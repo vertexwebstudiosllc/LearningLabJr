@@ -105,14 +105,34 @@ private struct PhonicsGame: Identifiable {
 
 private struct GameTileLink: View {
     let game: PhonicsGame
+    @ObservedObject private var storeManager = StoreManager.shared
+    @State private var showPremiumGate = false
+
+    private var isPremiumLocked: Bool {
+        game.isLocked && !storeManager.hasPremium
+    }
 
     var body: some View {
-        NavigationLink {
-            destinationView
-        } label: {
-            GameTile(game: game)
+        Group {
+            if isPremiumLocked {
+                Button {
+                    showPremiumGate = true
+                } label: {
+                    GameTile(game: game, isLocked: true)
+                }
+                .buttonStyle(.plain)
+            } else {
+                NavigationLink {
+                    destinationView
+                } label: {
+                    GameTile(game: game, isLocked: false)
+                }
+                .buttonStyle(.plain)
+            }
         }
-        .buttonStyle(.plain)
+        .sheet(isPresented: $showPremiumGate) {
+            PremiumParentGateView()
+        }
     }
 
     @ViewBuilder
@@ -149,6 +169,7 @@ private struct PeekabooBarnyardGameView: View {
 
 private struct GameTile: View {
     let game: PhonicsGame
+    let isLocked: Bool
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -156,7 +177,7 @@ private struct GameTile: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
-            if game.isLocked {
+            if isLocked {
                 Image(systemName: "lock.fill")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.white)

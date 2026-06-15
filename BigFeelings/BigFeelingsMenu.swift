@@ -82,7 +82,7 @@ private struct PhonicsGame: Identifiable {
         PhonicsGame(title: "Letter Match", assetName: "Button-Letter-Match", destination: .letterMatch, isLocked: false),
         PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: false),
+        PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: true),
         PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
@@ -105,14 +105,34 @@ private struct PhonicsGame: Identifiable {
 
 private struct GameTileLink: View {
     let game: PhonicsGame
+    @ObservedObject private var storeManager = StoreManager.shared
+    @State private var showPremiumGate = false
+
+    private var isPremiumLocked: Bool {
+        game.isLocked && !storeManager.hasPremium
+    }
 
     var body: some View {
-        NavigationLink {
-            destinationView
-        } label: {
-            GameTile(game: game)
+        Group {
+            if isPremiumLocked {
+                Button {
+                    showPremiumGate = true
+                } label: {
+                    GameTile(game: game, isLocked: true)
+                }
+                .buttonStyle(.plain)
+            } else {
+                NavigationLink {
+                    destinationView
+                } label: {
+                    GameTile(game: game, isLocked: false)
+                }
+                .buttonStyle(.plain)
+            }
         }
-        .buttonStyle(.plain)
+        .sheet(isPresented: $showPremiumGate) {
+            PremiumParentGateView()
+        }
     }
 
     @ViewBuilder
@@ -149,6 +169,7 @@ private struct PeekabooVehicleGameView: View {
 
 private struct GameTile: View {
     let game: PhonicsGame
+    let isLocked: Bool
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -156,7 +177,7 @@ private struct GameTile: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
-            if game.isLocked {
+            if isLocked {
                 Image(systemName: "lock.fill")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(.white)

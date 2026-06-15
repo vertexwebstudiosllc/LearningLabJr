@@ -6,9 +6,166 @@
 //
 import SpriteKit
 
+private struct ClawImageOption {
+    let image: String
+    let name: String
+}
+
+private enum ClawImageOptionsLoader {
+    private static let knownAssetNames: [String: String] = [
+        "baseball": "baseball",
+        "basketball": "basketball",
+        "football": "football",
+        "golf ball": "golf ball",
+        "hockey puck": "hockey puck",
+        "tennis ball": "tennis ball",
+        "volleyball": "volleyball"
+    ]
+
+    private static let fallbackOptions: [ClawImageOption] = [
+        ClawImageOption(image: "basketball", name: "Basketball"),
+        ClawImageOption(image: "baseball", name: "Baseball"),
+        ClawImageOption(image: "football", name: "Football"),
+        ClawImageOption(image: "hockey puck", name: "Hockey Puck"),
+        ClawImageOption(image: "tennis ball", name: "Tennis Ball"),
+        ClawImageOption(image: "golf ball", name: "Golf Ball"),
+        ClawImageOption(image: "volleyball", name: "Volleyball")
+    ]
+
+    static func loadOptions() -> [ClawImageOption] {
+        guard let csv = loadCategoriesText() else {
+            return fallbackOptions
+        }
+
+        let rows = parseCSV(csv)
+        guard let headers = rows.first, rows.count > 1 else {
+            return fallbackOptions
+        }
+
+        let normalizedHeaders = headers.map(normalizeHeader)
+        let imageIndex = 0
+        guard let inAppIndex = normalizedHeaders.firstIndex(of: "inapp"),
+              let sportIndex = normalizedHeaders.firstIndex(of: "sport")
+                ?? normalizedHeaders.firstIndex(of: "sports") else {
+            return fallbackOptions
+        }
+
+        let nameIndex = normalizedHeaders.firstIndex(of: "name")
+        let options = rows.dropFirst().compactMap { row -> ClawImageOption? in
+            guard row.indices.contains(imageIndex),
+                  row.indices.contains(inAppIndex),
+                  row.indices.contains(sportIndex),
+                  isMarked(row[inAppIndex]),
+                  isMarked(row[sportIndex]) else {
+                return nil
+            }
+
+            let csvImage = row[imageIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !csvImage.isEmpty else { return nil }
+            let image = knownAssetNames[csvImage.lowercased()] ?? csvImage
+
+            let name: String
+            if let nameIndex, row.indices.contains(nameIndex) {
+                let value = row[nameIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+                name = value.isEmpty ? displayName(from: csvImage) : value
+            } else {
+                name = displayName(from: csvImage)
+            }
+
+            return ClawImageOption(image: image, name: name)
+        }
+
+        return options.isEmpty ? fallbackOptions : options
+    }
+
+    private static func loadCategoriesText() -> String? {
+        let resourceNames = [
+            ("LearningLabAppCategories", "csv"),
+            ("LearningLabAppCategories", "tsv"),
+            ("LearningLabAppCategories", "txt"),
+            ("LearningLabAppCategories", "numbers")
+        ]
+
+        for resource in resourceNames {
+            guard let url = Bundle.main.url(forResource: resource.0, withExtension: resource.1),
+                  let text = try? String(contentsOf: url, encoding: .utf8) else {
+                continue
+            }
+
+            return text
+        }
+
+        return nil
+    }
+
+    private static func parseCSV(_ text: String) -> [[String]] {
+        let delimiter: Character = text.contains("\t") ? "\t" : ","
+        var rows: [[String]] = []
+        var row: [String] = []
+        var field = ""
+        var isQuoted = false
+        var index = text.startIndex
+
+        while index < text.endIndex {
+            let character = text[index]
+            let nextIndex = text.index(after: index)
+
+            if character == "\"" {
+                if isQuoted, nextIndex < text.endIndex, text[nextIndex] == "\"" {
+                    field.append("\"")
+                    index = text.index(after: nextIndex)
+                    continue
+                } else {
+                    isQuoted.toggle()
+                }
+            } else if character == delimiter, !isQuoted {
+                row.append(field)
+                field = ""
+            } else if character == "\n", !isQuoted {
+                row.append(field)
+                rows.append(row)
+                row = []
+                field = ""
+            } else if character != "\r" {
+                field.append(character)
+            }
+
+            index = nextIndex
+        }
+
+        if !field.isEmpty || !row.isEmpty {
+            row.append(field)
+            rows.append(row)
+        }
+
+        return rows
+    }
+
+    private static func normalizeHeader(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+            .filter { $0.isLetter || $0.isNumber }
+    }
+
+    private static func isMarked(_ value: String) -> Bool {
+        let marker = value.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return marker == "x" || marker == "yes" || marker == "true" || marker == "1"
+    }
+
+    private static func displayName(from image: String) -> String {
+        image
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "-", with: " ")
+            .split(separator: " ")
+            .map { $0.prefix(1).uppercased() + String($0.dropFirst()) }
+            .joined(separator: " ")
+    }
+}
+
 class ClawGameScene: SKScene {
     // MARK: - Configuration
-    private let itemNames = ["Basketball","Baseball","Football","Hockey Puck","Tennis Ball","Golf Ball"]
+    private let maxVisibleItemCount = 5
     private let clawSpeed: TimeInterval = 0.3
     private let topInsetRatio: CGFloat = 0.09
     private let bottomInsetRatio: CGFloat = 0.08
@@ -19,10 +176,11 @@ class ClawGameScene: SKScene {
     private var originalClawPosition: CGPoint!
     private var isDropping = false
 
+    private let imageOptions = ClawImageOptionsLoader.loadOptions()
     private var itemSide: CGFloat = 0
-    private var bottomPositionByName = [String:CGPoint]()
     private var lastPickedName: String?
     private var grabbedItem: SKSpriteNode?
+    private var pickedImages = Set<String>()
     private var dropDistance: CGFloat = 0
 
     private let rope = SKShapeNode()
@@ -56,28 +214,24 @@ class ClawGameScene: SKScene {
         originalClawPosition = claw.position
 
         // Compute bottom-row sizing
+        let visibleItemCount = min(maxVisibleItemCount, playableOptions.count)
+        guard visibleItemCount > 0 else { return }
+
         let margin       = size.width * 0.05
         let availW       = size.width - margin*2
-        let byCount      = availW / CGFloat(itemNames.count)
+        let byCount      = availW / CGFloat(visibleItemCount)
         let maxH         = size.height * 0.22
         let maxClawWidth = claw.size.width * 1.08
         itemSide         = min(byCount * 1.42, maxH, maxClawWidth)
         dropDistance     = max(0, originalClawPosition.y - itemSide * 1.25 - size.height * bottomInsetRatio)
 
         // Spawn bottom-row sports items
-        let bottomSize = CGSize(width: itemSide, height: itemSide)
-        let spacing    = availW / CGFloat(itemNames.count - 1)
-        for (i, name) in itemNames.enumerated() {
-            let node = SKSpriteNode(imageNamed: name.lowercased().replacingOccurrences(of: " ", with: " "))
-            node.name   = name
-            node.size   = bottomSize
-            let x       = margin + spacing * CGFloat(i)
-            let y       = bottomSize.height/2 + size.height * bottomInsetRatio
-            node.position = CGPoint(x: x, y: y)
-            node.zPosition = 1
-            addChild(node)
-            bottomItems.append(node)
-            bottomPositionByName[name] = node.position
+        let initialOptions = Array(playableOptions.shuffled().prefix(visibleItemCount))
+        let spacing = visibleItemCount > 1 ? availW / CGFloat(visibleItemCount - 1) : 0
+        for (index, option) in initialOptions.enumerated() {
+            let x = visibleItemCount > 1 ? margin + spacing * CGFloat(index) : size.width / 2
+            let y = itemSide / 2 + size.height * bottomInsetRatio
+            addBottomItem(option, at: CGPoint(x: x, y: y))
         }
 
         isUserInteractionEnabled = true
@@ -110,6 +264,13 @@ class ClawGameScene: SKScene {
 
         let tapLocation = touch.location(in: self)
         let tappedItem = bottomItems.first { $0.frame.contains(tapLocation) }
+        let disappearedImage = grabbedItem.flatMap { imageName(for: $0) }
+
+        if let old = grabbedItem {
+            old.removeFromParent()
+            grabbedItem = nil
+        }
+
         let targetX = tappedItem?.position.x ?? claw.position.x
         let moveOverTarget = SKAction.moveTo(x: targetX, duration: 0.2)
         moveOverTarget.timingMode = .easeInEaseOut
@@ -120,20 +281,16 @@ class ClawGameScene: SKScene {
         let grab = SKAction.run { [weak self] in
             guard let self = self else { return }
 
-            if let old = self.grabbedItem, let nm = old.name {
-                old.removeFromParent()
-                old.size     = CGSize(width: self.itemSide,
-                                      height: self.itemSide)
-                old.position = self.bottomPositionByName[nm]!
-                self.addChild(old)
-                self.bottomItems.append(old)
-            }
-
             let candidates = self.bottomItems.filter { $0.name != self.lastPickedName }
-            guard let item = tappedItem ?? candidates.randomElement(),
+            guard let item = tappedItem ?? candidates.randomElement() ?? self.bottomItems.randomElement(),
                   let name = item.name else { return }
 
+            let itemImage = self.imageName(for: item)
             self.lastPickedName = name
+            if let itemImage {
+                self.pickedImages.insert(itemImage)
+            }
+            let replacementPosition = item.position
             item.removeFromParent()
             if let idx = self.bottomItems.firstIndex(of: item) {
                 self.bottomItems.remove(at: idx)
@@ -151,6 +308,11 @@ class ClawGameScene: SKScene {
 
             self.grabbedItem = item
             self.showPickedName(name)
+            self.addRandomReplacement(
+                excludingSelected: itemImage,
+                disappearedImage: disappearedImage,
+                at: replacementPosition
+            )
         }
 
         let up = SKAction.move(to: originalClawPosition, duration: clawSpeed)
@@ -206,6 +368,52 @@ class ClawGameScene: SKScene {
 
         background.run(seq)
         label.run(seq)
+    }
+
+    private var playableOptions: [ClawImageOption] {
+        let optionsWithTextures = imageOptions.filter { SKTexture(imageNamed: $0.image).size() != .zero }
+        return optionsWithTextures.isEmpty ? imageOptions : optionsWithTextures
+    }
+
+    private func addBottomItem(_ option: ClawImageOption, at position: CGPoint) {
+        let node = SKSpriteNode(imageNamed: option.image)
+        node.name = option.name
+        node.userData = NSMutableDictionary(dictionary: ["image": option.image])
+        node.size = CGSize(width: itemSide, height: itemSide)
+        node.position = position
+        node.zPosition = 1
+        addChild(node)
+        bottomItems.append(node)
+    }
+
+    private func imageName(for node: SKSpriteNode) -> String? {
+        node.userData?["image"] as? String
+    }
+
+    private func addRandomReplacement(
+        excludingSelected selectedImage: String?,
+        disappearedImage: String?,
+        at position: CGPoint
+    ) {
+        let visibleImages = Set(bottomItems.compactMap { imageName(for: $0) })
+        let selectedImages = Set([selectedImage].compactMap { $0 })
+        let protectedImages = Set([selectedImage, disappearedImage].compactMap { $0 })
+        let strictOptions = playableOptions.filter {
+            !protectedImages.contains($0.image) && !visibleImages.contains($0.image)
+        }
+        let notYetPickedOptions = strictOptions.filter { !pickedImages.contains($0.image) }
+
+        if let replacement = notYetPickedOptions.randomElement() ?? strictOptions.randomElement() {
+            addBottomItem(replacement, at: position)
+            return
+        }
+
+        // Reuse the disappeared item only if no other off-screen option remains.
+        let unavoidableReuseOptions = playableOptions.filter {
+            !selectedImages.contains($0.image) && !visibleImages.contains($0.image)
+        }
+        guard let replacement = unavoidableReuseOptions.randomElement() else { return }
+        addBottomItem(replacement, at: position)
     }
 
     private func fittedSize(for sourceSize: CGSize, maxWidth: CGFloat, maxHeight: CGFloat) -> CGSize {
