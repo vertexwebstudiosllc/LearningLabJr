@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ParentsCornerMenu: View {
+    @Environment(\.openURL) private var openURL
+    @ObservedObject private var storeManager = StoreManager.shared
     @AppStorage("parents.soundEffectsEnabled") private var soundEffectsEnabled = true
     @AppStorage("parents.voicePromptsEnabled") private var voicePromptsEnabled = true
     @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = false
     @AppStorage("parents.autoAdvanceEnabled") private var autoAdvanceEnabled = false
     @AppStorage("parents.sessionMinutes") private var sessionMinutes = 15.0
     @AppStorage("parents.difficulty") private var difficulty = ParentDifficulty.gentle.rawValue
+    @State private var showPremiumPaywall = false
 
     var body: some View {
         ZStack {
@@ -39,6 +42,9 @@ struct ParentsCornerMenu: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 24)
+
+                    subscriptionSection
+                        .padding(.horizontal, 18)
 
                     VStack(spacing: 12) {
                         OptionToggleRow(
@@ -114,6 +120,87 @@ struct ParentsCornerMenu: View {
         }
         .navigationTitle("Parents Corner")
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showPremiumPaywall) {
+            PremiumPaywallView()
+        }
+        .task {
+            await storeManager.loadProducts()
+            await storeManager.updateCustomerProductStatus()
+        }
+    }
+
+    private var subscriptionSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .center, spacing: 12) {
+                Image(systemName: storeManager.hasPremium ? "checkmark.seal.fill" : "lock.fill")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(storeManager.hasPremium ? .green : .white)
+                    .frame(width: 36, height: 36)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Subscription")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+
+                    Text(storeManager.hasPremium ? "Premium is active" : "Premium games are locked")
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.88))
+                }
+
+                Spacer()
+            }
+
+            if storeManager.hasPremium {
+                SubscriptionActionButton(
+                    title: "Manage Subscription",
+                    systemImage: "person.crop.circle.badge.checkmark"
+                ) {
+                    openSubscriptionSettings()
+                }
+
+                SubscriptionActionButton(
+                    title: "Turn Off Auto-Renew",
+                    systemImage: "arrow.triangle.2.circlepath"
+                ) {
+                    openSubscriptionSettings()
+                }
+
+                SubscriptionActionButton(
+                    title: "End Subscription",
+                    systemImage: "xmark.circle.fill"
+                ) {
+                    openSubscriptionSettings()
+                }
+            } else {
+                SubscriptionActionButton(
+                    title: "Sign Up for Premium",
+                    systemImage: "sparkles"
+                ) {
+                    showPremiumPaywall = true
+                }
+
+                SubscriptionActionButton(
+                    title: "Restore Purchases",
+                    systemImage: "arrow.clockwise"
+                ) {
+                    Task {
+                        await storeManager.restorePurchases()
+                    }
+                }
+            }
+
+            Text("Subscription changes are managed through your Apple ID.")
+                .font(.system(size: 13, weight: .semibold, design: .rounded))
+                .foregroundColor(.white.opacity(0.75))
+        }
+        .padding(16)
+        .background(Color.black.opacity(0.22))
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+
+    private func openSubscriptionSettings() {
+        guard let url = URL(string: "https://apps.apple.com/account/subscriptions") else { return }
+        openURL(url)
     }
 }
 
@@ -151,6 +238,36 @@ private struct OptionToggleRow: View {
         .padding(16)
         .background(Color.black.opacity(0.22))
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+}
+
+private struct SubscriptionActionButton: View {
+    let title: String
+    let systemImage: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 10) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 17, weight: .bold))
+                    .frame(width: 22)
+
+                Text(title)
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 14, weight: .bold))
+            }
+            .foregroundColor(Color(red: 0.12, green: 0.36, blue: 0.52))
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 }
 
