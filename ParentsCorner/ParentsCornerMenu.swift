@@ -10,6 +10,7 @@ import SwiftUI
 struct ParentsCornerMenu: View {
     @Environment(\.openURL) private var openURL
     @ObservedObject private var storeManager = StoreManager.shared
+    @ObservedObject private var timerManager = SessionTimerManager.shared
     @AppStorage("parents.soundEffectsEnabled") private var soundEffectsEnabled = true
     @AppStorage("parents.voicePromptsEnabled") private var voicePromptsEnabled = true
     @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = false
@@ -86,6 +87,43 @@ struct ParentsCornerMenu: View {
 
                             Slider(value: $sessionMinutes, in: 5...30, step: 5)
                                 .tint(.white)
+
+                            HStack(spacing: 10) {
+                                if timerManager.isRunning {
+                                    Label(timerManager.formattedTime, systemImage: "hourglass")
+                                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                                        .foregroundColor(.white.opacity(0.9))
+                                        .monospacedDigit()
+
+                                    Spacer()
+
+                                    Button {
+                                        timerManager.stop()
+                                    } label: {
+                                        Text("Stop")
+                                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 8)
+                                            .background(Color.white.opacity(0.16))
+                                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                                    }
+                                    .buttonStyle(.plain)
+                                } else {
+                                    Button {
+                                        timerManager.start(minutes: Int(sessionMinutes))
+                                    } label: {
+                                        Label("Start Timer", systemImage: "play.fill")
+                                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                                            .foregroundColor(Color(red: 0.12, green: 0.36, blue: 0.52))
+                                            .frame(maxWidth: .infinity)
+                                            .padding(.vertical, 10)
+                                            .background(Color.white.opacity(0.92))
+                                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+                            }
                         }
                         .padding(16)
                         .background(Color.black.opacity(0.22))

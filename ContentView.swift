@@ -2,8 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            LearningLabHomeView()
+        ZStack {
+            NavigationStack {
+                LearningLabHomeView()
+            }
+
+            SessionTimerOverlay()
         }
     }
 }
