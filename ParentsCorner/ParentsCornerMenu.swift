@@ -43,9 +43,6 @@ struct ParentsCornerMenu: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 24)
 
-                    subscriptionSection
-                        .padding(.horizontal, 18)
-
                     VStack(spacing: 12) {
                         OptionToggleRow(
                             title: "Sound Effects",
@@ -111,7 +108,11 @@ struct ParentsCornerMenu: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     }
                     .padding(.horizontal, 18)
-                    .padding(.bottom, 32)
+
+                    subscriptionSection
+                        .padding(.horizontal, 18)
+                        .padding(.top, 2)
+                        .padding(.bottom, 32)
                 }
                 .frame(maxWidth: 560)
                 .frame(maxWidth: .infinity)
@@ -130,21 +131,21 @@ struct ParentsCornerMenu: View {
     }
 
     private var subscriptionSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .center, spacing: 12) {
                 Image(systemName: storeManager.hasPremium ? "checkmark.seal.fill" : "lock.fill")
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(storeManager.hasPremium ? .green : .white)
-                    .frame(width: 36, height: 36)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.white.opacity(0.86))
+                    .frame(width: 24, height: 24)
 
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Subscription")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .font(.system(size: 17, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
 
                     Text(storeManager.hasPremium ? "Premium is active" : "Premium games are locked")
-                        .font(.system(size: 15, weight: .semibold, design: .rounded))
-                        .foregroundColor(.white.opacity(0.88))
+                        .font(.system(size: 13, weight: .semibold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.72))
                 }
 
                 Spacer()
@@ -191,10 +192,10 @@ struct ParentsCornerMenu: View {
 
             Text("Subscription changes are managed through your Apple ID.")
                 .font(.system(size: 13, weight: .semibold, design: .rounded))
-                .foregroundColor(.white.opacity(0.75))
+                .foregroundColor(.white.opacity(0.62))
         }
-        .padding(16)
-        .background(Color.black.opacity(0.22))
+        .padding(14)
+        .background(Color.black.opacity(0.15))
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 
@@ -250,21 +251,22 @@ private struct SubscriptionActionButton: View {
         Button(action: action) {
             HStack(spacing: 10) {
                 Image(systemName: systemImage)
-                    .font(.system(size: 17, weight: .bold))
-                    .frame(width: 22)
+                    .font(.system(size: 15, weight: .semibold))
+                    .frame(width: 20)
 
                 Text(title)
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.system(size: 15, weight: .semibold, design: .rounded))
 
                 Spacer()
 
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .bold))
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundColor(.white.opacity(0.45))
             }
-            .foregroundColor(Color(red: 0.12, green: 0.36, blue: 0.52))
-            .padding(.horizontal, 14)
-            .padding(.vertical, 12)
-            .background(Color.white)
+            .foregroundColor(.white.opacity(0.86))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(Color.white.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         }
         .buttonStyle(.plain)
