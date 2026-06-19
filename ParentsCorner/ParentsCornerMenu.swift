@@ -13,7 +13,7 @@ struct ParentsCornerMenu: View {
     @ObservedObject private var timerManager = SessionTimerManager.shared
     @AppStorage("parents.soundEffectsEnabled") private var soundEffectsEnabled = true
     @AppStorage("parents.voicePromptsEnabled") private var voicePromptsEnabled = true
-    @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = false
+    @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = true
     @AppStorage("parents.autoAdvanceEnabled") private var autoAdvanceEnabled = false
     @AppStorage("parents.sessionMinutes") private var sessionMinutes = 15.0
     @AppStorage("parents.difficulty") private var difficulty = ParentDifficulty.gentle.rawValue

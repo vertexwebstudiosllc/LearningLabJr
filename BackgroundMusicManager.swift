@@ -5,6 +5,7 @@ import Foundation
 final class BackgroundMusicManager: NSObject, AVAudioPlayerDelegate {
     static let shared = BackgroundMusicManager()
 
+    private let trackDuration: TimeInterval = 120
     private let trackNames = [
         "peekaboo_bounce_loop_112bpm",
         "storytime_sparkle_loop_78bpm",
@@ -12,6 +13,7 @@ final class BackgroundMusicManager: NSObject, AVAudioPlayerDelegate {
     ]
 
     private var player: AVAudioPlayer?
+    private var rotationTask: Task<Void, Never>?
     private var currentTrackIndex = 0
     private var isEnabled = false
 
@@ -35,12 +37,17 @@ final class BackgroundMusicManager: NSObject, AVAudioPlayerDelegate {
     }
 
     private func stop() {
+        rotationTask?.cancel()
+        rotationTask = nil
         player?.stop()
         player = nil
     }
 
     private func playTrack(at index: Int) {
         guard isEnabled, !trackNames.isEmpty else { return }
+
+        rotationTask?.cancel()
+        rotationTask = nil
 
         currentTrackIndex = index % trackNames.count
         let trackName = trackNames[currentTrackIndex]
@@ -59,13 +66,26 @@ final class BackgroundMusicManager: NSObject, AVAudioPlayerDelegate {
 
             let audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.delegate = self
-            audioPlayer.numberOfLoops = 0
-            audioPlayer.volume = 0.28
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.volume = 0.42
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             player = audioPlayer
+            scheduleNextTrack()
         } catch {
             print("Failed to play background music: \(error)")
+        }
+    }
+
+    private func scheduleNextTrack() {
+        let duration = trackDuration
+        rotationTask = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: UInt64(duration * 1_000_000_000))
+            await MainActor.run {
+                guard let self, self.isEnabled else { return }
+                self.currentTrackIndex = (self.currentTrackIndex + 1) % self.trackNames.count
+                self.playTrack(at: self.currentTrackIndex)
+            }
         }
     }
 

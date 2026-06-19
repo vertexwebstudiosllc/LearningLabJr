@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = false
+    @AppStorage("parents.backgroundMusicEnabled") private var backgroundMusicEnabled = true
 
     var body: some View {
         ZStack {
