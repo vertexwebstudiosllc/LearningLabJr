@@ -281,7 +281,7 @@ class BarnyardPeekabooScene: SKScene, AVSpeechSynthesizerDelegate, AVAudioPlayer
             state = .showingName
             // Play sound after state change to prevent overlap
             run(SKAction.wait(forDuration: 0.1)) { [weak self] in
-                self?.playAnimalSound(self?.imageName ?? "")
+                ItemSoundManager.shared.playSound(for: self?.imageName ?? "")
             }
 
         case .showingName:
@@ -452,6 +452,8 @@ class BarnyardPeekabooScene: SKScene, AVSpeechSynthesizerDelegate, AVAudioPlayer
         }
     }
     private func stopAllSounds() {
+        ItemSoundManager.shared.stop()
+
         // Stop AVAudioPlayers immediately
         if let p = audioPlayer {
             p.stop()

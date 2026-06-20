@@ -170,6 +170,7 @@ class VehiclePeekabooScene: SKScene {
 
     private let garageDoor = SKSpriteNode(imageNamed: "MechanicGarageDoor")
     private let vehicle = SKSpriteNode()
+    private var vehicleImageName = ""
     private var vehicleName = ""
 
     private let imageOptions = VehicleImageOptionsLoader.loadOptions()
@@ -186,6 +187,7 @@ class VehiclePeekabooScene: SKScene {
         guard texture.size() != .zero else { return }
 
         vehicle.texture = texture
+        vehicleImageName = choice.image
         vehicleName = choice.name
         lastVehicleName = vehicleName
         vehicle.alpha = 0
@@ -246,6 +248,7 @@ class VehiclePeekabooScene: SKScene {
 
         case .doorOpen:
             showVehicleName()
+            ItemSoundManager.shared.playSound(for: vehicleImageName)
             state = .showingName
 
         case .showingName:

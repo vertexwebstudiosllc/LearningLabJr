@@ -308,6 +308,9 @@ class ClawGameScene: SKScene {
 
             self.grabbedItem = item
             self.showPickedName(name)
+            if let itemImage {
+                ItemSoundManager.shared.playSound(for: itemImage)
+            }
             self.addRandomReplacement(
                 excludingSelected: itemImage,
                 disappearedImage: disappearedImage,
