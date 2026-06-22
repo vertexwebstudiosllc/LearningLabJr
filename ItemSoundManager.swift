@@ -16,13 +16,13 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
         super.init()
     }
 
-    func playSound(for imageName: String) {
+    func playSound(for imageName: String, displayName: String? = nil) {
         let imageKey = imageName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !imageKey.isEmpty else { return }
 
         stop()
 
-        guard let url = catalog.soundURL(for: imageKey) else {
+        guard let url = catalog.soundURL(for: imageKey, displayName: displayName) else {
             return
         }
 
@@ -101,7 +101,7 @@ private struct ItemSoundCatalog {
         return ItemSoundCatalog(soundNamesByImage: sounds)
     }
 
-    func soundURL(for imageName: String) -> URL? {
+    func soundURL(for imageName: String, displayName: String? = nil) -> URL? {
         let normalizedImage = Self.normalizeResourceKey(imageName)
 
         if let configuredSound = soundNamesByImage[normalizedImage],
@@ -109,14 +109,17 @@ private struct ItemSoundCatalog {
             return configuredURL
         }
 
-        let fallbackNames = [
-            imageName,
-            "\(imageName)_sound",
-            "\(imageName)_noise",
-            "\(imageName)_sfx",
-            "\(imageName)_final",
-            "\(imageName)_voice"
-        ]
+        let baseNames = [imageName, displayName].compactMap { $0 }
+        let fallbackNames = baseNames.flatMap { baseName in
+            [
+                baseName,
+                "\(baseName)_sound",
+                "\(baseName)_noise",
+                "\(baseName)_sfx",
+                "\(baseName)_final",
+                "\(baseName)_voice"
+            ]
+        }
 
         for name in fallbackNames {
             if let url = Self.url(forConfiguredSound: name) {
@@ -147,18 +150,103 @@ private struct ItemSoundCatalog {
         let resourcePath = (trimmedSound as NSString).deletingPathExtension
         let explicitExtension = (trimmedSound as NSString).pathExtension
 
-        if !explicitExtension.isEmpty,
-           let url = url(forResourcePath: resourcePath, extension: explicitExtension) {
-            return url
+        let resourcePaths = resourcePathVariants(for: resourcePath)
+
+        if !explicitExtension.isEmpty {
+            for path in resourcePaths {
+                if let url = url(forResourcePath: path, extension: explicitExtension) {
+                    return url
+                }
+            }
         }
 
         for soundExtension in soundExtensions {
-            if let url = url(forResourcePath: resourcePath, extension: soundExtension) {
-                return url
+            for path in resourcePaths {
+                if let url = url(forResourcePath: path, extension: soundExtension) {
+                    return url
+                }
             }
         }
 
         return nil
+    }
+
+    private static func resourcePathVariants(for resourcePath: String) -> [String] {
+        let cleanPath = resourcePath.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanPath.isEmpty else { return [] }
+
+        let nsPath = cleanPath as NSString
+        let directory = nsPath.deletingLastPathComponent
+        let resourceName = nsPath.lastPathComponent
+
+        return nameVariants(for: resourceName).map { variant in
+            if directory != ".", !directory.isEmpty {
+                return (directory as NSString).appendingPathComponent(variant)
+            }
+
+            return variant
+        }
+    }
+
+    private static func nameVariants(for name: String) -> [String] {
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedName.isEmpty else { return [] }
+
+        let words = wordsInName(trimmedName)
+        let compact = words.joined()
+        let pascal = words
+            .map { $0.prefix(1).uppercased() + String($0.dropFirst()).lowercased() }
+            .joined()
+
+        return unique([
+            trimmedName,
+            trimmedName.lowercased(),
+            trimmedName.prefix(1).uppercased() + String(trimmedName.dropFirst()),
+            compact,
+            compact.lowercased(),
+            pascal,
+            pascal.lowercased()
+        ])
+    }
+
+    private static func wordsInName(_ name: String) -> [String] {
+        let separatedName = name
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "-", with: " ")
+        var words: [String] = []
+        var currentWord = ""
+
+        for character in separatedName {
+            if character.isLetter || character.isNumber {
+                if character.isUppercase, !currentWord.isEmpty {
+                    words.append(currentWord)
+                    currentWord = ""
+                }
+                currentWord.append(character)
+            } else if !currentWord.isEmpty {
+                words.append(currentWord)
+                currentWord = ""
+            }
+        }
+
+        if !currentWord.isEmpty {
+            words.append(currentWord)
+        }
+
+        return words.isEmpty ? [name] : words
+    }
+
+    private static func unique(_ values: [String]) -> [String] {
+        var seen: Set<String> = []
+        var uniqueValues: [String] = []
+
+        for value in values {
+            guard !seen.contains(value) else { continue }
+            seen.insert(value)
+            uniqueValues.append(value)
+        }
+
+        return uniqueValues
     }
 
     private static func url(forResourcePath resourcePath: String, extension soundExtension: String) -> URL? {

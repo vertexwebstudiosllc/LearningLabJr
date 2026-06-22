@@ -281,7 +281,10 @@ class BarnyardPeekabooScene: SKScene, AVSpeechSynthesizerDelegate, AVAudioPlayer
             state = .showingName
             // Play sound after state change to prevent overlap
             run(SKAction.wait(forDuration: 0.1)) { [weak self] in
-                ItemSoundManager.shared.playSound(for: self?.imageName ?? "")
+                ItemSoundManager.shared.playSound(
+                    for: self?.imageName ?? "",
+                    displayName: self?.displayName
+                )
             }
 
         case .showingName:

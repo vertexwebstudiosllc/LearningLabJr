@@ -248,7 +248,7 @@ class VehiclePeekabooScene: SKScene {
 
         case .doorOpen:
             showVehicleName()
-            ItemSoundManager.shared.playSound(for: vehicleImageName)
+            ItemSoundManager.shared.playSound(for: vehicleImageName, displayName: vehicleName)
             state = .showingName
 
         case .showingName:

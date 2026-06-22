@@ -480,7 +480,7 @@ struct StoryBookGame: View {
                         .padding(.top, 12)
 
                     StoryPageView(page: pages[pageIndex], availableHeight: proxy.size.height)
-                        .frame(maxWidth: min(proxy.size.width - 32, 620))
+                        .frame(maxWidth: min(max(0, proxy.size.width - 32), 620))
                         .frame(maxHeight: .infinity)
                         .transition(.asymmetric(
                             insertion: .move(edge: .trailing).combined(with: .opacity),
