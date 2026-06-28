@@ -70,6 +70,7 @@ private struct PhonicsGame: Identifiable {
         case soundBaskets
         case peekabooVehicle
         case clawGame
+        case foodScroll
         case placeholder
     }
 
@@ -84,7 +85,7 @@ private struct PhonicsGame: Identifiable {
         PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
         PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: true),
-        PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
+        PhonicsGame(title: "Food Scroll", assetName: nil, destination: .foodScroll, isLocked: true),
         PhonicsGame(title: "Claw Game", assetName: nil, destination: .clawGame, isLocked: true),
         PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
@@ -149,6 +150,8 @@ private struct GameTileLink: View {
             PeekabooVehicleGameView()
         case .clawGame:
             ClawGameView()
+        case .foodScroll:
+            FoodScrollGameView()
         case .placeholder:
             ABCsPlaceholderGame(title: game.title)
         }
@@ -180,6 +183,21 @@ private struct ClawGameView: View {
 
     private func makeScene(size: CGSize) -> SKScene {
         let scene = ClawGameScene(size: size)
+        scene.scaleMode = .resizeFill
+        return scene
+    }
+}
+
+private struct FoodScrollGameView: View {
+    var body: some View {
+        GeometryReader { proxy in
+            SpriteView(scene: makeScene(size: proxy.size))
+                .ignoresSafeArea()
+        }
+    }
+
+    private func makeScene(size: CGSize) -> SKScene {
+        let scene = FoodScrollScene(size: size)
         scene.scaleMode = .resizeFill
         return scene
     }
