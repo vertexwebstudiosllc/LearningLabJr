@@ -11,6 +11,7 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
 
     private let catalog = ItemSoundCatalog.load()
     private var player: AVAudioPlayer?
+    private var queuedSoundURLs: [URL] = []
 
     private override init() {
         super.init()
@@ -26,6 +27,42 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
             return
         }
 
+        playURL(url, itemName: imageKey)
+    }
+
+    func playSounds(_ sounds: [(imageName: String, displayName: String?)]) {
+        stop()
+
+        queuedSoundURLs = sounds.compactMap { sound in
+            let imageKey = sound.imageName.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !imageKey.isEmpty else { return nil }
+            return catalog.soundURL(for: imageKey, displayName: sound.displayName)
+        }
+
+        playNextQueuedURL()
+    }
+
+    func stop() {
+        queuedSoundURLs.removeAll()
+        player?.stop()
+        player = nil
+    }
+
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playNextQueuedURL()
+    }
+
+    private func playNextQueuedURL() {
+        guard !queuedSoundURLs.isEmpty else {
+            player = nil
+            return
+        }
+
+        let nextURL = queuedSoundURLs.removeFirst()
+        playURL(nextURL, itemName: nextURL.deletingPathExtension().lastPathComponent)
+    }
+
+    private func playURL(_ url: URL, itemName: String) {
         do {
 #if os(iOS)
             try AVAudioSession.sharedInstance().setCategory(.ambient, options: [.mixWithOthers])
@@ -37,13 +74,9 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
             nextPlayer.play()
             player = nextPlayer
         } catch {
-            print("Failed to play item sound for \(imageKey): \(error)")
+            print("Failed to play item sound for \(itemName): \(error)")
+            playNextQueuedURL()
         }
-    }
-
-    func stop() {
-        player?.stop()
-        player = nil
     }
 }
 

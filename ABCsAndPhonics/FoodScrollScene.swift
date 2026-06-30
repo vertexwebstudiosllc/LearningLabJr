@@ -174,10 +174,19 @@ final class FoodScrollScene: SKScene {
     private let container = SKNode()
     private var slots: [CardSlot] = []
     private weak var panGesture: UIPanGestureRecognizer?
+    private var isPanning = false
+    private var shouldPlaySettledCard = false
+    private var lastPlayedCardID: String?
 
     private struct CardSlot {
         let node: FoodScrollCard
         let baseAngle: CGFloat
+        let food: FoodScrollOption
+        let count: Int
+
+        var cardID: String {
+            "\(food.image)-\(count)"
+        }
     }
 
     override func didMove(to view: SKView) {
@@ -239,7 +248,7 @@ final class FoodScrollScene: SKScene {
             let card = FoodScrollCard(cardSize: cardSize)
             card.configure(food: combo.0, count: combo.1)
             container.addChild(card)
-            slots.append(CardSlot(node: card, baseAngle: CGFloat(index) * step))
+            slots.append(CardSlot(node: card, baseAngle: CGFloat(index) * step, food: combo.0, count: combo.1))
         }
     }
 
@@ -248,12 +257,16 @@ final class FoodScrollScene: SKScene {
 
         switch gesture.state {
         case .began:
+            isPanning = true
+            shouldPlaySettledCard = false
             angularVelocity = 0
         case .changed:
             let dy = -gesture.translation(in: view).y
             gesture.setTranslation(.zero, in: view)
             rotationAngle += dy / radius
         case .ended, .cancelled:
+            isPanning = false
+            shouldPlaySettledCard = true
             let velocity = -gesture.velocity(in: view).y
             angularVelocity = velocity / radius * 0.02
         default:
@@ -276,6 +289,7 @@ final class FoodScrollScene: SKScene {
         }
 
         projectSlots()
+        playSettledCardSoundIfNeeded()
     }
 
     private func projectSlots() {
@@ -291,6 +305,44 @@ final class FoodScrollScene: SKScene {
             slot.node.setScale(scale)
             slot.node.alpha = 0.22 + 0.78 * max(0, depth)
             slot.node.zPosition = scale * 100
+        }
+    }
+
+    private func playSettledCardSoundIfNeeded() {
+        guard shouldPlaySettledCard, !isPanning, abs(angularVelocity) <= 0.012,
+              let frontSlot = frontSlot() else {
+            return
+        }
+
+        shouldPlaySettledCard = false
+        guard frontSlot.cardID != lastPlayedCardID else { return }
+
+        lastPlayedCardID = frontSlot.cardID
+        ItemSoundManager.shared.playSounds([
+            (imageName: numberName(for: frontSlot.count), displayName: nil),
+            (imageName: frontSlot.food.image, displayName: frontSlot.food.name)
+        ])
+    }
+
+    private func frontSlot() -> CardSlot? {
+        slots.max { left, right in
+            cos(left.baseAngle + rotationAngle) < cos(right.baseAngle + rotationAngle)
+        }
+    }
+
+    private func numberName(for count: Int) -> String {
+        switch count {
+        case 1: return "One"
+        case 2: return "Two"
+        case 3: return "Three"
+        case 4: return "Four"
+        case 5: return "Five"
+        case 6: return "Six"
+        case 7: return "Seven"
+        case 8: return "Eight"
+        case 9: return "Nine"
+        case 10: return "Ten"
+        default: return "\(count)"
         }
     }
 }
