@@ -4,7 +4,14 @@
 //
 
 import SpriteKit
+
+#if canImport(UIKit)
 import UIKit
+private typealias PlatformPanGestureRecognizer = UIPanGestureRecognizer
+#elseif canImport(AppKit)
+import AppKit
+private typealias PlatformPanGestureRecognizer = NSPanGestureRecognizer
+#endif
 
 private struct FoodScrollOption {
     let image: String
@@ -173,7 +180,7 @@ final class FoodScrollScene: SKScene {
 
     private let container = SKNode()
     private var slots: [CardSlot] = []
-    private weak var panGesture: UIPanGestureRecognizer?
+    private weak var panGesture: PlatformPanGestureRecognizer?
     private var isPanning = false
     private var shouldPlaySettledCard = false
     private var lastPlayedCardID: String?
@@ -190,13 +197,13 @@ final class FoodScrollScene: SKScene {
     }
 
     override func didMove(to view: SKView) {
-        backgroundColor = UIColor(red: 0.96, green: 0.98, blue: 1.0, alpha: 1.0)
+        backgroundColor = SKColor(red: 0.96, green: 0.98, blue: 1.0, alpha: 1.0)
         configureLayout()
         addBackground()
         addChild(container)
         buildCards()
 
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+        let pan = PlatformPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
         view.addGestureRecognizer(pan)
         panGesture = pan
 
@@ -252,7 +259,7 @@ final class FoodScrollScene: SKScene {
         }
     }
 
-    @objc private func didPan(_ gesture: UIPanGestureRecognizer) {
+    @objc private func didPan(_ gesture: PlatformPanGestureRecognizer) {
         guard let view = gesture.view else { return }
 
         switch gesture.state {
@@ -359,13 +366,13 @@ private final class FoodScrollCard: SKNode {
         super.init()
 
         background.fillColor = .white
-        background.strokeColor = UIColor(red: 0.18, green: 0.45, blue: 0.78, alpha: 1.0)
+        background.strokeColor = SKColor(red: 0.18, green: 0.45, blue: 0.78, alpha: 1.0)
         background.lineWidth = 3
         background.alpha = 0.94
         addChild(background)
 
         label.fontSize = min(24, cardSize.width * 0.11)
-        label.fontColor = UIColor(red: 0.08, green: 0.18, blue: 0.32, alpha: 1.0)
+        label.fontColor = SKColor(red: 0.08, green: 0.18, blue: 0.32, alpha: 1.0)
         label.verticalAlignmentMode = .center
         label.horizontalAlignmentMode = .center
         label.position = CGPoint(x: 0, y: cardSize.height / 2 - 26)
