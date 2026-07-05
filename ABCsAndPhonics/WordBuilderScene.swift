@@ -1,6 +1,11 @@
 import Foundation
 import SpriteKit
+
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 private struct WordBuilderOption: Equatable {
     let imageName: String
@@ -196,7 +201,7 @@ final class WordBuilderScene: SKScene {
     private var isResolving = false
 
     override func didMove(to view: SKView) {
-        backgroundColor = UIColor(red: 0.91, green: 0.97, blue: 0.98, alpha: 1)
+        backgroundColor = SKColor(red: 0.91, green: 0.97, blue: 0.98, alpha: 1)
         startRound()
     }
 
@@ -223,7 +228,7 @@ final class WordBuilderScene: SKScene {
         renderRound()
     }
 
-    private func renderRound(feedback: String? = nil, feedbackColor: UIColor = .clear, revealWord: Bool = false) {
+    private func renderRound(feedback: String? = nil, feedbackColor: SKColor = .clear, revealWord: Bool = false) {
         removeAllChildren()
         addBackground()
 
@@ -236,7 +241,7 @@ final class WordBuilderScene: SKScene {
         let title = SKLabelNode(fontNamed: "AvenirNext-Heavy")
         title.text = "Word Builder"
         title.fontSize = min(44, safeWidth * 0.075)
-        title.fontColor = UIColor(red: 0.08, green: 0.28, blue: 0.38, alpha: 1)
+        title.fontColor = SKColor(red: 0.08, green: 0.28, blue: 0.38, alpha: 1)
         title.position = CGPoint(x: centerX, y: safeHeight * 0.9)
         title.horizontalAlignmentMode = .center
         title.verticalAlignmentMode = .center
@@ -244,7 +249,7 @@ final class WordBuilderScene: SKScene {
 
         let imageCard = SKShapeNode(rectOf: CGSize(width: safeWidth * 0.52, height: safeHeight * 0.32), cornerRadius: 28)
         imageCard.fillColor = .white
-        imageCard.strokeColor = UIColor(red: 0.64, green: 0.85, blue: 0.89, alpha: 1)
+        imageCard.strokeColor = SKColor(red: 0.64, green: 0.85, blue: 0.89, alpha: 1)
         imageCard.lineWidth = 5
         imageCard.position = CGPoint(x: centerX, y: safeHeight * 0.68)
         addChild(imageCard)
@@ -255,8 +260,8 @@ final class WordBuilderScene: SKScene {
         addChild(itemSprite)
 
         let wordCard = SKShapeNode(rectOf: CGSize(width: safeWidth * 0.7, height: safeHeight * 0.12), cornerRadius: 22)
-        wordCard.fillColor = UIColor(red: 1, green: 0.98, blue: 0.83, alpha: 1)
-        wordCard.strokeColor = UIColor(red: 0.96, green: 0.72, blue: 0.22, alpha: 1)
+        wordCard.fillColor = SKColor(red: 1, green: 0.98, blue: 0.83, alpha: 1)
+        wordCard.strokeColor = SKColor(red: 0.96, green: 0.72, blue: 0.22, alpha: 1)
         wordCard.lineWidth = 5
         wordCard.position = CGPoint(x: centerX, y: safeHeight * 0.43)
         addChild(wordCard)
@@ -264,7 +269,7 @@ final class WordBuilderScene: SKScene {
         let wordLabel = SKLabelNode(fontNamed: "AvenirNext-Heavy")
         wordLabel.text = displayWord(revealWord: revealWord)
         wordLabel.fontSize = min(58, safeWidth * 0.095)
-        wordLabel.fontColor = UIColor(red: 0.14, green: 0.18, blue: 0.27, alpha: 1)
+        wordLabel.fontColor = SKColor(red: 0.14, green: 0.18, blue: 0.27, alpha: 1)
         wordLabel.position = wordCard.position
         wordLabel.horizontalAlignmentMode = .center
         wordLabel.verticalAlignmentMode = .center
@@ -286,7 +291,7 @@ final class WordBuilderScene: SKScene {
 
     private func addBackground() {
         let background = SKShapeNode(rectOf: size)
-        background.fillColor = UIColor(red: 0.91, green: 0.97, blue: 0.98, alpha: 1)
+        background.fillColor = SKColor(red: 0.91, green: 0.97, blue: 0.98, alpha: 1)
         background.strokeColor = .clear
         background.position = CGPoint(x: size.width / 2, y: size.height / 2)
         background.zPosition = -10
@@ -304,7 +309,7 @@ final class WordBuilderScene: SKScene {
             let x = startX + CGFloat(index) * (cardSize.width + gap)
             let card = SKShapeNode(rectOf: cardSize, cornerRadius: 20)
             card.fillColor = .white
-            card.strokeColor = UIColor(red: 0.38, green: 0.68, blue: 0.82, alpha: 1)
+            card.strokeColor = SKColor(red: 0.38, green: 0.68, blue: 0.82, alpha: 1)
             card.lineWidth = 5
             card.position = CGPoint(x: x, y: center.y)
             card.name = "letter:\(letter)"
@@ -332,10 +337,19 @@ final class WordBuilderScene: SKScene {
         }.joined(separator: " ")
     }
 
+#if canImport(UIKit)
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !isResolving, let touch = touches.first else { return }
-        let location = touch.location(in: self)
+        handleTap(at: touch.location(in: self))
+    }
+#elseif canImport(AppKit)
+    override func mouseUp(with event: NSEvent) {
+        guard !isResolving else { return }
+        handleTap(at: event.location(in: self))
+    }
+#endif
 
+    private func handleTap(at location: CGPoint) {
         for node in nodes(at: location) {
             var candidate: SKNode? = node
             while let current = candidate {
@@ -354,16 +368,16 @@ final class WordBuilderScene: SKScene {
         isResolving = true
 
         if letter == correctLetter {
-            flash(node: selectedNode, color: UIColor(red: 0.24, green: 0.76, blue: 0.36, alpha: 1))
-            renderRound(feedback: "Correct!", feedbackColor: UIColor(red: 0.12, green: 0.5, blue: 0.22, alpha: 1), revealWord: true)
+            flash(node: selectedNode, color: SKColor(red: 0.24, green: 0.76, blue: 0.36, alpha: 1))
+            renderRound(feedback: "Correct!", feedbackColor: SKColor(red: 0.12, green: 0.5, blue: 0.22, alpha: 1), revealWord: true)
             ItemSoundManager.shared.playSound(for: option.imageName, displayName: option.displayName)
             run(.sequence([
                 .wait(forDuration: 1.25),
                 .run { [weak self] in self?.startRound() }
             ]))
         } else {
-            flash(node: selectedNode, color: UIColor(red: 0.96, green: 0.22, blue: 0.25, alpha: 1))
-            renderRound(feedback: "Try again!", feedbackColor: UIColor(red: 0.75, green: 0.12, blue: 0.15, alpha: 1))
+            flash(node: selectedNode, color: SKColor(red: 0.96, green: 0.22, blue: 0.25, alpha: 1))
+            renderRound(feedback: "Try again!", feedbackColor: SKColor(red: 0.75, green: 0.12, blue: 0.15, alpha: 1))
             run(.sequence([
                 .wait(forDuration: 0.75),
                 .run { [weak self] in
@@ -374,7 +388,7 @@ final class WordBuilderScene: SKScene {
         }
     }
 
-    private func flash(node: SKNode, color: UIColor) {
+    private func flash(node: SKNode, color: SKColor) {
         guard let shape = node as? SKShapeNode else { return }
         let originalColor = shape.fillColor
         shape.run(.sequence([

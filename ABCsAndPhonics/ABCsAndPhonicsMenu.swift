@@ -71,6 +71,7 @@ private struct PhonicsGame: Identifiable {
         case peekabooVehicle
         case clawGame
         case foodScroll
+        case wordBuilder
         case placeholder
     }
 
@@ -87,7 +88,7 @@ private struct PhonicsGame: Identifiable {
         PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: true),
         PhonicsGame(title: "Food Scroll", assetName: nil, destination: .foodScroll, isLocked: true),
         PhonicsGame(title: "Claw Game", assetName: nil, destination: .clawGame, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
+        PhonicsGame(title: "Word Builder", assetName: nil, destination: .wordBuilder, isLocked: true),
         PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
@@ -152,6 +153,8 @@ private struct GameTileLink: View {
             ClawGameView()
         case .foodScroll:
             FoodScrollGameView()
+        case .wordBuilder:
+            WordBuilderGameView()
         case .placeholder:
             ABCsPlaceholderGame(title: game.title)
         }
@@ -198,6 +201,21 @@ private struct FoodScrollGameView: View {
 
     private func makeScene(size: CGSize) -> SKScene {
         let scene = FoodScrollScene(size: size)
+        scene.scaleMode = .resizeFill
+        return scene
+    }
+}
+
+private struct WordBuilderGameView: View {
+    var body: some View {
+        GeometryReader { proxy in
+            SpriteView(scene: makeScene(size: proxy.size))
+                .ignoresSafeArea()
+        }
+    }
+
+    private func makeScene(size: CGSize) -> SKScene {
+        let scene = WordBuilderScene(size: size)
         scene.scaleMode = .resizeFill
         return scene
     }
