@@ -315,7 +315,7 @@ final class WordBuilderScene: SKScene {
             card.name = "letter:\(letter)"
             addChild(card)
 
-            let letterSprite = SKSpriteNode(imageNamed: letter)
+            let letterSprite = SKSpriteNode(imageNamed: letterAssetName(for: letter))
             fit(letterSprite, maxWidth: cardSize.width * 0.68, maxHeight: cardSize.height * 0.78)
             letterSprite.position = card.position
             letterSprite.name = card.name
@@ -326,6 +326,10 @@ final class WordBuilderScene: SKScene {
     private func shuffledAnswers() -> [String] {
         let distractors = alphabet.filter { $0 != correctLetter }.shuffled().prefix(2)
         return ([correctLetter] + distractors).shuffled()
+    }
+
+    private func letterAssetName(for letter: String) -> String {
+        letter.uppercased()
     }
 
     private func displayWord(revealWord: Bool) -> String {
