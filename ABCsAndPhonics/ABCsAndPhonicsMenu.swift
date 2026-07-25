@@ -72,7 +72,11 @@ private struct PhonicsGame: Identifiable {
         case clawGame
         case foodScroll
         case wordBuilder
-        case placeholder
+        case beginningSounds
+        case alphabetSequence
+        case vowelGarden
+        case consonantCove
+        case syllableHop
     }
 
     let id = UUID()
@@ -89,20 +93,11 @@ private struct PhonicsGame: Identifiable {
         PhonicsGame(title: "Food Scroll", assetName: nil, destination: .foodScroll, isLocked: true),
         PhonicsGame(title: "Claw Game", assetName: nil, destination: .clawGame, isLocked: true),
         PhonicsGame(title: "Word Builder", assetName: nil, destination: .wordBuilder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Sight Word Stars", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Blend Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Digraph Dash", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Find the Word", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trace & Say", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Phonics Puzzle", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Story Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "ABC Review", assetName: nil, destination: .placeholder, isLocked: true)
+        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .beginningSounds, isLocked: false),
+        PhonicsGame(title: "ABC Adventure", assetName: nil, destination: .alphabetSequence, isLocked: false),
+        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .vowelGarden, isLocked: false),
+        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .consonantCove, isLocked: false),
+        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .syllableHop, isLocked: false)
     ]
 }
 
@@ -155,8 +150,16 @@ private struct GameTileLink: View {
             FoodScrollGameView()
         case .wordBuilder:
             WordBuilderGameView()
-        case .placeholder:
-            ABCsPlaceholderGame(title: game.title)
+        case .beginningSounds:
+            BeginningSoundsGame()
+        case .alphabetSequence:
+            AlphabetSequenceGame()
+        case .vowelGarden:
+            VowelGardenGame()
+        case .consonantCove:
+            ConsonantCoveGame()
+        case .syllableHop:
+            SyllableHopGame()
         }
     }
 }
