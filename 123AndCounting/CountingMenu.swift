@@ -194,6 +194,7 @@ private struct GameShell<Content: View>: View {
 
 private struct FeedbackBanner: View {
     let success: Bool?
+    var onCorrect: () -> Void = {}
 
     var body: some View {
         if let success {
@@ -201,7 +202,24 @@ private struct FeedbackBanner: View {
                 .font(.system(size: 19, weight: .bold, design: .rounded))
                 .foregroundStyle(success ? Color.yellow : Color.white)
                 .transition(.scale.combined(with: .opacity))
+                .task(id: success) {
+                    guard success else { return }
+                    try? await Task.sleep(for: .seconds(1))
+                    guard !Task.isCancelled else { return }
+                    onCorrect()
+                }
         }
+    }
+}
+
+private struct RoundCounter: View {
+    let round: Int
+    let total: Int
+
+    var body: some View {
+        Text("Challenge \(round + 1) of \(total)")
+            .font(.system(size: 15, weight: .bold, design: .rounded))
+            .foregroundStyle(.white.opacity(0.85))
     }
 }
 
@@ -225,13 +243,21 @@ private struct NumberButton: View {
 // MARK: - 1. Match two number cards to two distinct piles
 
 private struct PileMatchGame: View {
+    @State private var round = 0
     @State private var answers: [Int?] = [nil, nil]
     @State private var feedback: Bool?
-    private let piles = [(emoji: "🍎", count: 3), (emoji: "⭐️", count: 5)]
+    private let rounds = [
+        [(emoji: "🍎", count: 3), (emoji: "⭐️", count: 5)],
+        [(emoji: "🐠", count: 4), (emoji: "🦋", count: 2)],
+        [(emoji: "🚗", count: 6), (emoji: "⚽️", count: 3)]
+    ]
+    private var piles: [(emoji: String, count: Int)] { rounds[round] }
+    private var cards: [Int] { Array(piles.map(\.count).reversed()) }
 
     var body: some View {
         GameShell(title: "Pile Match", directions: "Count both piles. Drag each number card to the pile it matches.", colors: [.orange, .pink]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(alignment: .top, spacing: 16) {
                     ForEach(piles.indices, id: \.self) { index in
                         VStack(spacing: 10) {
@@ -257,7 +283,7 @@ private struct PileMatchGame: View {
                 }
 
                 HStack(spacing: 16) {
-                    ForEach([5, 3], id: \.self) { number in
+                    ForEach(cards, id: \.self) { number in
                         Text("\(number)")
                             .font(.system(size: 28, weight: .black, design: .rounded))
                             .foregroundStyle(.indigo)
@@ -266,11 +292,17 @@ private struct PileMatchGame: View {
                             .onDrag { NSItemProvider(object: NSString(string: "\(number)")) }
                     }
                 }
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
                 Button("Reset") { answers = [nil, nil]; feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        answers = [nil, nil]
+        feedback = nil
     }
 }
 
@@ -285,20 +317,25 @@ private func loadNumber(from providers: [NSItemProvider], completion: @escaping 
 // MARK: - 2. Touch every object while counting aloud
 
 private struct TouchCountGame: View {
+    @State private var round = 0
     @State private var touched: Set<Int> = []
     @State private var feedback: Bool?
-    private let count = 6
+    private let counts = [6, 4, 7]
+    private let emojis = [["🐶", "🐱", "🐥"], ["🐸", "🐞", "🐝"], ["🐙", "🐬", "🐳"]]
+    private var count: Int { counts[round] }
+    private var choices: [Int] { [count - 1, count, count + 1] }
 
     var body: some View {
         GameShell(title: "Touch & Count", directions: "Touch each animal once. Then choose how many you counted.", colors: [.blue, .cyan]) {
             VStack(spacing: 20) {
+                RoundCounter(round: round, total: counts.count)
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 14) {
                     ForEach(0..<count, id: \.self) { index in
                         Button {
                             touched.insert(index)
                         } label: {
                             ZStack(alignment: .topTrailing) {
-                                Text(["🐶", "🐱", "🐥"][index % 3]).font(.system(size: 50))
+                            Text(emojis[round][index % 3]).font(.system(size: 50))
                                 if touched.contains(index) {
                                     Text("\(touched.sorted().firstIndex(of: index)! + 1)")
                                         .font(.caption.bold())
@@ -312,58 +349,89 @@ private struct TouchCountGame: View {
                     }
                 }
                 HStack {
-                    ForEach([5, 6, 7], id: \.self) { value in
+                    ForEach(choices, id: \.self) { value in
                         NumberButton(number: value) { feedback = touched.count == count && value == count }
                     }
                 }
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
                 Button("Start Over") { touched.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % counts.count
+        touched.removeAll()
+        feedback = nil
     }
 }
 
 // MARK: - 3. Visual addition with a multiple-choice sum
 
 private struct AdditionGame: View {
+    @State private var round = 0
     @State private var feedback: Bool?
+    private let rounds = [
+        (emoji: "🍓", left: 2, right: 3),
+        (emoji: "🥕", left: 4, right: 2),
+        (emoji: "🧁", left: 1, right: 3)
+    ]
+    private var question: (emoji: String, left: Int, right: Int) { rounds[round] }
+    private var total: Int { question.left + question.right }
+    private var choices: [Int] { [max(0, total - 1), total, total + 1] }
 
     var body: some View {
         GameShell(title: "Addition Picnic", directions: "Put both picnic groups together. What is 2 + 3?", colors: [.green, .mint]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 18) {
-                    ObjectGroup(emoji: "🍓", count: 2)
+                    ObjectGroup(emoji: question.emoji, count: question.left)
                     Text("+").font(.largeTitle.bold())
-                    ObjectGroup(emoji: "🍓", count: 3)
+                    ObjectGroup(emoji: question.emoji, count: question.right)
                 }
-                Text("2 + 3 = ?").font(.system(size: 32, weight: .bold, design: .rounded))
+                Text("\(question.left) + \(question.right) = ?").font(.system(size: 32, weight: .bold, design: .rounded))
                 HStack {
-                    ForEach([4, 5, 6], id: \.self) { value in
-                        NumberButton(number: value) { feedback = value == 5 }
+                    ForEach(choices, id: \.self) { value in
+                        NumberButton(number: value) { feedback = value == total }
                     }
                 }
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        feedback = nil
     }
 }
 
 // MARK: - 4. Subtraction by physically tapping objects away
 
 private struct SubtractionGame: View {
+    @State private var round = 0
     @State private var removed: Set<Int> = []
     @State private var feedback: Bool?
+    private let rounds = [
+        (emoji: "🦕", start: 5, takeAway: 2),
+        (emoji: "🐇", start: 6, takeAway: 2),
+        (emoji: "🚀", start: 4, takeAway: 3)
+    ]
+    private var question: (emoji: String, start: Int, takeAway: Int) { rounds[round] }
+    private var answer: Int { question.start - question.takeAway }
+    private var choices: [Int] { [max(0, answer - 1), answer, answer + 1] }
 
     var body: some View {
-        GameShell(title: "Dino Dash", directions: "There are 5 dinosaurs. Tap 2 to make them dash away. How many remain?", colors: [.purple, .indigo]) {
+        GameShell(title: "Dino Dash", directions: "Tap \(question.takeAway) objects to make them dash away. How many remain?", colors: [.purple, .indigo]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack {
-                    ForEach(0..<5, id: \.self) { index in
+                    ForEach(0..<question.start, id: \.self) { index in
                         Button {
-                            if removed.count < 2 { removed.insert(index) }
+                            if removed.count < question.takeAway { removed.insert(index) }
                         } label: {
-                            Text("🦕")
+                            Text(question.emoji)
                                 .font(.system(size: 45))
                                 .opacity(removed.contains(index) ? 0.12 : 1)
                                 .offset(y: removed.contains(index) ? -18 : 0)
@@ -371,31 +439,46 @@ private struct SubtractionGame: View {
                         .buttonStyle(.plain)
                     }
                 }
-                Text("5 − \(removed.count) = ?")
+                Text("\(question.start) − \(removed.count) = ?")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                 HStack {
-                    ForEach([2, 3, 4], id: \.self) { value in
-                        NumberButton(number: value) { feedback = removed.count == 2 && value == 3 }
+                    ForEach(choices, id: \.self) { value in
+                        NumberButton(number: value) { feedback = removed.count == question.takeAway && value == answer }
                     }
                 }
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
                 Button("Bring Them Back") { removed.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        removed.removeAll()
+        feedback = nil
     }
 }
 
 // MARK: - 5. Missing number in a sequence
 
 private struct MissingNumberGame: View {
+    @State private var round = 0
     @State private var answer: Int?
+    private let sequences = [
+        (values: ["2", "3", "?", "5", "6"], answer: 4),
+        (values: ["5", "?", "7", "8", "9"], answer: 6),
+        (values: ["7", "8", "9", "?", "11"], answer: 10)
+    ]
+    private var question: (values: [String], answer: Int) { sequences[round] }
+    private var choices: [Int] { [question.answer - 1, question.answer, question.answer + 1] }
 
     var body: some View {
         GameShell(title: "Treasure Trail", directions: "Which stepping-stone number is missing?", colors: [.yellow, .orange]) {
             VStack(spacing: 24) {
+                RoundCounter(round: round, total: sequences.count)
                 HStack(spacing: 8) {
-                    ForEach(["2", "3", "?", "5", "6"], id: \.self) { value in
+                    ForEach(question.values, id: \.self) { value in
                         Text(value)
                             .font(.system(size: 26, weight: .bold, design: .rounded))
                             .frame(width: 52, height: 52)
@@ -403,30 +486,46 @@ private struct MissingNumberGame: View {
                     }
                 }
                 HStack {
-                    ForEach([3, 4, 5], id: \.self) { value in
+                    ForEach(choices, id: \.self) { value in
                         NumberButton(number: value) { answer = value }
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == 4 })
+                FeedbackBanner(success: answer.map { $0 == question.answer }, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % sequences.count
+        answer = nil
     }
 }
 
 // MARK: - 6. Compare two visible quantities with symbols
 
 private struct CompareGame: View {
+    @State private var round = 0
     @State private var answer: String?
+    private let rounds = [
+        (emoji: "🎈", left: 4, right: 2),
+        (emoji: "🐚", left: 3, right: 5),
+        (emoji: "🍪", left: 4, right: 4)
+    ]
+    private var question: (emoji: String, left: Int, right: Int) { rounds[round] }
+    private var correctSymbol: String {
+        question.left == question.right ? "=" : (question.left < question.right ? "<" : ">")
+    }
 
     var body: some View {
         GameShell(title: "More or Less", directions: "Choose the symbol that makes the number sentence true.", colors: [.teal, .blue]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 18) {
-                    ObjectGroup(emoji: "🎈", count: 4)
+                    ObjectGroup(emoji: question.emoji, count: question.left)
                     Text(answer ?? "?")
                         .font(.system(size: 40, weight: .black))
                         .frame(width: 58)
-                    ObjectGroup(emoji: "🎈", count: 2)
+                    ObjectGroup(emoji: question.emoji, count: question.right)
                 }
                 HStack(spacing: 14) {
                     ForEach(["<", "=", ">"], id: \.self) { symbol in
@@ -437,22 +536,30 @@ private struct CompareGame: View {
                             .foregroundStyle(.indigo)
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == ">" })
+                FeedbackBanner(success: answer.map { $0 == correctSymbol }, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        answer = nil
     }
 }
 
 // MARK: - 7. Construct a quantity in a ten-frame
 
 private struct TenFrameGame: View {
+    @State private var round = 0
     @State private var planted: Set<Int> = []
     @State private var feedback: Bool?
-    private let target = 7
+    private let targets = [7, 4, 9]
+    private var target: Int { targets[round] }
 
     var body: some View {
-        GameShell(title: "Ten-Frame Garden", directions: "Plant exactly 7 flowers in the ten-frame.", colors: [.pink, .purple]) {
+        GameShell(title: "Ten-Frame Garden", directions: "Plant exactly \(target) flowers in the ten-frame.", colors: [.pink, .purple]) {
             VStack(spacing: 20) {
+                RoundCounter(round: round, total: targets.count)
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 5), spacing: 6) {
                     ForEach(0..<10, id: \.self) { index in
                         Button {
@@ -470,22 +577,31 @@ private struct TenFrameGame: View {
                 Text("\(planted.count) flowers").font(.title2.bold())
                 Button("Check My Garden") { feedback = planted.count == target }
                     .buttonStyle(.borderedProminent)
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % targets.count
+        planted.removeAll()
+        feedback = nil
     }
 }
 
 // MARK: - 8. Select scrambled values from least to greatest
 
 private struct NumberOrderGame: View {
+    @State private var round = 0
     @State private var ordered: [Int] = []
     @State private var feedback: Bool?
-    private let numbers = [4, 1, 3, 2]
+    private let rounds = [[4, 1, 3, 2], [7, 5, 8, 6], [10, 8, 11, 9]]
+    private var numbers: [Int] { rounds[round] }
 
     var body: some View {
         GameShell(title: "Train Order", directions: "Tap the train cars from the smallest number to the biggest.", colors: [.indigo, .teal]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack {
                     ForEach(numbers, id: \.self) { value in
                         NumberButton(number: value, selected: ordered.contains(value)) {
@@ -500,62 +616,90 @@ private struct NumberOrderGame: View {
                     ForEach(ordered, id: \.self) { Text("\($0)").frame(width: 42, height: 42).background(.orange, in: RoundedRectangle(cornerRadius: 8)) }
                 }
                 .frame(minHeight: 46)
-                FeedbackBanner(success: feedback)
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
                 Button("Mix Them Up") { ordered.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        ordered.removeAll()
+        feedback = nil
     }
 }
 
 // MARK: - 9. Choose an addend pair for a target whole
 
 private struct NumberBondGame: View {
+    @State private var round = 0
     @State private var selected: Int?
+    private let rounds = [(whole: 7, part: 3), (whole: 9, part: 4), (whole: 6, part: 2)]
+    private var question: (whole: Int, part: Int) { rounds[round] }
+    private var missing: Int { question.whole - question.part }
+    private var choices: [Int] { [max(0, missing - 1), missing, missing + 1] }
 
     var body: some View {
-        GameShell(title: "Make the Number", directions: "The whole is 7. One part is 3. Choose the other part.", colors: [.red, .orange]) {
+        GameShell(title: "Make the Number", directions: "The whole is \(question.whole). One part is \(question.part). Choose the other part.", colors: [.red, .orange]) {
             VStack(spacing: 20) {
-                Text("7").font(.system(size: 34, weight: .black)).frame(width: 72, height: 72).background(.orange, in: Circle())
+                RoundCounter(round: round, total: rounds.count)
+                Text("\(question.whole)").font(.system(size: 34, weight: .black)).frame(width: 72, height: 72).background(.orange, in: Circle())
                 HStack {
-                    Text("3").font(.title.bold()).frame(width: 64, height: 64).background(.white.opacity(0.25), in: Circle())
+                    Text("\(question.part)").font(.title.bold()).frame(width: 64, height: 64).background(.white.opacity(0.25), in: Circle())
                     Image(systemName: "plus").font(.title.bold())
                     Text(selected.map(String.init) ?? "?").font(.title.bold()).frame(width: 64, height: 64).background(.white.opacity(0.25), in: Circle())
                 }
                 HStack {
-                    ForEach([3, 4, 5], id: \.self) { value in
+                    ForEach(choices, id: \.self) { value in
                         NumberButton(number: value) { selected = value }
                     }
                 }
-                FeedbackBanner(success: selected.map { 3 + $0 == 7 })
+                FeedbackBanner(success: selected.map { question.part + $0 == question.whole }, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        selected = nil
     }
 }
 
 // MARK: - 10. Count dot patterns on both halves of a domino
 
 private struct DominoGame: View {
+    @State private var round = 0
     @State private var answer: Int?
+    private let rounds = [(left: 3, right: 2), (left: 1, right: 4), (left: 3, right: 3)]
+    private var question: (left: Int, right: Int) { rounds[round] }
+    private var total: Int { question.left + question.right }
+    private var choices: [Int] { [total - 1, total, total + 1] }
 
     var body: some View {
         GameShell(title: "Domino Detective", directions: "Count the dots on both sides. What is the total?", colors: [.brown, .orange]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 0) {
-                    DominoHalf(count: 3)
+                    DominoHalf(count: question.left)
                     Rectangle().fill(.indigo).frame(width: 3, height: 110)
-                    DominoHalf(count: 2)
+                    DominoHalf(count: question.right)
                 }
                 .background(.white, in: RoundedRectangle(cornerRadius: 18))
-                Text("3 + 2 = ?").font(.title.bold())
+                Text("\(question.left) + \(question.right) = ?").font(.title.bold())
                 HStack {
-                    ForEach([4, 5, 6], id: \.self) { value in
+                    ForEach(choices, id: \.self) { value in
                         NumberButton(number: value) { answer = value }
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == 5 })
+                FeedbackBanner(success: answer.map { $0 == total }, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        answer = nil
     }
 }
 
@@ -573,61 +717,90 @@ private struct DominoHalf: View {
 // MARK: - 11. Move a character along a number line
 
 private struct NumberLineGame: View {
+    @State private var round = 0
     @State private var frogPosition = 2
     @State private var hops = 0
     @State private var feedback: Bool?
+    private let rounds = [(start: 2, hops: 3), (start: 1, hops: 4), (start: 4, hops: 2)]
+    private var question: (start: Int, hops: Int) { rounds[round] }
+    private var lineEnd: Int { max(6, question.start + question.hops + 1) }
 
     var body: some View {
-        GameShell(title: "Frog Number Hops", directions: "Start at 2. Tap Hop three times to solve 2 + 3.", colors: [.cyan, .blue]) {
+        GameShell(title: "Frog Number Hops", directions: "Start at \(question.start). Tap Hop \(question.hops) times.", colors: [.cyan, .blue]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 5) {
-                    ForEach(0...6, id: \.self) { number in
+                    ForEach(0...lineEnd, id: \.self) { number in
                         VStack(spacing: 4) {
                             Text(frogPosition == number ? "🐸" : " ").font(.title2)
                             Text("\(number)").font(.headline).frame(width: 38, height: 38).background(.white.opacity(0.23), in: Circle())
                         }
                     }
                 }
-                Text("2 + \(hops) = \(frogPosition)").font(.title.bold())
+                Text("\(question.start) + \(hops) = \(frogPosition)").font(.title.bold())
                 Button("Hop →") {
-                    guard hops < 3 else { return }
+                    guard hops < question.hops else { return }
                     hops += 1
                     frogPosition += 1
-                    if hops == 3 { feedback = frogPosition == 5 }
+                    if hops == question.hops { feedback = frogPosition == question.start + question.hops }
                 }
                 .buttonStyle(.borderedProminent)
-                FeedbackBanner(success: feedback)
-                Button("Back to 2") { frogPosition = 2; hops = 0; feedback = nil }
+                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                Button("Back to \(question.start)") { frogPosition = question.start; hops = 0; feedback = nil }
                     .buttonStyle(.bordered)
             }
         }
+        .onAppear { frogPosition = question.start }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        hops = 0
+        feedback = nil
+        frogPosition = rounds[round].start
     }
 }
 
 // MARK: - 12. Solve an equality by completing one side
 
 private struct BalanceGame: View {
+    @State private var round = 0
     @State private var answer: Int?
+    private let rounds = [(whole: 6, part: 3), (whole: 8, part: 5), (whole: 5, part: 1)]
+    private var question: (whole: Int, part: Int) { rounds[round] }
+    private var missing: Int { question.whole - question.part }
+    private var choices: [Int] { [max(0, missing - 1), missing, missing + 1] }
+    private var rightTotal: Int { question.part + (answer ?? 0) }
 
     var body: some View {
-        GameShell(title: "Balance the Scale", directions: "The left side weighs 6. Choose the number that makes the right side equal.", colors: [.green, .yellow]) {
+        GameShell(title: "Balance the Scale", directions: "The left side weighs \(question.whole). Choose the missing number that makes both sides equal.", colors: [.green, .yellow]) {
             VStack(spacing: 22) {
+                RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 14) {
-                    VStack { Text("🍊🍊🍊"); Text("🍊🍊🍊"); Text("6").font(.title.bold()) }
+                    VStack { Text(String(repeating: "🍊", count: question.whole)); Text("\(question.whole)").font(.title.bold()) }
                         .frame(maxWidth: .infinity).padding().background(.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 18))
-                    Image(systemName: answer == 6 ? "equal.circle.fill" : "scale.3d").font(.largeTitle)
-                    VStack { Text("🍊🍊🍊"); Text(answer.map { String(repeating: "🍊", count: $0) } ?? "?"); Text(answer.map(String.init) ?? "?").font(.title.bold()) }
+                    Image(systemName: rightTotal == question.whole ? "equal.circle.fill" : "scale.3d").font(.largeTitle)
+                    VStack {
+                        Text(String(repeating: "🍊", count: question.part))
+                        Text(answer.map { String(repeating: "🍊", count: $0) } ?? "?")
+                        Text(answer.map { "\(question.part) + \($0)" } ?? "\(question.part) + ?").font(.title2.bold())
+                    }
                         .frame(maxWidth: .infinity).padding().background(.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 18))
                 }
                 HStack {
-                    ForEach([2, 3, 4], id: \.self) { missing in
-                        NumberButton(number: missing) { answer = 3 + missing }
+                    ForEach(choices, id: \.self) { value in
+                        NumberButton(number: value) { answer = value }
                     }
                 }
-                Text("3 + ? = 6").font(.title2.bold())
-                FeedbackBanner(success: answer.map { $0 == 6 })
+                Text("\(question.part) + ? = \(question.whole)").font(.title2.bold())
+                FeedbackBanner(success: answer.map { $0 == missing }, onCorrect: nextRound)
             }
         }
+    }
+
+    private func nextRound() {
+        round = (round + 1) % rounds.count
+        answer = nil
     }
 }
 
