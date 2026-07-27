@@ -171,6 +171,7 @@ private struct GameShell<Content: View>: View {
                         .font(.system(size: 17, weight: .semibold, design: .rounded))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
+                        .accessibilityLabel("How to play. \(directions)")
 
                     content
                         .padding(18)
@@ -189,22 +190,27 @@ private struct GameShell<Content: View>: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
     }
 }
 
 private struct FeedbackBanner: View {
     let success: Bool?
+    var correctMessage = "That’s correct! Great thinking."
+    var retryMessage = "Not quite. Take another look and try again."
     var onCorrect: () -> Void = {}
 
     var body: some View {
         if let success {
-            Label(success ? "You got it!" : "Try again!", systemImage: success ? "star.fill" : "arrow.counterclockwise")
+            Label(success ? correctMessage : retryMessage, systemImage: success ? "star.fill" : "arrow.counterclockwise")
                 .font(.system(size: 19, weight: .bold, design: .rounded))
                 .foregroundStyle(success ? Color.yellow : Color.white)
+                .multilineTextAlignment(.center)
                 .transition(.scale.combined(with: .opacity))
+                .accessibilityLabel(success ? correctMessage : retryMessage)
                 .task(id: success) {
                     guard success else { return }
-                    try? await Task.sleep(for: .seconds(1))
+                    try? await Task.sleep(for: .seconds(1.35))
                     guard !Task.isCancelled else { return }
                     onCorrect()
                 }
@@ -217,9 +223,23 @@ private struct RoundCounter: View {
     let total: Int
 
     var body: some View {
-        Text("Challenge \(round + 1) of \(total)")
-            .font(.system(size: 15, weight: .bold, design: .rounded))
-            .foregroundStyle(.white.opacity(0.85))
+        VStack(spacing: 7) {
+            Text("Challenge \(round + 1) of \(total)")
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .foregroundStyle(.white.opacity(0.9))
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Capsule().fill(.white.opacity(0.2))
+                    Capsule()
+                        .fill(.white.opacity(0.9))
+                        .frame(width: proxy.size.width * CGFloat(round + 1) / CGFloat(total))
+                }
+            }
+            .frame(height: 7)
+        }
+        .frame(maxWidth: 260)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Challenge \(round + 1) of \(total)")
     }
 }
 
@@ -237,6 +257,8 @@ private struct NumberButton: View {
                 .background(selected ? Color.indigo : Color.white.opacity(0.92), in: RoundedRectangle(cornerRadius: 16))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(number)")
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 }
 
@@ -245,11 +267,14 @@ private struct NumberButton: View {
 private struct PileMatchGame: View {
     @State private var round = 0
     @State private var answers: [Int?] = [nil, nil]
+    @State private var selectedCard: Int?
     @State private var feedback: Bool?
     private let rounds = [
         [(emoji: "🍎", count: 3), (emoji: "⭐️", count: 5)],
         [(emoji: "🐠", count: 4), (emoji: "🦋", count: 2)],
-        [(emoji: "🚗", count: 6), (emoji: "⚽️", count: 3)]
+        [(emoji: "🚗", count: 6), (emoji: "⚽️", count: 3)],
+        [(emoji: "🍪", count: 2), (emoji: "🎈", count: 7)],
+        [(emoji: "🐞", count: 5), (emoji: "🌼", count: 4)]
     ]
     private var piles: [(emoji: String, count: Int)] { rounds[round] }
     private var cards: [Int] { Array(piles.map(\.count).reversed()) }
@@ -264,19 +289,23 @@ private struct PileMatchGame: View {
                             Text(String(repeating: piles[index].emoji, count: piles[index].count))
                                 .font(.system(size: 36))
                                 .multilineTextAlignment(.center)
+                                .accessibilityLabel("\(piles[index].count) items")
                             Text(answers[index].map(String.init) ?? "Drop here")
                                 .font(.system(size: 22, weight: .bold, design: .rounded))
                                 .frame(maxWidth: .infinity, minHeight: 62)
                                 .background(.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 18))
                                 .onDrop(of: [.text], isTargeted: nil) { providers in
                                     loadNumber(from: providers) { number in
-                                        answers[index] = number
-                                        if answers.allSatisfy({ $0 != nil }) {
-                                            feedback = answers[0] == piles[0].count && answers[1] == piles[1].count
-                                        }
+                                        place(number, in: index)
                                     }
                                     return true
                                 }
+                                .onTapGesture {
+                                    guard let selectedCard else { return }
+                                    place(selectedCard, in: index)
+                                }
+                                .accessibilityLabel("Pile \(index + 1), \(answers[index].map(String.init) ?? "empty answer")")
+                                .accessibilityHint(selectedCard == nil ? "Select a number card first" : "Double tap to place \(selectedCard!) here")
                         }
                         .frame(maxWidth: .infinity)
                     }
@@ -286,14 +315,29 @@ private struct PileMatchGame: View {
                     ForEach(cards, id: \.self) { number in
                         Text("\(number)")
                             .font(.system(size: 28, weight: .black, design: .rounded))
-                            .foregroundStyle(.indigo)
+                            .foregroundStyle(selectedCard == number ? .white : .indigo)
                             .frame(width: 68, height: 68)
-                            .background(.white, in: Circle())
+                            .background(selectedCard == number ? Color.indigo : .white, in: Circle())
                             .onDrag { NSItemProvider(object: NSString(string: "\(number)")) }
+                            .onTapGesture {
+                                selectedCard = selectedCard == number ? nil : number
+                                feedback = nil
+                            }
+                            .accessibilityLabel("Number \(number). Drag to a pile.")
+                            .accessibilityAddTraits(selectedCard == number ? [.isSelected] : [])
                     }
                 }
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
-                Button("Reset") { answers = [nil, nil]; feedback = nil }
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "Both numbers match their piles!",
+                    retryMessage: "One number is misplaced. Count each pile and move the cards.",
+                    onCorrect: nextRound
+                )
+                Button("Clear My Answers") {
+                    answers = [nil, nil]
+                    selectedCard = nil
+                    feedback = nil
+                }
                     .buttonStyle(.borderedProminent)
             }
         }
@@ -302,7 +346,19 @@ private struct PileMatchGame: View {
     private func nextRound() {
         round = (round + 1) % rounds.count
         answers = [nil, nil]
+        selectedCard = nil
         feedback = nil
+    }
+
+    private func place(_ number: Int, in index: Int) {
+        if let previousIndex = answers.firstIndex(where: { $0 == number }) {
+            answers[previousIndex] = nil
+        }
+        answers[index] = number
+        selectedCard = nil
+        feedback = answers.allSatisfy { $0 != nil }
+            ? answers[0] == piles[0].count && answers[1] == piles[1].count
+            : nil
     }
 }
 
@@ -318,12 +374,17 @@ private func loadNumber(from providers: [NSItemProvider], completion: @escaping 
 
 private struct TouchCountGame: View {
     @State private var round = 0
-    @State private var touched: Set<Int> = []
+    @State private var touched: [Int] = []
     @State private var feedback: Bool?
-    private let counts = [6, 4, 7]
-    private let emojis = [["🐶", "🐱", "🐥"], ["🐸", "🐞", "🐝"], ["🐙", "🐬", "🐳"]]
+    private let counts = [6, 4, 7, 5, 8]
+    private let emojis = [
+        ["🐶", "🐱", "🐥"], ["🐸", "🐞", "🐝"], ["🐙", "🐬", "🐳"],
+        ["🦊", "🐼", "🐨"], ["🦀", "🐢", "🐡"]
+    ]
     private var count: Int { counts[round] }
-    private var choices: [Int] { [count - 1, count, count + 1] }
+    private var choices: [Int] {
+        [[count, count + 1, count - 1], [count - 1, count + 1, count], [count + 1, count, count - 1]][round % 3]
+    }
 
     var body: some View {
         GameShell(title: "Touch & Count", directions: "Touch each animal once. Then choose how many you counted.", colors: [.blue, .cyan]) {
@@ -332,12 +393,14 @@ private struct TouchCountGame: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 14) {
                     ForEach(0..<count, id: \.self) { index in
                         Button {
-                            touched.insert(index)
+                            guard !touched.contains(index) else { return }
+                            touched.append(index)
+                            feedback = nil
                         } label: {
                             ZStack(alignment: .topTrailing) {
                             Text(emojis[round][index % 3]).font(.system(size: 50))
                                 if touched.contains(index) {
-                                    Text("\(touched.sorted().firstIndex(of: index)! + 1)")
+                                    Text("\(touched.firstIndex(of: index)! + 1)")
                                         .font(.caption.bold())
                                         .frame(width: 25, height: 25)
                                         .background(.green, in: Circle())
@@ -346,14 +409,29 @@ private struct TouchCountGame: View {
                             .opacity(touched.contains(index) ? 0.55 : 1)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(
+                            touched.contains(index)
+                                ? "\(emojis[round][index % 3]), counted \(touched.firstIndex(of: index)! + 1)"
+                                : "\(emojis[round][index % 3]), not counted"
+                        )
+                        .accessibilityHint("Double tap to count this animal")
                     }
                 }
                 HStack {
                     ForEach(choices, id: \.self) { value in
-                        NumberButton(number: value) { feedback = touched.count == count && value == count }
+                        NumberButton(number: value) {
+                            feedback = touched.count == count && value == count
+                        }
                     }
                 }
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "You counted every animal once!",
+                    retryMessage: touched.count < count
+                        ? "Touch every animal before choosing the total."
+                        : "Count the numbered animals once more.",
+                    onCorrect: nextRound
+                )
                 Button("Start Over") { touched.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
@@ -375,14 +453,19 @@ private struct AdditionGame: View {
     private let rounds = [
         (emoji: "🍓", left: 2, right: 3),
         (emoji: "🥕", left: 4, right: 2),
-        (emoji: "🧁", left: 1, right: 3)
+        (emoji: "🧁", left: 1, right: 3),
+        (emoji: "🍊", left: 5, right: 2),
+        (emoji: "🥨", left: 3, right: 3)
     ]
     private var question: (emoji: String, left: Int, right: Int) { rounds[round] }
     private var total: Int { question.left + question.right }
-    private var choices: [Int] { [max(0, total - 1), total, total + 1] }
+    private var choices: [Int] {
+        let values = [max(0, total - 1), total, total + 1]
+        return [values, [values[1], values[2], values[0]], [values[2], values[0], values[1]]][round % 3]
+    }
 
     var body: some View {
-        GameShell(title: "Addition Picnic", directions: "Put both picnic groups together. What is 2 + 3?", colors: [.green, .mint]) {
+        GameShell(title: "Addition Picnic", directions: "Count each group, then put them together. What is \(question.left) plus \(question.right)?", colors: [.green, .mint]) {
             VStack(spacing: 22) {
                 RoundCounter(round: round, total: rounds.count)
                 HStack(spacing: 18) {
@@ -396,7 +479,12 @@ private struct AdditionGame: View {
                         NumberButton(number: value) { feedback = value == total }
                     }
                 }
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "\(question.left) plus \(question.right) equals \(total)!",
+                    retryMessage: "Count both groups together, starting with one.",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -416,11 +504,16 @@ private struct SubtractionGame: View {
     private let rounds = [
         (emoji: "🦕", start: 5, takeAway: 2),
         (emoji: "🐇", start: 6, takeAway: 2),
-        (emoji: "🚀", start: 4, takeAway: 3)
+        (emoji: "🚀", start: 4, takeAway: 3),
+        (emoji: "🐧", start: 7, takeAway: 3),
+        (emoji: "🍪", start: 8, takeAway: 2)
     ]
     private var question: (emoji: String, start: Int, takeAway: Int) { rounds[round] }
     private var answer: Int { question.start - question.takeAway }
-    private var choices: [Int] { [max(0, answer - 1), answer, answer + 1] }
+    private var choices: [Int] {
+        let values = [max(0, answer - 1), answer, answer + 1]
+        return [values, [values[2], values[0], values[1]], [values[1], values[2], values[0]]][round % 3]
+    }
 
     var body: some View {
         GameShell(title: "Dino Dash", directions: "Tap \(question.takeAway) objects to make them dash away. How many remain?", colors: [.purple, .indigo]) {
@@ -429,7 +522,12 @@ private struct SubtractionGame: View {
                 HStack {
                     ForEach(0..<question.start, id: \.self) { index in
                         Button {
-                            if removed.count < question.takeAway { removed.insert(index) }
+                            if removed.contains(index) {
+                                removed.remove(index)
+                            } else if removed.count < question.takeAway {
+                                removed.insert(index)
+                            }
+                            feedback = nil
                         } label: {
                             Text(question.emoji)
                                 .font(.system(size: 45))
@@ -437,6 +535,8 @@ private struct SubtractionGame: View {
                                 .offset(y: removed.contains(index) ? -18 : 0)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(removed.contains(index) ? "Object \(index + 1), taken away" : "Object \(index + 1)")
+                        .accessibilityHint("Double tap to take away or restore this object")
                     }
                 }
                 Text("\(question.start) − \(removed.count) = ?")
@@ -446,7 +546,14 @@ private struct SubtractionGame: View {
                         NumberButton(number: value) { feedback = removed.count == question.takeAway && value == answer }
                     }
                 }
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "\(question.start) take away \(question.takeAway) leaves \(answer)!",
+                    retryMessage: removed.count != question.takeAway
+                        ? "Take away exactly \(question.takeAway) objects first."
+                        : "Count only the objects that are still here.",
+                    onCorrect: nextRound
+                )
                 Button("Bring Them Back") { removed.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
@@ -468,10 +575,15 @@ private struct MissingNumberGame: View {
     private let sequences = [
         (values: ["2", "3", "?", "5", "6"], answer: 4),
         (values: ["5", "?", "7", "8", "9"], answer: 6),
-        (values: ["7", "8", "9", "?", "11"], answer: 10)
+        (values: ["7", "8", "9", "?", "11"], answer: 10),
+        (values: ["?", "13", "14", "15", "16"], answer: 12),
+        (values: ["16", "17", "?", "19", "20"], answer: 18)
     ]
     private var question: (values: [String], answer: Int) { sequences[round] }
-    private var choices: [Int] { [question.answer - 1, question.answer, question.answer + 1] }
+    private var choices: [Int] {
+        let values = [question.answer - 1, question.answer, question.answer + 1]
+        return [values, [values[1], values[2], values[0]], [values[2], values[0], values[1]]][round % 3]
+    }
 
     var body: some View {
         GameShell(title: "Treasure Trail", directions: "Which stepping-stone number is missing?", colors: [.yellow, .orange]) {
@@ -490,7 +602,12 @@ private struct MissingNumberGame: View {
                         NumberButton(number: value) { answer = value }
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == question.answer }, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: answer.map { $0 == question.answer },
+                    correctMessage: "\(question.answer) completes the counting pattern!",
+                    retryMessage: "Say the numbers in order and listen for the missing one.",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -509,7 +626,9 @@ private struct CompareGame: View {
     private let rounds = [
         (emoji: "🎈", left: 4, right: 2),
         (emoji: "🐚", left: 3, right: 5),
-        (emoji: "🍪", left: 4, right: 4)
+        (emoji: "🍪", left: 4, right: 4),
+        (emoji: "⭐️", left: 2, right: 6),
+        (emoji: "🐞", left: 7, right: 3)
     ]
     private var question: (emoji: String, left: Int, right: Int) { rounds[round] }
     private var correctSymbol: String {
@@ -534,9 +653,15 @@ private struct CompareGame: View {
                             .frame(width: 68, height: 58)
                             .background(.white, in: RoundedRectangle(cornerRadius: 16))
                             .foregroundStyle(.indigo)
+                            .accessibilityLabel(symbol == "<" ? "less than" : symbol == ">" ? "greater than" : "equal to")
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == correctSymbol }, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: answer.map { $0 == correctSymbol },
+                    correctMessage: correctSymbol == "=" ? "Both groups are equal!" : "Yes—the \(correctSymbol == ">" ? "left" : "right") group has more.",
+                    retryMessage: "Count each group, then point the open side toward the group with more.",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -553,7 +678,7 @@ private struct TenFrameGame: View {
     @State private var round = 0
     @State private var planted: Set<Int> = []
     @State private var feedback: Bool?
-    private let targets = [7, 4, 9]
+    private let targets = [7, 4, 9, 5, 10]
     private var target: Int { targets[round] }
 
     var body: some View {
@@ -572,12 +697,21 @@ private struct TenFrameGame: View {
                                 .background(.white.opacity(0.24), in: RoundedRectangle(cornerRadius: 10))
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(planted.contains(index) ? "Space \(index + 1), flower planted" : "Space \(index + 1), empty")
+                        .accessibilityHint("Double tap to plant or remove a flower")
                     }
                 }
                 Text("\(planted.count) flowers").font(.title2.bold())
                 Button("Check My Garden") { feedback = planted.count == target }
                     .buttonStyle(.borderedProminent)
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "Your ten-frame shows exactly \(target)!",
+                    retryMessage: planted.count < target
+                        ? "Plant \(target - planted.count) more \(target - planted.count == 1 ? "flower" : "flowers")."
+                        : "Remove \(planted.count - target) \(planted.count - target == 1 ? "flower" : "flowers").",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -595,7 +729,10 @@ private struct NumberOrderGame: View {
     @State private var round = 0
     @State private var ordered: [Int] = []
     @State private var feedback: Bool?
-    private let rounds = [[4, 1, 3, 2], [7, 5, 8, 6], [10, 8, 11, 9]]
+    private let rounds = [
+        [4, 1, 3, 2], [7, 5, 8, 6], [10, 8, 11, 9],
+        [14, 12, 15, 13], [18, 20, 17, 19]
+    ]
     private var numbers: [Int] { rounds[round] }
 
     var body: some View {
@@ -606,8 +743,13 @@ private struct NumberOrderGame: View {
                     ForEach(numbers, id: \.self) { value in
                         NumberButton(number: value, selected: ordered.contains(value)) {
                             guard !ordered.contains(value) else { return }
+                            let expected = numbers.sorted()[ordered.count]
+                            guard value == expected else {
+                                feedback = false
+                                return
+                            }
                             ordered.append(value)
-                            if ordered.count == numbers.count { feedback = ordered == numbers.sorted() }
+                            feedback = ordered.count == numbers.count ? true : nil
                         }
                     }
                 }
@@ -616,7 +758,12 @@ private struct NumberOrderGame: View {
                     ForEach(ordered, id: \.self) { Text("\($0)").frame(width: 42, height: 42).background(.orange, in: RoundedRectangle(cornerRadius: 8)) }
                 }
                 .frame(minHeight: 46)
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "The train is in order from least to greatest!",
+                    retryMessage: "Find the smallest number that has not joined the train yet.",
+                    onCorrect: nextRound
+                )
                 Button("Mix Them Up") { ordered.removeAll(); feedback = nil }
                     .buttonStyle(.borderedProminent)
             }
@@ -635,10 +782,16 @@ private struct NumberOrderGame: View {
 private struct NumberBondGame: View {
     @State private var round = 0
     @State private var selected: Int?
-    private let rounds = [(whole: 7, part: 3), (whole: 9, part: 4), (whole: 6, part: 2)]
+    private let rounds = [
+        (whole: 7, part: 3), (whole: 9, part: 4), (whole: 6, part: 2),
+        (whole: 10, part: 6), (whole: 8, part: 1)
+    ]
     private var question: (whole: Int, part: Int) { rounds[round] }
     private var missing: Int { question.whole - question.part }
-    private var choices: [Int] { [max(0, missing - 1), missing, missing + 1] }
+    private var choices: [Int] {
+        let values = [max(0, missing - 1), missing, missing + 1]
+        return [values, [values[2], values[0], values[1]], [values[1], values[2], values[0]]][round % 3]
+    }
 
     var body: some View {
         GameShell(title: "Make the Number", directions: "The whole is \(question.whole). One part is \(question.part). Choose the other part.", colors: [.red, .orange]) {
@@ -655,7 +808,12 @@ private struct NumberBondGame: View {
                         NumberButton(number: value) { selected = value }
                     }
                 }
-                FeedbackBanner(success: selected.map { question.part + $0 == question.whole }, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: selected.map { question.part + $0 == question.whole },
+                    correctMessage: "\(question.part) and \(missing) make \(question.whole)!",
+                    retryMessage: "Count on from \(question.part) until you reach \(question.whole).",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -671,10 +829,16 @@ private struct NumberBondGame: View {
 private struct DominoGame: View {
     @State private var round = 0
     @State private var answer: Int?
-    private let rounds = [(left: 3, right: 2), (left: 1, right: 4), (left: 3, right: 3)]
+    private let rounds = [
+        (left: 3, right: 2), (left: 1, right: 4), (left: 3, right: 3),
+        (left: 2, right: 4), (left: 5, right: 2)
+    ]
     private var question: (left: Int, right: Int) { rounds[round] }
     private var total: Int { question.left + question.right }
-    private var choices: [Int] { [total - 1, total, total + 1] }
+    private var choices: [Int] {
+        let values = [total - 1, total, total + 1]
+        return [values, [values[1], values[2], values[0]], [values[2], values[0], values[1]]][round % 3]
+    }
 
     var body: some View {
         GameShell(title: "Domino Detective", directions: "Count the dots on both sides. What is the total?", colors: [.brown, .orange]) {
@@ -692,7 +856,12 @@ private struct DominoGame: View {
                         NumberButton(number: value) { answer = value }
                     }
                 }
-                FeedbackBanner(success: answer.map { $0 == total }, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: answer.map { $0 == total },
+                    correctMessage: "\(question.left) dots plus \(question.right) dots equals \(total)!",
+                    retryMessage: "Touch and count every dot on both sides.",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -711,6 +880,8 @@ private struct DominoHalf: View {
         }
         .frame(width: 100, height: 110)
         .padding(.horizontal, 8)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(count) dots")
     }
 }
 
@@ -721,7 +892,10 @@ private struct NumberLineGame: View {
     @State private var frogPosition = 2
     @State private var hops = 0
     @State private var feedback: Bool?
-    private let rounds = [(start: 2, hops: 3), (start: 1, hops: 4), (start: 4, hops: 2)]
+    private let rounds = [
+        (start: 2, hops: 3), (start: 1, hops: 4), (start: 4, hops: 2),
+        (start: 3, hops: 5), (start: 5, hops: 3)
+    ]
     private var question: (start: Int, hops: Int) { rounds[round] }
     private var lineEnd: Int { max(6, question.start + question.hops + 1) }
 
@@ -745,7 +919,13 @@ private struct NumberLineGame: View {
                     if hops == question.hops { feedback = frogPosition == question.start + question.hops }
                 }
                 .buttonStyle(.borderedProminent)
-                FeedbackBanner(success: feedback, onCorrect: nextRound)
+                .accessibilityLabel("Hop forward one")
+                .accessibilityHint("\(question.hops - hops) hops remaining")
+                FeedbackBanner(
+                    success: feedback,
+                    correctMessage: "\(question.start) plus \(question.hops) equals \(question.start + question.hops)!",
+                    onCorrect: nextRound
+                )
                 Button("Back to \(question.start)") { frogPosition = question.start; hops = 0; feedback = nil }
                     .buttonStyle(.bordered)
             }
@@ -766,10 +946,16 @@ private struct NumberLineGame: View {
 private struct BalanceGame: View {
     @State private var round = 0
     @State private var answer: Int?
-    private let rounds = [(whole: 6, part: 3), (whole: 8, part: 5), (whole: 5, part: 1)]
+    private let rounds = [
+        (whole: 6, part: 3), (whole: 8, part: 5), (whole: 5, part: 1),
+        (whole: 10, part: 4), (whole: 9, part: 2)
+    ]
     private var question: (whole: Int, part: Int) { rounds[round] }
     private var missing: Int { question.whole - question.part }
-    private var choices: [Int] { [max(0, missing - 1), missing, missing + 1] }
+    private var choices: [Int] {
+        let values = [max(0, missing - 1), missing, missing + 1]
+        return [values, [values[1], values[2], values[0]], [values[2], values[0], values[1]]][round % 3]
+    }
     private var rightTotal: Int { question.part + (answer ?? 0) }
 
     var body: some View {
@@ -793,7 +979,12 @@ private struct BalanceGame: View {
                     }
                 }
                 Text("\(question.part) + ? = \(question.whole)").font(.title2.bold())
-                FeedbackBanner(success: answer.map { $0 == missing }, onCorrect: nextRound)
+                FeedbackBanner(
+                    success: answer.map { $0 == missing },
+                    correctMessage: "Both sides equal \(question.whole)—the scale is balanced!",
+                    retryMessage: "Count on from \(question.part) to \(question.whole) to find the missing part.",
+                    onCorrect: nextRound
+                )
             }
         }
     }
@@ -814,6 +1005,8 @@ private struct ObjectGroup: View {
             .multilineTextAlignment(.center)
             .padding(12)
             .background(.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 18))
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(count) items")
     }
 }
 
