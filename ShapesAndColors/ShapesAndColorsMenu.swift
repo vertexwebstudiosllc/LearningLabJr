@@ -152,7 +152,7 @@ private struct GameTile: View {
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, icon: "circle.hexagongrid.fill")
+            SharedGameTile(title: game.title, category: .shapes)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
