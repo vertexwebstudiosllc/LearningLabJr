@@ -157,7 +157,7 @@ private struct GameTile: View {
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            tileContent
+            SharedGameTile(title: game.title, icon: "book.fill")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
@@ -171,40 +171,7 @@ private struct GameTile: View {
                     .accessibilityLabel(Text("Locked"))
             }
         }
-        .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
         .contentShape(Rectangle())
-    }
-
-    @ViewBuilder
-    private var tileContent: some View {
-        if let assetName = game.assetName {
-            Image(assetName)
-                .resizable()
-                .scaledToFit()
-                .aspectRatio(1, contentMode: .fit)
-                .padding(2)
-        } else {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            Color(red: 0.20, green: 0.55, blue: 0.95),
-                            Color(red: 0.10, green: 0.78, blue: 0.72)
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .overlay(
-                    Text(game.title)
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.65)
-                        .padding(.horizontal, 10)
-                )
-        }
     }
 }
 
