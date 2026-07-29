@@ -662,73 +662,262 @@ private struct PileDropFrameKey: PreferenceKey {
 private struct TouchCountGame: View {
     @State private var round = 0
     @State private var touched: [Int] = []
+    @State private var selectedAnswer: Int?
     @State private var feedback: Bool?
+    @State private var coaching = "Touch an animal and count out loud."
+    @State private var hintedItem: Int?
+    @State private var answerHintActive = false
+    @State private var hintTimerID = 0
+    @State private var countHaptics = 0
+    @State private var successHaptics = 0
     private let counts = [6, 4, 7, 5, 8]
     private let emojis = [
         ["🐶", "🐱", "🐥"], ["🐸", "🐞", "🐝"], ["🐙", "🐬", "🐳"],
         ["🦊", "🐼", "🐨"], ["🦀", "🐢", "🐡"]
     ]
     private var count: Int { counts[round] }
+    private var finishedCounting: Bool { touched.count == count }
     private var choices: [Int] {
         [[count, count + 1, count - 1], [count - 1, count + 1, count], [count + 1, count, count - 1]][round % 3]
     }
 
     var body: some View {
         GameShell(title: "Touch & Count", directions: "Touch each animal once. Then choose how many you counted.", colors: [.blue, .cyan]) {
-            VStack(spacing: 20) {
+            VStack(spacing: 18) {
                 RoundCounter(round: round, total: counts.count)
+
+                Label(coaching, systemImage: finishedCounting ? "number.circle.fill" : "hand.tap.fill")
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    .padding(.horizontal, 14)
+                    .background(.black.opacity(0.12), in: Capsule())
+                    .foregroundStyle(feedback == true ? Color.yellow : .white)
+                    .contentTransition(.numericText())
+                    .accessibilityLabel("Game hint. \(coaching)")
+
+                HStack(spacing: 8) {
+                    Image(systemName: finishedCounting ? "checkmark.circle.fill" : "hand.tap.fill")
+                    Text(finishedCounting ? "All animals counted!" : "\(touched.count) of \(count) touched")
+                }
+                .font(.system(size: 16, weight: .black, design: .rounded))
+                .foregroundStyle(finishedCounting ? Color.yellow : .white.opacity(0.9))
+                .animation(.spring(response: 0.3, dampingFraction: 0.7), value: touched.count)
+
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 14) {
                     ForEach(0..<count, id: \.self) { index in
-                        Button {
-                            guard !touched.contains(index) else { return }
-                            touched.append(index)
-                            feedback = nil
-                        } label: {
-                            ZStack(alignment: .topTrailing) {
-                            Text(emojis[round][index % 3]).font(.system(size: 50))
-                                if touched.contains(index) {
-                                    Text("\(touched.firstIndex(of: index)! + 1)")
-                                        .font(.caption.bold())
-                                        .frame(width: 25, height: 25)
-                                        .background(.green, in: Circle())
-                                }
-                            }
-                            .opacity(touched.contains(index) ? 0.55 : 1)
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel(
-                            touched.contains(index)
-                                ? "\(emojis[round][index % 3]), counted \(touched.firstIndex(of: index)! + 1)"
-                                : "\(emojis[round][index % 3]), not counted"
+                        TouchCountAnimalButton(
+                            emoji: emojis[round][index % 3],
+                            countOrder: touched.firstIndex(of: index).map { $0 + 1 },
+                            isHinting: hintedItem == index,
+                            action: { countAnimal(at: index) }
                         )
-                        .accessibilityHint("Double tap to count this animal")
                     }
                 }
-                HStack {
+
+                VStack(spacing: 10) {
+                    Text(finishedCounting ? "How many animals did you count?" : "Count every animal to unlock the answers")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.white.opacity(finishedCounting ? 1 : 0.7))
+                        .multilineTextAlignment(.center)
+
+                    HStack(spacing: 12) {
                     ForEach(choices, id: \.self) { value in
-                        NumberButton(number: value) {
-                            feedback = touched.count == count && value == count
+                            TouchCountAnswerButton(
+                                number: value,
+                                enabled: finishedCounting,
+                                selected: selectedAnswer == value,
+                                result: selectedAnswer == value ? feedback : nil,
+                                isHinting: finishedCounting && value == count && answerHintActive,
+                                action: { chooseAnswer(value) }
+                            )
                         }
                     }
                 }
+
                 FeedbackBanner(
                     success: feedback,
-                    correctMessage: "You counted every animal once!",
-                    retryMessage: touched.count < count
-                        ? "Touch every animal before choosing the total."
-                        : "Count the numbered animals once more.",
+                    correctMessage: "Yes! You counted \(count) animals!",
+                    retryMessage: "Look at the last green number. That tells how many you counted.",
                     onCorrect: nextRound
                 )
-                Button("Start Over") { touched.removeAll(); feedback = nil }
-                    .buttonStyle(.borderedProminent)
+
+                Button {
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.72)) {
+                        resetRound()
+                    }
+                } label: {
+                    Label("Count Them Again", systemImage: "arrow.counterclockwise")
+                }
+                .buttonStyle(.bordered)
+                .tint(.white)
+            }
+            .sensoryFeedback(.selection, trigger: countHaptics)
+            .sensoryFeedback(.success, trigger: successHaptics)
+            .task(id: hintTimerID) {
+                let delay: Duration = finishedCounting ? .seconds(3) : .seconds(4)
+                try? await Task.sleep(for: delay)
+                guard !Task.isCancelled, feedback != true else { return }
+
+                if finishedCounting {
+                    guard selectedAnswer == nil || selectedAnswer != count else { return }
+                    coaching = "The total is waiting—try the wiggling number."
+                    answerHintActive = true
+                } else {
+                    guard let nextItem = (0..<count).filter({ !touched.contains($0) }).randomElement() else { return }
+                    hintedItem = nextItem
+                    coaching = "Tap the wiggling animal and say the next number."
+                }
             }
         }
     }
 
     private func nextRound() {
         round = (round + 1) % counts.count
+        resetRound()
+    }
+
+    private func countAnimal(at index: Int) {
+        guard !touched.contains(index), feedback != true else { return }
+        clearHints()
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.62)) {
+            touched.append(index)
+            countHaptics += 1
+            selectedAnswer = nil
+            feedback = nil
+            coaching = touched.count == count
+                ? "Great counting! Now choose the total."
+                : "You said \(touched.count). Keep going!"
+        }
+        restartHintTimer()
+    }
+
+    private func chooseAnswer(_ value: Int) {
+        guard finishedCounting, feedback != true else { return }
+        clearHints()
+        selectedAnswer = value
+        feedback = value == count
+        if feedback == true {
+            successHaptics += 1
+        }
+        coaching = value == count
+            ? "\(count) is correct! Wonderful counting!"
+            : "Almost. Find the last green counting number."
+        if feedback != true {
+            restartHintTimer()
+        }
+    }
+
+    private func resetRound() {
         touched.removeAll()
+        selectedAnswer = nil
         feedback = nil
+        coaching = "Touch an animal and count out loud."
+        restartHintTimer()
+    }
+
+    private func clearHints() {
+        hintedItem = nil
+        answerHintActive = false
+    }
+
+    private func restartHintTimer() {
+        hintTimerID += 1
+        clearHints()
+    }
+}
+
+private struct TouchCountAnimalButton: View {
+    let emoji: String
+    let countOrder: Int?
+    let isHinting: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            ZStack(alignment: .topTrailing) {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(countOrder == nil ? .white.opacity(0.14) : .green.opacity(0.22))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(countOrder == nil ? .white.opacity(0.25) : .green.opacity(0.8), lineWidth: 2)
+                    }
+
+                Text(emoji)
+                    .font(.system(size: 48))
+                    .saturation(countOrder == nil ? 1 : 0.72)
+                    .scaleEffect(countOrder == nil ? 1 : 0.86)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                if let countOrder {
+                    Label("\(countOrder)", systemImage: "checkmark")
+                        .labelStyle(.titleOnly)
+                        .font(.system(size: 15, weight: .black, design: .rounded))
+                        .frame(width: 29, height: 29)
+                        .background(.green, in: Circle())
+                        .overlay(Circle().stroke(.white, lineWidth: 2))
+                        .offset(x: 6, y: -6)
+                        .transition(.scale.combined(with: .opacity))
+                }
+            }
+            .frame(minHeight: 82)
+        }
+        .buttonStyle(.plain)
+        .disabled(countOrder != nil)
+        .phaseAnimator(isHinting ? [-1.0, 1.0] : [0.0]) { content, phase in
+            content
+                .rotationEffect(.degrees(phase * 5))
+                .offset(x: phase * 5)
+                .scaleEffect(isHinting ? 1.04 : 1)
+        } animation: { _ in
+            .easeInOut(duration: 0.18)
+        }
+        .accessibilityLabel(countOrder.map { "\(emoji), counted number \($0)" } ?? "\(emoji), not counted")
+        .accessibilityHint(countOrder == nil ? "Double tap to count this animal." : "This animal has already been counted.")
+    }
+}
+
+private struct TouchCountAnswerButton: View {
+    let number: Int
+    let enabled: Bool
+    let selected: Bool
+    let result: Bool?
+    let isHinting: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text("\(number)")
+                .font(.system(size: 28, weight: .black, design: .rounded))
+                .foregroundStyle(selected ? .white : .indigo)
+                .frame(minWidth: 64, minHeight: 62)
+                .background(buttonColor, in: RoundedRectangle(cornerRadius: 17))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 17)
+                        .stroke(isHinting ? Color.yellow : .white.opacity(0.5), lineWidth: isHinting ? 4 : 2)
+                }
+        }
+        .buttonStyle(.plain)
+        .disabled(!enabled)
+        .opacity(enabled ? 1 : 0.45)
+        .phaseAnimator(isHinting ? [-1.0, 1.0] : [0.0]) { content, phase in
+            content
+                .rotationEffect(.degrees(phase * 5))
+                .offset(x: phase * 6, y: isHinting ? -4 : 0)
+                .scaleEffect(isHinting ? 1.05 : 1)
+        } animation: { _ in
+            .easeInOut(duration: 0.18)
+        }
+        .accessibilityLabel("Number \(number)")
+        .accessibilityHint(enabled ? "Double tap to choose this total." : "Count every animal first.")
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
+    }
+
+    private var buttonColor: Color {
+        if result == true { return .green }
+        if result == false { return .red.opacity(0.85) }
+        if selected { return .indigo }
+        return .white.opacity(0.94)
     }
 }
 
