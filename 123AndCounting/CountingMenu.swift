@@ -661,6 +661,8 @@ private struct PileDropFrameKey: PreferenceKey {
 
 private struct TouchCountGame: View {
     @State private var round = 0
+    @State private var displayedItems: [String]
+    @State private var recentTurnItems: [[String]] = []
     @State private var touched: [Int] = []
     @State private var selectedAnswer: Int?
     @State private var feedback: Bool?
@@ -671,14 +673,26 @@ private struct TouchCountGame: View {
     @State private var countHaptics = 0
     @State private var successHaptics = 0
     private let counts = [6, 4, 7, 5, 8]
-    private let emojis = [
-        ["🐶", "🐱", "🐥"], ["🐸", "🐞", "🐝"], ["🐙", "🐬", "🐳"],
-        ["🦊", "🐼", "🐨"], ["🦀", "🐢", "🐡"]
+    private static let picturePool = [
+        "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯",
+        "🦁", "🐮", "🐷", "🐸", "🐵", "🐔", "🐧", "🐦", "🐤", "🦆",
+        "🦉", "🦋", "🐛", "🐝", "🐞", "🦀", "🐙", "🐠", "🐡", "🐬",
+        "🐳", "🦈", "🐊", "🐢", "🦕", "🦖", "🐘", "🦒", "🦓", "🦘",
+        "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🫐", "🍒",
+        "🥝", "🍅", "🥕", "🌽", "🥦", "🥨", "🧀", "🧁", "🍪", "🍩",
+        "⚽️", "🏀", "🏈", "⚾️", "🎾", "🏐", "🎈", "🎁", "🪁", "🧸",
+        "🚗", "🚕", "🚌", "🚎", "🏎️", "🚓", "🚑", "🚒", "🚜", "🚲",
+        "🚂", "✈️", "🚀", "🛶", "⛵️", "⭐️", "🌙", "☀️", "🌈", "☁️",
+        "🌼", "🌻", "🌷", "🌵", "🌳", "🍄", "🐚", "🎵", "🔔", "💎"
     ]
     private var count: Int { counts[round] }
     private var finishedCounting: Bool { touched.count == count }
     private var choices: [Int] {
         [[count, count + 1, count - 1], [count - 1, count + 1, count], [count + 1, count, count - 1]][round % 3]
+    }
+
+    init() {
+        _displayedItems = State(initialValue: Self.makeItems(count: 6, excluding: []))
     }
 
     var body: some View {
@@ -707,7 +721,7 @@ private struct TouchCountGame: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 14) {
                     ForEach(0..<count, id: \.self) { index in
                         TouchCountAnimalButton(
-                            emoji: emojis[round][index % 3],
+                            emoji: displayedItems[index],
                             countOrder: touched.firstIndex(of: index).map { $0 + 1 },
                             isHinting: hintedItem == index,
                             action: { countAnimal(at: index) }
@@ -773,7 +787,12 @@ private struct TouchCountGame: View {
     }
 
     private func nextRound() {
-        round = (round + 1) % counts.count
+        let nextRound = (round + 1) % counts.count
+        recentTurnItems.append(displayedItems)
+        recentTurnItems = Array(recentTurnItems.suffix(10))
+        let excludedItems = Set(recentTurnItems.flatMap { $0 })
+        displayedItems = Self.makeItems(count: counts[nextRound], excluding: excludedItems)
+        round = nextRound
         resetRound()
     }
 
@@ -824,6 +843,12 @@ private struct TouchCountGame: View {
     private func restartHintTimer() {
         hintTimerID += 1
         clearHints()
+    }
+
+    private static func makeItems(count: Int, excluding excludedItems: Set<String>) -> [String] {
+        let eligibleItems = picturePool.filter { !excludedItems.contains($0) }
+        precondition(eligibleItems.count >= count, "Touch & Count needs more non-repeating pictures.")
+        return Array(eligibleItems.shuffled().prefix(count))
     }
 }
 
