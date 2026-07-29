@@ -263,8 +263,15 @@ private struct NumberButton: View {
 
 // MARK: - 1. Match two number cards to two distinct piles
 
+private struct PileMatchItem {
+    let emoji: String
+    let count: Int
+}
+
 private struct PileMatchGame: View {
     @State private var round = 0
+    @State private var piles: [PileMatchItem]
+    @State private var recentItems: [String] = []
     @State private var answers: [Int?] = [nil, nil]
     @State private var selectedCard: Int?
     @State private var feedback: Bool?
@@ -273,20 +280,26 @@ private struct PileMatchGame: View {
     @State private var activeDropTarget: Int?
     @State private var wrongAttempts = 0
     @State private var correctPlacements = 0
-    private let rounds = [
-        [(emoji: "🍎", count: 3), (emoji: "⭐️", count: 5)],
-        [(emoji: "🐠", count: 4), (emoji: "🦋", count: 2)],
-        [(emoji: "🚗", count: 6), (emoji: "⚽️", count: 3)],
-        [(emoji: "🍪", count: 2), (emoji: "🎈", count: 7)],
-        [(emoji: "🐞", count: 5), (emoji: "🌼", count: 4)]
+    @State private var hintCard: Int?
+    @State private var hintPulse = false
+    @State private var hintTimerID = 0
+    @State private var draggingCard: Int?
+    private static let itemPool = [
+        "🍎", "⭐️", "🐠", "🦋", "🚗", "⚽️", "🍪", "🎈",
+        "🐞", "🌼", "🐶", "🐸", "🦀", "🐢", "🐙", "🐬",
+        "🦊", "🐼", "🧁", "🥕", "🚀", "🦕", "🍓", "🍊",
+        "🐧", "🐝", "🌈", "🎁", "🍉", "🥨", "🐳", "🪁"
     ]
-    private var piles: [(emoji: String, count: Int)] { rounds[round] }
     private var cards: [Int] { Array(piles.map(\.count).reversed()) }
+
+    init() {
+        _piles = State(initialValue: Self.makeRound(excluding: []))
+    }
 
     var body: some View {
         GameShell(title: "Pile Match", directions: "Count each group. Drag or tap each number onto its matching group.", colors: [.orange, .pink]) {
             VStack(spacing: 18) {
-                RoundCounter(round: round, total: rounds.count)
+                RoundCounter(round: round % 10, total: 10)
 
                 Label(coaching, systemImage: feedback == true ? "star.fill" : "hand.point.up.left.fill")
                     .font(.system(size: 17, weight: .bold, design: .rounded))
@@ -335,12 +348,23 @@ private struct PileMatchGame: View {
                                 number: number,
                                 selected: selectedCard == number,
                                 placed: answers.contains(number),
+                                isHinting: hintCard == number,
+                                hintPulse: hintPulse,
+                                hintDirection: hintDirection(for: number),
                                 onTap: { select(number) },
+                                onDragBegan: {
+                                    draggingCard = number
+                                    stopHint()
+                                },
                                 onDragChanged: { location in
                                     activeDropTarget = target(at: location)
                                 },
                                 onDragEnded: { location in
-                                    defer { activeDropTarget = nil }
+                                    defer {
+                                        activeDropTarget = nil
+                                        draggingCard = nil
+                                        restartHintTimer()
+                                    }
                                     guard let index = target(at: location) else {
                                         coaching = "Almost! Move the card inside a glowing group."
                                         wrongAttempts += 1
@@ -371,23 +395,46 @@ private struct PileMatchGame: View {
             .sensoryFeedback(.error, trigger: wrongAttempts)
             .sensoryFeedback(.selection, trigger: selectedCard)
             .sensoryFeedback(.success, trigger: correctPlacements)
+            .task(id: hintTimerID) {
+                try? await Task.sleep(for: .seconds(5))
+                guard !Task.isCancelled,
+                      selectedCard == nil,
+                      draggingCard == nil,
+                      feedback != true,
+                      let number = cards.filter({ !answers.contains($0) }).randomElement()
+                else { return }
+
+                hintCard = number
+                coaching = "Try the wiggling \(number). It is showing you where to go!"
+                hintPulse = false
+                withAnimation(.easeInOut(duration: 0.32).repeatForever(autoreverses: true)) {
+                    hintPulse = true
+                }
+            }
         }
     }
 
     private func nextRound() {
         withAnimation(.easeInOut(duration: 0.35)) {
-            round = (round + 1) % rounds.count
+            recentItems.append(contentsOf: piles.map(\.emoji))
+            recentItems = Array(recentItems.suffix(20))
+            piles = Self.makeRound(excluding: Set(recentItems))
+            round += 1
             resetAnswers()
         }
     }
 
     private func select(_ number: Int) {
         guard !answers.contains(number), feedback != true else { return }
+        stopHint()
         withAnimation(.spring(response: 0.28, dampingFraction: 0.7)) {
             selectedCard = selectedCard == number ? nil : number
             coaching = selectedCard == nil
                 ? "Count each group, then move its number card."
                 : "Card \(number) selected. Now tap the matching group."
+        }
+        if selectedCard == nil {
+            restartHintTimer()
         }
     }
 
@@ -395,6 +442,7 @@ private struct PileMatchGame: View {
         guard let selectedCard else {
             coaching = "Choose a number card first, then tap its group."
             wrongAttempts += 1
+            restartHintTimer()
             return
         }
         attemptPlace(selectedCard, in: index)
@@ -409,9 +457,11 @@ private struct PileMatchGame: View {
                 selectedCard = number
             }
             wrongAttempts += 1
+            restartHintTimer()
             return
         }
 
+        stopHint()
         withAnimation(.spring(response: 0.4, dampingFraction: 0.68)) {
             answers[index] = number
             selectedCard = nil
@@ -424,7 +474,10 @@ private struct PileMatchGame: View {
             }
         }
 
-        guard feedback == true else { return }
+        guard feedback == true else {
+            restartHintTimer()
+            return
+        }
         Task {
             try? await Task.sleep(for: .seconds(1.6))
             guard !Task.isCancelled else { return }
@@ -442,6 +495,35 @@ private struct PileMatchGame: View {
         activeDropTarget = nil
         feedback = nil
         coaching = "Count each group, then move its number card."
+        restartHintTimer()
+    }
+
+    private func stopHint() {
+        hintTimerID += 1
+        hintCard = nil
+        hintPulse = false
+    }
+
+    private func restartHintTimer() {
+        hintTimerID += 1
+        hintCard = nil
+        hintPulse = false
+    }
+
+    private func hintDirection(for number: Int) -> CGFloat {
+        guard let pileIndex = piles.firstIndex(where: { $0.count == number }) else { return 0 }
+        return pileIndex == 0 ? -1 : 1
+    }
+
+    private static func makeRound(excluding excludedItems: Set<String>) -> [PileMatchItem] {
+        var availableItems = itemPool.filter { !excludedItems.contains($0) }
+        if availableItems.count < 2 {
+            availableItems = itemPool
+        }
+
+        let chosenItems = Array(availableItems.shuffled().prefix(2))
+        let chosenCounts = Array((1...8).shuffled().prefix(2))
+        return zip(chosenItems, chosenCounts).map { PileMatchItem(emoji: $0.0, count: $0.1) }
     }
 }
 
@@ -501,7 +583,11 @@ private struct PileNumberCard: View {
     let number: Int
     let selected: Bool
     let placed: Bool
+    let isHinting: Bool
+    let hintPulse: Bool
+    let hintDirection: CGFloat
     let onTap: () -> Void
+    let onDragBegan: () -> Void
     let onDragChanged: (CGPoint) -> Void
     let onDragEnded: (CGPoint) -> Void
     @State private var dragOffset: CGSize = .zero
@@ -522,7 +608,11 @@ private struct PileNumberCard: View {
                     .stroke(selected ? Color.yellow : .white.opacity(0.65), lineWidth: selected ? 5 : 2)
             }
             .scaleEffect(dragging ? 1.16 : selected ? 1.08 : 1)
-            .offset(dragOffset)
+            .rotationEffect(.degrees(isHinting ? (hintPulse ? 5 : -5) : 0))
+            .offset(
+                x: dragOffset.width + (isHinting ? hintDirection * (hintPulse ? 18 : 10) : 0),
+                y: dragOffset.height + (isHinting ? -10 : 0)
+            )
             .opacity(placed ? 0 : 1)
             .allowsHitTesting(!placed)
             .zIndex(dragging ? 20 : 1)
@@ -531,6 +621,9 @@ private struct PileNumberCard: View {
                 DragGesture(minimumDistance: 1, coordinateSpace: .named("pileMatchBoard"))
                     .onChanged { value in
                         guard !placed else { return }
+                        if !dragging {
+                            onDragBegan()
+                        }
                         dragging = true
                         dragOffset = value.translation
                         onDragChanged(value.location)
@@ -546,7 +639,11 @@ private struct PileNumberCard: View {
             )
             .animation(.spring(response: 0.28, dampingFraction: 0.7), value: selected)
             .accessibilityLabel("Number \(number)")
-            .accessibilityHint("Double tap to select, then activate the group with \(number) items.")
+            .accessibilityHint(
+                isHinting
+                    ? "This card is giving a hint. Move it toward the \(hintDirection < 0 ? "left" : "right") group."
+                    : "Double tap to select, then activate the group with \(number) items."
+            )
             .accessibilityAddTraits(selected ? [.isSelected] : [])
             .accessibilityHidden(placed)
     }
