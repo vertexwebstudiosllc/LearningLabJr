@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 
 struct CountingMenu: View {
     private let games = CountingGame.allGames
@@ -269,6 +268,11 @@ private struct PileMatchGame: View {
     @State private var answers: [Int?] = [nil, nil]
     @State private var selectedCard: Int?
     @State private var feedback: Bool?
+    @State private var coaching = "Count each group, then move its number card."
+    @State private var dropFrames: [Int: CGRect] = [:]
+    @State private var activeDropTarget: Int?
+    @State private var wrongAttempts = 0
+    @State private var correctPlacements = 0
     private let rounds = [
         [(emoji: "🍎", count: 3), (emoji: "⭐️", count: 5)],
         [(emoji: "🐠", count: 4), (emoji: "🦋", count: 2)],
@@ -280,93 +284,279 @@ private struct PileMatchGame: View {
     private var cards: [Int] { Array(piles.map(\.count).reversed()) }
 
     var body: some View {
-        GameShell(title: "Pile Match", directions: "Count both piles. Drag each number card to the pile it matches.", colors: [.orange, .pink]) {
-            VStack(spacing: 22) {
+        GameShell(title: "Pile Match", directions: "Count each group. Drag or tap each number onto its matching group.", colors: [.orange, .pink]) {
+            VStack(spacing: 18) {
                 RoundCounter(round: round, total: rounds.count)
+
+                Label(coaching, systemImage: feedback == true ? "star.fill" : "hand.point.up.left.fill")
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(feedback == true ? Color.yellow : .white)
+                    .frame(maxWidth: .infinity, minHeight: 46)
+                    .padding(.horizontal, 12)
+                    .background(.black.opacity(0.12), in: Capsule())
+                    .contentTransition(.numericText())
+                    .accessibilityLabel("Game hint. \(coaching)")
+
                 HStack(alignment: .top, spacing: 16) {
                     ForEach(piles.indices, id: \.self) { index in
-                        VStack(spacing: 10) {
-                            Text(String(repeating: piles[index].emoji, count: piles[index].count))
-                                .font(.system(size: 36))
-                                .multilineTextAlignment(.center)
-                                .accessibilityLabel("\(piles[index].count) items")
-                            Text(answers[index].map(String.init) ?? "Drop here")
-                                .font(.system(size: 22, weight: .bold, design: .rounded))
-                                .frame(maxWidth: .infinity, minHeight: 62)
-                                .background(.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 18))
-                                .onDrop(of: [.text], isTargeted: nil) { providers in
-                                    loadNumber(from: providers) { number in
-                                        place(number, in: index)
-                                    }
-                                    return true
-                                }
-                                .onTapGesture {
-                                    guard let selectedCard else { return }
-                                    place(selectedCard, in: index)
-                                }
-                                .accessibilityLabel("Pile \(index + 1), \(answers[index].map(String.init) ?? "empty answer")")
-                                .accessibilityHint(selectedCard == nil ? "Select a number card first" : "Double tap to place \(selectedCard!) here")
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                }
-
-                HStack(spacing: 16) {
-                    ForEach(cards, id: \.self) { number in
-                        Text("\(number)")
-                            .font(.system(size: 28, weight: .black, design: .rounded))
-                            .foregroundStyle(selectedCard == number ? .white : .indigo)
-                            .frame(width: 68, height: 68)
-                            .background(selectedCard == number ? Color.indigo : .white, in: Circle())
-                            .onDrag { NSItemProvider(object: NSString(string: "\(number)")) }
-                            .onTapGesture {
-                                selectedCard = selectedCard == number ? nil : number
-                                feedback = nil
+                        PileMatchDropZone(
+                            emoji: piles[index].emoji,
+                            itemCount: piles[index].count,
+                            answer: answers[index],
+                            isTargeted: activeDropTarget == index
+                        )
+                        .contentShape(RoundedRectangle(cornerRadius: 24))
+                        .onTapGesture { placeSelectedCard(in: index) }
+                        .background {
+                            GeometryReader { proxy in
+                                Color.clear.preference(
+                                    key: PileDropFrameKey.self,
+                                    value: [index: proxy.frame(in: .named("pileMatchBoard"))]
+                                )
                             }
-                            .accessibilityLabel("Number \(number). Drag to a pile.")
-                            .accessibilityAddTraits(selectedCard == number ? [.isSelected] : [])
+                        }
+                        .accessibilityAction(named: "Place selected card") {
+                            placeSelectedCard(in: index)
+                        }
                     }
                 }
-                FeedbackBanner(
-                    success: feedback,
-                    correctMessage: "Both numbers match their piles!",
-                    retryMessage: "One number is misplaced. Count each pile and move the cards.",
-                    onCorrect: nextRound
-                )
-                Button("Clear My Answers") {
-                    answers = [nil, nil]
-                    selectedCard = nil
-                    feedback = nil
+                .frame(minHeight: 205)
+
+                VStack(spacing: 9) {
+                    Text(answers.allSatisfy { $0 != nil } ? "Wonderful matching!" : "NUMBER CARDS")
+                        .font(.system(size: 13, weight: .black, design: .rounded))
+                        .tracking(1.2)
+                        .foregroundStyle(.white.opacity(0.82))
+
+                    HStack(spacing: 22) {
+                    ForEach(cards, id: \.self) { number in
+                            PileNumberCard(
+                                number: number,
+                                selected: selectedCard == number,
+                                placed: answers.contains(number),
+                                onTap: { select(number) },
+                                onDragChanged: { location in
+                                    activeDropTarget = target(at: location)
+                                },
+                                onDragEnded: { location in
+                                    defer { activeDropTarget = nil }
+                                    guard let index = target(at: location) else {
+                                        coaching = "Almost! Move the card inside a glowing group."
+                                        wrongAttempts += 1
+                                        return
+                                    }
+                                    attemptPlace(number, in: index)
+                                }
+                            )
+                        }
+                    }
                 }
-                    .buttonStyle(.borderedProminent)
+                .padding(.vertical, 8)
+
+                if answers.contains(where: { $0 != nil }) && feedback != true {
+                    Button {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) {
+                            resetAnswers()
+                        }
+                    } label: {
+                        Label("Start This Match Over", systemImage: "arrow.counterclockwise")
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.white)
+                }
             }
+            .coordinateSpace(name: "pileMatchBoard")
+            .onPreferenceChange(PileDropFrameKey.self) { dropFrames = $0 }
+            .sensoryFeedback(.error, trigger: wrongAttempts)
+            .sensoryFeedback(.selection, trigger: selectedCard)
+            .sensoryFeedback(.success, trigger: correctPlacements)
         }
     }
 
     private func nextRound() {
-        round = (round + 1) % rounds.count
-        answers = [nil, nil]
-        selectedCard = nil
-        feedback = nil
+        withAnimation(.easeInOut(duration: 0.35)) {
+            round = (round + 1) % rounds.count
+            resetAnswers()
+        }
     }
 
-    private func place(_ number: Int, in index: Int) {
-        if let previousIndex = answers.firstIndex(where: { $0 == number }) {
-            answers[previousIndex] = nil
+    private func select(_ number: Int) {
+        guard !answers.contains(number), feedback != true else { return }
+        withAnimation(.spring(response: 0.28, dampingFraction: 0.7)) {
+            selectedCard = selectedCard == number ? nil : number
+            coaching = selectedCard == nil
+                ? "Count each group, then move its number card."
+                : "Card \(number) selected. Now tap the matching group."
         }
-        answers[index] = number
+    }
+
+    private func placeSelectedCard(in index: Int) {
+        guard let selectedCard else {
+            coaching = "Choose a number card first, then tap its group."
+            wrongAttempts += 1
+            return
+        }
+        attemptPlace(selectedCard, in: index)
+    }
+
+    private func attemptPlace(_ number: Int, in index: Int) {
+        guard feedback != true, !answers.contains(number) else { return }
+
+        guard number == piles[index].count else {
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.55)) {
+                coaching = "Count again—this group does not have \(number)."
+                selectedCard = number
+            }
+            wrongAttempts += 1
+            return
+        }
+
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.68)) {
+            answers[index] = number
+            selectedCard = nil
+            correctPlacements += 1
+            if answers.allSatisfy({ $0 != nil }) {
+                feedback = true
+                coaching = "You matched both groups! Great counting!"
+            } else {
+                coaching = "\(number) is a match! Now count the other group."
+            }
+        }
+
+        guard feedback == true else { return }
+        Task {
+            try? await Task.sleep(for: .seconds(1.6))
+            guard !Task.isCancelled else { return }
+            nextRound()
+        }
+    }
+
+    private func target(at location: CGPoint) -> Int? {
+        dropFrames.first(where: { $0.value.insetBy(dx: -12, dy: -12).contains(location) })?.key
+    }
+
+    private func resetAnswers() {
+        answers = [nil, nil]
         selectedCard = nil
-        feedback = answers.allSatisfy { $0 != nil }
-            ? answers[0] == piles[0].count && answers[1] == piles[1].count
-            : nil
+        activeDropTarget = nil
+        feedback = nil
+        coaching = "Count each group, then move its number card."
     }
 }
 
-private func loadNumber(from providers: [NSItemProvider], completion: @escaping (Int) -> Void) {
-    guard let provider = providers.first else { return }
-    _ = provider.loadObject(ofClass: NSString.self) { object, _ in
-        guard let string = object as? String, let number = Int(string) else { return }
-        DispatchQueue.main.async { completion(number) }
+private struct PileMatchDropZone: View {
+    let emoji: String
+    let itemCount: Int
+    let answer: Int?
+    let isTargeted: Bool
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Text(String(repeating: emoji, count: itemCount))
+                .font(.system(size: 39))
+                .lineSpacing(4)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.75)
+                .frame(maxWidth: .infinity, minHeight: 100)
+
+            ZStack {
+                RoundedRectangle(cornerRadius: 17)
+                    .fill(answer == nil ? .white.opacity(isTargeted ? 0.34 : 0.14) : .green.opacity(0.85))
+
+                if let answer {
+                    Label("\(answer)", systemImage: "checkmark.circle.fill")
+                        .font(.system(size: 25, weight: .black, design: .rounded))
+                        .transition(.scale.combined(with: .opacity))
+                } else {
+                    Label(isTargeted ? "Let go!" : "Match here", systemImage: isTargeted ? "arrow.down.circle.fill" : "square.dashed")
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(.white.opacity(0.9))
+                }
+            }
+            .frame(maxWidth: .infinity, minHeight: 64)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 24)
+                .fill(.white.opacity(isTargeted ? 0.2 : 0.08))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 24)
+                        .stroke(
+                            answer == nil ? (isTargeted ? Color.yellow : .white.opacity(0.28)) : Color.green,
+                            style: StrokeStyle(lineWidth: isTargeted ? 5 : 2, dash: answer == nil && !isTargeted ? [8] : [])
+                        )
+                }
+        )
+        .scaleEffect(isTargeted ? 1.035 : 1)
+        .animation(.spring(response: 0.25, dampingFraction: 0.72), value: isTargeted)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(itemCount) \(emoji) items. \(answer == nil ? "Waiting for a number." : "Matched with \(answer!).")")
+        .accessibilityHint(answer == nil ? "Select the matching number, then activate this group." : "This group is complete.")
+    }
+}
+
+private struct PileNumberCard: View {
+    let number: Int
+    let selected: Bool
+    let placed: Bool
+    let onTap: () -> Void
+    let onDragChanged: (CGPoint) -> Void
+    let onDragEnded: (CGPoint) -> Void
+    @State private var dragOffset: CGSize = .zero
+    @State private var dragging = false
+
+    var body: some View {
+        Text("\(number)")
+            .font(.system(size: 36, weight: .black, design: .rounded))
+            .foregroundStyle(selected || dragging ? .white : .indigo)
+            .frame(width: 82, height: 82)
+            .background(
+                Circle()
+                    .fill(selected || dragging ? Color.indigo : .white)
+                    .shadow(color: .black.opacity(dragging ? 0.3 : 0.18), radius: dragging ? 16 : 7, y: dragging ? 12 : 5)
+            )
+            .overlay {
+                Circle()
+                    .stroke(selected ? Color.yellow : .white.opacity(0.65), lineWidth: selected ? 5 : 2)
+            }
+            .scaleEffect(dragging ? 1.16 : selected ? 1.08 : 1)
+            .offset(dragOffset)
+            .opacity(placed ? 0 : 1)
+            .allowsHitTesting(!placed)
+            .zIndex(dragging ? 20 : 1)
+            .onTapGesture(perform: onTap)
+            .highPriorityGesture(
+                DragGesture(minimumDistance: 1, coordinateSpace: .named("pileMatchBoard"))
+                    .onChanged { value in
+                        guard !placed else { return }
+                        dragging = true
+                        dragOffset = value.translation
+                        onDragChanged(value.location)
+                    }
+                    .onEnded { value in
+                        guard !placed else { return }
+                        onDragEnded(value.location)
+                        withAnimation(.spring(response: 0.38, dampingFraction: 0.66)) {
+                            dragOffset = .zero
+                            dragging = false
+                        }
+                    }
+            )
+            .animation(.spring(response: 0.28, dampingFraction: 0.7), value: selected)
+            .accessibilityLabel("Number \(number)")
+            .accessibilityHint("Double tap to select, then activate the group with \(number) items.")
+            .accessibilityAddTraits(selected ? [.isSelected] : [])
+            .accessibilityHidden(placed)
+    }
+}
+
+private struct PileDropFrameKey: PreferenceKey {
+    static let defaultValue: [Int: CGRect] = [:]
+
+    static func reduce(value: inout [Int: CGRect], nextValue: () -> [Int: CGRect]) {
+        value.merge(nextValue(), uniquingKeysWith: { _, new in new })
     }
 }
 
