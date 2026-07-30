@@ -95,7 +95,7 @@ private struct CountingGame: Identifiable {
     static let allGames: [CountingGame] = [
         .init(kind: .pileMatch, title: "Pile Match", subtitle: "Drag numbers to two object piles.", icon: "hand.draw.fill", colors: [.orange, .pink]),
         .init(kind: .touchCount, title: "Touch & Count", subtitle: "Touch every critter as you count.", icon: "hand.tap.fill", colors: [.blue, .cyan]),
-        .init(kind: .addition, title: "Addition Picnic", subtitle: "Add two groups and choose the sum.", icon: "plus.circle.fill", colors: [.green, .mint]),
+        .init(kind: .addition, title: "Plus Party!", subtitle: "Bring two groups together and find the total.", icon: "plus.circle.fill", colors: [.green, .mint]),
         .init(kind: .subtraction, title: "Dino Dash", subtitle: "Tap dinos away, then count.", icon: "minus.circle.fill", colors: [.purple, .indigo]),
         .init(kind: .missingNumber, title: "Treasure Trail", subtitle: "Find the number missing in line.", icon: "map.fill", colors: [.yellow, .orange]),
         .init(kind: .compare, title: "More or Less", subtitle: "Choose >, <, or = for two groups.", icon: "scale.3d", colors: [.teal, .blue]),
@@ -197,6 +197,7 @@ private struct FeedbackBanner: View {
     let success: Bool?
     var correctMessage = "That’s correct! Great thinking."
     var retryMessage = "Not quite. Take another look and try again."
+    var advanceDelay: Duration = .seconds(1.35)
     var onCorrect: () -> Void = {}
 
     var body: some View {
@@ -209,7 +210,7 @@ private struct FeedbackBanner: View {
                 .accessibilityLabel(success ? correctMessage : retryMessage)
                 .task(id: success) {
                     guard success else { return }
-                    try? await Task.sleep(for: .seconds(1.35))
+                    try? await Task.sleep(for: advanceDelay)
                     guard !Task.isCancelled else { return }
                     onCorrect()
                 }
@@ -950,7 +951,12 @@ private struct TouchCountAnswerButton: View {
 
 private struct AdditionGame: View {
     @State private var round = 0
+    @State private var selectedAnswer: Int?
     @State private var feedback: Bool?
+    @State private var coaching = "Count the first group, then count on with the second."
+    @State private var hintAnswer = false
+    @State private var hintTimerID = 0
+    @State private var successHaptics = 0
     private let rounds = [
         (emoji: "🍓", left: 2, right: 3),
         (emoji: "🥕", left: 4, right: 2),
@@ -966,33 +972,173 @@ private struct AdditionGame: View {
     }
 
     var body: some View {
-        GameShell(title: "Addition Picnic", directions: "Count each group, then put them together. What is \(question.left) plus \(question.right)?", colors: [.green, .mint]) {
-            VStack(spacing: 22) {
+        GameShell(title: "Plus Party!", directions: "Count both groups, put them together, and choose how many there are altogether.", colors: [.green, .mint]) {
+            VStack(spacing: 18) {
                 RoundCounter(round: round, total: rounds.count)
+
+                Label(coaching, systemImage: feedback == true ? "party.popper.fill" : "plus.circle.fill")
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    .padding(.horizontal, 14)
+                    .background(.black.opacity(0.12), in: Capsule())
+                    .foregroundStyle(feedback == true ? Color.yellow : .white)
+                    .contentTransition(.numericText())
+                    .accessibilityLabel("Game hint. \(coaching)")
+
                 HStack(spacing: 18) {
-                    ObjectGroup(emoji: question.emoji, count: question.left)
-                    Text("+").font(.largeTitle.bold())
-                    ObjectGroup(emoji: question.emoji, count: question.right)
+                    AdditionGroupCard(
+                        emoji: question.emoji,
+                        count: question.left,
+                        label: "First group"
+                    )
+
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 38, weight: .bold))
+                        .foregroundStyle(.yellow)
+                        .accessibilityLabel("plus")
+
+                    AdditionGroupCard(
+                        emoji: question.emoji,
+                        count: question.right,
+                        label: "Second group"
+                    )
                 }
-                Text("\(question.left) + \(question.right) = ?").font(.system(size: 32, weight: .bold, design: .rounded))
-                HStack {
+
+                Text("\(question.left) + \(question.right) = \(feedback == true ? "\(total)" : "?")")
+                    .font(.system(size: 34, weight: .black, design: .rounded))
+                    .contentTransition(.numericText())
+                    .accessibilityLabel("\(question.left) plus \(question.right) equals \(feedback == true ? "\(total)" : "what")")
+
+                Text("How many \(question.emoji) are there altogether?")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .multilineTextAlignment(.center)
+
+                HStack(spacing: 12) {
                     ForEach(choices, id: \.self) { value in
-                        NumberButton(number: value) { feedback = value == total }
+                        TouchCountAnswerButton(
+                            number: value,
+                            enabled: feedback != true,
+                            selected: selectedAnswer == value,
+                            result: selectedAnswer == value ? feedback : nil,
+                            isHinting: value == total && hintAnswer,
+                            action: { chooseAnswer(value) }
+                        )
                     }
                 }
+
+                if feedback == true {
+                    AdditionTotalReveal(emoji: question.emoji, total: total)
+                        .transition(.scale(scale: 0.88).combined(with: .opacity))
+                }
+
                 FeedbackBanner(
                     success: feedback,
-                    correctMessage: "\(question.left) plus \(question.right) equals \(total)!",
-                    retryMessage: "Count both groups together, starting with one.",
+                    correctMessage: "\(question.left) plus \(question.right) makes \(total) altogether!",
+                    retryMessage: "Start with \(question.left), then count on \(question.right) more.",
+                    advanceDelay: .seconds(2.5),
                     onCorrect: nextRound
                 )
+            }
+            .sensoryFeedback(.success, trigger: successHaptics)
+            .task(id: hintTimerID) {
+                try? await Task.sleep(for: .seconds(4))
+                guard !Task.isCancelled, feedback != true else { return }
+                coaching = "Count all the \(question.emoji), then try the wiggling number."
+                hintAnswer = true
             }
         }
     }
 
     private func nextRound() {
-        round = (round + 1) % rounds.count
-        feedback = nil
+        withAnimation(.easeInOut(duration: 0.35)) {
+            round = (round + 1) % rounds.count
+            selectedAnswer = nil
+            feedback = nil
+            coaching = "Count the first group, then count on with the second."
+            restartHintTimer()
+        }
+    }
+
+    private func chooseAnswer(_ value: Int) {
+        guard feedback != true else { return }
+        hintAnswer = false
+        selectedAnswer = value
+        feedback = value == total
+        if feedback == true {
+            coaching = "You brought the groups together—\(total) altogether!"
+            successHaptics += 1
+        } else {
+            coaching = "Almost! Start at \(question.left) and count \(question.right) more."
+            restartHintTimer()
+        }
+    }
+
+    private func restartHintTimer() {
+        hintTimerID += 1
+        hintAnswer = false
+    }
+}
+
+private struct AdditionGroupCard: View {
+    let emoji: String
+    let count: Int
+    let label: String
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(label.uppercased())
+                .font(.system(size: 11, weight: .black, design: .rounded))
+                .tracking(0.8)
+                .foregroundStyle(.white.opacity(0.75))
+
+            Text(String(repeating: emoji, count: count))
+                .font(.system(size: 35))
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.7)
+                .frame(maxWidth: .infinity, minHeight: 76)
+
+            Text("\(count)")
+                .font(.system(size: 24, weight: .black, design: .rounded))
+                .frame(width: 46, height: 38)
+                .background(.white.opacity(0.2), in: Capsule())
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity)
+        .background(.white.opacity(0.1), in: RoundedRectangle(cornerRadius: 20))
+        .overlay {
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.white.opacity(0.28), lineWidth: 2)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(label), \(count) items")
+    }
+}
+
+private struct AdditionTotalReveal: View {
+    let emoji: String
+    let total: Int
+
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(String(repeating: emoji, count: total))
+                .font(.system(size: 31))
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.68)
+
+            Label("\(total) altogether", systemImage: "sparkles")
+                .font(.system(size: 23, weight: .black, design: .rounded))
+                .foregroundStyle(.yellow)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(14)
+        .background(.green.opacity(0.34), in: RoundedRectangle(cornerRadius: 20))
+        .overlay {
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.yellow.opacity(0.85), lineWidth: 3)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(total) \(emoji) altogether")
     }
 }
 
