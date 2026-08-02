@@ -78,7 +78,7 @@ private struct PhonicsGame: Identifiable {
     let isLocked: Bool
 
     static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Adventures of Owen Onion Volume 1", assetName: nil, destination: .storyBook, isLocked: false),
+        PhonicsGame(title: "Owen Onion Finds His Voice", assetName: nil, destination: .storyBook, isLocked: false),
         PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
         PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
