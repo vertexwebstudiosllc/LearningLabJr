@@ -1,28 +1,18 @@
-//
-//  ABCsAndPhonicsMenu.swift
-//  LearningLabJr
-//
-//  Created by Matthew Teitelman on 12/10/25.
-//
-
 import SpriteKit
 import SwiftUI
 
 struct NatureExplorersMenu: View {
-    private let games = PhonicsGame.allGames
+    private let games = NatureExplorerGame.allGames
 
     var body: some View {
         ZStack {
-            ABCsBackgroundLayer()
+            NatureMenuBackground()
 
             GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
+                let padding: CGFloat = 20
                 let spacing: CGFloat = 12
-                let columnsCount = min(3, max(1, Int((geo.size.width - horizontalPadding * 2) / 104)))
-                let columns = Array(
-                    repeating: GridItem(.flexible(), spacing: spacing),
-                    count: columnsCount
-                )
+                let count = min(3, max(1, Int((geo.size.width - padding * 2) / 104)))
+                let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: count)
 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
@@ -31,24 +21,33 @@ struct NatureExplorersMenu: View {
                         Image("learningLabLogo")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198) // match MainMenu logo sizing
-                            .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
+                            .frame(maxWidth: 198, maxHeight: 198)
+                            .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
                             .offset(y: -8)
 
                         Image("learningLabKids")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490) // align with MainMenu hero sizing
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
+                            .frame(maxWidth: 490, maxHeight: 490)
+                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
                             .padding(.top, -170)
 
                         LazyVGrid(columns: columns, spacing: spacing) {
                             ForEach(games) { game in
-                                GameTileLink(game: game)
-                                    .aspectRatio(1, contentMode: .fit)
+                                NavigationLink {
+                                    if game.kind == .peekaboo {
+                                        NatureBarnyardGameView()
+                                    } else {
+                                        NatureLearningGameView(game: game)
+                                    }
+                                } label: {
+                                    NatureGameTile(game: game)
+                                        .aspectRatio(1, contentMode: .fit)
+                                }
+                                .buttonStyle(.plain)
                             }
                         }
-                        .padding(.horizontal, horizontalPadding)
+                        .padding(.horizontal, padding)
                         .padding(.top, -145)
                         .padding(.bottom, 48)
                     }
@@ -61,103 +60,42 @@ struct NatureExplorersMenu: View {
     }
 }
 
-// MARK: - Game Tiles
-
-private struct PhonicsGame: Identifiable {
-    enum Destination {
-        case peekabooBarnyard
-        case letterMatch
-        case letterDraw
-        case soundBaskets
-        case placeholder
+struct NatureExplorerGame: Identifiable, Hashable {
+    enum Kind: String, Hashable {
+        case habitat, dino, space, families, size, pattern
+        case peekaboo, oddOne, memory, fossil, scene, counting, clues
     }
 
-    let id = UUID()
+    let kind: Kind
     let title: String
-    let assetName: String?
-    let destination: Destination
-    let isLocked: Bool
+    let subtitle: String
+    let image: String
+    let colors: [Color]
+    var id: Kind { kind }
 
-    static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Peekaboo Barnyard", assetName: "Button-Peekaboo-Barnyard", destination: .peekabooBarnyard, isLocked: false),
-        PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
-        PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Sight Word Stars", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Blend Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Digraph Dash", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Find the Word", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trace & Say", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Phonics Puzzle", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Story Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "ABC Review", assetName: nil, destination: .placeholder, isLocked: true)
+    static let allGames: [NatureExplorerGame] = [
+        .init(kind: .habitat, title: "Habitat Helpers", subtitle: "Find each creature's home.", image: "dolphin", colors: [.teal, .blue]),
+        .init(kind: .dino, title: "Dino Discovery", subtitle: "Meet prehistoric friends.", image: "Triceratops", colors: [.green, .orange]),
+        .init(kind: .space, title: "Space Scouts", subtitle: "Explore our sky and planets.", image: "Rocket", colors: [.indigo, .purple]),
+        .init(kind: .families, title: "Animal Families", subtitle: "Match grown-ups and babies.", image: "calf", colors: [.orange, .pink]),
+        .init(kind: .size, title: "Big & Little Safari", subtitle: "Compare animal sizes.", image: "blue whale", colors: [.cyan, .blue]),
+        .init(kind: .pattern, title: "Nature Patterns", subtitle: "Finish the picture pattern.", image: "starfish", colors: [.purple, .pink]),
+        .init(kind: .peekaboo, title: "Peekaboo Barnyard", subtitle: "Open the barn and meet animals.", image: "cow", colors: [.yellow, .orange]),
+        .init(kind: .memory, title: "Explorer Memory", subtitle: "Remember the hidden picture.", image: "Telescope", colors: [.mint, .teal]),
+        .init(kind: .fossil, title: "Fossil Detectives", subtitle: "Use clues to find dinosaurs.", image: "DinoBone", colors: [.brown, .orange]),
+        .init(kind: .scene, title: "Where Does It Belong?", subtitle: "Sort items into their worlds.", image: "WoollyMammoth", colors: [.green, .teal]),
+        .init(kind: .counting, title: "Creature Counter", subtitle: "Count a lively animal group.", image: "penguin", colors: [.blue, .mint]),
+        .init(kind: .clues, title: "Who Am I?", subtitle: "Solve friendly nature clues.", image: "Smilodon", colors: [.red, .orange])
     ]
 }
 
-private struct GameTileLink: View {
-    let game: PhonicsGame
-    @ObservedObject private var storeManager = StoreManager.shared
-    @State private var showPremiumGate = false
-
-    private var isPremiumLocked: Bool {
-        game.isLocked && !storeManager.hasPremium
-    }
-
-    var body: some View {
-        Group {
-            if isPremiumLocked {
-                Button {
-                    showPremiumGate = true
-                } label: {
-                    GameTile(game: game, isLocked: true)
-                }
-                .buttonStyle(.plain)
-            } else {
-                NavigationLink {
-                    destinationView
-                } label: {
-                    GameTile(game: game, isLocked: false)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .sheet(isPresented: $showPremiumGate) {
-            PremiumParentGateView()
-        }
-    }
-
-    @ViewBuilder
-    private var destinationView: some View {
-        switch game.destination {
-        case .peekabooBarnyard:
-            PeekabooBarnyardGameView()
-        case .letterMatch:
-            LetterMatch()
-        case .letterDraw:
-            LetterDraw()
-        case .soundBaskets:
-            SoundBaskets()
-        case .placeholder:
-            ABCsPlaceholderGame(title: game.title)
-        }
-    }
-}
-
-private struct PeekabooBarnyardGameView: View {
+private struct NatureBarnyardGameView: View {
     var body: some View {
         GeometryReader { proxy in
             SpriteView(scene: makeScene(size: proxy.size))
                 .ignoresSafeArea()
         }
+        .navigationBarBackButtonHidden(false)
     }
 
     private func makeScene(size: CGSize) -> SKScene {
@@ -167,90 +105,63 @@ private struct PeekabooBarnyardGameView: View {
     }
 }
 
-private struct GameTile: View {
-    let game: PhonicsGame
-    let isLocked: Bool
+private struct NatureGameTile: View {
+    let game: NatureExplorerGame
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, category: .nature)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            if isLocked {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Circle().fill(Color.black.opacity(0.55)))
-                    .padding(7)
-                    .accessibilityLabel(Text("Locked"))
+        RoundedRectangle(cornerRadius: 16, style: .continuous)
+            .fill(LinearGradient(colors: game.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+            .overlay(alignment: .topTrailing) {
+                Circle()
+                    .fill(.white.opacity(0.18))
+                    .frame(width: 68, height: 68)
+                    .offset(x: 16, y: -18)
             }
-        }
-        .contentShape(Rectangle())
+            .overlay {
+                VStack(spacing: 5) {
+                    Image(game.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 48)
+                        .shadow(color: .black.opacity(0.2), radius: 4, y: 3)
+
+                    Text(game.title)
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.72)
+
+                    Text(game.subtitle)
+                        .font(.system(size: 9, weight: .semibold, design: .rounded))
+                        .opacity(0.9)
+                        .lineLimit(2)
+                }
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+                .padding(7)
+            }
+            .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(game.title). \(game.subtitle)")
     }
 }
 
-private struct ABCsPlaceholderGame: View {
-    let title: String
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            VStack(spacing: 16) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundColor(.white)
-
-                Text(title)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-
-                Text("Coming Soon")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.9))
-            }
-            .padding(24)
-        }
-    }
-}
-
-private struct ABCsBackgroundLayer: View {
+private struct NatureMenuBackground: View {
     var body: some View {
         GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
+            ZStack {
                 LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
+                    colors: [Color(red: 0.15, green: 0.72, blue: 0.58), Color(red: 0.08, green: 0.48, blue: 0.68)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
                 )
-                .ignoresSafeArea(.all)
-
                 Image("learningLabBackground")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
+                    .frame(width: proxy.size.width, height: proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom)
                     .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
+                    .opacity(0.38)
             }
+            .ignoresSafeArea()
         }
     }
-}
-
-#Preview {
-    ABCsAndPhonicsMenu()
 }
