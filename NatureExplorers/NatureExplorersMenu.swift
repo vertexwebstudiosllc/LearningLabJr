@@ -35,11 +35,7 @@ struct NatureExplorersMenu: View {
                         LazyVGrid(columns: columns, spacing: spacing) {
                             ForEach(games) { game in
                                 NavigationLink {
-                                    if game.kind == .peekaboo {
-                                        NatureBarnyardGameView()
-                                    } else {
-                                        NatureLearningGameView(game: game)
-                                    }
+                                    NatureGameDestination(game: game)
                                 } label: {
                                     NatureGameTile(game: game)
                                         .aspectRatio(1, contentMode: .fit)
@@ -74,35 +70,19 @@ struct NatureExplorerGame: Identifiable, Hashable {
     var id: Kind { kind }
 
     static let allGames: [NatureExplorerGame] = [
-        .init(kind: .habitat, title: "Habitat Helpers", subtitle: "Find each creature's home.", image: "dolphin", colors: [.teal, .blue]),
-        .init(kind: .dino, title: "Dino Discovery", subtitle: "Meet prehistoric friends.", image: "Triceratops", colors: [.green, .orange]),
-        .init(kind: .space, title: "Space Scouts", subtitle: "Explore our sky and planets.", image: "Rocket", colors: [.indigo, .purple]),
-        .init(kind: .families, title: "Animal Families", subtitle: "Match grown-ups and babies.", image: "calf", colors: [.orange, .pink]),
-        .init(kind: .size, title: "Big & Little Safari", subtitle: "Compare animal sizes.", image: "blue whale", colors: [.cyan, .blue]),
+        .init(kind: .habitat, title: "Habitat Helpers", subtitle: "Send each creature home.", image: "dolphin", colors: [.teal, .blue]),
+        .init(kind: .dino, title: "Dino Discovery", subtitle: "Excavate a hidden dinosaur.", image: "Triceratops", colors: [.green, .orange]),
+        .init(kind: .space, title: "Space Scouts", subtitle: "Launch and guide a rocket.", image: "Rocket", colors: [.indigo, .purple]),
+        .init(kind: .families, title: "Animal Families", subtitle: "Connect three family pairs.", image: "calf", colors: [.orange, .pink]),
+        .init(kind: .size, title: "Big & Little Safari", subtitle: "Build a smallest-to-biggest line.", image: "blue whale", colors: [.cyan, .blue]),
         .init(kind: .pattern, title: "Nature Patterns", subtitle: "Finish the picture pattern.", image: "starfish", colors: [.purple, .pink]),
         .init(kind: .peekaboo, title: "Peekaboo Barnyard", subtitle: "Open the barn and meet animals.", image: "cow", colors: [.yellow, .orange]),
         .init(kind: .memory, title: "Explorer Memory", subtitle: "Remember the hidden picture.", image: "Telescope", colors: [.mint, .teal]),
-        .init(kind: .fossil, title: "Fossil Detectives", subtitle: "Use clues to find dinosaurs.", image: "DinoBone", colors: [.brown, .orange]),
-        .init(kind: .scene, title: "Where Does It Belong?", subtitle: "Sort items into their worlds.", image: "WoollyMammoth", colors: [.green, .teal]),
-        .init(kind: .counting, title: "Creature Counter", subtitle: "Count a lively animal group.", image: "penguin", colors: [.blue, .mint]),
+        .init(kind: .fossil, title: "Fossil Detectives", subtitle: "Brush off clues and solve a mystery.", image: "DinoBone", colors: [.brown, .orange]),
+        .init(kind: .scene, title: "Where Does It Belong?", subtitle: "Sort a discovery queue by world.", image: "WoollyMammoth", colors: [.green, .teal]),
+        .init(kind: .counting, title: "Creature Counter", subtitle: "Touch every creature as you count.", image: "penguin", colors: [.blue, .mint]),
         .init(kind: .clues, title: "Who Am I?", subtitle: "Solve friendly nature clues.", image: "Smilodon", colors: [.red, .orange])
     ]
-}
-
-private struct NatureBarnyardGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-        .navigationBarBackButtonHidden(false)
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = BarnyardPeekabooScene(size: size)
-        scene.scaleMode = .aspectFill
-        return scene
-    }
 }
 
 private struct NatureGameTile: View {

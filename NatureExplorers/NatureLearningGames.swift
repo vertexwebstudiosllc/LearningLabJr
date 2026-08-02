@@ -1,6 +1,6 @@
 import SwiftUI
 
-private struct NatureAsset: Hashable, Identifiable {
+struct NatureAsset: Hashable, Identifiable {
     let image: String
     let name: String
     let group: String
@@ -28,7 +28,7 @@ private struct NatureRound: Equatable {
     }
 }
 
-private enum NatureLibrary {
+enum NatureLibrary {
     static let farm: [NatureAsset] = [
         .init(image: "cow", name: "Cow", group: "farm", sizeRank: 7),
         .init(image: "pig", name: "Pig", group: "farm", sizeRank: 5),
