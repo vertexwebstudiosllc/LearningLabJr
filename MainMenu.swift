@@ -1,135 +1,140 @@
 import SwiftUI
 
 struct LearningLabHomeView: View {
+    private let categories = HomeCategory.allCategories
+
     var body: some View {
         ZStack {
             BackgroundLayer()
 
-            VStack {
-                Spacer().frame(height: 20)
+            GeometryReader { geo in
+                let horizontalPadding: CGFloat = 20
+                let spacing: CGFloat = 12
+                let columnCount = min(3, max(2, Int((geo.size.width - horizontalPadding * 2) / 150)))
+                let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: columnCount)
 
-                // Logo at top center; replace name with your asset name
-                Image("learningLabLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 198, maxHeight: 198) // ~10% smaller
-                    .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
-                    .offset(y: -8)
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        Spacer().frame(height: 20)
 
-                // Kids artwork beneath logo; replace name with your asset name
-                Image("learningLabKids")
-                    .resizable()
-                    .scaledToFit()
-                    
-                    .frame(maxWidth: 490, maxHeight: 490) // ~20% larger again
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
-                    .padding(.top, -170) // nudged slightly down (~2.5-3% shift)
-
-                // Menu row with two buttons side by side (tap area matches image size)
-                HStack(spacing: -10) {
-                    NavigationLink {
-                        ABCsAndPhonicsMenu()
-                    } label: {
-                        Image("Button-ABCs-Phonics")
+                        Image("learningLabLogo")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 280, maxHeight: 170)
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
-                    }
+                            .frame(maxWidth: 198, maxHeight: 198)
+                            .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
+                            .offset(y: -8)
 
-                    NavigationLink {
-                        ShapesAndColorsMenu()
-                    } label: {
-                        Image("Button-Shapes-Colors")
+                        Image("learningLabKids")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 280, maxHeight: 170)
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
+                            .frame(maxWidth: 490, maxHeight: 490)
+                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
+                            .padding(.top, -170)
+
+                        LazyVGrid(columns: columns, spacing: spacing) {
+                            ForEach(categories) { category in
+                                NavigationLink {
+                                    category.destination
+                                } label: {
+                                    HomeCategoryTile(category: category)
+                                        .aspectRatio(1, contentMode: .fit)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityHint("Opens the \(category.title) games")
+                            }
+                        }
+                        .padding(.horizontal, horizontalPadding)
+                        .padding(.top, -145)
+
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                ParentsCornerMenu()
+                            } label: {
+                                Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 18)
+                                    .frame(minHeight: 48)
+                                    .background(.black.opacity(0.28), in: Capsule())
+                                    .overlay(Capsule().stroke(.white.opacity(0.4), lineWidth: 1.5))
+                                    .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityHint("Opens settings and parent information")
+                        }
+                        .padding(.horizontal, 24)
+                        .padding(.top, 18)
+                        .padding(.bottom, 36)
                     }
+                    .frame(minHeight: geo.size.height, alignment: .top)
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.horizontal, 10)
-                .padding(.top, -230)
-
-                // Second row of buttons
-                HStack(spacing: -10) {
-                    NavigationLink {
-                        CountingMenu()
-                    } label: {
-                        Image("Button-123s-Counting")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 280, maxHeight: 170)
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
-                    }
-
-                    NavigationLink {
-                        NatureExplorersMenu()
-                    } label: {
-                        Image("Button-Nature-Explorers")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 280, maxHeight: 170)
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.horizontal, 10)
-                .padding(.top, -110) // moved up another ~15%
-
-                // Third row of buttons
-                HStack(spacing: -10) {
-                    NavigationLink {
-                        StoryTimeMenu()
-                    } label: {
-                        Image("Button-Story-Time")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 196, maxHeight: 120) // ~30% smaller
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
-                    }
-
-                    NavigationLink {
-                        BigFeelingsMenu()
-                    } label: {
-                        Image("Button-Big-Feelings")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 188, maxHeight: 115) // ~33% smaller
-                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
-                            .contentShape(Rectangle())
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.horizontal, 10)
-                .padding(.top, -40) // moved up ~40% relative to previous spacing
-
-                // Parents Corner button, small and anchored to the bottom trailing area
-                HStack {
-                    Spacer()
-                    NavigationLink {
-                        ParentsCornerMenu()
-                    } label: {
-                        Image("Button-Parents-Corner")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 200, maxHeight: 60)
-                            .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
-                            .contentShape(Rectangle())
-                    }
-                }
-                .padding(.trailing, 24)
-                .padding(.top, 12)
-
-                Spacer()
+                .scrollBounceBehavior(.basedOnSize)
+                .ignoresSafeArea(edges: .top)
             }
-            .ignoresSafeArea(edges: .top)
         }
+    }
+}
+
+private struct HomeCategory: Identifiable {
+    enum Kind { case phonics, shapes, counting, nature, stories, feelings }
+
+    let kind: Kind
+    let title: String
+    let subtitle: String
+    let icon: String
+    let colors: [Color]
+    var id: String { title }
+
+    @ViewBuilder var destination: some View {
+        switch kind {
+        case .phonics: ABCsAndPhonicsMenu()
+        case .shapes: ShapesAndColorsMenu()
+        case .counting: CountingMenu()
+        case .nature: NatureExplorersMenu()
+        case .stories: StoryTimeMenu()
+        case .feelings: BigFeelingsMenu()
+        }
+    }
+
+    static let allCategories: [HomeCategory] = [
+        .init(kind: .phonics, title: "ABCs & Phonics", subtitle: "Letters, sounds & words", icon: "character.book.closed.fill", colors: [.orange, .pink]),
+        .init(kind: .shapes, title: "Shapes & Colors", subtitle: "Match, sort & create", icon: "paintpalette.fill", colors: [.blue, .cyan]),
+        .init(kind: .counting, title: "123s & Counting", subtitle: "Count, add & compare", icon: "123.rectangle.fill", colors: [.green, .mint]),
+        .init(kind: .nature, title: "Nature Explorers", subtitle: "Animals & discovery", icon: "leaf.fill", colors: [.teal, .blue]),
+        .init(kind: .stories, title: "Story Time", subtitle: "Read, imagine & learn", icon: "book.fill", colors: [.purple, .indigo]),
+        .init(kind: .feelings, title: "Big Feelings", subtitle: "Name, understand & grow", icon: "heart.fill", colors: [.pink, .purple])
+    ]
+}
+
+private struct HomeCategoryTile: View {
+    let category: HomeCategory
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 16, style: .continuous)
+            .fill(LinearGradient(colors: category.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+            .overlay {
+                VStack(spacing: 9) {
+                    Image(systemName: category.icon)
+                        .font(.system(size: 29, weight: .bold))
+
+                    Text(category.title)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .lineLimit(2)
+
+                    Text(category.subtitle)
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .opacity(0.9)
+                        .lineLimit(2)
+                }
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+                .padding(10)
+            }
+            .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
+            .contentShape(Rectangle())
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(category.title). \(category.subtitle)")
     }
 }
 
