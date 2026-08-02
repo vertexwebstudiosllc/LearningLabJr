@@ -148,20 +148,33 @@ private struct NatureGameTile: View {
 private struct NatureMenuBackground: View {
     var body: some View {
         GeometryReader { proxy in
-            ZStack {
+            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
+
+            ZStack(alignment: .center) {
                 LinearGradient(
-                    colors: [Color(red: 0.15, green: 0.72, blue: 0.58), Color(red: 0.08, green: 0.48, blue: 0.68)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
+                    colors: [
+                        Color(red: 1.0, green: 0.78, blue: 0.42),
+                        Color(red: 1.0, green: 0.68, blue: 0.35)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
                 )
+                .ignoresSafeArea(.all)
+
                 Image("learningLabBackground")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: proxy.size.width, height: proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom)
+                    .frame(width: proxy.size.width, height: totalHeight)
                     .clipped()
-                    .opacity(0.38)
+                    .ignoresSafeArea(.all)
+
+                Image("PlayfulBackground")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: proxy.size.width, height: totalHeight)
+                    .clipped()
+                    .ignoresSafeArea(.all)
             }
-            .ignoresSafeArea()
         }
     }
 }
