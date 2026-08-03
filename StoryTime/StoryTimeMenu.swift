@@ -65,6 +65,7 @@ struct StoryTimeMenu: View {
 private struct PhonicsGame: Identifiable {
     enum Destination {
         case storyBook
+        case dinoBasketballBook
         case letterMatch
         case letterDraw
         case soundBaskets
@@ -79,7 +80,7 @@ private struct PhonicsGame: Identifiable {
 
     static let allGames: [PhonicsGame] = [
         PhonicsGame(title: "Owen Onion Finds His Voice", assetName: nil, destination: .storyBook, isLocked: false),
-        PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
+        PhonicsGame(title: "Dino Sports: Trey Shoots for Three", assetName: nil, destination: .dinoBasketballBook, isLocked: false),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
         PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
@@ -139,6 +140,8 @@ private struct GameTileLink: View {
         switch game.destination {
         case .storyBook:
             StoryBookGame()
+        case .dinoBasketballBook:
+            StoryBookGame(book: .dinoBasketball)
         case .letterMatch:
             LetterMatch()
         case .letterDraw:

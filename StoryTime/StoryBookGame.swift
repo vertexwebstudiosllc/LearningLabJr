@@ -11,12 +11,18 @@ struct StoryBookGame: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var pageIndex = 0
 
-    private let storyTitle = "Owen Onion Finds His Voice"
-    private let pages = StoryBookPage.owenOnion
+    let book: StoryBook
+
+    init(book: StoryBook = .owenOnion) {
+        self.book = book
+    }
+
+    private var storyTitle: String { book.title }
+    private var pages: [StoryBookPage] { book.pages }
 
     var body: some View {
         ZStack {
-            StoryBookBackground()
+            StoryBookBackground(colors: book.backgroundColors)
 
             GeometryReader { proxy in
                 VStack(spacing: 10) {
@@ -44,13 +50,22 @@ struct StoryBookGame: View {
     private var bookHeader: some View {
         HStack(spacing: 10) {
             Image(systemName: "book.closed.fill")
-                .foregroundStyle(Color(red: 0.49, green: 0.24, blue: 0.55))
+                .foregroundStyle(book.accentColor)
 
-            Text(storyTitle)
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundStyle(Color(red: 0.22, green: 0.16, blue: 0.14))
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
+            VStack(alignment: .leading, spacing: 0) {
+                Text(storyTitle)
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundStyle(Color(red: 0.22, green: 0.16, blue: 0.14))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+
+                if let subtitle = book.subtitle {
+                    Text(subtitle)
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .foregroundStyle(Color(red: 0.42, green: 0.31, blue: 0.25))
+                        .lineLimit(1)
+                }
+            }
 
             Spacer(minLength: 8)
 
@@ -61,7 +76,7 @@ struct StoryBookGame: View {
         }
         .padding(.horizontal, 16)
         .frame(maxWidth: 720)
-        .frame(height: 44)
+        .frame(height: book.subtitle == nil ? 44 : 52)
         .background(.white.opacity(0.88), in: Capsule())
         .shadow(color: .black.opacity(0.12), radius: 7, y: 4)
     }
@@ -72,6 +87,7 @@ struct StoryBookGame: View {
                 systemImage: "chevron.left",
                 label: "Previous page",
                 isEnabled: pageIndex > 0,
+                accentColor: book.accentColor,
                 action: goBack
             )
 
@@ -82,6 +98,7 @@ struct StoryBookGame: View {
                 systemImage: pageIndex == pages.count - 1 ? "checkmark" : "chevron.right",
                 label: pageIndex == pages.count - 1 ? "Story complete" : "Next page",
                 isEnabled: pageIndex < pages.count - 1,
+                accentColor: book.accentColor,
                 action: goForward
             )
         }
@@ -122,12 +139,61 @@ struct StoryBookGame: View {
     }
 }
 
+enum StoryBook {
+    case owenOnion
+    case dinoBasketball
+
+    var title: String {
+        switch self {
+        case .owenOnion: "Owen Onion Finds His Voice"
+        case .dinoBasketball: "Dino Sports: Trey Shoots for Three"
+        }
+    }
+
+    var subtitle: String? {
+        switch self {
+        case .owenOnion: nil
+        case .dinoBasketball: "A Dino Sports Club Story"
+        }
+    }
+
+    fileprivate var pages: [StoryBookPage] {
+        switch self {
+        case .owenOnion: .owenOnion
+        case .dinoBasketball: .dinoBasketball
+        }
+    }
+
+    fileprivate var accentColor: Color {
+        switch self {
+        case .owenOnion: Color(red: 0.49, green: 0.24, blue: 0.55)
+        case .dinoBasketball: Color(red: 0.91, green: 0.36, blue: 0.08)
+        }
+    }
+
+    fileprivate var backgroundColors: [Color] {
+        switch self {
+        case .owenOnion:
+            [Color(red: 0.62, green: 0.37, blue: 0.64), Color(red: 0.94, green: 0.62, blue: 0.34)]
+        case .dinoBasketball:
+            [Color(red: 0.13, green: 0.61, blue: 0.84), Color(red: 0.95, green: 0.47, blue: 0.12)]
+        }
+    }
+}
+
 private struct StoryBookPage: Identifiable {
     let number: Int
     let text: String
+    let imagePrefix: String
 
     var id: Int { number }
-    var imageName: String { "OwenOnionPage\(number)" }
+    var imageName: String { "\(imagePrefix)\(number)" }
+
+    init(number: Int, text: String, imagePrefix: String = "OwenOnionPage") {
+        self.number = number
+        self.text = text
+        self.imagePrefix = imagePrefix
+    }
 
     static let owenOnion: [StoryBookPage] = [
         StoryBookPage(number: 1, text: """
@@ -260,6 +326,173 @@ private struct StoryBookPage: Identifiable {
         Owen’s voice was welcome here.
         """)
     ]
+
+    static let dinoBasketball: [StoryBookPage] = [
+        StoryBookPage(number: 1, text: """
+        Trey Triceratops loved to run.
+        He loved to stomp.
+        He loved to play.
+        But most of all,
+        Trey wanted to learn
+        basketball one day.
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 2, text: """
+        At Dino Court, the hoops stood tall.
+        So did Barry Brontosaurus.
+        So did Rex T-Rex.
+        Barry could dunk with his long, long neck.
+        Rex could jump with a thunderous
+        STOMP!
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 3, text: """
+        Trey looked up.
+        The basket looked high.
+        Very high.
+        “I’m not tall like Barry,” said Trey.
+        “I can’t jump like Rex.”
+        His little horns drooped.
+        “Maybe basketball is not for me.”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 4, text: """
+        Barry bent his long neck low.
+        “Basketball is for every dino,” he said.
+        “Some dunk.
+        Some pass.
+        Some run fast.”
+        Rex grinned.
+        “And some learn to shoot from far away.”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 5, text: """
+        “From far away?” asked Trey.
+        Rex bounced the ball.
+        Barry pointed to a line on the court.
+        “This is the three-point line,” said Barry.
+        Rex smiled.
+        “Make it from here,
+        and it counts as three!”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 6, text: """
+        Trey gulped.
+        “That is very far.”
+        Barry nodded.
+        “It is.”
+        Rex nodded too.
+        “But far things get closer
+        when you practice.”
+        Then they chanted:
+        Feet set.
+        Eyes up.
+        Toss it high.
+        Try, try, try.
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 7, text: """
+        Trey tried his first shot.
+        BONK!
+        The ball hit the rim.
+        He tried again.
+        BOING!
+        The ball bounced away.
+        He tried one more time.
+        WHOOSH!
+        Right over the hoop.
+        Trey sighed.
+        “I missed them all.”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 8, text: """
+        Barry smiled kindly.
+        “Missing is part of learning.”
+        Rex patted Trey’s back.
+        “Every great shooter
+        missed first.”
+        Trey looked at the ball.
+        “Even you?”
+        Rex nodded.
+        “Especially me.”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 9, text: """
+        So they practiced together.
+        Barry taught Trey to stand strong.
+        “Point your toes to the hoop.”
+        Rex taught Trey to bend his knees.
+        “Use your legs, little buddy!”
+        Trey whispered:
+        Feet set.
+        Eyes up.
+        Toss it high.
+        Try, try, try.
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 10, text: """
+        Trey shot in the morning.
+        He shot after snack.
+        He shot when the sun turned orange.
+        Some shots missed.
+        Some shots bounced.
+        One shot rolled around the rim…
+        and fell out.
+        Trey stomped his foot.
+        “This is hard!”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 11, text: """
+        Barry nodded.
+        “Hard means you are learning.”
+        Rex spun the ball on one claw.
+        “Practice does not make it easy.”
+        He winked.
+        “Practice makes you braver.”
+        Trey took a deep breath.
+        Then he tried again.
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 12, text: """
+        At last, it was game day.
+        The Dino Court was full.
+        Stegosaurus cheered.
+        Pterodactyls flapped.
+        Raptor twins waved flags.
+        Trey’s tummy felt wiggly.
+        “What if I miss?” he whispered.
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 13, text: """
+        Barry looked at him gently.
+        “Then we try again.”
+        Rex smiled.
+        “You are on our team
+        because you worked hard.”
+        The score was tied.
+        Three seconds left.
+        The ball bounced to Trey.
+        Barry shouted, “You can do it!”
+        Rex shouted, “Shoot!”
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 14, text: """
+        Trey stood behind the line.
+        His heart went
+        thump, thump, thump.
+        He remembered the chant.
+        Feet set.
+        Eyes up.
+        Toss it high.
+        Try, try, try.
+        Trey shot the ball.
+        Up it went.
+        Higher.
+        Higher.
+        Swish!
+        """, imagePrefix: "DinoBasketballPage"),
+        StoryBookPage(number: 15, text: """
+        The crowd roared.
+        Barry lifted Trey high.
+        Rex danced a T-Rex dance.
+        Trey laughed.
+        “I made a three!”
+        Barry smiled.
+        “You practiced.”
+        Rex grinned.
+        “You got brave.”
+        And Trey Triceratops knew:
+        Big wins can start
+        with one small try.
+        """, imagePrefix: "DinoBasketballPage")
+    ]
 }
 
 private struct StoryPageView: View {
@@ -318,13 +551,14 @@ private struct PageButton: View {
     let systemImage: String
     let label: String
     let isEnabled: Bool
+    let accentColor: Color
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
             Image(systemName: systemImage)
                 .font(.system(size: 22, weight: .black))
-                .foregroundStyle(isEnabled ? Color(red: 0.49, green: 0.24, blue: 0.55) : Color.gray.opacity(0.45))
+                .foregroundStyle(isEnabled ? accentColor : Color.gray.opacity(0.45))
                 .frame(width: 54, height: 48)
                 .background(.white.opacity(isEnabled ? 0.94 : 0.55), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
                 .shadow(color: .black.opacity(isEnabled ? 0.14 : 0), radius: 5, y: 3)
@@ -355,13 +589,12 @@ private struct PageIndicator: View {
 }
 
 private struct StoryBookBackground: View {
+    let colors: [Color]
+
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [
-                    Color(red: 0.62, green: 0.37, blue: 0.64),
-                    Color(red: 0.94, green: 0.62, blue: 0.34)
-                ],
+                colors: colors,
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
