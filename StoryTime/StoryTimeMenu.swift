@@ -80,7 +80,7 @@ private struct PhonicsGame: Identifiable {
 
     static let allGames: [PhonicsGame] = [
         PhonicsGame(title: "Owen Onion Finds His Voice", assetName: nil, destination: .storyBook, isLocked: false),
-        PhonicsGame(title: "Dino Sports: Trey Shoots for Three", assetName: nil, destination: .dinoBasketballBook, isLocked: false),
+        PhonicsGame(title: "Trey Triceratops: Shoots for Three", assetName: nil, destination: .dinoBasketballBook, isLocked: false),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
         PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),

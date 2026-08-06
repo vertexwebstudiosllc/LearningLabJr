@@ -146,7 +146,7 @@ enum StoryBook {
     var title: String {
         switch self {
         case .owenOnion: "Owen Onion Finds His Voice"
-        case .dinoBasketball: "Dino Sports: Trey Shoots for Three"
+        case .dinoBasketball: "Trey Triceratops: Shoots for Three"
         }
     }
 
@@ -159,8 +159,8 @@ enum StoryBook {
 
     fileprivate var pages: [StoryBookPage] {
         switch self {
-        case .owenOnion: .owenOnion
-        case .dinoBasketball: .dinoBasketball
+        case .owenOnion: StoryBookPage.owenOnion
+        case .dinoBasketball: StoryBookPage.dinoBasketball
         }
     }
 
