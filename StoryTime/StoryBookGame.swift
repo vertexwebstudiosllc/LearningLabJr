@@ -142,11 +142,13 @@ struct StoryBookGame: View {
 enum StoryBook {
     case owenOnion
     case dinoBasketball
+    case dinoHockey
 
     var title: String {
         switch self {
         case .owenOnion: "Owen Onion Finds His Voice"
         case .dinoBasketball: "Trey Triceratops: Shoots for Three"
+        case .dinoHockey: "Trey Triceratops: Scores a Hat Trick"
         }
     }
 
@@ -154,6 +156,7 @@ enum StoryBook {
         switch self {
         case .owenOnion: nil
         case .dinoBasketball: "A Dino Sports Club Story"
+        case .dinoHockey: "A Dino Sports Club Story"
         }
     }
 
@@ -161,6 +164,7 @@ enum StoryBook {
         switch self {
         case .owenOnion: StoryBookPage.owenOnion
         case .dinoBasketball: StoryBookPage.dinoBasketball
+        case .dinoHockey: StoryBookPage.dinoHockey
         }
     }
 
@@ -168,6 +172,7 @@ enum StoryBook {
         switch self {
         case .owenOnion: Color(red: 0.49, green: 0.24, blue: 0.55)
         case .dinoBasketball: Color(red: 0.91, green: 0.36, blue: 0.08)
+        case .dinoHockey: Color(red: 0.08, green: 0.52, blue: 0.78)
         }
     }
 
@@ -177,6 +182,8 @@ enum StoryBook {
             [Color(red: 0.62, green: 0.37, blue: 0.64), Color(red: 0.94, green: 0.62, blue: 0.34)]
         case .dinoBasketball:
             [Color(red: 0.13, green: 0.61, blue: 0.84), Color(red: 0.95, green: 0.47, blue: 0.12)]
+        case .dinoHockey:
+            [Color(red: 0.34, green: 0.77, blue: 0.94), Color(red: 0.72, green: 0.90, blue: 0.98)]
         }
     }
 }
@@ -492,6 +499,145 @@ private struct StoryBookPage: Identifiable {
         Big wins can start
         with one small try.
         """, imagePrefix: "DinoBasketballPage")
+    ]
+
+    static let dinoHockey: [StoryBookPage] = [
+        StoryBookPage(number: 1, text: """
+        Snowflakes danced on Dino Pond.
+        The ice was shiny, smooth, and wide.
+        Trey Triceratops peeked out slowly.
+        “I want to play hockey,” he said.
+        Then he took one tiny slide.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 2, text: """
+        On the ice stood Milo Mammoth.
+        Big feet. Warm fur. Kind eyes.
+        Milo pushed the puck with a gentle tap.
+        “Come on, Trey,” he called.
+        “Hockey starts with one brave glide.”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 3, text: """
+        Beside Milo zipped Sasha Smilodon.
+        Sasha was quick.
+        Sasha was clever.
+        Sasha swished her tail and skated in loops.
+        “Zoom, zoom, zip!” she cheered.
+        “Hockey is fast and fun!”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 4, text: """
+        Trey stepped onto the ice.
+        Slip. Slide. Wobble.
+        WHUMP!
+        Trey landed on his belly.
+        His hockey stick flew into the snow.
+        “I am not good at ice,” Trey sighed.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 5, text: """
+        Milo helped Trey up.
+        “Falling is part of skating,” said Milo.
+        Sasha nodded.
+        “And trying again is part of winning.”
+        Trey looked at the ice.
+        It still looked slippery.
+        But his friends looked kind.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 6, text: """
+        Milo showed Trey how to stand.
+        “Feet wide. Knees bent. Horn up high.”
+        Sasha showed him how to glide.
+        “Small push.
+        Little slide.
+        Try, try, try.”
+        Trey whispered,
+        “Try, try, try.”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 7, text: """
+        Soon Trey could glide.
+        Not fast. Not fancy.
+        But forward.
+        Swish.
+        Trey smiled.
+        “I’m skating!”
+        Milo trumpeted.
+        Sasha cheered.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 8, text: """
+        Then Trey saw Milo shoot the puck.
+        SLAP!
+        The puck zipped across the ice.
+        Sasha shot next. SLAP!
+        The puck zoomed into the net.
+        Trey’s eyes grew wide.
+        “I want to learn that!”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 9, text: """
+        “That is a slapshot,” said Milo.
+        “It takes practice.”
+        Sasha tapped Trey’s stick.
+        “Stick down. Eyes up.
+        Swing back. Slap!”
+        Trey nodded.
+        “Slapshot,” he whispered.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 10, text: """
+        Trey tried. Tap.
+        The puck moved one inch.
+        He tried again. Bonk.
+        The puck spun in a circle.
+        He tried once more.
+        Whoops!
+        Trey spun in a circle too.
+        “I can’t do it,” he said.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 11, text: """
+        Milo smiled. “Not yet.”
+        Sasha smiled too.
+        “Yet is a little word
+        with a big job.”
+        So Trey practiced.
+        Stick down. Eyes up.
+        Swing back. Slap!
+        Again. And again. And again.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 12, text: """
+        At last, it was game day.
+        Snow dinos filled the rink.
+        Penguins waved little flags.
+        A pterodactyl blew the whistle.
+        Trey held his stick tight.
+        “What if I miss?” he asked.
+        Milo said, “Then we keep playing.”
+        Sasha said, “And we help our team.”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 13, text: """
+        The puck slid to Trey.
+        He remembered his practice.
+        Stick down. Eyes up.
+        Swing back. Slap!
+        WHOOSH! Goal one!
+        The crowd cheered.
+        Trey blinked. “I did it!”
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 14, text: """
+        The game went on.
+        Trey skated. Trey passed.
+        Trey tried again. SLAP!
+        Goal two!
+        Then, with one chilly second left,
+        the puck came back to Trey.
+        His heart went thump, thump, thump.
+        """, imagePrefix: "DinoHockeyPage"),
+        StoryBookPage(number: 15, text: """
+        Trey took one brave breath.
+        Stick down. Eyes up. Swing back.
+        Slap! The puck flew. The net shook.
+        Goal three! “A hat trick!” cried Milo.
+        Sasha spun in happy circles.
+        Trey smiled big.
+        He had learned something true:
+        Practice makes you better.
+        And trying again can help you score.
+        """, imagePrefix: "DinoHockeyPage")
     ]
 }
 

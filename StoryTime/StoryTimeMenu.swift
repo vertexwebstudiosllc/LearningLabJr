@@ -66,6 +66,7 @@ private struct PhonicsGame: Identifiable {
     enum Destination {
         case storyBook
         case dinoBasketballBook
+        case dinoHockeyBook
         case letterMatch
         case letterDraw
         case soundBaskets
@@ -83,7 +84,7 @@ private struct PhonicsGame: Identifiable {
         PhonicsGame(title: "Trey Triceratops: Shoots for Three", assetName: nil, destination: .dinoBasketballBook, isLocked: false),
         PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
         PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
+        PhonicsGame(title: "Trey Triceratops: Scores a Hat Trick", assetName: nil, destination: .dinoHockeyBook, isLocked: false),
         PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
         PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
@@ -142,6 +143,8 @@ private struct GameTileLink: View {
             StoryBookGame()
         case .dinoBasketballBook:
             StoryBookGame(book: .dinoBasketball)
+        case .dinoHockeyBook:
+            StoryBookGame(book: .dinoHockey)
         case .letterMatch:
             LetterMatch()
         case .letterDraw:
