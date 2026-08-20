@@ -18,6 +18,7 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
     }
 
     func playSound(for imageName: String, displayName: String? = nil) {
+        guard UserDefaults.standard.object(forKey: "parents.soundEffectsEnabled") as? Bool ?? true else { return }
         let imageKey = imageName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !imageKey.isEmpty else { return }
 
@@ -31,6 +32,7 @@ final class ItemSoundManager: NSObject, AVAudioPlayerDelegate {
     }
 
     func playSounds(_ sounds: [(imageName: String, displayName: String?)]) {
+        guard UserDefaults.standard.object(forKey: "parents.soundEffectsEnabled") as? Bool ?? true else { return }
         stop()
 
         queuedSoundURLs = sounds.compactMap { sound in
@@ -115,7 +117,7 @@ private struct ItemSoundCatalog {
             return ItemSoundCatalog(soundNamesByImage: [:])
         }
 
-        let normalizedHeaders = headers.map(normalizeHeader)
+        let normalizedHeaders = headers.map { normalizeHeader($0) }
         guard let soundIndex = normalizedHeaders.firstIndex(where: { soundHeaderNames.contains($0) }) else {
             return ItemSoundCatalog(soundNamesByImage: [:])
         }

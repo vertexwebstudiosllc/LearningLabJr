@@ -1,246 +1,106 @@
-//
-//  ABCsAndPhonicsMenu.swift
-//  LearningLabJr
-//
-//  Created by Matthew Teitelman on 12/10/25.
-//
-
 import SwiftUI
 
 struct StoryTimeMenu: View {
-    private let games = PhonicsGame.allGames
+    static let activities: [LearningActivity] = StoryActivity.allCases.map(\.metadata)
 
     var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 12
-                let columnsCount = min(3, max(1, Int((geo.size.width - horizontalPadding * 2) / 104)))
-                let columns = Array(
-                    repeating: GridItem(.flexible(), spacing: spacing),
-                    count: columnsCount
-                )
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198) // match MainMenu logo sizing
-                            .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490) // align with MainMenu hero sizing
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(games) { game in
-                                GameTileLink(game: game)
-                                    .aspectRatio(1, contentMode: .fit)
-                            }
-                        }
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.top, -145)
-                        .padding(.bottom, 48)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
-            }
-        }
-    }
-}
-
-// MARK: - Game Tiles
-
-private struct PhonicsGame: Identifiable {
-    enum Destination {
-        case storyBook
-        case dinoBasketballBook
-        case dinoHockeyBook
-        case letterMatch
-        case letterDraw
-        case soundBaskets
-        case placeholder
-    }
-
-    let id = UUID()
-    let title: String
-    let assetName: String?
-    let destination: Destination
-    let isLocked: Bool
-
-    static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Owen Onion Finds His Voice", assetName: nil, destination: .storyBook, isLocked: false),
-        PhonicsGame(title: "Trey Triceratops: Shoots for Three", assetName: nil, destination: .dinoBasketballBook, isLocked: false),
-        PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Alphabet Train", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trey Triceratops: Scores a Hat Trick", assetName: nil, destination: .dinoHockeyBook, isLocked: false),
-        PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Sight Word Stars", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Blend Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Digraph Dash", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Find the Word", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trace & Say", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Phonics Puzzle", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Story Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "ABC Review", assetName: nil, destination: .placeholder, isLocked: true)
-    ]
-}
-
-private struct GameTileLink: View {
-    let game: PhonicsGame
-    @ObservedObject private var storeManager = StoreManager.shared
-    @State private var showPremiumGate = false
-
-    private var isPremiumLocked: Bool {
-        game.isLocked && !storeManager.hasPremium
-    }
-
-    var body: some View {
-        Group {
-            if isPremiumLocked {
-                Button {
-                    showPremiumGate = true
-                } label: {
-                    GameTile(game: game, isLocked: true)
-                }
-                .buttonStyle(.plain)
-            } else {
+        ActivityMenu(title: "Story & Language", subtitle: "12 ways to listen, talk, imagine, and read together", accent: .purple) {
+            ForEach(StoryActivity.allCases) { activity in
                 NavigationLink {
-                    destinationView
+                    StoryActivityDestination(activity: activity)
+                        .learningActivity(activity.metadata)
                 } label: {
-                    GameTile(game: game, isLocked: false)
-                }
-                .buttonStyle(.plain)
+                    ActivityCard(title: activity.metadata.title, subtitle: activity.metadata.skill,
+                                 symbol: activity.symbol, asset: activity.asset, accent: .purple)
+                }.buttonStyle(.plain)
             }
-        }
-        .sheet(isPresented: $showPremiumGate) {
-            PremiumParentGateView()
-        }
-    }
-
-    @ViewBuilder
-    private var destinationView: some View {
-        switch game.destination {
-        case .storyBook:
-            StoryBookGame()
-        case .dinoBasketballBook:
-            StoryBookGame(book: .dinoBasketball)
-        case .dinoHockeyBook:
-            StoryBookGame(book: .dinoHockey)
-        case .letterMatch:
-            LetterMatch()
-        case .letterDraw:
-            LetterDraw()
-        case .soundBaskets:
-            SoundBaskets()
-        case .placeholder:
-            ABCsPlaceholderGame(title: game.title)
         }
     }
 }
 
-private struct GameTile: View {
-    let game: PhonicsGame
-    let isLocked: Bool
+enum StoryActivity: String, CaseIterable, Identifiable {
+    case library, pictureHunt, storyOrder, puppets, finishSentence, soundStory, storyBag, sillyScene, bunny, conversation, storyChoices, sentenceBuilder
+    var id: String { "stories.\(rawValue)" }
+    var metadata: LearningActivity {
+        let details: (String, String, String, String)
+        switch self {
+        case .library: details = ("Read Together", "Shared reading", "Listen to and turn the pages of four illustrated books", "For a younger toddler, describe a few pictures instead of reading every word. Stop whenever your child is ready.")
+        case .pictureHunt: details = ("Picture Hunt", "Listening & vocabulary", "Find named objects within a picnic scene", "Let your child point, speak, or use their home language.")
+        case .storyOrder: details = ("First, Next, Last", "Everyday sequences", "Arrange a three-picture routine in order", "Talk about the steps in a familiar real-life routine.")
+        case .puppets: details = ("Puppet Friends", "Pretend dialogue", "Give two puppets turns to greet, speak, and say goodbye", "Use different voices and leave a pause for your child’s reply.")
+        case .finishSentence: details = ("Finish My Sentence", "Understand spoken sentences", "Complete an everyday spoken sentence with a picture", "Expand your child’s words: ‘Ball’ can become ‘A bouncy ball!’")
+        case .soundStory: details = ("A Noisy Little Story", "Listening & sound imitation", "Bring story scenes to life by activating sound events", "Copy the sounds with your child. No microphone or recording is needed.")
+        case .storyBag: details = ("The Story Bag", "Imagination & describing", "Uncover three surprise props and invent a story together", "There are no wrong stories. Your child can point while you supply words.")
+        case .sillyScene: details = ("Silly Story Fixer", "Make sense of a scene", "Spot a silly detail and replace it with a fitting object", "Laugh together and explain what makes each scene silly.")
+        case .bunny: details = ("Where Is Bunny?", "Words for position", "Place Bunny in, on, and beside a box", "Practice the same words with a real toy and box.")
+        case .conversation: details = ("Picnic Chat", "Conversation turns", "Choose what to say and hear a friendly reply", "Pause before choosing; invite your child to answer in any way.")
+        case .storyChoices: details = ("Choose Our Adventure", "Predict & create", "Make decisions that change a short story’s path and ending", "Ask what might happen next. Both choices make a valid story.")
+        case .sentenceBuilder: details = ("Make a Sentence", "Combine words", "Choose a character, action, and object, then hear your sentence", "Act out the sentence and try changing one word together.")
+        }
+        return LearningActivity(id: id, title: details.0, skill: details.1, interaction: details.2,
+                                ageBand: self == .library || self == .storyOrder || self == .sentenceBuilder ? "3–4 with a grown-up" : "2–4 with a grown-up", caregiverTip: details.3)
+    }
+    var symbol: String {
+        switch self {
+        case .library: "book.fill"
+        case .pictureHunt: "magnifyingglass"
+        case .storyOrder: "arrow.right.square.fill"
+        case .puppets: "theatermasks.fill"
+        case .finishSentence: "text.bubble.fill"
+        case .soundStory: "speaker.wave.2.fill"
+        case .storyBag: "bag.fill"
+        case .sillyScene: "face.smiling.fill"
+        case .bunny: "shippingbox.fill"
+        case .conversation: "bubble.left.and.bubble.right.fill"
+        case .storyChoices: "arrow.triangle.branch"
+        case .sentenceBuilder: "rectangle.3.group.fill"
+        }
+    }
+    var asset: String? {
+        switch self {
+        case .library: "OwenOnionPage1"
+        case .pictureHunt: "Apple"
+        case .puppets: "dog"
+        case .soundStory: "duck"
+        case .storyBag: "basketball"
+        case .bunny, .storyChoices: "rabbit"
+        default: nil
+        }
+    }
+}
 
+struct StoryActivityDestination: View {
+    let activity: StoryActivity
+    @ViewBuilder var body: some View {
+        switch activity {
+        case .library: StoryLibraryView()
+        case .pictureHunt: StoryPictureHunt()
+        case .storyOrder: StorySequenceGame()
+        case .puppets: PuppetFriendsGame()
+        case .finishSentence: FinishSentenceGame()
+        case .soundStory: NoisyStoryGame()
+        case .storyBag: StoryBagGame()
+        case .sillyScene: SillyStoryGame()
+        case .bunny: BunnyPositionGame()
+        case .conversation: PicnicChatGame()
+        case .storyChoices: ChooseAdventureGame()
+        case .sentenceBuilder: SentenceBuilderGame()
+        }
+    }
+}
+
+private struct StoryLibraryView: View {
+    private let books: [StoryBook] = [.owenOnion, .dinoBasketball, .dinoHockey, .dinoBaseball]
+    private let covers = ["OwenOnionPage1", "DinoBasketballPage1", "DinoHockeyPage1", "DinoBaseballPage1"]
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, category: .stories)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            if isLocked {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Circle().fill(Color.black.opacity(0.55)))
-                    .padding(7)
-                    .accessibilityLabel(Text("Locked"))
-            }
-        }
-        .contentShape(Rectangle())
-    }
-}
-
-private struct ABCsPlaceholderGame: View {
-    let title: String
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            VStack(spacing: 16) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundColor(.white)
-
-                Text(title)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-
-                Text("Coming Soon")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.9))
-            }
-            .padding(24)
-        }
-    }
-}
-
-private struct ABCsBackgroundLayer: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
-                LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(.all)
-
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
+        ActivityMenu(title: "Read Together", subtitle: "Four longer stories for ages 3–4 with a grown-up. Read a little or a lot.", accent: .purple, activityCount: 4) {
+            ForEach(books.indices, id: \.self) { index in
+                NavigationLink {
+                    StoryBookGame(book: books[index])
+                } label: {
+                    ActivityCard(title: books[index].title, subtitle: "Listen, look, and talk together", symbol: "book.fill", asset: covers[index], accent: .purple)
+                }.buttonStyle(.plain)
             }
         }
     }
-}
-
-#Preview {
-    StoryTimeMenu()
 }

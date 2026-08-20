@@ -1,256 +1,53 @@
-//
-//  ABCsAndPhonicsMenu.swift
-//  LearningLabJr
-//
-//  Created by Matthew Teitelman on 12/10/25.
-//
-
-import SpriteKit
 import SwiftUI
 
 struct BigFeelingsMenu: View {
-    private let games = PhonicsGame.allGames
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 12
-                let columnsCount = min(3, max(1, Int((geo.size.width - horizontalPadding * 2) / 104)))
-                let columns = Array(
-                    repeating: GridItem(.flexible(), spacing: spacing),
-                    count: columnsCount
-                )
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198) // match MainMenu logo sizing
-                            .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490) // align with MainMenu hero sizing
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(games) { game in
-                                GameTileLink(game: game)
-                                    .aspectRatio(1, contentMode: .fit)
-                            }
-                        }
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.top, -145)
-                        .padding(.bottom, 48)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
-            }
-        }
-    }
-}
-
-// MARK: - Game Tiles
-
-private struct PhonicsGame: Identifiable {
-    enum Destination {
-        case letterMatch
-        case letterDraw
-        case soundBaskets
-        case peekabooVehicle
-        case placeholder
-    }
-
-    let id = UUID()
-    let title: String
-    let assetName: String?
-    let destination: Destination
-    let isLocked: Bool
-
-    static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Letter Match", assetName: "Button-Letter-Match", destination: .letterMatch, isLocked: false),
-        PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
-        PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: true),
-        PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Sight Word Stars", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Blend Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Digraph Dash", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Find the Word", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trace & Say", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Phonics Puzzle", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Story Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "ABC Review", assetName: nil, destination: .placeholder, isLocked: true)
+    static let activities: [LearningActivity] = [
+        .init(id: "feelings.faces", title: "Funny Face Studio", skill: "Explore facial expressions", interaction: "Make and name three face puppets", ageBand: "2–4 with a grown-up", caregiverTip: "Copy a face together. Faces give clues, but we ask how someone feels."),
+        .init(id: "feelings.breathe", title: "Flower Breaths", skill: "Practice a calming routine", interaction: "Grow and settle a flower at your own pace", ageBand: "2–4 with a grown-up", caregiverTip: "Model a comfortable breath. Your child can watch or join; no breath holding."),
+        .init(id: "feelings.teddy", title: "Teddy's Helping Hands", skill: "Offer care and respect choices", interaction: "Choose ways to help Teddy in three little stories", ageBand: "2–4 with a grown-up", caregiverTip: "Offer a hug rather than assuming someone wants one."),
+        .init(id: "feelings.turns", title: "Roll It Together", skill: "Practice taking turns", interaction: "Pass a ball back and forth with a grown-up", ageBand: "2–4 with a grown-up", caregiverTip: "Say my turn and your turn. Try rolling a real ball afterward."),
+        .init(id: "feelings.pause", title: "Wiggle, Slow, Stop", skill: "Explore movement and pauses", interaction: "Follow six movement cards away from the screen", ageBand: "2–4 with a grown-up", caregiverTip: "Clear a safe space. Seated hand movements work just as well."),
+        .init(id: "feelings.weather", title: "My Feeling Weather", skill: "Communicate feelings and needs", interaction: "Choose a feeling, its size, and a support", ageBand: "2–4 with a grown-up", caregiverTip: "Accept every answer, including not sure. Feelings do not need to change."),
+        .init(id: "feelings.kindness", title: "Kindness Garden", skill: "Practice caring actions", interaction: "Choose, act out, and plant three kindness flowers", ageBand: "2–4 with a grown-up", caregiverTip: "Name the caring action you notice without requiring affection."),
+        .init(id: "feelings.tools", title: "My Cozy Toolbox", skill: "Choose a regulation strategy", interaction: "Try three self-paced calming tools together", ageBand: "2–4 with a grown-up", caregiverTip: "These are play ideas, not treatment. Stop a tool if it is uncomfortable."),
+        .init(id: "feelings.body", title: "Body Clue Buddies", skill: "Notice body sensations", interaction: "Explore hands, heartbeat, tummy, and feet", ageBand: "2–4 with a grown-up", caregiverTip: "Let your child describe their own body. A body clue can mean many things."),
+        .init(id: "feelings.bridge", title: "Friendship Bridge", skill: "Use words and solve social problems", interaction: "Build a bridge through three pretend conversations", ageBand: "3–4 with a grown-up", caregiverTip: "Model asking, listening, and accepting no. There can be many kind solutions."),
+        .init(id: "feelings.routine", title: "Cozy Evening Path", skill: "Anticipate familiar routines", interaction: "Put four bedtime pictures in a gentle sequence", ageBand: "2–4 with a grown-up", caregiverTip: "Explain that families have different routines. Talk about your own."),
+        .init(id: "feelings.goodbye", title: "See You Soon", skill: "Rehearse a reassuring goodbye", interaction: "Choose a goodbye, a comfort plan, and a pretend reunion", ageBand: "2–4 with a grown-up", caregiverTip: "Use a familiar caregiver and a predictable return. Never disappear without saying goodbye.")
     ]
-}
-
-private struct GameTileLink: View {
-    let game: PhonicsGame
-    @ObservedObject private var storeManager = StoreManager.shared
-    @State private var showPremiumGate = false
-
-    private var isPremiumLocked: Bool {
-        game.isLocked && !storeManager.hasPremium
-    }
-
+    private let symbols = ["face.smiling.fill", "camera.macro", "heart.fill", "basketball.fill", "figure.cooldown", "cloud.sun.fill", "leaf.fill", "shippingbox.fill", "hand.raised.fill", "person.2.fill", "moon.stars.fill", "hand.wave.fill"]
     var body: some View {
-        Group {
-            if isPremiumLocked {
-                Button {
-                    showPremiumGate = true
-                } label: {
-                    GameTile(game: game, isLocked: true)
-                }
-                .buttonStyle(.plain)
-            } else {
+        ActivityMenu(title: "Big Feelings", subtitle: "12 playful ways to connect and care", accent: .pink) {
+            ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
                 NavigationLink {
-                    destinationView
+                    BFActivityDestination(index: index).learningActivity(activity)
                 } label: {
-                    GameTile(game: game, isLocked: false)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .sheet(isPresented: $showPremiumGate) {
-            PremiumParentGateView()
-        }
-    }
-
-    @ViewBuilder
-    private var destinationView: some View {
-        switch game.destination {
-        case .letterMatch:
-            LetterMatch()
-        case .letterDraw:
-            LetterDraw()
-        case .soundBaskets:
-            SoundBaskets()
-        case .peekabooVehicle:
-            PeekabooVehicleGameView()
-        case .placeholder:
-            ABCsPlaceholderGame(title: game.title)
-        }
-    }
-}
-
-private struct PeekabooVehicleGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = VehiclePeekabooScene(size: size)
-        scene.scaleMode = .aspectFill
-        return scene
-    }
-}
-
-private struct GameTile: View {
-    let game: PhonicsGame
-    let isLocked: Bool
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, category: .feelings)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            if isLocked {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Circle().fill(Color.black.opacity(0.55)))
-                    .padding(7)
-                    .accessibilityLabel(Text("Locked"))
-            }
-        }
-        .contentShape(Rectangle())
-    }
-}
-
-private struct ABCsPlaceholderGame: View {
-    let title: String
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            VStack(spacing: 16) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundColor(.white)
-
-                Text(title)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-
-                Text("Coming Soon")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.9))
-            }
-            .padding(24)
-        }
-    }
-}
-
-private struct ABCsBackgroundLayer: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
-                LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(.all)
-
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
+                    ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbols[index], accent: .pink)
+                }.buttonStyle(.plain)
             }
         }
     }
 }
 
-#Preview {
-    BigFeelingsMenu()
+private struct BFActivityDestination: View {
+    let index: Int
+    @State private var session = UUID()
+    var body: some View { game.id(session) }
+    private func replay() { session = UUID() }
+    @ViewBuilder private var game: some View {
+        switch index {
+        case 0: FunnyFaceStudioGame(onReplay: replay)
+        case 1: FlowerBreathsGame(onReplay: replay)
+        case 2: TeddyHelpingHandsGame(onReplay: replay)
+        case 3: RollItTogetherGame(onReplay: replay)
+        case 4: WiggleSlowStopGame(onReplay: replay)
+        case 5: FeelingWeatherGame(onReplay: replay)
+        case 6: KindnessGardenGame(onReplay: replay)
+        case 7: CozyToolboxGame(onReplay: replay)
+        case 8: BodyClueBuddiesGame(onReplay: replay)
+        case 9: FriendshipBridgeGame(onReplay: replay)
+        case 10: CozyEveningPathGame(onReplay: replay)
+        default: SeeYouSoonGame(onReplay: replay)
+        }
+    }
 }

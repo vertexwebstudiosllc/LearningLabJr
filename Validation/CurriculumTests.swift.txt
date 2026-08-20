@@ -1,0 +1,92 @@
+import XCTest
+import UIKit
+@testable import LearningLabJr
+
+final class CurriculumTests: XCTestCase {
+    @MainActor
+    func testEveryCategoryHasTwelveCompleteUniqueActivities() {
+        let sections = LearningCatalog.sections
+        XCTAssertEqual(sections.count, 6)
+        XCTAssertEqual(LearningCatalog.activities.count, 72)
+        XCTAssertEqual(Set(LearningCatalog.activities.map(\.id)).count, 72)
+        XCTAssertEqual(Set(LearningCatalog.activities.map(\.title)).count, 72)
+        for section in sections {
+            XCTAssertEqual(section.activities.count, 12, section.title)
+            for activity in section.activities {
+                XCTAssertTrue(activity.id.hasPrefix(section.id + "."), activity.id)
+                for field in [activity.title, activity.skill, activity.interaction, activity.ageBand, activity.caregiverTip] {
+                    XCTAssertFalse(field.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, activity.id)
+                    XCTAssertFalse(field.localizedCaseInsensitiveContains("coming soon"), activity.id)
+                }
+            }
+        }
+    }
+
+    func testSessionClockExpiryAndBackgroundElapsedTime() {
+        var clock = PlaySessionClock()
+        XCTAssertEqual(clock.remaining(at: 100), 0)
+        clock.start(minutes: 5, now: 100)
+        XCTAssertEqual(clock.remaining(at: 100), 300)
+        XCTAssertEqual(clock.remaining(at: 340), 60)
+        XCTAssertEqual(clock.remaining(at: 399.1), 1)
+        XCTAssertEqual(clock.remaining(at: 400), 0)
+        XCTAssertEqual(clock.remaining(at: 5000), 0)
+    }
+
+    func testSessionRestartAndStopCannotRetainPreviousDeadline() {
+        var clock = PlaySessionClock()
+        clock.start(minutes: 30, now: 0)
+        clock.start(minutes: 1, now: 20)
+        XCTAssertEqual(clock.remaining(at: 21), 59)
+        clock.stop()
+        XCTAssertNil(clock.deadline)
+        XCTAssertEqual(clock.remaining(at: 22), 0)
+        clock.start(minutes: Int.max, now: 40)
+        XCTAssertEqual(clock.remaining(at: 40), 1800)
+        clock.start(minutes: Int.min, now: 40)
+        XCTAssertEqual(clock.remaining(at: 40), 60)
+    }
+
+    @MainActor
+    func testNatureAndStoryMenuArtworkExistsInBundle() {
+        for activity in NatureActivity.allCases {
+            if let asset = activity.asset { XCTAssertNotNil(UIImage(named: asset), asset) }
+        }
+        for activity in StoryActivity.allCases {
+            if let asset = activity.asset { XCTAssertNotNil(UIImage(named: asset), asset) }
+        }
+        let gameArt = ["dolphin", "cow", "octopus", "sheep", "horse", "calf", "foal", "lamb", "rabbit", "chicken", "Triceratops", "Space/SpaceSuit", "Space/Rocket", "Space/Moon", "Space/Earth", "Space/Spaceman_Child_1", "duck", "pig", "turtle", "crab", "penguin", "Space/Sun", "barnDoorLeft", "barnDoorRight", "Apple", "basketball", "Bread", "dog", "cat", "carBlue", "tractor"]
+        let pages = ["OwenOnionPage", "DinoBasketballPage", "DinoHockeyPage", "DinoBaseballPage"].flatMap { prefix in
+            (1...15).map { "\(prefix)\($0)" }
+        }
+        for asset in gameArt + pages + ["dolphinClean", "AppleClean"] {
+            XCTAssertNotNil(UIImage(named: asset), asset)
+        }
+    }
+
+    @MainActor
+    func testNarrationPrefersNaturalQualityAndHonorsParentSelection() {
+        let standardUS = NarrationVoiceDescriptor(id: "standard", name: "Standard", language: "en-US", quality: 1, gender: .female)
+        let premiumUK = NarrationVoiceDescriptor(id: "premium-uk", name: "Premium UK", language: "en-GB", quality: 3, gender: .female)
+        let premiumUS = NarrationVoiceDescriptor(id: "premium-us", name: "Premium US", language: "en-US", quality: 3, gender: .female)
+        let voices = [standardUS, premiumUK, premiumUS]
+        XCTAssertEqual(NarrationVoiceSelection.selectedIdentifier(in: voices, preferredIdentifier: ""), premiumUS.id)
+        XCTAssertEqual(NarrationVoiceSelection.selectedIdentifier(in: [standardUS, premiumUK], preferredIdentifier: ""), premiumUK.id)
+        XCTAssertEqual(NarrationVoiceSelection.selectedIdentifier(in: voices, preferredIdentifier: standardUS.id), standardUS.id)
+        XCTAssertEqual(NarrationVoiceSelection.selectedIdentifier(in: voices, preferredIdentifier: "deleted-voice"), premiumUS.id)
+        XCTAssertEqual(NarrationVoiceSelection.ranked(voices), NarrationVoiceSelection.ranked(voices.reversed()))
+    }
+
+    @MainActor
+    func testNarrationExcludesNoveltyPersonalAndNonEnglishVoices() {
+        let unsuitable = [
+            NarrationVoiceDescriptor(id: "novelty", name: "Bubbles", language: "en-US", quality: 3, gender: .unspecified),
+            NarrationVoiceDescriptor(id: "flagged", name: "Character", language: "en-US", quality: 3, gender: .female, isNovelty: true),
+            NarrationVoiceDescriptor(id: "personal", name: "Personal", language: "en-US", quality: 3, gender: .female, isPersonal: true),
+            NarrationVoiceDescriptor(id: "french", name: "French", language: "fr-FR", quality: 3, gender: .female)
+        ]
+        XCTAssertTrue(NarrationVoiceSelection.ranked(unsuitable).isEmpty)
+        XCTAssertNil(NarrationVoiceSelection.selectedIdentifier(in: unsuitable, preferredIdentifier: "personal"))
+        XCTAssertNil(NarrationVoiceSelection.selectedIdentifier(in: [], preferredIdentifier: ""))
+    }
+}

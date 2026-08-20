@@ -1,267 +1,35 @@
-//
-//  LetterDraw.swift
-//  LearningLabJr
-//
-//  Toddler‑friendly word tracing game.
-//
-
-@preconcurrency import SwiftUI
-import AVFoundation
-import AudioToolbox
+import SwiftUI
 import UIKit
 import CoreText
 
+/// Keeps the original glyph outlines and stroke guidance, with one roomy letter at a time.
 struct LetterDraw: View {
-    @State private var currentWord = WordRound.randomWord()
-    @State private var showFeedback: FeedbackType? = nil
-    @State private var animateFeedback = false
-    @State private var isInputLocked = false
-    @State private var successPlayer: AVAudioPlayer?
-
-    private let words: [String] = ["cat", "dog", "sun", "hat", "fish", "goat", "moon", "ball", "tree", "frog"]
+    @StateObject private var play = LiteracyPlay()
+    @State private var canvasID = UUID()
+    private var letter: String { ["L", "T", "I"][play.round] }
 
     var body: some View {
-        ZStack {
-            background
-
-            GeometryReader { geo in
-                let pictureSize = min(132, max(88, geo.size.height * 0.18))
-
-                VStack(spacing: 20) {
-                    Spacer().frame(height: geo.size.height * 0.08)
-
-                    WordImageBadge(word: currentWord.display, size: pictureSize)
-
-                    Text(currentWord.display.uppercased())
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
-                        .foregroundColor(.white.opacity(0.9))
-
-                    WordTraceView(
-                        word: currentWord.display,
-                        onCompletion: handleCompletion
-                    )
-                    .id(currentWord.display) // reset tracing state when word changes
-                    .padding(.horizontal, 20)
-
-                    Spacer()
-
-                    Button(action: nextWord) {
-                        Text("Next Word")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 14)
-                            .background(
-                                Capsule().fill(Color.blue.opacity(0.85))
-                            )
-                            .shadow(color: Color.blue.opacity(0.35), radius: 10, x: 0, y: 6)
-                    }
-                    .padding(.bottom, 30)
-                    .disabled(isInputLocked)
-                }
-                .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
-            }
-
-            if let feedback = showFeedback {
-                FeedbackOverlay(type: feedback, animate: animateFeedback)
-            }
-        }
-        .onAppear(perform: prepareSuccessSound)
-    }
-
-    private var background: some View {
-        LinearGradient(
-            colors: [
-                Color(red: 0.98, green: 0.85, blue: 0.65),
-                Color(red: 1.0, green: 0.74, blue: 0.58),
-                Color(red: 1.0, green: 0.64, blue: 0.54)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .ignoresSafeArea()
-    }
-
-    // MARK: - Actions
-
-    private func handleCompletion() {
-        guard !isInputLocked else { return }
-        isInputLocked = true
-        showFeedback = .success
-        animateFeedback = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            withAnimation(.spring(response: 0.5, dampingFraction: 0.6)) {
-                animateFeedback = true
-            }
-        }
-        playSuccess()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            nextWord()
-        }
-    }
-
-    private func nextWord() {
-        currentWord = WordRound.randomWord(from: words)
-        showFeedback = nil
-        animateFeedback = false
-        isInputLocked = false
-    }
-
-    // MARK: - Sound
-
-    private func prepareSuccessSound() {
-        if let url = Bundle.main.url(forResource: "SuccessSound", withExtension: "wav") {
-            successPlayer = try? AVAudioPlayer(contentsOf: url)
-            successPlayer?.prepareToPlay()
-        }
-    }
-
-    private func playSuccess() {
-        if let player = successPlayer {
-            player.currentTime = 0
-            player.play()
-        } else {
-            AudioServicesPlaySystemSound(1110) // fallback system ping
-        }
-    }
-}
-
-// MARK: - Word Image
-
-private struct WordImageBadge: View {
-    let word: String
-    let size: CGFloat
-
-    private var picture: String {
-        switch word.lowercased() {
-        case "cat": return "🐱"
-        case "dog": return "🐶"
-        case "sun": return "☀️"
-        case "hat": return "🎩"
-        case "fish": return "🐠"
-        case "goat": return "🐐"
-        case "moon": return "🌙"
-        case "ball": return "⚽️"
-        case "tree": return "🌳"
-        case "frog": return "🐸"
-        default: return "⭐️"
-        }
-    }
-
-    var body: some View {
-        Text(picture)
-            .font(.system(size: size * 0.67))
-            .frame(width: size, height: size)
-            .background(
-                Circle()
-                    .fill(Color.white.opacity(0.88))
-                    .shadow(color: Color.orange.opacity(0.25), radius: 12, x: 0, y: 8)
-            )
-            .accessibilityLabel(Text(word))
-    }
-}
-
-// MARK: - Feedback
-
-private enum FeedbackType {
-    case success
-    case failure
-
-    var symbolName: String {
-        switch self {
-        case .success: return "checkmark.circle.fill"
-        case .failure: return "xmark.circle.fill"
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .success: return .green
-        case .failure: return .red
-        }
-    }
-}
-
-private struct FeedbackOverlay: View {
-    let type: FeedbackType
-    let animate: Bool
-
-    var body: some View {
-        ZStack {
-            Color.black.opacity(0.15).ignoresSafeArea()
-            Image(systemName: type.symbolName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 140, height: 140)
-                .foregroundStyle(type.color)
-                .shadow(color: type.color.opacity(0.5), radius: 12, x: 0, y: 8)
-                .scaleEffect(animate ? 1.0 : 0.4)
-                .opacity(animate ? 1.0 : 0.2)
-                .animation(.spring(response: 0.45, dampingFraction: 0.6), value: animate)
-        }
-        .transition(.opacity)
-    }
-}
-
-// MARK: - Models
-
-private struct WordRound {
-    let display: String
-
-    static func randomWord(from list: [String] = defaultWords) -> WordRound {
-        WordRound(display: list.randomElement() ?? "cat")
-    }
-
-    private static let defaultWords = ["cat", "dog", "sun", "hat", "fish", "goat", "moon", "ball", "tree", "frog"]
-}
-
-// MARK: - Word Trace View
-
-private struct WordTraceView: View {
-    let word: String
-    let onCompletion: () -> Void
-
-    @State private var letterCompletion: [Bool]
-    private let letters: [String]
-
-    init(word: String, onCompletion: @escaping () -> Void) {
-        self.word = word
-        self.onCompletion = onCompletion
-        self.letters = Array(word.uppercased()).map { String($0) }
-        _letterCompletion = State(initialValue: Array(repeating: false, count: word.count))
-    }
-
-    var body: some View {
-        GeometryReader { geo in
-            let width = geo.size.width
-            let spacing: CGFloat = 12
-            let letterWidth = (width - CGFloat(letters.count - 1) * spacing) / CGFloat(letters.count)
-            let letterHeight: CGFloat = 200
-
-            HStack(alignment: .center, spacing: spacing) {
-                ForEach(letters.indices, id: \.self) { idx in
-                    let letter = letters[idx]
-                    LetterTraceView(
-                        letter: letter,
-                        isComplete: Binding(
-                            get: { letterCompletion[idx] },
-                            set: { newValue in
-                                letterCompletion[idx] = newValue
-                                if letterCompletion.allSatisfy({ $0 }) {
-                                    onCompletion()
-                                }
-                            }
-                        )
-                    )
-                    .frame(width: letterWidth, height: letterHeight, alignment: .center)
+        LiteracyStage(title: "Letter Draw", prompt: "Draw over the big letter \(letter). Or draw it in the air with your grown-up.", play: play) {
+            VStack(spacing: 18) {
+                LetterTraceView(letter: letter, isComplete: Binding(
+                    get: { play.solved },
+                    set: { done in if done { play.win("You explored the lines in \(letter)!") } }
+                ))
+                .id("\(play.round)-\(canvasID)")
+                .frame(height: 300)
+                .padding(20)
+                .background(Color(red: 0.15, green: 0.32, blue: 0.36), in: RoundedRectangle(cornerRadius: 26))
+                .accessibilityLabel("Drawing canvas for letter \(letter)")
+                .accessibilityHint("Trace the large dotted letter with your finger, or use the air drawing button below.")
+                ToddlerActionButton(title: "Clear my drawing", systemImage: "arrow.counterclockwise", color: .orange) { canvasID = UUID() }
+                ToddlerActionButton(title: "We drew it in the air", systemImage: "hand.draw.fill", color: .orange) {
+                    play.win("You made the letter \(letter) together!")
                 }
             }
         }
-        .frame(height: 220)
+        .onChange(of: play.complete) { _, done in if !done { canvasID = UUID() } }
     }
 }
-
-// MARK: - Letter Trace View
 
 private struct LetterTraceView: View {
     let letter: String
@@ -301,6 +69,7 @@ private struct LetterTraceView: View {
                         Path { path in
                             guard let first = strokes[idx].first else { return }
                             path.move(to: first)
+                            path.addLine(to: CGPoint(x: first.x + 0.1, y: first.y))
                             for p in strokes[idx].dropFirst() { path.addLine(to: p) }
                         }
                         .stroke(isComplete ? Color.green : Color.blue, style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
@@ -310,21 +79,24 @@ private struct LetterTraceView: View {
                     Path { path in
                         guard let first = activeStroke.first else { return }
                         path.move(to: first)
+                        path.addLine(to: CGPoint(x: first.x + 0.1, y: first.y))
                         for p in activeStroke.dropFirst() { path.addLine(to: p) }
                     }
                     .stroke(Color.blue.opacity(0.7), style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
                 }
                 .clipShape(glyphShape)
             }
-            .contentShape(glyphShape) // hit test within glyph; clip keeps strokes tidy
+            .contentShape(Rectangle()) // A broad canvas accepts imprecise toddler starting points.
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
+                        guard !isComplete else { return }
                         let point = value.location
-                        activeStroke.append(point)
+                        if activeStroke.last.map({ $0.distance(to: point) > 2 }) ?? true { activeStroke.append(point) }
                     }
                     .onEnded { _ in
-                        strokes.append(activeStroke)
+                        guard !isComplete else { return }
+                        if !activeStroke.isEmpty { strokes.append(activeStroke) }
                         activeStroke = []
                         evaluateCompletion(in: rect)
                     }
@@ -338,13 +110,13 @@ private struct LetterTraceView: View {
         let allPoints = strokes.flatMap { $0 }
         guard !samples.isEmpty else { return }
 
-        let tolerance: CGFloat = 18
+        let tolerance: CGFloat = 28
         let hitCount = samples.filter { sample in
             allPoints.contains(where: { $0.distance(to: sample) < tolerance })
         }.count
 
         let coverage = CGFloat(hitCount) / CGFloat(samples.count)
-        if coverage > 0.7 {
+        if coverage > 0.55 {
             isComplete = true
         }
     }
@@ -559,38 +331,51 @@ private extension CGPoint {
 
 private extension CGPath {
     func sampledPoints(step: CGFloat) -> [CGPoint] {
+        guard step.isFinite, step > 0 else { return [] }
         var points: [CGPoint] = []
         var lastPoint: CGPoint = .zero
+        var subpathStart: CGPoint = .zero
+
+        func appendLine(to end: CGPoint) {
+            let start = lastPoint
+            let segments = max(1, Int(ceil(start.distance(to: end) / step)))
+            for index in 1...segments {
+                let fraction = CGFloat(index) / CGFloat(segments)
+                points.append(CGPoint(
+                    x: start.x + (end.x - start.x) * fraction,
+                    y: start.y + (end.y - start.y) * fraction
+                ))
+            }
+            lastPoint = end
+        }
 
         self.forEach { element in
             switch element.type {
             case .moveToPoint:
                 lastPoint = element.points[0]
+                subpathStart = lastPoint
                 points.append(lastPoint)
             case .addLineToPoint:
-                let end = element.points[0]
-                let dist = lastPoint.distance(to: end)
-                let segments = max(1, Int(dist / step))
-                for i in 1...segments {
-                    let t = CGFloat(i) / CGFloat(segments)
-                    let interp = CGPoint(
-                        x: lastPoint.x + (end.x - lastPoint.x) * t,
-                        y: lastPoint.y + (end.y - lastPoint.y) * t
-                    )
-                    points.append(interp)
+                appendLine(to: element.points[0])
+            case .addQuadCurveToPoint, .addCurveToPoint:
+                let controlCount = element.type == .addQuadCurveToPoint ? 1 : 2
+                let end = element.points[controlCount]
+                // Control-polygon length also samples curves whose endpoints coincide.
+                var polygonLength: CGFloat = 0
+                var previous = lastPoint
+                for index in 0...controlCount {
+                    let point = element.points[index]
+                    polygonLength += previous.distance(to: point)
+                    previous = point
+                }
+                let segments = max(1, Int(ceil(polygonLength / step)))
+                for index in 1...segments {
+                    points.append(self.evaluate(element: element, t: CGFloat(index) / CGFloat(segments), start: lastPoint))
                 }
                 lastPoint = end
-            case .addQuadCurveToPoint, .addCurveToPoint, .closeSubpath:
-                let controlPoints = element.points
-                let count = element.type == .addQuadCurveToPoint ? 1 : 2
-                let end = controlPoints[count]
-                let segments = max(1, Int(lastPoint.distance(to: end) / step))
-                for i in 1...segments {
-                    let t = CGFloat(i) / CGFloat(segments)
-                    let p = self.evaluate(element: element, t: t, start: lastPoint)
-                    points.append(p)
-                }
-                lastPoint = end
+            case .closeSubpath:
+                // Close elements have zero points; reading element.points is invalid.
+                appendLine(to: subpathStart)
             @unknown default:
                 break
             }

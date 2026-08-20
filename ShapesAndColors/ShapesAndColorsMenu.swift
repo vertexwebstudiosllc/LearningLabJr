@@ -1,235 +1,53 @@
-//
-//  ABCsAndPhonicsMenu.swift
-//  LearningLabJr
-//
-//  Created by Matthew Teitelman on 12/10/25.
-//
-
-import SpriteKit
 import SwiftUI
 
 struct ShapesAndColorsMenu: View {
-    private let games = PhonicsGame.allGames
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 12
-                let columnsCount = min(3, max(1, Int((geo.size.width - horizontalPadding * 2) / 104)))
-                let columns = Array(
-                    repeating: GridItem(.flexible(), spacing: spacing),
-                    count: columnsCount
-                )
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198) // match MainMenu logo sizing
-                            .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490) // align with MainMenu hero sizing
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(games) { game in
-                                GameTileLink(game: game)
-                                    .aspectRatio(1, contentMode: .fit)
-                            }
-                        }
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.top, -145)
-                        .padding(.bottom, 48)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
-            }
-        }
-    }
-}
-
-// MARK: - Game Tiles
-
-private struct PhonicsGame: Identifiable {
-    enum Destination {
-        case letterMatch
-        case letterDraw
-        case soundBaskets
-        case peekabooVehicle
-        case placeholder
-    }
-
-    let id = UUID()
-    let title: String
-    let assetName: String?
-    let destination: Destination
-    let isLocked: Bool
-
-    static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Letter Match", assetName: "Button-Letter-Match", destination: .letterMatch, isLocked: false),
-        PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
-        PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: false),
-        PhonicsGame(title: "Rhyme Time", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Pop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Ending Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Sight Word Stars", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Blend Builder", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Digraph Dash", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Letter Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Find the Word", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Trace & Say", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Phonics Puzzle", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "Story Sounds", assetName: nil, destination: .placeholder, isLocked: true),
-        PhonicsGame(title: "ABC Review", assetName: nil, destination: .placeholder, isLocked: true)
+    static let activities: [LearningActivity] = [
+        .init(id: "shapes.post", title: "Shape Post", skill: "Recognize shape outlines", interaction: "Post stamps through matching openings", ageBand: "2–4 with a grown-up", caregiverTip: "Trace the edges with your finger and name the shape."),
+        .init(id: "shapes.laundry", title: "Color Laundry", skill: "Sort by one attribute", interaction: "Place shirts in color baskets", ageBand: "2–4 with a grown-up", caregiverTip: "Try sorting real socks together afterward."),
+        .init(id: "shapes.mix", title: "Little Color Lab", skill: "Explore color mixing", interaction: "Combine paints to discover three new colors", ageBand: "2–4 with a grown-up", caregiverTip: "Wonder together: what might these paints make?"),
+        .init(id: "shapes.train", title: "Pattern Train", skill: "Notice repeating patterns", interaction: "Extend three repeating trains", ageBand: "3–4 with a grown-up", caregiverTip: "Read each pattern aloud before choosing the next carriage."),
+        .init(id: "shapes.town", title: "Build a Shape Town", skill: "Compose pictures from shapes", interaction: "Build a house, rocket, and tree", ageBand: "2–4 with a grown-up", caregiverTip: "Talk about which pieces sit above or below the others."),
+        .init(id: "shapes.nest", title: "Nesting Shapes", skill: "Compare small, medium, and large", interaction: "Layer shapes from largest to smallest", ageBand: "2–4 with a grown-up", caregiverTip: "Use your hands to show big and small."),
+        .init(id: "shapes.trail", title: "Shape Trails", skill: "Explore lines and boundaries", interaction: "Trace or tap a path around three shapes", ageBand: "2–4 with a grown-up", caregiverTip: "A broad scribble is welcome. Guide a finger only if invited."),
+        .init(id: "shapes.garden", title: "Mosaic Garden", skill: "Make creative color choices", interaction: "Choose paints and decorate six flower petals", ageBand: "2–4 with a grown-up", caregiverTip: "Describe the choices without asking for a right answer."),
+        .init(id: "shapes.wings", title: "Mirror Wings", skill: "Notice matching sides", interaction: "Paint spots and reveal mirrored partners", ageBand: "3–4 with a grown-up", caregiverTip: "Point to the same spot on the other wing."),
+        .init(id: "shapes.safari", title: "Shape Safari", skill: "Find shapes in everyday objects", interaction: "Find round, square, and triangular objects", ageBand: "2–4 with a grown-up", caregiverTip: "Find another example in the room after each round."),
+        .init(id: "shapes.reveal", title: "Rainbow Windows", skill: "Connect color words and objects", interaction: "Open six windows to reveal a rainbow collection", ageBand: "2–4 with a grown-up", caregiverTip: "Ask which color your child wants to explore next."),
+        .init(id: "shapes.roads", title: "Little Road Trip", skill: "Follow routes and position words", interaction: "Move a car along a winding path to its home", ageBand: "3–4 with a grown-up", caregiverTip: "Say across, up, and down as you guide the car together.")
     ]
-}
-
-private struct GameTileLink: View {
-    let game: PhonicsGame
-
+    private let symbols = ["envelope.fill", "tshirt.fill", "paintpalette.fill", "tram.fill", "house.fill", "square.3.layers.3d", "pencil.tip", "camera.macro", "butterfly.fill", "magnifyingglass", "rainbow", "car.fill"]
     var body: some View {
-        NavigationLink {
-            destinationView
-        } label: {
-            GameTile(game: game)
-        }
-        .buttonStyle(.plain)
-    }
-
-    @ViewBuilder
-    private var destinationView: some View {
-        switch game.destination {
-        case .letterMatch:
-            LetterMatch()
-        case .letterDraw:
-            LetterDraw()
-        case .soundBaskets:
-            SoundBaskets()
-        case .peekabooVehicle:
-            PeekabooVehicleGameView()
-        case .placeholder:
-            ABCsPlaceholderGame(title: game.title)
-        }
-    }
-}
-
-private struct PeekabooVehicleGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = VehiclePeekabooScene(size: size)
-        scene.scaleMode = .aspectFill
-        return scene
-    }
-}
-
-private struct GameTile: View {
-    let game: PhonicsGame
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, category: .shapes)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            if game.isLocked {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Circle().fill(Color.black.opacity(0.55)))
-                    .padding(7)
-                    .accessibilityLabel(Text("Locked"))
-            }
-        }
-        .contentShape(Rectangle())
-    }
-}
-
-private struct ABCsPlaceholderGame: View {
-    let title: String
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            VStack(spacing: 16) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundColor(.white)
-
-                Text(title)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-
-                Text("Coming Soon")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.9))
-            }
-            .padding(24)
-        }
-    }
-}
-
-private struct ABCsBackgroundLayer: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
-                LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(.all)
-
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
+        ActivityMenu(title: "Shapes & Colors", subtitle: "12 ways to sort, build, paint, and discover", accent: .blue) {
+            ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
+                NavigationLink {
+                    SCActivityDestination(index: index).learningActivity(activity)
+                } label: {
+                    ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbols[index], accent: .blue)
+                }.buttonStyle(.plain)
             }
         }
     }
 }
 
-#Preview {
-    ShapesAndColorsMenu()
+private struct SCActivityDestination: View {
+    let index: Int
+    @State private var session = UUID()
+    var body: some View { game.id(session) }
+    private func replay() { session = UUID() }
+    @ViewBuilder private var game: some View {
+        switch index {
+        case 0: ShapePostGame(onReplay: replay)
+        case 1: ColorLaundryGame(onReplay: replay)
+        case 2: ColorLabGame(onReplay: replay)
+        case 3: PatternTrainGame(onReplay: replay)
+        case 4: ShapeTownGame(onReplay: replay)
+        case 5: NestingShapesGame(onReplay: replay)
+        case 6: ShapeTrailsGame(onReplay: replay)
+        case 7: MosaicGardenGame(onReplay: replay)
+        case 8: MirrorWingsGame(onReplay: replay)
+        case 9: ShapeSafariGame(onReplay: replay)
+        case 10: RainbowWindowsGame(onReplay: replay)
+        default: LittleRoadTripGame(onReplay: replay)
+        }
+    }
 }

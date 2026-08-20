@@ -1,160 +1,77 @@
-import SpriteKit
 import SwiftUI
 
 struct NatureExplorersMenu: View {
-    private let games = NatureExplorerGame.allGames
+    static let activities: [LearningActivity] = NatureActivity.allCases.map(\.metadata)
 
     var body: some View {
-        ZStack {
-            NatureMenuBackground()
-
-            GeometryReader { geo in
-                let padding: CGFloat = 20
-                let spacing: CGFloat = 12
-                let count = min(3, max(1, Int((geo.size.width - padding * 2) / 104)))
-                let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: count)
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198)
-                            .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490)
-                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(games) { game in
-                                NavigationLink {
-                                    NatureGameDestination(game: game)
-                                } label: {
-                                    NatureGameTile(game: game)
-                                        .aspectRatio(1, contentMode: .fit)
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
-                        .padding(.horizontal, padding)
-                        .padding(.top, -145)
-                        .padding(.bottom, 48)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
+        ActivityMenu(title: "Nature Explorers", subtitle: "12 little adventures in our wonderful world", accent: .teal) {
+            ForEach(NatureActivity.allCases) { activity in
+                NavigationLink {
+                    NatureGameDestination(activity: activity)
+                        .learningActivity(activity.metadata)
+                } label: {
+                    ActivityCard(title: activity.metadata.title, subtitle: activity.metadata.skill,
+                                 symbol: activity.symbol, asset: activity.asset, accent: .teal)
                 }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
+                .buttonStyle(.plain)
             }
         }
     }
 }
 
-struct NatureExplorerGame: Identifiable, Hashable {
-    enum Kind: String, Hashable {
-        case habitat, dino, space, families, size, pattern
-        case peekaboo, oddOne, memory, fossil, scene, counting, clues
+enum NatureActivity: String, CaseIterable, Identifiable {
+    case habitats, tracks, moon, families, barn, garden, cleanup, weather, movement, dayNight, clues, nest
+    var id: String { "nature.\(rawValue)" }
+
+    var metadata: LearningActivity {
+        let details: (String, String, String, String)
+        switch self {
+        case .habitats: details = ("Habitat Helpers", "Animal homes", "Send each animal to its pictured home", "Name an animal you have seen outside.")
+        case .tracks: details = ("Dinosaur Trail", "Observation & discovery", "Follow connected footprints to uncover a dinosaur", "Make pretend dinosaur footprints with your hands.")
+        case .moon: details = ("Moon Mission", "Earth & space", "Pack a spacesuit, launch, land, and return home", "Look for the Moon together, even during the day.")
+        case .families: details = ("Animal Families", "Animal vocabulary", "Connect adults with their babies", "A baby horse is a foal. A pony is a small horse, not a baby.")
+        case .barn: details = ("Peekaboo Barnyard", "Listening & cause and effect", "Open the doors, meet an animal, and imitate its sound", "Take turns making your own animal sounds.")
+        case .garden: details = ("Little Garden", "What plants need", "Plant a seed and give it soil, water, and sunshine", "Care for a real plant together. Growing takes time.")
+        case .cleanup: details = ("Ocean Helpers", "Care for living things", "Pick up litter while leaving sea animals in their home", "An adult can help put litter in a bin on your next walk.")
+        case .weather: details = ("Weather Window", "Notice the weather", "Change a weather window and explore rain, wind, and sunshine", "Look out of a real window and describe today’s weather.")
+        case .movement: details = ("Move Like an Animal", "Animal movement", "Watch an animal and copy three different movements", "Make room nearby and move together; seated movements count too.")
+        case .dayNight: details = ("Day & Night", "Observe light and dark", "Turn between day and night and find changing details", "The Sun is a star; the Moon can also be seen in daytime.")
+        case .clues: details = ("Nature Detective", "Describe living things", "Open spoken clues and identify the animal", "Describe an animal without naming it and invite a guess.")
+        case .nest: details = ("A Cozy Nest", "How birds build", "Choose twigs, weave a nest, and settle the eggs", "Watch a nest from far away and leave it undisturbed.")
+        }
+        return LearningActivity(id: id, title: details.0, skill: details.1, interaction: details.2,
+                                ageBand: self == .clues ? "3–4 with a grown-up" : "2–4 with a grown-up", caregiverTip: details.3)
     }
 
-    let kind: Kind
-    let title: String
-    let subtitle: String
-    let image: String
-    let colors: [Color]
-    var id: Kind { kind }
-
-    static let allGames: [NatureExplorerGame] = [
-        .init(kind: .habitat, title: "Habitat Helpers", subtitle: "Send each creature home.", image: "dolphin", colors: [.teal, .blue]),
-        .init(kind: .dino, title: "Dino Discovery", subtitle: "Excavate a hidden dinosaur.", image: "Triceratops", colors: [.green, .orange]),
-        .init(kind: .space, title: "Space Scouts", subtitle: "Launch and guide a rocket.", image: "Rocket", colors: [.indigo, .purple]),
-        .init(kind: .families, title: "Animal Families", subtitle: "Connect three family pairs.", image: "calf", colors: [.orange, .pink]),
-        .init(kind: .size, title: "Big & Little Safari", subtitle: "Build a smallest-to-biggest line.", image: "blue whale", colors: [.cyan, .blue]),
-        .init(kind: .pattern, title: "Nature Patterns", subtitle: "Finish the picture pattern.", image: "starfish", colors: [.purple, .pink]),
-        .init(kind: .peekaboo, title: "Peekaboo Barnyard", subtitle: "Open the barn and meet animals.", image: "cow", colors: [.yellow, .orange]),
-        .init(kind: .memory, title: "Explorer Memory", subtitle: "Remember the hidden picture.", image: "Telescope", colors: [.mint, .teal]),
-        .init(kind: .fossil, title: "Fossil Detectives", subtitle: "Brush off clues and solve a mystery.", image: "DinoBone", colors: [.brown, .orange]),
-        .init(kind: .scene, title: "Where Does It Belong?", subtitle: "Sort a discovery queue by world.", image: "WoollyMammoth", colors: [.green, .teal]),
-        .init(kind: .counting, title: "Creature Counter", subtitle: "Touch every creature as you count.", image: "penguin", colors: [.blue, .mint]),
-        .init(kind: .clues, title: "Who Am I?", subtitle: "Solve friendly nature clues.", image: "Smilodon", colors: [.red, .orange])
-    ]
-}
-
-private struct NatureGameTile: View {
-    let game: NatureExplorerGame
-
-    var body: some View {
-        RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .fill(LinearGradient(colors: game.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
-            .overlay(alignment: .topTrailing) {
-                Circle()
-                    .fill(.white.opacity(0.18))
-                    .frame(width: 68, height: 68)
-                    .offset(x: 16, y: -18)
-            }
-            .overlay {
-                VStack(spacing: 5) {
-                    Image(game.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 48)
-                        .shadow(color: .black.opacity(0.2), radius: 4, y: 3)
-
-                    Text(game.title)
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.72)
-
-                    Text(game.subtitle)
-                        .font(.system(size: 9, weight: .semibold, design: .rounded))
-                        .opacity(0.9)
-                        .lineLimit(2)
-                }
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.white)
-                .padding(7)
-            }
-            .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel("\(game.title). \(game.subtitle)")
+    var symbol: String {
+        switch self {
+        case .habitats: "house.fill"
+        case .tracks: "pawprint.fill"
+        case .moon: "moon.stars.fill"
+        case .families: "heart.fill"
+        case .barn: "door.left.hand.open"
+        case .garden: "leaf.fill"
+        case .cleanup: "water.waves"
+        case .weather: "cloud.sun.rain.fill"
+        case .movement: "figure.walk"
+        case .dayNight: "sun.max.fill"
+        case .clues: "magnifyingglass"
+        case .nest: "bird.fill"
+        }
     }
-}
 
-private struct NatureMenuBackground: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
-                LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(.all)
-
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-            }
+    var asset: String? {
+        switch self {
+        case .habitats: "dolphin"
+        case .tracks: "Triceratops"
+        case .moon: "Space/Rocket"
+        case .families: "calf"
+        case .barn: "cow"
+        case .cleanup: "turtle"
+        case .movement: "rabbit"
+        case .clues: "octopus"
+        case .dayNight: "Space/Sun"
+        default: nil
         }
     }
 }

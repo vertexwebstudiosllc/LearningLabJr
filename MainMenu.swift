@@ -6,12 +6,28 @@ struct LearningLabHomeView: View {
     var body: some View {
         ZStack {
             BackgroundLayer()
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
 
             GeometryReader { geo in
                 let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 12
+                let spacing: CGFloat = 10
                 let columnCount = min(3, max(2, Int((geo.size.width - horizontalPadding * 2) / 150)))
-                let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: columnCount)
+                let compactHeight = geo.size.height < 750
+                let rowCount = CGFloat((categories.count + columnCount - 1) / columnCount)
+                let widthAvailable = geo.size.width - horizontalPadding * 2 - CGFloat(columnCount - 1) * spacing
+                let widthBasedSize = widthAvailable / CGFloat(columnCount)
+                let reservedHeight: CGFloat = compactHeight ? 335 : 390
+                let heightAvailable = geo.size.height - reservedHeight - (rowCount - 1) * spacing
+                let heightBasedSize = heightAvailable / rowCount
+                let maximumTileSize: CGFloat = geo.size.width < 500 ? 145 : 160
+                let tileSize = max(96, min(widthBasedSize, heightBasedSize, maximumTileSize))
+                let logoSize: CGFloat = compactHeight ? 145 : 165
+                let kidsSize: CGFloat = compactHeight ? 320 : 380
+                let columns = Array(
+                    repeating: GridItem(.fixed(tileSize), spacing: spacing),
+                    count: columnCount
+                )
 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
@@ -20,36 +36,41 @@ struct LearningLabHomeView: View {
                         Image("learningLabLogo")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198)
+                            .frame(maxWidth: logoSize, maxHeight: logoSize)
                             .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
                             .offset(y: -8)
+                            .allowsHitTesting(false)
+                            .accessibilityHidden(true)
 
                         Image("learningLabKids")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490)
+                            .frame(maxWidth: kidsSize, maxHeight: kidsSize)
                             .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
+                            .padding(.top, compactHeight ? -130 : -145)
+                            .allowsHitTesting(false)
+                            .accessibilityHidden(true)
 
                         LazyVGrid(columns: columns, spacing: spacing) {
                             ForEach(categories) { category in
                                 NavigationLink {
                                     category.destination
                                 } label: {
-                                    HomeCategoryTile(category: category)
+                                    HomeCategoryTile(category: category, compact: compactHeight)
                                         .aspectRatio(1, contentMode: .fit)
                                 }
                                 .buttonStyle(.plain)
                                 .accessibilityHint("Opens the \(category.title) games")
                             }
                         }
+                        .frame(maxWidth: CGFloat(columnCount) * tileSize + CGFloat(columnCount - 1) * spacing)
                         .padding(.horizontal, horizontalPadding)
-                        .padding(.top, -145)
+                        .padding(.top, compactHeight ? -105 : -118)
 
                         HStack {
                             Spacer()
                             NavigationLink {
-                                ParentsCornerMenu()
+                                ParentAccessView()
                             } label: {
                                 Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
                                     .font(.system(size: 15, weight: .bold, design: .rounded))
@@ -64,8 +85,8 @@ struct LearningLabHomeView: View {
                             .accessibilityHint("Opens settings and parent information")
                         }
                         .padding(.horizontal, 24)
-                        .padding(.top, 18)
-                        .padding(.bottom, 36)
+                        .padding(.top, 14)
+                        .padding(.bottom, 24)
                     }
                     .frame(minHeight: geo.size.height, alignment: .top)
                 }
@@ -100,7 +121,7 @@ private struct HomeCategory: Identifiable {
     static let allCategories: [HomeCategory] = [
         .init(kind: .phonics, title: "ABCs & Phonics", subtitle: "Letters, sounds & words", icon: "character.book.closed.fill", colors: [.orange, .pink]),
         .init(kind: .shapes, title: "Shapes & Colors", subtitle: "Match, sort & create", icon: "paintpalette.fill", colors: [.blue, .cyan]),
-        .init(kind: .counting, title: "123s & Counting", subtitle: "Count, add & compare", icon: "123.rectangle.fill", colors: [.green, .mint]),
+        .init(kind: .counting, title: "123s & Counting", subtitle: "Count, share & compare", icon: "123.rectangle.fill", colors: [.green, .mint]),
         .init(kind: .nature, title: "Nature Explorers", subtitle: "Animals & discovery", icon: "leaf.fill", colors: [.teal, .blue]),
         .init(kind: .stories, title: "Story Time", subtitle: "Read, imagine & learn", icon: "book.fill", colors: [.purple, .indigo]),
         .init(kind: .feelings, title: "Big Feelings", subtitle: "Name, understand & grow", icon: "heart.fill", colors: [.pink, .purple])
@@ -109,32 +130,36 @@ private struct HomeCategory: Identifiable {
 
 private struct HomeCategoryTile: View {
     let category: HomeCategory
+    let compact: Bool
 
     var body: some View {
         RoundedRectangle(cornerRadius: 16, style: .continuous)
             .fill(LinearGradient(colors: category.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
             .overlay {
-                VStack(spacing: 9) {
+                VStack(spacing: compact ? 6 : 9) {
                     Image(systemName: category.icon)
-                        .font(.system(size: 29, weight: .bold))
+                        .font(.system(size: compact ? 23 : 29, weight: .bold))
 
                     Text(category.title)
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .font(.system(size: compact ? 14 : 16, weight: .bold, design: .rounded))
                         .lineLimit(2)
+                        .minimumScaleFactor(0.75)
 
                     Text(category.subtitle)
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.system(size: compact ? 9 : 11, weight: .semibold, design: .rounded))
                         .opacity(0.9)
-                        .lineLimit(2)
+                        .lineLimit(compact ? 1 : 2)
+                        .minimumScaleFactor(0.7)
                 }
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
-                .padding(10)
+                .padding(compact ? 7 : 10)
             }
             .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
             .contentShape(Rectangle())
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("\(category.title). \(category.subtitle)")
+            .accessibilityIdentifier("category.\(category.title)")
     }
 }
 
@@ -156,14 +181,7 @@ private struct BackgroundLayer: View {
                 .ignoresSafeArea(.all)
 
                 // Preferred background art, full bleed without offsets
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                // Fallback to PlayfulBackground if that asset is present
+                // The bundled artwork is named PlayfulBackground.
                 Image("PlayfulBackground")
                     .resizable()
                     .scaledToFill()

@@ -1,313 +1,74 @@
-//
-//  ABCsAndPhonicsMenu.swift
-//  LearningLabJr
-//
-//  Created by Matthew Teitelman on 12/10/25.
-//
-
-import SpriteKit
 import SwiftUI
 
 struct ABCsAndPhonicsMenu: View {
-    private let games = PhonicsGame.allGames
+    static let activities: [LearningActivity] = [
+        .init(id: "phonics.letter-match", title: "Letter Twins", skill: "Notice matching letter shapes", interaction: "Match a large letter to its identical twin", ageBand: "Ages 2–4", caregiverTip: "Notice lines and curves together; letter names can come gradually."),
+        .init(id: "phonics.letter-draw", title: "Letter Draw", skill: "Explore letter formation", interaction: "Trace one large letter or draw it in the air together", ageBand: "Optional · Ages 4+", caregiverTip: "Let your child use a whole arm in the air before tracing on screen."),
+        .init(id: "phonics.sound-baskets", title: "Sound Baskets", skill: "Group words by their first sound", interaction: "Sort picture cards into two sound families", ageBand: "Optional · Ages 4+", caregiverTip: "Stretch the first sound in moon and sun without adding an 'uh'."),
+        .init(id: "phonics.vehicle-peekaboo", title: "Vehicle Peekaboo", skill: "Understand spoken clues", interaction: "Listen to a vehicle clue, then open its garage", ageBand: "Ages 2–4", caregiverTip: "Ask where you have seen each vehicle in your neighborhood."),
+        .init(id: "phonics.food-scroll", title: "Picnic Words", skill: "Listen and remember familiar words", interaction: "Browse food cards and pack a two-item spoken picnic list", ageBand: "Ages 2–4", caregiverTip: "Repeat the list as often as needed and name real foods together."),
+        .init(id: "phonics.claw-game", title: "Word Claw", skill: "Follow a spoken direction", interaction: "Aim a claw at the named object, then lower it to collect", ageBand: "Ages 2–4", caregiverTip: "Take turns giving each other a one-step direction."),
+        .init(id: "phonics.word-builder", title: "Word Builder", skill: "Explore letters in short words", interaction: "Build a picture word from left to right using a visible model", ageBand: "Optional · Ages 4+", caregiverTip: "This is supported letter play; independent reading is not expected."),
+        .init(id: "phonics.beginning-sounds", title: "Beginning Sounds", skill: "Hear matching word beginnings", interaction: "Listen to a picture pair and find the matching first sound", ageBand: "Ages 3–4 with a grown-up", caregiverTip: "Say the whole words clearly, then emphasize their first sound."),
+        .init(id: "phonics.abc-adventure", title: "ABC Adventure", skill: "Connect letter names with familiar words", interaction: "Open alphabet windows to discover picture words", ageBand: "Ages 3–4 with a grown-up", caregiverTip: "Sing the short letter sequence together; there is no timer."),
+        .init(id: "phonics.rhyme-garden", title: "Rhyme Garden", skill: "Notice words with matching endings", interaction: "Listen to two word pairs and grow the rhyming flower", ageBand: "Optional · Ages 4+", caregiverTip: "Rhyming is playful listening. Say the pairs together and help freely."),
+        .init(id: "phonics.letter-hide-seek", title: "Letter Hide & Seek", skill: "Find a letter among different shapes", interaction: "Find every copy of a target letter on a discovery board", ageBand: "Ages 3–4", caregiverTip: "Find the same letter in a book or on a package afterward."),
+        .init(id: "phonics.syllable-hop", title: "Syllable Hop", skill: "Hear the beats in spoken words", interaction: "Clap or tap each spoken word part, then check the beat count", ageBand: "Optional · Ages 4+", caregiverTip: "Say rabbit as rab-bit while you clap together. Help whenever needed.")
+    ]
+
+    private static let symbols = ["a.square.fill", "pencil.tip", "basket.fill", "car.fill", "basket", "hand.point.down.fill", "textformat.abc", "ear.fill", "tram.fill", "camera.macro", "magnifyingglass", "hands.clap.fill"]
+    private static let assets: [String?] = ["A", "Button-Letter-Draw", "Button-Sound-Basket", "carBlue", "Apple", "basketball", "cat", "Moon", "B", "cat", "M", "rabbit"]
 
     var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 12
-                let columnsCount = min(3, max(1, Int((geo.size.width - horizontalPadding * 2) / 104)))
-                let columns = Array(
-                    repeating: GridItem(.flexible(), spacing: spacing),
-                    count: columnsCount
-                )
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 198, maxHeight: 198) // match MainMenu logo sizing
-                            .shadow(color: Color.black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 490, maxHeight: 490) // align with MainMenu hero sizing
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, -170)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(games) { game in
-                                GameTileLink(game: game)
-                                    .aspectRatio(1, contentMode: .fit)
-                            }
-                        }
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.top, -145)
-                        .padding(.bottom, 48)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
-                }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
+        ActivityMenu(title: "ABCs & Word Play", subtitle: "12 ways to listen, talk, and discover letters together", accent: .orange) {
+            ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
+                LiteracyMenuLink(index: index, activity: activity, symbol: Self.symbols[index], asset: Self.assets[index])
             }
         }
     }
 }
 
-// MARK: - Game Tiles
-
-private struct PhonicsGame: Identifiable {
-    enum Destination {
-        case letterMatch
-        case letterDraw
-        case soundBaskets
-        case peekabooVehicle
-        case clawGame
-        case foodScroll
-        case wordBuilder
-        case beginningSounds
-        case alphabetSequence
-        case vowelGarden
-        case consonantCove
-        case syllableHop
-    }
-
-    let id = UUID()
-    let title: String
-    let assetName: String?
-    let destination: Destination
-    let isLocked: Bool
-
-    static let allGames: [PhonicsGame] = [
-        PhonicsGame(title: "Letter Match", assetName: "Button-Letter-Match", destination: .letterMatch, isLocked: false),
-        PhonicsGame(title: "Letter Draw", assetName: "Button-Letter-Draw", destination: .letterDraw, isLocked: true),
-        PhonicsGame(title: "Sound Baskets", assetName: "Button-Sound-Basket", destination: .soundBaskets, isLocked: true),
-        PhonicsGame(title: "Peekaboo Vehicle", assetName: nil, destination: .peekabooVehicle, isLocked: true),
-        PhonicsGame(title: "Food Scroll", assetName: nil, destination: .foodScroll, isLocked: true),
-        PhonicsGame(title: "Claw Game", assetName: nil, destination: .clawGame, isLocked: true),
-        PhonicsGame(title: "Word Builder", assetName: nil, destination: .wordBuilder, isLocked: true),
-        PhonicsGame(title: "Beginning Sounds", assetName: nil, destination: .beginningSounds, isLocked: false),
-        PhonicsGame(title: "ABC Adventure", assetName: nil, destination: .alphabetSequence, isLocked: false),
-        PhonicsGame(title: "Vowel Garden", assetName: nil, destination: .vowelGarden, isLocked: false),
-        PhonicsGame(title: "Consonant Cove", assetName: nil, destination: .consonantCove, isLocked: false),
-        PhonicsGame(title: "Syllable Hop", assetName: nil, destination: .syllableHop, isLocked: false)
-    ]
-}
-
-private struct GameTileLink: View {
-    let game: PhonicsGame
-    @ObservedObject private var storeManager = StoreManager.shared
+private struct LiteracyMenuLink: View {
+    let index: Int
+    let activity: LearningActivity
+    let symbol: String
+    let asset: String?
+    @ObservedObject private var store = StoreManager.shared
     @State private var showPremiumGate = false
-
-    private var isPremiumLocked: Bool {
-        game.isLocked && !storeManager.hasPremium
-    }
+    // Preserve the six original premium destinations and entitlement behavior.
+    private var locked: Bool { (1...6).contains(index) && !store.hasPremium }
 
     var body: some View {
         Group {
-            if isPremiumLocked {
-                Button {
-                    showPremiumGate = true
-                } label: {
-                    GameTile(game: game, isLocked: true)
-                }
-                .buttonStyle(.plain)
+            if locked {
+                Button { showPremiumGate = true } label: { card }
             } else {
-                NavigationLink {
-                    destinationView
-                } label: {
-                    GameTile(game: game, isLocked: false)
-                }
-                .buttonStyle(.plain)
+                NavigationLink { destination.learningActivity(activity) } label: { card }
             }
         }
-        .sheet(isPresented: $showPremiumGate) {
-            PremiumParentGateView()
+        .buttonStyle(.plain)
+        .sheet(isPresented: $showPremiumGate) { PremiumParentGateView() }
+    }
+
+    private var card: some View {
+        ActivityCard(title: activity.title, subtitle: "\(activity.ageBand)\(locked ? " · Premium" : "")", symbol: locked ? "lock.fill" : symbol, asset: asset, accent: .orange)
+            .accessibilityLabel("\(activity.title). \(activity.ageBand). \(locked ? "Premium, grown-up required" : activity.skill)")
+    }
+
+    @ViewBuilder private var destination: some View {
+        switch index {
+        case 0: LetterTwinsGame()
+        case 1: LetterDraw()
+        case 2: LiteracySoundBasketsGame()
+        case 3: LiteracyVehiclePeekabooGame()
+        case 4: PicnicWordsGame()
+        case 5: LiteracyWordClawGame()
+        case 6: GuidedWordBuilderGame()
+        case 7: ListeningBeginningsGame()
+        case 8: AlphabetWindowsGame()
+        case 9: RhymeGardenGame()
+        case 10: LetterHideSeekGame()
+        default: WordBeatHopGame()
         }
     }
-
-    @ViewBuilder
-    private var destinationView: some View {
-        switch game.destination {
-        case .letterMatch:
-            LetterMatch()
-        case .letterDraw:
-            LetterDraw()
-        case .soundBaskets:
-            SoundBaskets()
-        case .peekabooVehicle:
-            PeekabooVehicleGameView()
-        case .clawGame:
-            ClawGameView()
-        case .foodScroll:
-            FoodScrollGameView()
-        case .wordBuilder:
-            WordBuilderGameView()
-        case .beginningSounds:
-            BeginningSoundsGame()
-        case .alphabetSequence:
-            AlphabetSequenceGame()
-        case .vowelGarden:
-            VowelGardenGame()
-        case .consonantCove:
-            ConsonantCoveGame()
-        case .syllableHop:
-            SyllableHopGame()
-        }
-    }
-}
-
-private struct PeekabooVehicleGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = VehiclePeekabooScene(size: size)
-        scene.scaleMode = .aspectFill
-        return scene
-    }
-}
-
-private struct ClawGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = ClawGameScene(size: size)
-        scene.scaleMode = .resizeFill
-        return scene
-    }
-}
-
-private struct FoodScrollGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = FoodScrollScene(size: size)
-        scene.scaleMode = .resizeFill
-        return scene
-    }
-}
-
-private struct WordBuilderGameView: View {
-    var body: some View {
-        GeometryReader { proxy in
-            SpriteView(scene: makeScene(size: proxy.size))
-                .ignoresSafeArea()
-        }
-    }
-
-    private func makeScene(size: CGSize) -> SKScene {
-        let scene = WordBuilderScene(size: size)
-        scene.scaleMode = .resizeFill
-        return scene
-    }
-}
-
-private struct GameTile: View {
-    let game: PhonicsGame
-    let isLocked: Bool
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            SharedGameTile(title: game.title, category: .phonics)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            if isLocked {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Circle().fill(Color.black.opacity(0.55)))
-                    .padding(7)
-                    .accessibilityLabel(Text("Locked"))
-            }
-        }
-        .contentShape(Rectangle())
-    }
-}
-
-private struct ABCsPlaceholderGame: View {
-    let title: String
-
-    var body: some View {
-        ZStack {
-            ABCsBackgroundLayer()
-
-            VStack(spacing: 16) {
-                Image(systemName: "lock.fill")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundColor(.white)
-
-                Text(title)
-                    .font(.system(size: 32, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-
-                Text("Coming Soon")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.9))
-            }
-            .padding(24)
-        }
-    }
-}
-
-private struct ABCsBackgroundLayer: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let totalHeight = proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom
-
-            ZStack(alignment: .center) {
-                LinearGradient(
-                    colors: [
-                        Color(red: 1.0, green: 0.78, blue: 0.42),
-                        Color(red: 1.0, green: 0.68, blue: 0.35)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .ignoresSafeArea(.all)
-
-                Image("learningLabBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-
-                Image("PlayfulBackground")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width, height: totalHeight)
-                    .clipped()
-                    .ignoresSafeArea(.all)
-            }
-        }
-    }
-}
-
-#Preview {
-    ABCsAndPhonicsMenu()
 }

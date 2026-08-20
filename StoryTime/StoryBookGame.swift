@@ -8,134 +8,73 @@
 import SwiftUI
 
 struct StoryBookGame: View {
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dismiss) private var dismiss
     @State private var pageIndex = 0
-
+    @StateObject private var narrator = GameNarrator()
     let book: StoryBook
 
-    init(book: StoryBook = .owenOnion) {
-        self.book = book
-    }
-
-    private var storyTitle: String { book.title }
+    init(book: StoryBook = .owenOnion) { self.book = book }
     private var pages: [StoryBookPage] { book.pages }
+    private var lastPage: Bool { pageIndex == pages.count - 1 }
 
     var body: some View {
-        ZStack {
-            StoryBookBackground(colors: book.backgroundColors)
+        VStack(spacing: 12) {
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(book.title).font(.system(.title3, design: .rounded, weight: .bold))
+                    Text("Page \(pageIndex + 1) of \(pages.count) • Read together")
+                        .font(.system(.subheadline, design: .rounded))
+                        .foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+                Button { narrator.speak(pages[pageIndex].text) } label: {
+                    Image(systemName: "speaker.wave.2.fill").font(.title2.bold())
+                        .frame(width: 64, height: 64)
+                        .background(book.accentColor.opacity(0.12), in: Circle())
+                }.accessibilityLabel("Read this page aloud")
+            }.padding(.horizontal, 18).padding(.top, 12)
 
-            GeometryReader { proxy in
-                VStack(spacing: 10) {
-                    bookHeader
-
+            ScrollView {
+                VStack(spacing: 16) {
                     StoryPageView(page: pages[pageIndex])
-                        .id(pageIndex)
-                        .transition(pageTransition)
-                        .frame(maxWidth: 720, maxHeight: .infinity)
+                    Text(lastPage ? "The end. Which part would you like to talk about?" : "Pause together: What do you notice in this picture?")
+                        .font(.system(.body, design: .rounded)).multilineTextAlignment(.center)
+                        .padding(16)
+                        .frame(maxWidth: .infinity)
+                        .background(book.accentColor.opacity(0.08), in: RoundedRectangle(cornerRadius: 20))
+                }.padding(.horizontal, 18).padding(.bottom, 18)
+                    .frame(maxWidth: 760).frame(maxWidth: .infinity)
+            }.id(pageIndex)
 
-                    navigationBar
+            HStack(spacing: 12) {
+                Button {
+                    guard pageIndex > 0 else { return }
+                    narrator.stop()
+                    pageIndex -= 1
+                } label: {
+                    Image(systemName: "chevron.left").font(.title2.bold()).frame(width: 64, height: 64)
+                        .background(book.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 20))
+                }.disabled(pageIndex == 0).accessibilityLabel("Previous page")
+
+                if lastPage {
+                    ToddlerActionButton(title: "Read again", systemImage: "arrow.counterclockwise", color: book.accentColor) { narrator.stop(); pageIndex = 0 }
+                    ToddlerActionButton(title: "All done", systemImage: "checkmark", color: book.accentColor) { dismiss() }
+                } else {
+                    ToddlerActionButton(title: "Next page", systemImage: "chevron.right", color: book.accentColor) {
+                        guard pageIndex < pages.count - 1 else { return }
+                        narrator.stop()
+                        pageIndex += 1
+                    }
                 }
-                .padding(.horizontal, 14)
-                .padding(.top, 10)
-                .padding(.bottom, 12)
-                .frame(width: proxy.size.width, height: proxy.size.height)
-                .contentShape(Rectangle())
-                .gesture(pageSwipe)
-            }
+            }.padding(.horizontal, 18).padding(.bottom, 12)
         }
-        .navigationTitle(storyTitle)
+        .foregroundStyle(Color(red: 0.15, green: 0.19, blue: 0.25))
+        .tint(book.accentColor)
+        .background(Color(red: 0.99, green: 0.97, blue: 0.92).ignoresSafeArea())
+        .navigationTitle("Read Together")
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    private var bookHeader: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "book.closed.fill")
-                .foregroundStyle(book.accentColor)
-
-            VStack(alignment: .leading, spacing: 0) {
-                Text(storyTitle)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 0.22, green: 0.16, blue: 0.14))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-
-                if let subtitle = book.subtitle {
-                    Text(subtitle)
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
-                        .foregroundStyle(Color(red: 0.42, green: 0.31, blue: 0.25))
-                        .lineLimit(1)
-                }
-            }
-
-            Spacer(minLength: 8)
-
-            Text("Page \(pageIndex + 1) of \(pages.count)")
-                .font(.system(size: 14, weight: .bold, design: .rounded))
-                .foregroundStyle(Color(red: 0.42, green: 0.31, blue: 0.25))
-                .contentTransition(.numericText())
-        }
-        .padding(.horizontal, 16)
-        .frame(maxWidth: 720)
-        .frame(height: book.subtitle == nil ? 44 : 52)
-        .background(.white.opacity(0.88), in: Capsule())
-        .shadow(color: .black.opacity(0.12), radius: 7, y: 4)
-    }
-
-    private var navigationBar: some View {
-        HStack(spacing: 14) {
-            PageButton(
-                systemImage: "chevron.left",
-                label: "Previous page",
-                isEnabled: pageIndex > 0,
-                accentColor: book.accentColor,
-                action: goBack
-            )
-
-            PageIndicator(currentPage: pageIndex, pageCount: pages.count)
-                .frame(maxWidth: 360)
-
-            PageButton(
-                systemImage: pageIndex == pages.count - 1 ? "checkmark" : "chevron.right",
-                label: pageIndex == pages.count - 1 ? "Story complete" : "Next page",
-                isEnabled: pageIndex < pages.count - 1,
-                accentColor: book.accentColor,
-                action: goForward
-            )
-        }
-        .frame(maxWidth: 720)
-    }
-
-    private var pageSwipe: some Gesture {
-        DragGesture(minimumDistance: 30)
-            .onEnded { value in
-                guard abs(value.translation.width) > abs(value.translation.height) else { return }
-                if value.translation.width < -45 {
-                    goForward()
-                } else if value.translation.width > 45 {
-                    goBack()
-                }
-            }
-    }
-
-    private var pageTransition: AnyTransition {
-        reduceMotion ? .opacity : .asymmetric(
-            insertion: .move(edge: .trailing).combined(with: .opacity),
-            removal: .move(edge: .leading).combined(with: .opacity)
-        )
-    }
-
-    private func goBack() {
-        guard pageIndex > 0 else { return }
-        withAnimation(reduceMotion ? .easeOut(duration: 0.15) : .spring(response: 0.34, dampingFraction: 0.88)) {
-            pageIndex -= 1
-        }
-    }
-
-    private func goForward() {
-        guard pageIndex < pages.count - 1 else { return }
-        withAnimation(reduceMotion ? .easeOut(duration: 0.15) : .spring(response: 0.34, dampingFraction: 0.88)) {
-            pageIndex += 1
-        }
+        .task(id: pageIndex) { narrator.speak(pages[pageIndex].text) }
+        .onDisappear { narrator.stop() }
     }
 }
 
@@ -143,12 +82,14 @@ enum StoryBook {
     case owenOnion
     case dinoBasketball
     case dinoHockey
+    case dinoBaseball
 
     var title: String {
         switch self {
         case .owenOnion: "Owen Onion Finds His Voice"
         case .dinoBasketball: "Trey Triceratops: Shoots for Three"
         case .dinoHockey: "Trey Triceratops: Scores a Hat Trick"
+        case .dinoBaseball: "Trey Triceratops: Hits a Triple"
         }
     }
 
@@ -157,6 +98,7 @@ enum StoryBook {
         case .owenOnion: nil
         case .dinoBasketball: "A Dino Sports Club Story"
         case .dinoHockey: "A Dino Sports Club Story"
+        case .dinoBaseball: "A Dino Sports Club Story"
         }
     }
 
@@ -165,6 +107,7 @@ enum StoryBook {
         case .owenOnion: StoryBookPage.owenOnion
         case .dinoBasketball: StoryBookPage.dinoBasketball
         case .dinoHockey: StoryBookPage.dinoHockey
+        case .dinoBaseball: StoryBookPage.dinoBaseball
         }
     }
 
@@ -173,6 +116,7 @@ enum StoryBook {
         case .owenOnion: Color(red: 0.49, green: 0.24, blue: 0.55)
         case .dinoBasketball: Color(red: 0.91, green: 0.36, blue: 0.08)
         case .dinoHockey: Color(red: 0.08, green: 0.52, blue: 0.78)
+        case .dinoBaseball: Color(red: 0.18, green: 0.55, blue: 0.22)
         }
     }
 
@@ -184,6 +128,8 @@ enum StoryBook {
             [Color(red: 0.13, green: 0.61, blue: 0.84), Color(red: 0.95, green: 0.47, blue: 0.12)]
         case .dinoHockey:
             [Color(red: 0.34, green: 0.77, blue: 0.94), Color(red: 0.72, green: 0.90, blue: 0.98)]
+        case .dinoBaseball:
+            [Color(red: 0.20, green: 0.62, blue: 0.30), Color(red: 0.93, green: 0.57, blue: 0.20)]
         }
     }
 }
@@ -639,98 +585,167 @@ private struct StoryBookPage: Identifiable {
         And trying again can help you score.
         """, imagePrefix: "DinoHockeyPage")
     ]
+
+    static let dinoBaseball: [StoryBookPage] = [
+        StoryBookPage(number: 1, text: """
+        The sun was bright on Dino Field.
+        The grass was soft and green.
+        Trey Triceratops held a bat.
+        “I want to play baseball,” he said.
+        Then he looked at home plate.
+        “And I want to hit the ball.”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 2, text: """
+        Out in center field stood Vincent Velociraptor.
+        Vincent was quick. Vincent was clever.
+        Vincent could run, run, run!
+        He chased fly balls with speedy feet.
+        “Baseball is fun,” Vincent called.
+        “Come try with us, Trey!”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 3, text: """
+        At first base stood Annie Ankylosaurus.
+        Annie was strong. Annie was steady.
+        Annie had a mighty tail and a happy grin.
+        When Annie hit the ball…
+        CRACK! It flew over the ferns.
+        “Whoa,” said Trey.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 4, text: """
+        Trey stepped up to bat.
+        Vincent tossed the ball softly.
+        Trey swung. WHOOSH!
+        He missed. Annie tossed another.
+        Trey swung again. WHOOSH!
+        He missed again.
+        Trey’s horns drooped.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 5, text: """
+        “I can’t hit,” Trey said.
+        Vincent jogged in from center field.
+        “Not yet,” he said.
+        Annie nodded. “Every hitter starts with practice.”
+        Trey looked at the bat. “Even big hitters?”
+        Annie smiled. “Especially big hitters.”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 6, text: """
+        Vincent showed Trey his feet.
+        “Stand strong.” Annie showed Trey his hands.
+        “Hold tight.” Vincent pointed to the ball.
+        “Watch close.” Together they chanted:
+        Feet set. Eyes bright. Swing smooth.
+        Hold tight.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 7, text: """
+        Trey tried again.
+        Feet set. Eyes on the ball.
+        Swing smooth. Hold tight.
+        TAP! The ball rolled two tiny steps.
+        Trey blinked. “I hit it?”
+        Vincent cheered. “You hit it!”
+        Annie clapped. “That is where hitting starts.”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 8, text: """
+        So Trey practiced.
+        He hit soft tosses.
+        He hit little grounders.
+        He hit one ball into a mud puddle.
+        SPLAT! Vincent laughed.
+        Annie laughed.
+        Trey laughed too.
+        Practice was hard…
+        but practice could be fun.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 9, text: """
+        Some balls went left.
+        Vincent chased them.
+        Some balls went right.
+        Annie scooped them up.
+        Some balls barely moved at all.
+        Trey sighed. “This is taking a long time.”
+        Annie smiled. “Good things can take time.”
+        Vincent said, “Try again.”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 10, text: """
+        Trey took a breath.
+        Feet set. Eyes bright.
+        Swing smooth. Hold tight.
+        CRACK!
+        The ball bounced past Annie.
+        It rolled all the way to the fern fence.
+        Trey’s eyes grew wide. “I did it!”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 11, text: """
+        At last, it was game day.
+        Dino Field was full.
+        Pterodactyls flapped.
+        Stegosaurus waved a flag.
+        Little raptors stomped and cheered.
+        Trey held his bat close.
+        His tummy felt wiggly.
+        “What if I miss?” he whispered.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 12, text: """
+        Vincent stood beside him.
+        “Then we cheer for the next try.”
+        Annie gave Trey a gentle nod.
+        “You practiced.” Vincent smiled.
+        “You worked hard.”
+        Annie smiled too. “So now, trust your swing.”
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 13, text: """
+        It was the last inning.
+        Three dinos were on base.
+        The game was almost done.
+        Trey stepped up to home plate.
+        The crowd got quiet.
+        Vincent called, “You can do it!”
+        Annie called, “Remember the chant!”
+        Trey took one brave breath.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 14, text: """
+        Feet set. Eyes on the ball.
+        Swing smooth. Hold tight.
+        The ball came in.
+        Trey swung. CRACK!
+        The ball soared over first base.
+        It bounced past second.
+        It rolled deep into center field.
+        “Run, Trey, run!” shouted Vincent.
+        """, imagePrefix: "DinoBaseballPage"),
+        StoryBookPage(number: 15, text: """
+        Trey ran to first.
+        Then second.
+        Then third.
+        SAFE! Three dinos scored.
+        The crowd roared.
+        “Trey hit a triple!” shouted Annie.
+        Vincent jumped high. Trey smiled big.
+        He had learned something true:
+        Practice helps. Friends help too.
+        And one brave swing can win the game.
+        """, imagePrefix: "DinoBaseballPage")
+    ]
 }
 
 private struct StoryPageView: View {
     let page: StoryBookPage
-
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .top) {
-                Color(red: 1.00, green: 0.97, blue: 0.88)
-
-                Image(page.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: proxy.size.width, height: proxy.size.height)
-                    .accessibilityLabel("Illustration for page \(page.number)")
-
-                storyText
-                    .padding(.horizontal, max(16, proxy.size.width * 0.055))
-                    .padding(.top, max(16, proxy.size.height * 0.025))
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .stroke(Color.white.opacity(0.9), lineWidth: 3)
-            }
-            .shadow(color: .black.opacity(0.24), radius: 14, y: 8)
+        VStack(spacing: 20) {
+            Text(page.text)
+                .font(.system(.title3, design: .rounded, weight: .medium))
+                .lineSpacing(5)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(20)
+                .background(Color.white, in: RoundedRectangle(cornerRadius: 22))
+            Image(page.imageName)
+                .resizable().scaledToFit()
+                .frame(maxHeight: 500)
+                .clipShape(RoundedRectangle(cornerRadius: 22))
+                .accessibilityLabel("Story illustration for page \(page.number)")
         }
-        .aspectRatio(942.0 / 1674.0, contentMode: .fit)
-        .accessibilityElement(children: .combine)
-    }
-
-    private var storyText: some View {
-        Text(page.text)
-            .font(.system(size: fontSize, weight: .semibold, design: .rounded))
-            .lineSpacing(2)
-            .multilineTextAlignment(.center)
-            .foregroundStyle(Color(red: 0.22, green: 0.15, blue: 0.13))
-            .minimumScaleFactor(0.62)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 13)
-            .frame(maxWidth: .infinity)
-            .background(.ultraThinMaterial.opacity(0.92), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.72), lineWidth: 1)
-            }
-            .shadow(color: .black.opacity(0.12), radius: 6, y: 3)
-    }
-
-    private var fontSize: CGFloat {
-        page.text.count > 275 ? 15 : page.text.count > 225 ? 16 : 17
-    }
-}
-
-private struct PageButton: View {
-    let systemImage: String
-    let label: String
-    let isEnabled: Bool
-    let accentColor: Color
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: systemImage)
-                .font(.system(size: 22, weight: .black))
-                .foregroundStyle(isEnabled ? accentColor : Color.gray.opacity(0.45))
-                .frame(width: 54, height: 48)
-                .background(.white.opacity(isEnabled ? 0.94 : 0.55), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                .shadow(color: .black.opacity(isEnabled ? 0.14 : 0), radius: 5, y: 3)
-        }
-        .disabled(!isEnabled)
-        .buttonStyle(.plain)
-        .accessibilityLabel(label)
-    }
-}
-
-private struct PageIndicator: View {
-    let currentPage: Int
-    let pageCount: Int
-
-    var body: some View {
-        HStack(spacing: 6) {
-            ForEach(0..<pageCount, id: \.self) { index in
-                Capsule()
-                    .fill(index == currentPage ? Color.white : Color.white.opacity(0.42))
-                    .frame(width: index == currentPage ? 17 : 7, height: 7)
-                    .animation(.easeOut(duration: 0.2), value: currentPage)
-            }
-        }
-        .padding(.horizontal, 12)
-        .frame(height: 36)
-        .accessibilityHidden(true)
     }
 }
 

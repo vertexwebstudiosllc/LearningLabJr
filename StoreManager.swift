@@ -9,6 +9,9 @@ final class StoreManager: ObservableObject {
 
     @Published var products: [Product] = []
     @Published var hasPremium: Bool = false
+    @Published private(set) var isPurchasing = false
+    @Published private(set) var isLoadingProducts = false
+    @Published private(set) var statusMessage: String?
 
     private let productIDs: Set<String> = [
         "com.learninglabjr.premium.monthly"
@@ -30,14 +33,22 @@ final class StoreManager: ObservableObject {
     }
 
     func loadProducts() async {
+        guard !isLoadingProducts else { return }
+        isLoadingProducts = true
+        defer { isLoadingProducts = false }
         do {
             products = try await Product.products(for: productIDs)
+            statusMessage = nil
         } catch {
-            print("Failed to load products: \(error)")
+            statusMessage = "We couldn't reach the App Store. Please try again when connected."
         }
     }
 
     func purchase(_ product: Product) async {
+        guard !isPurchasing else { return }
+        isPurchasing = true
+        statusMessage = nil
+        defer { isPurchasing = false }
         do {
             let result = try await product.purchase()
 
@@ -49,25 +60,30 @@ final class StoreManager: ObservableObject {
                 await transaction.finish()
 
             case .userCancelled:
-                print("User cancelled purchase")
+                break
 
             case .pending:
-                print("Purchase is pending approval")
+                statusMessage = "Your purchase is waiting for approval. Games will unlock when it is approved."
 
             @unknown default:
                 break
             }
         } catch {
-            print("Purchase failed: \(error)")
+            statusMessage = "The purchase couldn't be completed. You can try again or restore an existing purchase."
         }
     }
 
     func restorePurchases() async {
+        guard !isPurchasing else { return }
+        isPurchasing = true
+        statusMessage = nil
+        defer { isPurchasing = false }
         do {
             try await AppStore.sync()
             await updateCustomerProductStatus()
+            statusMessage = hasPremium ? "Your Premium access is restored." : "No active Premium subscription was found for this Apple Account."
         } catch {
-            print("Restore failed: \(error)")
+            statusMessage = "Purchases couldn't be restored. Please check your connection and try again."
         }
     }
 
@@ -82,21 +98,16 @@ final class StoreManager: ObservableObject {
                     continue
                 }
 
-                if transaction.revocationDate == nil {
-                    if let expirationDate = transaction.expirationDate {
-                        if expirationDate > Date() {
-                            premiumActive = true
-                        }
-                    } else {
-                        premiumActive = true
-                    }
-                }
+                // StoreKit includes subscriptions in billing grace period here.
+                // A past transaction expiration date must not revoke that access.
+                if transaction.revocationDate == nil { premiumActive = true }
             } catch {
                 print("Unverified transaction")
             }
         }
 
         hasPremium = premiumActive
+        if premiumActive { statusMessage = nil }
     }
 
     private func listenForTransactions() -> Task<Void, Error> {
@@ -132,71 +143,19 @@ enum StoreError: Error {
 
 struct PremiumParentGateView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject private var storeManager = StoreManager.shared
-    @State private var answer = ""
-    @State private var showPaywall = false
-    @State private var showError = false
-
-    private let correctAnswer = "8"
+    @ObservedObject private var store = StoreManager.shared
+    @State private var unlocked = false
 
     var body: some View {
-        VStack(spacing: 22) {
-            Image(systemName: "lock.shield.fill")
-                .font(.system(size: 52, weight: .bold))
-                .foregroundColor(Color(red: 0.20, green: 0.55, blue: 0.95))
-
-            Text("Parent Check")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
-
-            Text("To unlock premium games, please answer:")
-                .font(.system(size: 17, weight: .semibold, design: .rounded))
-                .multilineTextAlignment(.center)
-
-            Text("3 + 5 = ?")
-                .font(.system(size: 26, weight: .bold, design: .rounded))
-
-            TextField("Answer", text: $answer)
-                .textFieldStyle(.roundedBorder)
-                .multilineTextAlignment(.center)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .frame(maxWidth: 180)
-
-            if showError {
-                Text("Please try again.")
-                    .font(.system(size: 15, weight: .semibold, design: .rounded))
-                    .foregroundColor(.red)
-            }
-
-            Button {
-                if answer.trimmingCharacters(in: .whitespacesAndNewlines) == correctAnswer {
-                    showPaywall = true
-                    showError = false
-                } else {
-                    showError = true
-                }
-            } label: {
-                Text("Continue")
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(Color(red: 0.10, green: 0.58, blue: 0.78))
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-            }
-
-            Button("Cancel") {
-                dismiss()
-            }
-            .font(.system(size: 16, weight: .semibold, design: .rounded))
-        }
-        .padding(28)
-        .onChange(of: storeManager.hasPremium) { hasPremium in
-            if hasPremium {
-                dismiss()
+        Group {
+            if unlocked {
+                PremiumPaywallView()
+            } else {
+                ParentChallengeView(onSuccess: { unlocked = true }, onCancel: { dismiss() })
             }
         }
-        .sheet(isPresented: $showPaywall) {
-            PremiumPaywallView()
+        .onChange(of: store.hasPremium) { _, premium in
+            if premium { dismiss() }
         }
     }
 }
@@ -206,6 +165,7 @@ struct PremiumPaywallView: View {
     @ObservedObject private var storeManager = StoreManager.shared
 
     var body: some View {
+        ScrollView {
         VStack(spacing: 20) {
             Image(systemName: "sparkles")
                 .font(.system(size: 52, weight: .bold))
@@ -215,7 +175,7 @@ struct PremiumPaywallView: View {
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
 
-            Text("Subscribe to unlock the premium games across Learning Lab Jr.")
+            Text("Unlock six additional phonics and word-play activities. The other activities stay available without a subscription.")
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -226,7 +186,7 @@ struct PremiumPaywallView: View {
                         await storeManager.purchase(product)
                     }
                 } label: {
-                    Text("Subscribe \(product.displayPrice)")
+                    Text("Subscribe · \(product.displayPrice) / \(billingPeriod(product))")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -234,8 +194,9 @@ struct PremiumPaywallView: View {
                         .background(Color(red: 0.10, green: 0.58, blue: 0.78))
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 }
+                .disabled(storeManager.isPurchasing)
             } else {
-                Text("Subscription unavailable")
+                Text(storeManager.isLoadingProducts ? "Loading subscription…" : "Subscription unavailable")
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundColor(.secondary)
 
@@ -247,6 +208,15 @@ struct PremiumPaywallView: View {
                 .font(.system(size: 17, weight: .bold, design: .rounded))
             }
 
+            if let message = storeManager.statusMessage {
+                Text(message).font(.footnote).foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+            if storeManager.isPurchasing { ProgressView("Connecting to the App Store") }
+
+            Text("Subscriptions renew automatically until canceled in your App Store account settings.")
+                .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+
             Button("Restore Purchases") {
                 Task {
                     await storeManager.restorePurchases()
@@ -254,20 +224,39 @@ struct PremiumPaywallView: View {
             }
             .font(.system(size: 16, weight: .semibold, design: .rounded))
 
+            .disabled(storeManager.isPurchasing)
+
             Button("Not Now") {
                 dismiss()
             }
             .font(.system(size: 16, weight: .semibold, design: .rounded))
         }
         .padding(28)
+        .frame(maxWidth: 560)
+        .frame(maxWidth: .infinity)
+        }
         .task {
             await storeManager.loadProducts()
             await storeManager.updateCustomerProductStatus()
         }
-        .onChange(of: storeManager.hasPremium) { hasPremium in
+        .onChange(of: storeManager.hasPremium) { _, hasPremium in
             if hasPremium {
                 dismiss()
             }
         }
     }
+
+    private func billingPeriod(_ product: Product) -> String {
+        guard let period = product.subscription?.subscriptionPeriod else { return "purchase" }
+        let unit: String
+        switch period.unit {
+        case .day: unit = "day"
+        case .week: unit = "week"
+        case .month: unit = "month"
+        case .year: unit = "year"
+        @unknown default: unit = "period"
+        }
+        return period.value == 1 ? unit : "\(period.value) \(unit)s"
+    }
+
 }
