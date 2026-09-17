@@ -1,0 +1,26 @@
+--- a/LearningLabJr.xcodeproj/project.pbxproj
++++ b/LearningLabJr.xcodeproj/project.pbxproj
+@@ -419,7 +419,10 @@
+ 					"$(inherited)",
+ 					"*.md",
+ 					"*.swift.txt",
+-					prepare_validation.py,
++					"*.py",
++					"*.pyc",
++					"narration-source-*.json",
++					"polly-*",
+ 				);
+ 				GENERATE_INFOPLIST_FILE = YES;
+ 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+@@ -475,7 +478,10 @@
+ 					"$(inherited)",
+ 					"*.md",
+ 					"*.swift.txt",
+-					prepare_validation.py,
++					"*.py",
++					"*.pyc",
++					"narration-source-*.json",
++					"polly-*",
+ 				);
+ 				GENERATE_INFOPLIST_FILE = YES;
+ 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

@@ -1,0 +1,16 @@
+[
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "spokenText": "We did it together! That was fun. Want to play again? Or are you all done for now?",
+    "category": "shared",
+    "delivery": "playful",
+    "ssml": "<speak>We did it together! That was fun.<break time=\"200ms\"/>Want to play again? Or are you all done for now?</speak>"
+  },
+  {
+    "text": "Hi, friend! Let's look together. Can you find the little duck? There it is! You found it.",
+    "category": "shared",
+    "delivery": "playful",
+    "ssml": "<speak>Hi, friend! Ooh, let's look for a little duck. Can you find it?<break time=\"650ms\"/>There it is! You found the duck!</speak>",
+    "spokenText": "Hi, friend! Ooh, let's look for a little duck. Can you find it? There it is! You found the duck!"
+  }
+]

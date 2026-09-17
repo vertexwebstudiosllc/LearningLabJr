@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GenerateLearningLabNarration",
+      "Effect": "Allow",
+      "Action": ["polly:DescribeVoices", "polly:SynthesizeSpeech"],
+      "Resource": "*",
+      "Condition": {"StringEquals": {"aws:RequestedRegion": "us-east-1"}}
+    }
+  ]
+}

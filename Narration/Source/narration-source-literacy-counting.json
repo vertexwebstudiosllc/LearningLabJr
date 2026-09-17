@@ -1,0 +1,1486 @@
+[
+  {
+    "text": "This is A. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both A!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is M. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both M!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is S. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both S!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the lines and curves. Find the same shape.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Draw over the big letter L. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in L!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter L together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter T. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in T!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter T together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter I. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in I!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter I together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Say milk. Does it start like moon or like sun? Tap its basket.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say milk, then moon, then sun. Listen to how each word begins.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "milk starts like moon.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Say sun. Does it start like moon or like sun? Tap its basket.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say sun, then moon, then sun. Listen to how each word begins.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "sun starts like sun.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Say moon. Does it start like moon or like sun? Tap its basket.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say moon, then moon, then sun. Listen to how each word begins.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "moon starts like moon.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "You sorted every word by its first sound!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "I help firefighters. Find the fire truck. Tap a garage to open it.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "A family can ride in me. Find the car. Tap a garage to open it.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "I help on a farm. Find the tractor. Tap a garage to open it.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Peekaboo! You found the fire truck.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "This is a tractor. Let's look for the fire truck.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is a car. Let's look for the fire truck.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Peekaboo! You found the tractor.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "This is a fire truck. Let's look for the tractor.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is a car. Let's look for the tractor.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Peekaboo! You found the car.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "This is a fire truck. Let's look for the car.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is a tractor. Let's look for the car.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pack apple, then sandwich. Use the arrows to look through the foods.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Packed apple. Now find sandwich.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "This is milk. Look for apple.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is sandwich. Look for apple.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is orange. Look for apple.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is apple. Look for sandwich.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is milk. Look for sandwich.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is orange. Look for sandwich.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pack orange, then milk. Use the arrows to look through the foods.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Packed orange. Now find milk.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "This is apple. Look for orange.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is milk. Look for orange.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is sandwich. Look for orange.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is apple. Look for milk.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is sandwich. Look for milk.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "This is orange. Look for milk.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pack sandwich, then orange. Use the arrows to look through the foods.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Packed sandwich. Now find orange.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Your picnic is packed! Say the two food names together.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "apple",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "milk",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "sandwich",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "orange",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's pick up the ball. Tap it to aim the claw. Then lower the claw.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Claw over the ball.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "The claw picked up the ball!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "The claw is over the car. Aim at the ball.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The claw is over the rabbit. Aim at the ball.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's pick up the car. Tap it to aim the claw. Then lower the claw.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Claw over the car.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "The claw picked up the car!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "The claw is over the ball. Aim at the car.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The claw is over the rabbit. Aim at the car.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's pick up the rabbit. Tap it to aim the claw. Then lower the claw.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Claw over the rabbit.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "The claw picked up the rabbit!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "The claw is over the ball. Aim at the rabbit.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The claw is over the car. Aim at the rabbit.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's build cat. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built cat! C, A, T. cat.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built cat! <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. cat.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "C. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "A. Next find T.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find C next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find A next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find T next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Let's build sun. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built sun! S, U, N. sun.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built sun! <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>. sun.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "S. Next find U.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "U. Next find N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find S next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find U next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find N next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Let's build dog. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built dog! D, O, G. dog.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built dog! <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>, <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>. dog.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "D. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "O. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find D next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find O next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Look at the model. Find G next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme> next.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Say moon. Which word starts the same way: milk or fish?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "moon and milk start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: moon, milk. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say sun. Which word starts the same way: dog or sandwich?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "sun and sandwich start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: sun, sandwich. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say cat. Which word starts the same way: cow or rabbit?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "cat and cow start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: cat, cow. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Open the letter windows: A, B, C. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>, <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "A is for apple.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme> is for apple.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "A is for apple. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme> is for apple. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "B is for ball.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for ball.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "B is for ball. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for ball. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "C is for cat.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for cat.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "C is for cat. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for cat. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Open the letter windows: D, E, F. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "D is for dog.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> is for dog.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "D is for dog. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> is for dog. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "E is for egg.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for egg.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "E is for egg. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for egg. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "F is for fish.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme> is for fish.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "F is for fish. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme> is for fish. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Open the letter windows: M, N, O. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>, <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "M is for moon.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme> is for moon.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "M is for moon. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme> is for moon. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "N is for noodles.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme> is for noodles.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "N is for noodles. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme> is for noodles. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "O is for orange.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme> is for orange.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "O is for orange. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme> is for orange. You opened all the alphabet windows!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Listen for words with the same ending. cat, hat. cat, sun. Which pair rhymes?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "cat and hat rhyme! Their endings sound alike.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Say these together: cat, hat. Listen to their matching endings.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listen for words with the same ending. goat, fish. goat, boat. Which pair rhymes?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "goat and boat rhyme! Their endings sound alike.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Say these together: goat, boat. Listen to their matching endings.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listen for words with the same ending. mouse, house. mouse, dog. Which pair rhymes?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "mouse and house rhyme! Their endings sound alike.",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Say these together: mouse, house. Listen to their matching endings.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find every M. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. There are three hiding here.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You found all three copies of M!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Found M. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. Keep looking for another.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is B. Look for M.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is S. Look for M.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is T. Look for M.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Find every S. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. There are three hiding here.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You found all three copies of S!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Found S. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Keep looking for another.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is B. Look for S.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is M. Look for S.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is T. Look for S.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Find every A. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>. There are three hiding here.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You found all three copies of A!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Found A. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>. Keep looking for another.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is M. Look for A.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is S. Look for A.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "That is T. Look for A.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>That is <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Look for <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Say cow with your grown-up. Clap once for each word part, then tap the hop button for each clap.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "cow has 1 beat. You heard the word parts!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try together: cow. Make 1 clap.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say rabbit with your grown-up. Clap once for each word part, then tap the hop button for each clap.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "rabbit has 2 beats. You heard the word parts!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try together: rab, bit. Make 2 claps.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Let's try together: <phoneme alphabet=\"ipa\" ph=\"ræ\">rab</phoneme><break time=\"300ms\"/><phoneme alphabet=\"ipa\" ph=\"bɪt\">bit</phoneme>. <break time=\"350ms\"/>Make two claps.</speak>",
+    "engine": "neural",
+    "note": "Audition required: two rabbit syllables /ræ/ and /bɪt/ with a clap-sized pause. The /b/ occurs once, at the start of the second syllable; the runtime spelling remains unchanged."
+  },
+  {
+    "text": "Say octopus with your grown-up. Clap once for each word part, then tap the hop button for each clap.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "octopus has 3 beats. You heard the word parts!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try together: oc, to, pus. Make 3 claps.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Let's try together: <phoneme alphabet=\"ipa\" ph=\"ɑk\">oc</phoneme><break time=\"300ms\"/><phoneme alphabet=\"ipa\" ph=\"tə\">to</phoneme><break time=\"300ms\"/><phoneme alphabet=\"ipa\" ph=\"pəs\">pus</phoneme>. <break time=\"350ms\"/>Make three claps.</speak>",
+    "engine": "neural",
+    "note": "Audition required: American English octopus, three syllables /ɑk/, /tə/, /pəs/. Avoid the unrelated standalone words to and pus."
+  },
+  {
+    "text": "1",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "2",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "3",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the apples. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 apples!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "You counted 1 apple!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "You counted 3 apples!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's touch each apple and count together.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Touch each duck once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every duck!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "3. You counted every duck!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "5. You counted every duck!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "4",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one apple to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "This plate has one. Find an empty plate.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "One apple for each friend. Everyone has one!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "One apple for this friend.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Tap each sheep to tuck it in. How many are still awake?",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "No sheep awake. All the sheep are asleep. Good night!",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "1 sheep is still awake.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "2 sheep are still awake.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "3 sheep are still awake.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Follow the counting stones. Start at one.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You followed every counting stone. Treasure found!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "1. Next comes 2.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 1. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "2. Next comes 3.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 2. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "3. Next comes 4.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 3. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "4. Next comes 5.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 4. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which group has more oranges? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! 3 oranges is more than 1.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yes! 4 oranges is more than 2.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yes! 5 oranges is more than 2.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's count each row. Which has more oranges?",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Plant 2 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 2 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Plant 3 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 3 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Plant 5 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 5 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "0 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 flowers",
+    "category": "counting",
+    "delivery": "clear",
+    "spokenText": "One flower."
+  },
+  {
+    "text": "2 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Add another flower, then count again.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Take out a flower, then count again.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Each passenger needs one ticket dot. Choose the ticket with enough dots for everyone.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One dot for each passenger. All aboard!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Match each rabbit with one dot. Try another ticket.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Build a tower the same height as mine. Add or take away blocks.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 blocks",
+    "category": "counting",
+    "delivery": "clear",
+    "spokenText": "One block."
+  },
+  {
+    "text": "2 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 2 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Both towers have 4 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Both towers have 3 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Your tower is shorter. Add a block.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your tower is taller. Take one block away.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Look at the clue dots. Hide the clue when you are ready, then find its twin.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found the twin: 2 dots!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the twin: 1 dots!",
+    "category": "counting",
+    "delivery": "playful",
+    "spokenText": "You found the twin: one dot!"
+  },
+  {
+    "text": "You found the twin: 3 dots!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "You can peek at the clue again. Look for the same dots.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help the frog make 2 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "2 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Help the frog make 3 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "3 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Help the frog make 4 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "4 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Make one more hop, then count again.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's start the hops again.",
+    "category": "counting",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listen to my counting beats. Tap the drum the same number of times.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1. Boom.",
+    "category": "counting",
+    "delivery": "playful",
+    "note": "Short rhythmic counting cue: keep the rendered clip below the existing 1.2-second interval; audition timing."
+  },
+  {
+    "text": "1 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "playful",
+    "spokenText": "One beat. You echoed my drum!"
+  },
+  {
+    "text": "2. Boom.",
+    "category": "counting",
+    "delivery": "playful",
+    "note": "Short rhythmic counting cue: keep the rendered clip below the existing 1.2-second interval; audition timing."
+  },
+  {
+    "text": "2 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "3. Boom.",
+    "category": "counting",
+    "delivery": "playful",
+    "note": "Short rhythmic counting cue: keep the rendered clip below the existing 1.2-second interval; audition timing."
+  },
+  {
+    "text": "3 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's listen again, then tap along.",
+    "category": "counting",
+    "delivery": "gentle"
+  }
+]

@@ -1,0 +1,1184 @@
+[
+  {
+    "text": "Red paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yellow paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Blue paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Orange paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Green paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Purple paint selected.",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "All six shape stamps are posted!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Post the circle in its matching opening.",
+    "category": "shapes",
+    "delivery": "playful",
+    "spokenText": "Here's a circle! Can you put it in the circle opening?"
+  },
+  {
+    "text": "Post the square in its matching opening.",
+    "category": "shapes",
+    "delivery": "playful",
+    "spokenText": "Here's a square! Can you put it in the square opening?"
+  },
+  {
+    "text": "Post the triangle in its matching opening.",
+    "category": "shapes",
+    "delivery": "playful",
+    "spokenText": "Here's a triangle! Can you put it in the triangle opening?"
+  },
+  {
+    "text": "The circle fits!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The square fits!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The triangle fits!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look at the edges. Find the circle.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look at the edges. Find the square.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look at the edges. Find the triangle.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "All six shirts are sorted into their color baskets!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put the red shirt in the red basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put the yellow shirt in the yellow basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put the blue shirt in the blue basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "In the red basket!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "In the yellow basket!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "In the blue basket!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "This shirt is red. Let's find its basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "This shirt is yellow. Let's find its basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "This shirt is blue. Let's find its basket.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose two different paints, then stir. Try red and yellow.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose two different paints, then stir. Try yellow and blue.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose two different paints, then stir. Try blue and red.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You discovered orange, green, and purple by mixing paints!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose two paints to mix.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose two different paint colors first.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red and Yellow selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red and yellow make orange!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red and Blue selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red and blue make purple!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow and Red selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow and red make orange!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow and Blue selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow and blue make green!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue and Red selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue and red make purple!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue and Yellow selected.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue and yellow make green!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the repeating train. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Three repeating trains are ready. Choo choo!",
+    "category": "shapes",
+    "delivery": "playful",
+    "note": "Listen for a gentle, clear train sound: choo choo."
+  },
+  {
+    "text": "Circle continues the pattern. Choo choo!",
+    "category": "shapes",
+    "delivery": "playful",
+    "note": "Listen for a gentle, clear train sound: choo choo."
+  },
+  {
+    "text": "Triangle continues the pattern. Choo choo!",
+    "category": "shapes",
+    "delivery": "playful",
+    "note": "Listen for a gentle, clear train sound: choo choo."
+  },
+  {
+    "text": "Let's say it together: Circle, Square, Circle, Square. What comes next?",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's say it together: Triangle, Circle, Triangle, Circle. What comes next?",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's say it together: Square, Square, Triangle, Square, Square. What comes next?",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Your town is ready!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at your house!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at your rocket!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at your tree!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Add a square wall.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put the triangle roof above the wall.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Add a round window.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Add the rocket body.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put a triangle on top.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Add a round window for the astronaut.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Plant the tree trunk.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Add triangle branches above the trunk.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put a round apple on the tree.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Three shape nests, from large to small!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Build a shape nest. Start with the largest, then medium, then small.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Large fits in the nest.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Medium fits in the nest.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Small fits in the nest.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's choose the large one next.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's choose the medium one next.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's choose the small one next.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You followed a circle, a square, and a triangle all the way around!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the glowing dot around the circle. Slide a finger or tap each dot.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the glowing dot around the square. Slide a finger or tap each dot.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the glowing dot around the triangle. Slide a finger or tap each dot.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You went all around the circle!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You went all around the square!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You went all around the triangle!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Your colorful flower is ready to share!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Choose a paint, then tap the flower petals. Every garden can be different.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Orange petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Green petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Purple petal.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Your butterfly has matching colors on both wings!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Paint a wing spot. Watch its matching spot appear on the other side!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Red on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Yellow on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Blue on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Orange on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Green on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Purple on both sides. They match!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found shapes in six everyday things!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Find two things with a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Find two things with a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Find two things with a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The clock face has a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the clock face. We are looking for a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the clock face. We are looking for a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the gift box. We are looking for a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The gift box has a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the gift box. We are looking for a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the mountain peak. We are looking for a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the mountain peak. We are looking for a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The mountain peak has a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The ball has a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the ball. We are looking for a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the ball. We are looking for a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the window. We are looking for a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The window has a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the window. We are looking for a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the tent. We are looking for a circle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look at the tent. We are looking for a square shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The tent has a triangle shape.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "All six rainbow windows are open!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Tap a colored window. What is hiding behind it?",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found a red heart!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found a yellow sun!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found a blue raindrop!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found an orange carrot!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found a green leaf!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found a purple moon!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You followed the winding road all the way home!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Up the road!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Down the road!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Across the road!",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "We followed the road all the way home.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the road. Tap the glowing square above the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the road. Tap the glowing square below the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the road. Tap the glowing square to the right of the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The next road square is glowing above the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The next road square is glowing below the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "The next road square is glowing to the right of the car.",
+    "category": "shapes",
+    "delivery": "playful"
+  },
+  {
+    "text": "You made and named three face puppets!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "How might your puppet feel? Any choice is welcome.",
+    "category": "feelings",
+    "delivery": "gentle",
+    "spokenText": "How do you think your puppet feels? You can choose any feeling."
+  },
+  {
+    "text": "Tap the face parts to change your puppet. Can you copy its expression?",
+    "category": "feelings",
+    "delivery": "gentle",
+    "spokenText": "Tap the eyes, brows, or mouth to change your puppet. Can you make a face like your puppet?"
+  },
+  {
+    "text": "You chose happy. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose sad. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose cross. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose worried. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose calm. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose not sure. People can show feelings in different ways.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Open eyes.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Closed eyes.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Level eyebrows.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Eyebrows tilt up in the middle.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Eyebrows tilt down in the middle.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Mouth curves upward.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Mouth curves downward.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Open, round mouth.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Three gentle flower breaths, together at your own pace.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let the air out gently, like a soft breeze. Tap when you are ready.",
+    "category": "feelings",
+    "delivery": "gentle",
+    "note": "Use a comfortable unhurried delivery; do not model breath holding."
+  },
+  {
+    "text": "Pretend to smell a flower. Take an easy breath in, or just watch your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle",
+    "note": "Use a comfortable unhurried delivery; do not model breath holding."
+  },
+  {
+    "text": "Teddy's tower fell down. Teddy says, 'I feel sad.'",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "There is a loud sound. Teddy says, 'I feel worried.'",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is tired after playing. Teddy wants some space.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You explored three ways to care for Teddy!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy says, 'Yes, let's rebuild together.' Pretend to stack three blocks.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy says, 'Thank you for listening.' Practice sitting nearby without rushing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A trusted grown-up stays with Teddy. Say, 'We are here together.'",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy chooses a quiet corner. Pretend to walk there together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy says, 'Thank you. I can rest here.' Make a little nest with your hands.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy says, 'Thank you for asking.' Practice a little wave from nearby.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You and your grown-up rolled the ball back and forth three times!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your turn! Tap to roll the ball to your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle",
+    "spokenText": "Your turn! Can you tap to roll the ball to your grown-up?"
+  },
+  {
+    "text": "Grown-up's turn! Roll the ball back to your child.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You practiced wiggling, slowing, and pausing together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Green: wiggle your fingers!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Yellow: move your hands slowly.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Red: rest your hands for a moment.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Green: gently wiggle your toes!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Yellow: make one slow stretch.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Red: settle into a comfortable pause.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What is your feeling weather? You can choose any feeling, or not sure.",
+    "category": "feelings",
+    "delivery": "gentle",
+    "spokenText": "What is your feeling weather today? You can choose any feeling. Not sure is okay, too."
+  },
+  {
+    "text": "Does your feeling seem little, medium, or big? Every size is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What would you like right now? Let your grown-up know.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Thank you for sharing. All feelings are welcome.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose sit together. Tell your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose ask for a hug. Tell your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose some quiet space. Tell your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose keep playing. Tell your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Three kindness flowers for caring together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Choose a caring action. Try it together, then plant a flower.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wave to your grown-up, or show how a puppet could wave.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Think of someone who helped. Try saying or signing thank you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find a toy nearby and offer to put it away together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A flower for caring together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You explored three tools for a cozy pause!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Choose a tool to try together. Notice what feels comfortable for you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Gently press your palms together, then let go. Try it once with your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pause together. Listen for a sound nearby. Point or tell your grown-up what you hear.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Reach your hands up as comfortably as you like, then let them rest. A tiny stretch is welcome.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You explored one way to pause together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You noticed clues from your hands, heartbeat, tummy, and feet!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Our bodies can give us clues. Choose a place to notice.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Open your hands, then softly close them. Do they feel warm, cool, or something else?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Rest your own hand on your chest if you like. Can you notice your heartbeat? It is okay if you cannot.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Notice your tummy. Does it feel hungry, full, fluttery, or something else? Only you can tell us.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Notice your feet touching the floor or a cushion. Wiggle your toes, then let them rest.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Thank you for noticing. A body clue can mean different things.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friendship bridge is ready. You practiced asking and making a plan together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A friend is building. You would like to play, too. What could you say?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says, 'I am still using this block.' What could you try?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You both want to build. How could you make a plan together?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says, 'Yes, let's make a plan.' Practice asking in your own words.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says, 'Yes, there is space here.' Point to a place beside you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says, 'I will tell you when I am done.' Waiting can be hard; a grown-up can help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You find another block. There is more than one way to keep playing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "One shared tower! Pretend to add a block, then invite your friend to add one.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Two towers! Pretend to show your friend what you made.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy knows what comes next. Time to rest.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy follow the evening plan. Next comes wash.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy follow the evening plan. Next comes pajamas.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy follow the evening plan. Next comes book.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy follow the evening plan. Next comes rest.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Splash, splash. Pretend to wash your hands.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Cozy pajamas. Pretend to pull on a sleeve.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Share a story. Pretend to turn a page.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy settles down. Say a gentle good night.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "For Teddy's plan, wash comes next.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "For Teddy's plan, pajamas comes next.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "For Teddy's plan, book comes next.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "For Teddy's plan, rest comes next.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hello again! Teddy and a friend practiced a goodbye and a reunion.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's pretend Teddy is saying goodbye for a little while. Choose a goodbye Teddy likes.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy will stay with a trusted grown-up. Choose something comforting to do together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy's friend says goodbye and goes behind the curtain. Your real grown-up stays right here.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy's friend is back! Practice a warm hello together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

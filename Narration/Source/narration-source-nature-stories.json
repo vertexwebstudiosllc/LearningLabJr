@@ -1,0 +1,1760 @@
+[
+  {
+    "text": "Every animal has a home!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Where does the dolphin live?",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The dolphin lives in the ocean. Let’s find it.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Where does the cow live?",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The cow lives in the farm. Let’s find it.",
+    "category": "nature",
+    "delivery": "gentle",
+    "spokenText": "The cow lives on the farm. Let’s find it."
+  },
+  {
+    "text": "Where does the octopus live?",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The octopus lives in the ocean. Let’s find it.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Where does the sheep live?",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The sheep lives in the farm. Let’s find it.",
+    "category": "nature",
+    "delivery": "gentle",
+    "spokenText": "The sheep lives on the farm. Let’s find it."
+  },
+  {
+    "text": "Three families together!",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap a grown-up animal. Then tap its baby.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "First choose a grown-up animal.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the baby cow.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A baby cow is a calf.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look for the baby that belongs with the cow.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the baby horse.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A baby horse is a foal.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look for the baby that belongs with the horse.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the baby sheep.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A baby sheep is a lamb.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Look for the baby that belongs with the sheep.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You noticed so many animal clues!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the octopus!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "I live in the ocean.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "I live in the ocean. I have eight arms.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let’s listen to the clues again. I live in the ocean. I have eight arms.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the rabbit!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "I have soft fur.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "I have soft fur. I have long ears and hop.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let’s listen to the clues again. I have soft fur. I have long ears and hop.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the chicken!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "I have feathers.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "I have feathers. I cluck and lay eggs.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Start at the glowing footprint.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Follow the next glowing footprint.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The tracks turn this way.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Keep following the trail.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Nearly there. Another footprint!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "One last footprint!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A Triceratops! It had three horns and ate plants.",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Pronounce Triceratops as try-SAIR-uh-tops."
+  },
+  {
+    "text": "We are on Earth. Put on a spacesuit for our pretend trip.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The spacesuit is on. Tap the rocket to launch.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We are traveling in space. Tap the Moon to land.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We landed! Tap the astronaut to explore.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Time to go home. Tap Earth.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Welcome home to Earth! The Moon is our nearest neighbor in space.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You met four farm friends!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Who is in the barn? Open the doors.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It’s a cow! Moo, moo! Can you make that sound?",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "Cow. Moo, moo!",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "It’s a duck! Quack, quack! Can you make that sound?",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "Duck. Quack, quack!",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "It’s a sheep! Baa, baa! Can you make that sound?",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "Sheep. Baa, baa!",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "It’s a pig! Oink, oink! Can you make that sound?",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "Pig. Oink, oink!",
+    "category": "nature",
+    "delivery": "playful",
+    "note": "Imitate the animal sound warmly; moo rhymes with blue, baa sounds like bah, oink like oink."
+  },
+  {
+    "text": "A seed can grow into a plant. Tap to put it in the pot.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Cover the seed with a little soil.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Give the seed a little water.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Put the pot near sunlight.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Growing takes many days. Pretend to wait as the days pass.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A little plant has grown! Keep giving it the care it needs.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The ocean is clear. The animals can stay in their home!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Tap the litter to put it in the bin. Leave the sea animals swimming.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The sea turtle belongs in the ocean. Look for litter.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The dolphin belongs in the ocean. Look for litter.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The crab belongs in the ocean. Look for litter.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You explored sunshine, rain, and wind!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Change the weather window. Tap inside to explore what happens.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The Sun gives us light. Make a big circle with your arms.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Sunshine. Tap the window to explore.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Rain falls from clouds. Pat your knees like raindrops.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Rain. Tap the window to explore.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Wind is moving air. Sway like a tree in the breeze.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Wind. Tap the window to explore.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You moved like three animals!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A rabbit hops. Bounce your hands or hop together.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A penguin waddles. Rock gently from side to side.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "A dolphin swims. Sweep your arms like swimming flippers.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You explored a daytime sky and a nighttime sky!",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Turn the sky from day to night. Tap both pictures in each sky.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Nighttime sky.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Daytime sky.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The Sun gives us daylight. The Sun is a star.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Many butterflies are active during the day.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The Moon reflects sunlight. Sometimes we see it in the daytime too.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "There are stars in the sky during the day too, but the bright sky hides them.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Some birds build nests from twigs. Gather three twigs.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap each twig to weave it into a cozy nest.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Our pretend nest is ready. Tap to settle the eggs gently.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A cozy nest for three eggs! Watch real nests from far away.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found Bunny, the apple, and the cup!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is having a picnic. Can you find the bunny?",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That is the apple. Look for the bunny.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the ball. Look for the bunny.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the cup. Look for the bunny.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the bread. Look for the bunny.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the flower. Look for the bunny.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is having a picnic. Can you find the apple?",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That is the ball. Look for the apple.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the bunny. Look for the apple.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the cup. Look for the apple.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the bread. Look for the apple.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the flower. Look for the apple.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is having a picnic. Can you find the cup?",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That is the apple. Look for the cup.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the ball. Look for the cup.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the bunny. Look for the cup.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the bread. Look for the cup.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the flower. Look for the cup.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You told three little stories in order!",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What happens first?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What happens next?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What happens last?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wash hands. Eat lunch. Clear the table.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "In our story, we wash hands first.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we eat lunch next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we clear the table next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Put on a shirt. Put on shoes. Go for a walk.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "In our story, we put on a shirt first.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we put on shoes next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we go for a walk next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Have a bath. Read a book. Go to bed.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "In our story, we have a bath first.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we read a book next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "In our story, we go to bed next.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You helped two friends tell a story!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is Dog’s turn. Tap the puppet and try its voice.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is Dog’s turn. Your turn is coming.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hello, Cat! Would you like to play?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "It is Cat’s turn. Tap the puppet and try its voice.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is Cat’s turn. Your turn is coming.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hello, Dog! Yes, let’s roll a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Here comes the ball. Your turn!",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Thank you! I’ll roll it back.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "That was fun. Goodbye, Cat!",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Goodbye, Dog. See you soon!",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You helped finish three sentences!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "When I am thirsty, I drink from a…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "When I am thirsty, I drink from a cup.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A shoe? Let’s listen again. When I am thirsty, I drink from a…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A ball? Let’s listen again. When I am thirsty, I drink from a…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "When it rains, I stay dry under an…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "When it rains, I stay dry under an umbrella.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A apple? Let’s listen again. When it rains, I stay dry under an…",
+    "category": "stories",
+    "delivery": "gentle",
+    "spokenText": "An apple? Let’s listen again. When it rains, I stay dry under an…"
+  },
+  {
+    "text": "A book? Let’s listen again. When it rains, I stay dry under an…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "At bedtime, I get cozy in my…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "At bedtime, I get cozy in my bed.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A car? Let’s listen again. At bedtime, I get cozy in my…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A ball? Let’s listen again. At bedtime, I get cozy in my…",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Quack, moo, splash, and chug! You brought our story to life.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Duck wakes up at the farm. Who does Duck hear? Tap both story pictures.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Quack, quack! Good morning, says Duck.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "Moo, moo! Good morning, says Cow.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "Duck walks to the pond. Rain starts to fall. Tap both story pictures.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Pitter patter, pitter patter. Rain taps on the leaves.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "Splish, splash! Duck steps in a puddle.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "The rain stops. Duck takes a ride home. Tap both story pictures.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Chug, chug, chug! The tractor takes Duck home.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "Quack, quack! What a noisy day, says Duck.",
+    "category": "stories",
+    "delivery": "playful",
+    "note": "Keep the repeated sound words rhythmic and friendly, without rushing."
+  },
+  {
+    "text": "A story only you could tell!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Open the bag to meet your story character.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Tell a tiny story using your three surprises. Point, talk, or make sounds together.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Who is Bunny? Open the bag for a story prop.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "What will happen with a ball? Open the last surprise.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Who is Duck? Open the bag for a story prop.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "What will happen with an apple? Open the last surprise.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "You fixed three silly stories!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "What could Bunny use instead?",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is trying to eat lunch with a shoe! Tap the silly shoe.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A fork helps Bunny eat lunch.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That might be silly too. A fork helps Bunny eat lunch.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is trying to bounce an apple! Tap the silly apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A ball is fun to bounce.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That might be silly too. A ball is fun to bounce.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is using a book to dry off after a bath! Tap the silly book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "A towel helps Bunny dry off.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "That might be silly too. A towel helps Bunny dry off.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny went in, on, and beside the box!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is in the box.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put Bunny in the box. Tap a landing spot.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is on the box. Can you put Bunny in the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is beside the box. Can you put Bunny in the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is on the box.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put Bunny on the box. Tap a landing spot.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is in the box. Can you put Bunny on the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is beside the box. Can you put Bunny on the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is beside the box.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Put Bunny beside the box. Tap a landing spot.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is in the box. Can you put Bunny beside the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny is on the box. Can you put Bunny beside the box?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You took turns talking with Bunny!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny says, Hello! I am happy to see you. What could you say?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hello, friend! Come sit with me.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "I see your wave! Come sit with me.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny asks, Would you like an apple or some bread?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Here is an apple for you. Crunch, crunch!",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Here is some bread for you. Yum!",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny asks, What would you like to do after our picnic?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let’s take turns rolling the ball.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let’s look at a book together.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny says, It is time for me to go home. What could you say?",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Goodbye! I enjoyed our picnic.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You are welcome. I enjoyed our picnic too!",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The end. Your choices made a special adventure!",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny is ready for an adventure. Where should Bunny go?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "At the pond, Bunny meets a friend. Who is there?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "At the garden, Bunny meets a friend. Who is there?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny and Duck want to do something together. What happens next?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny and Cat want to do something together. What happens next?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the pond. Bunny met Duck. They shared a picnic. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the pond. Bunny met Duck. They played with a ball. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the pond. Bunny met Cat. They shared a picnic. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the pond. Bunny met Cat. They played with a ball. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the garden. Bunny met Duck. They shared a picnic. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the garden. Bunny met Duck. They played with a ball. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the garden. Bunny met Cat. They shared a picnic. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny went to the garden. Bunny met Cat. They played with a ball. Then Bunny went home with a happy memory.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Choose who is in your sentence.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Choose what they do.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Choose the thing in your sentence.",
+    "category": "stories",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bunny finds an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny finds an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny finds a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny finds a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny finds a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny finds a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny carries an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny carries an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny carries a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny carries a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny carries a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny carries a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny looks at an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny looks at an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny looks at a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny looks at a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Bunny looks at a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Bunny looks at a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog finds an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog finds an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog finds a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog finds a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog finds a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog finds a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog carries an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog carries an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog carries a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog carries a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog carries a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog carries a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog looks at an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog looks at an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog looks at a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog looks at a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Dog looks at a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Dog looks at a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat finds an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat finds an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat finds a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat finds a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat finds a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat finds a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat carries an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat carries an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat carries a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat carries a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat carries a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat carries a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat looks at an apple.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat looks at an apple.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat looks at a ball.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat looks at a ball.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Cat looks at a book.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You made a sentence! Cat looks at a book.",
+    "category": "stories",
+    "delivery": "playful"
+  },
+  {
+    "text": "Owen Onion was round and small, with purple skin and layers tall. He had two feet, a tiny nose, and little hands with little toes. Owen had a voice inside… but most days, Owen liked to hide.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 1. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "His best friend Cooper Cheese was loud. He talked to chairs. He talked to clouds. He talked while running through the room. He talked while sweeping with a broom. “Talking’s fun!” said Cooper Cheese. “Try it, Owen. Pretty please?”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 2. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Owen looked down at his shoes. He had a worry he could not lose. “I’m an onion,” Owen said. Then he tucked his chin and hid his head. “What if my breath smells oniony? What if no one stands near me?”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 3. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. “Owen, Owen, listen here. You are my friend. Come sit right near.” He scooted close and gave a grin. “I like you outside, and within.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 4. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. “I’ll sit with Owen for a while.” Owen peeked. His fear felt small. Beau did not seem scared at all.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 5. Pronunciation review: Owen: OH-en; Beau: boh."
+  },
+  {
+    "text": "Then Quinn Quinoa hopped in too. She wore a bow of leafy blue. “Words are how we share and say the things we feel throughout the day.” She tapped Owen’s hand with care. “Your words are welcome everywhere.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 6. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Owen’s fingers touched his mouth. His worried thoughts went north and south. “What if I speak and people know? What if they wrinkle up and go?” Cooper said, “Then start out small. One tiny word. That’s all. That’s all.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 7. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Beau Bread said, “Let’s practice. See? You can say a word with me.” Beau took a breath. He gave a try. He smiled and softly said, “Hi.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 8. Pronunciation review: Beau: boh."
+  },
+  {
+    "text": "Cooper bounced and shouted, “Hi!” His cheesy voice went flying by. Quinn said, “Hi,” so calm and sweet. Beau tapped rhythm with his feet. Then Cooper whispered, “Now you try. Just one small word. Just one small hi.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 9. Pronunciation review: Beau: boh."
+  },
+  {
+    "text": "Owen breathed in. Owen breathed out. His little knees went shake-shake-shout. His voice came out so soft and shy, “Hi.” The room was still. The room was kind. No one left him far behind.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 10. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Cooper clapped. Beau Bread cheered. Quinn smiled bright and stood up near. “You did it, Owen!” Cooper cried. “You found the voice you kept inside!” Owen smiled from cheek to cheek. Maybe it was safe to speak.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 11. Pronunciation review: Owen: OH-en; Beau: boh."
+  },
+  {
+    "text": "Then from the table came a squeak. A tiny pea rolled down the peak. It rolled past Beau. It rolled past Quinn. It nearly dropped into the bin. The pea cried, “Help! I cannot stop!” Owen’s eyes went big. “Stop!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 12. Pronunciation review: Owen: OH-en; Beau: boh."
+  },
+  {
+    "text": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 13. Pronunciation review: Owen: OH-en; Beau: boh."
+  },
+  {
+    "text": "Owen laughed a tiny laugh. Then Cooper gave his hand a pat. “Your voice is yours,” said Cooper Cheese. “Use it loud or soft with ease.” Quinn said, “Words can help. It’s true.” Beau Bread nodded, “We hear you.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 14. Pronunciation review: Owen: OH-en; Beau: boh."
+  },
+  {
+    "text": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: “Hi, friends.” And every friend came close to hear. Owen’s voice was welcome here.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book OwenOnionPage, page 15. Pronunciation review: Owen: OH-en."
+  },
+  {
+    "text": "Trey Triceratops loved to run. He loved to stomp. He loved to play. But most of all, Trey wanted to learn basketball one day.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 1. Pronunciation review: Trey: tray; Triceratops: try-SAIR-uh-tops."
+  },
+  {
+    "text": "At Dino Court, the hoops stood tall. So did Barry Brontosaurus. So did Rex T-Rex. Barry could dunk with his long, long neck. Rex could jump with a thunderous STOMP!",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 2. Pronunciation review: Brontosaurus: BRON-tuh-SOR-us."
+  },
+  {
+    "text": "Trey looked up. The basket looked high. Very high. “I’m not tall like Barry,” said Trey. “I can’t jump like Rex.” His little horns drooped. “Maybe basketball is not for me.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 3. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 4."
+  },
+  {
+    "text": "“From far away?” asked Trey. Rex bounced the ball. Barry pointed to a line on the court. “This is the three-point line,” said Barry. Rex smiled. “Make it from here, and it counts as three!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 5. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey gulped. “That is very far.” Barry nodded. “It is.” Rex nodded too. “But far things get closer when you practice.” Then they chanted: Feet set. Eyes up. Toss it high. Try, try, try.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 6. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey tried his first shot. BONK! The ball hit the rim. He tried again. BOING! The ball bounced away. He tried one more time. WHOOSH! Right over the hoop. Trey sighed. “I missed them all.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 7. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Barry smiled kindly. “Missing is part of learning.” Rex patted Trey’s back. “Every great shooter missed first.” Trey looked at the ball. “Even you?” Rex nodded. “Especially me.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 8. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "So they practiced together. Barry taught Trey to stand strong. “Point your toes to the hoop.” Rex taught Trey to bend his knees. “Use your legs, little buddy!” Trey whispered: Feet set. Eyes up. Toss it high. Try, try, try.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 9. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey shot in the morning. He shot after snack. He shot when the sun turned orange. Some shots missed. Some shots bounced. One shot rolled around the rim… and fell out. Trey stomped his foot. “This is hard!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 10. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Barry nodded. “Hard means you are learning.” Rex spun the ball on one claw. “Practice does not make it easy.” He winked. “Practice makes you braver.” Trey took a deep breath. Then he tried again.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 11. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "At last, it was game day. The Dino Court was full. Stegosaurus cheered. Pterodactyls flapped. Raptor twins waved flags. Trey’s tummy felt wiggly. “What if I miss?” he whispered.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 12. Pronunciation review: Trey: tray; Stegosaurus: STEG-uh-SOR-us."
+  },
+  {
+    "text": "Barry looked at him gently. “Then we try again.” Rex smiled. “You are on our team because you worked hard.” The score was tied. Three seconds left. The ball bounced to Trey. Barry shouted, “You can do it!” Rex shouted, “Shoot!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 13. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey stood behind the line. His heart went thump, thump, thump. He remembered the chant. Feet set. Eyes up. Toss it high. Try, try, try. Trey shot the ball. Up it went. Higher. Higher. Swish!",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 14. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "The crowd roared. Barry lifted Trey high. Rex danced a T-Rex dance. Trey laughed. “I made a three!” Barry smiled. “You practiced.” Rex grinned. “You got brave.” And Trey Triceratops knew: Big wins can start with one small try.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBasketballPage, page 15. Pronunciation review: Trey: tray; Triceratops: try-SAIR-uh-tops."
+  },
+  {
+    "text": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. “I want to play hockey,” he said. Then he took one tiny slide.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 1. Pronunciation review: Trey: tray; Triceratops: try-SAIR-uh-tops."
+  },
+  {
+    "text": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. “Come on, Trey,” he called. “Hockey starts with one brave glide.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 2. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 3."
+  },
+  {
+    "text": "Trey stepped onto the ice. Slip. Slide. Wobble. WHUMP! Trey landed on his belly. His hockey stick flew into the snow. “I am not good at ice,” Trey sighed.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 4. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Milo helped Trey up. “Falling is part of skating,” said Milo. Sasha nodded. “And trying again is part of winning.” Trey looked at the ice. It still looked slippery. But his friends looked kind.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 5. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Milo showed Trey how to stand. “Feet wide. Knees bent. Horn up high.” Sasha showed him how to glide. “Small push. Little slide. Try, try, try.” Trey whispered, “Try, try, try.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 6. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. “I’m skating!” Milo trumpeted. Sasha cheered.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 7. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Then Trey saw Milo shoot the puck. SLAP! The puck zipped across the ice. Sasha shot next. SLAP! The puck zoomed into the net. Trey’s eyes grew wide. “I want to learn that!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 8. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "“That is a slapshot,” said Milo. “It takes practice.” Sasha tapped Trey’s stick. “Stick down. Eyes up. Swing back. Slap!” Trey nodded. “Slapshot,” he whispered.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 9. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey tried. Tap. The puck moved one inch. He tried again. Bonk. The puck spun in a circle. He tried once more. Whoops! Trey spun in a circle too. “I can’t do it,” he said.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 10. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Milo smiled. “Not yet.” Sasha smiled too. “Yet is a little word with a big job.” So Trey practiced. Stick down. Eyes up. Swing back. Slap! Again. And again. And again.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 11. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "At last, it was game day. Snow dinos filled the rink. Penguins waved little flags. A pterodactyl blew the whistle. Trey held his stick tight. “What if I miss?” he asked. Milo said, “Then we keep playing.” Sasha said, “And we help our team.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 12. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 13. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "The game went on. Trey skated. Trey passed. Trey tried again. SLAP! Goal two! Then, with one chilly second left, the puck came back to Trey. His heart went thump, thump, thump.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 14. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey took one brave breath. Stick down. Eyes up. Swing back. Slap! The puck flew. The net shook. Goal three! “A hat trick!” cried Milo. Sasha spun in happy circles. Trey smiled big. He had learned something true: Practice makes you better. And trying again can help you score.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoHockeyPage, page 15. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 1. Pronunciation review: Trey: tray; Triceratops: try-SAIR-uh-tops."
+  },
+  {
+    "text": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. “Baseball is fun,” Vincent called. “Come try with us, Trey!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 2. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "At first base stood Annie Ankylosaurus. Annie was strong. Annie was steady. Annie had a mighty tail and a happy grin. When Annie hit the ball… CRACK! It flew over the ferns. “Whoa,” said Trey.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 3. Pronunciation review: Trey: tray; Ankylosaurus: an-KY-luh-SOR-us."
+  },
+  {
+    "text": "Trey stepped up to bat. Vincent tossed the ball softly. Trey swung. WHOOSH! He missed. Annie tossed another. Trey swung again. WHOOSH! He missed again. Trey’s horns drooped.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 4. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "“I can’t hit,” Trey said. Vincent jogged in from center field. “Not yet,” he said. Annie nodded. “Every hitter starts with practice.” Trey looked at the bat. “Even big hitters?” Annie smiled. “Especially big hitters.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 5. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 6. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey tried again. Feet set. Eyes on the ball. Swing smooth. Hold tight. TAP! The ball rolled two tiny steps. Trey blinked. “I hit it?” Vincent cheered. “You hit it!” Annie clapped. “That is where hitting starts.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 7. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard… but practice could be fun.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 8. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Some balls went left. Vincent chased them. Some balls went right. Annie scooped them up. Some balls barely moved at all. Trey sighed. “This is taking a long time.” Annie smiled. “Good things can take time.” Vincent said, “Try again.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 9. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey took a breath. Feet set. Eyes bright. Swing smooth. Hold tight. CRACK! The ball bounced past Annie. It rolled all the way to the fern fence. Trey’s eyes grew wide. “I did it!”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 10. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. “What if I miss?” he whispered.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 11. Pronunciation review: Trey: tray; Stegosaurus: STEG-uh-SOR-us."
+  },
+  {
+    "text": "Vincent stood beside him. “Then we cheer for the next try.” Annie gave Trey a gentle nod. “You practiced.” Vincent smiled. “You worked hard.” Annie smiled too. “So now, trust your swing.”",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 12. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, “You can do it!” Annie called, “Remember the chant!” Trey took one brave breath.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 13. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. “Run, Trey, run!” shouted Vincent.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 14. Pronunciation review: Trey: tray."
+  },
+  {
+    "text": "Trey ran to first. Then second. Then third. SAFE! Three dinos scored. The crowd roared. “Trey hit a triple!” shouted Annie. Vincent jumped high. Trey smiled big. He had learned something true: Practice helps. Friends help too. And one brave swing can win the game.",
+    "category": "stories",
+    "delivery": "story",
+    "note": "Original illustrated book DinoBaseballPage, page 15. Pronunciation review: Trey: tray."
+  }
+]

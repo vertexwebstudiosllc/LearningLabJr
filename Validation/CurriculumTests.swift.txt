@@ -1,8 +1,38 @@
 import XCTest
 import UIKit
+import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    @MainActor
+    func testRecordedNarrationNormalizesTextAndRejectsUnsafePaths() {
+        let good = NarrationAudioCatalog.Clip(text: "Hi,\n friend!", file: "llj-example.mp3", spokenText: "Hi, friend!", voice: "Joanna", engine: "generative", category: "shared")
+        let unsafe = NarrationAudioCatalog.Clip(text: "Unsafe", file: "llj-../../other.mp3", spokenText: "Unsafe", voice: "Joanna", engine: "generative", category: "shared")
+        let catalog = NarrationAudioCatalog(manifest: .init(schemaVersion: 1, clips: [good, unsafe]))
+        XCTAssertEqual(catalog.clip(for: "  Hi,  friend! ")?.file, good.file)
+        XCTAssertNil(catalog.clip(for: "Unsafe"))
+        XCTAssertNil(catalog.url(for: "A prompt that has no recording"))
+        XCTAssertEqual(NarrationAudioCatalog.normalized("caf\u{65}\u{301}"), "café")
+        XCTAssertEqual(NarrationAudioCatalog(manifest: .init(schemaVersion: 99, clips: [good])).count, 0)
+    }
+
+    @MainActor
+    func testBundledPollyNarrationIsPlayableAndCoversSharedText() throws {
+        let catalog = NarrationAudioCatalog.shared
+        XCTAssertGreaterThan(catalog.count, 500)
+        XCTAssertNotNil(catalog.url(for: NarrationVoice.previewText))
+        XCTAssertNotNil(catalog.url(for: "We did it together! You can play again or choose all done."))
+        let manifestURL = try XCTUnwrap(Bundle.main.url(forResource: "NarrationAudioManifest", withExtension: "json"))
+        let manifest = try JSONDecoder().decode(NarrationAudioCatalog.Manifest.self, from: Data(contentsOf: manifestURL))
+        XCTAssertEqual(Set(manifest.clips.map { NarrationAudioCatalog.normalized($0.text) }).count, manifest.clips.count)
+        XCTAssertEqual(Set(manifest.clips.map(\.voice)), ["Ruth"])
+        for clip in manifest.clips {
+            let url = try XCTUnwrap(catalog.url(for: clip.text), clip.text)
+            let audio = try AVAudioPlayer(contentsOf: url)
+            XCTAssertGreaterThan(audio.duration, 0.1, clip.text)
+        }
+    }
+
     @MainActor
     func testEveryCategoryHasTwelveCompleteUniqueActivities() {
         let sections = LearningCatalog.sections

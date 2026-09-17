@@ -1,0 +1,2 @@
+# Unified diff context adds a space before the project's tab indentation.
+Narration/*.patch whitespace=-space-before-tab

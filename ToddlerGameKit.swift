@@ -37,6 +37,11 @@ final class GameNarrator: ObservableObject {
     private let owner = UUID()
 
     func speak(_ text: String) {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-validateNarrationCoverage"), !text.isEmpty {
+            assert(NarrationAudioCatalog.shared.url(for: text) != nil, "Missing recorded narration: \(text)")
+        }
+        #endif
         guard UserDefaults.standard.object(forKey: "parents.voicePromptsEnabled") as? Bool ?? true,
               !UIAccessibility.isVoiceOverRunning, !text.isEmpty,
               UIApplication.shared.applicationState == .active,
@@ -57,8 +62,10 @@ final class GameNarrator: ObservableObject {
 private final class ActivitySpeech: NSObject, AVSpeechSynthesizerDelegate {
     static let shared = ActivitySpeech()
     private let synthesizer = AVSpeechSynthesizer()
+    private let recording = RecordedNarrationPlayer()
     private var owner: UUID?
     private var currentUtterance: ObjectIdentifier?
+    private var currentRecording: UUID?
 
     private override init() {
         super.init()
@@ -67,6 +74,21 @@ private final class ActivitySpeech: NSObject, AVSpeechSynthesizerDelegate {
 
     func speak(_ text: String, owner: UUID) {
         stopAll()
+        if NarrationVoice.prefersRecordedNarration,
+           let url = NarrationAudioCatalog.shared.url(for: text) {
+            let token = UUID()
+            self.owner = owner
+            currentRecording = token
+            BackgroundMusicManager.shared.setNarrating(true)
+            if recording.play(url: url, onFinish: { [weak self] in
+                guard let self, self.currentRecording == token else { return }
+                self.currentRecording = nil
+                self.owner = nil
+                BackgroundMusicManager.shared.setNarrating(false)
+            }) { return }
+            // A missing or damaged recording should never leave a game silent.
+            stopAll()
+        }
         let utterance = AVSpeechUtterance(string: text)
         guard NarrationVoice.configure(utterance) else { return }
         self.owner = owner
@@ -81,6 +103,8 @@ private final class ActivitySpeech: NSObject, AVSpeechSynthesizerDelegate {
     }
 
     func stopAll() {
+        currentRecording = nil
+        recording.stop()
         currentUtterance = nil
         synthesizer.stopSpeaking(at: .immediate)
         owner = nil

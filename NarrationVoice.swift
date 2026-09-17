@@ -69,7 +69,16 @@ enum NarrationVoiceSelection {
 @MainActor
 enum NarrationVoice {
     static let preferenceKey = "parents.narrationVoiceIdentifier"
+    static let recordedPreferenceKey = "parents.useRecordedNarration"
     static let previewText = "Hi, friend! Let's look together. Can you find the little duck? There it is! You found it."
+
+    static var prefersRecordedNarration: Bool {
+        UserDefaults.standard.object(forKey: recordedPreferenceKey) as? Bool ?? true
+    }
+
+    static var hasRecordedNarration: Bool {
+        NarrationAudioCatalog.shared.url(for: previewText) != nil
+    }
 
     static func installedVoices() -> [AVSpeechSynthesisVoice] {
         // Use installed Apple voices, without third-party speech-provider extensions.
@@ -119,6 +128,7 @@ enum NarrationVoice {
 /// A Form section for Parents Corner. Selecting a voice never enables game narration.
 struct NarrationVoiceSettings: View {
     @AppStorage(NarrationVoice.preferenceKey) private var preferredIdentifier = ""
+    @AppStorage(NarrationVoice.recordedPreferenceKey) private var useRecordedNarration = true
     @State private var voices: [NarrationVoiceDescriptor] = []
     @StateObject private var preview = NarrationVoicePreview()
     @Environment(\.scenePhase) private var scenePhase
@@ -137,19 +147,28 @@ struct NarrationVoiceSettings: View {
 
     var body: some View {
         Section("A friendly learning voice") {
-            Picker("Narrator", selection: pickerSelection) {
-                Text("Automatic · best available").tag("")
-                ForEach(voices) { voice in
-                    Text("\(voice.name) · \(voice.qualityLabel) · \(Locale.current.localizedString(forIdentifier: voice.language) ?? voice.language)")
-                        .tag(voice.id)
+            if NarrationVoice.hasRecordedNarration {
+                Toggle("Learning Lab narrator", isOn: $useRecordedNarration)
+                if useRecordedNarration {
+                    Text("Warm, playful narration made for these games. Works offline and uses an AI-generated voice.")
+                        .font(.subheadline).foregroundStyle(.secondary)
                 }
             }
-            if let selected {
-                Text("Using \(selected.name) · \(selected.qualityLabel.lowercased())")
-                    .font(.subheadline).foregroundStyle(.secondary)
-            } else {
-                Text("No English voice is currently available. Add an English voice in your device's Accessibility speech settings.")
-                    .font(.subheadline).foregroundStyle(.secondary)
+            if !NarrationVoice.hasRecordedNarration || !useRecordedNarration {
+                Picker("Narrator", selection: pickerSelection) {
+                    Text("Automatic · best available").tag("")
+                    ForEach(voices) { voice in
+                        Text("\(voice.name) · \(voice.qualityLabel) · \(Locale.current.localizedString(forIdentifier: voice.language) ?? voice.language)")
+                            .tag(voice.id)
+                    }
+                }
+                if let selected {
+                    Text("Using \(selected.name) · \(selected.qualityLabel.lowercased())")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                } else {
+                    Text("No English voice is currently available. Add an English voice in your device's Accessibility speech settings.")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                }
             }
 
             Button {
@@ -160,19 +179,23 @@ struct NarrationVoiceSettings: View {
                       systemImage: preview.isSpeaking ? "stop.circle.fill" : "speaker.wave.2.fill")
                     .frame(minHeight: 56)
             }
-            .disabled(voices.isEmpty)
+            .disabled(voices.isEmpty && !(useRecordedNarration && NarrationVoice.hasRecordedNarration))
             .accessibilityHint("Plays a short sample, even when spoken game directions are turned off")
 
             if let message = preview.message {
                 Text(message).font(.footnote).foregroundStyle(.secondary)
             }
-            if !preferredIdentifier.isEmpty && !voices.contains(where: { $0.id == preferredIdentifier }) {
+            if (!useRecordedNarration || !NarrationVoice.hasRecordedNarration),
+               !preferredIdentifier.isEmpty && !voices.contains(where: { $0.id == preferredIdentifier }) {
                 Text("Your previous voice is unavailable, so we're using the best available voice.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
-            Text("Warm, clear speech with a gentle pace. Only Apple voices available on this device appear here. For more natural speech, add an Enhanced or Premium English voice in your device's Accessibility speech settings. Once installed, narration works offline.")
+            if !NarrationVoice.hasRecordedNarration || !useRecordedNarration {
+                Text("Choose an installed Apple voice for spoken directions. Enhanced and Premium voices can be added in your device's Accessibility speech settings. Once installed, they work offline.")
                 .font(.footnote).foregroundStyle(.secondary)
+            }
         }
+        .onChange(of: useRecordedNarration) { _, _ in preview.stop(); GameNarrator.stopAll() }
         .onAppear(perform: refresh)
         .onChange(of: preferredIdentifier) { _, _ in preview.stop() }
         .onChange(of: scenePhase) { _, phase in
@@ -197,7 +220,9 @@ private final class NarrationVoicePreview: NSObject, ObservableObject, AVSpeechS
     @Published private(set) var isSpeaking = false
     @Published private(set) var message: String?
     private let synthesizer = AVSpeechSynthesizer()
+    private let recording = RecordedNarrationPlayer()
     private var currentUtterance: ObjectIdentifier?
+    private var currentRecording: UUID?
 
     override init() {
         super.init()
@@ -212,13 +237,27 @@ private final class NarrationVoicePreview: NSObject, ObservableObject, AVSpeechS
             return
         }
         guard UIApplication.shared.applicationState == .active, !SessionTimerManager.shared.isLocked else { return }
+        GameNarrator.stopAll()
+        ItemSoundManager.shared.stop()
+        if NarrationVoice.prefersRecordedNarration,
+           let url = NarrationAudioCatalog.shared.url(for: NarrationVoice.previewText) {
+            let token = UUID()
+            currentRecording = token
+            isSpeaking = true
+            BackgroundMusicManager.shared.setNarrating(true)
+            if recording.play(url: url, onFinish: { [weak self] in
+                guard let self, self.currentRecording == token else { return }
+                self.currentRecording = nil
+                self.isSpeaking = false
+                BackgroundMusicManager.shared.setNarrating(false)
+            }) { return }
+            stop()
+        }
         let utterance = AVSpeechUtterance(string: NarrationVoice.previewText)
         guard NarrationVoice.configure(utterance, preferredIdentifier: identifier) else {
             message = "This voice is unavailable. Choose another installed English voice."
             return
         }
-        GameNarrator.stopAll()
-        ItemSoundManager.shared.stop()
         currentUtterance = ObjectIdentifier(utterance)
         isSpeaking = true
         BackgroundMusicManager.shared.setNarrating(true)
@@ -226,6 +265,8 @@ private final class NarrationVoicePreview: NSObject, ObservableObject, AVSpeechS
     }
 
     func stop() {
+        currentRecording = nil
+        recording.stop()
         currentUtterance = nil
         synthesizer.stopSpeaking(at: .immediate)
         if isSpeaking { BackgroundMusicManager.shared.setNarrating(false) }

@@ -17,7 +17,7 @@ final class ActivitySmokeTests: XCTestCase {
         session = store
         if premium { _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly") }
         let app = XCUIApplication()
-        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
         app.launch()
         XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
         return app
@@ -147,9 +147,12 @@ final class ActivitySmokeTests: XCTestCase {
         let directions = app.switches.matching(NSPredicate(format: "label CONTAINS 'Spoken directions'")).firstMatch
         try reveal(directions, in: app)
         XCTAssertEqual(directions.value as? String, "0")
+        let recorded = app.switches.matching(NSPredicate(format: "label CONTAINS 'Learning Lab narrator'")).firstMatch
+        try reveal(recorded, in: app)
+        XCTAssertEqual(recorded.value as? String, "1", "The bundled narrator should be available and selected.")
         let preview = app.buttons["Hear a friendly sample"]
         try reveal(preview, in: app)
-        XCTAssertTrue(preview.isEnabled, "Install an English simulator voice to validate narration preview.")
+        XCTAssertTrue(preview.isEnabled, "Bundled narration must provide a preview without an installed Apple voice.")
         preview.tap()
         let stop = app.buttons["Stop voice preview"]
         XCTAssertTrue(stop.waitForExistence(timeout: 3))
