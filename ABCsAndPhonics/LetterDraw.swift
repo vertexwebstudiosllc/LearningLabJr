@@ -2,32 +2,60 @@ import SwiftUI
 import UIKit
 import CoreText
 
+enum LetterDrawAlphabet {
+    static let letters = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(String.init)
+
+    static func shuffled(startingAfter previousStart: String, lastShown: String = "") -> [String] {
+        let first = letters.filter { $0 != previousStart && $0 != lastShown }.randomElement()!
+        return [first] + letters.filter { $0 != first }.shuffled()
+    }
+}
+
 /// Keeps the original glyph outlines and stroke guidance, with one roomy letter at a time.
 struct LetterDraw: View {
-    @StateObject private var play = LiteracyPlay()
+    @StateObject private var play = LiteracyPlay(total: 26)
+    @AppStorage("letterDraw.previousStartingLetter") private var previousStartingLetter = ""
+    @AppStorage("letterDraw.lastShownLetter") private var lastShownLetter = ""
+    @State private var letters: [String] = []
     @State private var canvasID = UUID()
-    private var letter: String { ["L", "T", "I"][play.round] }
 
     var body: some View {
-        LiteracyStage(title: "Letter Draw", prompt: "Draw over the big letter \(letter). Or draw it in the air with your grown-up.", play: play) {
-            VStack(spacing: 18) {
-                LetterTraceView(letter: letter, isComplete: Binding(
-                    get: { play.solved },
-                    set: { done in if done { play.win("You explored the lines in \(letter)!") } }
-                ))
-                .id("\(play.round)-\(canvasID)")
-                .frame(height: 300)
-                .padding(20)
-                .background(Color(red: 0.15, green: 0.32, blue: 0.36), in: RoundedRectangle(cornerRadius: 26))
-                .accessibilityLabel("Drawing canvas for letter \(letter)")
-                .accessibilityHint("Trace the large dotted letter with your finger, or use the air drawing button below.")
-                ToddlerActionButton(title: "Clear my drawing", systemImage: "arrow.counterclockwise", color: .orange) { canvasID = UUID() }
-                ToddlerActionButton(title: "We drew it in the air", systemImage: "hand.draw.fill", color: .orange) {
-                    play.win("You made the letter \(letter) together!")
+        VStack(spacing: 0) {
+            if letters.indices.contains(play.round) {
+                let letter = letters[play.round]
+                LiteracyStage(title: "Letter Draw", prompt: "Draw over the big letter \(letter). Or draw it in the air with your grown-up.", play: play, onReplay: restart, progressLabel: "Letter", nextLabel: "Next letter") {
+                    VStack(spacing: 18) {
+                        LetterTraceView(letter: letter, isComplete: Binding(
+                            get: { play.solved },
+                            set: { done in if done { play.win("You explored the lines in \(letter)!") } }
+                        ))
+                        .id("\(play.round)-\(canvasID)")
+                        .frame(height: 300)
+                        .padding(20)
+                        .background(Color(red: 0.15, green: 0.32, blue: 0.36), in: RoundedRectangle(cornerRadius: 26))
+                        .accessibilityLabel("Drawing canvas for letter \(letter)")
+                        .accessibilityIdentifier("letter-draw.canvas")
+                        .accessibilityHint("Trace the large dotted letter with your finger, or use the air drawing button below.")
+                        ToddlerActionButton(title: "Clear my drawing", systemImage: "arrow.counterclockwise", color: .orange) { canvasID = UUID() }
+                        ToddlerActionButton(title: "We drew it in the air", systemImage: "hand.draw.fill", color: .orange) {
+                            play.win("You made the letter \(letter) together!")
+                        }
+                    }
                 }
             }
         }
-        .onChange(of: play.complete) { _, done in if !done { canvasID = UUID() } }
+        .onAppear(perform: restart)
+        .onChange(of: play.round) { _, round in
+            if letters.indices.contains(round) { lastShownLetter = letters[round] }
+        }
+    }
+
+    private func restart() {
+        letters = LetterDrawAlphabet.shuffled(startingAfter: previousStartingLetter, lastShown: lastShownLetter)
+        previousStartingLetter = letters[0]
+        lastShownLetter = letters[0]
+        canvasID = UUID()
+        play.replay()
     }
 }
 
@@ -299,14 +327,8 @@ private enum LetterPathProvider {
     }
 
     static func subpaths(for letter: String, in rect: CGRect) -> [Path] {
-        let paths = cgPath(for: letter, in: rect).extractSubpaths()
-        let lettersWithHoles: Set<String> = ["A","B","D","O","P","Q","R"]
-        if lettersWithHoles.contains(letter.uppercased()) {
-            // Keep the two largest contours (outer + primary hole) to reduce clutter inside the glyph
-            let sorted = paths.sorted { $0.boundingRect.areaValue > $1.boundingRect.areaValue }
-            return Array(sorted.prefix(2))
-        }
-        return paths
+        // Keep every contour, including both enclosed spaces in B.
+        cgPath(for: letter, in: rect).extractSubpaths()
     }
 
     private static func glyphForChar(_ char: UniChar, font: UIFont) -> CGGlyph {

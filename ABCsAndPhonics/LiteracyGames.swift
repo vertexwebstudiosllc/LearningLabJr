@@ -13,7 +13,15 @@ final class LiteracyPlay: ObservableObject {
     @Published var complete = false
     @Published var feedback = ""
     @Published private(set) var feedbackRevision = 0
-    let total = 3
+    let total: Int
+
+    init(total: Int = 3) {
+        precondition(total > 0)
+        self.total = total
+    }
+
+    // No actor-bound cleanup is needed. Avoid an executor hop during teardown.
+    nonisolated deinit {}
 
     func say(_ text: String) { guard !complete else { return }; feedback = text; feedbackRevision += 1 }
     func win(_ text: String) { guard !complete else { return }; solved = true; say(text) }
@@ -30,19 +38,22 @@ struct LiteracyStage<Content: View>: View {
     let title: String
     let prompt: String
     @ObservedObject var play: LiteracyPlay
+    var onReplay: (() -> Void)? = nil
+    var progressLabel = "Adventure"
+    var nextLabel = "Next adventure"
     @ViewBuilder var content: () -> Content
     @StateObject private var narrator = GameNarrator()
 
     var body: some View {
-        ToddlerGameScaffold(title: title, prompt: prompt, accent: .orange, completion: play.complete, onReplay: play.replay) {
+        ToddlerGameScaffold(title: title, prompt: prompt, accent: .orange, completion: play.complete, onReplay: onReplay ?? play.replay) {
             VStack(spacing: 20) {
-                Text("Adventure \(play.round + 1) of \(play.total)").font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
+                Text("\(progressLabel) \(play.round + 1) of \(play.total)").font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
                 content().disabled(play.solved)
                 if !play.feedback.isEmpty {
                     Text(play.feedback).font(.title3.weight(.semibold)).multilineTextAlignment(.center).foregroundStyle(Color.brown)
                 }
                 if play.solved {
-                    ToddlerActionButton(title: play.round + 1 == play.total ? "All done" : "Next adventure", systemImage: "arrow.right.circle.fill", color: .orange, action: play.advance)
+                    ToddlerActionButton(title: play.round + 1 == play.total ? "All done" : nextLabel, systemImage: "arrow.right.circle.fill", color: .orange, action: play.advance)
                 }
             }
         }
@@ -113,43 +124,6 @@ struct LetterTwinsGame: View {
                 }
             }
         }
-    }
-}
-
-struct LiteracySoundBasketsGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private let cards: [[LiteracyPicture]] = [
-        [.init(word: "milk", asset: "Milk"), .init(word: "sun", asset: "Sun"), .init(word: "moon", asset: "Moon")],
-        [.init(word: "sun", asset: "Sun"), .init(word: "moon", asset: "Moon"), .init(word: "milk", asset: "Milk")],
-        [.init(word: "moon", asset: "Moon"), .init(word: "sun", asset: "Sun"), .init(word: "milk", asset: "Milk")]
-    ]
-    private var current: LiteracyPicture { cards[play.round][min(play.count, 2)] }
-    var body: some View {
-        LiteracyStage(title: "Sound Baskets", prompt: "Say \(current.word). Does it start like moon or like sun? Tap its basket.", play: play) {
-            VStack(spacing: 20) {
-                WordPictureCard(word: current.word, asset: current.asset)
-                Text("\(min(play.count, 3)) of 3 cards sorted").font(.headline)
-                HStack(spacing: 12) {
-                    basket("Moon", asset: "Moon", initial: "m")
-                    basket("Sun", asset: "Sun", initial: "s")
-                }
-            }
-        }
-    }
-    private func basket(_ word: String, asset: String, initial: String) -> some View {
-        Button {
-            if current.word.hasPrefix(initial) {
-                let found = current.word
-                play.count += 1
-                if play.count == 3 { play.win("You sorted every word by its first sound!") }
-                else { play.say("\(found) starts like \(word.lowercased()).") }
-            } else { play.say("Say \(current.word), then moon, then sun. Listen to how each word begins.") }
-        } label: {
-            VStack {
-                WordPictureCard(word: "Like \(word.lowercased())", asset: asset)
-                Image(systemName: "basket.fill").font(.system(size: 38))
-            }
-        }.buttonStyle(.plain).accessibilityLabel("Basket for words that start like \(word)")
     }
 }
 

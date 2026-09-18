@@ -29,6 +29,8 @@ Coverage:
 - Actual compiled-bundle lookup of nature and story artwork, including all sixty book pages and namespace-qualified Space images.
 - Session expiry, background elapsed time, restart, stop, and extreme duration input.
 - Voice quality ranking, saved choice, missing-voice fallback, and exclusion of novelty, personal, and non-English voices.
+- Letter Draw completes all 26 unique letters, rejects skipping, and starts with a different letter on reentry/replay.
+- Sound Baskets covers all 26 target letters, available artwork, stable two-letter choices, stale/wrong drop rejection, tap-only narration, real drag-and-drop, reentry, and replay.
 - Menu-to-game navigation, the four-book library, and the six premium phonics routes using StoreKit's local test session.
 - Wrong and correct parent-gate responses, access to the parent learning guide, and a complete three-round Touch & Count session followed by replay.
 - Bundled Polly manifest lookup and every MP3 opening with a valid duration; all 60 story pages and literal narration calls are covered by the source checks.

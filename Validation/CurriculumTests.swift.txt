@@ -5,6 +5,65 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testSoundBasketsAlphabetAndDropMatching() {
+        let alphabet = Set(LetterDrawAlphabet.letters)
+        XCTAssertEqual(SoundBasketItem.alphabet.count, 26)
+        XCTAssertEqual(Set(SoundBasketItem.alphabet.map(\.letter)), alphabet)
+        for item in SoundBasketItem.alphabet {
+            XCTAssertEqual(String(item.word.prefix(1)).uppercased(), item.letter)
+            if let asset = item.asset {
+                XCTAssertNotNil(UIImage(named: asset) ?? UIImage(named: "Space/\(asset)"), asset)
+            }
+        }
+        for previous in LetterDrawAlphabet.letters {
+            let rounds = SoundBasketRound.session(previousStart: previous, lastShown: "Z")
+            XCTAssertEqual(rounds.count, 26)
+            XCTAssertEqual(Set(rounds.map { $0.item.letter }), alphabet)
+            XCTAssertNotEqual(rounds.first?.item.letter, previous)
+            XCTAssertNotEqual(rounds.first?.item.letter, "Z")
+            for round in rounds {
+                XCTAssertEqual(Set(round.choices).count, 2)
+                XCTAssertTrue(round.choices.contains(round.item.letter))
+                XCTAssertTrue(Set(round.choices).isSubset(of: alphabet))
+                XCTAssertTrue(round.matches([round.dragID], basket: round.item.letter))
+                XCTAssertFalse(round.matches(["stale-picture"], basket: round.item.letter))
+                let wrong = round.choices.first { $0 != round.item.letter }!
+                XCTAssertFalse(round.matches([round.dragID], basket: wrong))
+            }
+        }
+    }
+
+    @MainActor
+    func testLetterDrawUsesEveryLetterOnceAndRestartsWithDifferentFirst() {
+        for previous in [""] + LetterDrawAlphabet.letters {
+            let letters = LetterDrawAlphabet.shuffled(startingAfter: previous, lastShown: "Z")
+            XCTAssertEqual(letters.count, 26)
+            XCTAssertEqual(Set(letters), Set(LetterDrawAlphabet.letters))
+            XCTAssertNotEqual(letters.first, previous)
+            XCTAssertNotEqual(letters.first, "Z")
+            let play = LiteracyPlay(total: letters.count)
+            var seen: Set<String> = []
+            for index in 0..<26 {
+                XCTAssertFalse(play.complete)
+                XCTAssertEqual(play.round, index)
+                XCTAssertTrue(seen.insert(letters[play.round]).inserted)
+                play.advance()
+                XCTAssertEqual(play.round, index, "Unfinished letters cannot be skipped")
+                play.win("Done")
+                play.advance()
+            }
+            XCTAssertTrue(play.complete)
+            play.advance()
+            XCTAssertEqual(play.round, 25)
+            play.replay()
+            XCTAssertEqual(play.round, 0)
+            XCTAssertFalse(play.solved)
+            XCTAssertFalse(play.complete)
+        }
+        XCTAssertEqual(LiteracyPlay().total, 3, "Other literacy games retain their round count")
+    }
+
+    @MainActor
     func testRecordedNarrationNormalizesTextAndRejectsUnsafePaths() {
         let good = NarrationAudioCatalog.Clip(text: "Hi,\n friend!", file: "llj-example.mp3", spokenText: "Hi, friend!", voice: "Joanna", engine: "generative", category: "shared")
         let unsafe = NarrationAudioCatalog.Clip(text: "Unsafe", file: "llj-../../other.mp3", spokenText: "Unsafe", voice: "Joanna", engine: "generative", category: "shared")

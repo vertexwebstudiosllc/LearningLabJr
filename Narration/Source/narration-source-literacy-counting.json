@@ -1482,5 +1482,1056 @@
     "text": "Let's listen again, then tap along.",
     "category": "counting",
     "delivery": "gentle"
+  },
+  {
+    "text": "Draw over the big letter A. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in A!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter A together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter B. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in B!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter B together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter C. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in C!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter C together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter D. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in D!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter D together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter E. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in E!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter E together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter F. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in F!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter F together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter G. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in G!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter G together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter H. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in H!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter H together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter J. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in J!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter J together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter K. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in K!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter K together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter M. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in M!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter M together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter N. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in N!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter N together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter O. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in O!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter O together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter P. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in P!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter P together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter Q. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in Q!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter Q together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter R. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in R!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter R together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter S. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in S!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter S together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter U. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in U!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter U together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter V. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in V!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter V together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter W. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in W!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter W together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter X. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in X!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter X together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter Y. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in Y!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter Y together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Draw over the big letter Z. Or draw it in the air with your grown-up.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Draw over the big letter <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Or draw it in the air with your grown-up.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You explored the lines in Z!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You explored the lines in <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "You made the letter Z together!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You made the letter <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> together!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is apple. Tap each basket to hear its letter. Drag the picture to the letter that starts apple.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched apple! Apple starts with the letter A.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched apple! Apple starts with the letter <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"eɪ\">A</phoneme>.</speak>"
+  },
+  {
+    "text": "This is basketball. Tap each basket to hear its letter. Drag the picture to the letter that starts basketball.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched basketball! Basketball starts with the letter B.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched basketball! Basketball starts with the letter <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter B.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>.</speak>"
+  },
+  {
+    "text": "This is cat. Tap each basket to hear its letter. Drag the picture to the letter that starts cat.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched cat! Cat starts with the letter C.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched cat! Cat starts with the letter <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter C.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>.</speak>"
+  },
+  {
+    "text": "This is dog. Tap each basket to hear its letter. Drag the picture to the letter that starts dog.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched dog! Dog starts with the letter D.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched dog! Dog starts with the letter <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter D.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>.</speak>"
+  },
+  {
+    "text": "This is egg. Tap each basket to hear its letter. Drag the picture to the letter that starts egg.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched egg! Egg starts with the letter E.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched egg! Egg starts with the letter <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>"
+  },
+  {
+    "text": "This is fish. Tap each basket to hear its letter. Drag the picture to the letter that starts fish.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched fish! Fish starts with the letter F.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched fish! Fish starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter F.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>.</speak>"
+  },
+  {
+    "text": "This is goat. Tap each basket to hear its letter. Drag the picture to the letter that starts goat.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched goat! Goat starts with the letter G.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched goat! Goat starts with the letter <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>.</speak>"
+  },
+  {
+    "text": "This is horse. Tap each basket to hear its letter. Drag the picture to the letter that starts horse.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched horse! Horse starts with the letter H.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched horse! Horse starts with the letter <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter H.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>.</speak>"
+  },
+  {
+    "text": "This is ice cream. Tap each basket to hear its letter. Drag the picture to the letter that starts ice cream.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched ice cream! Ice Cream starts with the letter I.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched ice cream! Ice Cream starts with the letter <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>.</speak>"
+  },
+  {
+    "text": "This is jellyfish. Tap each basket to hear its letter. Drag the picture to the letter that starts jellyfish.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched jellyfish! Jellyfish starts with the letter J.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched jellyfish! Jellyfish starts with the letter <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter J.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>.</speak>"
+  },
+  {
+    "text": "This is kiwi. Tap each basket to hear its letter. Drag the picture to the letter that starts kiwi.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched kiwi! Kiwi starts with the letter K.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched kiwi! Kiwi starts with the letter <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter K.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>.</speak>"
+  },
+  {
+    "text": "This is lemon. Tap each basket to hear its letter. Drag the picture to the letter that starts lemon.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched lemon! Lemon starts with the letter L.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched lemon! Lemon starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>.</speak>"
+  },
+  {
+    "text": "This is moon. Tap each basket to hear its letter. Drag the picture to the letter that starts moon.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched moon! Moon starts with the letter M.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched moon! Moon starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter M.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛm\">M</phoneme>.</speak>"
+  },
+  {
+    "text": "This is noodles. Tap each basket to hear its letter. Drag the picture to the letter that starts noodles.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched noodles! Noodles starts with the letter N.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched noodles! Noodles starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>.</speak>"
+  },
+  {
+    "text": "This is orange. Tap each basket to hear its letter. Drag the picture to the letter that starts orange.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched orange! Orange starts with the letter O.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched orange! Orange starts with the letter <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>.</speak>"
+  },
+  {
+    "text": "This is pig. Tap each basket to hear its letter. Drag the picture to the letter that starts pig.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched pig! Pig starts with the letter P.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched pig! Pig starts with the letter <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter P.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>"
+  },
+  {
+    "text": "This is quilt. Tap each basket to hear its letter. Drag the picture to the letter that starts quilt.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched quilt! Quilt starts with the letter Q.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched quilt! Quilt starts with the letter <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter Q.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>.</speak>"
+  },
+  {
+    "text": "This is rabbit. Tap each basket to hear its letter. Drag the picture to the letter that starts rabbit.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched rabbit! Rabbit starts with the letter R.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched rabbit! Rabbit starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>.</speak>"
+  },
+  {
+    "text": "This is sun. Tap each basket to hear its letter. Drag the picture to the letter that starts sun.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched sun! Sun starts with the letter S.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched sun! Sun starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛs\">S</phoneme>.</speak>"
+  },
+  {
+    "text": "This is turtle. Tap each basket to hear its letter. Drag the picture to the letter that starts turtle.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched turtle! Turtle starts with the letter T.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched turtle! Turtle starts with the letter <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter T.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>.</speak>"
+  },
+  {
+    "text": "This is umbrella. Tap each basket to hear its letter. Drag the picture to the letter that starts umbrella.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched umbrella! Umbrella starts with the letter U.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched umbrella! Umbrella starts with the letter <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter U.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>"
+  },
+  {
+    "text": "This is volleyball. Tap each basket to hear its letter. Drag the picture to the letter that starts volleyball.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched volleyball! Volleyball starts with the letter V.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched volleyball! Volleyball starts with the letter <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter V.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>.</speak>"
+  },
+  {
+    "text": "This is whale. Tap each basket to hear its letter. Drag the picture to the letter that starts whale.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched whale! Whale starts with the letter W.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched whale! Whale starts with the letter <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter W.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>.</speak>"
+  },
+  {
+    "text": "This is x-ray. Tap each basket to hear its letter. Drag the picture to the letter that starts x-ray.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched x-ray! X-Ray starts with the letter X.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched x-ray! X-Ray starts with the letter <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter X.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>.</speak>"
+  },
+  {
+    "text": "This is yogurt. Tap each basket to hear its letter. Drag the picture to the letter that starts yogurt.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched yogurt! Yogurt starts with the letter Y.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched yogurt! Yogurt starts with the letter <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter Y.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>.</speak>"
+  },
+  {
+    "text": "This is zucchini. Tap each basket to hear its letter. Drag the picture to the letter that starts zucchini.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You matched zucchini! Zucchini starts with the letter Z.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You matched zucchini! Zucchini starts with the letter <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>.</speak>"
+  },
+  {
+    "text": "Words that start with the letter Z.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Words that start with the letter <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>.</speak>"
+  },
+  {
+    "text": "Let's try the other basket. Tap its letter and listen.",
+    "category": "literacy",
+    "delivery": "gentle"
   }
 ]

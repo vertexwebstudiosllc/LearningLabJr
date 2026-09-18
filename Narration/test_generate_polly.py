@@ -121,6 +121,7 @@ class NarrationTests(unittest.TestCase):
         for page in pages:
             self.assertIn(narration.normalize_text(page), keys)
         files = ['ABCsAndPhonics/LiteracyGames.swift', 'ABCsAndPhonics/LetterDraw.swift',
+                 'ABCsAndPhonics/AlphabetSoundBaskets.swift',
                  '123AndCounting/CountingMenu.swift',
                  'ShapesAndColors/ShapesAndColorsGames.swift', 'BigFeelings/BigFeelingsGames.swift',
                  'NatureExplorers/NatureLearningGames.swift', 'NatureExplorers/NatureUniqueGames.swift',
@@ -130,10 +131,18 @@ class NarrationTests(unittest.TestCase):
             for spoken in re.findall(r'(?:narrator\.speak|play\.(?:say|win))\("([^"\\]*)"\)', text):
                 self.assertIn(narration.normalize_text(spoken), keys, filename)
         self.assertIn(narration.PREVIEW_TEXT, keys)
-        for letter in ['L', 'T', 'I']:
+        for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
             for spoken in [f'Draw over the big letter {letter}. Or draw it in the air with your grown-up.',
                            f'You explored the lines in {letter}!',
                            f'You made the letter {letter} together!']:
+                self.assertIn(spoken, keys)
+        baskets = (root / 'ABCsAndPhonics/AlphabetSoundBaskets.swift').read_text()
+        items = re.findall(r'\.init\(letter: "([A-Z])", word: "([^"]+)", asset:', baskets)
+        self.assertEqual(len(items), 26)
+        for letter, word in items:
+            for spoken in [f'This is {word}. Tap each basket to hear its letter. Drag the picture to the letter that starts {word}.',
+                           f'You matched {word}! {word.title()} starts with the letter {letter}.',
+                           f'Words that start with the letter {letter}.']:
                 self.assertIn(spoken, keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
