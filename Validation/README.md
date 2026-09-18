@@ -30,6 +30,7 @@ Coverage:
 - Session expiry, background elapsed time, restart, stop, and extreme duration input.
 - Voice quality ranking, saved choice, missing-voice fallback, and exclusion of novelty, personal, and non-English voices.
 - Restored SpriteKit garage reveal/name/close cycles and claw item pickups, with original artwork and Ruth recordings for every loaded item.
+- Word Builder checks the 45-word bank, 2,000 selections with a persistent 20-word exclusion window, picture and Ruth coverage, and a 22-word UI playthrough with reentry and app restart.
 - Beginning Sounds checks all 26 target letters, matching pictures and bundled assets, both answer-order recordings, wrong-answer retry, fresh entry, and replay.
 - Letter Twins verifies all 26 unique targets, two distinct answer choices, wrong-answer retry, fresh entry, replay, and complete Ruth prompt coverage.
 - Letter Draw completes all 26 unique letters, rejects skipping, and starts with a different letter on reentry/replay.

@@ -155,6 +155,16 @@ class NarrationTests(unittest.TestCase):
                 self.assertIn(f'Say {word}. Which word starts the same way: {first} or {second}?', keys)
             self.assertIn(f'{word} and {match} start with the same sound. Say them together!', keys)
             self.assertIn(f'Listen with your grown-up: {word}, {match}. Those words start alike.', keys)
+        builder = (root / 'ABCsAndPhonics/WordBuilder.swift').read_text()
+        words = re.findall(r'\.init\(word: "([A-Z]+)"', builder)
+        self.assertGreater(len(words), 20)
+        for word in words:
+            self.assertIn(f"Let's build {word.lower()}. Copy the letters from left to right. Your grown-up can help.", keys)
+            self.assertIn(f"You built {word.lower()}! {', '.join(word)}. {word.lower()}.", keys)
+            for first, second in zip(word, word[1:]):
+                self.assertIn(f'{first}. Next find {second}.', keys)
+            for letter in word:
+                self.assertIn(f'Look at the model. Find {letter} next.', keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
 

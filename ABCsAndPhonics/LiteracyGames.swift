@@ -256,41 +256,6 @@ struct LiteracyWordClawGame: View {
     }
 }
 
-struct GuidedWordBuilderGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private let words = [LiteracyPicture(word: "CAT", asset: "cat"), .init(word: "SUN", asset: "Sun"), .init(word: "DOG", asset: "dog")]
-    private var current: LiteracyPicture { words[play.round] }
-    private var letters: [String] { current.word.map(String.init) }
-    private var choices: [String] { [letters[2], letters[0], letters[1]] }
-    var body: some View {
-        LiteracyStage(title: "Word Builder", prompt: "Let's build \(current.word.lowercased()). Copy the letters from left to right. Your grown-up can help.", play: play) {
-            VStack(spacing: 18) {
-                WordPictureCard(word: current.word, asset: current.asset)
-                HStack(spacing: 12) {
-                    ForEach(0..<letters.count, id: \.self) { index in
-                        Text(index < play.count ? letters[index] : "·")
-                            .font(.system(size: 40, weight: .bold, design: .rounded))
-                            .frame(maxWidth: .infinity, minHeight: 80)
-                            .background(Color.orange.opacity(index == play.count ? 0.25 : 0.1), in: RoundedRectangle(cornerRadius: 16))
-                            .accessibilityLabel(index < play.count ? "Letter \(letters[index]) placed" : "Empty letter space \(index + 1)")
-                    }
-                }
-                HStack(spacing: 12) {
-                    ForEach(choices, id: \.self) { letter in
-                        LiteracyLetterButton(letter: letter, selected: letters.prefix(play.count).contains(letter)) {
-                            if letter == letters[min(play.count, 2)] {
-                                play.count += 1
-                                if play.count == 3 { play.win("You built \(current.word.lowercased())! \(letters.joined(separator: ", ")). \(current.word.lowercased()).") }
-                                else { play.say("\(letter). Next find \(letters[play.count]).") }
-                            } else { play.say("Look at the model. Find \(letters[min(play.count, 2)]) next.") }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct AlphabetWindowsGame: View {
     @StateObject private var play = LiteracyPlay()
     private var letters: [String] { [["A", "B", "C"], ["D", "E", "F"], ["M", "N", "O"]][play.round] }

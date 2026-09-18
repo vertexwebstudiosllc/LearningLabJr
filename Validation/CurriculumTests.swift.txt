@@ -44,6 +44,39 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
+    func testWordBuilderBankRecentWindowAndRuth() {
+        let bank = WordBuilderWord.bank
+        XCTAssertGreaterThan(bank.count, 20)
+        XCTAssertEqual(Set(bank.map(\.word)).count, bank.count)
+        XCTAssertEqual(Set(bank.map { $0.letters.count }), [3, 4, 5])
+        XCTAssertTrue(bank.contains { Set($0.letters).count < $0.letters.count })
+        for item in bank {
+            XCTAssertNotNil(UIImage(named: item.asset) ?? UIImage(named: "Space/\(item.asset)"), item.asset)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: item.prompt), item.prompt)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: item.success), item.success)
+            for index in item.letters.indices {
+                let letter = item.letters[index]
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: "Look at the model. Find \(letter) next."))
+                if index + 1 < item.letters.count {
+                    XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: "\(letter). Next find \(item.letters[index + 1])."))
+                }
+            }
+        }
+        var recent: [String] = []
+        for _ in 0..<2000 {
+            let next = WordBuilderWord.next(recent: recent)
+            XCTAssertFalse(recent.contains(next.word))
+            recent = WordBuilderWord.remembering(next.word, recent: recent)
+            XCTAssertLessThanOrEqual(recent.count, 20)
+            XCTAssertEqual(recent.last, next.word)
+            // Match persisted history restored on the next game entry.
+            recent = recent.joined(separator: "|").split(separator: "|").map(String.init)
+        }
+        let old = Array(bank.prefix(21).map(\.word))
+        XCTAssertEqual(WordBuilderWord.remembering("CAT", recent: old), Array((old + ["CAT"]).suffix(20)))
+    }
+
+    @MainActor
     func testBeginningSoundsAlphabetPicturesAndRuthCoverage() {
         let alphabet = Set(LetterDrawAlphabet.letters)
         XCTAssertEqual(BeginningSoundsPair.alphabet.count, 26)

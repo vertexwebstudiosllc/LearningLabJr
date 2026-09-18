@@ -1,0 +1,1213 @@
+[
+  {
+    "text": "Let's build pig. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built pig! P, I, G. pig.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built pig! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. pig.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find P next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find I next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build cow. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built cow! C, O, W. cow.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built cow! <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>. cow.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find W.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find W next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build hen. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built hen! H, E, N. hen.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built hen! <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. hen.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find H next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find E next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build egg. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built egg! E, G, G. egg.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built egg! <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. egg.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build jam. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built jam! J, A, M. jam.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built jam! <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. jam.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "J. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find M.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find J next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find M next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build eel. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built eel! E, E, L. eel.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built eel! <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. eel.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find L next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build goat. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built goat! G, O, A, T. goat.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built goat! <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. goat.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build duck. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built duck! D, U, C, K. duck.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built duck! <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>, <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. duck.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "D. Next find U.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U. Next find C.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C. Next find K.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find K next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build fish. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built fish! F, I, S, H. fish.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built fish! <phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. fish.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "F. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S. Next find H.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find F next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build moon. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built moon! M, O, O, N. moon.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built moon! <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. moon.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build milk. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built milk! M, I, L, K. milk.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built milk! <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. milk.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L. Next find K.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build pear. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built pear! P, E, A, R. pear.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built pear! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. pear.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find R next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build plum. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built plum! P, L, U, M. plum.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built plum! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. plum.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P. Next find L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L. Next find U.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U. Next find M.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build corn. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built corn! C, O, R, N. corn.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built corn! <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. corn.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build lamb. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built lamb! L, A, M, B. lamb.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built lamb! <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. lamb.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M. Next find B.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find B next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build crab. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built crab! C, R, A, B. crab.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built crab! <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. crab.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C. Next find R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find B.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build seal. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built seal! S, E, A, L. seal.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built seal! <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. seal.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build star. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built star! S, T, A, R. star.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built star! <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. star.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S. Next find T.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build kiwi. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built kiwi! K, I, W, I. kiwi.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built kiwi! <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. kiwi.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "K. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find W.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build soup. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built soup! S, O, U, P. soup.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built soup! <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>, <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. soup.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find U.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U. Next find P.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build rice. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built rice! R, I, C, E. rice.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built rice! <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. rice.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find C.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build peas. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built peas! P, E, A, S. peas.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built peas! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>. peas.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build apple. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built apple! A, P, P, L, E. apple.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built apple! <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. apple.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find P.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P. Next find P.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build grape. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built grape! G, R, A, P, E. grape.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built grape! <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. grape.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G. Next find R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build lemon. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built lemon! L, E, M, O, N. lemon.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built lemon! <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. lemon.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find M.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build peach. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built peach! P, E, A, C, H. peach.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built peach! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. peach.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find C.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C. Next find H.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build bread. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built bread! B, R, E, A, D. bread.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built bread! <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. bread.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B. Next find R.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find D.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build toast. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built toast! T, O, A, S, T. toast.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built toast! <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. toast.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build shark. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built shark! S, H, A, R, K. shark.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built shark! <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. shark.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find K.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build sheep. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built sheep! S, H, E, E, P. sheep.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built sheep! <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. sheep.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E. Next find P.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build whale. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built whale! W, H, A, L, E. whale.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built whale! <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. whale.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W. Next find H.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build horse. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built horse! H, O, R, S, E. horse.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built horse! <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. horse.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build mouse. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built mouse! M, O, U, S, E. mouse.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built mouse! <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. mouse.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U. Next find S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build goose. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built goose! G, O, O, S, E. goose.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built goose! <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. goose.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O. Next find S.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build chick. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built chick! C, H, I, C, K. chick.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built chick! <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. chick.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build pizza. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built pizza! P, I, Z, Z, A. pizza.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built pizza! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>, <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. pizza.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find Z.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z. Next find Z.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Look at the model. Find Z next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> next.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build pasta. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built pasta! P, A, S, T, A. pasta.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built pasta! <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. pasta.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build onion. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built onion! O, N, I, O, N. onion.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built onion! <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. onion.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "N. Next find I.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I. Next find O.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build mango. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built mango! M, A, N, G, O. mango.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built mango! <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>, <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. mango.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find N.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "N. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build llama. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built llama! L, L, A, M, A. llama.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built llama! <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. llama.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L. Next find L.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build bagel. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built bagel! B, A, G, E, L. bagel.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built bagel! <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. bagel.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B. Next find A.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A. Next find G.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G. Next find E.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Let's build earth. Copy the letters from left to right. Your grown-up can help.",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "You built earth! E, A, R, T, H. earth.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>You built earth! <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. earth.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R. Next find T.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T. Next find H.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Next find <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>.</speak>",
+    "engine": "neural"
+  }
+]
