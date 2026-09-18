@@ -30,6 +30,7 @@ Coverage:
 - Session expiry, background elapsed time, restart, stop, and extreme duration input.
 - Voice quality ranking, saved choice, missing-voice fallback, and exclusion of novelty, personal, and non-English voices.
 - Restored SpriteKit garage reveal/name/close cycles and claw item pickups, with original artwork and Ruth recordings for every loaded item.
+- Beginning Sounds checks all 26 target letters, matching pictures and bundled assets, both answer-order recordings, wrong-answer retry, fresh entry, and replay.
 - Letter Twins verifies all 26 unique targets, two distinct answer choices, wrong-answer retry, fresh entry, replay, and complete Ruth prompt coverage.
 - Letter Draw completes all 26 unique letters, rejects skipping, and starts with a different letter on reentry/replay.
 - Sound Baskets covers all 26 target letters, available artwork, stable two-letter choices, stale/wrong drop rejection, tap-only narration, real drag-and-drop, reentry, and replay.

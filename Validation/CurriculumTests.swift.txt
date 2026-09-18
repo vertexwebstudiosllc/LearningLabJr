@@ -44,6 +44,40 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
+    func testBeginningSoundsAlphabetPicturesAndRuthCoverage() {
+        let alphabet = Set(LetterDrawAlphabet.letters)
+        XCTAssertEqual(BeginningSoundsPair.alphabet.count, 26)
+        for pair in BeginningSoundsPair.alphabet {
+            XCTAssertNotEqual(pair.word, pair.matchingWord)
+            for word in [pair.word, pair.matchingWord] {
+                XCTAssertEqual(String(word.prefix(1)).uppercased(), pair.letter)
+            }
+            for asset in [pair.asset, pair.matchingAsset].compactMap({ $0 }) {
+                XCTAssertNotNil(UIImage(named: asset) ?? UIImage(named: "Space/\(asset)"), asset)
+            }
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: pair.success), pair.success)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: pair.retry), pair.retry)
+        }
+        for previous in LetterDrawAlphabet.letters {
+            let rounds = BeginningSoundsSessionRound.session(previousStart: previous, lastShown: "Z")
+            XCTAssertEqual(rounds.count, 26)
+            XCTAssertEqual(Set(rounds.map { $0.pair.letter }), alphabet)
+            let distractors = rounds.compactMap { round in round.choices.first { $0.word != round.pair.matchingWord }?.word }
+            XCTAssertEqual(Set(distractors).count, 26)
+            XCTAssertNotEqual(rounds.first?.pair.letter, previous)
+            XCTAssertNotEqual(rounds.first?.pair.letter, "Z")
+            for round in rounds {
+                XCTAssertEqual(round.choices.count, 2)
+                XCTAssertEqual(round.choices.filter { $0.word == round.pair.matchingWord }.count, 1)
+                XCTAssertEqual(round.choices.filter { String($0.word.prefix(1)).uppercased() == round.pair.letter }.count, 1)
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: round.prompt), round.prompt)
+                let reversed = BeginningSoundsSessionRound(pair: round.pair, choices: round.choices.reversed())
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: reversed.prompt), reversed.prompt)
+            }
+        }
+    }
+
+    @MainActor
     func testSoundBasketsAlphabetAndDropMatching() {
         let alphabet = Set(LetterDrawAlphabet.letters)
         XCTAssertEqual(SoundBasketItem.alphabet.count, 26)

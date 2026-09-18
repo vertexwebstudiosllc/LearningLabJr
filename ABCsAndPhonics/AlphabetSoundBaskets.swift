@@ -160,7 +160,7 @@ struct LiteracySoundBasketsGame: View {
 }
 
 /// Vector pictures fill the four gaps in the existing illustrated asset library.
-private struct SoundBasketPicture: View {
+struct SoundBasketPicture: View {
     let item: SoundBasketItem
     var body: some View {
         if let asset = item.asset {

@@ -291,33 +291,6 @@ struct GuidedWordBuilderGame: View {
     }
 }
 
-struct ListeningBeginningsGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var anchor: LiteracyPicture { [LiteracyPicture(word: "moon", asset: "Moon"), .init(word: "sun", asset: "Sun"), .init(word: "cat", asset: "cat")][play.round] }
-    private var options: [LiteracyPicture] {
-        [[LiteracyPicture(word: "milk", asset: "Milk"), .init(word: "fish", asset: "fish")],
-         [.init(word: "dog", asset: "dog"), .init(word: "sandwich", asset: "Sandwich")],
-         [.init(word: "cow", asset: "cow"), .init(word: "rabbit", asset: "rabbit")]][play.round]
-    }
-    private var answer: Int { [0, 1, 0][play.round] }
-    var body: some View {
-        LiteracyStage(title: "Beginning Sounds", prompt: "Say \(anchor.word). Which word starts the same way: \(options[0].word) or \(options[1].word)?", play: play) {
-            VStack(spacing: 22) {
-                WordPictureCard(word: anchor.word, asset: anchor.asset)
-                HStack(spacing: 14) {
-                    ForEach(Array(options.enumerated()), id: \.element.id) { index, option in
-                        Button {
-                            if index == answer { play.win("\(anchor.word) and \(option.word) start with the same sound. Say them together!") }
-                            else { play.say("Listen with your grown-up: \(anchor.word), \(options[answer].word). Those words start alike.") }
-                        } label: { WordPictureCard(word: option.word, asset: option.asset) }
-                        .buttonStyle(.plain)
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct AlphabetWindowsGame: View {
     @StateObject private var play = LiteracyPlay()
     private var letters: [String] { [["A", "B", "C"], ["D", "E", "F"], ["M", "N", "O"]][play.round] }

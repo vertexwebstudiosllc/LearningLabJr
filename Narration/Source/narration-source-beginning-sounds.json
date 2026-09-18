@@ -1,0 +1,502 @@
+[
+  {
+    "text": "Say apple. Which word starts the same way: alpaca or horse?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say apple. Which word starts the same way: horse or alpaca?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "apple and alpaca start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: apple, alpaca. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say basketball. Which word starts the same way: broccoli or ice cream?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say basketball. Which word starts the same way: ice cream or broccoli?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "basketball and broccoli start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: basketball, broccoli. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say cat. Which word starts the same way: cow or jellyfish?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say cat. Which word starts the same way: jellyfish or cow?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say dog. Which word starts the same way: duck or kiwi?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say dog. Which word starts the same way: kiwi or duck?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "dog and duck start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: dog, duck. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say egg. Which word starts the same way: excavator or lemon?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say egg. Which word starts the same way: lemon or excavator?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "egg and excavator start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: egg, excavator. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say fish. Which word starts the same way: football or moon?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say fish. Which word starts the same way: moon or football?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "fish and football start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: fish, football. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say goat. Which word starts the same way: grape or noodles?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say goat. Which word starts the same way: noodles or grape?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "goat and grape start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: goat, grape. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say horse. Which word starts the same way: hamburger or orange?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say horse. Which word starts the same way: orange or hamburger?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "horse and hamburger start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: horse, hamburger. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say ice cream. Which word starts the same way: ice cube or pig?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say ice cream. Which word starts the same way: pig or ice cube?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "ice cream and ice cube start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: ice cream, ice cube. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say jellyfish. Which word starts the same way: jam or quilt?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say jellyfish. Which word starts the same way: quilt or jam?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "jellyfish and jam start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: jellyfish, jam. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say kiwi. Which word starts the same way: krill or rabbit?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say kiwi. Which word starts the same way: rabbit or krill?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "kiwi and krill start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: kiwi, krill. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say lemon. Which word starts the same way: lobster or sun?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say lemon. Which word starts the same way: sun or lobster?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "lemon and lobster start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: lemon, lobster. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say moon. Which word starts the same way: milk or turtle?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say moon. Which word starts the same way: turtle or milk?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say noodles. Which word starts the same way: nest or umbrella?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say noodles. Which word starts the same way: umbrella or nest?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "noodles and nest start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: noodles, nest. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say orange. Which word starts the same way: orca or volleyball?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say orange. Which word starts the same way: volleyball or orca?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "orange and orca start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: orange, orca. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say pig. Which word starts the same way: pizza or watermelon?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say pig. Which word starts the same way: watermelon or pizza?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "pig and pizza start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: pig, pizza. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say quilt. Which word starts the same way: queen or x-ray?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say quilt. Which word starts the same way: x-ray or queen?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "quilt and queen start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: quilt, queen. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say rabbit. Which word starts the same way: rooster or yogurt?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say rabbit. Which word starts the same way: yogurt or rooster?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "rabbit and rooster start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: rabbit, rooster. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say sun. Which word starts the same way: soup or zucchini?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say sun. Which word starts the same way: zucchini or soup?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "sun and soup start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: sun, soup. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say turtle. Which word starts the same way: tomato or apple?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say turtle. Which word starts the same way: apple or tomato?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "turtle and tomato start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: turtle, tomato. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say umbrella. Which word starts the same way: undershirt or basketball?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say umbrella. Which word starts the same way: basketball or undershirt?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "umbrella and undershirt start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: umbrella, undershirt. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say volleyball. Which word starts the same way: volcano or cat?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say volleyball. Which word starts the same way: cat or volcano?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "volleyball and volcano start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: volleyball, volcano. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say watermelon. Which word starts the same way: walrus or dog?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say watermelon. Which word starts the same way: dog or walrus?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "watermelon and walrus start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: watermelon, walrus. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say x-ray. Which word starts the same way: x-ray hand or egg?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say x-ray. Which word starts the same way: egg or x-ray hand?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "x-ray and x-ray hand start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: x-ray, x-ray hand. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say yogurt. Which word starts the same way: yellow truck or fish?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say yogurt. Which word starts the same way: fish or yellow truck?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "yogurt and yellow truck start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: yogurt, yellow truck. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say zucchini. Which word starts the same way: zipper or goat?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "Say zucchini. Which word starts the same way: goat or zipper?",
+    "category": "literacy",
+    "delivery": "clear"
+  },
+  {
+    "text": "zucchini and zipper start with the same sound. Say them together!",
+    "category": "literacy",
+    "delivery": "playful"
+  },
+  {
+    "text": "Listen with your grown-up: zucchini, zipper. Those words start alike.",
+    "category": "literacy",
+    "delivery": "gentle"
+  }
+]

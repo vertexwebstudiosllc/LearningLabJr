@@ -146,6 +146,15 @@ class NarrationTests(unittest.TestCase):
                            f'You matched {word}! {word.title()} starts with the letter {letter}.',
                            f'Words that start with the letter {letter}.']:
                 self.assertIn(spoken, keys)
+        beginnings = (root / 'ABCsAndPhonics/AlphabetBeginningSounds.swift').read_text()
+        pairs = re.findall(r'\.init\(letter: "([A-Z])", word: "([^"]+)", asset: .*?, matchingWord: "([^"]+)"', beginnings)
+        self.assertEqual(len(pairs), 26)
+        for index, (letter, word, match) in enumerate(pairs):
+            wrong = pairs[(index + 7) % len(pairs)][1]
+            for first, second in [(match, wrong), (wrong, match)]:
+                self.assertIn(f'Say {word}. Which word starts the same way: {first} or {second}?', keys)
+            self.assertIn(f'{word} and {match} start with the same sound. Say them together!', keys)
+            self.assertIn(f'Listen with your grown-up: {word}, {match}. Those words start alike.', keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
 
