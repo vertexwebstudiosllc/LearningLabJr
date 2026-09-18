@@ -1,0 +1,1024 @@
+[
+  {
+    "text": "A is for alpaca.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme> is for alpaca.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "A is for alpaca. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026a\">A</phoneme> is for alpaca. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for bagel.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for bagel.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for bagel. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for bagel. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for basketball.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for basketball.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for basketball. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for basketball. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for bread.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for bread.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for bread. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for bread. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for broccoli.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for broccoli.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "B is for broccoli. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme> is for broccoli. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for chick.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for chick.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for chick. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for chick. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for corn.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for corn.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for corn. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for corn. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for cow.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for cow.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for cow. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for cow. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for crab.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for crab.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "C is for crab. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme> is for crab. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "D is for duck.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> is for duck.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "D is for duck. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme> is for duck. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for earth.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for earth.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for earth. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for earth. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for eel.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for eel.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for eel. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for eel. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for excavator.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for excavator.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "E is for excavator. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme> is for excavator. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "F is for football.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme> is for football.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "F is for football. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme> is for football. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for goat.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for goat.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for goat. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for goat. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for goose.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for goose.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for goose. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for goose. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for grape.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for grape.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "G is for grape. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme> is for grape. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for hamburger.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for hamburger.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for hamburger. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for hamburger. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for hen.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for hen.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for hen. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for hen. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for horse.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for horse.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "H is for horse. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme> is for horse. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I is for ice cream.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme> is for ice cream.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I is for ice cream. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme> is for ice cream. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I is for ice cube.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme> is for ice cube.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "I is for ice cube. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme> is for ice cube. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "J is for jam.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme> is for jam.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "J is for jam. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme> is for jam. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "J is for jellyfish.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme> is for jellyfish.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "J is for jellyfish. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme> is for jellyfish. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "K is for kiwi.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme> is for kiwi.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "K is for kiwi. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme> is for kiwi. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "K is for krill.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme> is for krill.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "K is for krill. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme> is for krill. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lamb.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lamb.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lamb. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lamb. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lemon.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lemon.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lemon. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lemon. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for llama.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for llama.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for llama. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for llama. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lobster.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lobster.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "L is for lobster. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme> is for lobster. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for mango.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for mango.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for mango. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for mango. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for milk.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for milk.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for milk. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for milk. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for mouse.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for mouse.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "M is for mouse. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bm\">M</phoneme> is for mouse. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "N is for nest.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme> is for nest.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "N is for nest. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme> is for nest. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O is for onion.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme> is for onion.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O is for onion. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme> is for onion. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O is for orca.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme> is for orca.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "O is for orca. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme> is for orca. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pasta.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pasta.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pasta. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pasta. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for peach.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for peach.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for peach. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for peach. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pear.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pear.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pear. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pear. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for peas.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for peas.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for peas. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for peas. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pig.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pig.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pig. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pig. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pizza.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pizza.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for pizza. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for pizza. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for plum.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for plum.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "P is for plum. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme> is for plum. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Q is for queen.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> is for queen.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Q is for queen. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> is for queen. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Q is for quilt.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> is for quilt.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Q is for quilt. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> is for quilt. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rabbit.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rabbit.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rabbit. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rabbit. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rice.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rice.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rice. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rice. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rooster.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rooster.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "R is for rooster. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme> is for rooster. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for seal.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for seal.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for seal. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for seal. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for shark.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for shark.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for shark. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for shark. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for sheep.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for sheep.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for sheep. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for sheep. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for soup.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for soup.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for soup. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for soup. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for star.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for star.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for star. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for star. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for sun.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for sun.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "S is for sun. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme> is for sun. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for toast.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for toast.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for toast. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for toast. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for tomato.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for tomato.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for tomato. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for tomato. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for turtle.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for turtle.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "T is for turtle. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme> is for turtle. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U is for umbrella.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> is for umbrella.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U is for umbrella. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> is for umbrella. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U is for undershirt.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> is for undershirt.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "U is for undershirt. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme> is for undershirt. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "V is for volcano.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> is for volcano.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "V is for volcano. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> is for volcano. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "V is for volleyball.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> is for volleyball.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "V is for volleyball. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> is for volleyball. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for walrus.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for walrus.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for walrus. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for walrus. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for watermelon.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for watermelon.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for watermelon. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for watermelon. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for whale.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for whale.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "W is for whale. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme> is for whale. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "X is for x-ray.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme> is for x-ray.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "X is for x-ray. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme> is for x-ray. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "X is for x-ray hand.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme> is for x-ray hand.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "X is for x-ray hand. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme> is for x-ray hand. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Y is for yellow truck.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme> is for yellow truck.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Y is for yellow truck. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme> is for yellow truck. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Y is for yogurt.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme> is for yogurt.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Y is for yogurt. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme> is for yogurt. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z is for zipper.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> is for zipper.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z is for zipper. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> is for zipper. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z is for zucchini.",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> is for zucchini.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Z is for zucchini. You opened all the alphabet windows!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak><phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme> is for zucchini. You opened all the alphabet windows!</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: G, H, I. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>, <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>, <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: J, K, L. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: P, Q, R. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>, <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: S, T, U. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"\u025bs\">S</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>, <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: V, W, X. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>, <phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  },
+  {
+    "text": "Open the letter windows: Y, Z. Say each letter and picture word together.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>Open the letter windows: <phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme>, <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Say each letter and picture word together.</speak>",
+    "engine": "neural"
+  }
+]

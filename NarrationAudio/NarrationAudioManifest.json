@@ -418,6 +418,22 @@
       "category": "feelings"
     },
     {
+      "text": "A is for alpaca.",
+      "file": "llj-bf88fdcbb92ef1d096c2cacb.mp3",
+      "spokenText": "A is for alpaca.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "A is for alpaca. You opened all the alphabet windows!",
+      "file": "llj-28dbc7ffc7a30b7bbc58b56a.mp3",
+      "spokenText": "A is for alpaca. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "A is for apple.",
       "file": "llj-91d9fc2506423618baefde7f.mp3",
       "spokenText": "A is for apple.",
@@ -754,6 +770,22 @@
       "category": "stories"
     },
     {
+      "text": "B is for bagel.",
+      "file": "llj-0993d7e4cf4085526f054b4e.mp3",
+      "spokenText": "B is for bagel.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for bagel. You opened all the alphabet windows!",
+      "file": "llj-5140a5e24ae799a0bd7f6120.mp3",
+      "spokenText": "B is for bagel. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "B is for ball.",
       "file": "llj-9e6e623f72e93505e3c391de.mp3",
       "spokenText": "B is for ball.",
@@ -765,6 +797,54 @@
       "text": "B is for ball. You opened all the alphabet windows!",
       "file": "llj-6fe18c1c93bde4bd6f84e859.mp3",
       "spokenText": "B is for ball. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for basketball.",
+      "file": "llj-5e6e6ba6839eacc00685131c.mp3",
+      "spokenText": "B is for basketball.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for basketball. You opened all the alphabet windows!",
+      "file": "llj-c18c2bae3ff49aef3ab4683c.mp3",
+      "spokenText": "B is for basketball. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for bread.",
+      "file": "llj-8e4f8716f55b8604fa96af2f.mp3",
+      "spokenText": "B is for bread.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for bread. You opened all the alphabet windows!",
+      "file": "llj-6276d050186e4bfacba01c41.mp3",
+      "spokenText": "B is for bread. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for broccoli.",
+      "file": "llj-9bd0baf3e0f3fd02379eae18.mp3",
+      "spokenText": "B is for broccoli.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "B is for broccoli. You opened all the alphabet windows!",
+      "file": "llj-7e88988620a2e6de22f05467.mp3",
+      "spokenText": "B is for broccoli. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -1306,6 +1386,70 @@
       "category": "literacy"
     },
     {
+      "text": "C is for chick.",
+      "file": "llj-c030d67990f022e631d8715b.mp3",
+      "spokenText": "C is for chick.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for chick. You opened all the alphabet windows!",
+      "file": "llj-dedf035d0c9277d44f4406f4.mp3",
+      "spokenText": "C is for chick. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for corn.",
+      "file": "llj-74bd035c8dbc64c0a8c1cc21.mp3",
+      "spokenText": "C is for corn.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for corn. You opened all the alphabet windows!",
+      "file": "llj-9eb32d0ee6ca92a17a76a304.mp3",
+      "spokenText": "C is for corn. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for cow.",
+      "file": "llj-e718c6c2e6ad3297068330e6.mp3",
+      "spokenText": "C is for cow.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for cow. You opened all the alphabet windows!",
+      "file": "llj-afcd155b768cef789f1be2c8.mp3",
+      "spokenText": "C is for cow. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for crab.",
+      "file": "llj-bda1756555fd9a9c32be4138.mp3",
+      "spokenText": "C is for crab.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "C is for crab. You opened all the alphabet windows!",
+      "file": "llj-23b238f0050e652995463795.mp3",
+      "spokenText": "C is for crab. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "C. Next find A.",
       "file": "llj-e5e74860b5835f7fade90c65.mp3",
       "spokenText": "C. Next find A.",
@@ -1637,6 +1781,22 @@
       "text": "D is for dog. You opened all the alphabet windows!",
       "file": "llj-84a6f52a4217bc8960c57d8f.mp3",
       "spokenText": "D is for dog. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "D is for duck.",
+      "file": "llj-bbd064b2b3b124e8b01d667c.mp3",
+      "spokenText": "D is for duck.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "D is for duck. You opened all the alphabet windows!",
+      "file": "llj-0da006875e40154d7ec70e12.mp3",
+      "spokenText": "D is for duck. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -1986,6 +2146,38 @@
       "category": "nature"
     },
     {
+      "text": "E is for earth.",
+      "file": "llj-c00ef0e3eeecdf8989e0cc65.mp3",
+      "spokenText": "E is for earth.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "E is for earth. You opened all the alphabet windows!",
+      "file": "llj-6ecc92e883ffdf5fbbee716a.mp3",
+      "spokenText": "E is for earth. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "E is for eel.",
+      "file": "llj-0cceb761f3fe7bb0a35924a4.mp3",
+      "spokenText": "E is for eel.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "E is for eel. You opened all the alphabet windows!",
+      "file": "llj-6ede28c2740ab77511445709.mp3",
+      "spokenText": "E is for eel. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "E is for egg.",
       "file": "llj-a05920bc58de2f2b530d3804.mp3",
       "spokenText": "E is for egg.",
@@ -1997,6 +2189,22 @@
       "text": "E is for egg. You opened all the alphabet windows!",
       "file": "llj-33653f3276318434056bfc74.mp3",
       "spokenText": "E is for egg. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "E is for excavator.",
+      "file": "llj-a1baf263937a9645f1fdb3de.mp3",
+      "spokenText": "E is for excavator.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "E is for excavator. You opened all the alphabet windows!",
+      "file": "llj-4b79b57cdccf3ef757488666.mp3",
+      "spokenText": "E is for excavator. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -2125,6 +2333,22 @@
       "text": "F is for fish. You opened all the alphabet windows!",
       "file": "llj-996a376ab1e1500e77dbaaaf.mp3",
       "spokenText": "F is for fish. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "F is for football.",
+      "file": "llj-dab5d5aecfa94cc87533c5a8.mp3",
+      "spokenText": "F is for football.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "F is for football. You opened all the alphabet windows!",
+      "file": "llj-c3d4dfa814277c22ecb6c394.mp3",
+      "spokenText": "F is for football. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -2378,6 +2602,54 @@
       "category": "literacy"
     },
     {
+      "text": "G is for goat.",
+      "file": "llj-5fe4b0cb69843fd67648b80d.mp3",
+      "spokenText": "G is for goat.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "G is for goat. You opened all the alphabet windows!",
+      "file": "llj-8b53897f3491241eed7223dd.mp3",
+      "spokenText": "G is for goat. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "G is for goose.",
+      "file": "llj-4876275dd208587f4fa42342.mp3",
+      "spokenText": "G is for goose.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "G is for goose. You opened all the alphabet windows!",
+      "file": "llj-d5c9585b2ecf1058874c8b12.mp3",
+      "spokenText": "G is for goose. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "G is for grape.",
+      "file": "llj-a6e5e8d55f1b69fe39456256.mp3",
+      "spokenText": "G is for grape.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "G is for grape. You opened all the alphabet windows!",
+      "file": "llj-fb04d12803d57a2c5706bfbb.mp3",
+      "spokenText": "G is for grape. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "G. Next find E.",
       "file": "llj-4c088d5de7b330f92f8d2932.mp3",
       "spokenText": "G. Next find E.",
@@ -2512,6 +2784,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "H is for hamburger.",
+      "file": "llj-a5b0c2ddb9cce0a29185d690.mp3",
+      "spokenText": "H is for hamburger.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "H is for hamburger. You opened all the alphabet windows!",
+      "file": "llj-50b186b8c3f69c373fc4f063.mp3",
+      "spokenText": "H is for hamburger. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "H is for hen.",
+      "file": "llj-29ef00dbe3898f089f9f1d95.mp3",
+      "spokenText": "H is for hen.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "H is for hen. You opened all the alphabet windows!",
+      "file": "llj-7c03a3d69ce52fe304110376.mp3",
+      "spokenText": "H is for hen. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "H is for horse.",
+      "file": "llj-42e9b17202df8017c5b6814f.mp3",
+      "spokenText": "H is for horse.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "H is for horse. You opened all the alphabet windows!",
+      "file": "llj-6ec4bb55ddefdd18dbda9fc9.mp3",
+      "spokenText": "H is for horse. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "H. Next find A.",
@@ -2743,6 +3063,38 @@
       "spokenText": "I help on a farm. Find the tractor. Tap a garage to open it.",
       "voice": "Ruth",
       "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "I is for ice cream.",
+      "file": "llj-d9a311fa5ad2d03ae4aa19f4.mp3",
+      "spokenText": "I is for ice cream.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "I is for ice cream. You opened all the alphabet windows!",
+      "file": "llj-67578c3e7a22ab3a60125dac.mp3",
+      "spokenText": "I is for ice cream. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "I is for ice cube.",
+      "file": "llj-aae9f2a33d60a765a8d10e4d.mp3",
+      "spokenText": "I is for ice cube.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "I is for ice cube. You opened all the alphabet windows!",
+      "file": "llj-7726fe53406a7f6775dd3d36.mp3",
+      "spokenText": "I is for ice cube. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
       "category": "literacy"
     },
     {
@@ -2994,9 +3346,73 @@
       "category": "nature"
     },
     {
+      "text": "J is for jam.",
+      "file": "llj-d4698e86129ca79c7e2ed27b.mp3",
+      "spokenText": "J is for jam.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "J is for jam. You opened all the alphabet windows!",
+      "file": "llj-d7948e1efc3c7d6b2de06f6f.mp3",
+      "spokenText": "J is for jam. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "J is for jellyfish.",
+      "file": "llj-30c41a0268b43f9471b75440.mp3",
+      "spokenText": "J is for jellyfish.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "J is for jellyfish. You opened all the alphabet windows!",
+      "file": "llj-3fe52a87636e3b6c5ea6acac.mp3",
+      "spokenText": "J is for jellyfish. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "J. Next find A.",
       "file": "llj-401f81fcb3eee6bdcd901642.mp3",
       "spokenText": "J. Next find A.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "K is for kiwi.",
+      "file": "llj-61859c4d575ced16de80ff8f.mp3",
+      "spokenText": "K is for kiwi.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "K is for kiwi. You opened all the alphabet windows!",
+      "file": "llj-21a4b0d650a9f14635b1866b.mp3",
+      "spokenText": "K is for kiwi. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "K is for krill.",
+      "file": "llj-8a9590328b6518de88592b71.mp3",
+      "spokenText": "K is for krill.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "K is for krill. You opened all the alphabet windows!",
+      "file": "llj-14c69eb965471071ac8e14ba.mp3",
+      "spokenText": "K is for krill. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -3016,6 +3432,70 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "L is for lamb.",
+      "file": "llj-e2c1e6d47fe487768014ac7a.mp3",
+      "spokenText": "L is for lamb.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for lamb. You opened all the alphabet windows!",
+      "file": "llj-9b216acc5b9ebc1edb63ccb2.mp3",
+      "spokenText": "L is for lamb. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for lemon.",
+      "file": "llj-c7df1e4c80391462424cbddd.mp3",
+      "spokenText": "L is for lemon.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for lemon. You opened all the alphabet windows!",
+      "file": "llj-c06906dfb48fb44a08aa4e87.mp3",
+      "spokenText": "L is for lemon. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for llama.",
+      "file": "llj-424dd848f3254e95147be01e.mp3",
+      "spokenText": "L is for llama.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for llama. You opened all the alphabet windows!",
+      "file": "llj-beadbab9f318dc280bdd5c03.mp3",
+      "spokenText": "L is for llama. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for lobster.",
+      "file": "llj-5f80145156573251775173a1.mp3",
+      "spokenText": "L is for lobster.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "L is for lobster. You opened all the alphabet windows!",
+      "file": "llj-8b1904a8b3fde869a0771f19.mp3",
+      "spokenText": "L is for lobster. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "L. Next find A.",
@@ -4274,6 +4754,38 @@
       "category": "nature"
     },
     {
+      "text": "M is for mango.",
+      "file": "llj-e8f9a15de2b886fc6bbc945e.mp3",
+      "spokenText": "M is for mango.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "M is for mango. You opened all the alphabet windows!",
+      "file": "llj-345ea53ef49dfa960cfff400.mp3",
+      "spokenText": "M is for mango. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "M is for milk.",
+      "file": "llj-78a99aa15824e61bd9c93580.mp3",
+      "spokenText": "M is for milk.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "M is for milk. You opened all the alphabet windows!",
+      "file": "llj-dada81a32f2ba595c1fdbf0f.mp3",
+      "spokenText": "M is for milk. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "M is for moon.",
       "file": "llj-eafc2857a6d31d95e27d5d49.mp3",
       "spokenText": "M is for moon.",
@@ -4285,6 +4797,22 @@
       "text": "M is for moon. You opened all the alphabet windows!",
       "file": "llj-597bd7ebc1e41547c1b24579.mp3",
       "spokenText": "M is for moon. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "M is for mouse.",
+      "file": "llj-660c50ea6b21e85a3cec19b8.mp3",
+      "spokenText": "M is for mouse.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "M is for mouse. You opened all the alphabet windows!",
+      "file": "llj-2df5663ee712788e5063702d.mp3",
+      "spokenText": "M is for mouse. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -4402,6 +4930,22 @@
       "category": "feelings"
     },
     {
+      "text": "N is for nest.",
+      "file": "llj-6e1f158fc490c4b53357ba8a.mp3",
+      "spokenText": "N is for nest.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "N is for nest. You opened all the alphabet windows!",
+      "file": "llj-a7d57bd318865c3e2bfcc1bd.mp3",
+      "spokenText": "N is for nest. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "N is for noodles.",
       "file": "llj-ec17861e982597e455b382de.mp3",
       "spokenText": "N is for noodles.",
@@ -4482,6 +5026,22 @@
       "category": "stories"
     },
     {
+      "text": "O is for onion.",
+      "file": "llj-f108ebbe1657b7986d8f5e19.mp3",
+      "spokenText": "O is for onion.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "O is for onion. You opened all the alphabet windows!",
+      "file": "llj-ee3fba756ea0f7d9fba356dd.mp3",
+      "spokenText": "O is for onion. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "O is for orange.",
       "file": "llj-5a52a557ca0f47ac34ae1bbc.mp3",
       "spokenText": "O is for orange.",
@@ -4493,6 +5053,22 @@
       "text": "O is for orange. You opened all the alphabet windows!",
       "file": "llj-a83dc21fb1af0b127ac37ebf.mp3",
       "spokenText": "O is for orange. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "O is for orca.",
+      "file": "llj-0e2b2b0b5e4df8ee0bc883c4.mp3",
+      "spokenText": "O is for orca.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "O is for orca. You opened all the alphabet windows!",
+      "file": "llj-9993cc1445e08743bc6a61f4.mp3",
+      "spokenText": "O is for orca. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -4642,9 +5218,57 @@
       "category": "literacy"
     },
     {
+      "text": "Open the letter windows: G, H, I. Say each letter and picture word together.",
+      "file": "llj-8d2d6054c0a26927c27eb85e.mp3",
+      "spokenText": "Open the letter windows: G, H, I. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Open the letter windows: J, K, L. Say each letter and picture word together.",
+      "file": "llj-8de8571d0b07b06d96131c95.mp3",
+      "spokenText": "Open the letter windows: J, K, L. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "Open the letter windows: M, N, O. Say each letter and picture word together.",
       "file": "llj-f79b4960cbd6620fb9ce6ef5.mp3",
       "spokenText": "Open the letter windows: M, N, O. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Open the letter windows: P, Q, R. Say each letter and picture word together.",
+      "file": "llj-1a5af0b0d21f82f74366e470.mp3",
+      "spokenText": "Open the letter windows: P, Q, R. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Open the letter windows: S, T, U. Say each letter and picture word together.",
+      "file": "llj-fe1b5de94c51e52fadbe556f.mp3",
+      "spokenText": "Open the letter windows: S, T, U. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Open the letter windows: V, W, X. Say each letter and picture word together.",
+      "file": "llj-d0789155d785e41a700f6422.mp3",
+      "spokenText": "Open the letter windows: V, W, X. Say each letter and picture word together.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Open the letter windows: Y, Z. Say each letter and picture word together.",
+      "file": "llj-98d3544fa157eae0b41e44b6.mp3",
+      "spokenText": "Open the letter windows: Y, Z. Say each letter and picture word together.",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -4752,6 +5376,118 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "P is for pasta.",
+      "file": "llj-6ec7bf5cc4f19358df3583a6.mp3",
+      "spokenText": "P is for pasta.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pasta. You opened all the alphabet windows!",
+      "file": "llj-648b3fc6e80227d0b0cf649a.mp3",
+      "spokenText": "P is for pasta. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for peach.",
+      "file": "llj-1e79292ee4427f8c7cd40887.mp3",
+      "spokenText": "P is for peach.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for peach. You opened all the alphabet windows!",
+      "file": "llj-74d073d41b19cecf2adbf7c4.mp3",
+      "spokenText": "P is for peach. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pear.",
+      "file": "llj-7f6de1d27da7b37e83c27335.mp3",
+      "spokenText": "P is for pear.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pear. You opened all the alphabet windows!",
+      "file": "llj-3127bf714c9408ecf3f0aee5.mp3",
+      "spokenText": "P is for pear. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for peas.",
+      "file": "llj-6ab00ca93fcf00321dd4c620.mp3",
+      "spokenText": "P is for peas.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for peas. You opened all the alphabet windows!",
+      "file": "llj-8bfb57be5488d21811b3a629.mp3",
+      "spokenText": "P is for peas. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pig.",
+      "file": "llj-4606218d6b783cdbd7ebce6d.mp3",
+      "spokenText": "P is for pig.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pig. You opened all the alphabet windows!",
+      "file": "llj-c152a62aadf6ddc7f6984a00.mp3",
+      "spokenText": "P is for pig. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pizza.",
+      "file": "llj-1995525515c588b9bf1f9365.mp3",
+      "spokenText": "P is for pizza.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for pizza. You opened all the alphabet windows!",
+      "file": "llj-377a95fec7447830d1519390.mp3",
+      "spokenText": "P is for pizza. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for plum.",
+      "file": "llj-6ff565af48d3932951515b35.mp3",
+      "spokenText": "P is for plum.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "P is for plum. You opened all the alphabet windows!",
+      "file": "llj-7181706e4bc169b80681fe7b.mp3",
+      "spokenText": "P is for plum. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "P. Next find A.",
@@ -5082,6 +5818,38 @@
       "category": "shapes"
     },
     {
+      "text": "Q is for queen.",
+      "file": "llj-ed994e72341c7986d79ff995.mp3",
+      "spokenText": "Q is for queen.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Q is for queen. You opened all the alphabet windows!",
+      "file": "llj-842d482e052f56ec7612abec.mp3",
+      "spokenText": "Q is for queen. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Q is for quilt.",
+      "file": "llj-b8cf9e970270ea16e4077f22.mp3",
+      "spokenText": "Q is for quilt.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Q is for quilt. You opened all the alphabet windows!",
+      "file": "llj-d923afc52ccec53bc2c557ad.mp3",
+      "spokenText": "Q is for quilt. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "Quack, moo, splash, and chug! You brought our story to life.",
       "file": "llj-722d3f27a215d5b8133d91d0.mp3",
       "spokenText": "Quack, moo, splash, and chug! You brought our story to life.",
@@ -5104,6 +5872,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "R is for rabbit.",
+      "file": "llj-d9a7589e27859d1117ee60b8.mp3",
+      "spokenText": "R is for rabbit.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "R is for rabbit. You opened all the alphabet windows!",
+      "file": "llj-6b44e3d08bea78ece2f6b9ed.mp3",
+      "spokenText": "R is for rabbit. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "R is for rice.",
+      "file": "llj-d0e118395ad1a839396145a8.mp3",
+      "spokenText": "R is for rice.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "R is for rice. You opened all the alphabet windows!",
+      "file": "llj-c1e6318e04b5e805377771ba.mp3",
+      "spokenText": "R is for rice. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "R is for rooster.",
+      "file": "llj-68077753fe05a1425579d359.mp3",
+      "spokenText": "R is for rooster.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "R is for rooster. You opened all the alphabet windows!",
+      "file": "llj-5dc3c24ce22d8c6df80019da.mp3",
+      "spokenText": "R is for rooster. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "R. Next find A.",
@@ -5280,6 +6096,102 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "S is for seal.",
+      "file": "llj-ec7cabcbd11610b4dd1beda6.mp3",
+      "spokenText": "S is for seal.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for seal. You opened all the alphabet windows!",
+      "file": "llj-de9c329eb80e0a97c761cdd1.mp3",
+      "spokenText": "S is for seal. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for shark.",
+      "file": "llj-902d53a6e924be8202f7d3c8.mp3",
+      "spokenText": "S is for shark.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for shark. You opened all the alphabet windows!",
+      "file": "llj-049238410ba61c1272ab0137.mp3",
+      "spokenText": "S is for shark. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for sheep.",
+      "file": "llj-6585f66961154feeec8b5f92.mp3",
+      "spokenText": "S is for sheep.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for sheep. You opened all the alphabet windows!",
+      "file": "llj-001cc409ad5aed97a4ed1a32.mp3",
+      "spokenText": "S is for sheep. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for soup.",
+      "file": "llj-c9972332ab5e44c1c9e92d20.mp3",
+      "spokenText": "S is for soup.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for soup. You opened all the alphabet windows!",
+      "file": "llj-bb3555cf966f9e46fed45a63.mp3",
+      "spokenText": "S is for soup. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for star.",
+      "file": "llj-b9c5975c28d58721622694ae.mp3",
+      "spokenText": "S is for star.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for star. You opened all the alphabet windows!",
+      "file": "llj-bca422a74555b1f4222fafee.mp3",
+      "spokenText": "S is for star. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for sun.",
+      "file": "llj-765c33d5762ad2a146990543.mp3",
+      "spokenText": "S is for sun.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "S is for sun. You opened all the alphabet windows!",
+      "file": "llj-3a119890fdc720d593bdddcb.mp3",
+      "spokenText": "S is for sun. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "S. Next find E.",
@@ -5960,6 +6872,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "T is for toast.",
+      "file": "llj-bd81298926dc7d92029fe20c.mp3",
+      "spokenText": "T is for toast.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "T is for toast. You opened all the alphabet windows!",
+      "file": "llj-66d85f0e639162a77d48e455.mp3",
+      "spokenText": "T is for toast. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "T is for tomato.",
+      "file": "llj-d81d0f40c0b8b828911a2f17.mp3",
+      "spokenText": "T is for tomato.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "T is for tomato. You opened all the alphabet windows!",
+      "file": "llj-6a124cea4206842323f51a7d.mp3",
+      "spokenText": "T is for tomato. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "T is for turtle.",
+      "file": "llj-7c250a94a7c3f0343120a1e0.mp3",
+      "spokenText": "T is for turtle.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "T is for turtle. You opened all the alphabet windows!",
+      "file": "llj-f8d794b0478956891ea776b9.mp3",
+      "spokenText": "T is for turtle. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "T. Next find A.",
@@ -7786,6 +8746,38 @@
       "category": "feelings"
     },
     {
+      "text": "U is for umbrella.",
+      "file": "llj-dc8de7eed7781e021052d2b4.mp3",
+      "spokenText": "U is for umbrella.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "U is for umbrella. You opened all the alphabet windows!",
+      "file": "llj-b60c54bb2a0c66b8ab74e9b0.mp3",
+      "spokenText": "U is for umbrella. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "U is for undershirt.",
+      "file": "llj-9f51bc5498ff78ed70309eb7.mp3",
+      "spokenText": "U is for undershirt.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "U is for undershirt. You opened all the alphabet windows!",
+      "file": "llj-bca26960fae68d4a740683ec.mp3",
+      "spokenText": "U is for undershirt. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "U. Next find C.",
       "file": "llj-ad058ee621c1325d09d1ce5d.mp3",
       "spokenText": "U. Next find C.",
@@ -7834,6 +8826,38 @@
       "category": "shapes"
     },
     {
+      "text": "V is for volcano.",
+      "file": "llj-b9987e7bb995eb3277b6de9a.mp3",
+      "spokenText": "V is for volcano.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "V is for volcano. You opened all the alphabet windows!",
+      "file": "llj-b2e6a8bee3edd1a87ecc4ebd.mp3",
+      "spokenText": "V is for volcano. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "V is for volleyball.",
+      "file": "llj-45f986145ba0ab5a03bd7d83.mp3",
+      "spokenText": "V is for volleyball.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "V is for volleyball. You opened all the alphabet windows!",
+      "file": "llj-507411c6ae5574b65e5b944c.mp3",
+      "spokenText": "V is for volleyball. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
       "file": "llj-c42d48650d9765bbeb281891.mp3",
       "spokenText": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
@@ -7855,6 +8879,54 @@
       "spokenText": "Volleyball",
       "voice": "Ruth",
       "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for walrus.",
+      "file": "llj-d6086c34b4e06e2065c57a3d.mp3",
+      "spokenText": "W is for walrus.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for walrus. You opened all the alphabet windows!",
+      "file": "llj-7c54127ca70bcbeb745470a2.mp3",
+      "spokenText": "W is for walrus. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for watermelon.",
+      "file": "llj-9163f899376eac5828920413.mp3",
+      "spokenText": "W is for watermelon.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for watermelon. You opened all the alphabet windows!",
+      "file": "llj-2f36a595eac99b3946ed8334.mp3",
+      "spokenText": "W is for watermelon. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for whale.",
+      "file": "llj-c927bfb012d10cee34357cf9.mp3",
+      "spokenText": "W is for whale.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "W is for whale. You opened all the alphabet windows!",
+      "file": "llj-634dfc9c5a8b4997ad14639b.mp3",
+      "spokenText": "W is for whale. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
       "category": "literacy"
     },
     {
@@ -8317,6 +9389,70 @@
       "text": "Words that start with the letter Z.",
       "file": "llj-1220d64d4d9c71eec82947ba.mp3",
       "spokenText": "Words that start with the letter Z.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "X is for x-ray hand.",
+      "file": "llj-434e2cf0c908694f3e54bf58.mp3",
+      "spokenText": "X is for x-ray hand.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "X is for x-ray hand. You opened all the alphabet windows!",
+      "file": "llj-531c04b18a449212f71bb4f1.mp3",
+      "spokenText": "X is for x-ray hand. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "X is for x-ray.",
+      "file": "llj-7f117717b0fb6e4274dc0794.mp3",
+      "spokenText": "X is for x-ray.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "X is for x-ray. You opened all the alphabet windows!",
+      "file": "llj-2fc027768f02744129275b6e.mp3",
+      "spokenText": "X is for x-ray. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Y is for yellow truck.",
+      "file": "llj-8ebd76707b1346559aa61b09.mp3",
+      "spokenText": "Y is for yellow truck.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Y is for yellow truck. You opened all the alphabet windows!",
+      "file": "llj-6b439f3ea8ecf1bdaaa3b1d1.mp3",
+      "spokenText": "Y is for yellow truck. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Y is for yogurt.",
+      "file": "llj-de1c85f0b88c654b4b837530.mp3",
+      "spokenText": "Y is for yogurt.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Y is for yogurt. You opened all the alphabet windows!",
+      "file": "llj-7b7ec73f83b13cea6c165aad.mp3",
+      "spokenText": "Y is for yogurt. You opened all the alphabet windows!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -10200,6 +11336,38 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Z is for zipper.",
+      "file": "llj-d1608e54ad87c2bf050f2f25.mp3",
+      "spokenText": "Z is for zipper.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Z is for zipper. You opened all the alphabet windows!",
+      "file": "llj-4ca16f9cec74d84087db9139.mp3",
+      "spokenText": "Z is for zipper. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Z is for zucchini.",
+      "file": "llj-14d6d5aa73e4c9d4c53ae75b.mp3",
+      "spokenText": "Z is for zucchini.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Z is for zucchini. You opened all the alphabet windows!",
+      "file": "llj-5603329756c90aed8fa0effe.mp3",
+      "spokenText": "Z is for zucchini. You opened all the alphabet windows!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
     },
     {
       "text": "Z. Next find A.",

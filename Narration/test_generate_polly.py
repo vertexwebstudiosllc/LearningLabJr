@@ -165,6 +165,17 @@ class NarrationTests(unittest.TestCase):
                 self.assertIn(f'{first}. Next find {second}.', keys)
             for letter in word:
                 self.assertIn(f'Look at the model. Find {letter} next.', keys)
+        windows = {letter: {word, match} for letter, word, match in pairs}
+        for word in words:
+            windows[word[0]].add(word.lower())
+        for letter, options in windows.items():
+            for word in options:
+                for suffix in ['', ' You opened all the alphabet windows!']:
+                    self.assertIn(f'{letter} is for {word}.' + suffix, keys)
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        for index in range(0, 26, 3):
+            group = ', '.join(alphabet[index:index + 3])
+            self.assertIn(f'Open the letter windows: {group}. Say each letter and picture word together.', keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
 

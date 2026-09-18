@@ -129,7 +129,7 @@ struct ListeningBeginningsGame: View {
     }
 }
 
-private struct BeginningSoundsArt: View {
+struct BeginningSoundsArt: View {
     let word: String
     let asset: String?
     let letter: String

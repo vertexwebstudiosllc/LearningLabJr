@@ -256,47 +256,6 @@ struct LiteracyWordClawGame: View {
     }
 }
 
-struct AlphabetWindowsGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var letters: [String] { [["A", "B", "C"], ["D", "E", "F"], ["M", "N", "O"]][play.round] }
-    private var pictures: [LiteracyPicture] {
-        [[LiteracyPicture(word: "apple", asset: "Apple"), .init(word: "ball", asset: "basketball"), .init(word: "cat", asset: "cat")],
-         [.init(word: "dog", asset: "dog"), .init(word: "egg", asset: "Egg"), .init(word: "fish", asset: "fish")],
-         [.init(word: "moon", asset: "Moon"), .init(word: "noodles", asset: "Noodles"), .init(word: "orange", asset: "Orange")]][play.round]
-    }
-    var body: some View {
-        LiteracyStage(title: "ABC Adventure", prompt: "Open the letter windows: \(letters.joined(separator: ", ")). Say each letter and picture word together.", play: play) {
-            VStack(spacing: 18) {
-                Text("\(play.marked.count) of 3 windows open").font(.headline)
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 124))], spacing: 16) {
-                    ForEach(0..<3, id: \.self) { index in
-                        Button {
-                            play.marked.insert(index)
-                            let phrase = "\(letters[index]) is for \(pictures[index].word)."
-                            if play.marked.count == 3 { play.win(phrase + " You opened all the alphabet windows!") }
-                            else { play.say(phrase) }
-                        } label: {
-                            VStack(spacing: 12) {
-                                Text(letters[index]).font(.system(size: 42, weight: .bold, design: .rounded))
-                                if play.marked.contains(index) {
-                                    ToddlerArt(asset: pictures[index].asset, size: 72)
-                                    Text(pictures[index].word).font(.headline)
-                                } else {
-                                    Image(systemName: "window.casement.closed").font(.system(size: 60)).frame(height: 96)
-                                }
-                            }.frame(maxWidth: .infinity, minHeight: 200)
-                                .background(.white, in: RoundedRectangle(cornerRadius: 22))
-                                .overlay(RoundedRectangle(cornerRadius: 22).stroke(Color.orange.opacity(0.4), lineWidth: 2))
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel(play.marked.contains(index) ? "\(letters[index]) is for \(pictures[index].word). Hear again." : "Open letter \(letters[index]) window")
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct RhymeGardenGame: View {
     @StateObject private var play = LiteracyPlay()
     private var word: String { ["cat", "goat", "mouse"][play.round] }

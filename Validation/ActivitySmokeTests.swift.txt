@@ -155,6 +155,58 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testABCAdventureWholeAlphabetAndNewPictures() async throws {
+        let app = try await launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.ABC Adventure"]
+        try reveal(card, in: app)
+        card.tap()
+        let alphabet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(String.init)
+        var previous: [String: String] = [:]
+        for session in 0..<2 {
+            for group in 0..<9 {
+                let letters = Array(alphabet[(group * 3)..<min(group * 3 + 3, 26)])
+                XCTAssertTrue(app.staticTexts["Adventure \(group + 1) of 9"].waitForExistence(timeout: 5))
+                XCTAssertTrue(app.staticTexts["0 of \(letters.count) windows open"].exists)
+                XCTAssertFalse(app.buttons["Next letters"].exists)
+                let windows = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'alphabet-adventure.window.'"))
+                XCTAssertEqual(windows.count, letters.count)
+                for (index, letter) in letters.enumerated() {
+                    let window = app.buttons["alphabet-adventure.window.\(letter)"]
+                    try reveal(window, in: app)
+                    window.tap()
+                    XCTAssertTrue(window.label.hasPrefix("\(letter) is for "))
+                    if session == 1 { XCTAssertNotEqual(window.label, previous[letter]) }
+                    previous[letter] = window.label
+                    if index == 0 {
+                        window.tap()
+                        XCTAssertTrue(app.staticTexts["1 of \(letters.count) windows open"].exists)
+                        XCTAssertFalse(app.buttons["Next letters"].exists)
+                    }
+                }
+                let next = app.buttons[group == 8 ? "All done" : "Next letters"]
+                try reveal(next, in: app)
+                next.tap()
+            }
+            let replay = app.buttons["Play again"]
+            try reveal(replay, in: app)
+            replay.tap()
+        }
+        // Leaving partway through also creates a fresh session.
+        let first = app.buttons["alphabet-adventure.window.A"]
+        try reveal(first, in: app)
+        first.tap()
+        let abandoned = first.label
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(app.staticTexts["0 of 3 windows open"].exists)
+        try reveal(first, in: app)
+        first.tap()
+        XCTAssertNotEqual(first.label, abandoned)
+    }
+
+    @MainActor
     func testWordBuilderTwentyWordWindowAndReentry() async throws {
         let app = try await launch(premium: true)
         app.buttons["category.ABCs & Phonics"].tap()

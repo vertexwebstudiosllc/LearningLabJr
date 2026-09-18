@@ -44,6 +44,38 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
+    func testAlphabetAdventureCoverageVarietyAndRuth() {
+        let alphabet = LetterDrawAlphabet.letters
+        for letter in alphabet {
+            let options = AlphabetWindow.vocabulary.filter { $0.letter == letter }
+            XCTAssertGreaterThanOrEqual(options.count, 2)
+            XCTAssertEqual(Set(options.map(\.word)).count, options.count)
+            for option in options {
+                XCTAssertEqual(String(option.word.prefix(1)).uppercased(), letter)
+                if let asset = option.asset {
+                    XCTAssertNotNil(UIImage(named: asset) ?? UIImage(named: "Space/\(asset)"), asset)
+                }
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: option.phrase), option.phrase)
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: option.success), option.success)
+            }
+        }
+        var previous: [String: String] = [:]
+        for _ in 0..<100 {
+            let rounds = AlphabetAdventureRound.session(previousWords: previous)
+            XCTAssertEqual(rounds.count, 9)
+            XCTAssertEqual(rounds.map { $0.windows.count }, [3, 3, 3, 3, 3, 3, 3, 3, 2])
+            XCTAssertEqual(rounds.flatMap(\.windows).map(\.letter), alphabet)
+            for round in rounds {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: round.prompt), round.prompt)
+                for window in round.windows {
+                    XCTAssertNotEqual(window.word, previous[window.letter])
+                    previous[window.letter] = window.word
+                }
+            }
+        }
+    }
+
+    @MainActor
     func testWordBuilderBankRecentWindowAndRuth() {
         let bank = WordBuilderWord.bank
         XCTAssertGreaterThan(bank.count, 20)
