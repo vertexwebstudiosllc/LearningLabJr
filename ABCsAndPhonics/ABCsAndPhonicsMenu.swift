@@ -5,9 +5,9 @@ struct ABCsAndPhonicsMenu: View {
         .init(id: "phonics.letter-match", title: "Letter Twins", skill: "Notice matching letter shapes", interaction: "Match a large letter to its identical twin", ageBand: "Ages 2–4", caregiverTip: "Notice lines and curves together; letter names can come gradually."),
         .init(id: "phonics.letter-draw", title: "Letter Draw", skill: "Explore letter formation", interaction: "Trace one large letter or draw it in the air together", ageBand: "Optional · Ages 4+", caregiverTip: "Let your child use a whole arm in the air before tracing on screen."),
         .init(id: "phonics.sound-baskets", title: "Sound Baskets", skill: "Connect pictures with their starting letters", interaction: "Listen to letter baskets, then drag each picture to its starting letter", ageBand: "Optional · Ages 4+", caregiverTip: "Name each picture together. Letter names and sounds differ; x-ray begins with the letter name X."),
-        .init(id: "phonics.vehicle-peekaboo", title: "Vehicle Peekaboo", skill: "Understand spoken clues", interaction: "Listen to a vehicle clue, then open its garage", ageBand: "Ages 2–4", caregiverTip: "Ask where you have seen each vehicle in your neighborhood."),
+        .init(id: "phonics.vehicle-peekaboo", title: "Vehicle Peekaboo", skill: "Name familiar vehicles", interaction: "Tap the garage door to reveal a vehicle, then hear its name", ageBand: "Ages 2–4", caregiverTip: "Ask where you have seen each vehicle in your neighborhood."),
         .init(id: "phonics.food-scroll", title: "Picnic Words", skill: "Listen and remember familiar words", interaction: "Browse food cards and pack a two-item spoken picnic list", ageBand: "Ages 2–4", caregiverTip: "Repeat the list as often as needed and name real foods together."),
-        .init(id: "phonics.claw-game", title: "Word Claw", skill: "Follow a spoken direction", interaction: "Aim a claw at the named object, then lower it to collect", ageBand: "Ages 2–4", caregiverTip: "Take turns giving each other a one-step direction."),
+        .init(id: "phonics.claw-game", title: "Word Claw", skill: "Connect objects with their names", interaction: "Tap an item and watch the claw lower, pick it up, and name it", ageBand: "Ages 2–4", caregiverTip: "Take turns giving each other a one-step direction."),
         .init(id: "phonics.word-builder", title: "Word Builder", skill: "Explore letters in short words", interaction: "Build a picture word from left to right using a visible model", ageBand: "Optional · Ages 4+", caregiverTip: "This is supported letter play; independent reading is not expected."),
         .init(id: "phonics.beginning-sounds", title: "Beginning Sounds", skill: "Hear matching word beginnings", interaction: "Listen to a picture pair and find the matching first sound", ageBand: "Ages 3–4 with a grown-up", caregiverTip: "Say the whole words clearly, then emphasize their first sound."),
         .init(id: "phonics.abc-adventure", title: "ABC Adventure", skill: "Connect letter names with familiar words", interaction: "Open alphabet windows to discover picture words", ageBand: "Ages 3–4 with a grown-up", caregiverTip: "Sing the short letter sequence together; there is no timer."),
@@ -60,9 +60,9 @@ private struct LiteracyMenuLink: View {
         case 0: LetterTwinsGame()
         case 1: LetterDraw()
         case 2: LiteracySoundBasketsGame()
-        case 3: LiteracyVehiclePeekabooGame()
+        case 3: OriginalArcadeGameView(kind: .garage)
         case 4: PicnicWordsGame()
-        case 5: LiteracyWordClawGame()
+        case 5: OriginalArcadeGameView(kind: .claw)
         case 6: GuidedWordBuilderGame()
         case 7: ListeningBeginningsGame()
         case 8: AlphabetWindowsGame()

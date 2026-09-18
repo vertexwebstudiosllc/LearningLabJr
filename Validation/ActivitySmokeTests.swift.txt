@@ -108,6 +108,53 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testFeelingsRoutes() async throws { try await checkCategory("Big Feelings") }
 
     @MainActor
+    func testOriginalGarageAndClawInteractions() async throws {
+        let app = try await launch(premium: true)
+        app.buttons["category.ABCs & Phonics"].tap()
+        let garage = app.buttons["activity-card.Vehicle Peekaboo"]
+        try reveal(garage, in: app)
+        garage.tap()
+        let canvas = app.descendants(matching: .any).matching(identifier: "original-arcade.canvas").firstMatch
+        XCTAssertTrue(canvas.waitForExistence(timeout: 5))
+        try reveal(canvas, in: app)
+        canvas.tap()
+        XCTAssertTrue(app.staticTexts["Door open. Tap to hear the vehicle name."].waitForExistence(timeout: 4))
+        canvas.tap()
+        let name = app.staticTexts["original-arcade.item-name"]
+        XCTAssertTrue(name.waitForExistence(timeout: 4))
+        let first = name.label
+        XCTAssertFalse(first.isEmpty)
+        let garageShot = XCTAttachment(screenshot: app.screenshot())
+        garageShot.name = "Restored garage reveal"
+        garageShot.lifetime = .keepAlways
+        add(garageShot)
+        canvas.tap()
+        XCTAssertTrue(app.staticTexts["Garage closed. Tap to open the door."].waitForExistence(timeout: 4))
+        canvas.tap()
+        XCTAssertTrue(app.staticTexts["Door open. Tap to hear the vehicle name."].waitForExistence(timeout: 4))
+        canvas.tap()
+        XCTAssertNotEqual(name.label, first)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        let claw = app.buttons["activity-card.Word Claw"]
+        try reveal(claw, in: app)
+        claw.tap()
+        XCTAssertTrue(canvas.waitForExistence(timeout: 5))
+        try reveal(canvas, in: app)
+        canvas.coordinate(withNormalizedOffset: CGVector(dx: 0.18, dy: 0.8)).tap()
+        XCTAssertTrue(name.waitForExistence(timeout: 5))
+        let picked = name.label
+        XCTAssertFalse(picked.isEmpty)
+        XCTAssertTrue(app.staticTexts["Tap an item for the claw to pick it up."].waitForExistence(timeout: 4))
+        let clawShot = XCTAttachment(screenshot: app.screenshot())
+        clawShot.name = "Restored claw pickup"
+        clawShot.lifetime = .keepAlways
+        add(clawShot)
+        canvas.coordinate(withNormalizedOffset: CGVector(dx: 0.82, dy: 0.8)).tap()
+        let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label != %@", picked), object: name)
+        await fulfillment(of: [changed], timeout: 5)
+    }
+
+    @MainActor
     func testLetterTwinsFullAlphabetAndFreshEntry() async throws {
         let app = try await launch()
         app.buttons["category.ABCs & Phonics"].tap()

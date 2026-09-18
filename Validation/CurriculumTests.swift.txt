@@ -5,6 +5,25 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testOriginalArcadeArtworkAndRuthNames() {
+        let vehicles = VehicleImageOptionsLoader.loadOptions()
+        let sports = ClawImageOptionsLoader.loadOptions()
+        XCTAssertEqual(vehicles.count, 9)
+        XCTAssertEqual(sports.count, 7)
+        for pair in vehicles.map({ ($0.image, $0.name) }) + sports.map({ ($0.image, $0.name) }) {
+            XCTAssertNotNil(UIImage(named: pair.0), pair.0)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: pair.1), pair.1)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: pair.1)?.voice, "Ruth")
+        }
+        for asset in ["MechanicGarage", "MechanicGarageDoor", "Claw", "ClawGameBackground"] {
+            XCTAssertNotNil(UIImage(named: asset), asset)
+        }
+        for kind in [OriginalArcadeGame.garage, .claw] {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: kind.prompt))
+        }
+    }
+
+    @MainActor
     func testLetterTwinsAlphabetAndChoices() {
         let alphabet = Set(LetterDrawAlphabet.letters)
         for previous in LetterDrawAlphabet.letters {

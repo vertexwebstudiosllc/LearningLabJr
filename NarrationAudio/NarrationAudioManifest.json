@@ -594,6 +594,14 @@
       "category": "stories"
     },
     {
+      "text": "Ambulance",
+      "file": "llj-e1bc20dc7549c78f7c4eee27.mp3",
+      "spokenText": "Ambulance",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "At Dino Court, the hoops stood tall. So did Barry Brontosaurus. So did Rex T-Rex. Barry could dunk with his long, long neck. Rex could jump with a thunderous STOMP!",
       "file": "llj-bfa8f7608898b5d5be3cf894.mp3",
       "spokenText": "At Dino Court, the hoops stood tall. So did Barry Brontosaurus. So did Rex T-Rex. Barry could dunk with his long, long neck. Rex could jump with a thunderous STOMP!",
@@ -714,6 +722,22 @@
       "category": "stories"
     },
     {
+      "text": "Baseball",
+      "file": "llj-d275335a4ef2c9bef38873f8.mp3",
+      "spokenText": "Baseball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Basketball",
+      "file": "llj-78f8562c7eee24c51d34f510.mp3",
+      "spokenText": "Basketball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
       "file": "llj-c3aad5406636f31c4eb63c2b.mp3",
       "spokenText": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
@@ -736,6 +760,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Blue Car",
+      "file": "llj-f8b8ef20b294fad89b19693c.mp3",
+      "spokenText": "Blue Car",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Blue and Red selected.",
@@ -1986,6 +2018,14 @@
       "category": "shapes"
     },
     {
+      "text": "Fire Truck",
+      "file": "llj-39cbd4d5bf9b7ec4a16ecf8d.mp3",
+      "spokenText": "Fire Truck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "First choose a grown-up animal.",
       "file": "llj-14f6b22469caa1a05723d5fe.mp3",
       "spokenText": "First choose a grown-up animal.",
@@ -2056,6 +2096,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Food Truck",
+      "file": "llj-e87691fabc2a1ffa3076d184.mp3",
+      "spokenText": "Food Truck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Football",
+      "file": "llj-b7474d9c31d7db9446792745.mp3",
+      "spokenText": "Football",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "For Teddy's plan, book comes next.",
@@ -2136,6 +2192,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Golf Ball",
+      "file": "llj-e42a706147a4a47a2fa11370.mp3",
+      "spokenText": "Golf Ball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Goodbye! I enjoyed our picnic.",
@@ -2344,6 +2408,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Hockey Puck",
+      "file": "llj-6474fa5c4a25fff806be75df.mp3",
+      "spokenText": "Hockey Puck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "How might your puppet feel? Any choice is welcome.",
@@ -3698,6 +3770,14 @@
       "category": "shapes"
     },
     {
+      "text": "Police Car",
+      "file": "llj-85bfc1016ee5d2f618ced823.mp3",
+      "spokenText": "Police Car",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Post the circle in its matching opening.",
       "file": "llj-f4831dc8cefe47ae715960d4.mp3",
       "spokenText": "Here's a circle! Can you put it in the circle opening?",
@@ -3888,6 +3968,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Red Motorcycle",
+      "file": "llj-f65af67eb8285538303c2d7e.mp3",
+      "spokenText": "Red Motorcycle",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Red and Blue selected.",
@@ -4234,6 +4322,14 @@
       "category": "nature"
     },
     {
+      "text": "Tap an item and watch the claw pick it up!",
+      "file": "llj-0169f12de031e3ffaec0c4ea.mp3",
+      "spokenText": "Tap an item and watch the claw pick it up!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Tap each sheep to tuck it in. How many are still awake?",
       "file": "llj-a133c31cc98a24c265c4f387.mp3",
       "spokenText": "Tap each sheep to tuck it in. How many are still awake?",
@@ -4256,6 +4352,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Tap the garage to open the door. Tap again to hear the vehicle's name!",
+      "file": "llj-7cca6894090d57f02d19d603.mp3",
+      "spokenText": "Tap the garage to open the door. Tap again to hear the vehicle's name!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Tap the litter to put it in the bin. Leave the sea animals swimming.",
@@ -4368,6 +4472,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Tennis Ball",
+      "file": "llj-50f5b20838720b3f643066be.mp3",
+      "spokenText": "Tennis Ball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Thank you for noticing. A body clue can mean different things.",
@@ -5634,6 +5746,22 @@
       "category": "counting"
     },
     {
+      "text": "Tractor",
+      "file": "llj-884e1f43438e3eb22234170c.mp3",
+      "spokenText": "Tractor",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Trash Truck",
+      "file": "llj-74036d839070e8997890269e.mp3",
+      "spokenText": "Trash Truck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Trey Triceratops loved to run. He loved to stomp. He loved to play. But most of all, Trey wanted to learn basketball one day.",
       "file": "llj-bc5c6e9bd660803dcfa62808.mp3",
       "spokenText": "Trey Triceratops loved to run. He loved to stomp. He loved to play. But most of all, Trey wanted to learn basketball one day.",
@@ -6000,6 +6128,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Volleyball",
+      "file": "llj-5f8c9978192da0581f225a68.mp3",
+      "spokenText": "Volleyball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Wash hands. Eat lunch. Clear the table.",
@@ -6447,6 +6583,14 @@
       "spokenText": "Words that start with the letter Z.",
       "voice": "Ruth",
       "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Yellow Truck",
+      "file": "llj-28f8e827924449977049b2dd.mp3",
+      "spokenText": "Yellow Truck",
+      "voice": "Ruth",
+      "engine": "generative",
       "category": "literacy"
     },
     {

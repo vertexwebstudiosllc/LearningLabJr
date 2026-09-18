@@ -7,12 +7,12 @@
 
 import SpriteKit
 
-private struct VehicleImageOption {
+struct VehicleImageOption {
     let image: String
     let name: String
 }
 
-private enum VehicleImageOptionsLoader {
+enum VehicleImageOptionsLoader {
     private static let fallbackOptions: [VehicleImageOption] = [
         VehicleImageOption(image: "ambulance", name: "Ambulance"),
         VehicleImageOption(image: "carBlue", name: "Blue Car"),
@@ -54,7 +54,9 @@ private enum VehicleImageOptionsLoader {
                 return nil
             }
 
-            let image = row[imageIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+            let csvImage = row[imageIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+            let aliases = ["ambulance": "ambulance", "blue car": "carBlue", "cop car": "copCar", "firetruck": "firetruck", "food truck": "foodTruckGrey", "red motorcycle": "motorcylceRed", "tractor": "tractor", "trash truck": "trashTruck", "yellow truck": "truckYellow"]
+            let image = aliases[csvImage.lowercased()] ?? csvImage
             guard !image.isEmpty else { return nil }
 
             let csvName: String?
@@ -65,7 +67,7 @@ private enum VehicleImageOptionsLoader {
                 csvName = nil
             }
 
-            let name = csvName ?? displayName(from: image)
+            let name = csvName ?? fallbackOptions.first(where: { $0.image == image })?.name ?? displayName(from: image)
             return VehicleImageOption(image: image, name: name)
         }
 
@@ -160,12 +162,15 @@ private enum VehicleImageOptionsLoader {
 class VehiclePeekabooScene: SKScene {
     enum State {
         case idle
+        case openingDoor
         case doorOpen
         case showingName
         case closingDoor
     }
 
-    private var state: State = .idle
+    private(set) var state: State = .idle
+    var onName: ((String) -> Void)?
+    var onStatus: ((String) -> Void)?
     private var lastVehicleName = ""
 
     private let garageDoor = SKSpriteNode(imageNamed: "MechanicGarageDoor")
@@ -199,6 +204,7 @@ class VehiclePeekabooScene: SKScene {
 
     // MARK: - Scene Setup
     override func didMove(to view: SKView) {
+        guard children.isEmpty else { return }
         // Background
         let background = SKSpriteNode(imageNamed: "MechanicGarage")
         background.position  = CGPoint(x: size.width/2, y: size.height/2)
@@ -236,19 +242,27 @@ class VehiclePeekabooScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !touches.isEmpty else { return }
 
+        activate()
+    }
+
+    func activate() {
+        guard !isPaused else { return }
         switch state {
         case .idle:
             garageDoor.removeAllActions()
             garageDoor.zRotation = 0
             let duration = 0.6
             let moveUp = SKAction.moveBy(x: 0, y: garageDoor.size.height, duration: duration)
-            garageDoor.run(moveUp)
+            state = .openingDoor
+            garageDoor.run(moveUp) { [weak self] in
+                self?.state = .doorOpen
+                self?.onStatus?("Door open. Tap to hear the vehicle name.")
+            }
             vehicle.run(.fadeIn(withDuration: 0.5))
-            state = .doorOpen
 
         case .doorOpen:
             showVehicleName()
-            ItemSoundManager.shared.playSound(for: vehicleImageName, displayName: vehicleName)
+            onName?(vehicleName)
             state = .showingName
 
         case .showingName:
@@ -264,9 +278,10 @@ class VehiclePeekabooScene: SKScene {
                 self.setRandomVehicle()
                 self.runShakeAnimationOnDoor()
                 self.state = .idle
+                self.onStatus?("Garage closed. Tap to open the door.")
             }
 
-        case .closingDoor:
+        case .openingDoor, .closingDoor:
             break // do nothing while closing
         }
     }

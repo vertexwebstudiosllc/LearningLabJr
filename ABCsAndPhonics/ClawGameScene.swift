@@ -6,12 +6,12 @@
 //
 import SpriteKit
 
-private struct ClawImageOption {
+struct ClawImageOption {
     let image: String
     let name: String
 }
 
-private enum ClawImageOptionsLoader {
+enum ClawImageOptionsLoader {
     private static let knownAssetNames: [String: String] = [
         "baseball": "baseball",
         "basketball": "basketball",
@@ -164,6 +164,8 @@ private enum ClawImageOptionsLoader {
 }
 
 class ClawGameScene: SKScene {
+    var onName: ((String) -> Void)?
+    var onStatus: ((String) -> Void)?
     // MARK: - Configuration
     private let maxVisibleItemCount = 5
     private let clawSpeed: TimeInterval = 0.3
@@ -187,6 +189,7 @@ class ClawGameScene: SKScene {
 
     // MARK: - Setup
     override func didMove(to view: SKView) {
+        guard children.isEmpty else { return }
         // Background
         let bg = SKSpriteNode(imageNamed: "ClawGameBackground")
         bg.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -227,9 +230,10 @@ class ClawGameScene: SKScene {
 
         // Spawn bottom-row sports items
         let initialOptions = Array(playableOptions.shuffled().prefix(visibleItemCount))
-        let spacing = visibleItemCount > 1 ? availW / CGFloat(visibleItemCount - 1) : 0
+        let left = margin + itemSide / 2
+        let spacing = visibleItemCount > 1 ? (size.width - 2 * left) / CGFloat(visibleItemCount - 1) : 0
         for (index, option) in initialOptions.enumerated() {
-            let x = visibleItemCount > 1 ? margin + spacing * CGFloat(index) : size.width / 2
+            let x = visibleItemCount > 1 ? left + spacing * CGFloat(index) : size.width / 2
             let y = itemSide / 2 + size.height * bottomInsetRatio
             addBottomItem(option, at: CGPoint(x: x, y: y))
         }
@@ -240,6 +244,7 @@ class ClawGameScene: SKScene {
     // MARK: - Draw the rope each frame
     override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+        guard let claw else { return }
         let path = CGMutablePath()
         path.move(to: CGPoint(x: claw.position.x, y: size.height))
         path.addLine(to: CGPoint(x: claw.position.x,
@@ -258,12 +263,16 @@ class ClawGameScene: SKScene {
     // MARK: - Tap handling
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
+        pick(at: touch.location(in: self))
+    }
 
-        guard !isDropping else { return }
+    func pick(at location: CGPoint? = nil) {
+        guard !isDropping, !isPaused, let claw else { return }
+        let point = location ?? CGPoint(x: size.width / 2, y: 0)
+        guard let tappedItem = bottomItems.first(where: { $0.frame.contains(point) })
+            ?? bottomItems.min(by: { abs($0.position.x - point.x) < abs($1.position.x - point.x) }) else { return }
         isDropping = true
-
-        let tapLocation = touch.location(in: self)
-        let tappedItem = bottomItems.first { $0.frame.contains(tapLocation) }
+        onStatus?("The claw is picking up an item.")
         let disappearedImage = grabbedItem.flatMap { imageName(for: $0) }
 
         if let old = grabbedItem {
@@ -271,19 +280,18 @@ class ClawGameScene: SKScene {
             grabbedItem = nil
         }
 
-        let targetX = tappedItem?.position.x ?? claw.position.x
+        let targetX = tappedItem.position.x
         let moveOverTarget = SKAction.moveTo(x: targetX, duration: 0.2)
         moveOverTarget.timingMode = .easeInEaseOut
 
-        let down = SKAction.moveBy(x: 0, y: -dropDistance, duration: clawSpeed)
+        let down = SKAction.moveTo(y: tappedItem.position.y + claw.size.height / 2 + itemSide * 0.28, duration: clawSpeed)
         down.timingMode = .easeIn
 
         let grab = SKAction.run { [weak self] in
             guard let self = self else { return }
 
-            let candidates = self.bottomItems.filter { $0.name != self.lastPickedName }
-            guard let item = tappedItem ?? candidates.randomElement() ?? self.bottomItems.randomElement(),
-                  let name = item.name else { return }
+            let item = tappedItem
+            guard let name = item.name else { return }
 
             let itemImage = self.imageName(for: item)
             self.lastPickedName = name
@@ -308,9 +316,7 @@ class ClawGameScene: SKScene {
 
             self.grabbedItem = item
             self.showPickedName(name)
-            if let itemImage {
-                ItemSoundManager.shared.playSound(for: itemImage, displayName: name)
-            }
+            self.onName?(name)
             self.addRandomReplacement(
                 excludingSelected: itemImage,
                 disappearedImage: disappearedImage,
@@ -323,6 +329,7 @@ class ClawGameScene: SKScene {
 
         let reset = SKAction.run { [weak self] in
             self?.isDropping = false
+            self?.onStatus?("Tap an item for the claw to pick it up.")
         }
 
         claw.run(.sequence([moveOverTarget, down, grab, up, reset]))
@@ -382,7 +389,7 @@ class ClawGameScene: SKScene {
         let node = SKSpriteNode(imageNamed: option.image)
         node.name = option.name
         node.userData = NSMutableDictionary(dictionary: ["image": option.image])
-        node.size = CGSize(width: itemSide, height: itemSide)
+        node.size = fittedSize(for: node.texture?.size() ?? .zero, maxWidth: itemSide, maxHeight: itemSide)
         node.position = position
         node.zPosition = 1
         addChild(node)
