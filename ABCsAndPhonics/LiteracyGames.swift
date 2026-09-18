@@ -104,26 +104,60 @@ private struct LiteracyLetterButton: View {
     }
 }
 
+struct LetterTwinsRound {
+    let letter: String
+    let choices: [String]
+
+    static func session(previousStart: String, lastShown: String) -> [LetterTwinsRound] {
+        LetterDrawAlphabet.shuffled(startingAfter: previousStart, lastShown: lastShown).map { letter in
+            let other = LetterDrawAlphabet.letters.filter { $0 != letter }.randomElement()!
+            return LetterTwinsRound(letter: letter, choices: [letter, other].shuffled())
+        }
+    }
+}
+
 struct LetterTwinsGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var letter: String { ["A", "M", "S"][play.round] }
-    private var choices: [String] { [["A", "T"], ["S", "M"], ["S", "B"]][play.round] }
+    @StateObject private var play = LiteracyPlay(total: 26)
+    @AppStorage("letterTwins.previousStartingLetter") private var previousStart = ""
+    @AppStorage("letterTwins.lastShownLetter") private var lastShown = ""
+    @State private var rounds: [LetterTwinsRound] = []
+
     var body: some View {
-        LiteracyStage(title: "Letter Twins", prompt: "This is \(letter). Find the letter that looks just like it.", play: play) {
-            VStack(spacing: 26) {
-                Text(letter).font(.system(size: 100, weight: .bold, design: .rounded)).foregroundStyle(.brown)
-                    .frame(width: 150, height: 160).background(Color.orange.opacity(0.18), in: RoundedRectangle(cornerRadius: 28))
-                    .accessibilityLabel("Find letter \(letter)")
-                HStack(spacing: 18) {
-                    ForEach(choices, id: \.self) { choice in
-                        LiteracyLetterButton(letter: choice) {
-                            if choice == letter { play.win("Two matching letters. They are both \(letter)!") }
-                            else { play.say("Look at the lines and curves. Find the same shape.") }
+        VStack(spacing: 0) {
+            if rounds.indices.contains(play.round) {
+                let round = rounds[play.round]
+                LiteracyStage(title: "Letter Twins", prompt: "This is \(round.letter). Find the letter that looks just like it.", play: play,
+                              onReplay: restart, progressLabel: "Letter", nextLabel: "Next letter") {
+                    VStack(spacing: 26) {
+                        Text(round.letter).font(.system(size: 100, weight: .bold, design: .rounded)).foregroundStyle(.brown)
+                            .frame(width: 150, height: 160).background(Color.orange.opacity(0.18), in: RoundedRectangle(cornerRadius: 28))
+                            .accessibilityLabel("Find letter \(round.letter)")
+                            .accessibilityIdentifier("letter-twins.target")
+                        HStack(spacing: 18) {
+                            ForEach(round.choices, id: \.self) { choice in
+                                LiteracyLetterButton(letter: choice) {
+                                    if choice == round.letter { play.win("Two matching letters. They are both \(round.letter)!") }
+                                    else { play.say("Look at the lines and curves. Find the same shape.") }
+                                }
+                                .accessibilityIdentifier("letter-twins.choice.\(choice)")
+                            }
                         }
                     }
                 }
             }
         }
+        .onAppear { if rounds.isEmpty { restart() } }
+        .onDisappear { rounds = [] }
+        .onChange(of: play.round) { _, index in
+            if rounds.indices.contains(index) { lastShown = rounds[index].letter }
+        }
+    }
+
+    private func restart() {
+        rounds = LetterTwinsRound.session(previousStart: previousStart, lastShown: lastShown)
+        previousStart = rounds[0].letter
+        lastShown = previousStart
+        play.replay()
     }
 }
 

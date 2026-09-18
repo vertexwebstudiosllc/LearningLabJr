@@ -132,7 +132,9 @@ class NarrationTests(unittest.TestCase):
                 self.assertIn(narration.normalize_text(spoken), keys, filename)
         self.assertIn(narration.PREVIEW_TEXT, keys)
         for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
-            for spoken in [f'Draw over the big letter {letter}. Or draw it in the air with your grown-up.',
+            for spoken in [f'This is {letter}. Find the letter that looks just like it.',
+                           f'Two matching letters. They are both {letter}!',
+                           f'Draw over the big letter {letter}. Or draw it in the air with your grown-up.',
                            f'You explored the lines in {letter}!',
                            f'You made the letter {letter} together!']:
                 self.assertIn(spoken, keys)

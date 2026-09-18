@@ -29,6 +29,7 @@ Coverage:
 - Actual compiled-bundle lookup of nature and story artwork, including all sixty book pages and namespace-qualified Space images.
 - Session expiry, background elapsed time, restart, stop, and extreme duration input.
 - Voice quality ranking, saved choice, missing-voice fallback, and exclusion of novelty, personal, and non-English voices.
+- Letter Twins verifies all 26 unique targets, two distinct answer choices, wrong-answer retry, fresh entry, replay, and complete Ruth prompt coverage.
 - Letter Draw completes all 26 unique letters, rejects skipping, and starts with a different letter on reentry/replay.
 - Sound Baskets covers all 26 target letters, available artwork, stable two-letter choices, stale/wrong drop rejection, tap-only narration, real drag-and-drop, reentry, and replay.
 - Menu-to-game navigation, the four-book library, and the six premium phonics routes using StoreKit's local test session.

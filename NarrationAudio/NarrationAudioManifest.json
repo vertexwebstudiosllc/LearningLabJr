@@ -4994,6 +4994,94 @@
       "category": "literacy"
     },
     {
+      "text": "This is B. Find the letter that looks just like it.",
+      "file": "llj-02fd79b5b49123dd25350f71.mp3",
+      "spokenText": "This is B. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is C. Find the letter that looks just like it.",
+      "file": "llj-37bc0f095391de05295eb684.mp3",
+      "spokenText": "This is C. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is D. Find the letter that looks just like it.",
+      "file": "llj-1b70b908dc6337a5aaefe9b9.mp3",
+      "spokenText": "This is D. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is E. Find the letter that looks just like it.",
+      "file": "llj-07d9b18a74ac8ce389dfa156.mp3",
+      "spokenText": "This is E. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is F. Find the letter that looks just like it.",
+      "file": "llj-3d7f90bb0efad5715b32503a.mp3",
+      "spokenText": "This is F. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is G. Find the letter that looks just like it.",
+      "file": "llj-520a872b4a8ea634a5071dac.mp3",
+      "spokenText": "This is G. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is H. Find the letter that looks just like it.",
+      "file": "llj-8d06da5900faaacec5d4c72f.mp3",
+      "spokenText": "This is H. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is I. Find the letter that looks just like it.",
+      "file": "llj-3a5b6660efc60165c699dd10.mp3",
+      "spokenText": "This is I. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is J. Find the letter that looks just like it.",
+      "file": "llj-0c5385095b3dd3af5db2256d.mp3",
+      "spokenText": "This is J. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is K. Find the letter that looks just like it.",
+      "file": "llj-fb5308cd45d060cf1a8e5490.mp3",
+      "spokenText": "This is K. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is L. Find the letter that looks just like it.",
+      "file": "llj-80c4b4f728189f2905917311.mp3",
+      "spokenText": "This is L. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "This is M. Find the letter that looks just like it.",
       "file": "llj-a4cc0e4323b456070c9f2100.mp3",
       "spokenText": "This is M. Find the letter that looks just like it.",
@@ -5002,9 +5090,105 @@
       "category": "literacy"
     },
     {
+      "text": "This is N. Find the letter that looks just like it.",
+      "file": "llj-b03574de197488427afc2dee.mp3",
+      "spokenText": "This is N. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is O. Find the letter that looks just like it.",
+      "file": "llj-5db305dedd57fe506d6a5df0.mp3",
+      "spokenText": "This is O. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is P. Find the letter that looks just like it.",
+      "file": "llj-6eb402656841cb4373357d37.mp3",
+      "spokenText": "This is P. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is Q. Find the letter that looks just like it.",
+      "file": "llj-93292bc27fd406cd96cf59cd.mp3",
+      "spokenText": "This is Q. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is R. Find the letter that looks just like it.",
+      "file": "llj-ef6558a05a7e608b027ce0a5.mp3",
+      "spokenText": "This is R. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "This is S. Find the letter that looks just like it.",
       "file": "llj-698657eb3158a1b3d9341907.mp3",
       "spokenText": "This is S. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is T. Find the letter that looks just like it.",
+      "file": "llj-25e296d34745ecd61671a45f.mp3",
+      "spokenText": "This is T. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is U. Find the letter that looks just like it.",
+      "file": "llj-aa8a5c11f60201bce1032e43.mp3",
+      "spokenText": "This is U. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is V. Find the letter that looks just like it.",
+      "file": "llj-a0ab3fe3a69081183fbcf360.mp3",
+      "spokenText": "This is V. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is W. Find the letter that looks just like it.",
+      "file": "llj-39f8e173317b98bf10c167b8.mp3",
+      "spokenText": "This is W. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is X. Find the letter that looks just like it.",
+      "file": "llj-a1de2ece36b8bdc72186b56a.mp3",
+      "spokenText": "This is X. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is Y. Find the letter that looks just like it.",
+      "file": "llj-818cb9714dd23b0e1f61342e.mp3",
+      "spokenText": "This is Y. Find the letter that looks just like it.",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "This is Z. Find the letter that looks just like it.",
+      "file": "llj-fb5907c67a855579b73c941b.mp3",
+      "spokenText": "This is Z. Find the letter that looks just like it.",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
@@ -5578,6 +5762,94 @@
       "category": "literacy"
     },
     {
+      "text": "Two matching letters. They are both B!",
+      "file": "llj-6c85cfcdd7a434be881ed262.mp3",
+      "spokenText": "Two matching letters. They are both B!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both C!",
+      "file": "llj-9cf020b0f6bc68b6964ecbc4.mp3",
+      "spokenText": "Two matching letters. They are both C!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both D!",
+      "file": "llj-1bd13593265852db910ef2b6.mp3",
+      "spokenText": "Two matching letters. They are both D!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both E!",
+      "file": "llj-1cbbaa70369d1edf835499a6.mp3",
+      "spokenText": "Two matching letters. They are both E!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both F!",
+      "file": "llj-208b1314af4613070496db87.mp3",
+      "spokenText": "Two matching letters. They are both F!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both G!",
+      "file": "llj-4ab911dfe1dc59e77ea57cf0.mp3",
+      "spokenText": "Two matching letters. They are both G!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both H!",
+      "file": "llj-6eb02ad0eb7daec73667895a.mp3",
+      "spokenText": "Two matching letters. They are both H!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both I!",
+      "file": "llj-6b3f957e5ff7b5cf1679a8b6.mp3",
+      "spokenText": "Two matching letters. They are both I!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both J!",
+      "file": "llj-86f843fbf1907deb3737b343.mp3",
+      "spokenText": "Two matching letters. They are both J!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both K!",
+      "file": "llj-7b286c524d3d0ded72ea9012.mp3",
+      "spokenText": "Two matching letters. They are both K!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both L!",
+      "file": "llj-e0061f4a1e79e0b5c220845c.mp3",
+      "spokenText": "Two matching letters. They are both L!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "Two matching letters. They are both M!",
       "file": "llj-71b02d629d8a71f63a646857.mp3",
       "spokenText": "Two matching letters. They are both M!",
@@ -5586,9 +5858,105 @@
       "category": "literacy"
     },
     {
+      "text": "Two matching letters. They are both N!",
+      "file": "llj-d920776483434c4ab09c71ee.mp3",
+      "spokenText": "Two matching letters. They are both N!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both O!",
+      "file": "llj-e3d7a172fe0c529be324afbe.mp3",
+      "spokenText": "Two matching letters. They are both O!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both P!",
+      "file": "llj-1a30b298bd06b7d35b9ef45b.mp3",
+      "spokenText": "Two matching letters. They are both P!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both Q!",
+      "file": "llj-377611fc6484631c82110f45.mp3",
+      "spokenText": "Two matching letters. They are both Q!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both R!",
+      "file": "llj-aab64c9855d3c7e9ef291aef.mp3",
+      "spokenText": "Two matching letters. They are both R!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
       "text": "Two matching letters. They are both S!",
       "file": "llj-d98d3f71a982c8c5d90c548b.mp3",
       "spokenText": "Two matching letters. They are both S!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both T!",
+      "file": "llj-36463667cc82beba5cdef3ee.mp3",
+      "spokenText": "Two matching letters. They are both T!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both U!",
+      "file": "llj-d6ba044ec557ec582f3062cd.mp3",
+      "spokenText": "Two matching letters. They are both U!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both V!",
+      "file": "llj-b4dccad2471854642d74c7d5.mp3",
+      "spokenText": "Two matching letters. They are both V!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both W!",
+      "file": "llj-d7f570f0cb3dc31f52a8b75c.mp3",
+      "spokenText": "Two matching letters. They are both W!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both X!",
+      "file": "llj-a793a9249dca88bc25063725.mp3",
+      "spokenText": "Two matching letters. They are both X!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both Y!",
+      "file": "llj-efe5b123004b420108738de9.mp3",
+      "spokenText": "Two matching letters. They are both Y!",
+      "voice": "Ruth",
+      "engine": "neural",
+      "category": "literacy"
+    },
+    {
+      "text": "Two matching letters. They are both Z!",
+      "file": "llj-057b43365d9498eb0a2fe536.mp3",
+      "spokenText": "Two matching letters. They are both Z!",
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"

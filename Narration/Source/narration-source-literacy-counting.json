@@ -2533,5 +2533,373 @@
     "text": "Let's try the other basket. Tap its letter and listen.",
     "category": "literacy",
     "delivery": "gentle"
+  },
+  {
+    "text": "This is B. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both B!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is C. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both C!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is D. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both D!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is E. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both E!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is F. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both F!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛf\">F</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is G. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both G!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"dʒi\">G</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is H. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both H!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"eɪtʃ\">H</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is I. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both I!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"aɪ\">I</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is J. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both J!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"dʒeɪ\">J</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is K. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both K!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"keɪ\">K</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is L. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both L!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛl\">L</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is N. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both N!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛn\">N</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is O. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both O!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"oʊ\">O</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is P. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both P!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is Q. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both Q!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is R. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both R!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɑɹ\">R</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is T. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both T!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is U. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both U!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is V. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both V!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is W. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both W!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ˈdʌbəlju\">W</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is X. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both X!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"ɛks\">X</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is Y. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both Y!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"waɪ\">Y</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "This is Z. Find the letter that looks just like it.",
+    "category": "literacy",
+    "delivery": "clear",
+    "ssml": "<speak>This is <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Find the letter that looks just like it.</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
+  },
+  {
+    "text": "Two matching letters. They are both Z!",
+    "category": "literacy",
+    "delivery": "playful",
+    "ssml": "<speak>Two matching letters. They are both <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>!</speak>",
+    "engine": "neural",
+    "note": "Letter names, not isolated phonemes. Audition the letter pronunciation with the selected Neural voice."
   }
 ]

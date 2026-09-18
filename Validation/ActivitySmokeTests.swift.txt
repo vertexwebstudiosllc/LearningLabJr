@@ -108,6 +108,57 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testFeelingsRoutes() async throws { try await checkCategory("Big Feelings") }
 
     @MainActor
+    func testLetterTwinsFullAlphabetAndFreshEntry() async throws {
+        let app = try await launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.Letter Twins"]
+        try reveal(card, in: app)
+        card.tap()
+        let target = app.staticTexts["letter-twins.target"]
+        func currentLetter() -> String {
+            XCTAssertTrue(target.waitForExistence(timeout: 5))
+            return String(target.label.suffix(1))
+        }
+        func match(last: Bool = false) throws {
+            let choice = app.buttons["letter-twins.choice.\(currentLetter())"]
+            try reveal(choice, in: app)
+            choice.tap()
+            let next = app.buttons[last ? "All done" : "Next letter"]
+            try reveal(next, in: app)
+            next.tap()
+        }
+        let initial = currentLetter()
+        let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'letter-twins.choice.'"))
+        XCTAssertEqual(choices.count, 2)
+        let wrong = try XCTUnwrap(choices.allElementsBoundByIndex.first { !$0.identifier.hasSuffix(".\(initial)") })
+        try reveal(wrong, in: app)
+        wrong.tap()
+        XCTAssertTrue(app.staticTexts["Look at the lines and curves. Find the same shape."].waitForExistence(timeout: 3))
+        XCTAssertFalse(app.buttons["Next letter"].exists)
+        XCTAssertEqual(currentLetter(), initial)
+        try match()
+        let abandoned = currentLetter()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        let restarted = currentLetter()
+        XCTAssertNotEqual(restarted, initial)
+        XCTAssertNotEqual(restarted, abandoned)
+        var seen: Set<String> = []
+        for index in 0..<26 {
+            XCTAssertTrue(seen.insert(currentLetter()).inserted)
+            XCTAssertTrue(app.staticTexts["Letter \(index + 1) of 26"].exists)
+            try match(last: index == 25)
+        }
+        XCTAssertEqual(seen, Set(Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(String.init)))
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app)
+        replay.tap()
+        XCTAssertNotEqual(currentLetter(), restarted)
+        XCTAssertTrue(app.staticTexts["Letter 1 of 26"].exists)
+    }
+
+    @MainActor
     func testSoundBasketsLetterAudioDraggingAndFullAlphabet() async throws {
         let app = try await launch(premium: true)
         app.buttons["category.ABCs & Phonics"].tap()

@@ -73,4 +73,12 @@ The following local artifacts were inspected for this report. They are temporary
 - A previous native test exposed a teardown crash in LiteracyPlay on the older simulator runtime. An explicit nonisolated deinitializer avoids the unused executor hop; the same synchronous test now passes. The crash stack matches [Swift issue 88036](https://github.com/swiftlang/swift/issues/88036). Earlier simulator launch/SIGTERM failures are not counted as passing runs.
 - The full Sound Baskets iPhone UI test also passed: both letter taps, wrong and correct drags, all 26 unique targets, fresh entry, and replay. Evidence: `/private/tmp/LearningLabJr-soundbaskets-iphone.xcresult`.
 
+
+### Full-alphabet Letter Twins — September 18, 2026
+
+- Letter Twins now uses 26 shuffled targets without repetition and two distinct, stable answer choices per round. Wrong answers retain the current target. Reentry and replay reset progress, excluding the prior starting and last displayed letters from the new first round.
+- Added an active-session guard after the initial UI test caught an unexpected reshuffle during play. Leaving clears the session; repeated appearance callbacks do not reset an active session.
+- Added 46 Ruth recordings for the remaining 23 letters, retaining pronunciation markup. All 1,017 manifest entries use Ruth; hashes verified. Additional synthesis estimate: $0.033488 before tax/credits.
+- Eleven native tests and the complete iPhone UI test passed in `/private/tmp/LearningLabJr-lettertwins-retry.xcresult`, including all 26 targets, wrong-answer retry, leaving after partial progress, fresh entry, and replay. Eight Python checks passed, including source coverage for every Letter Twins instruction and response. The first failed UI run is retained in `/private/tmp/LearningLabJr-lettertwins-tests.xcresult`.
+
 Real-device audio review, VoiceOver interaction testing, TestFlight purchase/restore checks, and caregiver/toddler playtesting remain pending. Every game's mechanics, all story content, large-text and motor-access behavior, and representative real-device layouts need release review. Route coverage and two completed gameplay loops do not establish educational efficacy, comprehensive accessibility, or full gameplay quality. App Store privacy materials and release screenshots also need their own review.

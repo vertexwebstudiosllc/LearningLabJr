@@ -5,6 +5,26 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testLetterTwinsAlphabetAndChoices() {
+        let alphabet = Set(LetterDrawAlphabet.letters)
+        for previous in LetterDrawAlphabet.letters {
+            let rounds = LetterTwinsRound.session(previousStart: previous, lastShown: "Z")
+            XCTAssertEqual(rounds.count, 26)
+            XCTAssertEqual(Set(rounds.map(\.letter)), alphabet)
+            XCTAssertNotEqual(rounds.first?.letter, previous)
+            XCTAssertNotEqual(rounds.first?.letter, "Z")
+            for round in rounds {
+                XCTAssertEqual(round.choices.count, 2)
+                XCTAssertEqual(Set(round.choices).count, 2)
+                XCTAssertTrue(round.choices.contains(round.letter))
+                XCTAssertTrue(Set(round.choices).isSubset(of: alphabet))
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: "This is \(round.letter). Find the letter that looks just like it."))
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: "Two matching letters. They are both \(round.letter)!"))
+            }
+        }
+    }
+
+    @MainActor
     func testSoundBasketsAlphabetAndDropMatching() {
         let alphabet = Set(LetterDrawAlphabet.letters)
         XCTAssertEqual(SoundBasketItem.alphabet.count, 26)
