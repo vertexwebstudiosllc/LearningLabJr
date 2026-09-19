@@ -172,39 +172,118 @@ struct ShapePostGame: View {
     }
 }
 
+enum LaundryColor: String, CaseIterable, Identifiable {
+    case red, orange, yellow, green, blue, purple, pink, brown, black, white, gray
+    var id: String { rawValue }
+    var name: String { rawValue.capitalized }
+    var color: Color {
+        switch self {
+        case .red: return .red
+        case .orange: return .orange
+        case .yellow: return .yellow
+        case .green: return .green
+        case .blue: return .blue
+        case .purple: return .purple
+        case .pink: return .pink
+        case .brown: return .brown
+        case .black: return .black
+        case .white: return .white
+        case .gray: return .gray
+        }
+    }
+    var prompt: String { "Put the \(rawValue) shirt in the \(rawValue) basket." }
+    var success: String { "In the \(rawValue) basket! Nice sorting!" }
+    var retry: String { "This shirt is \(rawValue). Let's find its basket." }
+}
+
+struct LaundryRound {
+    let target: LaundryColor
+    let baskets: [LaundryColor]
+    static func cycle(after previous: LaundryColor? = nil) -> [Self] {
+        var colors = LaundryColor.allCases.shuffled()
+        if colors.first == previous { colors.swapAt(0, Int.random(in: 1..<colors.count)) }
+        return colors.map { target in
+            Self(target: target, baskets: ([target] + LaundryColor.allCases.filter { $0 != target }.shuffled().prefix(2)).shuffled())
+        }
+    }
+}
+
+struct LaundrySession {
+    private(set) var rounds = LaundryRound.cycle()
+    private(set) var index = 0
+    private(set) var counts: [LaundryColor: Int] = [:]
+    private(set) var solved = false
+    var current: LaundryRound { rounds[index] }
+    var total: Int { counts.values.reduce(0, +) }
+
+    @discardableResult
+    mutating func sort(into basket: LaundryColor) -> Bool {
+        guard !solved, basket == current.target else { return false }
+        counts[basket, default: 0] += 1
+        solved = true
+        return true
+    }
+
+    mutating func next() {
+        guard solved else { return }
+        if index == rounds.count - 1 {
+            rounds = LaundryRound.cycle(after: current.target)
+            index = 0
+        } else {
+            index += 1
+        }
+        solved = false
+    }
+}
+
 struct ColorLaundryGame: View {
     let onReplay: () -> Void
-    @State private var index = 0
-    @State private var counts = [0, 0, 0]
+    @State private var laundry = LaundrySession()
     @State private var note = "Look for something this color nearby."
     @StateObject private var narrator = GameNarrator()
-    private let shirts: [SCPaint] = [.blue, .red, .yellow, .red, .blue, .yellow]
-    private let baskets: [SCPaint] = [.red, .yellow, .blue]
-    private var current: SCPaint { shirts[min(index, 5)] }
+
     var body: some View {
-        ToddlerGameScaffold(title: "Color Laundry", prompt: index == 6 ? "All six shirts are sorted into their color baskets!" : "Put the \(current.name.lowercased()) shirt in the \(current.name.lowercased()) basket.", accent: .blue, completion: index == 6, onReplay: onReplay) {
-            Image(systemName: index == 6 ? "checkmark.seal.fill" : "tshirt.fill")
-                .font(.system(size: 120)).foregroundStyle(current.color)
-                .shadow(color: .black.opacity(0.15), radius: 2).frame(height: 150)
-                .accessibilityLabel("\(current.name) shirt")
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 92))], spacing: 12) {
-                ForEach(Array(baskets.enumerated()), id: \.element.id) { position, paint in
+        ToddlerGameScaffold(title: "Color Laundry", prompt: laundry.current.target.prompt, accent: .blue) {
+            Image(systemName: "tshirt.fill")
+                .font(.system(size: 110)).foregroundStyle(laundry.current.target.color)
+                .shadow(color: .black.opacity(0.65), radius: 1)
+                .frame(maxWidth: .infinity, minHeight: 145)
+                .background(Color(red: 0.84, green: 0.89, blue: 0.94), in: RoundedRectangle(cornerRadius: 24))
+                .accessibilityLabel("\(laundry.current.target.name) shirt")
+                .accessibilityValue(laundry.current.target.rawValue)
+                .accessibilityIdentifier("shapes.laundry.shirt")
+            Text("\(laundry.total) shirts sorted").font(.headline)
+                .accessibilityIdentifier("shapes.laundry.progress")
+            HStack(spacing: 12) {
+                ForEach(laundry.current.baskets) { paint in
                     Button {
-                        guard index < 6 else { return }
-                        if paint == current { counts[position] += 1; index += 1; note = "In the \(paint.name.lowercased()) basket!" }
-                        else { note = "This shirt is \(current.name.lowercased()). Let's find its basket." }
+                        guard !laundry.solved else { return }
+                        let target = laundry.current.target
+                        note = laundry.sort(into: paint) ? target.success : target.retry
                         narrator.speak(note)
                     } label: {
-                        VStack {
-                            Image(systemName: "basket.fill").font(.system(size: 48)).foregroundStyle(paint.color)
-                            Text(paint.name).font(.headline)
-                            Text("\(counts[position]) shirts").font(.caption)
-                        }.foregroundStyle(.primary).frame(maxWidth: .infinity, minHeight: 132)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 22))
-                    }.buttonStyle(.plain)
+                        VStack(spacing: 8) {
+                            Image(systemName: "basket.fill").font(.system(size: 44)).foregroundStyle(paint.color)
+                                .shadow(color: .black.opacity(0.65), radius: 1)
+                            Text(paint.name).font(.system(.subheadline, design: .rounded, weight: .bold))
+                            Text("\(laundry.counts[paint, default: 0]) shirts").font(.caption)
+                            if laundry.solved && paint == laundry.current.target {
+                                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                            }
+                        }.foregroundStyle(.primary).frame(maxWidth: .infinity, minHeight: 145)
+                            .background(Color(red: 0.84, green: 0.89, blue: 0.94), in: RoundedRectangle(cornerRadius: 22))
+                    }.buttonStyle(.plain).disabled(laundry.solved)
+                        .accessibilityLabel("\(paint.name) basket, \(laundry.counts[paint, default: 0]) shirts")
+                        .accessibilityIdentifier("shapes.laundry.basket.\(paint.rawValue)")
                 }
             }
             SCNote(text: note)
+            if laundry.solved {
+                ToddlerActionButton(title: "Next shirt", systemImage: "arrow.right", color: .blue) {
+                    laundry.next()
+                    note = "Look for something this color nearby."
+                }.accessibilityIdentifier("shapes.laundry.next")
+            }
         }
     }
 }

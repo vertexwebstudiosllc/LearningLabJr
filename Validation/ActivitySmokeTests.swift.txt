@@ -777,6 +777,53 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testColorLaundryCyclesAndReentry() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app)
+        category.tap()
+        let card = app.buttons["activity-card.Color Laundry"]
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(app.images["shapes.laundry.shirt"].waitForExistence(timeout: 5))
+        var previous: String?
+        for _ in 0..<2 {
+            var seen: Set<String> = []
+            for index in 0..<11 {
+                let shirt = app.images["shapes.laundry.shirt"]
+                let color = try XCTUnwrap(shirt.value as? String)
+                if index == 0 { XCTAssertNotEqual(color, previous) }
+                XCTAssertTrue(seen.insert(color).inserted)
+                let basket = app.buttons["shapes.laundry.basket.\(color)"]
+                try reveal(basket, in: app)
+                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.laundry.basket.'"))
+                XCTAssertEqual(choices.count, 3)
+                let wrong = choices.allElementsBoundByIndex.first { $0.identifier != basket.identifier }!
+                wrong.tap()
+                XCTAssertFalse(app.buttons["shapes.laundry.next"].exists)
+                basket.tap()
+                XCTAssertFalse(basket.isEnabled)
+                let next = app.buttons["shapes.laundry.next"]
+                XCTAssertTrue(next.waitForExistence(timeout: 3))
+                if color == "white" {
+                    let shot = XCTAttachment(screenshot: app.screenshot())
+                    shot.name = "Color Laundry white shirt"
+                    shot.lifetime = .keepAlways
+                    add(shot)
+                }
+                try reveal(next, in: app)
+                next.tap()
+                previous = color
+            }
+            XCTAssertEqual(seen.count, 11)
+        }
+        app.buttons["BackButton"].tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(app.staticTexts["0 shirts sorted"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor
     func testLandscapeShapePostCompletesAndReplays() async throws {
         try await checkShapePost(orientation: .landscapeLeft)
     }

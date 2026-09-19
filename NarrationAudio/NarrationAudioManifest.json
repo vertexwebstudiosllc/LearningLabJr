@@ -3802,9 +3802,73 @@
       "category": "stories"
     },
     {
+      "text": "In the black basket! Nice sorting!",
+      "file": "llj-b67b57bfeba909dd7b080fb8.mp3",
+      "spokenText": "In the black basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "In the blue basket!",
       "file": "llj-a858a8a342fcbc391fbf49e0.mp3",
       "spokenText": "In the blue basket!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the blue basket! Nice sorting!",
+      "file": "llj-6a0bdbc11e20a0645b670412.mp3",
+      "spokenText": "In the blue basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the brown basket! Nice sorting!",
+      "file": "llj-c03eeddcc187bb5871d51f13.mp3",
+      "spokenText": "In the brown basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the gray basket! Nice sorting!",
+      "file": "llj-f749eee7fdf787f34047a63d.mp3",
+      "spokenText": "In the gray basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the green basket! Nice sorting!",
+      "file": "llj-bc1ed74d7fd5402420b537d5.mp3",
+      "spokenText": "In the green basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the orange basket! Nice sorting!",
+      "file": "llj-36c904787aee73a2245200f5.mp3",
+      "spokenText": "In the orange basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the pink basket! Nice sorting!",
+      "file": "llj-01688dfd98d414a74cee4523.mp3",
+      "spokenText": "In the pink basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the purple basket! Nice sorting!",
+      "file": "llj-c16312e341e47507670de231.mp3",
+      "spokenText": "In the purple basket! Nice sorting!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -3818,9 +3882,33 @@
       "category": "shapes"
     },
     {
+      "text": "In the red basket! Nice sorting!",
+      "file": "llj-2ef7cff35ae89c68b5275388.mp3",
+      "spokenText": "In the red basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the white basket! Nice sorting!",
+      "file": "llj-5fa7c592f4f3235b51d95103.mp3",
+      "spokenText": "In the white basket! Nice sorting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "In the yellow basket!",
       "file": "llj-84e1f1df04c4b2cf0f367c6b.mp3",
       "spokenText": "In the yellow basket!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "In the yellow basket! Nice sorting!",
+      "file": "llj-14f59052cd5b0954d38e8312.mp3",
+      "spokenText": "In the yellow basket! Nice sorting!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -9010,9 +9098,57 @@
       "category": "stories"
     },
     {
+      "text": "Put the black shirt in the black basket.",
+      "file": "llj-fd47392baf6f1992d6ab00cf.mp3",
+      "spokenText": "Put the black shirt in the black basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Put the blue shirt in the blue basket.",
       "file": "llj-fac3bff6544f85918a8946a2.mp3",
       "spokenText": "Put the blue shirt in the blue basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the brown shirt in the brown basket.",
+      "file": "llj-2245b6bc64ed2352671750a6.mp3",
+      "spokenText": "Put the brown shirt in the brown basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the gray shirt in the gray basket.",
+      "file": "llj-44b505059aa3671d0685f886.mp3",
+      "spokenText": "Put the gray shirt in the gray basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the green shirt in the green basket.",
+      "file": "llj-5dc604486e234c2e281aac81.mp3",
+      "spokenText": "Put the green shirt in the green basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the orange shirt in the orange basket.",
+      "file": "llj-bf04fcc07e11e2e6006aeaed.mp3",
+      "spokenText": "Put the orange shirt in the orange basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the pink shirt in the pink basket.",
+      "file": "llj-8752d9c4046709b0aa17f2c1.mp3",
+      "spokenText": "Put the pink shirt in the pink basket.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -9026,6 +9162,14 @@
       "category": "nature"
     },
     {
+      "text": "Put the purple shirt in the purple basket.",
+      "file": "llj-bc64b0fedd3c26d3b6486c6e.mp3",
+      "spokenText": "Put the purple shirt in the purple basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Put the red shirt in the red basket.",
       "file": "llj-10557fe6d770e48e42601325.mp3",
       "spokenText": "Put the red shirt in the red basket.",
@@ -9037,6 +9181,14 @@
       "text": "Put the triangle roof above the wall.",
       "file": "llj-93449dd6b7e5aa0a95c1f67b.mp3",
       "spokenText": "Put the triangle roof above the wall.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Put the white shirt in the white basket.",
+      "file": "llj-42b27be9333467455c612f8a.mp3",
+      "spokenText": "Put the white shirt in the white basket.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -12154,6 +12306,14 @@
       "category": "counting"
     },
     {
+      "text": "This shirt is black. Let's find its basket.",
+      "file": "llj-c3a8003ab7c8e070e1d8a64e.mp3",
+      "spokenText": "This shirt is black. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "This shirt is blue. Let's find its basket.",
       "file": "llj-603453bd30222004a683e78e.mp3",
       "spokenText": "This shirt is blue. Let's find its basket.",
@@ -12162,9 +12322,65 @@
       "category": "shapes"
     },
     {
+      "text": "This shirt is brown. Let's find its basket.",
+      "file": "llj-8c79d90e55c12c86756d20eb.mp3",
+      "spokenText": "This shirt is brown. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is gray. Let's find its basket.",
+      "file": "llj-b5e669a1068a305aed644b5f.mp3",
+      "spokenText": "This shirt is gray. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is green. Let's find its basket.",
+      "file": "llj-d9d96fde61d6e33e9ebaf666.mp3",
+      "spokenText": "This shirt is green. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is orange. Let's find its basket.",
+      "file": "llj-b4b3a69f829ca735f7e7eca3.mp3",
+      "spokenText": "This shirt is orange. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is pink. Let's find its basket.",
+      "file": "llj-aa4a341abc59cd25ec329d4f.mp3",
+      "spokenText": "This shirt is pink. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is purple. Let's find its basket.",
+      "file": "llj-947c1359d01c57a9c0979b1a.mp3",
+      "spokenText": "This shirt is purple. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "This shirt is red. Let's find its basket.",
       "file": "llj-19a28bcbff97d98e3ac68349.mp3",
       "spokenText": "This shirt is red. Let's find its basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "This shirt is white. Let's find its basket.",
+      "file": "llj-38ef11cd67e7d3136f7786a5.mp3",
+      "spokenText": "This shirt is white. Let's find its basket.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"

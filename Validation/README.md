@@ -48,3 +48,5 @@ Coverage:
 - Shape Post checks cover ten distinct targets, three openings per round, drop-zone acceptance at phone/tablet widths, symbol availability and Ruth audio. Its landscape UI test rejects taps, incorrect and outside drops, then drags all ten shapes and replays.
 
 UI navigation smoke tests establish that screens open; they do not establish that every possible interaction in every game has been tested. TestFlight purchases, device audio/VoiceOver, toddler/caregiver playtesting, and App Store materials still need release review.
+
+- Color Laundry: eleven-color shuffled cycles, no immediate repeat across cycles, incorrect/duplicate selection protection, persistent per-session counts and Ruth coverage. UI checks cover two full cycles and fresh entry.

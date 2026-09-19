@@ -3,7 +3,7 @@ import SwiftUI
 struct ShapesAndColorsMenu: View {
     static let activities: [LearningActivity] = [
         .init(id: "shapes.post", title: "Shape Post", skill: "Recognize shape outlines", interaction: "Drag ten shapes into matching openings", ageBand: "2–4 with a grown-up", caregiverTip: "Trace the edges with your finger and name the shape."),
-        .init(id: "shapes.laundry", title: "Color Laundry", skill: "Sort by one attribute", interaction: "Place shirts in color baskets", ageBand: "2–4 with a grown-up", caregiverTip: "Try sorting real socks together afterward."),
+        .init(id: "shapes.laundry", title: "Color Laundry", skill: "Sort by one attribute", interaction: "Sort shirts across eleven colors with three baskets at a time", ageBand: "2–4 with a grown-up", caregiverTip: "Try sorting real socks together afterward."),
         .init(id: "shapes.mix", title: "Little Color Lab", skill: "Explore color mixing", interaction: "Combine paints to discover three new colors", ageBand: "2–4 with a grown-up", caregiverTip: "Wonder together: what might these paints make?"),
         .init(id: "shapes.train", title: "Pattern Train", skill: "Notice repeating patterns", interaction: "Extend three repeating trains", ageBand: "3–4 with a grown-up", caregiverTip: "Read each pattern aloud before choosing the next carriage."),
         .init(id: "shapes.town", title: "Build a Shape Town", skill: "Compose pictures from shapes", interaction: "Build a house, rocket, and tree", ageBand: "2–4 with a grown-up", caregiverTip: "Talk about which pieces sit above or below the others."),

@@ -5,6 +5,41 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testLaundryColorsCyclesAndRuth() {
+        XCTAssertEqual(LaundryColor.allCases.count, 11)
+        var session = LaundrySession()
+        var previous: LaundryColor?
+        for cycle in 0..<100 {
+            var seen: Set<LaundryColor> = []
+            for index in 0..<11 {
+                let round = session.current
+                if index == 0 { XCTAssertNotEqual(round.target, previous) }
+                XCTAssertTrue(seen.insert(round.target).inserted)
+                XCTAssertEqual(Set(round.baskets).count, 3)
+                XCTAssertTrue(round.baskets.contains(round.target))
+                session.next()
+                XCTAssertEqual(session.current.target, round.target)
+                for wrong in round.baskets where wrong != round.target {
+                    XCTAssertFalse(session.sort(into: wrong))
+                }
+                XCTAssertEqual(session.total, cycle * 11 + index)
+                XCTAssertTrue(session.sort(into: round.target))
+                XCTAssertFalse(session.sort(into: round.target))
+                XCTAssertEqual(session.total, cycle * 11 + index + 1)
+                previous = round.target
+                session.next()
+            }
+            XCTAssertEqual(seen, Set(LaundryColor.allCases))
+        }
+        for color in LaundryColor.allCases {
+            for text in [color.prompt, color.success, color.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+            }
+        }
+    }
+
+    @MainActor
     func testShapePostSessionsDropZonesAndRuth() {
         XCTAssertEqual(PostShape.allCases.count, 10)
         for _ in 0..<100 {
