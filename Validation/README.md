@@ -52,3 +52,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Color Laundry: eleven-color shuffled cycles, no immediate repeat across cycles, incorrect/duplicate selection protection, persistent per-session counts and Ruth coverage. UI checks cover two full drag cycles and fresh entry, rejecting taps, incorrect/outside drops and repeat posting.
 
 - Little Color Lab: nine levels, three recipes per level, order-independent mixing, selection toggles, repeat-discovery protection, level transitions and replay. Native checks verify exact Ruth coverage; UI tests complete all 27 discoveries.
+
+- Pattern Train: sixty distinct repeating sequences per session, progressively longer 5–15-shape trains, two visible repetitions before each blank, correct answers/choices, retry and repeated-tap protection, Ruth hints and replay. UI coverage completes all sixty trains across five stages.

@@ -4,6 +4,57 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testPatternTrainProgressionAndUniqueSequences() {
+        for _ in 0..<100 {
+            let rounds = TrainPattern.session()
+            XCTAssertEqual(rounds.count, 60)
+            XCTAssertEqual(Set(rounds.map(\.key)).count, 60)
+            XCTAssertEqual(Set(rounds.map { $0.shapes.map(\.rawValue).joined(separator: ",") }).count, 60)
+            XCTAssertEqual(Set(rounds.map(\.count)), Set(5...15))
+            var previousCount = 0
+            for (index, round) in rounds.enumerated() {
+                XCTAssertEqual(round.stage, index / 12)
+                XCTAssertGreaterThanOrEqual(round.count, previousCount)
+                previousCount = round.count
+                XCTAssertGreaterThanOrEqual(round.count - 1, round.unit.count * 2)
+                XCTAssertEqual(round.answer, round.unit[(round.count - 1) % round.unit.count])
+                XCTAssertEqual(Set(round.choices).count, 3)
+                XCTAssertTrue(round.choices.contains(round.answer))
+                for i in round.shapes.indices { XCTAssertEqual(round.shapes[i], round.unit[i % round.unit.count]) }
+            }
+        }
+        var train = TrainSession()
+        for index in 0..<60 {
+            train.next()
+            XCTAssertEqual(train.index, index)
+            for wrong in TrainShape.allCases where wrong != train.current.answer { XCTAssertFalse(train.choose(wrong)) }
+            XCTAssertFalse(train.solved)
+            XCTAssertTrue(train.choose(train.current.answer))
+            XCTAssertFalse(train.choose(train.current.answer))
+            train.next()
+        }
+        XCTAssertTrue(train.finished)
+        XCTAssertFalse(train.choose(train.current.answer))
+        train.next()
+        XCTAssertEqual(train.index, 60)
+    }
+
+    @MainActor
+    func testPatternTrainRuthCoverage() {
+        var texts = Set(TrainPattern.prompts + [TrainPattern.completion])
+        for stage in 0..<5 {
+            for unit in TrainPattern.units(stage: stage) {
+                let round = TrainPattern(stage: stage, unit: unit, count: 15, choices: [])
+                texts.insert(round.hint)
+            }
+        }
+        for shape in TrainShape.allCases { texts.insert(shape.success) }
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+        }
+    }
+
     func testColorLabLevelsAndMixing() {
         XCTAssertEqual(LabLevel.levels.count, 9)
         XCTAssertEqual(Set(LabPaint.bank.map(\.id)).count, LabPaint.bank.count)

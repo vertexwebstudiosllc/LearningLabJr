@@ -1,0 +1,762 @@
+[
+  {
+    "text": "Follow the numbered train cars. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's try a longer repeating group. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, square, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, square, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, star, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, star, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, triangle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, triangle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, circle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, circle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, circle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, circle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, circle, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, circle, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, square, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, square, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, circle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, circle, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, star, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, star, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, triangle, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, triangle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, square, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, square, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, square, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, square, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, star, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, star, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, star, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, star, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, circle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, circle, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, square, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, square, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, triangle, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, triangle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, star, circle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, star, square, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: star, triangle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, triangle, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, triangle, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, triangle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, triangle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, triangle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, triangle, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, circle, circle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, circle, circle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, circle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, square, square, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, square, square, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, square, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, star, star, circle. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, star, star, square. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, star, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Listen to the repeating group: triangle, triangle, star. Then it starts again!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for the repeating group of four. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for three shapes that repeat. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Sixty different pattern trains! Choo choo!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Some shapes come in pairs. Which shape comes next?",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Square continues the pattern. Choo choo!",
+    "category": "shapes",
+    "delivery": "clear"
+  },
+  {
+    "text": "Star continues the pattern. Choo choo!",
+    "category": "shapes",
+    "delivery": "clear"
+  }
+]

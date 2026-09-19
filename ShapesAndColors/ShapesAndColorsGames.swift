@@ -338,39 +338,6 @@ struct ColorLaundryGame: View {
     }
 }
 
-struct PatternTrainGame: View {
-    let onReplay: () -> Void
-    @State private var round = 0
-    @State private var note = "Say the shapes in a gentle rhythm."
-    @StateObject private var narrator = GameNarrator()
-    private let patterns: [[SCShape]] = [[.circle, .square, .circle, .square], [.triangle, .circle, .triangle, .circle], [.square, .square, .triangle, .square, .square]]
-    private let answers: [SCShape] = [.circle, .triangle, .triangle]
-    private var pattern: [SCShape] { patterns[min(round, 2)] }
-    var body: some View {
-        ToddlerGameScaffold(title: "Pattern Train", prompt: round == 3 ? "Three repeating trains are ready. Choo choo!" : "Look at the repeating train. Which shape comes next?", accent: .orange, completion: round == 3, onReplay: onReplay) {
-            Image(systemName: "tram.fill").font(.system(size: 75)).foregroundStyle(.orange).accessibilityHidden(true)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 68))], spacing: 8) {
-                ForEach(Array(pattern.enumerated()), id: \.offset) { _, shape in
-                    Image(systemName: shape.symbol).font(.system(size: 35)).foregroundStyle(shape.color)
-                        .frame(maxWidth: .infinity, minHeight: 70).background(.white, in: RoundedRectangle(cornerRadius: 16))
-                        .accessibilityLabel(shape.name)
-                }
-                Image(systemName: round == 3 ? "checkmark" : "questionmark").font(.largeTitle)
-                    .frame(maxWidth: .infinity, minHeight: 70).background(.orange.opacity(0.15), in: RoundedRectangle(cornerRadius: 16))
-            }
-            ForEach(SCShape.allCases) { shape in
-                ToddlerActionButton(title: shape.name, systemImage: shape.symbol, color: shape.color) {
-                    guard round < 3 else { return }
-                    if shape == answers[round] { round += 1; note = "\(shape.name) continues the pattern. Choo choo!" }
-                    else { note = "Let's say it together: " + pattern.map(\.name).joined(separator: ", ") + ". What comes next?" }
-                    narrator.speak(note)
-                }
-            }
-            SCNote(text: note)
-        }
-    }
-}
-
 private struct SCTownPiece: Identifiable {
     let id: Int
     let shape: SCShape

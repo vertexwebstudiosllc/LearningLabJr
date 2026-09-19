@@ -777,6 +777,58 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testPatternTrainProgressionAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Pattern Train"]
+        try reveal(card, in: app); card.tap()
+        var seen: Set<String> = []
+        for index in 0..<60 {
+            let progress = app.staticTexts["shapes.train.progress"]
+            XCTAssertTrue(progress.waitForExistence(timeout: 5))
+            XCTAssertTrue(progress.label.hasPrefix("Train \(index + 1) of 60"))
+            let cars = app.otherElements.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.train.car.'"))
+            let count = cars.count
+            XCTAssertTrue((5...15).contains(count))
+            let values = (0..<(count - 1)).map { app.otherElements["shapes.train.car.\($0)"].value as! String }
+            let period = try XCTUnwrap((2...5).first { size in
+                values.count >= 2 * size && values.indices.allSatisfy { values[$0] == values[$0 % size] }
+            })
+            let key = values.prefix(period).joined(separator: ",")
+            XCTAssertTrue(seen.insert(key).inserted)
+            let answer = values[(count - 1) % period]
+            let choice = app.buttons["shapes.train.choice.\(answer)"]
+            try reveal(choice, in: app)
+            if index % 12 == 0 {
+                let wrong = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.train.choice.' AND identifier != %@", choice.identifier)).firstMatch
+                wrong.tap()
+                XCTAssertFalse(app.buttons["shapes.train.next"].exists)
+                let hint = app.buttons["shapes.train.hint"]
+                try reveal(hint, in: app); hint.tap()
+            }
+            try reveal(choice, in: app); choice.tap()
+            let next = app.buttons["shapes.train.next"]
+            XCTAssertTrue(next.waitForExistence(timeout: 3))
+            XCTAssertFalse(choice.isEnabled)
+            XCTAssertEqual(app.otherElements["shapes.train.car.\(count - 1)"].value as? String, answer)
+            if index == 59 {
+                let board = app.otherElements["shapes.train.car.0"]
+                try reveal(board, in: app)
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Pattern Train fifteen shapes"
+                shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        XCTAssertEqual(seen.count, 60)
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.train.progress"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.train.progress"].label.hasPrefix("Train 1 of 60"))
+    }
+
+    @MainActor
     func testColorLabLevelsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]
