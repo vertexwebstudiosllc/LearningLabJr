@@ -176,6 +176,29 @@ class NarrationTests(unittest.TestCase):
         for index in range(0, 26, 3):
             group = ', '.join(alphabet[index:index + 3])
             self.assertIn(f'Open the letter windows: {group}. Say each letter and picture word together.', keys)
+        garden = (root / 'ABCsAndPhonics/RhymeGarden.swift').read_text()
+        rhymes = re.findall(r'\.init\(word: "([^"]+)", asset: "[^"]+", picture: "[^"]+", rhyme: "([^"]+)"', garden)
+        self.assertEqual(len(rhymes), 30)
+        for index, (word, rhyme) in enumerate(rhymes):
+            wrong = rhymes[(index + 11) % len(rhymes)][0]
+            for first, second in [(rhyme, wrong), (wrong, rhyme)]:
+                self.assertIn(f'Listen for words with the same ending. {word}, {first}. {word}, {second}. Which pair rhymes?', keys)
+            self.assertIn(f'{word} and {rhyme} rhyme! Their endings sound alike.', keys)
+            self.assertIn(f'Say these together: {word}, {rhyme}. Listen to their matching endings.', keys)
+        for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+            for template in ['Find every {}. There are three hiding here.',
+                             'Found {}. Keep looking for another.',
+                             'You found all three copies of {}!',
+                             'Look at the model. Find {} next.']:
+                self.assertIn(template.format(letter), keys)
+        hop = (root / 'ABCsAndPhonics/SoundHop.swift').read_text()
+        hop_words = re.findall(r'\.init\(word: "([^"]+)", asset: "[^"]+", parts: \[([^\]]+)\]', hop)
+        self.assertEqual(len(hop_words), 30)
+        for word, parts in hop_words:
+            count = len(re.findall(r'"([^"]+)"', parts))
+            self.assertIn(f'Say {word} with your grown-up. Clap once for each word part, then tap the hop button for each clap.', keys)
+            self.assertIn(f'{word} has {count} {"beat" if count == 1 else "beats"}. You heard the word parts!', keys)
+            self.assertIn(f"Let's try together: {word}. Make {count} {'clap' if count == 1 else 'claps'}.", keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
 

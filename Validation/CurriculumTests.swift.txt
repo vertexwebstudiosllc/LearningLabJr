@@ -44,6 +44,92 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
+    func testSoundHopVocabularyAndRecentWords() {
+        XCTAssertEqual(HopWord.bank.count, 30)
+        XCTAssertEqual(Set(HopWord.bank.map(\.word)).count, 30)
+        for count in 1...3 { XCTAssertEqual(HopWord.bank.filter { $0.beats == count }.count, 10) }
+        for item in HopWord.bank {
+            XCTAssertEqual(item.parts.joined(), item.word)
+            XCTAssertFalse(item.parts.contains(""))
+            XCTAssertNotNil(UIImage(named: item.asset) ?? UIImage(named: "Space/\(item.asset)"), item.asset)
+        }
+        var recent: [String] = []
+        for _ in 0..<2000 {
+            let item = HopWord.next(recent: recent)
+            XCTAssertFalse(recent.contains(item.word))
+            recent = Array((recent + [item.word]).suffix(20))
+            recent = recent.joined(separator: "|").split(separator: "|").map(String.init)
+        }
+    }
+
+    @MainActor
+    func testSoundHopRuthCoverage() {
+        for item in HopWord.bank {
+            for text in [item.prompt, item.success, item.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            }
+        }
+        for count in 1...3 { XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: "\(count)")) }
+    }
+
+    @MainActor
+    func testLetterHideSeekFullAlphabetAndBoard() {
+        for previous in LetterDrawAlphabet.letters {
+            let rounds = LetterHideSeekRound.session(previousStart: previous, lastShown: "Z")
+            XCTAssertEqual(rounds.count, 26)
+            XCTAssertEqual(Set(rounds.map(\.target)), Set(LetterDrawAlphabet.letters))
+            XCTAssertNotEqual(rounds.first?.target, previous)
+            XCTAssertNotEqual(rounds.first?.target, "Z")
+            for round in rounds {
+                XCTAssertEqual(round.board.count, 6)
+                XCTAssertEqual(round.board.filter { $0 == round.target }.count, 3)
+                let distractors = round.board.filter { $0 != round.target }
+                XCTAssertEqual(Set(distractors).count, 3)
+                XCTAssertTrue(Set(round.board).isSubset(of: Set(LetterDrawAlphabet.letters)))
+            }
+        }
+    }
+
+    @MainActor
+    func testLetterHideSeekRuthCoverage() {
+        for round in LetterHideSeekRound.session(previousStart: "", lastShown: "") {
+            for prompt in [round.prompt, round.found, round.success, round.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: prompt), prompt)
+            }
+        }
+    }
+
+    @MainActor
+    func testRhymeGardenRuthCoverage() {
+        for pair in GardenRhyme.bank {
+            let round = GardenRhymeRound.make(pair: pair)
+            for prompt in [round.prompt, GardenRhymeRound(pair: pair, choices: round.choices.reversed()).prompt, pair.success, pair.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: prompt), prompt)
+            }
+        }
+    }
+
+    @MainActor
+    func testRhymeGardenVarietyAndPictures() {
+        XCTAssertEqual(GardenRhyme.bank.count, 30)
+        XCTAssertEqual(Set(GardenRhyme.bank.map(\.word)).count, 30)
+        for pair in GardenRhyme.bank {
+            XCTAssertNotNil(UIImage(named: pair.asset) ?? UIImage(named: "Space/\(pair.asset)"), pair.asset)
+            XCTAssertNotEqual(pair.word, pair.rhyme)
+            let round = GardenRhymeRound.make(pair: pair)
+            XCTAssertEqual(Set(round.choices.map(\.word)).count, 2)
+            XCTAssertEqual(round.choices.filter { $0.word == pair.rhyme }.count, 1)
+        }
+        var recent: [String] = []
+        for _ in 0..<2000 {
+            let round = GardenRhymeRound.next(recent: recent)
+            XCTAssertFalse(recent.contains(round.pair.word))
+            recent = Array((recent + [round.pair.word]).suffix(20))
+            recent = recent.joined(separator: "|").split(separator: "|").map(String.init)
+        }
+    }
+
+    @MainActor
     func testAlphabetAdventureCoverageVarietyAndRuth() {
         let alphabet = LetterDrawAlphabet.letters
         for letter in alphabet {

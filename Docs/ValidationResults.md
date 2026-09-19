@@ -111,4 +111,28 @@ The following local artifacts were inspected for this report. They are temporary
 - Added 146 Ruth recordings for every picture phrase, last-window success variant, and missing group prompt. Letter names use explicit pronunciation markup. The catalog contains 1,466 Ruth clips totaling 31,368,664 bytes. Generation reserved approximately $0.0841 before credits/taxes. Eight Python narration checks passed.
 - All 15 native checks and the UI test passed at `/private/tmp/LearningLabJr-abc-adventure-final.xcresult`. Native checks cover 100 sessions, per-letter vocabulary and audio coverage. UI checks open all 26 letters twice, compare every replay picture, reject repeated-tap advancement, finish the two-window Y/Z group, and verify fresh entry. The initial UI check was corrected to wait for page transitions before inspecting the next group. The iPhone window layout was visually inspected from the exported test screenshot.
 
+## Rhyme Garden expansion — September 18–19, 2026
+
+- Replaced three fixed rounds with 30 rhyme pairs and continuous Next rhyme play. Random selection excludes the previous 20 pairs, persisted across game exit and app relaunch. Answer positions shuffle once per round; wrong answers keep the current pair and solved rounds disable answer buttons.
+- Added 114 Ruth recordings for both answer orders, success and retry. The word-bank checks cover bundled pictures and 2,000 selections with recent-pair exclusion.
+- The earlier gameplay-only test passed 22 rounds, wrong answers, recent-pair exclusion, reentry and app relaunch at `/private/tmp/LearningLabJr-hide-seek-gameplay.xcresult`.
+
+## Letter Hide & Seek full alphabet — September 18–19, 2026
+
+- Expanded from three targets to all 26 letters in shuffled order without target repetition. Each board has three target copies and three distinct distractors in stable shuffled positions. Wrong or already-found taps cannot increase the count. Reentry/replay excludes the previous starting and last displayed target.
+- Added 73 Ruth recordings for all target directions and feedback. Retry audio reuses letter-specific model guidance.
+- The earlier gameplay-only test passed all 26 letters, wrong/repeated taps, reentry, completion and replay at `/private/tmp/LearningLabJr-hide-seek-gameplay.xcresult`. The six-cell iPhone layout was visually inspected at `/private/tmp/LearningLabJr-hide-seek.png`.
+
+## Sound Hop / Syllable Hop expansion — September 18–19, 2026
+
+- Replaced three fixed rounds with 30 picture words, ten each with one, two and three syllables. Continuous Next word play excludes the previous 20 words, persisted across exits and app relaunches. Visible word parts support caregiver clapping; retry narration reads the whole word naturally and gives the clap count.
+- Preserved the three-beat limit, explicit checking and reset. Incorrect counts reset to zero; successful checks disable beat controls until Next word. Added 83 Ruth recordings.
+- The earlier 22-word gameplay-only test passed all three syllable counts, zero-count retry, tap limit, reset, correct checks, continuing play, reentry and app relaunch at `/private/tmp/LearningLabJr-sound-hop-gameplay.xcresult`. Its iPhone layout was visually inspected at `/private/tmp/LearningLabJr-sound-hop.png`.
+
+## Ruth recording completion — September 19, 2026
+
+- Renewed AWS authentication and generated all 270 pending clips. All 1,736 manifest entries use Ruth, totaling 38,377,504 audio bytes (38.4 MB); the previous 1,466 entries are unchanged. New successful generation reserved approximately $0.4322 before credits/taxes. Two earlier authentication failures retain their conservative reservations in the ledger.
+- Eight Python narration checks passed. The standard validation project has runtime recorded-prompt assertions enabled again. All 21 native checks passed with the completed audio library at `/private/tmp/LearningLabJr-three-games-ruth-final.xcresult`, including exact narration keys for every variant and decoding every MP3.
+- The final UI rerun did not complete: Hide & Seek unexpectedly returned to its menu at round 24, then the Rhyme Garden and Sound Hop test runners received SIGTERM. A clean simulator retry failed to install the runner because CoreSimulator reported invalid device state and Mach server death (`/private/tmp/LearningLabJr-three-games-ruth-clean.xcresult`). Earlier complete gameplay-only runs passed as recorded above. No app or test logic was changed to suppress these failures; a complete audio-enabled UI rerun remains pending a stable simulator.
+
 Real-device audio review, VoiceOver interaction testing, TestFlight purchase/restore checks, and caregiver/toddler playtesting remain pending. Every game's mechanics, all story content, large-text and motor-access behavior, and representative real-device layouts need release review. Route coverage and two completed gameplay loops do not establish educational efficacy, comprehensive accessibility, or full gameplay quality. App Store privacy materials and release screenshots also need their own review.

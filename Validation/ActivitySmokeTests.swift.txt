@@ -155,6 +155,185 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testSoundHopContinuesAcrossSyllableCountsAndReentry() async throws {
+        let app = try await launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.Syllable Hop"]
+        try reveal(card, in: app)
+        card.tap()
+        let counts = ["cat": 1, "dog": 1, "cow": 1, "pig": 1, "hen": 1, "duck": 1, "fish": 1, "moon": 1, "goat": 1, "sheep": 1, "rabbit": 2, "turtle": 2, "apple": 2, "lemon": 2, "pizza": 2, "chicken": 2, "donkey": 2, "penguin": 2, "lobster": 2, "dolphin": 2, "octopus": 3, "banana": 3, "potato": 3, "tomato": 3, "pineapple": 3, "hamburger": 3, "cucumber": 3, "volcano": 3, "jellyfish": 3, "basketball": 3]
+        let target = app.descendants(matching: .any).matching(identifier: "sound-hop.target").firstMatch
+        let beats = app.descendants(matching: .any).matching(identifier: "sound-hop.beats").firstMatch
+        let hop = app.buttons["Hop one word beat"]
+        let check = app.buttons["Check our word beats"]
+        var recent: [String] = []
+        var lengths: Set<Int> = []
+        for index in 0..<22 {
+            XCTAssertTrue(target.waitForExistence(timeout: 5))
+            let word = target.label
+            let count = try XCTUnwrap(counts[word])
+            lengths.insert(count)
+            XCTAssertFalse(recent.suffix(20).contains(word))
+            recent.append(word)
+            XCTAssertEqual(beats.label, "0 word beats tapped")
+            XCTAssertFalse(app.buttons["Next word"].exists)
+            if index == 0 {
+                try reveal(check, in: app)
+                check.tap()
+                XCTAssertEqual(beats.label, "0 word beats tapped")
+                XCTAssertFalse(app.buttons["Next word"].exists)
+                for _ in 0..<3 { try reveal(hop, in: app); hop.tap() }
+                XCTAssertEqual(beats.label, "3 word beats tapped")
+                XCTAssertFalse(hop.isEnabled)
+                let reset = app.buttons["Start the beats again"]
+                try reveal(reset, in: app)
+                reset.tap()
+                XCTAssertEqual(beats.label, "0 word beats tapped")
+            }
+            for _ in 0..<count { try reveal(hop, in: app); hop.tap() }
+            XCTAssertFalse(app.buttons["Next word"].exists)
+            try reveal(check, in: app)
+            check.tap()
+            XCTAssertFalse(hop.isEnabled)
+            let next = app.buttons["Next word"]
+            try reveal(next, in: app)
+            next.tap()
+        }
+        XCTAssertEqual(lengths, [1, 2, 3])
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        recent.append(target.label)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        recent.append(target.label)
+        app.terminate()
+        app.launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        XCTAssertEqual(beats.label, "0 word beats tapped")
+    }
+
+    @MainActor
+    func testLetterHideSeekFullAlphabetAndFreshEntry() async throws {
+        let app = try await launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.Letter Hide & Seek"]
+        try reveal(card, in: app)
+        card.tap()
+        let target = app.staticTexts["letter-hide-seek.target"]
+        func currentLetter() -> String {
+            XCTAssertTrue(target.waitForExistence(timeout: 5))
+            return target.label
+        }
+        let cells = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'letter-hide-seek.cell.'"))
+        func matching(_ letter: String) -> [XCUIElement] {
+            cells.allElementsBoundByIndex.filter { $0.label.hasPrefix("Letter \(letter),") }
+        }
+        func complete(last: Bool = false) throws {
+            let matches = matching(currentLetter())
+            XCTAssertEqual(matches.count, 3)
+            for button in matches { try reveal(button, in: app); button.tap() }
+            let next = app.buttons[last ? "All done" : "Next letter"]
+            try reveal(next, in: app)
+            next.tap()
+        }
+        let initial = currentLetter()
+        XCTAssertEqual(cells.count, 6)
+        let wrong = try XCTUnwrap(cells.allElementsBoundByIndex.first { !$0.label.hasPrefix("Letter \(initial),") })
+        try reveal(wrong, in: app)
+        wrong.tap()
+        XCTAssertEqual(matching(initial).filter { $0.label.contains(", found,") }.count, 0)
+        XCTAssertFalse(app.buttons["Next letter"].exists)
+        let first = try XCTUnwrap(matching(initial).first)
+        try reveal(first, in: app)
+        first.tap()
+        first.tap()
+        XCTAssertEqual(matching(initial).filter { $0.label.contains(", found,") }.count, 1)
+        XCTAssertFalse(app.buttons["Next letter"].exists)
+        try complete()
+        let abandoned = currentLetter()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        let restarted = currentLetter()
+        XCTAssertNotEqual(restarted, initial)
+        XCTAssertNotEqual(restarted, abandoned)
+        var seen: Set<String> = []
+        for index in 0..<26 {
+            XCTAssertTrue(app.staticTexts["Letter \(index + 1) of 26"].waitForExistence(timeout: 5))
+            XCTAssertTrue(seen.insert(currentLetter()).inserted)
+            XCTAssertEqual(cells.count, 6)
+            try complete(last: index == 25)
+        }
+        XCTAssertEqual(seen, Set(Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map(String.init)))
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app)
+        replay.tap()
+        XCTAssertNotEqual(currentLetter(), restarted)
+        XCTAssertTrue(app.staticTexts["Letter 1 of 26"].exists)
+    }
+
+    @MainActor
+    func testRhymeGardenContinuesAndRemembersRecentPairs() async throws {
+        let app = try await launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.Rhyme Garden"]
+        try reveal(card, in: app)
+        card.tap()
+        let matches = ["cat": "hat", "goat": "boat", "mouse": "house", "dog": "log", "sun": "bun", "pig": "wig", "hen": "pen", "duck": "truck", "fish": "dish", "moon": "spoon", "pear": "bear", "corn": "horn", "seal": "wheel", "star": "car", "rice": "mice", "peas": "cheese", "grape": "cape", "peach": "beach", "bread": "bed", "sheep": "jeep", "whale": "snail", "crab": "cab", "clam": "jam", "lime": "time", "plum": "drum", "toast": "ghost", "shark": "park", "chick": "brick", "goose": "moose", "beef": "leaf"]
+        let target = app.descendants(matching: .any).matching(identifier: "rhyme-garden.target").firstMatch
+        var recent: [String] = []
+        for index in 0..<22 {
+            XCTAssertTrue(target.waitForExistence(timeout: 5))
+            let word = target.label
+            XCTAssertFalse(recent.suffix(20).contains(word))
+            recent.append(word)
+            let correct = try XCTUnwrap(matches[word])
+            let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'rhyme-garden.choice.'"))
+            XCTAssertEqual(choices.count, 2)
+            XCTAssertFalse(app.buttons["Next rhyme"].exists)
+            if index == 0 {
+                let wrong = try XCTUnwrap(choices.allElementsBoundByIndex.first { $0.identifier != "rhyme-garden.choice.\(correct)" })
+                try reveal(wrong, in: app)
+                wrong.tap()
+                XCTAssertEqual(target.label, word)
+                XCTAssertFalse(app.buttons["Next rhyme"].exists)
+            }
+            let answer = app.buttons["rhyme-garden.choice.\(correct)"]
+            try reveal(answer, in: app)
+            answer.tap()
+            XCTAssertTrue(app.staticTexts["\(word) and \(correct) rhyme! Their endings sound alike."].waitForExistence(timeout: 5))
+            XCTAssertFalse(answer.isEnabled)
+            let next = app.buttons["Next rhyme"]
+            try reveal(next, in: app)
+            next.tap()
+        }
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        recent.append(target.label)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        recent.append(target.label)
+        app.terminate()
+        app.launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertTrue(target.waitForExistence(timeout: 5))
+        XCTAssertFalse(recent.suffix(20).contains(target.label))
+        XCTAssertFalse(app.buttons["Next rhyme"].exists)
+    }
+
+    @MainActor
     func testABCAdventureWholeAlphabetAndNewPictures() async throws {
         let app = try await launch()
         app.buttons["category.ABCs & Phonics"].tap()

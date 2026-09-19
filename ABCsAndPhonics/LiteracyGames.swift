@@ -88,7 +88,7 @@ private struct WordPictureCard: View {
     }
 }
 
-private struct LiteracyLetterButton: View {
+struct LiteracyLetterButton: View {
     let letter: String
     var selected = false
     let action: () -> Void
@@ -251,95 +251,6 @@ struct LiteracyWordClawGame: View {
                     if selected == target { play.win("The claw picked up the \(toys[target].word)!") }
                     else { play.say("The claw is over the \(toys[selected].word). Aim at the \(toys[target].word).") }
                 }.disabled(play.selected == nil)
-            }
-        }
-    }
-}
-
-struct RhymeGardenGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var word: String { ["cat", "goat", "mouse"][play.round] }
-    private var asset: String { ["cat", "goat", "mouse"][play.round] }
-    private var answers: [String] { [["hat", "sun"], ["fish", "boat"], ["house", "dog"]][play.round] }
-    private var answer: Int { [0, 1, 0][play.round] }
-    private var emoji: [String] { [["🎩", "☀️"], ["🐟", "⛵️"], ["🏠", "🐶"]][play.round] }
-    var body: some View {
-        LiteracyStage(title: "Rhyme Garden", prompt: "Listen for words with the same ending. \(word), \(answers[0]). \(word), \(answers[1]). Which pair rhymes?", play: play) {
-            VStack(spacing: 20) {
-                WordPictureCard(word: word, asset: asset)
-                HStack(spacing: 14) {
-                    ForEach(0..<2, id: \.self) { index in
-                        Button {
-                            if index == answer { play.win("\(word) and \(answers[index]) rhyme! Their endings sound alike.") }
-                            else { play.say("Say these together: \(word), \(answers[answer]). Listen to their matching endings.") }
-                        } label: {
-                            VStack(spacing: 8) {
-                                Text(emoji[index]).font(.system(size: 60)).accessibilityHidden(true)
-                                Text(answers[index]).font(.title3.bold())
-                                Image(systemName: "camera.macro").font(.largeTitle).foregroundStyle(.orange)
-                            }.frame(maxWidth: .infinity, minHeight: 170).padding(10).background(.white, in: RoundedRectangle(cornerRadius: 20))
-                        }.buttonStyle(.plain).accessibilityLabel("\(word) and \(answers[index])")
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct LetterHideSeekGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var target: String { ["M", "S", "A"][play.round] }
-    private var board: [String] { [["M", "T", "M", "S", "B", "M"], ["B", "S", "T", "S", "S", "M"], ["A", "M", "S", "A", "T", "A"]][play.round] }
-    var body: some View {
-        LiteracyStage(title: "Letter Hide & Seek", prompt: "Find every \(target). There are three hiding here.", play: play) {
-            VStack(spacing: 18) {
-                Text("Find \(target) · \(play.marked.count) of 3").font(.title.bold())
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 88))], spacing: 14) {
-                    ForEach(0..<board.count, id: \.self) { index in
-                        LiteracyLetterButton(letter: board[index], selected: play.marked.contains(index)) {
-                            guard !play.marked.contains(index) else { return }
-                            if board[index] == target {
-                                play.marked.insert(index)
-                                if play.marked.count == 3 { play.win("You found all three copies of \(target)!") }
-                                else { play.say("Found \(target). Keep looking for another.") }
-                            } else { play.say("That is \(board[index]). Look for \(target).") }
-                        }
-                        .overlay(alignment: .topTrailing) {
-                            if play.marked.contains(index) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green).padding(6).accessibilityHidden(true) }
-                        }
-                        .accessibilityLabel("Letter \(board[index]), \(play.marked.contains(index) ? "found" : "not selected"), position \(index + 1)")
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct WordBeatHopGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private var word: String { ["cow", "rabbit", "octopus"][play.round] }
-    private var spokenParts: String { ["cow", "rab, bit", "oc, to, pus"][play.round] }
-    private var target: Int { play.round + 1 }
-    var body: some View {
-        LiteracyStage(title: "Syllable Hop", prompt: "Say \(word) with your grown-up. Clap once for each word part, then tap the hop button for each clap.", play: play) {
-            VStack(spacing: 18) {
-                WordPictureCard(word: word, asset: word)
-                Text(["cow", "rab · bit", "oc · to · pus"][play.round]).font(.title.bold())
-                HStack(spacing: 10) {
-                    ForEach(0..<3, id: \.self) { index in
-                        Image(systemName: index < play.count ? "leaf.circle.fill" : "circle")
-                            .font(.system(size: 46)).foregroundStyle(index < play.count ? .green : .gray)
-                    }
-                }.accessibilityLabel("\(play.count) word beats tapped")
-                ToddlerActionButton(title: "Hop one word beat", systemImage: "hands.clap.fill", color: .orange) {
-                    guard play.count < 3 else { return }
-                    play.count += 1; play.say("\(play.count)")
-                }.disabled(play.count == 3)
-                ToddlerActionButton(title: "Check our word beats", systemImage: "checkmark.circle.fill", color: .orange) {
-                    if play.count == target { play.win("\(word) has \(target) \(target == 1 ? "beat" : "beats"). You heard the word parts!") }
-                    else { play.count = 0; play.say("Let's try together: \(spokenParts). Make \(target) \(target == 1 ? "clap" : "claps").") }
-                }
-                ToddlerActionButton(title: "Start the beats again", systemImage: "arrow.counterclockwise", color: .orange) { play.count = 0; play.feedback = "" }
             }
         }
     }

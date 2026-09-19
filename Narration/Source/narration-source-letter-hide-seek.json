@@ -1,0 +1,513 @@
+[
+  {
+    "text": "Find every B. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found B. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of B!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"bi\">B</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every C. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found C. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of C!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"si\">C</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every D. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found D. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of D!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"di\">D</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every E. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found E. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of E!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"i\">E</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every F. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found F. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of F!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u025bf\">F</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every G. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found G. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of G!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"d\u0292i\">G</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every H. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found H. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of H!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"e\u026at\u0283\">H</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every I. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found I. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of I!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"a\u026a\">I</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every J. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found J. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of J!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"d\u0292e\u026a\">J</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every K. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found K. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of K!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"ke\u026a\">K</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every L. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found L. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of L!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u025bl\">L</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every N. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found N. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of N!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u025bn\">N</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every O. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found O. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of O!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"o\u028a\">O</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every P. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found P. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of P!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"pi\">P</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every Q. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found Q. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of Q!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme>!</speak>"
+  },
+  {
+    "text": "Look at the model. Find Q next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "engine": "neural",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"kju\">Q</phoneme> next.</speak>"
+  },
+  {
+    "text": "Find every R. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found R. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of R!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u0251\u0279\">R</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every T. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found T. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of T!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"ti\">T</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every U. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found U. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of U!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"ju\">U</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every V. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found V. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of V!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme>!</speak>"
+  },
+  {
+    "text": "Look at the model. Find V next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "engine": "neural",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"vi\">V</phoneme> next.</speak>"
+  },
+  {
+    "text": "Find every W. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found W. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of W!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u02c8d\u028cb\u0259lju\">W</phoneme>!</speak>"
+  },
+  {
+    "text": "Find every X. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found X. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of X!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme>!</speak>"
+  },
+  {
+    "text": "Look at the model. Find X next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "engine": "neural",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"\u025bks\">X</phoneme> next.</speak>"
+  },
+  {
+    "text": "Find every Y. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found Y. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of Y!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme>!</speak>"
+  },
+  {
+    "text": "Look at the model. Find Y next.",
+    "category": "literacy",
+    "delivery": "gentle",
+    "engine": "neural",
+    "ssml": "<speak>Look at the model. Find <phoneme alphabet=\"ipa\" ph=\"wa\u026a\">Y</phoneme> next.</speak>"
+  },
+  {
+    "text": "Find every Z. There are three hiding here.",
+    "category": "literacy",
+    "delivery": "clear",
+    "engine": "neural",
+    "ssml": "<speak>Find every <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. There are three hiding here.</speak>"
+  },
+  {
+    "text": "Found Z. Keep looking for another.",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>Found <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>. Keep looking for another.</speak>"
+  },
+  {
+    "text": "You found all three copies of Z!",
+    "category": "literacy",
+    "delivery": "playful",
+    "engine": "neural",
+    "ssml": "<speak>You found all three copies of <phoneme alphabet=\"ipa\" ph=\"zi\">Z</phoneme>!</speak>"
+  }
+]
