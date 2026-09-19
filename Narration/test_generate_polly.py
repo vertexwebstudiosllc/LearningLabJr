@@ -1,5 +1,6 @@
 """Offline checks for spending, resumability, catalog coverage, and file integrity."""
 import io
+import itertools
 import json
 from decimal import Decimal
 from pathlib import Path
@@ -199,6 +200,15 @@ class NarrationTests(unittest.TestCase):
             self.assertIn(f'Say {word} with your grown-up. Clap once for each word part, then tap the hop button for each clap.', keys)
             self.assertIn(f'{word} has {count} {"beat" if count == 1 else "beats"}. You heard the word parts!', keys)
             self.assertIn(f"Let's try together: {word}. Make {count} {'clap' if count == 1 else 'claps'}.", keys)
+        picnic = (root / 'ABCsAndPhonics/PicnicWords.swift').read_text()
+        picnic_foods = re.findall(r'\.init\(word: "([^"]+)", asset:', picnic)
+        self.assertEqual(len(picnic_foods), 12)
+        for first, second, third in itertools.combinations(picnic_foods, 3):
+            self.assertIn(f'Pack {first}, {second}, and {third}. Tap the foods in any order.', keys)
+        for food in picnic_foods:
+            for text in [f'Find {food}.', f'Packed {food}.', f'This is {food}. Check the basket labels.']:
+                self.assertIn(text, keys)
+        self.assertIn('Your picnic is packed! You found all three foods.', keys)
         self.assertIn('We did it together! You can play again or choose all done.', keys)
 
 

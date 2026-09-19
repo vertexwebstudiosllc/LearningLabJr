@@ -44,6 +44,45 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
+    func testPicnicChoicesAnyOrderAndRuth() {
+        XCTAssertEqual(PicnicFood.bank.count, 12)
+        XCTAssertEqual(PicnicRound.lists.count, 220)
+        for food in PicnicFood.bank {
+            XCTAssertNotNil(UIImage(named: food.asset), food.asset)
+            for text in [food.basketPrompt, food.packedPrompt, food.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            }
+        }
+        XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: PicnicRound.success))
+        for targets in PicnicRound.lists {
+            let round = PicnicRound(targets: targets, choices: targets)
+            XCTAssertEqual(Set(targets.map(\.id)).count, 3)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: round.prompt), round.prompt)
+            for order in [[0,1,2], [0,2,1], [1,0,2], [1,2,0], [2,0,1], [2,1,0]] {
+                var packed: Set<String> = []
+                for index in order {
+                    packed = round.packing(targets[index].id, into: packed)
+                    XCTAssertEqual(round.packing(targets[index].id, into: packed), packed)
+                }
+                XCTAssertEqual(packed, Set(targets.map(\.id)))
+                XCTAssertEqual(round.packing("not-a-food", into: packed), packed)
+            }
+        }
+        var recent: [String] = []
+        for _ in 0..<1000 {
+            let round = PicnicRound.next(recent: recent)
+            XCTAssertFalse(recent.contains(round.key))
+            XCTAssertEqual(round.choices.count, 6)
+            XCTAssertEqual(Set(round.choices.map(\.id)).count, 6)
+            XCTAssertTrue(Set(round.targets.map(\.id)).isSubset(of: Set(round.choices.map(\.id))))
+            for wrong in round.choices where !round.targets.contains(where: { $0.id == wrong.id }) {
+                XCTAssertEqual(round.packing(wrong.id, into: []), [])
+            }
+            recent = Array((recent + [round.key]).suffix(20))
+        }
+    }
+
+    @MainActor
     func testSoundHopVocabularyAndRecentWords() {
         XCTAssertEqual(HopWord.bank.count, 30)
         XCTAssertEqual(Set(HopWord.bank.map(\.word)).count, 30)

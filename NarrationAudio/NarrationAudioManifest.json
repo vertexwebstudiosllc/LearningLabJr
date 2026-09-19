@@ -2378,6 +2378,46 @@
       "category": "feelings"
     },
     {
+      "text": "Find apple.",
+      "file": "llj-c2032569d862d75cbcfee786.mp3",
+      "spokenText": "Find apple.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find banana.",
+      "file": "llj-30de2884869ba6d0df06932b.mp3",
+      "spokenText": "Find banana.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find bread.",
+      "file": "llj-316242e597fbc11eb19c49e6.mp3",
+      "spokenText": "Find bread.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find carrot.",
+      "file": "llj-570e45019b5c73c2dae6560b.mp3",
+      "spokenText": "Find carrot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find cheese.",
+      "file": "llj-17c9eb946d56f878f5a93574.mp3",
+      "spokenText": "Find cheese.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Find every A. There are three hiding here.",
       "file": "llj-687ce3edf6270cb40d1fb452.mp3",
       "spokenText": "Find every A. There are three hiding here.",
@@ -2586,6 +2626,54 @@
       "category": "literacy"
     },
     {
+      "text": "Find grapes.",
+      "file": "llj-974827ea4cf2f3a55373e172.mp3",
+      "spokenText": "Find grapes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find milk.",
+      "file": "llj-95d964f9e707bf2d76dee2c2.mp3",
+      "spokenText": "Find milk.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find orange.",
+      "file": "llj-8aaefdb8c69e94e2d3dccce4.mp3",
+      "spokenText": "Find orange.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find pear.",
+      "file": "llj-f8849299f1ce1f7a4c4cb8ed.mp3",
+      "spokenText": "Find pear.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find sandwich.",
+      "file": "llj-7366f8085a0390bee66f6d11.mp3",
+      "spokenText": "Find sandwich.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Find strawberry.",
+      "file": "llj-f533e86f942aed1d2e41ab96.mp3",
+      "spokenText": "Find strawberry.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Find the baby cow.",
       "file": "llj-1d59f5591cfb3e309618d5e2.mp3",
       "spokenText": "Find the baby cow.",
@@ -2632,6 +2720,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Find watermelon.",
+      "file": "llj-17b65adacefdcebc4b434c36.mp3",
+      "spokenText": "Find watermelon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
     },
     {
       "text": "Fire Truck",
@@ -6642,9 +6738,1473 @@
       "category": "literacy"
     },
     {
+      "text": "Pack apple, banana, and bread. Tap the foods in any order.",
+      "file": "llj-854a748e7a4ee5c115967290.mp3",
+      "spokenText": "Pack apple, banana, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and carrot. Tap the foods in any order.",
+      "file": "llj-715f1fdeb706ae7976f4d9ad.mp3",
+      "spokenText": "Pack apple, banana, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and cheese. Tap the foods in any order.",
+      "file": "llj-94dbeb77c56f02885839852b.mp3",
+      "spokenText": "Pack apple, banana, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and grapes. Tap the foods in any order.",
+      "file": "llj-6eb88ab42d8781c84a78dd40.mp3",
+      "spokenText": "Pack apple, banana, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and pear. Tap the foods in any order.",
+      "file": "llj-111bf3879e0a29368d6b6e3c.mp3",
+      "spokenText": "Pack apple, banana, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and strawberry. Tap the foods in any order.",
+      "file": "llj-e741700af64c487969c798dc.mp3",
+      "spokenText": "Pack apple, banana, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, banana, and watermelon. Tap the foods in any order.",
+      "file": "llj-6221e8698ad256c6a7a22dfb.mp3",
+      "spokenText": "Pack apple, banana, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, bread, and pear. Tap the foods in any order.",
+      "file": "llj-1b259a92f19c9493eda229b9.mp3",
+      "spokenText": "Pack apple, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-750ec864b6b18ecaa98d6d67.mp3",
+      "spokenText": "Pack apple, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-756baf283f981b5f7296f18c.mp3",
+      "spokenText": "Pack apple, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-3e387eeece5946527d6a945f.mp3",
+      "spokenText": "Pack apple, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-127040e309425d2d1ac2d1cc.mp3",
+      "spokenText": "Pack apple, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-7d139e0eac00a81b7efaee1c.mp3",
+      "spokenText": "Pack apple, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-f43d246ddb3caa6b201fe92d.mp3",
+      "spokenText": "Pack apple, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-e20ada12215fa4c727091e7b.mp3",
+      "spokenText": "Pack apple, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-be78dc53f4906b3e48a0930c.mp3",
+      "spokenText": "Pack apple, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-0d30e27d7de916c529182363.mp3",
+      "spokenText": "Pack apple, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-304ed85f32a130ac56b0005a.mp3",
+      "spokenText": "Pack apple, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-9d1ed64227910ebc0891163d.mp3",
+      "spokenText": "Pack apple, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and bread. Tap the foods in any order.",
+      "file": "llj-109380d74ca6689b0556a50d.mp3",
+      "spokenText": "Pack apple, grapes, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and carrot. Tap the foods in any order.",
+      "file": "llj-07b31f06207676df649133ea.mp3",
+      "spokenText": "Pack apple, grapes, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and cheese. Tap the foods in any order.",
+      "file": "llj-713c2ba6cd057e49dc690992.mp3",
+      "spokenText": "Pack apple, grapes, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and pear. Tap the foods in any order.",
+      "file": "llj-840b842f07bdc823dae56802.mp3",
+      "spokenText": "Pack apple, grapes, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and strawberry. Tap the foods in any order.",
+      "file": "llj-785f2cc6b190d5d195f25938.mp3",
+      "spokenText": "Pack apple, grapes, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, grapes, and watermelon. Tap the foods in any order.",
+      "file": "llj-28fccfa697456788b7a7525b.mp3",
+      "spokenText": "Pack apple, grapes, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and banana. Tap the foods in any order.",
+      "file": "llj-cefa85ea949285e471d7fedc.mp3",
+      "spokenText": "Pack apple, milk, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and bread. Tap the foods in any order.",
+      "file": "llj-528878b027efabe5a4eb8c19.mp3",
+      "spokenText": "Pack apple, milk, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and carrot. Tap the foods in any order.",
+      "file": "llj-53b422c91becd75b5d70accf.mp3",
+      "spokenText": "Pack apple, milk, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and cheese. Tap the foods in any order.",
+      "file": "llj-793ba4bdb0e8be599c2cd4a3.mp3",
+      "spokenText": "Pack apple, milk, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and grapes. Tap the foods in any order.",
+      "file": "llj-bbbc63b7f505b962c73f05c4.mp3",
+      "spokenText": "Pack apple, milk, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and orange. Tap the foods in any order.",
+      "file": "llj-f4d43161c525c02da709e00d.mp3",
+      "spokenText": "Pack apple, milk, and orange. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and pear. Tap the foods in any order.",
+      "file": "llj-4ffcc8dc75eae0fe47dc9dc9.mp3",
+      "spokenText": "Pack apple, milk, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and sandwich. Tap the foods in any order.",
+      "file": "llj-88791372a357a74be152c281.mp3",
+      "spokenText": "Pack apple, milk, and sandwich. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and strawberry. Tap the foods in any order.",
+      "file": "llj-3a537fa66d3d19be82551394.mp3",
+      "spokenText": "Pack apple, milk, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, milk, and watermelon. Tap the foods in any order.",
+      "file": "llj-c6aa5ecb0049901b363e501c.mp3",
+      "spokenText": "Pack apple, milk, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and banana. Tap the foods in any order.",
+      "file": "llj-d7e6ff4ca0f59b360af53eb0.mp3",
+      "spokenText": "Pack apple, orange, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and bread. Tap the foods in any order.",
+      "file": "llj-090cc7593ce21c26cdd6a27a.mp3",
+      "spokenText": "Pack apple, orange, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and carrot. Tap the foods in any order.",
+      "file": "llj-02f48f493b3a01c763627e95.mp3",
+      "spokenText": "Pack apple, orange, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and cheese. Tap the foods in any order.",
+      "file": "llj-d8d5ffb99db75624abf94e28.mp3",
+      "spokenText": "Pack apple, orange, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and grapes. Tap the foods in any order.",
+      "file": "llj-0f5defb170e4d29adca262c3.mp3",
+      "spokenText": "Pack apple, orange, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and pear. Tap the foods in any order.",
+      "file": "llj-cea421983a62ee10d1970717.mp3",
+      "spokenText": "Pack apple, orange, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and strawberry. Tap the foods in any order.",
+      "file": "llj-85ff1ca892752867a5c59e82.mp3",
+      "spokenText": "Pack apple, orange, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, orange, and watermelon. Tap the foods in any order.",
+      "file": "llj-3d9ef7217b67127afc6c7111.mp3",
+      "spokenText": "Pack apple, orange, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-8beba0def71f09388ddd39c1.mp3",
+      "spokenText": "Pack apple, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-acb069a9fae79a0be320c951.mp3",
+      "spokenText": "Pack apple, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and banana. Tap the foods in any order.",
+      "file": "llj-a0fd8c388e49ee6510e8b3f6.mp3",
+      "spokenText": "Pack apple, sandwich, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and bread. Tap the foods in any order.",
+      "file": "llj-6a03553fefaed0501aea8dd1.mp3",
+      "spokenText": "Pack apple, sandwich, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and carrot. Tap the foods in any order.",
+      "file": "llj-c3fc14dbf8f8684b5dcfccaa.mp3",
+      "spokenText": "Pack apple, sandwich, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and cheese. Tap the foods in any order.",
+      "file": "llj-018a8bda085e0dd14991447b.mp3",
+      "spokenText": "Pack apple, sandwich, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and grapes. Tap the foods in any order.",
+      "file": "llj-60ffdd157a34f5120ee37140.mp3",
+      "spokenText": "Pack apple, sandwich, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and orange. Tap the foods in any order.",
+      "file": "llj-379cc149277080b9d7572dea.mp3",
+      "spokenText": "Pack apple, sandwich, and orange. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and pear. Tap the foods in any order.",
+      "file": "llj-630e02ee1ecb572b9ee3a455.mp3",
+      "spokenText": "Pack apple, sandwich, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and strawberry. Tap the foods in any order.",
+      "file": "llj-92a4d9aee59781f993dad297.mp3",
+      "spokenText": "Pack apple, sandwich, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, sandwich, and watermelon. Tap the foods in any order.",
+      "file": "llj-5855e7f4b9c3921d5c81d44c.mp3",
+      "spokenText": "Pack apple, sandwich, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack apple, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-aaba252f9e881dba65657517.mp3",
+      "spokenText": "Pack apple, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Pack apple, then sandwich. Use the arrows to look through the foods.",
       "file": "llj-c2f8866215713d6ee505985e.mp3",
       "spokenText": "Pack apple, then sandwich. Use the arrows to look through the foods.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, bread, and pear. Tap the foods in any order.",
+      "file": "llj-874e0ba6160ea1bf95ecc901.mp3",
+      "spokenText": "Pack banana, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-8d2c9da979d1fcef5fbdf507.mp3",
+      "spokenText": "Pack banana, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-c8c1b24ae01b5f0c2f6fb1f9.mp3",
+      "spokenText": "Pack banana, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-f0b10d97f297c1c3e088a0b8.mp3",
+      "spokenText": "Pack banana, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-f12b462dbf7ea752404e8c6b.mp3",
+      "spokenText": "Pack banana, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-ba335d329c11934569cf320b.mp3",
+      "spokenText": "Pack banana, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-44f217ab18367f2ae4ac3c23.mp3",
+      "spokenText": "Pack banana, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-c0df28bbeab84b3312a6c611.mp3",
+      "spokenText": "Pack banana, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-4bcb8f96dbb674c17a5285e8.mp3",
+      "spokenText": "Pack banana, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-a9c5eecf4ee4037c5b0730a6.mp3",
+      "spokenText": "Pack banana, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-8287e9a9773d792231804a93.mp3",
+      "spokenText": "Pack banana, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-7ebbd608a809b1a91f30053d.mp3",
+      "spokenText": "Pack banana, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and bread. Tap the foods in any order.",
+      "file": "llj-221e6e08917706c045d5fc15.mp3",
+      "spokenText": "Pack banana, grapes, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and carrot. Tap the foods in any order.",
+      "file": "llj-b7c73c152fdb52a71d03f759.mp3",
+      "spokenText": "Pack banana, grapes, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and cheese. Tap the foods in any order.",
+      "file": "llj-b296bbb63b43fe4dbcd9867b.mp3",
+      "spokenText": "Pack banana, grapes, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and pear. Tap the foods in any order.",
+      "file": "llj-d91c063608650d9e61a611fe.mp3",
+      "spokenText": "Pack banana, grapes, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and strawberry. Tap the foods in any order.",
+      "file": "llj-0e272f85ed4e64c105e9b0f5.mp3",
+      "spokenText": "Pack banana, grapes, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, grapes, and watermelon. Tap the foods in any order.",
+      "file": "llj-0788ae92063124aee556e4f0.mp3",
+      "spokenText": "Pack banana, grapes, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-b81e5a97f1f9fe76376a66bb.mp3",
+      "spokenText": "Pack banana, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-89e5e9b02c406ac4981e396c.mp3",
+      "spokenText": "Pack banana, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack banana, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-a10b628d07a5711207e146fa.mp3",
+      "spokenText": "Pack banana, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack bread, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-91b3073a64e8a30f9c3fea8a.mp3",
+      "spokenText": "Pack bread, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack bread, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-04cb7620a1eaa2d9670fe4bc.mp3",
+      "spokenText": "Pack bread, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack bread, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-a3393b12812bb76f74367ecf.mp3",
+      "spokenText": "Pack bread, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, bread, and pear. Tap the foods in any order.",
+      "file": "llj-d5c9dcc0b7bed79ab0831c53.mp3",
+      "spokenText": "Pack carrot, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-63900542218cd9d11a1b4364.mp3",
+      "spokenText": "Pack carrot, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-c08c6ea2b1622eec2a13c919.mp3",
+      "spokenText": "Pack carrot, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-985ba18adb241091de54440b.mp3",
+      "spokenText": "Pack carrot, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-fe05a6fe7365d92256cf99f2.mp3",
+      "spokenText": "Pack carrot, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack carrot, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-188c7969f76f1d458e556238.mp3",
+      "spokenText": "Pack carrot, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, bread, and pear. Tap the foods in any order.",
+      "file": "llj-4a89324c457b9729504d8203.mp3",
+      "spokenText": "Pack cheese, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-89e3b17129225681f52aaf9c.mp3",
+      "spokenText": "Pack cheese, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-30323f4db0ce7eac3be8be54.mp3",
+      "spokenText": "Pack cheese, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-dc4fea66dec8fbd9aca0b882.mp3",
+      "spokenText": "Pack cheese, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-b45f203ddb0cd91aa0d72ce6.mp3",
+      "spokenText": "Pack cheese, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-7eb33accd4cf2e2368c54fcf.mp3",
+      "spokenText": "Pack cheese, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-b084e271319ffc99cf687012.mp3",
+      "spokenText": "Pack cheese, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-3eabf406360c5b76163eeceb.mp3",
+      "spokenText": "Pack cheese, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-a0da90b0b1d00c5e79885078.mp3",
+      "spokenText": "Pack cheese, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack cheese, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-a44b5459264c3f8f556c35ae.mp3",
+      "spokenText": "Pack cheese, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, bread, and pear. Tap the foods in any order.",
+      "file": "llj-34975a2484df749dfd6f0472.mp3",
+      "spokenText": "Pack grapes, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-2160b440b3ec65c65ceb54e9.mp3",
+      "spokenText": "Pack grapes, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-4b2c939c021641a2d66f525d.mp3",
+      "spokenText": "Pack grapes, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-62679cb9a895cbf0c07789d1.mp3",
+      "spokenText": "Pack grapes, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-51b2d6010f7742f9d08a7229.mp3",
+      "spokenText": "Pack grapes, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-b2d7486f2b62d4c528f96c94.mp3",
+      "spokenText": "Pack grapes, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-be60f3cd56a8a7ce140c5689.mp3",
+      "spokenText": "Pack grapes, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-799226f32d418ec4cd9051e4.mp3",
+      "spokenText": "Pack grapes, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-ecfac14d1502ea7a7a94ed02.mp3",
+      "spokenText": "Pack grapes, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-49e95be08f539dd1f28d0b13.mp3",
+      "spokenText": "Pack grapes, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-273fb0c1d5437fbc9256dc20.mp3",
+      "spokenText": "Pack grapes, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-724daad572d20af156ecdb8a.mp3",
+      "spokenText": "Pack grapes, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-e433cd68788042ba2df59d71.mp3",
+      "spokenText": "Pack grapes, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-79cabdc918f7416e3e112f4c.mp3",
+      "spokenText": "Pack grapes, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack grapes, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-d64ff8a709e81485d4f7dcf5.mp3",
+      "spokenText": "Pack grapes, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and bread. Tap the foods in any order.",
+      "file": "llj-dbbfe705bcab98663ea09ba6.mp3",
+      "spokenText": "Pack milk, banana, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and carrot. Tap the foods in any order.",
+      "file": "llj-c77ed980fb5f74e4ed8e294b.mp3",
+      "spokenText": "Pack milk, banana, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and cheese. Tap the foods in any order.",
+      "file": "llj-547bd5432d0fc146d6fb1626.mp3",
+      "spokenText": "Pack milk, banana, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and grapes. Tap the foods in any order.",
+      "file": "llj-f96cbd8997cc937c2ef2ef98.mp3",
+      "spokenText": "Pack milk, banana, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and pear. Tap the foods in any order.",
+      "file": "llj-c183dd6bcc7cb638952be508.mp3",
+      "spokenText": "Pack milk, banana, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and strawberry. Tap the foods in any order.",
+      "file": "llj-2f514b694f3d11dcb6d5f8bb.mp3",
+      "spokenText": "Pack milk, banana, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, banana, and watermelon. Tap the foods in any order.",
+      "file": "llj-544c61e6a547ea94ce01651e.mp3",
+      "spokenText": "Pack milk, banana, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, bread, and pear. Tap the foods in any order.",
+      "file": "llj-0fd6e84a80581c18bc5961d8.mp3",
+      "spokenText": "Pack milk, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-6656d6ed2b77069688df669e.mp3",
+      "spokenText": "Pack milk, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-63185d12b04575312db14c56.mp3",
+      "spokenText": "Pack milk, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-5116668f2c908b1a016317bc.mp3",
+      "spokenText": "Pack milk, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-a688cee9b755db5ce8b1c4e9.mp3",
+      "spokenText": "Pack milk, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-2b3876cfd18ff8cdd204408e.mp3",
+      "spokenText": "Pack milk, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-c8462e1555e8444be29f62db.mp3",
+      "spokenText": "Pack milk, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-47870509bdaad2acec73fbba.mp3",
+      "spokenText": "Pack milk, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-f9181a8de8408415e1c6811d.mp3",
+      "spokenText": "Pack milk, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-68de5b9e863a7e78d20d278e.mp3",
+      "spokenText": "Pack milk, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-53fd899c57c95e0bbddf03ea.mp3",
+      "spokenText": "Pack milk, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-b95fe5e5173abc3ffcac2fcf.mp3",
+      "spokenText": "Pack milk, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and bread. Tap the foods in any order.",
+      "file": "llj-7c646c42bf4bd59c9998ce78.mp3",
+      "spokenText": "Pack milk, grapes, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and carrot. Tap the foods in any order.",
+      "file": "llj-d9a59fbeaa4663de71e26f72.mp3",
+      "spokenText": "Pack milk, grapes, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and cheese. Tap the foods in any order.",
+      "file": "llj-e112ea62b82d6f8ed3a6bab7.mp3",
+      "spokenText": "Pack milk, grapes, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and pear. Tap the foods in any order.",
+      "file": "llj-2285815d3a65fe1fc20d97f7.mp3",
+      "spokenText": "Pack milk, grapes, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and strawberry. Tap the foods in any order.",
+      "file": "llj-f3518388931bf3d64244d3fb.mp3",
+      "spokenText": "Pack milk, grapes, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, grapes, and watermelon. Tap the foods in any order.",
+      "file": "llj-af79d2f5309cb166ce83c516.mp3",
+      "spokenText": "Pack milk, grapes, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and banana. Tap the foods in any order.",
+      "file": "llj-ad63fe65f966f41d33e52cb1.mp3",
+      "spokenText": "Pack milk, orange, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and bread. Tap the foods in any order.",
+      "file": "llj-88399bb0f97519396bb08506.mp3",
+      "spokenText": "Pack milk, orange, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and carrot. Tap the foods in any order.",
+      "file": "llj-0bd36b0ebba8fd7831655e39.mp3",
+      "spokenText": "Pack milk, orange, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and cheese. Tap the foods in any order.",
+      "file": "llj-a7f494e799e48a10c05b2331.mp3",
+      "spokenText": "Pack milk, orange, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and grapes. Tap the foods in any order.",
+      "file": "llj-9f1fd2aaefb28c0891f1a775.mp3",
+      "spokenText": "Pack milk, orange, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and pear. Tap the foods in any order.",
+      "file": "llj-0b5196772331e9c53b6151d7.mp3",
+      "spokenText": "Pack milk, orange, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and strawberry. Tap the foods in any order.",
+      "file": "llj-8fd53f3a08c90c5f6f6e76c5.mp3",
+      "spokenText": "Pack milk, orange, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, orange, and watermelon. Tap the foods in any order.",
+      "file": "llj-71331ad8ba511996ffdea92d.mp3",
+      "spokenText": "Pack milk, orange, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-1189561f899b298303888e09.mp3",
+      "spokenText": "Pack milk, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-36b7bd8ed4d04be5231bd8ce.mp3",
+      "spokenText": "Pack milk, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and banana. Tap the foods in any order.",
+      "file": "llj-dc72c5108e2a6d751d9d1dba.mp3",
+      "spokenText": "Pack milk, sandwich, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and bread. Tap the foods in any order.",
+      "file": "llj-a74c6a0326c70b6ab87939f8.mp3",
+      "spokenText": "Pack milk, sandwich, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and carrot. Tap the foods in any order.",
+      "file": "llj-f93312bb591c26837d537a26.mp3",
+      "spokenText": "Pack milk, sandwich, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and cheese. Tap the foods in any order.",
+      "file": "llj-4d552c34863f601c1318ca93.mp3",
+      "spokenText": "Pack milk, sandwich, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and grapes. Tap the foods in any order.",
+      "file": "llj-457d9aeea922834c87975e32.mp3",
+      "spokenText": "Pack milk, sandwich, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and orange. Tap the foods in any order.",
+      "file": "llj-e74d735189d7c9d718b8b190.mp3",
+      "spokenText": "Pack milk, sandwich, and orange. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and pear. Tap the foods in any order.",
+      "file": "llj-e843e16e57b186327d24c2fe.mp3",
+      "spokenText": "Pack milk, sandwich, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and strawberry. Tap the foods in any order.",
+      "file": "llj-a31b9bf396eed2d0e25fbf24.mp3",
+      "spokenText": "Pack milk, sandwich, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, sandwich, and watermelon. Tap the foods in any order.",
+      "file": "llj-7ba9c55e7125bcd297736db7.mp3",
+      "spokenText": "Pack milk, sandwich, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack milk, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-d72b690e148580dfdd325390.mp3",
+      "spokenText": "Pack milk, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and bread. Tap the foods in any order.",
+      "file": "llj-982d5ccf9c015772055df7bc.mp3",
+      "spokenText": "Pack orange, banana, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and carrot. Tap the foods in any order.",
+      "file": "llj-8d37c4d72ce324902cb559b9.mp3",
+      "spokenText": "Pack orange, banana, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and cheese. Tap the foods in any order.",
+      "file": "llj-e11d4000bd206972a3f1c438.mp3",
+      "spokenText": "Pack orange, banana, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and grapes. Tap the foods in any order.",
+      "file": "llj-7db65bcc956b56dde7c2300e.mp3",
+      "spokenText": "Pack orange, banana, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and pear. Tap the foods in any order.",
+      "file": "llj-2e2a25f44c863d876249f297.mp3",
+      "spokenText": "Pack orange, banana, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and strawberry. Tap the foods in any order.",
+      "file": "llj-49fbb9d4de1b086cf8a0b786.mp3",
+      "spokenText": "Pack orange, banana, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, banana, and watermelon. Tap the foods in any order.",
+      "file": "llj-6706a2a274333ab5493e9a52.mp3",
+      "spokenText": "Pack orange, banana, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, bread, and pear. Tap the foods in any order.",
+      "file": "llj-0d8d25801816b2b4837359bc.mp3",
+      "spokenText": "Pack orange, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-7d7604db424dd6f1e1af836d.mp3",
+      "spokenText": "Pack orange, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-f343bd556eedb9f72d67d9a2.mp3",
+      "spokenText": "Pack orange, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-932d4ef4beae356a63ea5a2b.mp3",
+      "spokenText": "Pack orange, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-fa6aab46fd2f90b22b2e236b.mp3",
+      "spokenText": "Pack orange, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-57ab7d4168df76f8a061062b.mp3",
+      "spokenText": "Pack orange, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-42947075463197e387579cfb.mp3",
+      "spokenText": "Pack orange, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-6c2d17e6d94def2b71967604.mp3",
+      "spokenText": "Pack orange, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-1f9ec6b0ff0de45936820480.mp3",
+      "spokenText": "Pack orange, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-0fdce5400bc39c58444d914c.mp3",
+      "spokenText": "Pack orange, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-047fb9439586be5a1d5c423e.mp3",
+      "spokenText": "Pack orange, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-14653d29195290c2f9b5114c.mp3",
+      "spokenText": "Pack orange, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and bread. Tap the foods in any order.",
+      "file": "llj-9807ba0442478e2d11471467.mp3",
+      "spokenText": "Pack orange, grapes, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and carrot. Tap the foods in any order.",
+      "file": "llj-fd312b9497b4bfaa5acd8205.mp3",
+      "spokenText": "Pack orange, grapes, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and cheese. Tap the foods in any order.",
+      "file": "llj-6b1690f41813cccc91979738.mp3",
+      "spokenText": "Pack orange, grapes, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and pear. Tap the foods in any order.",
+      "file": "llj-ab2435c163cbcb26e2b75421.mp3",
+      "spokenText": "Pack orange, grapes, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and strawberry. Tap the foods in any order.",
+      "file": "llj-ec3ff96281655e43058256fe.mp3",
+      "spokenText": "Pack orange, grapes, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, grapes, and watermelon. Tap the foods in any order.",
+      "file": "llj-b6877cdb4d3b7a6ac6043faf.mp3",
+      "spokenText": "Pack orange, grapes, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-18e8b1272d74c9a52dd345a5.mp3",
+      "spokenText": "Pack orange, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-13e061d6c7bba03a421516d3.mp3",
+      "spokenText": "Pack orange, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack orange, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-ac53632d9856da30b98d9b5a.mp3",
+      "spokenText": "Pack orange, strawberry, and watermelon. Tap the foods in any order.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -6658,9 +8218,313 @@
       "category": "literacy"
     },
     {
+      "text": "Pack pear, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-dd39c75fb9586374ce61db6b.mp3",
+      "spokenText": "Pack pear, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and bread. Tap the foods in any order.",
+      "file": "llj-7583eb63e15c494263d84546.mp3",
+      "spokenText": "Pack sandwich, banana, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and carrot. Tap the foods in any order.",
+      "file": "llj-a3a2231b72a9ad8599aa15dc.mp3",
+      "spokenText": "Pack sandwich, banana, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and cheese. Tap the foods in any order.",
+      "file": "llj-b178996233e59700fffac0b1.mp3",
+      "spokenText": "Pack sandwich, banana, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and grapes. Tap the foods in any order.",
+      "file": "llj-472878ff45936565c50a534e.mp3",
+      "spokenText": "Pack sandwich, banana, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and pear. Tap the foods in any order.",
+      "file": "llj-9ba2728e786f13bccf780a32.mp3",
+      "spokenText": "Pack sandwich, banana, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and strawberry. Tap the foods in any order.",
+      "file": "llj-f4febe3eb624e43f8fae1296.mp3",
+      "spokenText": "Pack sandwich, banana, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, banana, and watermelon. Tap the foods in any order.",
+      "file": "llj-685a1646e797d4b3887d610c.mp3",
+      "spokenText": "Pack sandwich, banana, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, bread, and pear. Tap the foods in any order.",
+      "file": "llj-21c98cc68fd1822f93ab3a05.mp3",
+      "spokenText": "Pack sandwich, bread, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, bread, and strawberry. Tap the foods in any order.",
+      "file": "llj-465a81adfc7500eaf9f55a53.mp3",
+      "spokenText": "Pack sandwich, bread, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, bread, and watermelon. Tap the foods in any order.",
+      "file": "llj-3fdc5655bebdfa3b7b2996fa.mp3",
+      "spokenText": "Pack sandwich, bread, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, carrot, and bread. Tap the foods in any order.",
+      "file": "llj-7c4a27f3d6e1d5d26ae97060.mp3",
+      "spokenText": "Pack sandwich, carrot, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, carrot, and pear. Tap the foods in any order.",
+      "file": "llj-556e54c1351ea33d7edf69a5.mp3",
+      "spokenText": "Pack sandwich, carrot, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, carrot, and strawberry. Tap the foods in any order.",
+      "file": "llj-27e4c2eb5a3beb5db210eebf.mp3",
+      "spokenText": "Pack sandwich, carrot, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, carrot, and watermelon. Tap the foods in any order.",
+      "file": "llj-75ed41015254018201eb87e2.mp3",
+      "spokenText": "Pack sandwich, carrot, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, cheese, and bread. Tap the foods in any order.",
+      "file": "llj-20b7d6f9b5a4afea60d7090e.mp3",
+      "spokenText": "Pack sandwich, cheese, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, cheese, and carrot. Tap the foods in any order.",
+      "file": "llj-a985d17ab638b5975fb894d6.mp3",
+      "spokenText": "Pack sandwich, cheese, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, cheese, and pear. Tap the foods in any order.",
+      "file": "llj-5d9961854d201ccd5bfab105.mp3",
+      "spokenText": "Pack sandwich, cheese, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, cheese, and strawberry. Tap the foods in any order.",
+      "file": "llj-a8598748beb401b526a82478.mp3",
+      "spokenText": "Pack sandwich, cheese, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, cheese, and watermelon. Tap the foods in any order.",
+      "file": "llj-1cf9a4ca2373e9f29d71b4c2.mp3",
+      "spokenText": "Pack sandwich, cheese, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and bread. Tap the foods in any order.",
+      "file": "llj-1593bdb40f4271a7469d96b9.mp3",
+      "spokenText": "Pack sandwich, grapes, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and carrot. Tap the foods in any order.",
+      "file": "llj-35d879080ae2120b88365860.mp3",
+      "spokenText": "Pack sandwich, grapes, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and cheese. Tap the foods in any order.",
+      "file": "llj-609ca8369ea0bf452def277b.mp3",
+      "spokenText": "Pack sandwich, grapes, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and pear. Tap the foods in any order.",
+      "file": "llj-7e770bcfb2daabfee5584253.mp3",
+      "spokenText": "Pack sandwich, grapes, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and strawberry. Tap the foods in any order.",
+      "file": "llj-eaebf5af7ffe45d706839757.mp3",
+      "spokenText": "Pack sandwich, grapes, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, grapes, and watermelon. Tap the foods in any order.",
+      "file": "llj-464e568ec5654274e7d1d652.mp3",
+      "spokenText": "Pack sandwich, grapes, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and banana. Tap the foods in any order.",
+      "file": "llj-ac10b6bab0b9627b77a9347f.mp3",
+      "spokenText": "Pack sandwich, orange, and banana. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and bread. Tap the foods in any order.",
+      "file": "llj-5e38afaab5c8bc05c87d9ec0.mp3",
+      "spokenText": "Pack sandwich, orange, and bread. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and carrot. Tap the foods in any order.",
+      "file": "llj-d9a3e583b9ca88a954fc7a64.mp3",
+      "spokenText": "Pack sandwich, orange, and carrot. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and cheese. Tap the foods in any order.",
+      "file": "llj-146cd97190ef1011e103e76e.mp3",
+      "spokenText": "Pack sandwich, orange, and cheese. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and grapes. Tap the foods in any order.",
+      "file": "llj-057577bac1dabcdbad0350da.mp3",
+      "spokenText": "Pack sandwich, orange, and grapes. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and pear. Tap the foods in any order.",
+      "file": "llj-ca12e077decebb130ec3159b.mp3",
+      "spokenText": "Pack sandwich, orange, and pear. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and strawberry. Tap the foods in any order.",
+      "file": "llj-49f28bd4d7d5c1dffc209ed8.mp3",
+      "spokenText": "Pack sandwich, orange, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, orange, and watermelon. Tap the foods in any order.",
+      "file": "llj-ac0434c8fb69266d0513decf.mp3",
+      "spokenText": "Pack sandwich, orange, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, pear, and strawberry. Tap the foods in any order.",
+      "file": "llj-3458478542a792eed082a6ed.mp3",
+      "spokenText": "Pack sandwich, pear, and strawberry. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, pear, and watermelon. Tap the foods in any order.",
+      "file": "llj-2df94f37cffa94061cd7f321.mp3",
+      "spokenText": "Pack sandwich, pear, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Pack sandwich, strawberry, and watermelon. Tap the foods in any order.",
+      "file": "llj-42d74c4297e59409dc28eb41.mp3",
+      "spokenText": "Pack sandwich, strawberry, and watermelon. Tap the foods in any order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Pack sandwich, then orange. Use the arrows to look through the foods.",
       "file": "llj-7ff951515a8a75ed83493540.mp3",
       "spokenText": "Pack sandwich, then orange. Use the arrows to look through the foods.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed apple.",
+      "file": "llj-b6467d4d77a88ea6c25f581d.mp3",
+      "spokenText": "Packed apple.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -6674,6 +8538,62 @@
       "category": "literacy"
     },
     {
+      "text": "Packed banana.",
+      "file": "llj-66a7e6eb683f22d06a60b27a.mp3",
+      "spokenText": "Packed banana.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed bread.",
+      "file": "llj-103f4d5f2609dce349f3b54b.mp3",
+      "spokenText": "Packed bread.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed carrot.",
+      "file": "llj-ed001a44b54fd1e7ec153d46.mp3",
+      "spokenText": "Packed carrot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed cheese.",
+      "file": "llj-c55c29b09d963bb0e54a01c1.mp3",
+      "spokenText": "Packed cheese.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed grapes.",
+      "file": "llj-4ed5af0f5528fb611c7b3d1e.mp3",
+      "spokenText": "Packed grapes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed milk.",
+      "file": "llj-deee1d30bc3fde355961908d.mp3",
+      "spokenText": "Packed milk.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed orange.",
+      "file": "llj-47ea88d94816f131af0c33ac.mp3",
+      "spokenText": "Packed orange.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Packed orange. Now find milk.",
       "file": "llj-99ea0c7d51e5c0d4dfaf7423.mp3",
       "spokenText": "Packed orange. Now find milk.",
@@ -6682,9 +8602,41 @@
       "category": "literacy"
     },
     {
+      "text": "Packed pear.",
+      "file": "llj-e6e8f99b3ce3ee912007d4f7.mp3",
+      "spokenText": "Packed pear.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed sandwich.",
+      "file": "llj-3868904cd165bd23131619cf.mp3",
+      "spokenText": "Packed sandwich.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "Packed sandwich. Now find orange.",
       "file": "llj-7a94e834aaae37b26f80c39d.mp3",
       "spokenText": "Packed sandwich. Now find orange.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed strawberry.",
+      "file": "llj-f11534bc74a6ea1010fc2a8e.mp3",
+      "spokenText": "Packed strawberry.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Packed watermelon.",
+      "file": "llj-a57a0769f7842f28cc29e202.mp3",
+      "spokenText": "Packed watermelon.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -9546,6 +11498,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is apple. Check the basket labels.",
+      "file": "llj-928e428c824c339e5c909a0c.mp3",
+      "spokenText": "This is apple. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is apple. Look for milk.",
       "file": "llj-471d6cb5ff98b4c944caceaa.mp3",
       "spokenText": "This is apple. Look for milk.",
@@ -9578,6 +11538,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is banana. Check the basket labels.",
+      "file": "llj-348045e874a66fa3ec65b010.mp3",
+      "spokenText": "This is banana. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is basketball. Tap each basket to hear its letter. Drag the picture to the letter that starts basketball.",
       "file": "llj-864a5a6f7d8adfc92111dc03.mp3",
       "spokenText": "This is basketball. Tap each basket to hear its letter. Drag the picture to the letter that starts basketball.",
@@ -9586,9 +11554,33 @@
       "category": "literacy"
     },
     {
+      "text": "This is bread. Check the basket labels.",
+      "file": "llj-60e24409602cc42442f140e1.mp3",
+      "spokenText": "This is bread. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "This is carrot. Check the basket labels.",
+      "file": "llj-7bb33bf463b78270b5d288a5.mp3",
+      "spokenText": "This is carrot. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is cat. Tap each basket to hear its letter. Drag the picture to the letter that starts cat.",
       "file": "llj-b5e0a295686752a8dc8a5471.mp3",
       "spokenText": "This is cat. Tap each basket to hear its letter. Drag the picture to the letter that starts cat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "This is cheese. Check the basket labels.",
+      "file": "llj-c83c6446ae3ffa5f66d42e1b.mp3",
+      "spokenText": "This is cheese. Check the basket labels.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -9621,6 +11613,14 @@
       "text": "This is goat. Tap each basket to hear its letter. Drag the picture to the letter that starts goat.",
       "file": "llj-f5fa20eedc28787d1d21f182.mp3",
       "spokenText": "This is goat. Tap each basket to hear its letter. Drag the picture to the letter that starts goat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "This is grapes. Check the basket labels.",
+      "file": "llj-0e139d7aa881bbd288004889.mp3",
+      "spokenText": "This is grapes. Check the basket labels.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -9666,6 +11666,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is milk. Check the basket labels.",
+      "file": "llj-00c7024e693102a71f1d3f90.mp3",
+      "spokenText": "This is milk. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is milk. Look for apple.",
       "file": "llj-950755c1997891057ba5eae7.mp3",
       "spokenText": "This is milk. Look for apple.",
@@ -9706,6 +11714,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is orange. Check the basket labels.",
+      "file": "llj-fb334902581fef8528acf7cf.mp3",
+      "spokenText": "This is orange. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is orange. Look for apple.",
       "file": "llj-46e612c014cb346d7c6b4348.mp3",
       "spokenText": "This is orange. Look for apple.",
@@ -9738,6 +11754,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is pear. Check the basket labels.",
+      "file": "llj-8286db545226724a0996d6a1.mp3",
+      "spokenText": "This is pear. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is pig. Tap each basket to hear its letter. Drag the picture to the letter that starts pig.",
       "file": "llj-cddeba072486ea06ef09592f.mp3",
       "spokenText": "This is pig. Tap each basket to hear its letter. Drag the picture to the letter that starts pig.",
@@ -9762,6 +11786,14 @@
       "category": "literacy"
     },
     {
+      "text": "This is sandwich. Check the basket labels.",
+      "file": "llj-56fb4729a117bac9a50a1836.mp3",
+      "spokenText": "This is sandwich. Check the basket labels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
       "text": "This is sandwich. Look for apple.",
       "file": "llj-9ac4dc6f87c71fbb24b0859a.mp3",
       "spokenText": "This is sandwich. Look for apple.",
@@ -9781,6 +11813,14 @@
       "text": "This is sandwich. Look for orange.",
       "file": "llj-809b76f5f64b15c4ad07dedf.mp3",
       "spokenText": "This is sandwich. Look for orange.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "This is strawberry. Check the basket labels.",
+      "file": "llj-57ada97b71d71377b8345b31.mp3",
+      "spokenText": "This is strawberry. Check the basket labels.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -9813,6 +11853,14 @@
       "text": "This is volleyball. Tap each basket to hear its letter. Drag the picture to the letter that starts volleyball.",
       "file": "llj-c93ea5633ecf5ef4da6a67c4.mp3",
       "spokenText": "This is volleyball. Tap each basket to hear its letter. Drag the picture to the letter that starts volleyball.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "This is watermelon. Check the basket labels.",
+      "file": "llj-f5007b1ea01c94a2c34eec91.mp3",
+      "spokenText": "This is watermelon. Check the basket labels.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
@@ -13029,6 +15077,14 @@
       "text": "Your picnic is packed! Say the two food names together.",
       "file": "llj-6dbc05e37635adbaa6476196.mp3",
       "spokenText": "Your picnic is packed! Say the two food names together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "literacy"
+    },
+    {
+      "text": "Your picnic is packed! You found all three foods.",
+      "file": "llj-78e9b8f29d0ce1d2aafc4cd5.mp3",
+      "spokenText": "Your picnic is packed! You found all three foods.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"

@@ -155,6 +155,77 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testPicnicSixFoodsThreeBasketsAndVariety() async throws {
+        let app = try await launch(premium: true)
+        app.buttons["category.ABCs & Phonics"].tap()
+        let card = app.buttons["activity-card.Picnic Words"]
+        try reveal(card, in: app)
+        card.tap()
+        let baskets = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'picnic.basket.'"))
+        let foods = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'picnic.food.'"))
+        func list() -> [String] {
+            XCTAssertTrue(app.staticTexts["picnic.progress"].waitForExistence(timeout: 5))
+            XCTAssertEqual(baskets.count, 3)
+            XCTAssertEqual(foods.count, 6)
+            return baskets.allElementsBoundByIndex.map(\.label)
+        }
+        var recent: [String] = []
+        for index in 0..<22 {
+            let targets = list()
+            let key = targets.sorted().joined(separator: ",")
+            XCTAssertFalse(recent.suffix(20).contains(key))
+            recent.append(key)
+            XCTAssertEqual(app.staticTexts["picnic.progress"].label, "0 of 3 foods packed")
+            if index == 0 {
+                XCTAssertFalse(app.buttons["Previous"].exists)
+                XCTAssertFalse(app.buttons["Next food"].exists)
+                let viewport = app.windows.firstMatch.frame
+                for food in foods.allElementsBoundByIndex {
+                    XCTAssertTrue(food.isHittable)
+                    XCTAssertTrue(viewport.contains(food.frame), "All six foods must fit on screen")
+                }
+                let basket = baskets.element(boundBy: 0)
+                basket.tap()
+                XCTAssertEqual(basket.value as? String, "Empty")
+                let wrong = try XCTUnwrap(foods.allElementsBoundByIndex.first { !targets.contains($0.label) })
+                wrong.tap()
+                XCTAssertEqual(app.staticTexts["picnic.progress"].label, "0 of 3 foods packed")
+                XCTAssertFalse(app.buttons["Next picnic"].exists)
+            }
+            let orders = [[2,0,1], [1,2,0], [0,2,1], [2,1,0], [1,0,2], [0,1,2]]
+            for (position, targetIndex) in orders[index % orders.count].enumerated() {
+                let word = targets[targetIndex]
+                let food = app.buttons["picnic.food.\(word)"]
+                try reveal(food, in: app)
+                food.tap()
+                XCTAssertFalse(food.isEnabled)
+                XCTAssertEqual(app.buttons["picnic.basket.\(word)"].value as? String, "Packed")
+                XCTAssertEqual(app.staticTexts["picnic.progress"].label, "\(position + 1) of 3 foods packed")
+                if position < 2 { XCTAssertFalse(app.buttons["Next picnic"].exists) }
+            }
+            let next = app.buttons["Next picnic"]
+            try reveal(next, in: app)
+            next.tap()
+        }
+        let abandoned = list().sorted().joined(separator: ",")
+        XCTAssertFalse(recent.suffix(20).contains(abandoned))
+        recent.append(abandoned)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        try reveal(card, in: app)
+        card.tap()
+        let restarted = list().sorted().joined(separator: ",")
+        XCTAssertFalse(recent.suffix(20).contains(restarted))
+        recent.append(restarted)
+        app.terminate()
+        app.launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        try reveal(card, in: app)
+        card.tap()
+        XCTAssertFalse(recent.suffix(20).contains(list().sorted().joined(separator: ",")))
+        XCTAssertEqual(app.staticTexts["picnic.progress"].label, "0 of 3 foods packed")
+    }
+
+    @MainActor
     func testSoundHopContinuesAcrossSyllableCountsAndReentry() async throws {
         let app = try await launch()
         app.buttons["category.ABCs & Phonics"].tap()

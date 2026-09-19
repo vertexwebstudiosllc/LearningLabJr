@@ -188,45 +188,6 @@ struct LiteracyVehiclePeekabooGame: View {
     }
 }
 
-struct PicnicWordsGame: View {
-    @StateObject private var play = LiteracyPlay()
-    private let foods = [LiteracyPicture(word: "apple", asset: "Apple"), .init(word: "milk", asset: "Milk"), .init(word: "sandwich", asset: "Sandwich"), .init(word: "orange", asset: "Orange")]
-    private var list: [Int] { [[0, 2], [3, 1], [2, 3]][play.round] }
-    private var displayed: Int { play.selected ?? 1 }
-    private var current: LiteracyPicture { foods[displayed] }
-    var body: some View {
-        LiteracyStage(title: "Picnic Words", prompt: "Pack \(foods[list[0]].word), then \(foods[list[1]].word). Use the arrows to look through the foods.", play: play) {
-            VStack(spacing: 18) {
-                HStack {
-                    ForEach(0..<2, id: \.self) { index in
-                        VStack {
-                            if index < play.count { ToddlerArt(asset: foods[list[index]].asset, size: 58) }
-                            else { Image(systemName: "basket").font(.system(size: 38)).frame(height: 58) }
-                            Text(index < play.count ? "Packed" : "Item \(index + 1)").font(.headline)
-                        }.frame(maxWidth: .infinity).accessibilityLabel(index < play.count ? "\(foods[list[index]].word) packed" : "Picnic item \(index + 1), empty")
-                    }
-                }
-                WordPictureCard(word: current.word, asset: current.asset)
-                HStack {
-                    ToddlerActionButton(title: "Previous", systemImage: "arrow.left.circle.fill", color: .orange) { browse(-1) }
-                    ToddlerActionButton(title: "Next food", systemImage: "arrow.right.circle.fill", color: .orange) { browse(1) }
-                }
-                ToddlerActionButton(title: "Pack this food", systemImage: "basket.fill", color: .orange) {
-                    if displayed == list[min(play.count, 1)] {
-                        play.count += 1
-                        if play.count == 2 { play.win("Your picnic is packed! Say the two food names together.") }
-                        else { play.say("Packed \(current.word). Now find \(foods[list[1]].word).") }
-                    } else { play.say("This is \(current.word). Look for \(foods[list[min(play.count, 1)]].word).") }
-                }
-            }
-        }
-    }
-    private func browse(_ step: Int) {
-        play.selected = (displayed + step + foods.count) % foods.count
-        play.say(foods[displayed].word)
-    }
-}
-
 struct LiteracyWordClawGame: View {
     @StateObject private var play = LiteracyPlay()
     private let toys = [LiteracyPicture(word: "ball", asset: "basketball"), .init(word: "car", asset: "carBlue"), .init(word: "rabbit", asset: "rabbit")]

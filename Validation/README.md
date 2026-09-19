@@ -30,6 +30,7 @@ Coverage:
 - Session expiry, background elapsed time, restart, stop, and extreme duration input.
 - Voice quality ranking, saved choice, missing-voice fallback, and exclusion of novelty, personal, and non-English voices.
 - Restored SpriteKit garage reveal/name/close cycles and claw item pickups, with original artwork and Ruth recordings for every loaded item.
+- Picnic Words checks six visible food choices, three named baskets with tap narration, all six packing orders, wrong/duplicate selection handling, 220 unique target triples, recent-list exclusion, reentry and app relaunch.
 - Sound Hop (Syllable Hop) checks 30 picture words split evenly across one/two/three syllables, 2,000 selections excluding the last 20 words, beat limits, retry/reset, continuous play, reentry and app relaunch.
 - Letter Hide & Seek checks all 26 shuffled targets, exactly three matches and three distinct distractors, wrong/repeated-tap handling, fresh entry, replay, and every Ruth narration line.
 - Rhyme Garden checks 30 distinct pairs, picture assets, 2,000 selections avoiding the recent 20 pairs, both narration orders, and continuing play across game exit and app relaunch.
