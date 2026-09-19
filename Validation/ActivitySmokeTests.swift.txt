@@ -777,6 +777,45 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testColorLabLevelsAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Little Color Lab"]
+        try reveal(card, in: app); card.tap()
+        let bases = ["red", "orange", "blue", "red", "yellow", "green", "purple", "pink", "brown"]
+        for (level, base) in bases.enumerated() {
+            XCTAssertTrue(app.staticTexts["shapes.lab.level"].waitForExistence(timeout: 5))
+            XCTAssertTrue(app.staticTexts["shapes.lab.level"].label.hasPrefix("Level \(level + 1) of 9"))
+            XCTAssertEqual(app.staticTexts["shapes.lab.progress"].label, "0 of 3 mixtures discovered")
+            let stir = app.buttons["shapes.lab.stir"]
+            try reveal(stir, in: app); stir.tap()
+            XCTAssertEqual(app.staticTexts["shapes.lab.progress"].label, "0 of 3 mixtures discovered")
+            let pairs = level == 0 ? [["red", "yellow"], ["yellow", "blue"], ["blue", "red"]] : [[base, "white"], [base, "black"], ["black", "white"]]
+            for (index, pair) in pairs.enumerated() {
+                for id in pair {
+                    let paint = app.buttons["shapes.lab.paint.\(id)"]
+                    try reveal(paint, in: app); paint.tap()
+                }
+                try reveal(stir, in: app); stir.tap()
+                XCTAssertEqual(app.staticTexts["shapes.lab.progress"].label, "\(index + 1) of 3 mixtures discovered")
+            }
+            if level == 2 {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Color Lab blue shades"
+                shot.lifetime = .keepAlways; add(shot)
+            }
+            let next = app.buttons["shapes.lab.next"]
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.buttons["shapes.lab.paint.red"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.lab.level"].label.hasPrefix("Level 1 of 9"))
+        XCTAssertEqual(app.staticTexts["shapes.lab.progress"].label, "0 of 3 mixtures discovered")
+    }
+
+    @MainActor
     func testColorLaundryCyclesAndReentry() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

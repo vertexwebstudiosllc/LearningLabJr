@@ -17,7 +17,7 @@ private enum SCShape: Int, CaseIterable, Identifiable {
     var color: Color { [.pink, .blue, .green][rawValue] }
 }
 
-private struct SCNote: View {
+struct SCNote: View {
     let text: String
     var body: some View {
         Text(text).font(.system(.body, design: .rounded, weight: .medium))
@@ -335,68 +335,6 @@ struct ColorLaundryGame: View {
         let matched = basket.map { laundry.sort(into: $0) } ?? false
         note = matched ? target.success : target.retry
         narrator.speak(note)
-    }
-}
-
-struct ColorLabGame: View {
-    let onReplay: () -> Void
-    @State private var selected: [SCPaint] = []
-    @State private var discoveries: Set<SCPaint> = []
-    @State private var result: SCPaint?
-    @State private var note = "Predict what the paints might make."
-    @StateObject private var narrator = GameNarrator()
-    private var suggestion: String {
-        if !discoveries.contains(.orange) { return "Try red and yellow." }
-        if !discoveries.contains(.green) { return "Try yellow and blue." }
-        return "Try blue and red."
-    }
-    var body: some View {
-        ToddlerGameScaffold(title: "Little Color Lab", prompt: discoveries.count == 3 ? "You discovered orange, green, and purple by mixing paints!" : "Choose two different paints, then stir. \(suggestion)", accent: .purple, completion: discoveries.count == 3, onReplay: onReplay) {
-            ZStack {
-                Circle().fill((result?.color ?? .white).gradient).frame(width: 160, height: 160)
-                Image(systemName: "paintbrush.pointed.fill").font(.system(size: 70)).foregroundStyle(.primary.opacity(0.7))
-            }.accessibilityLabel(result.map { "Mixed \($0.name) paint" } ?? "Mixing bowl")
-            HStack(spacing: 10) {
-                ForEach([SCPaint.red, .yellow, .blue]) { paint in
-                    Button {
-                        result = nil
-                        if let i = selected.firstIndex(of: paint) { selected.remove(at: i) }
-                        else {
-                            if selected.count == 2 { selected.removeFirst() }
-                            selected.append(paint)
-                        }
-                        note = selected.isEmpty ? "Choose two paints to mix." : selected.map(\.name).joined(separator: " and ") + " selected."
-                        narrator.speak(note)
-                    } label: {
-                        VStack {
-                            Image(systemName: selected.contains(paint) ? "checkmark.circle.fill" : "drop.fill").font(.system(size: 30))
-                            Text(paint.name).font(.headline)
-                        }.foregroundStyle(paint == .yellow ? Color.black : .white)
-                            .frame(maxWidth: .infinity, minHeight: 90)
-                            .background(paint.color, in: RoundedRectangle(cornerRadius: 20))
-                    }.buttonStyle(.plain).accessibilityAddTraits(selected.contains(paint) ? .isSelected : [])
-                }
-            }
-            ToddlerActionButton(title: "Stir the paints", systemImage: "arrow.triangle.2.circlepath", color: .purple) {
-                guard selected.count == 2 else { narrator.speak("Choose two different paint colors first."); return }
-                let mixed: SCPaint = selected.contains(.red) && selected.contains(.yellow) ? .orange : selected.contains(.yellow) && selected.contains(.blue) ? .green : .purple
-                result = mixed
-                discoveries.insert(mixed)
-                note = "\(selected[0].name) and \(selected[1].name.lowercased()) make \(mixed.name.lowercased())!"
-                selected = []
-                narrator.speak(note)
-            }
-            HStack {
-                ForEach([SCPaint.orange, .green, .purple]) { paint in
-                    VStack {
-                        Image(systemName: discoveries.contains(paint) ? "checkmark.seal.fill" : "circle.dashed")
-                            .font(.system(size: 32)).foregroundStyle(paint.color)
-                        Text(paint.name).font(.caption)
-                    }.frame(maxWidth: .infinity)
-                }
-            }
-            SCNote(text: note)
-        }
     }
 }
 

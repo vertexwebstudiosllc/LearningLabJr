@@ -4,6 +4,67 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testColorLabLevelsAndMixing() {
+        XCTAssertEqual(LabLevel.levels.count, 9)
+        XCTAssertEqual(Set(LabPaint.bank.map(\.id)).count, LabPaint.bank.count)
+        var lab = ColorLabSession()
+        for (index, level) in LabLevel.levels.enumerated() {
+            XCTAssertEqual(lab.levelIndex, index)
+            XCTAssertEqual(Set(level.paints).count, 3)
+            XCTAssertEqual(Set(level.recipes.map(\.output)).count, 3)
+            XCTAssertNil(lab.mix())
+            lab.next()
+            XCTAssertEqual(lab.levelIndex, index)
+            lab.select("invalid")
+            XCTAssertTrue(lab.selected.isEmpty)
+            lab.select(level.paints[0]); lab.select(level.paints[0])
+            XCTAssertTrue(lab.selected.isEmpty)
+            for id in level.paints { lab.select(id) }
+            XCTAssertEqual(lab.selected, Array(level.paints.suffix(2)))
+            for id in lab.selected { lab.select(id) }
+            for (number, recipe) in level.recipes.enumerated() {
+                XCTAssertTrue(recipe.ingredients.isSubset(of: Set(level.paints)))
+                for order in [[recipe.first, recipe.second], [recipe.second, recipe.first]] {
+                    if lab.levelComplete { break }
+                    for id in order { lab.select(id) }
+                    XCTAssertEqual(lab.mix()?.output, recipe.output)
+                    XCTAssertEqual(lab.result?.id, recipe.output)
+                    XCTAssertEqual(lab.discoveries.count, number + 1)
+                    XCTAssertTrue(lab.selected.isEmpty)
+                }
+            }
+            XCTAssertTrue(lab.levelComplete)
+            lab.next()
+            if !lab.finished {
+                XCTAssertTrue(lab.discoveries.isEmpty)
+                XCTAssertNil(lab.result)
+            }
+        }
+        XCTAssertTrue(lab.finished)
+        XCTAssertNil(lab.mix())
+        lab.next()
+        XCTAssertEqual(lab.levelIndex, 9)
+        let blue = LabLevel.levels.first { $0.title == "Blue shades" }!
+        XCTAssertEqual(Set(blue.recipes.map(\.output)), ["navy", "gray", "sky-blue"])
+    }
+
+    @MainActor
+    func testColorLabRuthCoverage() {
+        var prompts: Set<String> = [ColorLabSession.completion, ColorLabSession.levelSuccess, ColorLabSession.chooseTwo]
+        for level in LabLevel.levels {
+            prompts.insert(level.prompt)
+            for id in level.paints { prompts.insert(LabPaint.named(id).selectionPrompt) }
+            for recipe in level.recipes {
+                prompts.insert(recipe.success)
+                prompts.insert("Choose two different paints, then stir. " + recipe.suggestion)
+            }
+        }
+        for text in prompts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+        }
+    }
+
     @MainActor
     func testLaundryColorsCyclesAndRuth() {
         XCTAssertEqual(LaundryColor.allCases.count, 11)

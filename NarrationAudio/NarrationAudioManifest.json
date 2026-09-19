@@ -946,6 +946,22 @@
       "category": "stories"
     },
     {
+      "text": "Black and white make gray!",
+      "file": "llj-1b9f9f6655fb357d535ee85b.mp3",
+      "spokenText": "Black and white make gray!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Black paint selected.",
+      "file": "llj-551a996012cb977faa07b333.mp3",
+      "spokenText": "Black paint selected.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Blue Car",
       "file": "llj-f8b8ef20b294fad89b19693c.mp3",
       "spokenText": "Blue Car",
@@ -970,9 +986,25 @@
       "category": "shapes"
     },
     {
+      "text": "Blue and black make navy!",
+      "file": "llj-87ee8bcff5af2e61ca5ab6d8.mp3",
+      "spokenText": "Blue and black make navy!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Blue and red make purple!",
       "file": "llj-f093b4846680e23761635bfc.mp3",
       "spokenText": "Blue and red make purple!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Blue and white make sky blue!",
+      "file": "llj-a4026965ddbd8b4ec54df883.mp3",
+      "spokenText": "Blue and white make sky blue!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -1040,6 +1072,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Brown and black make dark brown!",
+      "file": "llj-1a4eae85940fcadc764ee395.mp3",
+      "spokenText": "Brown and black make dark brown!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Brown and white make tan!",
+      "file": "llj-b3980ab7036114fe2266c955.mp3",
+      "spokenText": "Brown and white make tan!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Brown paint selected.",
+      "file": "llj-c7c9e2bb17a1eeb7c090634c.mp3",
+      "spokenText": "Brown paint selected.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Build a shape nest. Start with the largest, then medium, then small.",
@@ -1626,9 +1682,129 @@
       "category": "shapes"
     },
     {
+      "text": "Choose two different paints, then stir. Try black and white.",
+      "file": "llj-dcd97e48046f5e88d98ccc70.mp3",
+      "spokenText": "Choose two different paints, then stir. Try black and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try blue and black.",
+      "file": "llj-e889812432df3c91e7e7a2d6.mp3",
+      "spokenText": "Choose two different paints, then stir. Try blue and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Choose two different paints, then stir. Try blue and red.",
       "file": "llj-1d493d6a55fd22b9a1f797f2.mp3",
       "spokenText": "Choose two different paints, then stir. Try blue and red.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try blue and white.",
+      "file": "llj-f5dc88e56bcad619ceea5e1c.mp3",
+      "spokenText": "Choose two different paints, then stir. Try blue and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try brown and black.",
+      "file": "llj-c1e56bb84f01df9e3da9b59b.mp3",
+      "spokenText": "Choose two different paints, then stir. Try brown and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try brown and white.",
+      "file": "llj-0605df62ef077d3057d98a2f.mp3",
+      "spokenText": "Choose two different paints, then stir. Try brown and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try green and black.",
+      "file": "llj-0458597dff9ffaa6587e3e14.mp3",
+      "spokenText": "Choose two different paints, then stir. Try green and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try green and white.",
+      "file": "llj-6cecaf8d1fc03afe98d63310.mp3",
+      "spokenText": "Choose two different paints, then stir. Try green and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try orange and black.",
+      "file": "llj-41b12125ed220124daad3833.mp3",
+      "spokenText": "Choose two different paints, then stir. Try orange and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try orange and white.",
+      "file": "llj-7703d397036d20a7ac93f0d3.mp3",
+      "spokenText": "Choose two different paints, then stir. Try orange and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try pink and black.",
+      "file": "llj-5be6b4518c16748b85bb0dbd.mp3",
+      "spokenText": "Choose two different paints, then stir. Try pink and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try pink and white.",
+      "file": "llj-ac25d299c20731062c880364.mp3",
+      "spokenText": "Choose two different paints, then stir. Try pink and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try purple and black.",
+      "file": "llj-aefbf798d8fa06961d4d81bb.mp3",
+      "spokenText": "Choose two different paints, then stir. Try purple and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try purple and white.",
+      "file": "llj-5cf7717754aa8a4de411db4e.mp3",
+      "spokenText": "Choose two different paints, then stir. Try purple and white.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try red and black.",
+      "file": "llj-6cbb799f2dfeb3f050fdaa5c.mp3",
+      "spokenText": "Choose two different paints, then stir. Try red and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try red and white.",
+      "file": "llj-8676e6a037f551a9b25f3ad7.mp3",
+      "spokenText": "Choose two different paints, then stir. Try red and white.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -1642,9 +1818,25 @@
       "category": "shapes"
     },
     {
+      "text": "Choose two different paints, then stir. Try yellow and black.",
+      "file": "llj-e663ab137190322b4e3ff0eb.mp3",
+      "spokenText": "Choose two different paints, then stir. Try yellow and black.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Choose two different paints, then stir. Try yellow and blue.",
       "file": "llj-4b3b1245517feee4e713e76b.mp3",
       "spokenText": "Choose two different paints, then stir. Try yellow and blue.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Choose two different paints, then stir. Try yellow and white.",
+      "file": "llj-3a7fd9f5844b700dfa928842.mp3",
+      "spokenText": "Choose two different paints, then stir. Try yellow and white.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -3282,6 +3474,22 @@
       "category": "stories"
     },
     {
+      "text": "Green and black make dark green!",
+      "file": "llj-5fc61b29c3f9d1106cae132c.mp3",
+      "spokenText": "Green and black make dark green!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Green and white make light green!",
+      "file": "llj-453200cb84ce830f1de54e90.mp3",
+      "spokenText": "Green and white make light green!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Green on both sides. They match!",
       "file": "llj-5c4d53a14479334bfbe78847.mp3",
       "spokenText": "Green on both sides. They match!",
@@ -4613,6 +4821,78 @@
       "text": "Let's look at the edges. Find the triangle.",
       "file": "llj-805e70e3bf5d75be42a7d621.mp3",
       "spokenText": "Let's look at the edges. Find the triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix blue, white, and black. Choose two different paints, then stir.",
+      "file": "llj-a724c2cd4e9bd7585a4e3d60.mp3",
+      "spokenText": "Let's mix blue, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix brown, white, and black. Choose two different paints, then stir.",
+      "file": "llj-8e865cc25a24a68b88b27252.mp3",
+      "spokenText": "Let's mix brown, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix green, white, and black. Choose two different paints, then stir.",
+      "file": "llj-bfbce287f3646f8058f81323.mp3",
+      "spokenText": "Let's mix green, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix orange, white, and black. Choose two different paints, then stir.",
+      "file": "llj-15a6965e18cdf8725442bf66.mp3",
+      "spokenText": "Let's mix orange, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix pink, white, and black. Choose two different paints, then stir.",
+      "file": "llj-9f69ca820f42fa6443f6ee28.mp3",
+      "spokenText": "Let's mix pink, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix purple, white, and black. Choose two different paints, then stir.",
+      "file": "llj-653afdb84a53d7eb71023c78.mp3",
+      "spokenText": "Let's mix purple, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix red, white, and black. Choose two different paints, then stir.",
+      "file": "llj-30d7a92bb1ce440b234df0f7.mp3",
+      "spokenText": "Let's mix red, white, and black. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix red, yellow, and blue. Choose two different paints, then stir.",
+      "file": "llj-47b27abfa2c35625af19ecda.mp3",
+      "spokenText": "Let's mix red, yellow, and blue. Choose two different paints, then stir.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's mix yellow, white, and black. Choose two different paints, then stir.",
+      "file": "llj-fa7a8029c2740c914e74ebd5.mp3",
+      "spokenText": "Let's mix yellow, white, and black. Choose two different paints, then stir.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -6752,6 +7032,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Orange and black make dark orange!",
+      "file": "llj-077c869b362f901562896505.mp3",
+      "spokenText": "Orange and black make dark orange!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Orange and white make peach!",
+      "file": "llj-3bf73ba2e28a4095d65c53ba.mp3",
+      "spokenText": "Orange and white make peach!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Orange on both sides. They match!",
@@ -8946,6 +9242,30 @@
       "category": "nature"
     },
     {
+      "text": "Pink and black make dark pink!",
+      "file": "llj-f6f6b81f8f7a193ebb284af2.mp3",
+      "spokenText": "Pink and black make dark pink!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pink and white make light pink!",
+      "file": "llj-fdb9a8a80c8ea2d205b6a8d5.mp3",
+      "spokenText": "Pink and white make light pink!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pink paint selected.",
+      "file": "llj-0a658275ce42f391bf2a7d33.mp3",
+      "spokenText": "Pink paint selected.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Pitter patter, pitter patter. Rain taps on the leaves.",
       "file": "llj-783ce7655162f271140ed75d.mp3",
       "spokenText": "Pitter patter, pitter patter. Rain taps on the leaves.",
@@ -9024,6 +9344,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Purple and black make dark purple!",
+      "file": "llj-039f0a5ea340a08c18ed2391.mp3",
+      "spokenText": "Purple and black make dark purple!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Purple and white make lavender!",
+      "file": "llj-1e54b25c1104d2ac37f80159.mp3",
+      "spokenText": "Purple and white make lavender!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Purple on both sides. They match!",
@@ -9410,9 +9746,25 @@
       "category": "shapes"
     },
     {
+      "text": "Red and black make dark red!",
+      "file": "llj-82d68799e353e43ecd33e1ee.mp3",
+      "spokenText": "Red and black make dark red!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Red and blue make purple!",
       "file": "llj-e0492bc3f7614373f171825b.mp3",
       "spokenText": "Red and blue make purple!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Red and white make pink!",
+      "file": "llj-7a1f29021c4a7020741f1067.mp3",
+      "spokenText": "Red and white make pink!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -13202,6 +13554,14 @@
       "category": "counting"
     },
     {
+      "text": "White paint selected.",
+      "file": "llj-0cac5e72a781a87dcd0a7591.mp3",
+      "spokenText": "White paint selected.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Who is Bunny? Open the bag for a story prop.",
       "file": "llj-def9eb043a8465a8f9fe8ee1.mp3",
       "spokenText": "Who is Bunny? Open the bag for a story prop.",
@@ -13538,6 +13898,14 @@
       "category": "shapes"
     },
     {
+      "text": "Yellow and black make ochre!",
+      "file": "llj-73acd7f432638cb8cc876aed.mp3",
+      "spokenText": "Yellow and black make ochre!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Yellow and blue make green!",
       "file": "llj-6a1f5b8bca122d2f33bd240b.mp3",
       "spokenText": "Yellow and blue make green!",
@@ -13549,6 +13917,14 @@
       "text": "Yellow and red make orange!",
       "file": "llj-6a507f10324d1c8d8ef7ab7f.mp3",
       "spokenText": "Yellow and red make orange!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Yellow and white make cream!",
+      "file": "llj-68b963cddda231e4a52faaf1.mp3",
+      "spokenText": "Yellow and white make cream!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -14138,6 +14514,14 @@
       "category": "nature"
     },
     {
+      "text": "You explored all the color levels! So many colors to discover!",
+      "file": "llj-b7081891ae020bf13f23c22d.mp3",
+      "spokenText": "You explored all the color levels! So many colors to discover!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "You explored one way to pause together.",
       "file": "llj-b2632017d94a76b122634200.mp3",
       "spokenText": "You explored one way to pause together.",
@@ -14672,6 +15056,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "You found all three mixtures! Let's try the next color level.",
+      "file": "llj-92d345d5c8edb49ab220352b.mp3",
+      "spokenText": "You found all three mixtures! Let's try the next color level.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "You found an orange carrot!",

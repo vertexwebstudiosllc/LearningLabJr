@@ -10,7 +10,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Mir
 | --- | --- | --- |
 | Shape Post | Drag a shape stamp into one of three outline openings | Ten distinct shapes in shuffled order |
 | Color Laundry | Drag eleven shirt colors into three matching-choice baskets per round | Continuous shuffled cycles, with a Next shirt pause |
-| Little Color Lab | Select two primary paints, mix, and discover combinations | Orange, green, and purple discovered |
+| Little Color Lab | Explore primary mixtures, then lighten and darken eight paint colors | Nine levels, three discoveries per level |
 | Pattern Train | Extend AB and AAB repeating shape patterns | Three trains |
 | Build a Shape Town | Assemble spatially positioned shape pieces into pictures | House, rocket, and tree |
 | Nesting Shapes | Order and layer large, medium, and small shapes | Three nests |
