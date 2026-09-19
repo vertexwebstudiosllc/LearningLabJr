@@ -8,7 +8,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Mir
 
 | Game | Distinct interaction | Natural finish |
 | --- | --- | --- |
-| Shape Post | Match a large shape stamp to an outline opening | Six stamps |
+| Shape Post | Drag a shape stamp into one of three outline openings | Ten distinct shapes in shuffled order |
 | Color Laundry | Sort shirts into three accumulating color baskets | Six shirts |
 | Little Color Lab | Select two primary paints, mix, and discover combinations | Orange, green, and purple discovered |
 | Pattern Train | Extend AB and AAB repeating shape patterns | Three trains |

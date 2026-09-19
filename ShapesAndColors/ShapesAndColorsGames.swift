@@ -49,40 +49,126 @@ private struct SCPaintPicker: View {
     }
 }
 
+enum PostShape: String, CaseIterable, Identifiable {
+    case circle, square, triangle, rectangle, oval, diamond, star, heart, pentagon, hexagon
+    var id: String { rawValue }
+    var name: String { rawValue.capitalized }
+    var symbol: String { rawValue }
+    var prompt: String { "Drag the \(rawValue) to its matching opening." }
+    var success: String { "The \(rawValue) fits! You posted it!" }
+    var retry: String { "Let's try again. Drag the \(rawValue) to the matching opening." }
+}
+
+struct ShapePostRound {
+    let target: PostShape
+    let openings: [PostShape]
+    static let completion = "All ten shapes are posted! Nice matching!"
+    static func session() -> [Self] {
+        PostShape.allCases.shuffled().map { target in
+            Self(target: target, openings: ([target] + PostShape.allCases.filter { $0 != target }.shuffled().prefix(2)).shuffled())
+        }
+    }
+    // Generous rectangular drop zones include the outline and its label.
+    static func holeFrame(index: Int, width: CGFloat) -> CGRect {
+        let cellWidth = (width - 24) / 3
+        return CGRect(x: CGFloat(index) * (cellWidth + 12), y: 136, width: cellWidth, height: 116)
+    }
+    func accepts(_ point: CGPoint, width: CGFloat) -> Bool {
+        guard let index = openings.firstIndex(of: target) else { return false }
+        return Self.holeFrame(index: index, width: width).contains(point)
+    }
+}
+
 struct ShapePostGame: View {
     let onReplay: () -> Void
+    @State private var rounds = ShapePostRound.session()
     @State private var posted = 0
-    @State private var note = "Trace the edges and name the shape together."
+    @State private var solved = false
+    @State private var offset = CGSize.zero
+    @State private var hover: PostShape?
+    @State private var note = "Slide the shape with your finger."
     @StateObject private var narrator = GameNarrator()
-    private let sequence: [SCShape] = [.circle, .triangle, .square, .triangle, .circle, .square]
-    private var target: SCShape { sequence[min(posted, sequence.count - 1)] }
+    private var finished: Bool { posted == rounds.count }
+    private var round: ShapePostRound { rounds[min(posted, rounds.count - 1)] }
+
     var body: some View {
-        ToddlerGameScaffold(title: "Shape Post", prompt: posted == sequence.count ? "All six shape stamps are posted!" : "Post the \(target.name.lowercased()) in its matching opening.", accent: .blue, completion: posted == sequence.count, onReplay: onReplay) {
-            Image(systemName: posted == sequence.count ? "envelope.fill" : target.symbol)
-                .font(.system(size: 105, weight: .bold)).foregroundStyle(target.color)
-                .frame(height: 145).accessibilityLabel("\(target.name) stamp")
-            Text("\(posted) of 6 stamps posted").font(.headline)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 92))], spacing: 14) {
-                ForEach(SCShape.allCases) { shape in
-                    Button {
-                        guard posted < sequence.count else { return }
-                        if shape == target { posted += 1; note = "The \(shape.name.lowercased()) fits!" }
-                        else { note = "Let's look at the edges. Find the \(target.name.lowercased())." }
-                        narrator.speak(note)
-                    } label: {
-                        VStack(spacing: 12) {
-                            Image(systemName: shape.outline).font(.system(size: 56, weight: .bold))
-                            Text(shape.name).font(.system(.subheadline, design: .rounded, weight: .bold))
-                        }.foregroundStyle(.primary).frame(maxWidth: .infinity, minHeight: 130)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 24))
-                    }.buttonStyle(.plain)
-                        .accessibilityLabel("\(shape.name) opening")
-                        .accessibilityHint("Post the matching shape stamp here")
-                        .accessibilityIdentifier("shapes.post.opening.\(shape.name.lowercased())")
-                }
-            }
+        ToddlerGameScaffold(title: "Shape Post", prompt: finished ? ShapePostRound.completion : round.target.prompt, accent: .blue, completion: finished, onReplay: onReplay) {
+            Text("\(posted + (solved ? 1 : 0)) of 10 shapes posted")
+                .font(.headline).accessibilityIdentifier("shapes.post.progress")
+            GeometryReader { geometry in
+                ZStack(alignment: .topLeading) {
+                    ForEach(Array(round.openings.enumerated()), id: \.element.id) { index, shape in
+                        opening(shape, index: index, width: geometry.size.width)
+                    }
+                    stamp(width: geometry.size.width)
+                }.coordinateSpace(name: "shape-post-board")
+            }.frame(height: 260)
             SCNote(text: note)
+            if solved && !finished {
+                ToddlerActionButton(title: posted == rounds.count - 1 ? "Finish posting" : "Next shape", systemImage: "arrow.right", color: .blue) {
+                    guard solved, !finished else { return }
+                    posted += 1
+                    solved = false
+                    note = "Slide the shape with your finger."
+                }.accessibilityIdentifier("shapes.post.next")
+            }
         }
+    }
+
+    private func opening(_ shape: PostShape, index: Int, width: CGFloat) -> some View {
+        let frame = ShapePostRound.holeFrame(index: index, width: width)
+        let filled = solved && shape == round.target
+        return VStack(spacing: 8) {
+            Image(systemName: shape.symbol + (filled ? ".fill" : ""))
+                .resizable().scaledToFit().frame(width: 62, height: 62)
+            Text(shape.name).font(.system(.caption, design: .rounded, weight: .bold))
+        }
+        .foregroundStyle(filled ? Color.green : Color.primary)
+        .frame(width: frame.width, height: frame.height)
+        .background(.white, in: RoundedRectangle(cornerRadius: 22))
+        .overlay(RoundedRectangle(cornerRadius: 22).stroke(hover == shape ? Color.blue : Color.blue.opacity(0.2), lineWidth: 3))
+        .position(x: frame.midX, y: frame.midY)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(shape.name) opening")
+        .accessibilityIdentifier("shapes.post.opening.\(shape.rawValue)")
+        .accessibilityAction(named: "Post shape here") { post(matches: shape == round.target) }
+    }
+
+    private func stamp(width: CGFloat) -> some View {
+        Image(systemName: solved || finished ? "checkmark.circle.fill" : round.target.symbol + ".fill")
+            .resizable().scaledToFit().foregroundStyle(solved ? Color.green : Color.blue)
+            .frame(width: 86, height: 86).padding(10)
+            .contentShape(Rectangle())
+            .highPriorityGesture(stampDrag(width: width), including: solved || finished ? .none : .all)
+            .offset(offset)
+            .position(x: width / 2, y: 57)
+            .accessibilityLabel("\(round.target.name) stamp")
+            .accessibilityValue(round.target.rawValue)
+            .accessibilityHint("Drag to the matching opening, or use an opening's Post shape here action.")
+            .accessibilityIdentifier("shapes.post.stamp")
+    }
+
+    private func stampDrag(width: CGFloat) -> some Gesture {
+        DragGesture(minimumDistance: 4, coordinateSpace: .named("shape-post-board"))
+            .onChanged { value in
+                guard !solved, !finished else { return }
+                offset = value.translation
+                hover = round.openings.enumerated().first {
+                    ShapePostRound.holeFrame(index: $0.offset, width: width).contains(value.location)
+                }?.element
+            }
+            .onEnded { value in
+                offset = .zero
+                hover = nil
+                post(matches: round.accepts(value.location, width: width))
+            }
+    }
+
+    private func post(matches: Bool) {
+        guard !solved, !finished else { return }
+        solved = matches
+        note = matches ? round.target.success : round.target.retry
+        narrator.speak(note)
     }
 }
 

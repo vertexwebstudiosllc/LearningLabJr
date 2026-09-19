@@ -5,6 +5,37 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testShapePostSessionsDropZonesAndRuth() {
+        XCTAssertEqual(PostShape.allCases.count, 10)
+        for _ in 0..<100 {
+            let rounds = ShapePostRound.session()
+            XCTAssertEqual(Set(rounds.map(\.target)), Set(PostShape.allCases))
+            for round in rounds {
+                XCTAssertEqual(Set(round.openings).count, 3)
+                XCTAssertTrue(round.openings.contains(round.target))
+                for width: CGFloat in [280, 362, 740] {
+                    for (index, shape) in round.openings.enumerated() {
+                        let frame = ShapePostRound.holeFrame(index: index, width: width)
+                        XCTAssertGreaterThanOrEqual(frame.width, 64)
+                        XCTAssertEqual(round.accepts(CGPoint(x: frame.midX, y: frame.midY), width: width), shape == round.target)
+                    }
+                    XCTAssertFalse(round.accepts(CGPoint(x: width / 2, y: 57), width: width))
+                    XCTAssertFalse(round.accepts(CGPoint(x: -10, y: 180), width: width))
+                }
+            }
+        }
+        for shape in PostShape.allCases {
+            XCTAssertNotNil(UIImage(systemName: shape.symbol))
+            XCTAssertNotNil(UIImage(systemName: shape.symbol + ".fill"))
+            for text in [shape.prompt, shape.success, shape.retry] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+            }
+        }
+        XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: ShapePostRound.completion))
+    }
+
+    @MainActor
     func testOriginalArcadeArtworkAndRuthNames() {
         let vehicles = VehicleImageOptionsLoader.loadOptions()
         let sports = ClawImageOptionsLoader.loadOptions()

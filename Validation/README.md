@@ -45,6 +45,6 @@ Coverage:
 - Bundled Polly manifest lookup and every MP3 opening with a valid duration; all 60 story pages and literal narration calls are covered by the source checks.
 - Parent narration preview uses the bundled narrator and starts/stops while spoken game directions remain off.
 - Debug route checks assert that every narration key encountered has a bundled recording.
-- Landscape Shape Post completion and replay, with opening controls at least 64 points high. The test scrolls the actual scroll view in either direction instead of swiping the whole application window.
+- Shape Post checks cover ten distinct targets, three openings per round, drop-zone acceptance at phone/tablet widths, symbol availability and Ruth audio. Its landscape UI test rejects taps, incorrect and outside drops, then drags all ten shapes and replays.
 
 UI navigation smoke tests establish that screens open; they do not establish that every possible interaction in every game has been tested. TestFlight purchases, device audio/VoiceOver, toddler/caregiver playtesting, and App Store materials still need release review.

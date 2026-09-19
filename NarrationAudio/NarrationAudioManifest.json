@@ -682,6 +682,14 @@
       "category": "shapes"
     },
     {
+      "text": "All ten shapes are posted! Nice matching!",
+      "file": "llj-43ce6907681430fd7ea03657.mp3",
+      "spokenText": "All ten shapes are posted! Nice matching!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. “I’ll sit with Owen for a while.” Owen peeked. His fear felt small. Beau did not seem scared at all.",
       "file": "llj-c384de0e739c6059667e5697.mp3",
       "spokenText": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. “I’ll sit with Owen for a while.” Owen peeked. His fear felt small. Beau did not seem scared at all.",
@@ -1909,6 +1917,86 @@
       "text": "Down the road!",
       "file": "llj-ef69faff634335a2e9ecdf7c.mp3",
       "spokenText": "Down the road!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the circle to its matching opening.",
+      "file": "llj-e940d0e7cf8927d4cf0a438d.mp3",
+      "spokenText": "Drag the circle to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the diamond to its matching opening.",
+      "file": "llj-3b3cb8f3dc397fe6c87a1cb8.mp3",
+      "spokenText": "Drag the diamond to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the heart to its matching opening.",
+      "file": "llj-6389d075b5421892f8fce23e.mp3",
+      "spokenText": "Drag the heart to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the hexagon to its matching opening.",
+      "file": "llj-7c02efb1ae00f58b09949b00.mp3",
+      "spokenText": "Drag the hexagon to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the oval to its matching opening.",
+      "file": "llj-b04419fe0fc09f8b847e9d6a.mp3",
+      "spokenText": "Drag the oval to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the pentagon to its matching opening.",
+      "file": "llj-ad9a45593f870a8726e2dbd2.mp3",
+      "spokenText": "Drag the pentagon to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the rectangle to its matching opening.",
+      "file": "llj-3e5d9cbd1f30b43255941e66.mp3",
+      "spokenText": "Drag the rectangle to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the square to its matching opening.",
+      "file": "llj-65e0cf2fea6dfafd68679beb.mp3",
+      "spokenText": "Drag the square to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the star to its matching opening.",
+      "file": "llj-fb263bd70e2600c6ae5574b3.mp3",
+      "spokenText": "Drag the star to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the triangle to its matching opening.",
+      "file": "llj-101aea33138c1235d01ce186.mp3",
+      "spokenText": "Drag the triangle to its matching opening.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -4512,6 +4600,86 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Let's try again. Drag the circle to the matching opening.",
+      "file": "llj-cfa53c0af4f1324f90c011a7.mp3",
+      "spokenText": "Let's try again. Drag the circle to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the diamond to the matching opening.",
+      "file": "llj-bb36959c0656fedc4462d459.mp3",
+      "spokenText": "Let's try again. Drag the diamond to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the heart to the matching opening.",
+      "file": "llj-3161a850221b593f24bbf4c2.mp3",
+      "spokenText": "Let's try again. Drag the heart to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the hexagon to the matching opening.",
+      "file": "llj-ffcb94b538dc3ba96e0a8fc0.mp3",
+      "spokenText": "Let's try again. Drag the hexagon to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the oval to the matching opening.",
+      "file": "llj-5faf8a4af4979def6f2f7e04.mp3",
+      "spokenText": "Let's try again. Drag the oval to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the pentagon to the matching opening.",
+      "file": "llj-9019f64f3950afaa7fe534d8.mp3",
+      "spokenText": "Let's try again. Drag the pentagon to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the rectangle to the matching opening.",
+      "file": "llj-39ebd640a581332b97e56388.mp3",
+      "spokenText": "Let's try again. Drag the rectangle to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the square to the matching opening.",
+      "file": "llj-c45aeb52184f4e24a24dbe20.mp3",
+      "spokenText": "Let's try again. Drag the square to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the star to the matching opening.",
+      "file": "llj-32d36fde1fb884e66a209578.mp3",
+      "spokenText": "Let's try again. Drag the star to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Drag the triangle to the matching opening.",
+      "file": "llj-e373fbaf528e1b93f4ff4a39.mp3",
+      "spokenText": "Let's try again. Drag the triangle to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Let's try the other basket. Tap its letter and listen.",
@@ -10914,6 +11082,14 @@
       "category": "shapes"
     },
     {
+      "text": "The circle fits! You posted it!",
+      "file": "llj-65ac0441324d116418b2470c.mp3",
+      "spokenText": "The circle fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The claw is over the ball. Aim at the car.",
       "file": "llj-9fdf62ee4d006d331aac7051.mp3",
       "spokenText": "The claw is over the ball. Aim at the car.",
@@ -11018,6 +11194,14 @@
       "category": "stories"
     },
     {
+      "text": "The diamond fits! You posted it!",
+      "file": "llj-1b5af9e029598c095190604b.mp3",
+      "spokenText": "The diamond fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The dolphin belongs in the ocean. Look for litter.",
       "file": "llj-cd3306fa8c160c6e5a04633a.mp3",
       "spokenText": "The dolphin belongs in the ocean. Look for litter.",
@@ -11053,6 +11237,22 @@
       "text": "The gift box has a square shape.",
       "file": "llj-ae8c7c9b1a3fc8f598feed3d.mp3",
       "spokenText": "The gift box has a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The heart fits! You posted it!",
+      "file": "llj-b30d37f3e045e7fd47a44033.mp3",
+      "spokenText": "The heart fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The hexagon fits! You posted it!",
+      "file": "llj-9a19cb414da0089d108d385e.mp3",
+      "spokenText": "The hexagon fits! You posted it!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -11106,6 +11306,22 @@
       "category": "nature"
     },
     {
+      "text": "The oval fits! You posted it!",
+      "file": "llj-0363dd9a0fe5e75559cafbeb.mp3",
+      "spokenText": "The oval fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The pentagon fits! You posted it!",
+      "file": "llj-0655986b81c9b1efed87e27a.mp3",
+      "spokenText": "The pentagon fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
       "file": "llj-7f0bbe11429704066678edc3.mp3",
       "spokenText": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
@@ -11120,6 +11336,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "The rectangle fits! You posted it!",
+      "file": "llj-a46e8744d83804d40bf32787.mp3",
+      "spokenText": "The rectangle fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "The sea turtle belongs in the ocean. Look for litter.",
@@ -11154,6 +11378,22 @@
       "category": "shapes"
     },
     {
+      "text": "The square fits! You posted it!",
+      "file": "llj-855189a577c12c398bd80741.mp3",
+      "spokenText": "The square fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The star fits! You posted it!",
+      "file": "llj-d57338cbf67b9040bd1f62a3.mp3",
+      "spokenText": "The star fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
       "file": "llj-24c7de42046fc8f8260dce40.mp3",
       "spokenText": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
@@ -11181,6 +11421,14 @@
       "text": "The triangle fits!",
       "file": "llj-82b63dd572d8425d4b74873f.mp3",
       "spokenText": "The triangle fits!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The triangle fits! You posted it!",
+      "file": "llj-1a5a8f5d69810e76afe66dce.mp3",
+      "spokenText": "The triangle fits! You posted it!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"

@@ -778,8 +778,18 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testLandscapeShapePostCompletesAndReplays() async throws {
+        try await checkShapePost(orientation: .landscapeLeft)
+    }
+
+    @MainActor
+    func testShapePostDragCompletesAndReplays() async throws {
+        try await checkShapePost(orientation: .portrait)
+    }
+
+    @MainActor
+    private func checkShapePost(orientation: UIDeviceOrientation) async throws {
         let app = try await launch()
-        XCUIDevice.shared.orientation = .landscapeLeft
+        XCUIDevice.shared.orientation = orientation
         defer { XCUIDevice.shared.orientation = .portrait }
         let category = app.buttons["category.Shapes & Colors"]
         try reveal(category, in: app)
@@ -789,20 +799,44 @@ final class ActivitySmokeTests: XCTestCase {
         try reveal(card, in: app)
         card.tap()
         XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
-        for shape in ["Circle", "Triangle", "Square", "Triangle", "Circle", "Square"] {
-            let opening = app.buttons["shapes.post.opening.\(shape.lowercased())"]
+        var seen: Set<String> = []
+        for index in 0..<10 {
+            let stamp = app.images["shapes.post.stamp"]
+            try reveal(stamp, in: app)
+            let shape = try XCTUnwrap(stamp.value as? String)
+            XCTAssertTrue(seen.insert(shape).inserted)
+            let opening = app.otherElements["shapes.post.opening.\(shape)"]
             try reveal(opening, in: app)
             XCTAssertGreaterThanOrEqual(opening.frame.height, 64)
-            opening.tap()
+            XCTAssertTrue(stamp.isHittable)
+            if index == 0 {
+                let screenshot = XCTAttachment(screenshot: app.screenshot())
+                screenshot.name = "Shape Post drag board"
+                screenshot.lifetime = .keepAlways
+                add(screenshot)
+                opening.tap()
+                XCTAssertFalse(app.buttons["shapes.post.next"].exists, "Tapping must not post a stamp")
+                let wrong = app.otherElements.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.post.opening.' AND identifier != %@", opening.identifier)).firstMatch
+                stamp.press(forDuration: 0.1, thenDragTo: wrong)
+                XCTAssertFalse(app.buttons["shapes.post.next"].exists)
+                stamp.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: stamp.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5)))
+                XCTAssertFalse(app.buttons["shapes.post.next"].exists)
+            }
+            stamp.press(forDuration: 0.1, thenDragTo: opening)
+            let next = app.buttons["shapes.post.next"]
+            XCTAssertTrue(next.waitForExistence(timeout: 3))
+            try reveal(next, in: app)
+            next.tap()
         }
+        XCTAssertEqual(seen.count, 10)
         let replay = app.buttons["Play again"]
         try reveal(replay, in: app)
         let screenshot = XCTAttachment(screenshot: app.screenshot())
-        screenshot.name = "Shape Post landscape completion"
+        screenshot.name = "Shape Post completion"
         screenshot.lifetime = .keepAlways
         add(screenshot)
         replay.tap()
-        XCTAssertTrue(app.staticTexts["0 of 6 stamps posted"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["0 of 10 shapes posted"].waitForExistence(timeout: 5))
     }
 
     @MainActor
