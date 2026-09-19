@@ -16,13 +16,13 @@ struct ABCsAndPhonicsMenu: View {
         .init(id: "phonics.syllable-hop", title: "Syllable Hop", skill: "Hear the beats in spoken words", interaction: "Clap or tap each spoken word part, then check the beat count", ageBand: "Optional · Ages 4+", caregiverTip: "Say rabbit as rab-bit while you clap together. Help whenever needed.")
     ]
 
-    private static let symbols = ["a.square.fill", "pencil.tip", "basket.fill", "car.fill", "basket", "hand.point.down.fill", "textformat.abc", "ear.fill", "tram.fill", "camera.macro", "magnifyingglass", "hands.clap.fill"]
-    private static let assets: [String?] = ["A", "Button-Letter-Draw", "Button-Sound-Basket", "carBlue", "Apple", "basketball", "cat", "Moon", "B", "cat", "M", "rabbit"]
+    // Match the single-color icon treatment used by Counting, Shapes and Feelings.
+    private static let symbols = ["square.on.square", "pencil.tip", "basket.fill", "car.fill", "fork.knife", "hand.point.down.fill", "textformat.abc", "ear.fill", "window.casement.closed", "camera.macro", "magnifyingglass", "hands.clap.fill"]
 
     var body: some View {
         ActivityMenu(title: "ABCs & Word Play", subtitle: "12 ways to listen, talk, and discover letters together", accent: .orange) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
-                LiteracyMenuLink(index: index, activity: activity, symbol: Self.symbols[index], asset: Self.assets[index])
+                LiteracyMenuLink(index: index, activity: activity, symbol: Self.symbols[index])
             }
         }
     }
@@ -32,7 +32,6 @@ private struct LiteracyMenuLink: View {
     let index: Int
     let activity: LearningActivity
     let symbol: String
-    let asset: String?
     @ObservedObject private var store = StoreManager.shared
     @State private var showPremiumGate = false
     // Preserve the six original premium destinations and entitlement behavior.
@@ -51,7 +50,18 @@ private struct LiteracyMenuLink: View {
     }
 
     private var card: some View {
-        ActivityCard(title: activity.title, subtitle: "\(activity.ageBand)\(locked ? " · Premium" : "")", symbol: locked ? "lock.fill" : symbol, asset: asset, accent: .orange)
+        ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbol, accent: .orange)
+            .overlay(alignment: .topTrailing) {
+                if locked {
+                    Image(systemName: "lock.fill")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.orange)
+                        .frame(width: 32, height: 32)
+                        .background(Color.orange.opacity(0.12), in: Circle())
+                        .padding(14)
+                        .accessibilityHidden(true)
+                }
+            }
             .accessibilityLabel("\(activity.title). \(activity.ageBand). \(locked ? "Premium, grown-up required" : activity.skill)")
     }
 
