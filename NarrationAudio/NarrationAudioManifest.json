@@ -2114,6 +2114,70 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the black circle to its outline.",
+      "file": "llj-182c5701e8ef0d75158fb3d4.mp3",
+      "spokenText": "Drag the black circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the black rectangle to its outline.",
+      "file": "llj-2219f6d6caf85ab57f10464d.mp3",
+      "spokenText": "Drag the black rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the blue circle to its outline.",
+      "file": "llj-b124b162abe5ebe09d7f0183.mp3",
+      "spokenText": "Drag the blue circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the blue oval to its outline.",
+      "file": "llj-3d29d649499d5c4cc1e6f616.mp3",
+      "spokenText": "Drag the blue oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the blue rectangle to its outline.",
+      "file": "llj-7f149c27ff532a91896f085f.mp3",
+      "spokenText": "Drag the blue rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the blue triangle to its outline.",
+      "file": "llj-6779acad698a94bbd2cfdde9.mp3",
+      "spokenText": "Drag the blue triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the brown rectangle to its outline.",
+      "file": "llj-8eccbd0419b5384355e5cae7.mp3",
+      "spokenText": "Drag the brown rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the brown triangle to its outline.",
+      "file": "llj-efe71764e052ce6b561de025.mp3",
+      "spokenText": "Drag the brown triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Drag the circle to its matching opening.",
       "file": "llj-e940d0e7cf8927d4cf0a438d.mp3",
       "spokenText": "Drag the circle to its matching opening.",
@@ -2125,6 +2189,46 @@
       "text": "Drag the diamond to its matching opening.",
       "file": "llj-3b3cb8f3dc397fe6c87a1cb8.mp3",
       "spokenText": "Drag the diamond to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the gray oval to its outline.",
+      "file": "llj-9abc42786cdee7c0faffe2e0.mp3",
+      "spokenText": "Drag the gray oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the gray rectangle to its outline.",
+      "file": "llj-a965a00aca76cccfd6970206.mp3",
+      "spokenText": "Drag the gray rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the green oval to its outline.",
+      "file": "llj-2e780823f8a95e93015e3805.mp3",
+      "spokenText": "Drag the green oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the green rectangle to its outline.",
+      "file": "llj-cdcb227ab62aa3eda0d88de8.mp3",
+      "spokenText": "Drag the green rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the green triangle to its outline.",
+      "file": "llj-29c0163cb80cc0de103eb9d4.mp3",
+      "spokenText": "Drag the green triangle to its outline.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -2146,6 +2250,46 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the orange diamond to its outline.",
+      "file": "llj-e2b60cb9fff3beaf0a083843.mp3",
+      "spokenText": "Drag the orange diamond to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the orange oval to its outline.",
+      "file": "llj-16e1a98ff4430f23cff2b1d3.mp3",
+      "spokenText": "Drag the orange oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the orange rectangle to its outline.",
+      "file": "llj-2b89f4655dc45687a0534dde.mp3",
+      "spokenText": "Drag the orange rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the orange square to its outline.",
+      "file": "llj-32ef3eceeda30e6c164244c0.mp3",
+      "spokenText": "Drag the orange square to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the orange triangle to its outline.",
+      "file": "llj-821d1359e45ce6c87dfc9559.mp3",
+      "spokenText": "Drag the orange triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Drag the oval to its matching opening.",
       "file": "llj-b04419fe0fc09f8b847e9d6a.mp3",
       "spokenText": "Drag the oval to its matching opening.",
@@ -2162,9 +2306,89 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the pink circle to its outline.",
+      "file": "llj-bddffdf04c79e0e20c3e4aea.mp3",
+      "spokenText": "Drag the pink circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the pink oval to its outline.",
+      "file": "llj-299213ec483165e131cb89c8.mp3",
+      "spokenText": "Drag the pink oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the pink triangle to its outline.",
+      "file": "llj-bfccad1d972ef4e88acdeae5.mp3",
+      "spokenText": "Drag the pink triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the purple oval to its outline.",
+      "file": "llj-64b25943cc85cf87ad0bc257.mp3",
+      "spokenText": "Drag the purple oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the purple triangle to its outline.",
+      "file": "llj-c8131c1f4210dbc7d8af11f0.mp3",
+      "spokenText": "Drag the purple triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Drag the rectangle to its matching opening.",
       "file": "llj-3e5d9cbd1f30b43255941e66.mp3",
       "spokenText": "Drag the rectangle to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the red circle to its outline.",
+      "file": "llj-acbfdf6ce36897742045eea3.mp3",
+      "spokenText": "Drag the red circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the red oval to its outline.",
+      "file": "llj-d28370a288ffd68dc460bb92.mp3",
+      "spokenText": "Drag the red oval to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the red rectangle to its outline.",
+      "file": "llj-c734a16f63ef68b35d53da7a.mp3",
+      "spokenText": "Drag the red rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the red square to its outline.",
+      "file": "llj-b1e6ec4b60fd44c6d6136164.mp3",
+      "spokenText": "Drag the red square to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the red triangle to its outline.",
+      "file": "llj-18cbb552060cac7fe9d638cd.mp3",
+      "spokenText": "Drag the red triangle to its outline.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -2189,6 +2413,70 @@
       "text": "Drag the triangle to its matching opening.",
       "file": "llj-101aea33138c1235d01ce186.mp3",
       "spokenText": "Drag the triangle to its matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the white circle to its outline.",
+      "file": "llj-33488d8595dfeffdb9c2eb7a.mp3",
+      "spokenText": "Drag the white circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the white rectangle to its outline.",
+      "file": "llj-cbff7c98b7ff16bdbe690913.mp3",
+      "spokenText": "Drag the white rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the white square to its outline.",
+      "file": "llj-63c75aff546446038a256e83.mp3",
+      "spokenText": "Drag the white square to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the white triangle to its outline.",
+      "file": "llj-a1b2a3a7e534359cff7a369e.mp3",
+      "spokenText": "Drag the white triangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the yellow circle to its outline.",
+      "file": "llj-c1d902bdf41fb2538b6b7d77.mp3",
+      "spokenText": "Drag the yellow circle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the yellow rectangle to its outline.",
+      "file": "llj-89dcf1dcde58f09c3eb4060a.mp3",
+      "spokenText": "Drag the yellow rectangle to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the yellow square to its outline.",
+      "file": "llj-5b20418cc98444a77a41e22e.mp3",
+      "spokenText": "Drag the yellow square to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Drag the yellow triangle to its outline.",
+      "file": "llj-6776c8fff2f573c7cbeeccb9.mp3",
+      "spokenText": "Drag the yellow triangle to its outline.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -4754,6 +5042,166 @@
       "category": "literacy"
     },
     {
+      "text": "Let's build the bird! Choose a shape below, then drag it to its outline.",
+      "file": "llj-1680c13c72e6fcb43b822d58.mp3",
+      "spokenText": "Let's build the bird! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the butterfly! Choose a shape below, then drag it to its outline.",
+      "file": "llj-ccb384cb72088b38f3f94c2a.mp3",
+      "spokenText": "Let's build the butterfly! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the car! Choose a shape below, then drag it to its outline.",
+      "file": "llj-f9800605cef6f305e7bdac57.mp3",
+      "spokenText": "Let's build the car! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the castle! Choose a shape below, then drag it to its outline.",
+      "file": "llj-6670ef60846f40db2f7d7f3f.mp3",
+      "spokenText": "Let's build the castle! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the fish! Choose a shape below, then drag it to its outline.",
+      "file": "llj-08fba16b08e766eaa666de5a.mp3",
+      "spokenText": "Let's build the fish! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the flower! Choose a shape below, then drag it to its outline.",
+      "file": "llj-c7273187ee4e75c69421a609.mp3",
+      "spokenText": "Let's build the flower! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the house! Choose a shape below, then drag it to its outline.",
+      "file": "llj-edc3581ab16673f7225eaf1a.mp3",
+      "spokenText": "Let's build the house! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the ice cream! Choose a shape below, then drag it to its outline.",
+      "file": "llj-37620ae3fa5652d42bbb8147.mp3",
+      "spokenText": "Let's build the ice cream! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the lighthouse! Choose a shape below, then drag it to its outline.",
+      "file": "llj-b1cfc49b95090f212eb9af74.mp3",
+      "spokenText": "Let's build the lighthouse! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the mountains! Choose a shape below, then drag it to its outline.",
+      "file": "llj-52dcc1da4daa11dd3da40630.mp3",
+      "spokenText": "Let's build the mountains! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the mushroom! Choose a shape below, then drag it to its outline.",
+      "file": "llj-8cb9dd15ead8e6fd445ccfb2.mp3",
+      "spokenText": "Let's build the mushroom! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the robot! Choose a shape below, then drag it to its outline.",
+      "file": "llj-bd7208e97a57d3effc257713.mp3",
+      "spokenText": "Let's build the robot! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the rocket! Choose a shape below, then drag it to its outline.",
+      "file": "llj-9f3b91c49b77ae7036af89b4.mp3",
+      "spokenText": "Let's build the rocket! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the sailboat! Choose a shape below, then drag it to its outline.",
+      "file": "llj-a25939c80fac040c80f5cfe3.mp3",
+      "spokenText": "Let's build the sailboat! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the snowman! Choose a shape below, then drag it to its outline.",
+      "file": "llj-f2c64e8fb9c95f6eaa216b59.mp3",
+      "spokenText": "Let's build the snowman! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the tent! Choose a shape below, then drag it to its outline.",
+      "file": "llj-b311694fa9670bd32fc53f90.mp3",
+      "spokenText": "Let's build the tent! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the train! Choose a shape below, then drag it to its outline.",
+      "file": "llj-a37a963b1ae9acd89c62aefd.mp3",
+      "spokenText": "Let's build the train! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the tree! Choose a shape below, then drag it to its outline.",
+      "file": "llj-5da074cf30c5f865ad84012c.mp3",
+      "spokenText": "Let's build the tree! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the truck! Choose a shape below, then drag it to its outline.",
+      "file": "llj-b667757a71535f9b78e6a2c3.mp3",
+      "spokenText": "Let's build the truck! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's build the windmill! Choose a shape below, then drag it to its outline.",
+      "file": "llj-dda97c38204854a7717f7585.mp3",
+      "spokenText": "Let's build the windmill! Choose a shape below, then drag it to its outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Let's build toast. Copy the letters from left to right. Your grown-up can help.",
       "file": "llj-2fc7f947c904bf1db800161f.mp3",
       "spokenText": "Let's build toast. Copy the letters from left to right. Your grown-up can help.",
@@ -5061,6 +5509,14 @@
       "text": "Let's try again. Drag the triangle to the matching opening.",
       "file": "llj-e373fbaf528e1b93f4ff4a39.mp3",
       "spokenText": "Let's try again. Drag the triangle to the matching opening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's try again. Find an outline that matches your shape.",
+      "file": "llj-d7e27460201c0dff1d704353.mp3",
+      "spokenText": "Let's try again. Find an outline that matches your shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -12914,6 +13370,14 @@
       "category": "stories"
     },
     {
+      "text": "The diamond fits!",
+      "file": "llj-3606cc56d4e840b098e937ac.mp3",
+      "spokenText": "The diamond fits!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The diamond fits! You posted it!",
       "file": "llj-1b5af9e029598c095190604b.mp3",
       "spokenText": "The diamond fits! You posted it!",
@@ -13026,6 +13490,14 @@
       "category": "nature"
     },
     {
+      "text": "The oval fits!",
+      "file": "llj-123a839dbbf95448fcddf6fc.mp3",
+      "spokenText": "The oval fits!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The oval fits! You posted it!",
       "file": "llj-0363dd9a0fe5e75559cafbeb.mp3",
       "spokenText": "The oval fits! You posted it!",
@@ -13056,6 +13528,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "The rectangle fits!",
+      "file": "llj-5f96083ec0b8ace1bd4fd8aa.mp3",
+      "spokenText": "The rectangle fits!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "The rectangle fits! You posted it!",
@@ -14152,6 +14632,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Twenty shape pictures! Our town is ready!",
+      "file": "llj-7375c351b4297ac5bf3b1742.mp3",
+      "spokenText": "Twenty shape pictures! Our town is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Two matching letters. They are both A!",
@@ -15584,6 +16072,166 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "You built the bird!",
+      "file": "llj-5412523f4b6db2b67cc6b839.mp3",
+      "spokenText": "You built the bird!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the butterfly!",
+      "file": "llj-f322b311d9f6b62b373f4809.mp3",
+      "spokenText": "You built the butterfly!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the car!",
+      "file": "llj-145cac784e224429ba9a680b.mp3",
+      "spokenText": "You built the car!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the castle!",
+      "file": "llj-fceb7348a41eafe91ebac84c.mp3",
+      "spokenText": "You built the castle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the fish!",
+      "file": "llj-fb2dbc89639db52bb95cbc86.mp3",
+      "spokenText": "You built the fish!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the flower!",
+      "file": "llj-eadd9516057a700469cbf706.mp3",
+      "spokenText": "You built the flower!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the house!",
+      "file": "llj-2590b0c3107cb2a3356321e7.mp3",
+      "spokenText": "You built the house!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the ice cream!",
+      "file": "llj-2a87a0b3def9456484829870.mp3",
+      "spokenText": "You built the ice cream!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the lighthouse!",
+      "file": "llj-40bc9b23b5a84d0286b96789.mp3",
+      "spokenText": "You built the lighthouse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the mountains!",
+      "file": "llj-3703a17193d80504d0ebcb42.mp3",
+      "spokenText": "You built the mountains!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the mushroom!",
+      "file": "llj-b9760502017aab0330eb6962.mp3",
+      "spokenText": "You built the mushroom!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the robot!",
+      "file": "llj-4a51eb4d1edd0b1c70c539a8.mp3",
+      "spokenText": "You built the robot!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the rocket!",
+      "file": "llj-f56100216cccc4f97e083d4e.mp3",
+      "spokenText": "You built the rocket!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the sailboat!",
+      "file": "llj-b272233e89ce73b05ef332d2.mp3",
+      "spokenText": "You built the sailboat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the snowman!",
+      "file": "llj-1bb4513b3ad7ad4755cbef79.mp3",
+      "spokenText": "You built the snowman!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the tent!",
+      "file": "llj-5c983fcc31717943160cb66c.mp3",
+      "spokenText": "You built the tent!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the train!",
+      "file": "llj-8748f9d97b1587b37ae927bd.mp3",
+      "spokenText": "You built the train!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the tree!",
+      "file": "llj-c8265b58b4e8dcab9b87e23f.mp3",
+      "spokenText": "You built the tree!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the truck!",
+      "file": "llj-f70987822cb0805b5e4f69cd.mp3",
+      "spokenText": "You built the truck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "You built the windmill!",
+      "file": "llj-d9afd16fb28dda711724d2c1.mp3",
+      "spokenText": "You built the windmill!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "You built toast! T, O, A, S, T. toast.",

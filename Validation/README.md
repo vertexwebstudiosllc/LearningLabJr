@@ -54,3 +54,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Little Color Lab: nine levels, three recipes per level, order-independent mixing, selection toggles, repeat-discovery protection, level transitions and replay. Native checks verify exact Ruth coverage; UI tests complete all 27 discoveries.
 
 - Pattern Train: sixty distinct repeating sequences per session, progressively longer 5–15-shape trains, two visible repetitions before each blank, correct answers/choices, retry and repeated-tap protection, Ruth hints and replay. UI coverage completes all sixty trains across five stages.
+
+- Build a Shape Town: twenty pictures with 3–5 pieces, any-order dropping at phone/tablet widths, wrong/outside/duplicate rejection, interchangeable identical pieces, Ruth coverage and a full twenty-picture UI session with replay.

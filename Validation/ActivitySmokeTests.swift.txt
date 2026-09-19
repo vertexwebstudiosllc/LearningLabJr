@@ -777,6 +777,55 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testShapeTownTwentyPicturesAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Build a Shape Town"]
+        try reveal(card, in: app); card.tap()
+        var seen: Set<String> = []
+        for index in 0..<20 {
+            let picture = app.staticTexts["shapes.town.picture"]
+            XCTAssertTrue(picture.waitForExistence(timeout: 5))
+            XCTAssertTrue(picture.label.hasPrefix("Picture \(index + 1) of 20"))
+            XCTAssertTrue(seen.insert(picture.label.components(separatedBy: " · ").last!).inserted)
+            let pieces = app.otherElements.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.town.piece.'"))
+            let count = pieces.count
+            XCTAssertTrue((3...5).contains(count))
+            for id in (0..<count).reversed() {
+                let source = app.otherElements["shapes.town.piece.\(id)"]
+                let target = app.otherElements["shapes.town.target.\(id)"]
+                try reveal(source, in: app)
+                if index == 0 && id == count - 1 {
+                    source.tap()
+                    XCTAssertEqual(app.staticTexts["shapes.town.progress"].label, "0 of 3 shapes placed")
+                    let wrong = app.otherElements["shapes.town.target.1"]
+                    source.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: wrong.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)))
+                    XCTAssertEqual(app.staticTexts["shapes.town.progress"].label, "0 of 3 shapes placed")
+                    source.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: source.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5)))
+                    XCTAssertEqual(app.staticTexts["shapes.town.progress"].label, "0 of 3 shapes placed")
+                }
+                source.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: target.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)))
+                XCTAssertEqual(source.value as? String, "placed")
+                XCTAssertEqual(app.staticTexts["shapes.town.progress"].label, "\(count - id) of \(count) shapes placed")
+            }
+            if index == 0 || index == 16 || index == 19 {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Shape Town picture \(index + 1)"
+                shot.lifetime = .keepAlways; add(shot)
+            }
+            let next = app.buttons["shapes.town.next"]
+            try reveal(next, in: app); next.tap()
+        }
+        XCTAssertEqual(seen.count, 20)
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.town.picture"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.town.picture"].label.hasPrefix("Picture 1 of 20"))
+        XCTAssertEqual(app.staticTexts["shapes.town.progress"].label, "0 of 3 shapes placed")
+    }
+
+    @MainActor
     func testPatternTrainProgressionAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

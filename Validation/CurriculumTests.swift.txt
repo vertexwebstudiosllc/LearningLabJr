@@ -4,6 +4,76 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testShapeTownPicturesAndAnyOrderDrops() {
+        XCTAssertEqual(TownPicture.bank.count, 20)
+        XCTAssertEqual(Set(TownPicture.bank.map(\.id)).count, 20)
+        XCTAssertEqual(Set(TownPicture.bank.map { $0.pieces.count }), [3, 4, 5])
+        for width: CGFloat in [280, 362, 740] {
+            for reverse in [false, true] {
+                var town = TownSession()
+                for picture in TownPicture.bank {
+                    XCTAssertEqual(town.picture.id, picture.id)
+                    XCTAssertFalse(town.completePicture)
+                    town.next()
+                    XCTAssertEqual(town.picture.id, picture.id)
+                    let pieces = reverse ? Array(picture.pieces.reversed()) : picture.pieces
+                    for piece in pieces {
+                        let frame = piece.frame(boardWidth: width)
+                        XCTAssertGreaterThanOrEqual(frame.minX, 0)
+                        XCTAssertLessThanOrEqual(frame.maxX, width)
+                        XCTAssertGreaterThanOrEqual(frame.minY, 0)
+                        XCTAssertLessThanOrEqual(frame.maxY, 230)
+                        XCTAssertTrue(LabPaint.bank.contains { $0.id == piece.paint })
+                        if piece.shape == .square || piece.shape == .circle { XCTAssertEqual(piece.width, piece.height) }
+                        XCTAssertFalse(town.place(pieceID: piece.id, at: CGPoint(x: width / 2, y: 275), boardWidth: width))
+                        XCTAssertFalse(town.place(pieceID: 999, at: CGPoint(x: frame.midX, y: frame.midY), boardWidth: width))
+                        XCTAssertTrue(town.place(pieceID: piece.id, at: CGPoint(x: frame.midX, y: frame.midY), boardWidth: width))
+                        XCTAssertFalse(town.place(pieceID: piece.id, at: CGPoint(x: frame.midX, y: frame.midY), boardWidth: width))
+                    }
+                    XCTAssertTrue(town.completePicture)
+                    town.next()
+                }
+                XCTAssertTrue(town.finished)
+                town.next()
+                XCTAssertEqual(town.index, 20)
+            }
+        }
+        var town = TownSession()
+        // A circle window cannot be dropped into the triangular roof.
+        let roof = town.picture.pieces[1].frame(boardWidth: 320)
+        XCTAssertFalse(town.place(pieceID: 2, at: CGPoint(x: roof.midX, y: roof.midY), boardWidth: 320))
+        for picture in TownPicture.bank {
+            if picture.id == "car" {
+                let rightWheel = picture.pieces[3].frame(boardWidth: 320)
+                XCTAssertTrue(town.place(pieceID: 2, at: CGPoint(x: rightWheel.midX, y: rightWheel.midY), boardWidth: 320))
+                XCTAssertTrue(town.placed.contains(3))
+                let leftWheel = picture.pieces[2].frame(boardWidth: 320)
+                XCTAssertTrue(town.place(pieceID: 3, at: CGPoint(x: leftWheel.midX, y: leftWheel.midY), boardWidth: 320))
+                break
+            }
+            for piece in picture.pieces {
+                let frame = piece.frame(boardWidth: 320)
+                town.place(pieceID: piece.id, at: CGPoint(x: frame.midX, y: frame.midY), boardWidth: 320)
+            }
+            town.next()
+        }
+    }
+
+    @MainActor
+    func testShapeTownRuthCoverage() {
+        var texts: Set<String> = [TownPicture.retry, TownPicture.completion]
+        for picture in TownPicture.bank {
+            texts.insert(picture.prompt); texts.insert(picture.success)
+            for piece in picture.pieces {
+                texts.insert(piece.instruction); texts.insert(piece.success)
+            }
+        }
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+        }
+    }
+
     func testPatternTrainProgressionAndUniqueSequences() {
         for _ in 0..<100 {
             let rounds = TrainPattern.session()
