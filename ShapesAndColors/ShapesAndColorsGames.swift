@@ -184,7 +184,7 @@ enum LaundryColor: String, CaseIterable, Identifiable {
         case .green: return .green
         case .blue: return .blue
         case .purple: return .purple
-        case .pink: return .pink
+        case .pink: return Color(red: 1, green: 0.42, blue: 0.72)
         case .brown: return .brown
         case .black: return .black
         case .white: return .white
@@ -199,6 +199,16 @@ enum LaundryColor: String, CaseIterable, Identifiable {
 struct LaundryRound {
     let target: LaundryColor
     let baskets: [LaundryColor]
+    static func basketFrame(index: Int, width: CGFloat) -> CGRect {
+        let cellWidth = (width - 24) / 3
+        return CGRect(x: CGFloat(index) * (cellWidth + 12), y: 160, width: cellWidth, height: 144)
+    }
+    func basket(at point: CGPoint, width: CGFloat) -> LaundryColor? {
+        baskets.enumerated().first {
+            Self.basketFrame(index: $0.offset, width: width).contains(point)
+        }?.element
+    }
+
     static func cycle(after previous: LaundryColor? = nil) -> [Self] {
         var colors = LaundryColor.allCases.shuffled()
         if colors.first == previous { colors.swapAt(0, Int.random(in: 1..<colors.count)) }
@@ -239,52 +249,92 @@ struct LaundrySession {
 struct ColorLaundryGame: View {
     let onReplay: () -> Void
     @State private var laundry = LaundrySession()
-    @State private var note = "Look for something this color nearby."
+    @State private var offset = CGSize.zero
+    @State private var hover: LaundryColor?
+    @State private var note = "Slide the shirt with your finger."
     @StateObject private var narrator = GameNarrator()
+    private let boardColor = Color(red: 0.84, green: 0.89, blue: 0.94)
 
     var body: some View {
         ToddlerGameScaffold(title: "Color Laundry", prompt: laundry.current.target.prompt, accent: .blue) {
-            Image(systemName: "tshirt.fill")
-                .font(.system(size: 110)).foregroundStyle(laundry.current.target.color)
-                .shadow(color: .black.opacity(0.65), radius: 1)
-                .frame(maxWidth: .infinity, minHeight: 145)
-                .background(Color(red: 0.84, green: 0.89, blue: 0.94), in: RoundedRectangle(cornerRadius: 24))
-                .accessibilityLabel("\(laundry.current.target.name) shirt")
-                .accessibilityValue(laundry.current.target.rawValue)
-                .accessibilityIdentifier("shapes.laundry.shirt")
             Text("\(laundry.total) shirts sorted").font(.headline)
                 .accessibilityIdentifier("shapes.laundry.progress")
-            HStack(spacing: 12) {
-                ForEach(laundry.current.baskets) { paint in
-                    Button {
-                        guard !laundry.solved else { return }
-                        let target = laundry.current.target
-                        note = laundry.sort(into: paint) ? target.success : target.retry
-                        narrator.speak(note)
-                    } label: {
-                        VStack(spacing: 8) {
-                            Image(systemName: "basket.fill").font(.system(size: 44)).foregroundStyle(paint.color)
-                                .shadow(color: .black.opacity(0.65), radius: 1)
-                            Text(paint.name).font(.system(.subheadline, design: .rounded, weight: .bold))
-                            Text("\(laundry.counts[paint, default: 0]) shirts").font(.caption)
-                            if laundry.solved && paint == laundry.current.target {
-                                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
-                            }
-                        }.foregroundStyle(.primary).frame(maxWidth: .infinity, minHeight: 145)
-                            .background(Color(red: 0.84, green: 0.89, blue: 0.94), in: RoundedRectangle(cornerRadius: 22))
-                    }.buttonStyle(.plain).disabled(laundry.solved)
-                        .accessibilityLabel("\(paint.name) basket, \(laundry.counts[paint, default: 0]) shirts")
-                        .accessibilityIdentifier("shapes.laundry.basket.\(paint.rawValue)")
-                }
-            }
+            GeometryReader { geometry in
+                ZStack(alignment: .topLeading) {
+                    RoundedRectangle(cornerRadius: 24).fill(boardColor)
+                        .frame(height: 140).accessibilityHidden(true)
+                    ForEach(Array(laundry.current.baskets.enumerated()), id: \.element.id) { index, color in
+                        basket(color, index: index, width: geometry.size.width)
+                    }
+                    shirt(width: geometry.size.width)
+                }.coordinateSpace(name: "laundry-board")
+            }.frame(height: 312)
             SCNote(text: note)
             if laundry.solved {
                 ToddlerActionButton(title: "Next shirt", systemImage: "arrow.right", color: .blue) {
                     laundry.next()
-                    note = "Look for something this color nearby."
+                    note = "Slide the shirt with your finger."
                 }.accessibilityIdentifier("shapes.laundry.next")
             }
         }
+    }
+
+    private func basket(_ color: LaundryColor, index: Int, width: CGFloat) -> some View {
+        let frame = LaundryRound.basketFrame(index: index, width: width)
+        return VStack(spacing: 8) {
+            Image(systemName: "basket.fill").font(.system(size: 44)).foregroundStyle(color.color)
+                .shadow(color: .black.opacity(0.65), radius: 1)
+            Text(color.name).font(.system(.subheadline, design: .rounded, weight: .bold))
+            Text("\(laundry.counts[color, default: 0]) shirts").font(.caption)
+            if laundry.solved && color == laundry.current.target {
+                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+            }
+        }.foregroundStyle(.primary).frame(width: frame.width, height: frame.height)
+            .background(boardColor, in: RoundedRectangle(cornerRadius: 22))
+            .overlay(RoundedRectangle(cornerRadius: 22).stroke(hover == color ? Color.blue : .clear, lineWidth: 3))
+            .position(x: frame.midX, y: frame.midY)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(color.name) basket, \(laundry.counts[color, default: 0]) shirts")
+            .accessibilityIdentifier("shapes.laundry.basket.\(color.rawValue)")
+            .accessibilityAction(named: "Put shirt here") { sort(into: color) }
+    }
+
+    private func shirt(width: CGFloat) -> some View {
+        Image(systemName: laundry.solved ? "checkmark.circle.fill" : "tshirt.fill")
+            .resizable().scaledToFit()
+            .foregroundStyle(laundry.solved ? Color.green : laundry.current.target.color)
+            .shadow(color: .black.opacity(0.65), radius: 1)
+            .frame(width: 112, height: 106).padding(10)
+            .contentShape(Rectangle())
+            .highPriorityGesture(shirtDrag(width: width), including: laundry.solved ? .none : .all)
+            .offset(offset)
+            .position(x: width / 2, y: 70)
+            .accessibilityLabel("\(laundry.current.target.name) shirt")
+            .accessibilityValue(laundry.current.target.rawValue)
+            .accessibilityHint("Drag to the matching basket, or use a basket's Put shirt here action.")
+            .accessibilityIdentifier("shapes.laundry.shirt")
+    }
+
+    private func shirtDrag(width: CGFloat) -> some Gesture {
+        DragGesture(minimumDistance: 4, coordinateSpace: .named("laundry-board"))
+            .onChanged { value in
+                guard !laundry.solved else { return }
+                offset = value.translation
+                hover = laundry.current.basket(at: value.location, width: width)
+            }
+            .onEnded { value in
+                offset = .zero
+                hover = nil
+                sort(into: laundry.current.basket(at: value.location, width: width))
+            }
+    }
+
+    private func sort(into basket: LaundryColor?) {
+        guard !laundry.solved else { return }
+        let target = laundry.current.target
+        let matched = basket.map { laundry.sort(into: $0) } ?? false
+        note = matched ? target.success : target.retry
+        narrator.speak(note)
     }
 }
 

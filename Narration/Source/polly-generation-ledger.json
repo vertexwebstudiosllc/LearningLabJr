@@ -51824,7 +51824,52 @@
       "audioBytes": 18476,
       "awsRequestCharacters": 43,
       "reservedUSD": "0.00174"
+    },
+    {
+      "signature": "816944d143538ec9bea87a643aca9f7f2c617ee541b6d595e23ec090516f8b38",
+      "file": "llj-816944d143538ec9bea87a64.mp3",
+      "text": "Drag the black shirt to the black basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak>Drag the black shirt to the black basket.</speak>",
+      "status": "failed",
+      "requestedAt": "2026-09-19T16:49:34.258320+00:00",
+      "billableCharacters": 41,
+      "estimatedUSD": "0.00168",
+      "humanReviewed": false,
+      "failedAt": "2026-09-19T16:49:34.791685+00:00",
+      "error": "Your session has expired or credentials have changed. Please reauthenticate using 'aws login'."
+    },
+    {
+      "signature": "b14ef98e18bce2706be4b98a249ab3a9e038bedf62dfd3496fef2a363fd1d9ea",
+      "file": "llj-b14ef98e18bce2706be4b98a.mp3",
+      "text": "Drag the blue shirt to the blue basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak>Drag the blue shirt to the blue basket.</speak>",
+      "status": "failed",
+      "requestedAt": "2026-09-19T16:49:34.513398+00:00",
+      "billableCharacters": 39,
+      "estimatedUSD": "0.00162",
+      "humanReviewed": false,
+      "failedAt": "2026-09-19T16:49:34.944706+00:00",
+      "error": "Your session has expired or credentials have changed. Please reauthenticate using 'aws login'."
+    },
+    {
+      "signature": "2667d9a3f1094528eef3ca6b64871526a2002119916096dc98abf28bdfe682cf",
+      "file": "llj-2667d9a3f1094528eef3ca6b.mp3",
+      "text": "Drag the brown shirt to the brown basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak>Drag the brown shirt to the brown basket.</speak>",
+      "status": "failed",
+      "requestedAt": "2026-09-19T16:49:34.761409+00:00",
+      "billableCharacters": 41,
+      "estimatedUSD": "0.00168",
+      "humanReviewed": false,
+      "failedAt": "2026-09-19T16:49:35.238164+00:00",
+      "error": "Your session has expired or credentials have changed. Please reauthenticate using 'aws login'."
     }
   ],
-  "updatedAt": "2026-09-19T15:34:56.627556+00:00"
+  "updatedAt": "2026-09-19T16:49:35.238184+00:00"
 }

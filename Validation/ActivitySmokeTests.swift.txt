@@ -794,23 +794,31 @@ final class ActivitySmokeTests: XCTestCase {
                 let color = try XCTUnwrap(shirt.value as? String)
                 if index == 0 { XCTAssertNotEqual(color, previous) }
                 XCTAssertTrue(seen.insert(color).inserted)
-                let basket = app.buttons["shapes.laundry.basket.\(color)"]
+                let basket = app.otherElements["shapes.laundry.basket.\(color)"]
                 try reveal(basket, in: app)
-                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.laundry.basket.'"))
+                let choices = app.otherElements.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.laundry.basket.'"))
                 XCTAssertEqual(choices.count, 3)
                 let wrong = choices.allElementsBoundByIndex.first { $0.identifier != basket.identifier }!
-                wrong.tap()
-                XCTAssertFalse(app.buttons["shapes.laundry.next"].exists)
                 basket.tap()
-                XCTAssertFalse(basket.isEnabled)
-                let next = app.buttons["shapes.laundry.next"]
-                XCTAssertTrue(next.waitForExistence(timeout: 3))
-                if color == "white" {
+                XCTAssertFalse(app.buttons["shapes.laundry.next"].exists, "Taps must not sort shirts")
+                shirt.press(forDuration: 0.1, thenDragTo: wrong)
+                XCTAssertFalse(app.buttons["shapes.laundry.next"].exists)
+                if index == 0 {
+                    shirt.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: shirt.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5)))
+                    XCTAssertFalse(app.buttons["shapes.laundry.next"].exists)
+                }
+                if color == "pink" || color == "white" {
                     let shot = XCTAttachment(screenshot: app.screenshot())
-                    shot.name = "Color Laundry white shirt"
+                    shot.name = "Color Laundry \(color) drag board"
                     shot.lifetime = .keepAlways
                     add(shot)
                 }
+                shirt.press(forDuration: 0.1, thenDragTo: basket)
+                let next = app.buttons["shapes.laundry.next"]
+                XCTAssertTrue(next.waitForExistence(timeout: 3))
+                let progress = app.staticTexts["shapes.laundry.progress"].label
+                shirt.press(forDuration: 0.1, thenDragTo: basket)
+                XCTAssertEqual(app.staticTexts["shapes.laundry.progress"].label, progress)
                 try reveal(next, in: app)
                 next.tap()
                 previous = color

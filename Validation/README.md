@@ -49,4 +49,4 @@ Coverage:
 
 UI navigation smoke tests establish that screens open; they do not establish that every possible interaction in every game has been tested. TestFlight purchases, device audio/VoiceOver, toddler/caregiver playtesting, and App Store materials still need release review.
 
-- Color Laundry: eleven-color shuffled cycles, no immediate repeat across cycles, incorrect/duplicate selection protection, persistent per-session counts and Ruth coverage. UI checks cover two full cycles and fresh entry.
+- Color Laundry: eleven-color shuffled cycles, no immediate repeat across cycles, incorrect/duplicate selection protection, persistent per-session counts and Ruth coverage. UI checks cover two full drag cycles and fresh entry, rejecting taps, incorrect/outside drops and repeat posting.

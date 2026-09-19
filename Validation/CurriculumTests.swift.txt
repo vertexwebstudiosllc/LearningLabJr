@@ -17,6 +17,15 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertTrue(seen.insert(round.target).inserted)
                 XCTAssertEqual(Set(round.baskets).count, 3)
                 XCTAssertTrue(round.baskets.contains(round.target))
+                for width: CGFloat in [280, 362, 740] {
+                    for (position, color) in round.baskets.enumerated() {
+                        let frame = LaundryRound.basketFrame(index: position, width: width)
+                        XCTAssertGreaterThanOrEqual(frame.width, 64)
+                        XCTAssertEqual(round.basket(at: CGPoint(x: frame.midX, y: frame.midY), width: width), color)
+                    }
+                    XCTAssertNil(round.basket(at: CGPoint(x: width / 2, y: 70), width: width))
+                    XCTAssertNil(round.basket(at: CGPoint(x: -10, y: 200), width: width))
+                }
                 session.next()
                 XCTAssertEqual(session.current.target, round.target)
                 for wrong in round.baskets where wrong != round.target {
