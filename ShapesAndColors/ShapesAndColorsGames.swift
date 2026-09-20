@@ -338,52 +338,6 @@ struct ColorLaundryGame: View {
     }
 }
 
-struct NestingShapesGame: View {
-    let onReplay: () -> Void
-    @State private var round = 0
-    @State private var layers = 0
-    @State private var note = "Show big and small with your hands."
-    @StateObject private var narrator = GameNarrator()
-    private let sizes: [CGFloat] = [156, 106, 58]
-    private let names = ["Large", "Medium", "Small"]
-    private var shape: SCShape { SCShape.allCases[min(round, 2)] }
-    var body: some View {
-        ToddlerGameScaffold(title: "Nesting Shapes", prompt: round == 3 ? "Three shape nests, from large to small!" : "Build a shape nest. Start with the largest, then medium, then small.", accent: .indigo, completion: round == 3, onReplay: onReplay) {
-            ZStack {
-                Image(systemName: shape.outline).font(.system(size: 170)).foregroundStyle(.gray.opacity(0.2))
-                ForEach(0..<layers, id: \.self) { index in
-                    Image(systemName: shape.symbol).resizable().scaledToFit().frame(width: sizes[index], height: sizes[index])
-                        .foregroundStyle([Color.indigo, .cyan, .yellow][index])
-                }
-            }.frame(height: 195).accessibilityLabel("\(layers) nested \(shape.name.lowercased()) shapes")
-            HStack(spacing: 10) {
-                ForEach([2, 0, 1], id: \.self) { index in
-                    Button {
-                        guard layers < 3, round < 3 else { return }
-                        if index == layers { layers += 1; note = "\(names[index]) fits in the nest." }
-                        else { note = "Let's choose the \(names[layers].lowercased()) one next." }
-                        narrator.speak(note)
-                    } label: {
-                        VStack {
-                            Image(systemName: shape.symbol).resizable().scaledToFit().frame(width: sizes[index] * 0.4, height: 65)
-                            Text(names[index]).font(.system(.caption, design: .rounded, weight: .bold))
-                        }.foregroundStyle(.indigo).frame(maxWidth: .infinity, minHeight: 105)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 18)).opacity(index < layers ? 0.3 : 1)
-                    }.buttonStyle(.plain).disabled(index < layers)
-                }
-            }
-            if layers == 3 && round < 3 {
-                ToddlerActionButton(title: round == 2 ? "All cozy!" : "Try another shape", systemImage: "arrow.right", color: .indigo) {
-                    guard round < 3, layers == 3 else { return }
-                    round += 1
-                    if round < 3 { layers = 0 }
-                }
-            }
-            SCNote(text: note)
-        }
-    }
-}
-
 struct ShapeTrailsGame: View {
     let onReplay: () -> Void
     @State private var round = 0

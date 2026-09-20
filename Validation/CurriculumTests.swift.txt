@@ -4,6 +4,59 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testNestingColorSequencesAndShapeCycles() throws {
+        var nest = NestSession()
+        var previous: PostShape?
+        var previousColors: [String: [String]] = [:]
+        for _ in 0..<100 {
+            var seen: Set<PostShape> = []
+            for index in 0..<10 {
+                let round = nest.current
+                if index == 0 { XCTAssertNotEqual(round.shape, previous) }
+                XCTAssertTrue(seen.insert(round.shape).inserted)
+                XCTAssertEqual(Set(round.colors).count, 3)
+                XCTAssertEqual(Set(round.choices), Set(round.colors))
+                XCTAssertTrue(Set(round.colors).isSubset(of: Set(NestRound.palette)))
+                XCTAssertNotEqual(round.colors, previousColors[round.shape.rawValue])
+                nest.next()
+                XCTAssertEqual(nest.current.shape, round.shape)
+                for layer in 0..<3 {
+                    for wrong in NestRound.palette where wrong != round.colors[layer] {
+                        XCTAssertFalse(nest.choose(wrong, expectedLayer: layer))
+                        XCTAssertEqual(nest.layer, layer)
+                    }
+                    XCTAssertTrue(nest.choose(round.colors[layer], expectedLayer: layer))
+                    XCTAssertFalse(nest.choose(round.colors[layer], expectedLayer: layer))
+                }
+                XCTAssertTrue(nest.solved)
+                previous = round.shape
+                previousColors[round.shape.rawValue] = round.colors
+                nest.next()
+            }
+            XCTAssertEqual(seen, Set(PostShape.allCases))
+        }
+        let data = try JSONEncoder().encode(nest.memory)
+        let memory = try JSONDecoder().decode(NestMemory.self, from: data)
+        let restarted = NestSession(memory: memory)
+        XCTAssertNotEqual(restarted.current.shape.rawValue, memory.lastShape)
+        XCTAssertNotEqual(restarted.current.colors, memory.palettes[restarted.current.shape.rawValue])
+        XCTAssertEqual(restarted.layer, 0)
+        XCTAssertEqual(restarted.completed, 0)
+    }
+
+    @MainActor
+    func testNestingRuthColorCoverage() {
+        for shape in PostShape.allCases {
+            for color in NestRound.palette {
+                let round = NestRound(shape: shape, colors: [color], choices: [])
+                for text in [round.prompt(layer: 0), round.prompt(layer: 3)] {
+                    XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                    XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+                }
+            }
+        }
+    }
+
     func testShapeTownPicturesAndAnyOrderDrops() {
         XCTAssertEqual(TownPicture.bank.count, 20)
         XCTAssertEqual(Set(TownPicture.bank.map(\.id)).count, 20)

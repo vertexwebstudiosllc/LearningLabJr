@@ -3266,6 +3266,566 @@
       "category": "nature"
     },
     {
+      "text": "Find the blue circle.",
+      "file": "llj-e75d3950887de48586d76358.mp3",
+      "spokenText": "Find the blue circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue diamond.",
+      "file": "llj-04a7514ed208c11693b9c46f.mp3",
+      "spokenText": "Find the blue diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue heart.",
+      "file": "llj-fd227e141072ed62e7ed5758.mp3",
+      "spokenText": "Find the blue heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue hexagon.",
+      "file": "llj-edf9886f8beefa909106837b.mp3",
+      "spokenText": "Find the blue hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue oval.",
+      "file": "llj-30c8575dc67807d1dea02c64.mp3",
+      "spokenText": "Find the blue oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue pentagon.",
+      "file": "llj-1810ab4287c0bd919a5ebfa4.mp3",
+      "spokenText": "Find the blue pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue rectangle.",
+      "file": "llj-f89988e97548ddc792354dcd.mp3",
+      "spokenText": "Find the blue rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue square.",
+      "file": "llj-1a87abae0726adf0fe039146.mp3",
+      "spokenText": "Find the blue square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue star.",
+      "file": "llj-c953c90b3927ddacf29ac796.mp3",
+      "spokenText": "Find the blue star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the blue triangle.",
+      "file": "llj-cfb5da5c4ac17a8dd18090e9.mp3",
+      "spokenText": "Find the blue triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green circle.",
+      "file": "llj-8e1ba661ef22c81f75e4b832.mp3",
+      "spokenText": "Find the green circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green diamond.",
+      "file": "llj-6b4e851371fda276539c1c43.mp3",
+      "spokenText": "Find the green diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green heart.",
+      "file": "llj-be71b4f25850ee612b864441.mp3",
+      "spokenText": "Find the green heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green hexagon.",
+      "file": "llj-0d5e5ea29cba0ca416d307ba.mp3",
+      "spokenText": "Find the green hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green oval.",
+      "file": "llj-b8a370f942800798578c5b31.mp3",
+      "spokenText": "Find the green oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green pentagon.",
+      "file": "llj-cddb0aa91e79a340e866ce59.mp3",
+      "spokenText": "Find the green pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green rectangle.",
+      "file": "llj-09b7384166f9a38f20504290.mp3",
+      "spokenText": "Find the green rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green square.",
+      "file": "llj-3e4daa768d465de29b84994e.mp3",
+      "spokenText": "Find the green square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green star.",
+      "file": "llj-f1c6ce5eb9d56d663baa266d.mp3",
+      "spokenText": "Find the green star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the green triangle.",
+      "file": "llj-c4f475119f68d4a11c8c76a0.mp3",
+      "spokenText": "Find the green triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange circle.",
+      "file": "llj-f2efba92e193e3e675524720.mp3",
+      "spokenText": "Find the orange circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange diamond.",
+      "file": "llj-92307612e3022b3d2b210ace.mp3",
+      "spokenText": "Find the orange diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange heart.",
+      "file": "llj-e7542c685e5e842a3bca1ff8.mp3",
+      "spokenText": "Find the orange heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange hexagon.",
+      "file": "llj-a2e70657e031d2932fee2a3e.mp3",
+      "spokenText": "Find the orange hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange oval.",
+      "file": "llj-d8cfc5ad08340834625897d7.mp3",
+      "spokenText": "Find the orange oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange pentagon.",
+      "file": "llj-ade1c820bfdb8538eee89ebe.mp3",
+      "spokenText": "Find the orange pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange rectangle.",
+      "file": "llj-1775c234acd01c28032127bd.mp3",
+      "spokenText": "Find the orange rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange square.",
+      "file": "llj-c3abc5a92d95e65c292c1e73.mp3",
+      "spokenText": "Find the orange square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange star.",
+      "file": "llj-5b2bb5561e5e07ce22c89ab9.mp3",
+      "spokenText": "Find the orange star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the orange triangle.",
+      "file": "llj-9585418dca82fab5736834cc.mp3",
+      "spokenText": "Find the orange triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink circle.",
+      "file": "llj-43cafb81571b2a8093385304.mp3",
+      "spokenText": "Find the pink circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink diamond.",
+      "file": "llj-a9ed9783ef2c97cdb6a8b491.mp3",
+      "spokenText": "Find the pink diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink heart.",
+      "file": "llj-4c4be5f87e8518883adff742.mp3",
+      "spokenText": "Find the pink heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink hexagon.",
+      "file": "llj-3c9a49f6a34ba4d7ff786ab8.mp3",
+      "spokenText": "Find the pink hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink oval.",
+      "file": "llj-1fb38bf0c4e7dd85ef561c74.mp3",
+      "spokenText": "Find the pink oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink pentagon.",
+      "file": "llj-86b058cccfbb97dd14e7e5bc.mp3",
+      "spokenText": "Find the pink pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink rectangle.",
+      "file": "llj-2881ce3ff3d8783857238337.mp3",
+      "spokenText": "Find the pink rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink square.",
+      "file": "llj-8f76eace454e3623eb92d69c.mp3",
+      "spokenText": "Find the pink square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink star.",
+      "file": "llj-44a2917b376459b3a3deb207.mp3",
+      "spokenText": "Find the pink star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the pink triangle.",
+      "file": "llj-c110fc825d2d00116123cca5.mp3",
+      "spokenText": "Find the pink triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple circle.",
+      "file": "llj-54b0d5113ce7dcf5c4c08c00.mp3",
+      "spokenText": "Find the purple circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple diamond.",
+      "file": "llj-0344d615eabc3ff9ba1e2a00.mp3",
+      "spokenText": "Find the purple diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple heart.",
+      "file": "llj-359b1b4c607e8ff8054add85.mp3",
+      "spokenText": "Find the purple heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple hexagon.",
+      "file": "llj-9158baa5a2f3450a76dcfef4.mp3",
+      "spokenText": "Find the purple hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple oval.",
+      "file": "llj-0b711c3874df92f5c3a3e227.mp3",
+      "spokenText": "Find the purple oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple pentagon.",
+      "file": "llj-5832d6fa10ba255afd5e449e.mp3",
+      "spokenText": "Find the purple pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple rectangle.",
+      "file": "llj-eade6463aa2f80d326839fa7.mp3",
+      "spokenText": "Find the purple rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple square.",
+      "file": "llj-af3506e1bad0b8c5baa0ff2e.mp3",
+      "spokenText": "Find the purple square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple star.",
+      "file": "llj-de734a8f71486f6d25891066.mp3",
+      "spokenText": "Find the purple star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the purple triangle.",
+      "file": "llj-a57a9303207245b7f719e269.mp3",
+      "spokenText": "Find the purple triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red circle.",
+      "file": "llj-6751f48fdad784282d6e73da.mp3",
+      "spokenText": "Find the red circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red diamond.",
+      "file": "llj-7291bdf08bf188553ca9ca21.mp3",
+      "spokenText": "Find the red diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red heart.",
+      "file": "llj-5319b115ce60255e74bffca0.mp3",
+      "spokenText": "Find the red heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red hexagon.",
+      "file": "llj-e83b1a24cf93c2ea50166256.mp3",
+      "spokenText": "Find the red hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red oval.",
+      "file": "llj-2700664889c4fb807b3109af.mp3",
+      "spokenText": "Find the red oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red pentagon.",
+      "file": "llj-0b3bd5f24d5b63c00e3843be.mp3",
+      "spokenText": "Find the red pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red rectangle.",
+      "file": "llj-14973d748b5c5293968b6ab9.mp3",
+      "spokenText": "Find the red rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red square.",
+      "file": "llj-50ad18035358df4d52e9b1f4.mp3",
+      "spokenText": "Find the red square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red star.",
+      "file": "llj-5679cc9d70e6b2c3ab775fb0.mp3",
+      "spokenText": "Find the red star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the red triangle.",
+      "file": "llj-b550f38952d27b193d6a803f.mp3",
+      "spokenText": "Find the red triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow circle.",
+      "file": "llj-fb5d26f48e5e576fd8380f1a.mp3",
+      "spokenText": "Find the yellow circle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow diamond.",
+      "file": "llj-f6ad1bb21d00ca25d8be28d1.mp3",
+      "spokenText": "Find the yellow diamond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow heart.",
+      "file": "llj-85d28a58112d7111990f3366.mp3",
+      "spokenText": "Find the yellow heart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow hexagon.",
+      "file": "llj-e46bb4a5e32822b45a2dd8d7.mp3",
+      "spokenText": "Find the yellow hexagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow oval.",
+      "file": "llj-12f04c0e563341d4d9dada37.mp3",
+      "spokenText": "Find the yellow oval.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow pentagon.",
+      "file": "llj-383fb63c09838d0a5ed2af38.mp3",
+      "spokenText": "Find the yellow pentagon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow rectangle.",
+      "file": "llj-41cb58f6588a54f8dab8be77.mp3",
+      "spokenText": "Find the yellow rectangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow square.",
+      "file": "llj-02fae4b1652823155e5ee70f.mp3",
+      "spokenText": "Find the yellow square.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow star.",
+      "file": "llj-9e9b57f02e801202f522830b.mp3",
+      "spokenText": "Find the yellow star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find the yellow triangle.",
+      "file": "llj-81fb603811ab1f47a33794f7.mp3",
+      "spokenText": "Find the yellow triangle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Find two things with a circle shape.",
       "file": "llj-40d35d05c8e1edd9224fb5a9.mp3",
       "spokenText": "Find two things with a circle shape.",
@@ -17746,9 +18306,25 @@
       "category": "shapes"
     },
     {
+      "text": "Your circle nest is ready!",
+      "file": "llj-391808508a1cd008352670a8.mp3",
+      "spokenText": "Your circle nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Your colorful flower is ready to share!",
       "file": "llj-6c938f62c771905f568f1600.mp3",
       "spokenText": "Your colorful flower is ready to share!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your diamond nest is ready!",
+      "file": "llj-ff7ec1fc66e6213b4127d71a.mp3",
+      "spokenText": "Your diamond nest is ready!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -17794,6 +18370,38 @@
       "category": "feelings"
     },
     {
+      "text": "Your heart nest is ready!",
+      "file": "llj-e7ae6ad2d5d13768c867e40a.mp3",
+      "spokenText": "Your heart nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your hexagon nest is ready!",
+      "file": "llj-f9a2b6dd450639a70ef9b248.mp3",
+      "spokenText": "Your hexagon nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your oval nest is ready!",
+      "file": "llj-0c76101371354dd5f19ba3fc.mp3",
+      "spokenText": "Your oval nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your pentagon nest is ready!",
+      "file": "llj-d069c955379e4e14f27e3715.mp3",
+      "spokenText": "Your pentagon nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Your picnic is packed! Say the two food names together.",
       "file": "llj-6dbc05e37635adbaa6476196.mp3",
       "spokenText": "Your picnic is packed! Say the two food names together.",
@@ -17808,6 +18416,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Your rectangle nest is ready!",
+      "file": "llj-a066304b6767be48660014a4.mp3",
+      "spokenText": "Your rectangle nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your square nest is ready!",
+      "file": "llj-1b2b9481bf075a09cf732c94.mp3",
+      "spokenText": "Your square nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your star nest is ready!",
+      "file": "llj-7c5cf30641f10a5d39abcbc3.mp3",
+      "spokenText": "Your star nest is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Your tower is shorter. Add a block.",
@@ -17829,6 +18461,14 @@
       "text": "Your town is ready!",
       "file": "llj-39778b794abd1d2ec1b1b43a.mp3",
       "spokenText": "Your town is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Your triangle nest is ready!",
+      "file": "llj-712ddb430c4135827c0edeb1.mp3",
+      "spokenText": "Your triangle nest is ready!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"

@@ -56,3 +56,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Pattern Train: sixty distinct repeating sequences per session, progressively longer 5–15-shape trains, two visible repetitions before each blank, correct answers/choices, retry and repeated-tap protection, Ruth hints and replay. UI coverage completes all sixty trains across five stages.
 
 - Build a Shape Town: twenty pictures with 3–5 pieces, any-order dropping at phone/tablet widths, wrong/outside/duplicate rejection, interchangeable identical pieces, Ruth coverage and a full twenty-picture UI session with replay.
+
+- Nesting Shapes: ten-shape cycles, three distinct requested colors from seven choices, fresh per-shape color sequences, incorrect/stale selection protection, saved palette memory and Ruth coverage. UI checks complete two cycles and reenter the game.

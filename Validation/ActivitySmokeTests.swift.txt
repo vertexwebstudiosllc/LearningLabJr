@@ -777,6 +777,62 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testNestingColorsCyclesAndReentry() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Nesting Shapes"]
+        try reveal(card, in: app); card.tap()
+        var previousShape: String?
+        var palettes: [String: [String]] = [:]
+        for cycle in 0..<2 {
+            var seen: Set<String> = []
+            for round in 0..<10 {
+                let shapeText = app.staticTexts["shapes.nest.shape"]
+                XCTAssertTrue(shapeText.waitForExistence(timeout: 5))
+                let shape = try XCTUnwrap(shapeText.value as? String)
+                if round == 0 { XCTAssertNotEqual(shape, previousShape) }
+                XCTAssertTrue(seen.insert(shape).inserted)
+                var colors: [String] = []
+                for layer in 0..<3 {
+                    let target = app.otherElements["shapes.nest.target"]
+                    let color = try XCTUnwrap(target.value as? String)
+                    XCTAssertFalse(colors.contains(color))
+                    colors.append(color)
+                    let choice = app.buttons["shapes.nest.choice.\(color)"]
+                    try reveal(choice, in: app)
+                    if layer == 0 {
+                        let wrong = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.nest.choice.' AND identifier != %@", choice.identifier)).firstMatch
+                        wrong.tap()
+                        XCTAssertTrue(app.staticTexts["shapes.nest.progress"].label.hasPrefix("0 of 3"))
+                    }
+                    choice.tap()
+                    XCTAssertFalse(choice.isEnabled)
+                    XCTAssertTrue(app.staticTexts["shapes.nest.progress"].label.hasPrefix("\(layer + 1) of 3"))
+                    XCTAssertEqual(app.otherElements["shapes.nest.picture"].value as? String, colors.joined(separator: ","))
+                }
+                XCTAssertNotEqual(colors, palettes[shape])
+                palettes[shape] = colors
+                previousShape = shape
+                if cycle == 0 && round == 0 {
+                    let shot = XCTAttachment(screenshot: app.screenshot())
+                    shot.name = "Nesting Shapes color layers"
+                    shot.lifetime = .keepAlways; add(shot)
+                }
+                if cycle == 1 && round == 9 { break }
+                let next = app.buttons["shapes.nest.next"]
+                try reveal(next, in: app); next.tap()
+            }
+            XCTAssertEqual(seen.count, 10)
+        }
+        app.buttons["BackButton"].tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertTrue(app.staticTexts["shapes.nest.shape"].waitForExistence(timeout: 5))
+        XCTAssertNotEqual(app.staticTexts["shapes.nest.shape"].value as? String, previousShape)
+        XCTAssertEqual(app.staticTexts["shapes.nest.progress"].label, "0 of 3 colors nested · 0 nests made")
+    }
+
+    @MainActor
     func testShapeTownTwentyPicturesAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]
