@@ -58,3 +58,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Build a Shape Town: twenty pictures with 3–5 pieces, any-order dropping at phone/tablet widths, wrong/outside/duplicate rejection, interchangeable identical pieces, Ruth coverage and a full twenty-picture UI session with replay.
 
 - Nesting Shapes: ten-shape cycles, three distinct requested colors from seven choices, fresh per-shape color sequences, incorrect/stale selection protection, saved palette memory and Ruth coverage. UI checks complete two cycles and reenter the game.
+
+- Shape Trails: twenty-five distinct closed outlines, ordered checkpoints, complete guide/progress paths, geometry at three widths, guarded advancement, Ruth coverage, finger tracing, tap-to-trace completion and replay.

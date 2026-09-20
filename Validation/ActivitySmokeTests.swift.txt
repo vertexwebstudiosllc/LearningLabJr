@@ -777,6 +777,53 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testShapeTrailsTwentyFiveAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Shape Trails"]
+        try reveal(card, in: app); card.tap()
+        var seen: Set<String> = []
+        for index in 0..<25 {
+            let name = app.staticTexts["shapes.trail.name"]
+            XCTAssertTrue(name.waitForExistence(timeout: 5))
+            XCTAssertTrue(name.label.hasPrefix("Shape \(index + 1) of 25"))
+            XCTAssertTrue(seen.insert(name.label.components(separatedBy: " · ").last!).inserted)
+            let point = app.buttons["shapes.trail.point"]
+            let next = app.buttons["shapes.trail.next"]
+            if index == 0 {
+                try reveal(point, in: app)
+                XCTAssertEqual(point.frame.width, 68, accuracy: 1)
+                XCTAssertEqual(point.frame.height, 68, accuracy: 1)
+                let firstShot = XCTAttachment(screenshot: app.screenshot())
+                firstShot.name = "Shape Trails initial guide"
+                firstShot.lifetime = .keepAlways; add(firstShot)
+                let progress = app.staticTexts["shapes.trail.progress"].label
+                point.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: point.coordinate(withNormalizedOffset: CGVector(dx: 1.0, dy: 0.6)))
+                XCTAssertNotEqual(app.staticTexts["shapes.trail.progress"].label, progress)
+            }
+            var taps = 0
+            while point.exists && taps < 40 {
+                try reveal(point, in: app); point.tap()
+                taps += 1
+            }
+            XCTAssertTrue(next.waitForExistence(timeout: 3))
+            if [9, 19, 24].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Shape Trails \(index + 1)"
+                shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        XCTAssertEqual(seen.count, 25)
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.buttons["shapes.trail.point"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.trail.name"].label.hasPrefix("Shape 1 of 25"))
+        XCTAssertTrue(app.staticTexts["shapes.trail.progress"].label.hasPrefix("0 of"))
+    }
+
+    @MainActor
     func testNestingColorsCyclesAndReentry() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

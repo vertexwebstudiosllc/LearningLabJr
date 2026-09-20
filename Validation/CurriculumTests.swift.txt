@@ -1,9 +1,67 @@
 import XCTest
 import UIKit
+import SwiftUI
 import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testShapeTrailsGeometryAndProgression() {
+        XCTAssertEqual(ShapeTrail.bank.count, 25)
+        XCTAssertEqual(Set(ShapeTrail.bank.map(\.id)).count, 25)
+        for trail in ShapeTrail.bank {
+            XCTAssertEqual(trail.points.first, trail.points.last, trail.name)
+            XCTAssertEqual(trail.checkpoints.first, 0)
+            XCTAssertEqual(trail.checkpoints.last, trail.points.count - 1)
+            XCTAssertEqual(trail.checkpoints, trail.checkpoints.sorted())
+            XCTAssertEqual(Set(trail.checkpoints).count, trail.checkpoints.count)
+            XCTAssertTrue((5...40).contains(trail.checkpoints.count), trail.name)
+            for point in trail.points {
+                XCTAssertTrue((0.05...0.95).contains(point.x), trail.name)
+                XCTAssertTrue((0.05...0.95).contains(point.y), trail.name)
+            }
+            for (a, b) in zip(trail.points, trail.points.dropFirst()) {
+                XCTAssertGreaterThan(hypot(b.x-a.x, b.y-a.y), 0.00001, trail.name)
+            }
+            for size in [CGSize(width: 280, height: 280), CGSize(width: 362, height: 280), CGSize(width: 740, height: 280)] {
+                let guide = trail.path(in: size)
+                let complete = trail.path(in: size, visited: trail.checkpoints.count)
+                XCTAssertEqual(guide.boundingRect, complete.boundingRect, trail.name)
+                for stop in trail.checkpoints {
+                    let point = trail.location(trail.points[stop], in: size)
+                    XCTAssertTrue(CGRect(origin: .zero, size: size).contains(point), trail.name)
+                }
+            }
+        }
+        var session = TrailSession()
+        let size = CGSize(width: 362, height: 280)
+        for index in 0..<25 {
+            session.next()
+            XCTAssertEqual(session.index, index)
+            let count = session.current.checkpoints.count
+            for stop in 0..<count {
+                XCTAssertFalse(session.touch(CGPoint(x: -100, y: -100), in: size))
+                XCTAssertEqual(session.visited, stop)
+                let point = session.current.location(session.current.points[session.current.checkpoints[stop]], in: size)
+                XCTAssertTrue(session.touch(point, in: size))
+                XCTAssertFalse(session.advance(expected: stop))
+            }
+            XCTAssertTrue(session.solved)
+            session.next()
+        }
+        XCTAssertTrue(session.finished)
+        XCTAssertFalse(session.advance(expected: session.visited))
+        session.next()
+        XCTAssertEqual(session.index, 25)
+    }
+
+    @MainActor
+    func testShapeTrailsRuthCoverage() {
+        for text in ShapeTrail.bank.flatMap({ [$0.prompt, $0.success] }) + [ShapeTrail.completion] {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+        }
+    }
+
     func testNestingColorSequencesAndShapeCycles() throws {
         var nest = NestSession()
         var previous: PostShape?
