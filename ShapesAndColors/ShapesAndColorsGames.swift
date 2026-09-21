@@ -8,15 +8,6 @@ private enum SCPaint: Int, CaseIterable, Identifiable {
     var symbol: String { ["heart.fill", "sun.max.fill", "drop.fill", "carrot.fill", "leaf.fill", "moon.fill"][rawValue] }
 }
 
-private enum SCShape: Int, CaseIterable, Identifiable {
-    case circle, square, triangle
-    var id: Int { rawValue }
-    var name: String { ["Circle", "Square", "Triangle"][rawValue] }
-    var symbol: String { ["circle.fill", "square.fill", "triangle.fill"][rawValue] }
-    var outline: String { ["circle", "square", "triangle"][rawValue] }
-    var color: Color { [.pink, .blue, .green][rawValue] }
-}
-
 struct SCNote: View {
     let text: String
     var body: some View {
@@ -314,62 +305,6 @@ struct ColorLaundryGame: View {
         let matched = basket.map { laundry.sort(into: $0) } ?? false
         note = matched ? target.success : target.retry
         narrator.speak(note)
-    }
-}
-
-private struct SCSafariObject: Identifiable {
-    let id: Int
-    let name: String
-    let symbol: String
-    let shape: SCShape
-    let color: Color
-}
-
-struct ShapeSafariGame: View {
-    let onReplay: () -> Void
-    @State private var round = 0
-    @State private var found: Set<Int> = []
-    @State private var note = "Find another shape like this in the room."
-    @StateObject private var narrator = GameNarrator()
-    private let objects: [SCSafariObject] = [
-        .init(id: 0, name: "Clock face", symbol: "clock.fill", shape: .circle, color: .blue),
-        .init(id: 1, name: "Gift box", symbol: "gift.fill", shape: .square, color: .pink),
-        .init(id: 2, name: "Mountain peak", symbol: "mountain.2.fill", shape: .triangle, color: .green),
-        .init(id: 3, name: "Ball", symbol: "basketball.fill", shape: .circle, color: .orange),
-        .init(id: 4, name: "Window", symbol: "square.split.2x2.fill", shape: .square, color: .cyan),
-        .init(id: 5, name: "Tent", symbol: "tent.fill", shape: .triangle, color: .purple)
-    ]
-    private var target: SCShape { SCShape.allCases[min(round, 2)] }
-    var body: some View {
-        ToddlerGameScaffold(title: "Shape Safari", prompt: round == 3 ? "You found shapes in six everyday things!" : "Find two things with a \(target.name.lowercased()) shape.", accent: .green, completion: round == 3, onReplay: onReplay) {
-            Image(systemName: target.outline).font(.system(size: 75)).foregroundStyle(target.color)
-                .accessibilityLabel("Look for a \(target.name.lowercased())")
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 118))], spacing: 12) {
-                ForEach(objects) { object in
-                    Button {
-                        guard round < 3 else { return }
-                        if object.shape == target { found.insert(object.id); note = "The \(object.name.lowercased()) has a \(target.name.lowercased()) shape." }
-                        else { note = "Look at the \(object.name.lowercased()). We are looking for a \(target.name.lowercased()) shape." }
-                        narrator.speak(note)
-                    } label: {
-                        VStack(spacing: 8) {
-                            Image(systemName: object.symbol).font(.system(size: 46)).foregroundStyle(object.color)
-                            Text(object.name).font(.system(.caption, design: .rounded, weight: .bold))
-                            if found.contains(object.id) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green) }
-                        }.foregroundStyle(.primary).frame(maxWidth: .infinity, minHeight: 125)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 20))
-                    }.buttonStyle(.plain).disabled(found.contains(object.id))
-                }
-            }
-            if found.count == 2 && round < 3 {
-                ToddlerActionButton(title: round == 2 ? "Finish our safari" : "Find another shape", systemImage: "magnifyingglass", color: .green) {
-                    guard round < 3, found.count == 2 else { return }
-                    round += 1
-                    if round < 3 { found = [] }
-                }
-            }
-            SCNote(text: note)
-        }
     }
 }
 

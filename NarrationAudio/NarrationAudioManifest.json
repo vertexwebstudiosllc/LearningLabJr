@@ -3834,9 +3834,65 @@
       "category": "shapes"
     },
     {
+      "text": "Find two things with a diamond shape.",
+      "file": "llj-e0964dddd85f5f3e44bc0ce6.mp3",
+      "spokenText": "Find two things with a diamond shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a heart shape.",
+      "file": "llj-7c9a05464e128077402de227.mp3",
+      "spokenText": "Find two things with a heart shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a hexagon shape.",
+      "file": "llj-49f3226abfc009c8cf91e030.mp3",
+      "spokenText": "Find two things with a hexagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a oval shape.",
+      "file": "llj-1acec10d38a2d690f85b87d5.mp3",
+      "spokenText": "Find two things with a oval shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a pentagon shape.",
+      "file": "llj-9a6d7c919d0cfc249c26da76.mp3",
+      "spokenText": "Find two things with a pentagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a rectangle shape.",
+      "file": "llj-6c2f5e60545a3ba62a85a80d.mp3",
+      "spokenText": "Find two things with a rectangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Find two things with a square shape.",
       "file": "llj-673e1d4bc5d8636a095f6f92.mp3",
       "spokenText": "Find two things with a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Find two things with a star shape.",
+      "file": "llj-606e532f93dc9d9d955d79b8.mp3",
+      "spokenText": "Find two things with a star shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -6005,6 +6061,86 @@
       "text": "Let's look again. Find a bubble that matches our clue.",
       "file": "llj-798f3a8a11884cff64c954c8.mp3",
       "spokenText": "Let's look again. Find a bubble that matches our clue.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a circle shape.",
+      "file": "llj-5b914a5d26e4d255d5ea6725.mp3",
+      "spokenText": "Let's look again. Find something with a circle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a diamond shape.",
+      "file": "llj-f47fa713a6ca2e3fb98f0016.mp3",
+      "spokenText": "Let's look again. Find something with a diamond shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a heart shape.",
+      "file": "llj-9a7cd12d0715a3cadf96579d.mp3",
+      "spokenText": "Let's look again. Find something with a heart shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a hexagon shape.",
+      "file": "llj-07398e533d8d659bf4b78eb5.mp3",
+      "spokenText": "Let's look again. Find something with a hexagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a oval shape.",
+      "file": "llj-e42d17c2f4562d6fbdaf6ae6.mp3",
+      "spokenText": "Let's look again. Find something with a oval shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a pentagon shape.",
+      "file": "llj-fa88bd67bebbd5682a5578b0.mp3",
+      "spokenText": "Let's look again. Find something with a pentagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a rectangle shape.",
+      "file": "llj-557479ce1b955cc10f515c92.mp3",
+      "spokenText": "Let's look again. Find something with a rectangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a square shape.",
+      "file": "llj-b284f3d37e7087ba933d1756.mp3",
+      "spokenText": "Let's look again. Find something with a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a star shape.",
+      "file": "llj-6e8511ee39e24605b67fe396.mp3",
+      "spokenText": "Let's look again. Find something with a star shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's look again. Find something with a triangle shape.",
+      "file": "llj-ec09a3b66652b4494ddbd9ea.mp3",
+      "spokenText": "Let's look again. Find something with a triangle shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -14802,6 +14938,22 @@
       "category": "shapes"
     },
     {
+      "text": "The book cover has a rectangle shape.",
+      "file": "llj-250d48d225f3738fadc4b0f5.mp3",
+      "spokenText": "The book cover has a rectangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The button has a circle shape.",
+      "file": "llj-5a1eb41fd9729b15335a0416.mp3",
+      "spokenText": "The button has a circle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The circle fits!",
       "file": "llj-93443cd02de0d2c6e179dfa1.mp3",
       "spokenText": "The circle fits!",
@@ -14938,6 +15090,22 @@
       "category": "shapes"
     },
     {
+      "text": "The diamond sign has a diamond shape.",
+      "file": "llj-40a61ad0d8b1c7d5155d02e7.mp3",
+      "spokenText": "The diamond sign has a diamond shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The diamond tile has a diamond shape.",
+      "file": "llj-39758907566c2d6642ed0a82.mp3",
+      "spokenText": "The diamond tile has a diamond shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The dolphin belongs in the ocean. Look for litter.",
       "file": "llj-cd3306fa8c160c6e5a04633a.mp3",
       "spokenText": "The dolphin belongs in the ocean. Look for litter.",
@@ -14952,6 +15120,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "The door has a rectangle shape.",
+      "file": "llj-16757a40064907d074ab8318.mp3",
+      "spokenText": "The door has a rectangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The egg has a oval shape.",
+      "file": "llj-6fb6baa5f6abc6a0b9143e39.mp3",
+      "spokenText": "The egg has a oval shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "The end. Your choices made a special adventure!",
@@ -14978,6 +15162,30 @@
       "category": "shapes"
     },
     {
+      "text": "The heart balloon has a heart shape.",
+      "file": "llj-88275bb2d69324a1fa1aa45d.mp3",
+      "spokenText": "The heart balloon has a heart shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The heart card has a heart shape.",
+      "file": "llj-c0c37e33b37619d8bc8c57b2.mp3",
+      "spokenText": "The heart card has a heart shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The heart cookie has a heart shape.",
+      "file": "llj-edd45ab537d5522401168d46.mp3",
+      "spokenText": "The heart cookie has a heart shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The heart fits! You posted it!",
       "file": "llj-b30d37f3e045e7fd47a44033.mp3",
       "spokenText": "The heart fits! You posted it!",
@@ -14989,6 +15197,38 @@
       "text": "The hexagon fits! You posted it!",
       "file": "llj-9a19cb414da0089d108d385e.mp3",
       "spokenText": "The hexagon fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The hexagon nut has a hexagon shape.",
+      "file": "llj-8ac72e243dd0e140254aba7d.mp3",
+      "spokenText": "The hexagon nut has a hexagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The hexagon tile has a hexagon shape.",
+      "file": "llj-9e701633d3a041379e36515a.mp3",
+      "spokenText": "The hexagon tile has a hexagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The honeycomb cell has a hexagon shape.",
+      "file": "llj-c2ee6b43bc6a7de099255533.mp3",
+      "spokenText": "The honeycomb cell has a hexagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The kite has a diamond shape.",
+      "file": "llj-9452be8dd067b284b45e5dae.mp3",
+      "spokenText": "The kite has a diamond shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -15066,9 +15306,57 @@
       "category": "shapes"
     },
     {
+      "text": "The oval mirror has a oval shape.",
+      "file": "llj-dc5af87c999413734277deb8.mp3",
+      "spokenText": "The oval mirror has a oval shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The oval rug has a oval shape.",
+      "file": "llj-dc19278a225b7a9684926ad4.mp3",
+      "spokenText": "The oval rug has a oval shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The pentagon badge has a pentagon shape.",
+      "file": "llj-6c1554f436d7c7dae8280a23.mp3",
+      "spokenText": "The pentagon badge has a pentagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The pentagon fits! You posted it!",
       "file": "llj-0655986b81c9b1efed87e27a.mp3",
       "spokenText": "The pentagon fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The pentagon sign has a pentagon shape.",
+      "file": "llj-8343aa4de09c79ceb14e8534.mp3",
+      "spokenText": "The pentagon sign has a pentagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The pentagon tile has a pentagon shape.",
+      "file": "llj-531d26cb44fbd7b3b97bd2cc.mp3",
+      "spokenText": "The pentagon tile has a pentagon shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The phone screen has a rectangle shape.",
+      "file": "llj-141ad71f4c3898e25abad3f2.mp3",
+      "spokenText": "The phone screen has a rectangle shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -15106,6 +15394,22 @@
       "category": "shapes"
     },
     {
+      "text": "The round plate has a circle shape.",
+      "file": "llj-59d4f629b619538f6fbd0759.mp3",
+      "spokenText": "The round plate has a circle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The sail has a triangle shape.",
+      "file": "llj-5ae4aa4f271c3401c47f3d93.mp3",
+      "spokenText": "The sail has a triangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The sea turtle belongs in the ocean. Look for litter.",
       "file": "llj-96219c9081ed19ed6c67fdf7.mp3",
       "spokenText": "The sea turtle belongs in the ocean. Look for litter.",
@@ -15130,6 +15434,14 @@
       "category": "nature"
     },
     {
+      "text": "The square cracker has a square shape.",
+      "file": "llj-a49f9256fddfc022d9f1f45b.mp3",
+      "spokenText": "The square cracker has a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The square fits!",
       "file": "llj-aab2bdd571735237f704da63.mp3",
       "spokenText": "The square fits!",
@@ -15146,9 +15458,41 @@
       "category": "shapes"
     },
     {
+      "text": "The square tile has a square shape.",
+      "file": "llj-9dc8e85c05c5f2af8175949e.mp3",
+      "spokenText": "The square tile has a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The star cookie has a star shape.",
+      "file": "llj-9b88adfd1d54bd3c394e0438.mp3",
+      "spokenText": "The star cookie has a star shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The star fits! You posted it!",
       "file": "llj-d57338cbf67b9040bd1f62a3.mp3",
       "spokenText": "The star fits! You posted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The star ornament has a star shape.",
+      "file": "llj-66cfeebdde592d15825a0709.mp3",
+      "spokenText": "The star ornament has a star shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The star sticker has a star shape.",
+      "file": "llj-5e2df052bb7f831f1007b574.mp3",
+      "spokenText": "The star sticker has a star shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -15160,6 +15504,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "The tent front has a triangle shape.",
+      "file": "llj-f2d70e3ca3212a5d3094ca2b.mp3",
+      "spokenText": "The tent front has a triangle shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "The tent has a triangle shape.",
@@ -15197,6 +15549,14 @@
       "text": "The window has a square shape.",
       "file": "llj-086322b1b849aee43d7e2949.mp3",
       "spokenText": "The window has a square shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "The window pane has a square shape.",
+      "file": "llj-a27b60685f8bb906f54b7df2.mp3",
+      "spokenText": "The window pane has a square shape.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
@@ -15248,6 +15608,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Thirty safari discoveries! You found ten shapes in so many things!",
+      "file": "llj-91f4d4783924622cea3fa504.mp3",
+      "spokenText": "Thirty safari discoveries! You found ten shapes in so many things!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "This is A. Find the letter that looks just like it.",

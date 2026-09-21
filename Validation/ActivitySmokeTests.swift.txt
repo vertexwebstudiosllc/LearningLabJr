@@ -777,6 +777,57 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testShapeSafariThirtyLevelsAndReplay() async throws {
+        let examples: [String: Set<String>] = [
+            "Circle": ["clock", "plate", "button"], "Square": ["window", "cracker", "square-tile"],
+            "Triangle": ["tent", "sail", "mountain"], "Rectangle": ["door", "book", "phone"],
+            "Oval": ["egg", "mirror", "rug"], "Diamond": ["kite", "diamond-tile", "diamond-sign"],
+            "Star": ["star-sticker", "star-cookie", "star-ornament"], "Heart": ["heart-balloon", "heart-cookie", "heart-card"],
+            "Pentagon": ["pentagon-badge", "pentagon-tile", "pentagon-sign"], "Hexagon": ["honeycomb", "hexagon-tile", "nut"]
+        ]
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Shape Safari"]
+        try reveal(card, in: app); card.tap()
+        var seen: Set<String> = [], pairs: Set<String> = []
+        for index in 0..<30 {
+            if index.isMultiple(of: 10) { seen = [] }
+            let level = app.staticTexts["shapes.safari.level"]
+            XCTAssertTrue(level.waitForExistence(timeout: 5))
+            XCTAssertTrue(level.label.hasPrefix("Level \(index + 1) of 30"))
+            let target = level.label.components(separatedBy: " · ").last!
+            XCTAssertTrue(seen.insert(target).inserted)
+            let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.safari.object.'")).allElementsBoundByIndex
+            XCTAssertEqual(choices.count, 6)
+            let correct = choices.filter { examples[target]!.contains($0.identifier.replacingOccurrences(of: "shapes.safari.object.", with: "")) }
+            XCTAssertEqual(correct.count, 2)
+            XCTAssertTrue(pairs.insert(correct.map(\.identifier).sorted().joined(separator: ",")).inserted)
+            let next = app.buttons["shapes.safari.next"]
+            XCTAssertFalse(next.exists)
+            let wrong = choices.first { !correct.map(\.identifier).contains($0.identifier) }!
+            try reveal(wrong, in: app); wrong.tap()
+            XCTAssertEqual(app.staticTexts["shapes.safari.progress"].label, "0 of 2 things found")
+            for choice in correct {
+                try reveal(choice, in: app); choice.tap()
+                XCTAssertFalse(choice.isEnabled)
+                XCTAssertTrue(choice.label.hasSuffix(", found"))
+            }
+            XCTAssertTrue(next.exists)
+            if index < 10 && ["Rectangle", "Pentagon", "Oval"].contains(target) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Shape Safari " + target; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.safari.level"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.safari.level"].label.hasPrefix("Level 1 of 30"))
+        XCTAssertEqual(app.staticTexts["shapes.safari.progress"].label, "0 of 2 things found")
+    }
+
+    @MainActor
     func testRoadTripTwentyFourGrowingGridsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

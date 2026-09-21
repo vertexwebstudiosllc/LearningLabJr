@@ -17,7 +17,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Lit
 | Shape Trails | Follow a broad moving guide by dragging or tapping | Twenty-five complete shape outlines |
 | Mosaic Garden | Choose eight paints to fill and recolor twelve pictures, beginning with the original flower | Paint all parts, then choose the next picture; no repeats before all twelve |
 | Shape Bubble Pop | Pop three matching bubbles among six; progress from colors to shapes to both attributes | Thirty shuffled challenges, gentle floating/pop animation, no timer, completion and replay |
-| Shape Safari | Find geometric forms in everyday object illustrations | Two objects per shape, three shapes |
+| Shape Safari | Find two illustrated examples of each of ten shapes across three shuffled passes | Thirty levels with a different matching pair for every appearance of a shape |
 | Rainbow Windows | Open colored windows to reveal and hear color–object associations | Six windows |
 | Little Road Trip | Follow twenty-four connected routes, progressing from 3×3 to 6×6 grids and longer paths | Reach home on each route, choose the next trip, complete all twenty-four and replay |
 

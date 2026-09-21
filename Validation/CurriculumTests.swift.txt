@@ -5,6 +5,56 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testShapeSafariBankCyclesAndPairs() {
+        XCTAssertEqual(SafariObject.bank.count, 30)
+        XCTAssertEqual(Set(SafariObject.bank.map(\.id)).count, 30)
+        XCTAssertEqual(Set(SafariObject.bank.map(\.name)).count, 30)
+        for shape in PostShape.allCases { XCTAssertEqual(SafariObject.bank.filter { $0.shape == shape }.count, 3) }
+        for _ in 0..<100 {
+            var session = SafariSession()
+            var pairs: Set<String> = []
+            for cycle in 0..<3 {
+                var seen: Set<PostShape> = []
+                for _ in 0..<10 {
+                    let round = session.current
+                    XCTAssertTrue(seen.insert(round.target).inserted)
+                    XCTAssertEqual(round.objects.count, 6)
+                    XCTAssertEqual(Set(round.objects.map(\.id)).count, 6)
+                    let correct = round.objects.filter { $0.shape == round.target }
+                    XCTAssertEqual(correct.count, 2)
+                    XCTAssertTrue(pairs.insert(correct.map(\.id).sorted().joined(separator: ",")).inserted)
+                    if session.index > 0 { XCTAssertNotEqual(session.rounds[session.index - 1].target, round.target) }
+                    let index = session.index
+                    session.next(); XCTAssertEqual(session.index, index)
+                    XCTAssertFalse(session.choose("invalid"))
+                    for wrong in round.objects.filter({ $0.shape != round.target }) { XCTAssertFalse(session.choose(wrong.id)) }
+                    for object in correct {
+                        XCTAssertTrue(session.choose(object.id))
+                        XCTAssertFalse(session.choose(object.id))
+                    }
+                    XCTAssertTrue(session.solved)
+                    session.next()
+                }
+                XCTAssertEqual(session.index, (cycle + 1) * 10)
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.choose(session.current.objects[0].id))
+            session.next(); XCTAssertEqual(session.index, 30)
+        }
+    }
+
+    @MainActor
+    func testShapeSafariRuthCoverage() {
+        let texts = PostShape.allCases.flatMap { shape in
+            let round = SafariRound(target: shape, objects: [])
+            return [round.prompt, round.retry]
+        } + SafariObject.bank.map(\.success) + [SafariRound.completion]
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
     func testRoadJourneysConnectedProgressionAndReplay() {
         var directions: Set<String> = []
         for _ in 0..<100 {
