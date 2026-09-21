@@ -32,6 +32,18 @@ enum CountingActivity: String, CaseIterable {
         }
     }
     func levels() -> [CountingLesson] {
+        var result = quantityLevels()
+        let foods = countingPictureCycle(NumberPicnicFood.bank, count: result.count)
+        let animals = countingPictureCycle(TouchCountAnimal.bank, count: result.count)
+        let themes = countingPictureCycle(CountingTheme.bank, count: result.count)
+        for index in result.indices {
+            result[index].food = foods[index]
+            result[index].animal = animals[index]
+            result[index].theme = themes[index]
+        }
+        return result
+    }
+    private func quantityLevels() -> [CountingLesson] {
         switch self {
         case .share:
             return (2...6).flatMap { n in (0..<2).map { CountingLesson(target: n, variant: $0) } }
@@ -59,6 +71,9 @@ enum CountingActivity: String, CaseIterable {
 
 struct CountingLesson {
     let target: Int
+    var food = NumberPicnicFood.bank[0]
+    var animal = TouchCountAnimal.bank[0]
+    var theme = CountingTheme.bank[0]
     var other = 0
     var amount = 1
     var start = 0
@@ -94,10 +109,10 @@ final class CountingPlay: ObservableObject {
     init(kind: CountingActivity) { self.kind = kind; levels = kind.levels(); resetRound() }
     var prompt: String {
         switch kind {
-        case .share: return lesson.amount == 1 ? "Give one apple to every plate. Tap an empty plate." : "Give two apples to every plate. Tap each plate until it has two."
-        case .sheep: return "Tap each sheep to tuck it in. How many are still awake?"
+        case .share: return lesson.amount == 1 ? "Give one \(lesson.food.id) to every plate. Tap an empty plate." : "Give two \(lesson.food.plural) to every plate. Tap each plate until it has two."
+        case .sheep: return "Tap each animal to tuck it in. How many are still awake?"
         case .trail: return "Follow the counting stones. Start at one."
-        case .more: return lesson.fewer ? "Which group has fewer oranges? Tap that group." : "Which group has more oranges? Tap that group."
+        case .more: return lesson.fewer ? "Which group has fewer \(lesson.food.plural)? Tap that group." : "Which group has more \(lesson.food.plural)? Tap that group."
         case .garden: return "Plant \(target) \(target == 1 ? "flower" : "flowers"). Tap a space to plant. Tap a flower to take it out."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
         case .towers: return "Build a tower the same height as mine. Add or take away blocks."
@@ -125,13 +140,13 @@ final class CountingPlay: ObservableObject {
         guard current < lesson.amount else { say("This plate has enough. Find a plate that needs more."); return }
         servings[index] = current + 1
         if servings.count == target && servings.values.allSatisfy({ $0 == lesson.amount }) { win("Everyone has the same amount. What fair sharing!") }
-        else { say(current == 0 ? "One apple for this friend." : "Two apples for this friend.") }
+        else { say(current == 0 ? "One \(lesson.food.id) for this friend." : "Two \(lesson.food.plural) for this friend.") }
     }
     func tuck(_ index: Int) {
         guard kind == .sheep, !solved, !complete, (0..<target).contains(index), marked.insert(index).inserted else { return }
         let left = target - marked.count
-        if left == 0 { win("No sheep awake. All the sheep are asleep. Good night!") }
-        else { say("\(left) \(left == 1 ? "sheep is" : "sheep are") still awake.") }
+        if left == 0 { win("No animals awake. All the animals are asleep. Good night!") }
+        else { say("\(left) \(left == 1 ? "animal is" : "animals are") still awake.") }
     }
     func stone(_ value: Int) {
         guard kind == .trail, !solved, !complete, lesson.stones.contains(value), value > count else { return }
@@ -144,14 +159,14 @@ final class CountingPlay: ObservableObject {
         guard [.more, .tickets, .dots].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
         if value == target {
             switch kind {
-            case .more: win(lesson.fewer ? "Yes! That group has fewer oranges." : "Yes! That group has more oranges.")
+            case .more: win(lesson.fewer ? "Yes! That group has fewer \(lesson.food.plural)." : "Yes! That group has more \(lesson.food.plural).")
             case .tickets: win("One dot for each passenger. All aboard!")
             default: win("You found the twin: \(target) dots!")
             }
         } else {
             switch kind {
             case .more: say("Count both groups carefully, then try again.")
-            case .tickets: say("Match each rabbit with one dot. Try another ticket.")
+            case .tickets: say("Match each passenger with one dot. Try another ticket.")
             default: say("You can peek at the clue again. Look for the same dots.")
             }
         }

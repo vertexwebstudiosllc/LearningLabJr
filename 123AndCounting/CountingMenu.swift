@@ -3,13 +3,13 @@ import Combine
 
 struct CountingMenu: View {
     static let activities: [LearningActivity] = [
-        .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count fruit groups from three to ten across twenty-four rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
-        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Count groups of two to ten animals across twenty-seven levels", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
-        .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Share one, then two apples per friend across twenty levels", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
-        .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Count down to zero across eighteen flocks of two to ten sheep", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when a sheep goes to sleep."),
+        .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count twelve kinds of fruit in growing groups across twenty-four rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
+        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Count twelve kinds of animals across twenty-seven growing levels", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
+        .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Share twelve kinds of fruit, one then two per friend", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
+        .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck twelve kinds of animal friends in across eighteen levels", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when an animal goes to sleep."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Counting order from one to ten", interaction: "Follow twenty-four shuffled trails growing from three to ten stones", ageBand: "Ages 3–4", caregiverTip: "Point to the dots if the numerals are unfamiliar."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare more, then fewer across twenty increasingly close pairs", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
-        .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
+        .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames with eight flower styles", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
         .init(id: "counting.tower", title: "Twin Towers", skill: "Compare height and count units", interaction: "Build and adjust eighteen towers from two to ten blocks", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
         .init(id: "counting.dots", title: "Dot Detective", skill: "Recognize small dot patterns", interaction: "Explore eighteen dot clues from one to six with optional hiding", ageBand: "Ages 3–4", caregiverTip: "Keep the clue open as long as your child wants."),
@@ -112,7 +112,7 @@ private struct PicnicShareGame: View {
     @StateObject private var play = CountingPlay(kind: .share)
     var body: some View {
         CountingStage(play: play) {
-            Text("\(play.target) friends · \(play.lesson.amount) \(play.lesson.amount == 1 ? "apple" : "apples") each").font(.headline)
+            Text("\(play.target) friends · \(play.lesson.amount) \(play.lesson.amount == 1 ? play.lesson.food.id : play.lesson.food.plural) each").font(.headline)
                 .accessibilityIdentifier("counting.ext.clue")
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 12) {
                 ForEach(0..<play.target, id: \.self) { index in
@@ -121,10 +121,10 @@ private struct PicnicShareGame: View {
                         ZStack {
                             Circle().fill(.white).overlay(Circle().stroke(.indigo.opacity(0.25), lineWidth: 4))
                             if amount == 0 { Image(systemName: "plus").font(.title) }
-                            else { HStack(spacing: 0) { ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: "Apple", size: amount == 1 ? 48 : 32) } } }
+                            else { HStack(spacing: 0) { ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: play.lesson.food.asset, size: amount == 1 ? 48 : 32) } } }
                         }.frame(height: 92)
                     }.buttonStyle(.plain)
-                        .accessibilityLabel("Plate \(index + 1), \(amount) apples")
+                        .accessibilityLabel("Plate \(index + 1), \(amount) \(amount == 1 ? play.lesson.food.id : play.lesson.food.plural)")
                         .accessibilityIdentifier("counting.ext.plate.\(index)")
                         .disabled(amount == play.lesson.amount)
                 }
@@ -143,11 +143,11 @@ private struct SleepySheepGame: View {
                     Button { play.tuck(index) } label: {
                         VStack(spacing: 4) {
                             if play.marked.contains(index) { Image(systemName: "moon.zzz.fill").font(.system(size: 34)).frame(height: 48) }
-                            else { CountingPicture(asset: "sheep") }
+                            else { CountingPicture(asset: play.lesson.animal.id) }
                             Text(play.marked.contains(index) ? "Asleep" : "Awake").font(.caption)
                         }.frame(maxWidth: .infinity, minHeight: 88).background(.white, in: RoundedRectangle(cornerRadius: 18))
                     }.buttonStyle(.plain).disabled(play.marked.contains(index))
-                        .accessibilityLabel("Sheep \(index + 1), \(play.marked.contains(index) ? "asleep" : "awake")")
+                        .accessibilityLabel("\(play.lesson.animal.id.capitalized) \(index + 1), \(play.marked.contains(index) ? "asleep" : "awake")")
                         .accessibilityIdentifier("counting.ext.sheep.\(index)")
                 }
             }
@@ -166,7 +166,10 @@ private struct TreasureTrailGame: View {
                         .disabled(value <= play.count).accessibilityIdentifier("counting.ext.stone.\(value)")
                 }
             }
-            if play.solved { ToddlerArt(asset: "Star", size: 64) }
+            HStack(spacing: 12) {
+                ToddlerArt(asset: play.lesson.theme.asset, size: 64)
+                Text(play.solved ? "Treasure found!" : "Find the trail treasure").font(.headline)
+            }.accessibilityElement(children: .ignore).accessibilityLabel("\(play.lesson.theme.id) treasure")
         }
     }
 }
@@ -179,9 +182,9 @@ private struct MoreGroupsGame: View {
             ForEach(play.lesson.choices, id: \.self) { amount in
                 Button { play.choose(amount) } label: {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 5), spacing: 6) {
-                        ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: "Orange", size: 40) }
+                        ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: play.lesson.food.asset, size: 40) }
                     }.padding(12).frame(maxWidth: .infinity, minHeight: 112).background(.white, in: RoundedRectangle(cornerRadius: 20))
-                }.buttonStyle(.plain).accessibilityLabel("Group with \(amount) oranges").accessibilityIdentifier("counting.ext.choice.\(amount)")
+                }.buttonStyle(.plain).accessibilityLabel("Group with \(amount) \(play.lesson.food.plural)").accessibilityIdentifier("counting.ext.choice.\(amount)")
             }
         }
     }
@@ -199,8 +202,10 @@ private struct FiveFrameGardenGame: View {
                         ForEach(0..<5, id: \.self) { column in
                             let index = row * 5 + column
                             Button { play.plant(index) } label: {
-                                Image(systemName: play.marked.contains(index) ? "camera.macro" : "plus")
-                                    .font(.system(size: 25)).frame(maxWidth: .infinity, minHeight: 66)
+                                Group {
+                                    if play.marked.contains(index) { CountingFlower(theme: play.lesson.theme) }
+                                    else { Image(systemName: "plus").font(.system(size: 25)) }
+                                }.frame(maxWidth: .infinity, minHeight: 66)
                                     .background(.white, in: RoundedRectangle(cornerRadius: 12))
                             }.buttonStyle(.plain)
                                 .accessibilityLabel("Space \(index + 1), \(play.marked.contains(index) ? "planted" : "empty")")
@@ -222,8 +227,8 @@ private struct TicketTrainGame: View {
         CountingStage(play: play) {
             Image(systemName: "tram.fill").font(.system(size: 42)).foregroundStyle(.indigo)
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 8) {
-                ForEach(0..<play.target, id: \.self) { _ in CountingPicture(asset: "rabbit", size: 40) }
-            }.accessibilityElement(children: .ignore).accessibilityLabel("\(play.target) passengers").accessibilityIdentifier("counting.ext.passengers")
+                ForEach(0..<play.target, id: \.self) { _ in CountingPicture(asset: play.lesson.animal.id, size: 40) }
+            }.accessibilityElement(children: .ignore).accessibilityLabel("\(play.target) \(play.lesson.animal.plural) riding the train").accessibilityIdentifier("counting.ext.passengers")
             ForEach(play.lesson.choices, id: \.self) { value in
                 Button { play.choose(value) } label: {
                     HStack {
@@ -240,7 +245,7 @@ private struct TwinTowersGame: View {
     @StateObject private var play = CountingPlay(kind: .towers)
     var body: some View {
         CountingStage(play: play) {
-            HStack(alignment: .bottom, spacing: 28) { tower(play.target, label: "My tower", color: .orange); tower(play.count, label: "Your tower", color: .indigo) }
+            HStack(alignment: .bottom, spacing: 28) { tower(play.target, label: "My tower", color: play.lesson.theme.color); tower(play.count, label: "Your tower", color: play.lesson.theme.color) }
             HStack {
                 ToddlerActionButton(title: "Take one", systemImage: "minus.circle.fill", color: .indigo) { play.changeBlocks(-1) }
                     .disabled(play.count == 0).accessibilityIdentifier("counting.ext.minus")
@@ -257,7 +262,7 @@ private struct TwinTowersGame: View {
                 ForEach(0..<count, id: \.self) { _ in RoundedRectangle(cornerRadius: 4).fill(color).frame(width: 72, height: 16) }
             }.frame(height: 240)
             Rectangle().fill(.secondary).frame(width: 90, height: 3)
-            Text(label).font(.headline)
+            HStack(spacing: 6) { ToddlerArt(asset: play.lesson.theme.asset, size: 28); Text(label).font(.headline) }
         }.accessibilityElement(children: .ignore).accessibilityLabel("\(label), \(count) blocks")
             .accessibilityIdentifier(label == "My tower" ? "counting.ext.model" : "counting.ext.built")
     }
@@ -268,7 +273,7 @@ private struct DotDetectiveGame: View {
     var body: some View {
         CountingStage(play: play) {
             VStack(spacing: 10) {
-                Text("Clue card").font(.headline)
+                HStack { CountingPicture(asset: play.lesson.theme.asset, size: 32); Text("Clue card").font(.headline) }
                 if play.revealed { Image(systemName: "questionmark").font(.title).frame(height: 42) }
                 else { QuantityDots(count: play.target, variant: play.lesson.variant).frame(height: 42) }
             }.frame(maxWidth: .infinity, minHeight: 104).background(.yellow.opacity(0.2), in: RoundedRectangle(cornerRadius: 20))
@@ -278,7 +283,10 @@ private struct DotDetectiveGame: View {
             HStack(spacing: 10) {
                 ForEach(play.lesson.choices, id: \.self) { value in
                     Button { play.choose(value) } label: {
-                        QuantityDots(count: value, variant: play.lesson.variant).frame(maxWidth: .infinity, minHeight: 106).background(.white, in: RoundedRectangle(cornerRadius: 18))
+                        VStack(spacing: 12) {
+                            CountingPicture(asset: play.lesson.theme.asset, size: 28)
+                            QuantityDots(count: value, variant: play.lesson.variant)
+                        }.frame(maxWidth: .infinity, minHeight: 120).background(.white, in: RoundedRectangle(cornerRadius: 18))
                     }.buttonStyle(.plain).accessibilityLabel("Card with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
                 }
             }
@@ -292,12 +300,8 @@ private struct FrogHopsGame: View {
     var body: some View {
         CountingStage(play: play) {
             Text("Make \(play.target) hops").font(.headline).accessibilityIdentifier("counting.ext.clue")
-            ZStack {
-                Capsule().fill(.cyan.opacity(0.12)).frame(height: 90)
-                Text("🐸").font(.system(size: 52))
-                    .offset(x: CGFloat(min(play.count, play.target)) / CGFloat(play.target) * 160 - 80)
-                    .animation(reduceMotion ? nil : .spring(duration: 0.3), value: play.count)
-            }.accessibilityHidden(true)
+            CountingPond(theme: play.lesson.theme, progress: Double(min(play.count, play.target)) / Double(play.target))
+                .animation(reduceMotion ? nil : .spring(duration: 0.3), value: play.count)
             Text("\(play.count) hops").font(.title.bold()).accessibilityIdentifier("counting.ext.count")
             ToddlerActionButton(title: "Hop!", systemImage: "arrow.up.circle.fill", color: .indigo, action: play.tap)
                 .disabled(play.count >= play.limit).accessibilityIdentifier("counting.ext.tap")
@@ -320,7 +324,12 @@ private struct CountingDrumGame: View {
                 .accessibilityIdentifier("counting.ext.listen")
             Text(playing ? "Listen: \(beat)" : "Your beats: \(play.count)").font(.title.bold()).accessibilityIdentifier("counting.ext.count")
             Button { if !playing { play.tap() } } label: {
-                Image(systemName: "circle.inset.filled").font(.system(size: 100)).foregroundStyle(.orange)
+                ZStack {
+                    Circle().fill(play.lesson.theme.color.opacity(0.18))
+                    Circle().stroke(play.lesson.theme.color, lineWidth: 8).padding(5)
+                    ToddlerArt(asset: play.lesson.theme.asset, size: 72)
+                }.frame(width: 124, height: 124)
+                    .scaleEffect(playing && beat > 0 ? 1.04 : 1)
                     .frame(maxWidth: .infinity, minHeight: 140).background(.white, in: RoundedRectangle(cornerRadius: 28))
             }.buttonStyle(.plain).disabled(playing || play.count >= play.limit).accessibilityLabel("Drum. Tap one beat").accessibilityIdentifier("counting.ext.tap")
             ToddlerActionButton(title: "Check my beats", systemImage: "checkmark.circle.fill", color: .indigo) {

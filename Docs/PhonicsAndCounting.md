@@ -31,18 +31,18 @@ Word and picture matches were checked against the catalog. The active destinatio
 
 | Activity | Distinct interaction | Quantities |
 | --- | --- | --- |
-| Number Picnic | Count apples, oranges and strawberries; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
-| Touch & Count | Tap ducks, sheep and rabbits in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
-| Picnic Share | Share one apple per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
-| Sleepy Sheep | Tuck each sheep in once and count the remaining flock down to zero | 18 levels, 2–10 sheep |
-| Treasure Trail | Follow shuffled number stones in order with dot support | 24 levels, trails from 3–10 |
-| Which Has More? | Compare aligned groups; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |
-| Five-Frame Garden | Build requested groups and correct preplanted groups in one or two five-frames | 20 levels, targets 1–10 |
-| Ticket Train | Match exactly one ticket dot per passenger using varied dot layouts | 24 levels, 2–9 passengers |
-| Twin Towers | Build from empty, then shorten an oversized tower to match a model | 18 levels, targets 2–10 |
-| Dot Detective | Inspect a dot pattern, optionally hide/peek, then find its matching card | 18 levels, 1–6 dots in three layouts |
-| Frog Hops | Count actions as a frog moves toward the pond; check, reset and retry freely | 24 trips, 2–9 hops |
-| Counting Drum | Request spoken beats, then echo their count; replay remains available without a timing score | 18 levels, 1–6 beats |
+| Number Picnic | Count twelve kinds of fruit; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
+| Touch & Count | Tap twelve kinds of animals in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
+| Picnic Share | Share one piece of fruit per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
+| Sleepy Sheep | Tuck each animal in once and count the remaining flock down to zero | 18 levels, 2–10 animals |
+| Treasure Trail | Follow shuffled number stones in order with dot support and eight illustrated treasures | 24 levels, trails from 3–10 |
+| Which Has More? | Compare aligned groups of twelve rotating fruits; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |
+| Five-Frame Garden | Build requested groups and correct preplanted groups in one or two five-frames with eight flower designs | 20 levels, targets 1–10 |
+| Ticket Train | Match exactly one ticket dot per passenger using twelve animal passengers and varied dot layouts | 24 levels, 2–9 passengers |
+| Twin Towers | Build from empty, then shorten an oversized tower to match a model; eight matching picture themes | 18 levels, targets 2–10 |
+| Dot Detective | Inspect a dot pattern, optionally hide/peek, then find its matching card; eight illustrated card themes | 18 levels, 1–6 dots in three layouts |
+| Frog Hops | Count actions as a frog moves toward eight illustrated pond scenes; check, reset and retry freely | 24 trips, 2–9 hops |
+| Counting Drum | Request spoken beats, then echo their count on eight illustrated drums; replay remains available without a timing score | 18 levels, 1–6 beats |
 
 Abstract addition, subtraction equations, number bonds, `>`/`<`, and ordering numbers to 20 are absent from the active toddler counting menu. The new activities use concrete small groups, objects, actions, and spatial comparison. Dot cards and visible reference models support children who are still learning numerals.
 
@@ -66,3 +66,9 @@ Swift frontend parsing passed for the modified menus, new literacy games, and tr
 The former `LetterMatch`, `SoundBaskets`, `BeginningSoundsGame`, `AlphabetSequenceGame`, `VowelGardenGame`, `ConsonantCoveGame`, `SyllableHopGame`, and SpriteKit scene source files remain for comparison and possible later reuse. The revised ABCs menu does not route to them, and they are not additional catalog activities. Their previous random rounds, timers, and screen-size assumptions are not part of the new activity implementations.
 
 Simulator interaction tests, real-device audio listening, larger accessibility text checks, and observed toddler/caregiver play remain necessary before describing these activities as release ready. In particular, inspect every spoken prompt in context, test replay after a session lock/background transition, and tune tracing tolerance with real finger input.
+
+### Counting picture variety
+
+All twelve counting games retain their difficulty progression. Number Picnic, Picnic Share and Which Has More? draw from twelve fruits: apple, orange, strawberry, pear, peach, plum, lemon, lime, mango, pineapple, blueberry and raspberry. Touch & Count, Sleepy Sheep and Ticket Train use twelve animal friends: duck, sheep, rabbit, cat, dog, cow, horse, goat, pig, chick, turtle and penguin. Sleepy Sheep keeps its menu name while welcoming other sleepy animals.
+
+Collections are shuffled at session creation and exhausted before repeating, with no repeats within any three consecutive rounds. Eight visual themes vary trail treasures, tower decorations, dot-card illustrations, drum faces and pond scenery. The garden uses eight colored petal designs. Every round keeps a stable picture/style across its countable items; comparisons use equal-size pictures, tower blocks retain equal dimensions, and card decorations are identical across choices. Replay creates a fresh picture order. Ruth names the selected foods and animals where applicable.

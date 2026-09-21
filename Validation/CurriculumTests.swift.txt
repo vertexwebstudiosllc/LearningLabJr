@@ -6,6 +6,67 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testNarrationMuteAcceptsBooleanAndLaunchArgumentValues() {
+        let suite = "LearningLabJr.MuteTest." + UUID().uuidString
+        let defaults = UserDefaults(suiteName: suite)!
+        defer { defaults.removePersistentDomain(forName: suite) }
+        XCTAssertTrue(GameNarrator.promptsEnabled(in: defaults))
+        for value in [false, "NO", "0"] as [Any] {
+            defaults.set(value, forKey: "parents.voicePromptsEnabled")
+            XCTAssertFalse(GameNarrator.promptsEnabled(in: defaults))
+        }
+        defaults.set(true, forKey: "parents.voicePromptsEnabled")
+        XCTAssertTrue(GameNarrator.promptsEnabled(in: defaults))
+    }
+
+    func testCountingPictureCollectionsAndCycles() {
+        XCTAssertEqual(NumberPicnicFood.bank.count, 12)
+        XCTAssertEqual(TouchCountAnimal.bank.count, 12)
+        XCTAssertEqual(CountingTheme.bank.count, 8)
+        for theme in CountingTheme.bank {
+            XCTAssertNotNil(UIImage(named: theme.asset), theme.asset)
+            XCTAssertNotNil(UIImage(systemName: theme.scenery), theme.scenery)
+        }
+        for _ in 0..<100 {
+            for kind in CountingActivity.allCases {
+                let levels = kind.levels()
+                let sequences = [levels.map { $0.food.id }, levels.map { $0.animal.id }, levels.map { $0.theme.id }]
+                for (index, sequence) in sequences.enumerated() {
+                    let size = index == 2 ? 8 : 12
+                    for start in stride(from: 0, to: sequence.count, by: size) {
+                        let cycle = Array(sequence[start..<min(start + size, sequence.count)])
+                        XCTAssertEqual(Set(cycle).count, cycle.count)
+                    }
+                    for start in 0..<(sequence.count - 2) {
+                        XCTAssertEqual(Set(sequence[start...start + 2]).count, 3)
+                    }
+                }
+            }
+        }
+    }
+
+    @MainActor
+    func testCountingPictureRuthCoverage() {
+        var texts = ["Tap each animal to tuck it in. How many are still awake?",
+                     "No animals awake. All the animals are asleep. Good night!",
+                     "Match each passenger with one dot. Try another ticket."]
+        texts += (1...9).map { "\($0) \($0 == 1 ? "animal is" : "animals are") still awake." }
+        for food in NumberPicnicFood.bank {
+            texts += ["Give one \(food.id) to every plate. Tap an empty plate.",
+                      "Give two \(food.plural) to every plate. Tap each plate until it has two.",
+                      "One \(food.id) for this friend.", "Two \(food.plural) for this friend."]
+            for comparison in ["more", "fewer"] {
+                texts += ["Which group has \(comparison) \(food.plural)? Tap that group.",
+                          "Yes! That group has \(comparison) \(food.plural)."]
+            }
+        }
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
+    @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
         let totals: [CountingActivity: Int] = [.share: 20, .sheep: 18, .trail: 24, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
@@ -127,7 +188,7 @@ final class CurriculumTests: XCTestCase {
         for _ in 0..<100 {
             var session = TouchCountSession()
             XCTAssertEqual(session.rounds.count, 27)
-            XCTAssertEqual(session.current.animal.id, "duck")
+            XCTAssertEqual(Set(session.rounds.prefix(12).map { $0.animal.id }).count, 12)
             XCTAssertEqual(Set(session.rounds.map(\.key)).count, 27)
             for index in 0..<27 {
                 let round = session.current
@@ -170,7 +231,7 @@ final class CurriculumTests: XCTestCase {
             var session = NumberPicnicSession()
             XCTAssertEqual(session.rounds.count, 24)
             XCTAssertEqual(session.current.count, 3)
-            XCTAssertEqual(session.current.food.id, "apple")
+            XCTAssertEqual(Set(session.rounds.prefix(12).map { $0.food.id }).count, 12)
             XCTAssertEqual(Set(session.rounds.map(\.key)).count, 24)
             for index in 0..<24 {
                 let round = session.current

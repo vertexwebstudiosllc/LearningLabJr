@@ -34,6 +34,14 @@
       "category": "literacy"
     },
     {
+      "text": "1 animal is still awake.",
+      "file": "llj-e4dcf210e055c073a3547004.mp3",
+      "spokenText": "1 animal is still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "1 beats. You echoed my drum!",
       "file": "llj-b05abaff5fb4779a5ad50e7f.mp3",
       "spokenText": "One beat. You echoed my drum!",
@@ -122,9 +130,73 @@
       "category": "counting"
     },
     {
+      "text": "10. You counted every cat!",
+      "file": "llj-78727790e167cc6913e6fd2e.mp3",
+      "spokenText": "10. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every chick!",
+      "file": "llj-335d3f2b1fa272fd52d0a31e.mp3",
+      "spokenText": "10. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every cow!",
+      "file": "llj-2d1790c94e98f82bd7e2a890.mp3",
+      "spokenText": "10. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every dog!",
+      "file": "llj-bf6eab8534a875d8b5abe94f.mp3",
+      "spokenText": "10. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "10. You counted every duck!",
       "file": "llj-7092ee7505467d5a46ca0f9a.mp3",
       "spokenText": "10. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every goat!",
+      "file": "llj-56386416d9c4347daede4f11.mp3",
+      "spokenText": "10. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every horse!",
+      "file": "llj-0e5f3c2b3f0efa6f880ceece.mp3",
+      "spokenText": "10. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every penguin!",
+      "file": "llj-9a7c89df83884335b75c8871.mp3",
+      "spokenText": "10. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every pig!",
+      "file": "llj-c0af0795fd70ab04b1a0751a.mp3",
+      "spokenText": "10. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -141,6 +213,14 @@
       "text": "10. You counted every sheep!",
       "file": "llj-634f313e653c5129f6fe8700.mp3",
       "spokenText": "10. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10. You counted every turtle!",
+      "file": "llj-23ac1ca0bb95edf3dcd8e7a8.mp3",
+      "spokenText": "10. You counted every turtle!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -184,6 +264,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "2 animals are still awake.",
+      "file": "llj-f4bb6f81bbd0d0b75437a282.mp3",
+      "spokenText": "2 animals are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "2 beats. You echoed my drum!",
@@ -242,9 +330,73 @@
       "category": "counting"
     },
     {
+      "text": "2. You counted every cat!",
+      "file": "llj-8d07c7a97f8915dd9d4074f4.mp3",
+      "spokenText": "2. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every chick!",
+      "file": "llj-0f9ad09888fda95f14f85c52.mp3",
+      "spokenText": "2. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every cow!",
+      "file": "llj-6dcc309c38505b6dc906689b.mp3",
+      "spokenText": "2. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every dog!",
+      "file": "llj-5fa7f901228e325ada620cdb.mp3",
+      "spokenText": "2. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "2. You counted every duck!",
       "file": "llj-a09b5638524483e99e2d1d7a.mp3",
       "spokenText": "2. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every goat!",
+      "file": "llj-080e3f1c4687070218bfa6b7.mp3",
+      "spokenText": "2. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every horse!",
+      "file": "llj-4a53ef0868fbc85967c55c3d.mp3",
+      "spokenText": "2. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every penguin!",
+      "file": "llj-a199cf9bf063dfacc1bd7723.mp3",
+      "spokenText": "2. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2. You counted every pig!",
+      "file": "llj-ce26089857b416d284c47374.mp3",
+      "spokenText": "2. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -266,12 +418,28 @@
       "category": "counting"
     },
     {
+      "text": "2. You counted every turtle!",
+      "file": "llj-523613a78f33bda552a38291.mp3",
+      "spokenText": "2. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3",
       "file": "llj-b1a3548b285a5bce2f2cf660.mp3",
       "spokenText": "3",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "3 animals are still awake.",
+      "file": "llj-b73a6b13cfa30486122609e9.mp3",
+      "spokenText": "3 animals are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "3 beats. You echoed my drum!",
@@ -330,9 +498,73 @@
       "category": "counting"
     },
     {
+      "text": "3. You counted every cat!",
+      "file": "llj-8ec3476b5e42c24544cb89a5.mp3",
+      "spokenText": "3. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every chick!",
+      "file": "llj-8942ed44b2d7b1dd8a36f917.mp3",
+      "spokenText": "3. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every cow!",
+      "file": "llj-0180024d63b62a056e6c3b00.mp3",
+      "spokenText": "3. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every dog!",
+      "file": "llj-bdf2185d34f9bf8b356a43e9.mp3",
+      "spokenText": "3. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3. You counted every duck!",
       "file": "llj-18d8b9b1c538f466eb41d617.mp3",
       "spokenText": "3. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every goat!",
+      "file": "llj-c0d6dad998a14c2a40dab616.mp3",
+      "spokenText": "3. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every horse!",
+      "file": "llj-930dbfa20f0b90289289b180.mp3",
+      "spokenText": "3. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every penguin!",
+      "file": "llj-eaf35f858fa7bb7a9137e7d7.mp3",
+      "spokenText": "3. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3. You counted every pig!",
+      "file": "llj-84af2f404d89dfa21f9e1030.mp3",
+      "spokenText": "3. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -354,9 +586,25 @@
       "category": "counting"
     },
     {
+      "text": "3. You counted every turtle!",
+      "file": "llj-9872ecd25ac6b8180919d1b3.mp3",
+      "spokenText": "3. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "4",
       "file": "llj-f964db7cd3b626991e24651f.mp3",
       "spokenText": "4",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 animals are still awake.",
+      "file": "llj-6f6f274b662f2003ce6417b0.mp3",
+      "spokenText": "4 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -418,9 +666,73 @@
       "category": "counting"
     },
     {
+      "text": "4. You counted every cat!",
+      "file": "llj-3b04cce64fbb7898bf6522c8.mp3",
+      "spokenText": "4. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every chick!",
+      "file": "llj-58770b0eeb10ac6f25e3b25d.mp3",
+      "spokenText": "4. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every cow!",
+      "file": "llj-046328474fcb42566b0b7480.mp3",
+      "spokenText": "4. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every dog!",
+      "file": "llj-8b2e370470710cc971abe426.mp3",
+      "spokenText": "4. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "4. You counted every duck!",
       "file": "llj-b4300aff093cc7c1997d23cd.mp3",
       "spokenText": "4. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every goat!",
+      "file": "llj-8bd94b54d9dff8834b8494d0.mp3",
+      "spokenText": "4. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every horse!",
+      "file": "llj-594e8854f6f654813ba3ef0b.mp3",
+      "spokenText": "4. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every penguin!",
+      "file": "llj-ea3afb3a03144875ba2cfcef.mp3",
+      "spokenText": "4. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. You counted every pig!",
+      "file": "llj-319b6503172644d3b0fb0d97.mp3",
+      "spokenText": "4. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -442,9 +754,25 @@
       "category": "counting"
     },
     {
+      "text": "4. You counted every turtle!",
+      "file": "llj-f14459bc6ad558b155481f0a.mp3",
+      "spokenText": "4. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "5",
       "file": "llj-8cc39fdbec866e83506d9f98.mp3",
       "spokenText": "5",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 animals are still awake.",
+      "file": "llj-0771887aebd368be4aa8f815.mp3",
+      "spokenText": "5 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -506,9 +834,73 @@
       "category": "counting"
     },
     {
+      "text": "5. You counted every cat!",
+      "file": "llj-f23f654d25a6a79c46a3c6f0.mp3",
+      "spokenText": "5. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every chick!",
+      "file": "llj-a62c411cfe9f8e6e54bf39ee.mp3",
+      "spokenText": "5. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every cow!",
+      "file": "llj-abb7f745610586c0af8da0fa.mp3",
+      "spokenText": "5. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every dog!",
+      "file": "llj-e06cc2bd305a9db91d944295.mp3",
+      "spokenText": "5. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "5. You counted every duck!",
       "file": "llj-a533e599d05828637429b31e.mp3",
       "spokenText": "5. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every goat!",
+      "file": "llj-ae8e65cd3f7b6112f2bad80f.mp3",
+      "spokenText": "5. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every horse!",
+      "file": "llj-80db0087f05a3490be68a314.mp3",
+      "spokenText": "5. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every penguin!",
+      "file": "llj-d7ff1e9964af9c0f170b6a00.mp3",
+      "spokenText": "5. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. You counted every pig!",
+      "file": "llj-c2bffa797ac77804d55a46f2.mp3",
+      "spokenText": "5. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -530,9 +922,25 @@
       "category": "counting"
     },
     {
+      "text": "5. You counted every turtle!",
+      "file": "llj-4ac0dd47f66308dfe3f95f1a.mp3",
+      "spokenText": "5. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6",
       "file": "llj-d5fc3ed4caa91ce10a1b1ed4.mp3",
       "spokenText": "6",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 animals are still awake.",
+      "file": "llj-f7351b7a17b6e5a006d1b418.mp3",
+      "spokenText": "6 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -594,9 +1002,73 @@
       "category": "counting"
     },
     {
+      "text": "6. You counted every cat!",
+      "file": "llj-e783315656dd4a0340e807a7.mp3",
+      "spokenText": "6. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every chick!",
+      "file": "llj-5c918c70772499d367de33ab.mp3",
+      "spokenText": "6. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every cow!",
+      "file": "llj-598ff76f5d496e0a9dc01ec8.mp3",
+      "spokenText": "6. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every dog!",
+      "file": "llj-b1f7baf11ab5b0af9199545d.mp3",
+      "spokenText": "6. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6. You counted every duck!",
       "file": "llj-aabe8675ed9367dfe610d112.mp3",
       "spokenText": "6. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every goat!",
+      "file": "llj-7e150de40595b0886498ea0e.mp3",
+      "spokenText": "6. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every horse!",
+      "file": "llj-d5cdd2857f7a00d1fa0ae306.mp3",
+      "spokenText": "6. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every penguin!",
+      "file": "llj-b8ea39bd18576f439b2043e4.mp3",
+      "spokenText": "6. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. You counted every pig!",
+      "file": "llj-216e4c7b909fc92e6c34aa96.mp3",
+      "spokenText": "6. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -618,9 +1090,25 @@
       "category": "counting"
     },
     {
+      "text": "6. You counted every turtle!",
+      "file": "llj-c8161dfabefdcf2b86a758ee.mp3",
+      "spokenText": "6. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7",
       "file": "llj-68f3d2397410bf75c71ecf1d.mp3",
       "spokenText": "7",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 animals are still awake.",
+      "file": "llj-00a604091f1519e03b127d8e.mp3",
+      "spokenText": "7 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -666,9 +1154,73 @@
       "category": "counting"
     },
     {
+      "text": "7. You counted every cat!",
+      "file": "llj-adf5301876e429fb4a650257.mp3",
+      "spokenText": "7. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every chick!",
+      "file": "llj-224467ebf61e10f9704236a4.mp3",
+      "spokenText": "7. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every cow!",
+      "file": "llj-3ca8a218eee2d8bca5ad2ef1.mp3",
+      "spokenText": "7. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every dog!",
+      "file": "llj-81ea63eac30baa052efc9036.mp3",
+      "spokenText": "7. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7. You counted every duck!",
       "file": "llj-67faab8f10a15642af8ce8c7.mp3",
       "spokenText": "7. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every goat!",
+      "file": "llj-a9f36422c63959e5bab04466.mp3",
+      "spokenText": "7. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every horse!",
+      "file": "llj-f6e95a0ddca32d18fbd8ab89.mp3",
+      "spokenText": "7. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every penguin!",
+      "file": "llj-2f0af746d09f52224d4a3eb5.mp3",
+      "spokenText": "7. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. You counted every pig!",
+      "file": "llj-b86a74ae8914b1abf4eddd47.mp3",
+      "spokenText": "7. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -690,9 +1242,25 @@
       "category": "counting"
     },
     {
+      "text": "7. You counted every turtle!",
+      "file": "llj-7b63b01e0918141d975e4720.mp3",
+      "spokenText": "7. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "8",
       "file": "llj-651ab0fbb37fa31e0ca0ef5f.mp3",
       "spokenText": "8",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 animals are still awake.",
+      "file": "llj-2c1af0043d830bb3c0f74dbf.mp3",
+      "spokenText": "8 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -738,9 +1306,73 @@
       "category": "counting"
     },
     {
+      "text": "8. You counted every cat!",
+      "file": "llj-5a3290d2cedb5ed92896eeb9.mp3",
+      "spokenText": "8. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every chick!",
+      "file": "llj-35676cf190526d1a6b0135be.mp3",
+      "spokenText": "8. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every cow!",
+      "file": "llj-e3bd10c5b7212b5f10e405d4.mp3",
+      "spokenText": "8. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every dog!",
+      "file": "llj-401a8147cf3e5e39c8a2e0aa.mp3",
+      "spokenText": "8. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "8. You counted every duck!",
       "file": "llj-c8a0a98f65735fc045c72aa8.mp3",
       "spokenText": "8. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every goat!",
+      "file": "llj-58735cabe6902094fc8f74ac.mp3",
+      "spokenText": "8. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every horse!",
+      "file": "llj-e2e9c22df01b41ca6a620bc5.mp3",
+      "spokenText": "8. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every penguin!",
+      "file": "llj-64e50155d0d0d6616db43840.mp3",
+      "spokenText": "8. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. You counted every pig!",
+      "file": "llj-6547452ef416780143472b89.mp3",
+      "spokenText": "8. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -762,9 +1394,25 @@
       "category": "counting"
     },
     {
+      "text": "8. You counted every turtle!",
+      "file": "llj-f168f0091fcf90b7251295de.mp3",
+      "spokenText": "8. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "9",
       "file": "llj-28a4666c617349dac6d2e703.mp3",
       "spokenText": "9",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 animals are still awake.",
+      "file": "llj-3d6793270107a4342a9f63fd.mp3",
+      "spokenText": "9 animals are still awake.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -810,9 +1458,73 @@
       "category": "counting"
     },
     {
+      "text": "9. You counted every cat!",
+      "file": "llj-807c03f8385e5dcac7e5d7b0.mp3",
+      "spokenText": "9. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every chick!",
+      "file": "llj-f9851b9fa2296beb9738def8.mp3",
+      "spokenText": "9. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every cow!",
+      "file": "llj-f1c0493691de6114ad63b125.mp3",
+      "spokenText": "9. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every dog!",
+      "file": "llj-16d1af9ba89065c24f488037.mp3",
+      "spokenText": "9. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "9. You counted every duck!",
       "file": "llj-93a9bcb1ecca266a4910445c.mp3",
       "spokenText": "9. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every goat!",
+      "file": "llj-4747b62e62f3896a38321f6f.mp3",
+      "spokenText": "9. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every horse!",
+      "file": "llj-448e94226cba52f54aa10445.mp3",
+      "spokenText": "9. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every penguin!",
+      "file": "llj-e0a3178ab4c5dc4644167a37.mp3",
+      "spokenText": "9. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every pig!",
+      "file": "llj-a7e04035f1d6ef457ecf6966.mp3",
+      "spokenText": "9. You counted every pig!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -829,6 +1541,14 @@
       "text": "9. You counted every sheep!",
       "file": "llj-839854de0a02b18f195f255d.mp3",
       "spokenText": "9. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. You counted every turtle!",
+      "file": "llj-175b51e6a7ccde3fff8f1259.mp3",
+      "spokenText": "9. You counted every turtle!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2554,9 +3274,81 @@
       "category": "counting"
     },
     {
+      "text": "Count the blueberries. Choose their number.",
+      "file": "llj-36d30a34fcb6accf7adca06e.mp3",
+      "spokenText": "Count the blueberries. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the lemons. Choose their number.",
+      "file": "llj-2995ce0a21b4371c9aeacc35.mp3",
+      "spokenText": "Count the lemons. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the limes. Choose their number.",
+      "file": "llj-d71baa7c4dd86fb28952d246.mp3",
+      "spokenText": "Count the limes. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the mangoes. Choose their number.",
+      "file": "llj-270aac97239e9c849903a8ad.mp3",
+      "spokenText": "Count the mangoes. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Count the oranges. Choose their number.",
       "file": "llj-13a048e1037cbf1e384de1d3.mp3",
       "spokenText": "Count the oranges. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the peaches. Choose their number.",
+      "file": "llj-3c5020312867327dd032bb21.mp3",
+      "spokenText": "Count the peaches. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the pears. Choose their number.",
+      "file": "llj-c771079738c0718d34d7529e.mp3",
+      "spokenText": "Count the pears. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the pineapples. Choose their number.",
+      "file": "llj-c18b68c1e433feed8d00b66e.mp3",
+      "spokenText": "Count the pineapples. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the plums. Choose their number.",
+      "file": "llj-7b8283ef0e688f6c232aca30.mp3",
+      "spokenText": "Count the plums. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the raspberries. Choose their number.",
+      "file": "llj-717290cedd62e5f8f3c5caf4.mp3",
+      "spokenText": "Count the raspberries. Choose their number.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -5242,6 +6034,94 @@
       "category": "counting"
     },
     {
+      "text": "Give one blueberry to every plate. Tap an empty plate.",
+      "file": "llj-1a1486aad451703da5f80a5a.mp3",
+      "spokenText": "Give one blueberry to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one lemon to every plate. Tap an empty plate.",
+      "file": "llj-1603d6a1b8d9e3a02290ad39.mp3",
+      "spokenText": "Give one lemon to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one lime to every plate. Tap an empty plate.",
+      "file": "llj-7605e93452b7769d964bc90e.mp3",
+      "spokenText": "Give one lime to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one mango to every plate. Tap an empty plate.",
+      "file": "llj-8743b71058b78136bc7a420b.mp3",
+      "spokenText": "Give one mango to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one orange to every plate. Tap an empty plate.",
+      "file": "llj-e488edd22f2d3c768f27b33a.mp3",
+      "spokenText": "Give one orange to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one peach to every plate. Tap an empty plate.",
+      "file": "llj-c690ca501f49834d591c16e6.mp3",
+      "spokenText": "Give one peach to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one pear to every plate. Tap an empty plate.",
+      "file": "llj-6eb5d59cc4693cee0c011639.mp3",
+      "spokenText": "Give one pear to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one pineapple to every plate. Tap an empty plate.",
+      "file": "llj-82a9abd8306e10d4ec49588b.mp3",
+      "spokenText": "Give one pineapple to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one plum to every plate. Tap an empty plate.",
+      "file": "llj-e9e00c67539ebdbb3ce52873.mp3",
+      "spokenText": "Give one plum to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one raspberry to every plate. Tap an empty plate.",
+      "file": "llj-3514c2398b7b3fb7ea80319f.mp3",
+      "spokenText": "Give one raspberry to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give one strawberry to every plate. Tap an empty plate.",
+      "file": "llj-4cbf2bd447c7a73b61d462b2.mp3",
+      "spokenText": "Give one strawberry to every plate. Tap an empty plate.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Give the seed a little water.",
       "file": "llj-247d63d8bca22366e5ab06a0.mp3",
       "spokenText": "Give the seed a little water.",
@@ -5253,6 +6133,94 @@
       "text": "Give two apples to every plate. Tap each plate until it has two.",
       "file": "llj-c956e9fcc525e08957d16073.mp3",
       "spokenText": "Give two apples to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two blueberries to every plate. Tap each plate until it has two.",
+      "file": "llj-cba982c37193f51088ae807d.mp3",
+      "spokenText": "Give two blueberries to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two lemons to every plate. Tap each plate until it has two.",
+      "file": "llj-86ebc6e3111f108f41c00da8.mp3",
+      "spokenText": "Give two lemons to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two limes to every plate. Tap each plate until it has two.",
+      "file": "llj-b95173a6faa2e4a45222a5ad.mp3",
+      "spokenText": "Give two limes to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two mangoes to every plate. Tap each plate until it has two.",
+      "file": "llj-3af30557e2052308f98fcb43.mp3",
+      "spokenText": "Give two mangoes to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two oranges to every plate. Tap each plate until it has two.",
+      "file": "llj-9b4fae50b4ebc72f2d7180e6.mp3",
+      "spokenText": "Give two oranges to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two peaches to every plate. Tap each plate until it has two.",
+      "file": "llj-565c32061409d6f7f87f0202.mp3",
+      "spokenText": "Give two peaches to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two pears to every plate. Tap each plate until it has two.",
+      "file": "llj-15df0ddcae3a7d97eb08513c.mp3",
+      "spokenText": "Give two pears to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two pineapples to every plate. Tap each plate until it has two.",
+      "file": "llj-a1b7db107b04281fbeda90f4.mp3",
+      "spokenText": "Give two pineapples to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two plums to every plate. Tap each plate until it has two.",
+      "file": "llj-4242bd79f3c392c92900e93c.mp3",
+      "spokenText": "Give two plums to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two raspberries to every plate. Tap each plate until it has two.",
+      "file": "llj-cd56efe7b3dc052092ba957d.mp3",
+      "spokenText": "Give two raspberries to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Give two strawberries to every plate. Tap each plate until it has two.",
+      "file": "llj-4bafbf2a694ad45aa70ab4a6.mp3",
+      "spokenText": "Give two strawberries to every plate. Tap each plate until it has two.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -6810,9 +7778,81 @@
       "category": "counting"
     },
     {
+      "text": "Let's count the blueberries one at a time, then choose their number.",
+      "file": "llj-d202221b220c33a526f1c658.mp3",
+      "spokenText": "Let's count the blueberries one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the lemons one at a time, then choose their number.",
+      "file": "llj-a8b7d9a8a50856e9fe4a194a.mp3",
+      "spokenText": "Let's count the lemons one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the limes one at a time, then choose their number.",
+      "file": "llj-0f83db824d53775dd507acdb.mp3",
+      "spokenText": "Let's count the limes one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the mangoes one at a time, then choose their number.",
+      "file": "llj-ea48beafcc31dfd460fb6738.mp3",
+      "spokenText": "Let's count the mangoes one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Let's count the oranges one at a time, then choose their number.",
       "file": "llj-61527e55f934b4154f5bf363.mp3",
       "spokenText": "Let's count the oranges one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the peaches one at a time, then choose their number.",
+      "file": "llj-7765c4a298d8c3344190c597.mp3",
+      "spokenText": "Let's count the peaches one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the pears one at a time, then choose their number.",
+      "file": "llj-e19e0d151bb3f9ec7eadb72f.mp3",
+      "spokenText": "Let's count the pears one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the pineapples one at a time, then choose their number.",
+      "file": "llj-b23a291f37142a270f781319.mp3",
+      "spokenText": "Let's count the pineapples one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the plums one at a time, then choose their number.",
+      "file": "llj-5086b61fee1db398a48f8a25.mp3",
+      "spokenText": "Let's count the plums one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the raspberries one at a time, then choose their number.",
+      "file": "llj-bacd81ba97582e8d8a7c2685.mp3",
+      "spokenText": "Let's count the raspberries one at a time, then choose their number.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -10058,6 +11098,14 @@
       "category": "nature"
     },
     {
+      "text": "Match each passenger with one dot. Try another ticket.",
+      "file": "llj-5f2e20b9dfa27619d2f82a66.mp3",
+      "spokenText": "Match each passenger with one dot. Try another ticket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Match each rabbit with one dot. Try another ticket.",
       "file": "llj-0cee3c182fe25bbe71237cab.mp3",
       "spokenText": "Match each rabbit with one dot. Try another ticket.",
@@ -10184,6 +11232,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "No animals awake. All the animals are asleep. Good night!",
+      "file": "llj-fae65b13982b56162d54a8f5.mp3",
+      "spokenText": "No animals awake. All the animals are asleep. Good night!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "No sheep awake. All the sheep are asleep. Good night!",
@@ -10354,6 +11410,14 @@
       "category": "counting"
     },
     {
+      "text": "One blueberry for this friend.",
+      "file": "llj-2027549e25d4b69d5fdd43b4.mp3",
+      "spokenText": "One blueberry for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "One dot for each passenger. All aboard!",
       "file": "llj-08e6e39f7da0dac8e34a60b3.mp3",
       "spokenText": "One dot for each passenger. All aboard!",
@@ -10370,12 +11434,92 @@
       "category": "nature"
     },
     {
+      "text": "One lemon for this friend.",
+      "file": "llj-3114cd1d49d80396f47bd45b.mp3",
+      "spokenText": "One lemon for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One lime for this friend.",
+      "file": "llj-6533f9eac35c6346f955ac1c.mp3",
+      "spokenText": "One lime for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One mango for this friend.",
+      "file": "llj-e0ea94be3462b9fb9705aa9c.mp3",
+      "spokenText": "One mango for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One orange for this friend.",
+      "file": "llj-9a950a2297439d80f10b0b9c.mp3",
+      "spokenText": "One orange for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One peach for this friend.",
+      "file": "llj-362281108fb3ab84bbe1633d.mp3",
+      "spokenText": "One peach for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One pear for this friend.",
+      "file": "llj-ebf3b58975529092ccd472d6.mp3",
+      "spokenText": "One pear for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One pineapple for this friend.",
+      "file": "llj-9f05e6584c3a223d8cdb4f0b.mp3",
+      "spokenText": "One pineapple for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One plum for this friend.",
+      "file": "llj-499b3949a29e7b70ce3a1018.mp3",
+      "spokenText": "One plum for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One raspberry for this friend.",
+      "file": "llj-146a55f2861831e11020d770.mp3",
+      "spokenText": "One raspberry for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "One shared tower! Pretend to add a block, then invite your friend to add one.",
       "file": "llj-f45d207bf5598fb645141ef2.mp3",
       "spokenText": "One shared tower! Pretend to add a block, then invite your friend to add one.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "One strawberry for this friend.",
+      "file": "llj-1a6b3402ee131b526064b212.mp3",
+      "spokenText": "One strawberry for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Open eyes.",
@@ -15386,6 +16530,14 @@
       "category": "literacy"
     },
     {
+      "text": "Tap each animal to tuck it in. How many are still awake?",
+      "file": "llj-e7512c7c3b5b180506c4d9f7.mp3",
+      "spokenText": "Tap each animal to tuck it in. How many are still awake?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Tap each sheep to tuck it in. How many are still awake?",
       "file": "llj-a133c31cc98a24c265c4f387.mp3",
       "spokenText": "Tap each sheep to tuck it in. How many are still awake?",
@@ -17314,9 +18466,73 @@
       "category": "nature"
     },
     {
+      "text": "Touch each cat once. Let's count together.",
+      "file": "llj-1d0f85655dfa3150b32dde33.mp3",
+      "spokenText": "Touch each cat once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each chick once. Let's count together.",
+      "file": "llj-719891de917f26f577875f92.mp3",
+      "spokenText": "Touch each chick once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each cow once. Let's count together.",
+      "file": "llj-48733c435ed271be65659eee.mp3",
+      "spokenText": "Touch each cow once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each dog once. Let's count together.",
+      "file": "llj-0a5936849261320ed654ed6a.mp3",
+      "spokenText": "Touch each dog once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Touch each duck once. Let's count together.",
       "file": "llj-ece32060eadb7a7f917d9d1f.mp3",
       "spokenText": "Touch each duck once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each goat once. Let's count together.",
+      "file": "llj-d8d6c71f20c5c5b4f0871d59.mp3",
+      "spokenText": "Touch each goat once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each horse once. Let's count together.",
+      "file": "llj-82e1418f6c073e004f2fce56.mp3",
+      "spokenText": "Touch each horse once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each penguin once. Let's count together.",
+      "file": "llj-210deb79956e7589fa78ede2.mp3",
+      "spokenText": "Touch each penguin once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each pig once. Let's count together.",
+      "file": "llj-494c6f1a22360458b47829a2.mp3",
+      "spokenText": "Touch each pig once. Let's count together.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -17333,6 +18549,14 @@
       "text": "Touch each sheep once. Let's count together.",
       "file": "llj-0670f52b899b5b8f40490e7f.mp3",
       "spokenText": "Touch each sheep once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Touch each turtle once. Let's count together.",
+      "file": "llj-cd960e6de3a1074cb04bca36.mp3",
+      "spokenText": "Touch each turtle once. Let's count together.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -17501,6 +18725,38 @@
       "text": "Two apples for this friend.",
       "file": "llj-b8c31f312a024076b6d5f9b5.mp3",
       "spokenText": "Two apples for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two blueberries for this friend.",
+      "file": "llj-1f0c12f4e34fbd44510b1726.mp3",
+      "spokenText": "Two blueberries for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two lemons for this friend.",
+      "file": "llj-bbcbfea1dacdd32d5a5d24ca.mp3",
+      "spokenText": "Two lemons for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two limes for this friend.",
+      "file": "llj-86a088099d46607637513105.mp3",
+      "spokenText": "Two limes for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two mangoes for this friend.",
+      "file": "llj-ae8dc4833b92cd0d7f67ea4a.mp3",
+      "spokenText": "Two mangoes for this friend.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -17712,6 +18968,62 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Two oranges for this friend.",
+      "file": "llj-bb49d7e7417a0d3a095b685d.mp3",
+      "spokenText": "Two oranges for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two peaches for this friend.",
+      "file": "llj-b19bbf6ab62cc34d317e24f5.mp3",
+      "spokenText": "Two peaches for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two pears for this friend.",
+      "file": "llj-bce7602735d665796d3833fa.mp3",
+      "spokenText": "Two pears for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two pineapples for this friend.",
+      "file": "llj-e9983c585ef6b577e21f5fbf.mp3",
+      "spokenText": "Two pineapples for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two plums for this friend.",
+      "file": "llj-5a5a6b39a847722f485715fa.mp3",
+      "spokenText": "Two plums for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two raspberries for this friend.",
+      "file": "llj-7fa332461dfd62a502174455.mp3",
+      "spokenText": "Two raspberries for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Two strawberries for this friend.",
+      "file": "llj-be17eaea4faf146ffd18bba6.mp3",
+      "spokenText": "Two strawberries for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Two towers! Pretend to show your friend what you made.",
@@ -18130,6 +19442,46 @@
       "category": "nature"
     },
     {
+      "text": "Which group has fewer apples? Tap that group.",
+      "file": "llj-22cde8bf293a940d88f5746b.mp3",
+      "spokenText": "Which group has fewer apples? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer blueberries? Tap that group.",
+      "file": "llj-39791b8284fd41d39b5ff0a0.mp3",
+      "spokenText": "Which group has fewer blueberries? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer lemons? Tap that group.",
+      "file": "llj-0086256c917f6ec5e7935b85.mp3",
+      "spokenText": "Which group has fewer lemons? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer limes? Tap that group.",
+      "file": "llj-179ceadc6fa2579d81b681b2.mp3",
+      "spokenText": "Which group has fewer limes? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer mangoes? Tap that group.",
+      "file": "llj-b69abf3b2efe833de16c6e0f.mp3",
+      "spokenText": "Which group has fewer mangoes? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Which group has fewer oranges? Tap that group.",
       "file": "llj-e631c883c4e568e20086948f.mp3",
       "spokenText": "Which group has fewer oranges? Tap that group.",
@@ -18138,9 +19490,145 @@
       "category": "counting"
     },
     {
+      "text": "Which group has fewer peaches? Tap that group.",
+      "file": "llj-c58b5d770f9e8903aa631962.mp3",
+      "spokenText": "Which group has fewer peaches? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer pears? Tap that group.",
+      "file": "llj-ca848c0a6a78db3b6f4102ae.mp3",
+      "spokenText": "Which group has fewer pears? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer pineapples? Tap that group.",
+      "file": "llj-77341b8b750724ea3a6550f1.mp3",
+      "spokenText": "Which group has fewer pineapples? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer plums? Tap that group.",
+      "file": "llj-ced1634e0d04a4ab07f5cf2d.mp3",
+      "spokenText": "Which group has fewer plums? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer raspberries? Tap that group.",
+      "file": "llj-c395fafb6b6b0c1d95b96ca6.mp3",
+      "spokenText": "Which group has fewer raspberries? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has fewer strawberries? Tap that group.",
+      "file": "llj-6ed57b79d73161a8e689b914.mp3",
+      "spokenText": "Which group has fewer strawberries? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more apples? Tap that group.",
+      "file": "llj-a11c39179ddc457ce891e761.mp3",
+      "spokenText": "Which group has more apples? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more blueberries? Tap that group.",
+      "file": "llj-c940a64323c1d49a725b6567.mp3",
+      "spokenText": "Which group has more blueberries? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more lemons? Tap that group.",
+      "file": "llj-06006fedddcceb19816b4ba7.mp3",
+      "spokenText": "Which group has more lemons? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more limes? Tap that group.",
+      "file": "llj-dfae7ff441f3784ed2c66a38.mp3",
+      "spokenText": "Which group has more limes? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more mangoes? Tap that group.",
+      "file": "llj-f1b29a9859fcfd426175857a.mp3",
+      "spokenText": "Which group has more mangoes? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Which group has more oranges? Tap that group.",
       "file": "llj-e5346531d4e03bcf68ab04fd.mp3",
       "spokenText": "Which group has more oranges? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more peaches? Tap that group.",
+      "file": "llj-5e5125dd089e64b3683e5922.mp3",
+      "spokenText": "Which group has more peaches? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more pears? Tap that group.",
+      "file": "llj-358e5b54fed4711b27b45d40.mp3",
+      "spokenText": "Which group has more pears? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more pineapples? Tap that group.",
+      "file": "llj-b656e4b1765d58eb88c9623f.mp3",
+      "spokenText": "Which group has more pineapples? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more plums? Tap that group.",
+      "file": "llj-a9069530f74de411087d6c99.mp3",
+      "spokenText": "Which group has more plums? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more raspberries? Tap that group.",
+      "file": "llj-2333cf311e23a667d5b392cf.mp3",
+      "spokenText": "Which group has more raspberries? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more strawberries? Tap that group.",
+      "file": "llj-9e272a5c7de8a2b0f7bfcf1e.mp3",
+      "spokenText": "Which group has more strawberries? Tap that group.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -18594,6 +20082,46 @@
       "category": "counting"
     },
     {
+      "text": "Yes! That group has fewer apples.",
+      "file": "llj-925acc8f34146b4af75a778b.mp3",
+      "spokenText": "Yes! That group has fewer apples.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer blueberries.",
+      "file": "llj-e5a5cb25492a1d504a213a39.mp3",
+      "spokenText": "Yes! That group has fewer blueberries.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer lemons.",
+      "file": "llj-f8d321dd80992ac308ae379c.mp3",
+      "spokenText": "Yes! That group has fewer lemons.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer limes.",
+      "file": "llj-1a332188935c2505ffa92be9.mp3",
+      "spokenText": "Yes! That group has fewer limes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer mangoes.",
+      "file": "llj-f33de841c7b45480f8bfb08a.mp3",
+      "spokenText": "Yes! That group has fewer mangoes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Yes! That group has fewer oranges.",
       "file": "llj-520b7a7983af41afa87305fc.mp3",
       "spokenText": "Yes! That group has fewer oranges.",
@@ -18602,9 +20130,145 @@
       "category": "counting"
     },
     {
+      "text": "Yes! That group has fewer peaches.",
+      "file": "llj-64e390e8dec567a98947343b.mp3",
+      "spokenText": "Yes! That group has fewer peaches.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer pears.",
+      "file": "llj-fa4e1accda67778ba32d1412.mp3",
+      "spokenText": "Yes! That group has fewer pears.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer pineapples.",
+      "file": "llj-56542bbb70c5e15b371e9ea7.mp3",
+      "spokenText": "Yes! That group has fewer pineapples.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer plums.",
+      "file": "llj-e1a241d4362732607a7727a9.mp3",
+      "spokenText": "Yes! That group has fewer plums.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer raspberries.",
+      "file": "llj-fef2b698424aa9cc00ab8b52.mp3",
+      "spokenText": "Yes! That group has fewer raspberries.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer strawberries.",
+      "file": "llj-a5cae1ace270944043605df3.mp3",
+      "spokenText": "Yes! That group has fewer strawberries.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more apples.",
+      "file": "llj-42c8ae6f3430004d3844d0d2.mp3",
+      "spokenText": "Yes! That group has more apples.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more blueberries.",
+      "file": "llj-07cf540e4026326528884254.mp3",
+      "spokenText": "Yes! That group has more blueberries.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more lemons.",
+      "file": "llj-61c33766cb03d29ca351275f.mp3",
+      "spokenText": "Yes! That group has more lemons.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more limes.",
+      "file": "llj-03ab0b45d2e0c11be3f6d1d7.mp3",
+      "spokenText": "Yes! That group has more limes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more mangoes.",
+      "file": "llj-ab0ece6fdaa4cd9c1e890dab.mp3",
+      "spokenText": "Yes! That group has more mangoes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Yes! That group has more oranges.",
       "file": "llj-d305a41807b4f44b5a160682.mp3",
       "spokenText": "Yes! That group has more oranges.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more peaches.",
+      "file": "llj-cc7f7a76b5ab72b04c4e9433.mp3",
+      "spokenText": "Yes! That group has more peaches.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more pears.",
+      "file": "llj-d2b5dc65a7ee74abf483537b.mp3",
+      "spokenText": "Yes! That group has more pears.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more pineapples.",
+      "file": "llj-f2c1666513ea06b5dbbd7c38.mp3",
+      "spokenText": "Yes! That group has more pineapples.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more plums.",
+      "file": "llj-c4fe3e2df4bfdfac1791343f.mp3",
+      "spokenText": "Yes! That group has more plums.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more raspberries.",
+      "file": "llj-48ef81bcdf2b46bedb4659ed.mp3",
+      "spokenText": "Yes! That group has more raspberries.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more strawberries.",
+      "file": "llj-ed47ae780009571cf3d1f67b.mp3",
+      "spokenText": "Yes! That group has more strawberries.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19266,9 +20930,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 10 blueberries!",
+      "file": "llj-1969060f699caebc391d662e.mp3",
+      "spokenText": "You counted 10 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 lemons!",
+      "file": "llj-602ae69a8d3e14f51f916a0b.mp3",
+      "spokenText": "You counted 10 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 limes!",
+      "file": "llj-ae8785cd2bb3bd2dda98c8f9.mp3",
+      "spokenText": "You counted 10 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 mangoes!",
+      "file": "llj-c640b504169643997deef152.mp3",
+      "spokenText": "You counted 10 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 10 oranges!",
       "file": "llj-1a0e47970ca4e05d584365b2.mp3",
       "spokenText": "You counted 10 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 peaches!",
+      "file": "llj-61040c81e266613d43ce76c4.mp3",
+      "spokenText": "You counted 10 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 pears!",
+      "file": "llj-520617e25ce4feaa22303e80.mp3",
+      "spokenText": "You counted 10 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 pineapples!",
+      "file": "llj-b3dd74673cf90de5cf5f15bd.mp3",
+      "spokenText": "You counted 10 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 plums!",
+      "file": "llj-fdb29d02bfe3129125d1ac8c.mp3",
+      "spokenText": "You counted 10 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 raspberries!",
+      "file": "llj-7296a4a731ef01027719cd9d.mp3",
+      "spokenText": "You counted 10 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19298,9 +21034,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 3 blueberries!",
+      "file": "llj-3aeb89bb87fc835f1f820ec5.mp3",
+      "spokenText": "You counted 3 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 lemons!",
+      "file": "llj-1a97e30d5c2336ec117edc0a.mp3",
+      "spokenText": "You counted 3 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 limes!",
+      "file": "llj-a86c1d40b6223dea6457c9b1.mp3",
+      "spokenText": "You counted 3 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 mangoes!",
+      "file": "llj-1ee9bd61e148d1a5cb60c9f8.mp3",
+      "spokenText": "You counted 3 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 3 oranges!",
       "file": "llj-6b9f64354c2aa1c0a3ebc996.mp3",
       "spokenText": "You counted 3 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 peaches!",
+      "file": "llj-eb1de96d86c28fd7d93a8141.mp3",
+      "spokenText": "You counted 3 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 pears!",
+      "file": "llj-6f31fa56a02f3fb075a45558.mp3",
+      "spokenText": "You counted 3 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 pineapples!",
+      "file": "llj-3ce1233f0c6a3ea6d9c985ca.mp3",
+      "spokenText": "You counted 3 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 plums!",
+      "file": "llj-efdea800a0f9f4f284855c68.mp3",
+      "spokenText": "You counted 3 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 raspberries!",
+      "file": "llj-d91d76c46d1bb6cbe546017b.mp3",
+      "spokenText": "You counted 3 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19322,9 +21130,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 4 blueberries!",
+      "file": "llj-210cd79b7a6961aa3936dd67.mp3",
+      "spokenText": "You counted 4 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 lemons!",
+      "file": "llj-2a8205c2e91ddacc7eb4fee3.mp3",
+      "spokenText": "You counted 4 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 limes!",
+      "file": "llj-f8da595db50b7d53c9ca8705.mp3",
+      "spokenText": "You counted 4 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 mangoes!",
+      "file": "llj-9a782c7867fc2024671b5c32.mp3",
+      "spokenText": "You counted 4 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 4 oranges!",
       "file": "llj-9f9623c373c6135b0ae5742a.mp3",
       "spokenText": "You counted 4 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 peaches!",
+      "file": "llj-6c76e4ea24f0ba67d83f1190.mp3",
+      "spokenText": "You counted 4 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 pears!",
+      "file": "llj-f176d1702fbed1df88dfb90e.mp3",
+      "spokenText": "You counted 4 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 pineapples!",
+      "file": "llj-23fea67c9efb1b62a19e475e.mp3",
+      "spokenText": "You counted 4 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 plums!",
+      "file": "llj-1d73c97f387b513ca161618b.mp3",
+      "spokenText": "You counted 4 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 raspberries!",
+      "file": "llj-db9b096059d4175a88129938.mp3",
+      "spokenText": "You counted 4 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19346,9 +21226,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 5 blueberries!",
+      "file": "llj-a599f75143f796190f46d776.mp3",
+      "spokenText": "You counted 5 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 lemons!",
+      "file": "llj-2898da2adf907f7f1d7ae857.mp3",
+      "spokenText": "You counted 5 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 limes!",
+      "file": "llj-1add2ce99619c993d3d56eaa.mp3",
+      "spokenText": "You counted 5 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 mangoes!",
+      "file": "llj-d7147a435d86e411444fa367.mp3",
+      "spokenText": "You counted 5 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 5 oranges!",
       "file": "llj-4a901da8f1f5a4a5f8b8587f.mp3",
       "spokenText": "You counted 5 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 peaches!",
+      "file": "llj-322b99063c5c29df4894d4a3.mp3",
+      "spokenText": "You counted 5 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 pears!",
+      "file": "llj-6d88414ceccb75b9192ec8c3.mp3",
+      "spokenText": "You counted 5 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 pineapples!",
+      "file": "llj-efb0e61ed8ff55570825f311.mp3",
+      "spokenText": "You counted 5 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 plums!",
+      "file": "llj-cc3cd8a91e141eb98770d940.mp3",
+      "spokenText": "You counted 5 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 raspberries!",
+      "file": "llj-703e9c2acd22e3f26719b708.mp3",
+      "spokenText": "You counted 5 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19370,9 +21322,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 6 blueberries!",
+      "file": "llj-e435a9022a88e0ab4015483f.mp3",
+      "spokenText": "You counted 6 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 lemons!",
+      "file": "llj-92152f2d4dd2228832d2482e.mp3",
+      "spokenText": "You counted 6 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 limes!",
+      "file": "llj-36fb1f87bc34a3162d5932d0.mp3",
+      "spokenText": "You counted 6 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 mangoes!",
+      "file": "llj-f43cf94ca915adca1648127d.mp3",
+      "spokenText": "You counted 6 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 6 oranges!",
       "file": "llj-96af7ad72db37c2b7ed761f8.mp3",
       "spokenText": "You counted 6 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 peaches!",
+      "file": "llj-2b5ffa89fffc1434d6eac31b.mp3",
+      "spokenText": "You counted 6 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 pears!",
+      "file": "llj-a33b2f071c67892d2b8f6d56.mp3",
+      "spokenText": "You counted 6 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 pineapples!",
+      "file": "llj-0c96f1145ddb8b3edf45f407.mp3",
+      "spokenText": "You counted 6 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 plums!",
+      "file": "llj-af19e2a09ff2ab98e9635186.mp3",
+      "spokenText": "You counted 6 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 raspberries!",
+      "file": "llj-c42546e6dbabd35c548b4127.mp3",
+      "spokenText": "You counted 6 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19394,9 +21418,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 7 blueberries!",
+      "file": "llj-61af23f1f4a4c3814c948362.mp3",
+      "spokenText": "You counted 7 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 lemons!",
+      "file": "llj-abe193abe7a3bea7a8c4542a.mp3",
+      "spokenText": "You counted 7 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 limes!",
+      "file": "llj-b1061f7d67e8edb359dd89c0.mp3",
+      "spokenText": "You counted 7 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 mangoes!",
+      "file": "llj-4e6e435cdca8b39f12aca102.mp3",
+      "spokenText": "You counted 7 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 7 oranges!",
       "file": "llj-b41d7c0d1e72877c57649fd6.mp3",
       "spokenText": "You counted 7 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 peaches!",
+      "file": "llj-927f271809d28de1474c232c.mp3",
+      "spokenText": "You counted 7 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 pears!",
+      "file": "llj-7020ec474d9df2983e0dc4c8.mp3",
+      "spokenText": "You counted 7 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 pineapples!",
+      "file": "llj-41b7df86f090bfe4bb6bd2c9.mp3",
+      "spokenText": "You counted 7 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 plums!",
+      "file": "llj-54bdc80824687f8f2ccef158.mp3",
+      "spokenText": "You counted 7 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 raspberries!",
+      "file": "llj-3cbbed8db7539ca6c1bdee78.mp3",
+      "spokenText": "You counted 7 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19418,9 +21514,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 8 blueberries!",
+      "file": "llj-76979e1fa28cec0f921d4d6c.mp3",
+      "spokenText": "You counted 8 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 lemons!",
+      "file": "llj-f9b6ee9a6cc5a69d45b6ec68.mp3",
+      "spokenText": "You counted 8 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 limes!",
+      "file": "llj-000929a32fbba31f9dc57c81.mp3",
+      "spokenText": "You counted 8 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 mangoes!",
+      "file": "llj-de2488625666e0d724693c59.mp3",
+      "spokenText": "You counted 8 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 8 oranges!",
       "file": "llj-91cce881aabc820eb14a996d.mp3",
       "spokenText": "You counted 8 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 peaches!",
+      "file": "llj-68d0791d366554f308b0cefc.mp3",
+      "spokenText": "You counted 8 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 pears!",
+      "file": "llj-f2a35fbaba2aea8921cda762.mp3",
+      "spokenText": "You counted 8 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 pineapples!",
+      "file": "llj-8de013f55cc9e42bca8943ee.mp3",
+      "spokenText": "You counted 8 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 plums!",
+      "file": "llj-6f2dd8076950c5584b5d82fc.mp3",
+      "spokenText": "You counted 8 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 raspberries!",
+      "file": "llj-c6af08d5da6844365e223780.mp3",
+      "spokenText": "You counted 8 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -19442,9 +21610,81 @@
       "category": "counting"
     },
     {
+      "text": "You counted 9 blueberries!",
+      "file": "llj-cee30ff45ea1c662a05534a2.mp3",
+      "spokenText": "You counted 9 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 lemons!",
+      "file": "llj-205195e62fa35aa1624f5faa.mp3",
+      "spokenText": "You counted 9 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 limes!",
+      "file": "llj-2a0e4ee37318c1f71282f325.mp3",
+      "spokenText": "You counted 9 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 mangoes!",
+      "file": "llj-1e720e9c2653de5997b6b92c.mp3",
+      "spokenText": "You counted 9 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 9 oranges!",
       "file": "llj-050a5634be8d838564661c86.mp3",
       "spokenText": "You counted 9 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 peaches!",
+      "file": "llj-4f7d59f12aa29b001aa3f227.mp3",
+      "spokenText": "You counted 9 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 pears!",
+      "file": "llj-3263144d61f6797e0de2f958.mp3",
+      "spokenText": "You counted 9 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 pineapples!",
+      "file": "llj-eb8145d957f2abfef6d706c5.mp3",
+      "spokenText": "You counted 9 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 plums!",
+      "file": "llj-f2170530a56269fb80a12655.mp3",
+      "spokenText": "You counted 9 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 raspberries!",
+      "file": "llj-b0e2029de254e8d2d06a3bc0.mp3",
+      "spokenText": "You counted 9 raspberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

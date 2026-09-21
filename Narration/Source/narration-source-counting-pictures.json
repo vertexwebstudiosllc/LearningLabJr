@@ -1,0 +1,1402 @@
+[
+  {
+    "text": "1 animal is still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 animals are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every cat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every chick!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every cow!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every dog!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every goat!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every horse!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every penguin!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every pig!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. You counted every turtle!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the blueberries. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the lemons. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the limes. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the mangoes. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the peaches. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the pears. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the pineapples. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the plums. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the raspberries. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one blueberry to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one lemon to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one lime to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one mango to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one orange to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one peach to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one pear to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one pineapple to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one plum to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one raspberry to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give one strawberry to every plate. Tap an empty plate.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two blueberries to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two lemons to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two limes to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two mangoes to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two oranges to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two peaches to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two pears to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two pineapples to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two plums to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two raspberries to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two strawberries to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the blueberries one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the lemons one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the limes one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the mangoes one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the peaches one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the pears one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the pineapples one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the plums one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the raspberries one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Match each passenger with one dot. Try another ticket.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "No animals awake. All the animals are asleep. Good night!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One blueberry for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One lemon for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One lime for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One mango for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One orange for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One peach for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One pear for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One pineapple for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One plum for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One raspberry for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "One strawberry for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Tap each animal to tuck it in. How many are still awake?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each cat once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each chick once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each cow once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each dog once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each goat once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each horse once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each penguin once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each pig once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Touch each turtle once. Let's count together.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two blueberries for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two lemons for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two limes for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two mangoes for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two oranges for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two peaches for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two pears for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two pineapples for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two plums for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two raspberries for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two strawberries for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer apples? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer blueberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer lemons? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer limes? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer mangoes? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer peaches? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer pears? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer pineapples? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer plums? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer raspberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer strawberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more apples? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more blueberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more lemons? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more limes? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more mangoes? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more peaches? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more pears? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more pineapples? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more plums? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more raspberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more strawberries? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer apples.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer blueberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer lemons.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer limes.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer mangoes.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer peaches.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer pears.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer pineapples.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer plums.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer raspberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer strawberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more apples.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more blueberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more lemons.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more limes.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more mangoes.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more peaches.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more pears.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more pineapples.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more plums.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more raspberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more strawberries.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

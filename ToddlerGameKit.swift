@@ -36,13 +36,17 @@ extension View {
 final class GameNarrator: ObservableObject {
     private let owner = UUID()
 
+    static func promptsEnabled(in defaults: UserDefaults = .standard) -> Bool {
+        defaults.object(forKey: "parents.voicePromptsEnabled") == nil || defaults.bool(forKey: "parents.voicePromptsEnabled")
+    }
+
     func speak(_ text: String) {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-validateNarrationCoverage"), !text.isEmpty {
             assert(NarrationAudioCatalog.shared.url(for: text) != nil, "Missing recorded narration: \(text)")
         }
         #endif
-        guard UserDefaults.standard.object(forKey: "parents.voicePromptsEnabled") as? Bool ?? true,
+        guard Self.promptsEnabled(),
               !UIAccessibility.isVoiceOverRunning, !text.isEmpty,
               UIApplication.shared.applicationState == .active,
               !SessionTimerManager.shared.isLocked else { return }

@@ -7,7 +7,16 @@ struct NumberPicnicFood: Identifiable {
     static let bank: [Self] = [
         .init(id: "apple", asset: "Apple", plural: "apples"),
         .init(id: "orange", asset: "Orange", plural: "oranges"),
-        .init(id: "strawberry", asset: "Strawberry", plural: "strawberries")
+        .init(id: "strawberry", asset: "Strawberry", plural: "strawberries"),
+        .init(id: "pear", asset: "Pear", plural: "pears"),
+        .init(id: "peach", asset: "Peach", plural: "peaches"),
+        .init(id: "plum", asset: "Plum", plural: "plums"),
+        .init(id: "lemon", asset: "Lemon", plural: "lemons"),
+        .init(id: "lime", asset: "Lime", plural: "limes"),
+        .init(id: "mango", asset: "Mango", plural: "mangoes"),
+        .init(id: "pineapple", asset: "Pineapple", plural: "pineapples"),
+        .init(id: "blueberry", asset: "Blueberry", plural: "blueberries"),
+        .init(id: "raspberry", asset: "Raspberry", plural: "raspberries")
     ]
     var prompt: String { "Count the \(plural). Choose their number." }
     var retry: String { "Let's count the \(plural) one at a time, then choose their number." }
@@ -22,15 +31,11 @@ struct NumberPicnicRound {
     static let completion = "What a picnic! You counted groups from three all the way to ten!"
     static func session() -> [Self] {
         var rounds: [Self] = []
-        for count in 3...10 {
-            var foods = NumberPicnicFood.bank.shuffled()
-            if count == 3 {
-                foods = [NumberPicnicFood.bank[0]] + NumberPicnicFood.bank.dropFirst().shuffled()
-            } else if foods.first?.id == rounds.last?.food.id { foods.swapAt(0, 1) }
-            for food in foods {
-                let alternatives = (max(1, count - 2)...min(12, count + 2)).filter { $0 != count }.shuffled().prefix(2)
-                rounds.append(Self(count: count, food: food, choices: ([count] + alternatives).shuffled()))
-            }
+        let foods = countingPictureCycle(NumberPicnicFood.bank, count: 24)
+        for index in 0..<24 {
+            let count = 3 + index / 3
+            let alternatives = (max(1, count - 2)...min(12, count + 2)).filter { $0 != count }.shuffled().prefix(2)
+            rounds.append(Self(count: count, food: foods[index], choices: ([count] + alternatives).shuffled()))
         }
         return rounds
     }

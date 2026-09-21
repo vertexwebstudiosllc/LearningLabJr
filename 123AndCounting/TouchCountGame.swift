@@ -3,7 +3,20 @@ import SwiftUI
 struct TouchCountAnimal: Identifiable {
     let id: String
     let plural: String
-    static let bank: [Self] = [.init(id: "duck", plural: "ducks"), .init(id: "sheep", plural: "sheep"), .init(id: "rabbit", plural: "rabbits")]
+    static let bank: [Self] = [
+        .init(id: "duck", plural: "ducks"),
+        .init(id: "sheep", plural: "sheep"),
+        .init(id: "rabbit", plural: "rabbits"),
+        .init(id: "cat", plural: "cats"),
+        .init(id: "dog", plural: "dogs"),
+        .init(id: "cow", plural: "cows"),
+        .init(id: "horse", plural: "horses"),
+        .init(id: "goat", plural: "goats"),
+        .init(id: "pig", plural: "pigs"),
+        .init(id: "chick", plural: "chicks"),
+        .init(id: "turtle", plural: "turtles"),
+        .init(id: "penguin", plural: "penguins")
+    ]
     var prompt: String { "Touch each \(id) once. Let's count together." }
 }
 
@@ -15,14 +28,9 @@ struct TouchCountRound {
     var success: String { "\(count). You counted every \(animal.id)!" }
     static let completion = "You counted groups from two to ten! Every animal got counted once!"
     static func session() -> [Self] {
-        var result: [Self] = []
-        for count in 2...10 {
-            var animals = TouchCountAnimal.bank.shuffled()
-            if count == 2 { animals = [TouchCountAnimal.bank[0]] + TouchCountAnimal.bank.dropFirst().shuffled() }
-            else if animals.first?.id == result.last?.animal.id { animals.swapAt(0, 1) }
-            result += animals.map { Self(count: count, animal: $0) }
+        countingPictureCycle(TouchCountAnimal.bank, count: 27).enumerated().map { index, animal in
+            Self(count: 2 + index / 3, animal: animal)
         }
-        return result
     }
 }
 

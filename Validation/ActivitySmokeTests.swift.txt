@@ -777,7 +777,7 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    private func playExpandedCounting(_ kind: String, title: String, total: Int) async throws {
+    private func playExpandedCounting(_ kind: String, title: String, total: Int, previewLevels: Int? = nil) async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]
         try reveal(category, in: app); category.tap()
@@ -796,12 +796,16 @@ final class ActivitySmokeTests: XCTestCase {
             let ready = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: drum)
             XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 15), .completed)
         }
-        for index in 0..<total {
+        for index in 0..<(previewLevels ?? total) {
             let level = app.staticTexts["counting.ext.level"]
             XCTAssertTrue(level.waitForExistence(timeout: 5))
             XCTAssertEqual(level.label, "Level \(index + 1) of \(total)")
             let next = app.buttons["counting.ext.next"]
             XCTAssertFalse(next.exists)
+            if previewLevels != nil {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = title + " start \(index + 1)"; shot.lifetime = .keepAlways; add(shot)
+            }
             switch kind {
             case "share":
                 let plates = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.plate.'")).allElementsBoundByIndex
@@ -810,7 +814,7 @@ final class ActivitySmokeTests: XCTestCase {
                 for plate in plates.reversed() {
                     for amount in 1...servings {
                         try reveal(plate, in: app); plate.tap()
-                        XCTAssertTrue(plate.label.hasSuffix("\(amount) apples"))
+                        XCTAssertTrue(plate.label.contains(", \(amount) "))
                     }
                     XCTAssertFalse(plate.isEnabled)
                 }
@@ -886,18 +890,38 @@ final class ActivitySmokeTests: XCTestCase {
                 try tap("counting.ext.check")
             }
             XCTAssertTrue(next.waitForExistence(timeout: 3), "\(title) level \(index + 1)")
-            if index == total - 1 {
+            if index == total - 1 || previewLevels != nil {
                 let shot = XCTAttachment(screenshot: app.screenshot())
-                shot.name = title + " final level"; shot.lifetime = .keepAlways; add(shot)
+                shot.name = title + " level \(index + 1)"; shot.lifetime = .keepAlways; add(shot)
             }
             try reveal(next, in: app); next.tap()
         }
+        if previewLevels != nil { app.terminate(); return }
         let replay = app.buttons["Play again"]
         try reveal(replay, in: app); replay.tap()
         XCTAssertTrue(app.staticTexts["counting.ext.level"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["counting.ext.level"].label, "Level 1 of \(total)")
         XCTAssertFalse(app.buttons["counting.ext.next"].exists)
         app.terminate()
+    }
+
+    @MainActor
+    func testCountingThemedLayouts() async throws {
+        let games = [("trail", "Treasure Trail", 24), ("garden", "Five-Frame Garden", 20),
+                     ("towers", "Twin Towers", 18), ("dots", "Dot Detective", 18),
+                     ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
+        for (kind, title, total) in games {
+            try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
+        }
+    }
+
+    @MainActor
+    func testCountingFoodAndAnimalLayouts() async throws {
+        let games = [("share", "Picnic Share", 20), ("sheep", "Sleepy Sheep", 18),
+                     ("more", "Which Has More?", 20), ("tickets", "Ticket Train", 24)]
+        for (kind, title, total) in games {
+            try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
+        }
     }
 
     @MainActor
