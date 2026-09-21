@@ -32,7 +32,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Activity | Distinct interaction | Quantities |
 | --- | --- | --- |
 | Number Picnic | Count apples, oranges and strawberries; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
-| Touch & Count | Mark each individual duck once; repeated taps cannot count it twice | 2, 3, 5 |
+| Touch & Count | Tap ducks, sheep and rabbits in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
 | Picnic Share | Give each empty plate exactly one apple | 2–4 plates |
 | Sleepy Sheep | Tuck sheep into bed and hear the shrinking awake group | 2–4, ending with none |
 | Treasure Trail | Follow shuffled numbered stepping stones in counting order | 1–5 |

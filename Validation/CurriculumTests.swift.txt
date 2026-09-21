@@ -5,6 +5,48 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testTouchCountGrowingGroupsAndOneToOneCounting() {
+        for animal in TouchCountAnimal.bank { XCTAssertNotNil(UIImage(named: animal.id), animal.id) }
+        for _ in 0..<100 {
+            var session = TouchCountSession()
+            XCTAssertEqual(session.rounds.count, 27)
+            XCTAssertEqual(session.current.animal.id, "duck")
+            XCTAssertEqual(Set(session.rounds.map(\.key)).count, 27)
+            for index in 0..<27 {
+                let round = session.current
+                XCTAssertEqual(round.count, 2 + index / 3)
+                XCTAssertTrue(session.counted.isEmpty)
+                if index > 0 { XCTAssertNotEqual(round.animal.id, session.rounds[index - 1].animal.id) }
+                session.next(); XCTAssertEqual(session.index, index)
+                XCTAssertFalse(session.count(-1))
+                XCTAssertFalse(session.count(round.count))
+                for (position, id) in (0..<round.count).shuffled().enumerated() {
+                    XCTAssertTrue(session.count(id))
+                    XCTAssertEqual(session.counted[id], position + 1)
+                    XCTAssertFalse(session.count(id))
+                    XCTAssertEqual(session.counted.count, position + 1)
+                }
+                XCTAssertEqual(Set(session.counted.values), Set(1...round.count))
+                XCTAssertTrue(session.solved)
+                session.next()
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.count(0))
+            session.next(); XCTAssertEqual(session.index, 27)
+        }
+    }
+
+    @MainActor
+    func testTouchCountRuthCoverage() {
+        let texts = TouchCountAnimal.bank.flatMap { animal in
+            [animal.prompt] + (2...10).map { TouchCountRound(count: $0, animal: animal).success }
+        } + (1...10).map(String.init) + [TouchCountRound.completion]
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
     func testNumberPicnicProgressionAndChoices() {
         for food in NumberPicnicFood.bank { XCTAssertNotNil(UIImage(named: food.asset), food.asset) }
         for _ in 0..<100 {

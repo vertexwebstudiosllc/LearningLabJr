@@ -777,6 +777,53 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testTouchCountTwentySevenLevelsAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Touch & Count"]
+        try reveal(card, in: app); card.tap()
+        for index in 0..<27 {
+            let level = app.staticTexts["counting.touch.level"]
+            XCTAssertTrue(level.waitForExistence(timeout: 5))
+            XCTAssertEqual(level.label, "Level \(index + 1) of 27")
+            let total = app.staticTexts["counting.touch.total"]
+            XCTAssertEqual(total.label, "0 animals counted")
+            let animals = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'"))
+            let count = animals.count
+            XCTAssertEqual(count, 2 + index / 3)
+            let next = app.buttons["counting.touch.next"]
+            XCTAssertFalse(next.exists)
+            for (position, id) in (0..<count).reversed().enumerated() {
+                let animal = app.buttons["counting.touch.animal.\(id)"]
+                try reveal(animal, in: app)
+                XCTAssertGreaterThanOrEqual(animal.frame.width, 44)
+                animal.tap()
+                XCTAssertEqual(total.label, "\(position + 1) \(position == 0 ? "animal" : "animals") counted")
+                XCTAssertTrue(animal.label.hasSuffix("counted as \(position + 1)"))
+                XCTAssertFalse(animal.isEnabled)
+                if position == 0 {
+                    animal.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+                    XCTAssertEqual(total.label, "1 animal counted")
+                    XCTAssertFalse(next.exists)
+                }
+            }
+            XCTAssertTrue(next.exists)
+            if [0, 24].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Touch Count group \(count)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["counting.touch.level"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["counting.touch.level"].label, "Level 1 of 27")
+        XCTAssertEqual(app.staticTexts["counting.touch.total"].label, "0 animals counted")
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'")).count, 2)
+    }
+
+    @MainActor
     func testNumberPicnicTwentyFourGrowingCountsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]

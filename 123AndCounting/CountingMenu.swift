@@ -4,7 +4,7 @@ import Combine
 struct CountingMenu: View {
     static let activities: [LearningActivity] = [
         .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count fruit groups from three to ten across twenty-four rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
-        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Touch each animal once to count the whole group", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
+        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Count groups of two to ten animals across twenty-seven levels", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Give every picnic plate one apple", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck sheep into bed and hear how many are still awake", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when a sheep goes to sleep."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Counting order from one to five", interaction: "Follow numbered stepping stones in order", ageBand: "Ages 3–4", caregiverTip: "Point to the dots if the numerals are unfamiliar."),
@@ -146,35 +146,6 @@ private struct CountNumberButton: View {
         .foregroundStyle(.indigo)
         .accessibilityLabel("\(number)")
         .accessibilityValue(selected ? "Selected" : "")
-    }
-}
-
-private struct TouchCountGame: View {
-    @StateObject private var play = CountingPlay()
-    private var target: Int { [2, 3, 5][play.round] }
-    var body: some View {
-        CountingStage(title: "Touch & Count", prompt: "Touch each duck once. Let's count together.", play: play) {
-            VStack(spacing: 20) {
-                Text("\(play.marked.count)").font(.system(size: 60, weight: .bold, design: .rounded))
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 90))], spacing: 14) {
-                    ForEach(0..<target, id: \.self) { index in
-                        Button {
-                            guard !play.marked.contains(index) else { return }
-                            play.marked.insert(index)
-                            if play.marked.count == target { play.win("\(target). You counted every duck!") }
-                            else { play.say("\(play.marked.count)") }
-                        } label: {
-                            VStack {
-                                CountingPicture(asset: "duck")
-                                Image(systemName: play.marked.contains(index) ? "checkmark.circle.fill" : "circle")
-                            }.padding(10).frame(maxWidth: .infinity).background(.white, in: RoundedRectangle(cornerRadius: 18))
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Duck \(index + 1), \(play.marked.contains(index) ? "counted" : "touch to count")")
-                    }
-                }
-            }
-        }
     }
 }
 

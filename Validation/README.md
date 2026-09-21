@@ -70,3 +70,5 @@ Little Road Trip coverage checks twenty-four unique ordered journeys, connected 
 Shape Safari coverage checks thirty illustrated examples, three shuffled ten-shape passes, nonrepeating matching pairs, wrong/duplicate taps, complete progression/replay, and exact Ruth narration coverage.
 
 Number Picnic coverage checks twenty-four unique food/count combinations, gradual growth from three to ten, valid shuffled answers, wrong/duplicate answer guards, asset availability, full playthrough/replay, and Ruth coverage.
+
+Touch & Count coverage checks twenty-seven growing animal groups, arbitrary tap order, stable one-to-one counting labels, duplicate/outside taps, progression/replay, assets, and Ruth narration from one through ten.
