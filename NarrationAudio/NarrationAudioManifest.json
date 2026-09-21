@@ -2,6 +2,14 @@
   "schemaVersion": 1,
   "clips": [
     {
+      "text": "0",
+      "file": "llj-d6c333ae0ad4f2435705206d.mp3",
+      "spokenText": "0",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "0 blocks",
       "file": "llj-c782060f5678454b5231f6f8.mp3",
       "spokenText": "0 blocks",
@@ -34,9 +42,25 @@
       "category": "counting"
     },
     {
+      "text": "1 block",
+      "file": "llj-edb6e2c460357b93c6d4d8c7.mp3",
+      "spokenText": "1 block",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "1 blocks",
       "file": "llj-0cebdbddb6b345843c302e85.mp3",
       "spokenText": "One block.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 flower",
+      "file": "llj-63ca5012191385f165aece9a.mp3",
+      "spokenText": "1 flower",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -82,6 +106,22 @@
       "category": "counting"
     },
     {
+      "text": "10 blocks",
+      "file": "llj-3a665ce484864b67bf717426.mp3",
+      "spokenText": "10 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 flowers",
+      "file": "llj-ac7d8550cca9fb72d4315e54.mp3",
+      "spokenText": "10 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "10. You counted every duck!",
       "file": "llj-7092ee7505467d5a46ca0f9a.mp3",
       "spokenText": "10. You counted every duck!",
@@ -101,6 +141,38 @@
       "text": "10. You counted every sheep!",
       "file": "llj-634f313e653c5129f6fe8700.mp3",
       "spokenText": "10. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11",
+      "file": "llj-4183359d3ad6275ce43824da.mp3",
+      "spokenText": "11",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11 blocks",
+      "file": "llj-0072ffffe8f0dd4f0073028e.mp3",
+      "spokenText": "11 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12",
+      "file": "llj-7acbe5a16d8e33000678f51f.mp3",
+      "spokenText": "12",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12 blocks",
+      "file": "llj-d4b8827b6b7431282395809c.mp3",
+      "spokenText": "12 blocks",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -290,6 +362,14 @@
       "category": "counting"
     },
     {
+      "text": "4 beats. You echoed my drum!",
+      "file": "llj-691e00be03134a343bbb9107.mp3",
+      "spokenText": "4 beats. You echoed my drum!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "4 blocks",
       "file": "llj-4dd677b0e885690029f7a14e.mp3",
       "spokenText": "4 blocks",
@@ -309,6 +389,22 @@
       "text": "4 hops! The frog reached the pond.",
       "file": "llj-7d85095d477fac94c2f8a860.mp3",
       "spokenText": "4 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 sheep are still awake.",
+      "file": "llj-85b35d47ce0bd5fc4c95eb06.mp3",
+      "spokenText": "4 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4. Boom.",
+      "file": "llj-237cf922d58d50f761e70f74.mp3",
+      "spokenText": "4. Boom.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -354,6 +450,14 @@
       "category": "counting"
     },
     {
+      "text": "5 beats. You echoed my drum!",
+      "file": "llj-d1669b181dcae4e8169eb3c9.mp3",
+      "spokenText": "5 beats. You echoed my drum!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "5 blocks",
       "file": "llj-27685b0d8fbe5abb1409f6fa.mp3",
       "spokenText": "5 blocks",
@@ -365,6 +469,38 @@
       "text": "5 flowers",
       "file": "llj-266cc5bd02b62f2e64bed410.mp3",
       "spokenText": "5 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 hops! The frog reached the pond.",
+      "file": "llj-e0d09294bac007f20863fe63.mp3",
+      "spokenText": "5 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 sheep are still awake.",
+      "file": "llj-90095bd278e1277c219fe73c.mp3",
+      "spokenText": "5 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. Boom.",
+      "file": "llj-7e96cc1ea7dde444ab377758.mp3",
+      "spokenText": "5. Boom.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5. Next comes 6.",
+      "file": "llj-08006eb45d76eaf2532b35e4.mp3",
+      "spokenText": "5. Next comes 6.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -402,6 +538,62 @@
       "category": "counting"
     },
     {
+      "text": "6 beats. You echoed my drum!",
+      "file": "llj-f41b6d25131969998bcede72.mp3",
+      "spokenText": "6 beats. You echoed my drum!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 blocks",
+      "file": "llj-35add0e500284503c998c6b7.mp3",
+      "spokenText": "6 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 flowers",
+      "file": "llj-d6e63d11fb0375bbbfd2bd1d.mp3",
+      "spokenText": "6 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 hops! The frog reached the pond.",
+      "file": "llj-56479c323ab539bbc8a668d8.mp3",
+      "spokenText": "6 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 sheep are still awake.",
+      "file": "llj-c1e637275427220b2abacd89.mp3",
+      "spokenText": "6 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. Boom.",
+      "file": "llj-3d6a53c4d613d8ba8bd0946b.mp3",
+      "spokenText": "6. Boom.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6. Next comes 7.",
+      "file": "llj-520d09de77b45751075fc059.mp3",
+      "spokenText": "6. Next comes 7.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6. You counted every duck!",
       "file": "llj-aabe8675ed9367dfe610d112.mp3",
       "spokenText": "6. You counted every duck!",
@@ -429,6 +621,46 @@
       "text": "7",
       "file": "llj-68f3d2397410bf75c71ecf1d.mp3",
       "spokenText": "7",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 blocks",
+      "file": "llj-28b5fb0c6655c5c08a919730.mp3",
+      "spokenText": "7 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 flowers",
+      "file": "llj-0b42f0575b2c9829c5819cac.mp3",
+      "spokenText": "7 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 hops! The frog reached the pond.",
+      "file": "llj-e908d461b0ee69cc4fa7d7ed.mp3",
+      "spokenText": "7 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 sheep are still awake.",
+      "file": "llj-91f4e3f961ec4a7edfce6f80.mp3",
+      "spokenText": "7 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7. Next comes 8.",
+      "file": "llj-3ee23c39cb075ddb619285a0.mp3",
+      "spokenText": "7. Next comes 8.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -466,6 +698,46 @@
       "category": "counting"
     },
     {
+      "text": "8 blocks",
+      "file": "llj-2529e6c15eb51abe2d1580a4.mp3",
+      "spokenText": "8 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 flowers",
+      "file": "llj-0d63d83812409114c1e1ebbc.mp3",
+      "spokenText": "8 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 hops! The frog reached the pond.",
+      "file": "llj-66d3028fb62c15c4abe993c3.mp3",
+      "spokenText": "8 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 sheep are still awake.",
+      "file": "llj-c65fab29a5f41b6ad1e53dc9.mp3",
+      "spokenText": "8 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8. Next comes 9.",
+      "file": "llj-f72a470c2cc0e9d194d93efd.mp3",
+      "spokenText": "8. Next comes 9.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "8. You counted every duck!",
       "file": "llj-c8a0a98f65735fc045c72aa8.mp3",
       "spokenText": "8. You counted every duck!",
@@ -493,6 +765,46 @@
       "text": "9",
       "file": "llj-28a4666c617349dac6d2e703.mp3",
       "spokenText": "9",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 blocks",
+      "file": "llj-82715df7f418c705246481a5.mp3",
+      "spokenText": "9 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 flowers",
+      "file": "llj-b90baff06c59b7e094a621df.mp3",
+      "spokenText": "9 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 hops! The frog reached the pond.",
+      "file": "llj-55209b4b9c1fb628df7d084e.mp3",
+      "spokenText": "9 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 sheep are still awake.",
+      "file": "llj-7e60f6fbfde256b7c8abe4a4.mp3",
+      "spokenText": "9 sheep are still awake.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9. Next comes 10.",
+      "file": "llj-55b34b2d7ff9c850cf676162.mp3",
+      "spokenText": "9. Next comes 10.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -1282,6 +1594,14 @@
       "category": "shapes"
     },
     {
+      "text": "Both towers have 10 blocks. They are the same height!",
+      "file": "llj-764356d9c06d26a529c21845.mp3",
+      "spokenText": "Both towers have 10 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Both towers have 2 blocks. They are the same height!",
       "file": "llj-017e0a67829bc888c800379e.mp3",
       "spokenText": "Both towers have 2 blocks. They are the same height!",
@@ -1301,6 +1621,46 @@
       "text": "Both towers have 4 blocks. They are the same height!",
       "file": "llj-9f05d0551a2a78050244aca6.mp3",
       "spokenText": "Both towers have 4 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Both towers have 5 blocks. They are the same height!",
+      "file": "llj-8c3a5aaeda494a559f106529.mp3",
+      "spokenText": "Both towers have 5 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Both towers have 6 blocks. They are the same height!",
+      "file": "llj-fd468f1ea0462813c49487d9.mp3",
+      "spokenText": "Both towers have 6 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Both towers have 7 blocks. They are the same height!",
+      "file": "llj-15539d47aaec28f5500633dc.mp3",
+      "spokenText": "Both towers have 7 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Both towers have 8 blocks. They are the same height!",
+      "file": "llj-2f52f9bbba24b678d6c30a68.mp3",
+      "spokenText": "Both towers have 8 blocks. They are the same height!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Both towers have 9 blocks. They are the same height!",
+      "file": "llj-ee00fff0ba35fc7fbab01569.mp3",
+      "spokenText": "Both towers have 9 blocks. They are the same height!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -1890,6 +2250,14 @@
       "category": "shapes"
     },
     {
+      "text": "Choose a ticket with exactly one dot for each passenger.",
+      "file": "llj-fb4ff5dbc2219e23b19a81cb.mp3",
+      "spokenText": "Choose a ticket with exactly one dot for each passenger.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Choose a tool to try together. Notice what feels comfortable for you.",
       "file": "llj-15f092dd295d6b9113fafbbe.mp3",
       "spokenText": "Choose a tool to try together. Notice what feels comfortable for you.",
@@ -2168,6 +2536,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Count both groups carefully, then try again.",
+      "file": "llj-03705546ba3ae9dff573d2a8.mp3",
+      "spokenText": "Count both groups carefully, then try again.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Count the apples. Choose their number.",
@@ -3098,6 +3474,46 @@
       "category": "nature"
     },
     {
+      "text": "Every flock is tucked in. You counted down all the way to zero!",
+      "file": "llj-fdd10dc0f7bc502d86e5ad1c.mp3",
+      "spokenText": "Every flock is tucked in. You counted down all the way to zero!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Every train has matching tickets. All aboard, counting explorer!",
+      "file": "llj-a841dda5b2fe14d4b076d027.mp3",
+      "spokenText": "Every train has matching tickets. All aboard, counting explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Everyone has the same amount. What fair sharing!",
+      "file": "llj-c4132eb8cf0c70c4e73505a9.mp3",
+      "spokenText": "Everyone has the same amount. What fair sharing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 1 flower. Your garden is growing!",
+      "file": "llj-ca250913cf02f62b28c047ea.mp3",
+      "spokenText": "Exactly 1 flower. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 10 flowers. Your garden is growing!",
+      "file": "llj-4e5446929e3089e2e9170151.mp3",
+      "spokenText": "Exactly 10 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Exactly 2 flowers. Your garden is growing!",
       "file": "llj-6c28f0a067c7811d06f12acc.mp3",
       "spokenText": "Exactly 2 flowers. Your garden is growing!",
@@ -3114,9 +3530,49 @@
       "category": "counting"
     },
     {
+      "text": "Exactly 4 flowers. Your garden is growing!",
+      "file": "llj-b4814045d61ef3862cf03c43.mp3",
+      "spokenText": "Exactly 4 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Exactly 5 flowers. Your garden is growing!",
       "file": "llj-2c96ddb80fed5d26e4df35a9.mp3",
       "spokenText": "Exactly 5 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 6 flowers. Your garden is growing!",
+      "file": "llj-98846e3608ca9afac3fc0dd5.mp3",
+      "spokenText": "Exactly 6 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 7 flowers. Your garden is growing!",
+      "file": "llj-fb07491c47f769c97396ad9d.mp3",
+      "spokenText": "Exactly 7 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 8 flowers. Your garden is growing!",
+      "file": "llj-3c8aa15723e2a711c4373627.mp3",
+      "spokenText": "Exactly 8 flowers. Your garden is growing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Exactly 9 flowers. Your garden is growing!",
+      "file": "llj-eed8018bdf73db4d58f823b8.mp3",
+      "spokenText": "Exactly 9 flowers. Your garden is growing!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4794,6 +5250,14 @@
       "category": "nature"
     },
     {
+      "text": "Give two apples to every plate. Tap each plate until it has two.",
+      "file": "llj-c956e9fcc525e08957d16073.mp3",
+      "spokenText": "Give two apples to every plate. Tap each plate until it has two.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Golf Ball",
       "file": "llj-e42a706147a4a47a2fa11370.mp3",
       "spokenText": "Golf Ball",
@@ -5061,6 +5525,46 @@
       "text": "Help the frog make 4 hops. Then tap All hopped.",
       "file": "llj-a593796c1e3ef6fb297a8d50.mp3",
       "spokenText": "Help the frog make 4 hops. Then tap All hopped.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Help the frog make 5 hops. Then tap All hopped.",
+      "file": "llj-0e20ccd0ebf4d3ec05b8b8f0.mp3",
+      "spokenText": "Help the frog make 5 hops. Then tap All hopped.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Help the frog make 6 hops. Then tap All hopped.",
+      "file": "llj-ba5502a8373a885f50ce2f7c.mp3",
+      "spokenText": "Help the frog make 6 hops. Then tap All hopped.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Help the frog make 7 hops. Then tap All hopped.",
+      "file": "llj-b44a83f8971de126fcbc7331.mp3",
+      "spokenText": "Help the frog make 7 hops. Then tap All hopped.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Help the frog make 8 hops. Then tap All hopped.",
+      "file": "llj-393a3356b2642576e6f2edaa.mp3",
+      "spokenText": "Help the frog make 8 hops. Then tap All hopped.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Help the frog make 9 hops. Then tap All hopped.",
+      "file": "llj-115f7efd84245b4542fa4653.mp3",
+      "spokenText": "Help the frog make 9 hops. Then tap All hopped.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -9330,6 +9834,14 @@
       "category": "counting"
     },
     {
+      "text": "Look for 10. Count the dots on the stones.",
+      "file": "llj-8f3650e7f320831c5556997d.mp3",
+      "spokenText": "Look for 10. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Look for 2. Count the dots on the stones.",
       "file": "llj-624d69bea98a49e06ab15045.mp3",
       "spokenText": "Look for 2. Count the dots on the stones.",
@@ -9349,6 +9861,46 @@
       "text": "Look for 4. Count the dots on the stones.",
       "file": "llj-dac4d32fe356747cc3feccc8.mp3",
       "spokenText": "Look for 4. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for 5. Count the dots on the stones.",
+      "file": "llj-74aa6de42991253ecb073421.mp3",
+      "spokenText": "Look for 5. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for 6. Count the dots on the stones.",
+      "file": "llj-e4b32939cc87e8d122f4a84a.mp3",
+      "spokenText": "Look for 6. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for 7. Count the dots on the stones.",
+      "file": "llj-509e6a421d6fec70e537999c.mp3",
+      "spokenText": "Look for 7. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for 8. Count the dots on the stones.",
+      "file": "llj-b00e74e560e4265e06c6a709.mp3",
+      "spokenText": "Look for 8. Count the dots on the stones.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for 9. Count the dots on the stones.",
+      "file": "llj-b3e5a3589d45b70326ca650a.mp3",
+      "spokenText": "Look for 9. Count the dots on the stones.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -12170,6 +12722,22 @@
       "category": "stories"
     },
     {
+      "text": "Plant 1 flower. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-9232616175bb38be7a53360b.mp3",
+      "spokenText": "Plant 1 flower. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Plant 10 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-4783034588b7a6e6080161d9.mp3",
+      "spokenText": "Plant 10 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Plant 2 flowers. Tap a space to plant. Tap a flower to take it out.",
       "file": "llj-a0295a6cb9ed05bb73778cb3.mp3",
       "spokenText": "Plant 2 flowers. Tap a space to plant. Tap a flower to take it out.",
@@ -12186,9 +12754,49 @@
       "category": "counting"
     },
     {
+      "text": "Plant 4 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-f79f73f89f8fff8772a2566c.mp3",
+      "spokenText": "Plant 4 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Plant 5 flowers. Tap a space to plant. Tap a flower to take it out.",
       "file": "llj-801ee420a6bf83623f574e21.mp3",
       "spokenText": "Plant 5 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Plant 6 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-e55f08b3a5effc9f7e00b5e8.mp3",
+      "spokenText": "Plant 6 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Plant 7 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-828d384177794d0c299ccf85.mp3",
+      "spokenText": "Plant 7 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Plant 8 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-595fdeeae4856861f9b3d352.mp3",
+      "spokenText": "Plant 8 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Plant 9 flowers. Tap a space to plant. Tap a flower to take it out.",
+      "file": "llj-33eb36fcda24ae8aca0d3754.mp3",
+      "spokenText": "Plant 9 flowers. Tap a space to plant. Tap a flower to take it out.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -15418,6 +16026,14 @@
       "category": "stories"
     },
     {
+      "text": "The frog finished every hopping trip. Thanks for counting along!",
+      "file": "llj-9bae1a21a9c2967fc35cf840.mp3",
+      "spokenText": "The frog finished every hopping trip. Thanks for counting along!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "The game went on. Trey skated. Trey passed. Trey tried again. SLAP! Goal two! Then, with one chilly second left, the puck came back to Trey. His heart went thump, thump, thump.",
       "file": "llj-48580ca96ddc20ea570d95a9.mp3",
       "spokenText": "The game went on. Trey skated. Trey passed. Trey tried again. SLAP! Goal two! Then, with one chilly second left, the puck came back to Trey. His heart went thump, thump, thump.",
@@ -16546,6 +17162,14 @@
       "category": "literacy"
     },
     {
+      "text": "This plate has enough. Find a plate that needs more.",
+      "file": "llj-9bfc485a52604ced8188f5cc.mp3",
+      "spokenText": "This plate has enough. Find a plate that needs more.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "This plate has one. Find an empty plate.",
       "file": "llj-87adf7d52cc787be9e334c6d.mp3",
       "spokenText": "This plate has one. Find an empty plate.",
@@ -16872,6 +17496,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Two apples for this friend.",
+      "file": "llj-b8c31f312a024076b6d5f9b5.mp3",
+      "spokenText": "Two apples for this friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Two matching letters. They are both A!",
@@ -17498,6 +18130,14 @@
       "category": "nature"
     },
     {
+      "text": "Which group has fewer oranges? Tap that group.",
+      "file": "llj-e631c883c4e568e20086948f.mp3",
+      "spokenText": "Which group has fewer oranges? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Which group has more oranges? Tap that group.",
       "file": "llj-e5346531d4e03bcf68ab04fd.mp3",
       "spokenText": "Which group has more oranges? Tap that group.",
@@ -17949,6 +18589,22 @@
       "text": "Yes! 5 oranges is more than 2.",
       "file": "llj-f30145e978cb695bac88c800.mp3",
       "spokenText": "Yes! 5 oranges is more than 2.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has fewer oranges.",
+      "file": "llj-520b7a7983af41afa87305fc.mp3",
+      "spokenText": "Yes! That group has fewer oranges.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more oranges.",
+      "file": "llj-d305a41807b4f44b5a160682.mp3",
+      "spokenText": "Yes! That group has more oranges.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -18586,6 +19242,14 @@
       "category": "feelings"
     },
     {
+      "text": "You compared every group. You found more and fewer!",
+      "file": "llj-48fa2f3176beaa1ffd19ec52.mp3",
+      "spokenText": "You compared every group. You found more and fewer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 1 apple!",
       "file": "llj-5b3d8424ee3f9cb3b9afa3fd.mp3",
       "spokenText": "You counted 1 apple!",
@@ -18808,6 +19472,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You echoed all the counting beats. What a musical adventure!",
+      "file": "llj-c607b726fa10e3c43c50921f.mp3",
+      "spokenText": "You echoed all the counting beats. What a musical adventure!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "You explored a daytime sky and a nighttime sky!",
@@ -19088,6 +19760,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You followed all the counting trails, from one all the way to ten!",
+      "file": "llj-0f837ed1944a09b17c2a170c.mp3",
+      "spokenText": "You followed all the counting trails, from one all the way to ten!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "You followed every counting stone. Treasure found!",
@@ -19378,6 +20058,14 @@
       "category": "shapes"
     },
     {
+      "text": "You found every dot twin. What careful looking and remembering!",
+      "file": "llj-bc1d4f7b99b7f1e12a993b5f.mp3",
+      "spokenText": "You found every dot twin. What careful looking and remembering!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You found shapes in six everyday things!",
       "file": "llj-970951db8178c81349d5df1a.mp3",
       "spokenText": "You found shapes in six everyday things!",
@@ -19429,6 +20117,30 @@
       "text": "You found the twin: 3 dots!",
       "file": "llj-9ecf7d6a192a15d6c21ce160.mp3",
       "spokenText": "You found the twin: 3 dots!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You found the twin: 4 dots!",
+      "file": "llj-97f712cefa57ef759cbf990c.mp3",
+      "spokenText": "You found the twin: 4 dots!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You found the twin: 5 dots!",
+      "file": "llj-83dc324f7b90a02b6e2da42c.mp3",
+      "spokenText": "You found the twin: 5 dots!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You found the twin: 6 dots!",
+      "file": "llj-f4bc685b5e6d9cb70489cd65.mp3",
+      "spokenText": "You found the twin: 6 dots!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -20130,6 +20842,14 @@
       "category": "feelings"
     },
     {
+      "text": "You shared the picnic fairly. Every friend got the same amount!",
+      "file": "llj-01dfe3fcd1ee36edcc10b52a.mp3",
+      "spokenText": "You shared the picnic fairly. Every friend got the same amount!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You sorted every word by its first sound!",
       "file": "llj-9952c1a5e50132743691cf78.mp3",
       "spokenText": "You sorted every word by its first sound!",
@@ -20434,6 +21154,14 @@
       "category": "feelings"
     },
     {
+      "text": "Your gardens are blooming. You made groups from one to ten!",
+      "file": "llj-74350ba696abc37a592eb2df.mp3",
+      "spokenText": "Your gardens are blooming. You made groups from one to ten!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Your heart nest is ready!",
       "file": "llj-e7ae6ad2d5d13768c867e40a.mp3",
       "spokenText": "Your heart nest is ready!",
@@ -20517,6 +21245,14 @@
       "text": "Your tower is taller. Take one block away.",
       "file": "llj-e967fdba17b464f89947120d.mp3",
       "spokenText": "Your tower is taller. Take one block away.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Your towers match! You used adding and taking away to build them!",
+      "file": "llj-e89ebd2e04b5d9a6b78bb488.mp3",
+      "spokenText": "Your towers match! You used adding and taking away to build them!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

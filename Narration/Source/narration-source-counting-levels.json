@@ -1,0 +1,462 @@
+[
+  {
+    "text": "0",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 block",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 flower",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "11",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "11 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "12",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "12 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4. Boom.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. Boom.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5. Next comes 6.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 beats. You echoed my drum!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. Boom.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6. Next comes 7.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7. Next comes 8.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8. Next comes 9.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 blocks",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 flowers",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 hops! The frog reached the pond.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 sheep are still awake.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9. Next comes 10.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 10 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 5 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 6 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 7 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 8 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Both towers have 9 blocks. They are the same height!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Choose a ticket with exactly one dot for each passenger.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count both groups carefully, then try again.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Every flock is tucked in. You counted down all the way to zero!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Every train has matching tickets. All aboard, counting explorer!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Everyone has the same amount. What fair sharing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 1 flower. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 10 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 4 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 6 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 7 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 8 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Exactly 9 flowers. Your garden is growing!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Give two apples to every plate. Tap each plate until it has two.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Help the frog make 5 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Help the frog make 6 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Help the frog make 7 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Help the frog make 8 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Help the frog make 9 hops. Then tap All hopped.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 10. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 5. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 6. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 7. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 8. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look for 9. Count the dots on the stones.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 1 flower. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 10 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 4 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 6 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 7 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 8 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Plant 9 flowers. Tap a space to plant. Tap a flower to take it out.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "The frog finished every hopping trip. Thanks for counting along!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "This plate has enough. Find a plate that needs more.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Two apples for this friend.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has fewer oranges? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer oranges.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more oranges.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You compared every group. You found more and fewer!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You echoed all the counting beats. What a musical adventure!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You followed all the counting trails, from one all the way to ten!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found every dot twin. What careful looking and remembering!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found the twin: 4 dots!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found the twin: 5 dots!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found the twin: 6 dots!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You shared the picnic fairly. Every friend got the same amount!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Your gardens are blooming. You made groups from one to ten!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Your towers match! You used adding and taking away to build them!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

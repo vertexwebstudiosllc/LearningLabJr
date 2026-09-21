@@ -777,6 +777,160 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    private func playExpandedCounting(_ kind: String, title: String, total: Int) async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.\(title)"]
+        try reveal(card, in: app); card.tap()
+        func element(_ id: String) -> XCUIElement { app.descendants(matching: .any).matching(identifier: id).firstMatch }
+        func number(_ label: String) -> Int { label.split(whereSeparator: { !$0.isNumber }).compactMap { Int($0) }.first! }
+        func tap(_ id: String) throws { let button = app.buttons[id]; try reveal(button, in: app); button.tap() }
+        func listen() throws {
+            try tap("counting.ext.listen")
+            let drum = app.buttons["counting.ext.tap"]
+            let waiting = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == false"), object: drum)
+            XCTAssertEqual(XCTWaiter.wait(for: [waiting], timeout: 4), .completed)
+            XCTAssertFalse(app.buttons["counting.ext.check"].isEnabled)
+            XCTAssertFalse(app.buttons["counting.ext.clear"].isEnabled)
+            let ready = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: drum)
+            XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 15), .completed)
+        }
+        for index in 0..<total {
+            let level = app.staticTexts["counting.ext.level"]
+            XCTAssertTrue(level.waitForExistence(timeout: 5))
+            XCTAssertEqual(level.label, "Level \(index + 1) of \(total)")
+            let next = app.buttons["counting.ext.next"]
+            XCTAssertFalse(next.exists)
+            switch kind {
+            case "share":
+                let plates = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.plate.'")).allElementsBoundByIndex
+                let servings = index < 10 ? 1 : 2
+                XCTAssertEqual(plates.count, 2 + (index % 10) / 2)
+                for plate in plates.reversed() {
+                    for amount in 1...servings {
+                        try reveal(plate, in: app); plate.tap()
+                        XCTAssertTrue(plate.label.hasSuffix("\(amount) apples"))
+                    }
+                    XCTAssertFalse(plate.isEnabled)
+                }
+            case "sheep":
+                let sheep = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.sheep.'")).allElementsBoundByIndex
+                XCTAssertEqual(sheep.count, 2 + index / 2)
+                for (i, animal) in sheep.reversed().enumerated() {
+                    try reveal(animal, in: app); animal.tap()
+                    XCTAssertFalse(animal.isEnabled)
+                    XCTAssertEqual(app.staticTexts["counting.ext.remaining"].label, "\(sheep.count - i - 1) awake")
+                }
+            case "trail":
+                let count = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.stone.'")).count
+                XCTAssertEqual(count, 3 + index / 3)
+                try tap("counting.ext.stone.\(count)")
+                XCTAssertEqual(app.staticTexts["counting.ext.reached"].label, "Start at 1")
+                for value in 1...count {
+                    try tap("counting.ext.stone.\(value)")
+                    XCTAssertFalse(app.buttons["counting.ext.stone.\(value)"].isEnabled)
+                }
+            case "more", "tickets", "dots":
+                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
+                let values = choices.map { number($0.label) }
+                let target: Int
+                if kind == "more" {
+                    target = app.staticTexts["counting.ext.clue"].label == "Find fewer" ? values.min()! : values.max()!
+                } else if kind == "tickets" { target = number(element("counting.ext.passengers").label) }
+                else {
+                    target = number(element("counting.ext.clue").label)
+                    try tap("counting.ext.peek")
+                    XCTAssertEqual(element("counting.ext.clue").label, "Hidden clue")
+                }
+                try tap("counting.ext.choice.\(values.first { $0 != target }!)")
+                XCTAssertFalse(next.exists)
+                if kind == "dots" {
+                    try tap("counting.ext.peek")
+                    XCTAssertTrue(element("counting.ext.clue").label.contains("\(target) dots"))
+                }
+                try tap("counting.ext.choice.\(target)")
+            case "garden":
+                let target = number(app.staticTexts["counting.ext.clue"].label)
+                try tap("counting.ext.check")
+                XCTAssertFalse(next.exists)
+                let plots = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.plot.'")).allElementsBoundByIndex
+                XCTAssertTrue([5, 10].contains(plots.count))
+                for plot in plots {
+                    let id = number(plot.identifier)
+                    if plot.label.hasSuffix("planted") != (id < target) { try reveal(plot, in: app); plot.tap() }
+                }
+                XCTAssertEqual(app.staticTexts["counting.ext.planted"].label, "\(target) planted")
+                try tap("counting.ext.check")
+            case "towers":
+                let target = number(element("counting.ext.model").label)
+                var built = number(element("counting.ext.built").label)
+                try tap("counting.ext.check"); XCTAssertFalse(next.exists)
+                while built != target {
+                    try tap(built < target ? "counting.ext.plus" : "counting.ext.minus")
+                    built = number(element("counting.ext.built").label)
+                }
+                try tap("counting.ext.check")
+            case "hops":
+                let target = number(app.staticTexts["counting.ext.clue"].label)
+                try tap("counting.ext.check"); XCTAssertFalse(next.exists)
+                try tap("counting.ext.tap"); try tap("counting.ext.clear")
+                XCTAssertEqual(app.staticTexts["counting.ext.count"].label, "0 hops")
+                for _ in 0..<target { try tap("counting.ext.tap") }
+                try tap("counting.ext.check")
+            default:
+                try listen()
+                let target = 1 + index / 3
+                XCTAssertEqual(app.staticTexts["counting.ext.count"].label, "Your beats: 0")
+                for _ in 0..<target { try tap("counting.ext.tap") }
+                try tap("counting.ext.check")
+            }
+            XCTAssertTrue(next.waitForExistence(timeout: 3), "\(title) level \(index + 1)")
+            if index == total - 1 {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = title + " final level"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["counting.ext.level"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["counting.ext.level"].label, "Level 1 of \(total)")
+        XCTAssertFalse(app.buttons["counting.ext.next"].exists)
+        app.terminate()
+    }
+
+    @MainActor
+    func testExpandedPicnicShare() async throws { try await playExpandedCounting("share", title: "Picnic Share", total: 20) }
+
+    @MainActor
+    func testExpandedSleepySheep() async throws { try await playExpandedCounting("sheep", title: "Sleepy Sheep", total: 18) }
+
+    @MainActor
+    func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 24) }
+
+    @MainActor
+    func testExpandedMoreGroups() async throws { try await playExpandedCounting("more", title: "Which Has More?", total: 20) }
+
+    @MainActor
+    func testExpandedGarden() async throws { try await playExpandedCounting("garden", title: "Five-Frame Garden", total: 20) }
+
+    @MainActor
+    func testExpandedTicketTrain() async throws { try await playExpandedCounting("tickets", title: "Ticket Train", total: 24) }
+
+    @MainActor
+    func testExpandedTwinTowers() async throws { try await playExpandedCounting("towers", title: "Twin Towers", total: 18) }
+
+    @MainActor
+    func testExpandedDotDetective() async throws { try await playExpandedCounting("dots", title: "Dot Detective", total: 18) }
+
+    @MainActor
+    func testExpandedFrogHops() async throws { try await playExpandedCounting("hops", title: "Frog Hops", total: 24) }
+
+    @MainActor
+    func testExpandedCountingDrum() async throws { try await playExpandedCounting("drum", title: "Counting Drum", total: 18) }
+
+    @MainActor
     func testTouchCountTwentySevenLevelsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]

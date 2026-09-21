@@ -72,3 +72,5 @@ Shape Safari coverage checks thirty illustrated examples, three shuffled ten-sha
 Number Picnic coverage checks twenty-four unique food/count combinations, gradual growth from three to ten, valid shuffled answers, wrong/duplicate answer guards, asset availability, full playthrough/replay, and Ruth coverage.
 
 Touch & Count coverage checks twenty-seven growing animal groups, arbitrary tap order, stable one-to-one counting labels, duplicate/outside taps, progression/replay, assets, and Ruth narration from one through ten.
+
+The remaining ten counting activities now have native coverage for all 204 levels and dedicated full UI playthroughs, including replay. Coverage checks fair sharing, counting down to zero, ordered stones, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.

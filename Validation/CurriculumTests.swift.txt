@@ -5,6 +5,123 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    @MainActor
+    func testRemainingCountingGamesProgressionAndNarration() async {
+        let totals: [CountingActivity: Int] = [.share: 20, .sheep: 18, .trail: 24, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        var narration: Set<String> = []
+        func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
+        for kind in CountingActivity.allCases {
+            let play = CountingPlay(kind: kind)
+            XCTAssertEqual(play.total, totals[kind])
+            narration.insert(kind.completion)
+            for index in 0..<play.total {
+                XCTAssertFalse(play.complete)
+                XCTAssertFalse(play.solved)
+                XCTAssertEqual(play.round, index)
+                narration.insert(play.prompt)
+                let n = play.target
+                XCTAssertTrue((1...10).contains(n))
+                XCTAssertEqual(Set(play.lesson.choices).count, play.lesson.choices.count)
+                XCTAssertTrue(play.lesson.choices.contains(n))
+                XCTAssertEqual(Set(play.lesson.stones), Set(1...n))
+                play.advance(); XCTAssertEqual(play.round, index)
+                switch kind {
+                case .share:
+                    play.serve(-1); XCTAssertTrue(play.servings.isEmpty)
+                    for plate in (0..<n).reversed() {
+                        for amount in 1...play.lesson.amount {
+                            play.serve(plate); record(play)
+                            XCTAssertEqual(play.servings[plate], amount)
+                        }
+                        play.serve(plate); record(play)
+                        XCTAssertEqual(play.servings[plate], play.lesson.amount)
+                    }
+                case .sheep:
+                    play.tuck(-1); XCTAssertTrue(play.marked.isEmpty)
+                    for sheep in (0..<n).reversed() {
+                        play.tuck(sheep); record(play)
+                        let before = play.marked.count
+                        play.tuck(sheep); XCTAssertEqual(play.marked.count, before)
+                    }
+                case .trail:
+                    for value in 1...n {
+                        play.stone(value + 1); record(play); XCTAssertEqual(play.count, value - 1)
+                        play.stone(value); record(play); XCTAssertEqual(play.count, value)
+                        play.stone(value); XCTAssertEqual(play.count, value)
+                    }
+                case .more, .tickets, .dots:
+                    for wrong in play.lesson.choices where wrong != n {
+                        play.choose(wrong); record(play); XCTAssertFalse(play.solved)
+                    }
+                    if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
+                    play.choose(n); record(play)
+                case .garden:
+                    play.check(); record(play); XCTAssertFalse(play.solved)
+                    play.plant(-1)
+                    for plot in 0..<play.lesson.gardenSize where !play.marked.contains(plot) { play.plant(plot); record(play) }
+                    if play.marked.count > n { play.check(); record(play); XCTAssertFalse(play.solved) }
+                    for plot in play.marked.sorted().dropFirst(n) { play.plant(plot); record(play) }
+                    XCTAssertEqual(play.marked.count, n)
+                    play.check(); record(play)
+                case .towers:
+                    play.check(); record(play); XCTAssertFalse(play.solved)
+                    while play.count > 0 { play.changeBlocks(-1); record(play) }
+                    play.changeBlocks(-1); XCTAssertEqual(play.count, 0)
+                    for _ in 0..<12 { play.changeBlocks(1); record(play) }
+                    play.changeBlocks(1); XCTAssertEqual(play.count, 12)
+                    play.check(); record(play); XCTAssertFalse(play.solved)
+                    while play.count > n { play.changeBlocks(-1); record(play) }
+                    play.check(); record(play)
+                case .hops, .drum:
+                    play.check(); record(play); XCTAssertFalse(play.solved)
+                    for _ in 0..<(play.limit + 2) { play.tap(); record(play) }
+                    XCTAssertEqual(play.count, play.limit)
+                    play.check(); record(play); XCTAssertEqual(play.count, 0)
+                    for _ in 0..<n { play.tap(); record(play) }
+                    play.check(); record(play)
+                }
+                XCTAssertTrue(play.solved, "\(kind) level \(index)")
+                let before = play.feedbackRevision
+                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.serve(0); play.changeBlocks(1); play.stone(n)
+                XCTAssertEqual(play.feedbackRevision, before)
+                play.advance()
+            }
+            XCTAssertTrue(play.complete)
+            play.advance(); XCTAssertEqual(play.round, play.total - 1)
+            play.replay(); XCTAssertEqual(play.round, 0); XCTAssertFalse(play.complete); XCTAssertFalse(play.solved)
+        }
+        for n in 1...6 { narration.insert("\(n). Boom.") }
+        for text in narration {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
+    @MainActor
+    func testRemainingCountingDifficultyAndReplayVariety() {
+        for kind in CountingActivity.allCases {
+            for _ in 0..<20 {
+                let levels = kind.levels()
+                if ![.share, .more].contains(kind) {
+                    XCTAssertEqual(levels.map(\.target), levels.map(\.target).sorted())
+                }
+                if kind == .share {
+                    XCTAssertTrue(levels.prefix(10).allSatisfy { $0.amount == 1 })
+                    XCTAssertTrue(levels.suffix(10).allSatisfy { $0.amount == 2 })
+                }
+                if kind == .more {
+                    XCTAssertTrue(levels.prefix(10).allSatisfy { !$0.fewer })
+                    XCTAssertTrue(levels.suffix(10).allSatisfy { $0.fewer })
+                    XCTAssertTrue(levels.allSatisfy { $0.target != $0.other })
+                }
+                if kind == .garden || kind == .towers {
+                    XCTAssertTrue(levels.enumerated().allSatisfy { $0.offset.isMultiple(of: 2) ? $0.element.start == 0 : $0.element.start != $0.element.target })
+                }
+                for level in levels { XCTAssertTrue(level.choices.allSatisfy { (1...12).contains($0) }) }
+            }
+        }
+    }
+
     func testTouchCountGrowingGroupsAndOneToOneCounting() {
         for animal in TouchCountAnimal.bank { XCTAssertNotNil(UIImage(named: animal.id), animal.id) }
         for _ in 0..<100 {

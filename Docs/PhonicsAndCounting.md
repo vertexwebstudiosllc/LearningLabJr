@@ -33,16 +33,16 @@ Word and picture matches were checked against the catalog. The active destinatio
 | --- | --- | --- |
 | Number Picnic | Count apples, oranges and strawberries; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
 | Touch & Count | Tap ducks, sheep and rabbits in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
-| Picnic Share | Give each empty plate exactly one apple | 2–4 plates |
-| Sleepy Sheep | Tuck sheep into bed and hear the shrinking awake group | 2–4, ending with none |
-| Treasure Trail | Follow shuffled numbered stepping stones in counting order | 1–5 |
-| Which Has More? | Compare aligned rows of equal-size oranges and choose the larger group | 1–5; no comparison symbols |
-| Five-Frame Garden | Toggle flowers in five spaces, then check the requested quantity | 2, 3, 5 |
-| Ticket Train | Match a dot ticket to a pictured group of passengers | 1–3 |
-| Twin Towers | Add/remove unit blocks to match a model tower's height | Models 2–4; up to 5 blocks |
-| Dot Detective | Inspect and optionally hide a dot clue, then identify its matching card | 1–3 |
-| Frog Hops | Count a frog's actions, then confirm the requested number | 2–4; recovery after extra hops |
-| Counting Drum | Request a spoken beat demonstration, echo it on the drum, then check the beat count | 1–3; no timing score |
+| Picnic Share | Share one apple per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
+| Sleepy Sheep | Tuck each sheep in once and count the remaining flock down to zero | 18 levels, 2–10 sheep |
+| Treasure Trail | Follow shuffled number stones in order with dot support | 24 levels, trails from 3–10 |
+| Which Has More? | Compare aligned groups; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |
+| Five-Frame Garden | Build requested groups and correct preplanted groups in one or two five-frames | 20 levels, targets 1–10 |
+| Ticket Train | Match exactly one ticket dot per passenger using varied dot layouts | 24 levels, 2–9 passengers |
+| Twin Towers | Build from empty, then shorten an oversized tower to match a model | 18 levels, targets 2–10 |
+| Dot Detective | Inspect a dot pattern, optionally hide/peek, then find its matching card | 18 levels, 1–6 dots in three layouts |
+| Frog Hops | Count actions as a frog moves toward the pond; check, reset and retry freely | 24 trips, 2–9 hops |
+| Counting Drum | Request spoken beats, then echo their count; replay remains available without a timing score | 18 levels, 1–6 beats |
 
 Abstract addition, subtraction equations, number bonds, `>`/`<`, and ordering numbers to 20 are absent from the active toddler counting menu. The new activities use concrete small groups, objects, actions, and spatial comparison. Dot cards and visible reference models support children who are still learning numerals.
 
