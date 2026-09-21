@@ -13,7 +13,7 @@ struct ShapesAndColorsMenu: View {
         .init(id: "shapes.bubbles", title: "Shape Bubble Pop", skill: "Match colors and shapes together", interaction: "Pop matching bubbles across thirty color, shape, and combined challenges", ageBand: "2–4 with a grown-up", caregiverTip: "Name the clue together. Later, look for both the color and the shape."),
         .init(id: "shapes.safari", title: "Shape Safari", skill: "Find shapes in everyday objects", interaction: "Find round, square, and triangular objects", ageBand: "2–4 with a grown-up", caregiverTip: "Find another example in the room after each round."),
         .init(id: "shapes.reveal", title: "Rainbow Windows", skill: "Connect color words and objects", interaction: "Open six windows to reveal a rainbow collection", ageBand: "2–4 with a grown-up", caregiverTip: "Ask which color your child wants to explore next."),
-        .init(id: "shapes.roads", title: "Little Road Trip", skill: "Follow routes and position words", interaction: "Move a car along a winding path to its home", ageBand: "3–4 with a grown-up", caregiverTip: "Say across, up, and down as you guide the car together.")
+        .init(id: "shapes.roads", title: "Little Road Trip", skill: "Follow routes and position words", interaction: "Travel twenty-four routes through growing three-by-three to six-by-six grids", ageBand: "3–4 with a grown-up", caregiverTip: "Say up, down, left, and right as you guide the car together.")
     ]
     private let symbols = ["envelope.fill", "tshirt.fill", "paintpalette.fill", "tram.fill", "house.fill", "square.3.layers.3d", "pencil.tip", "camera.macro", "bubbles.and.sparkles", "magnifyingglass", "rainbow", "car.fill"]
     var body: some View {

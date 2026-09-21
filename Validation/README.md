@@ -64,3 +64,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 Mosaic Garden coverage checks twelve unique pictures, exposed paint regions at three widths, any-color filling, repainting without duplicate progress, shuffled progression, completion, and replay. The UI fixture also checks Ruth recording coverage during play.
 
 Shape Bubble Pop coverage checks thirty distinct clues per session across three stages, three valid targets among six bubbles, distractors that match only one attribute, invalid/duplicate taps, completion/replay, menu replacement, symbol availability, and exact Ruth coverage.
+
+Little Road Trip coverage checks twenty-four unique ordered journeys, connected routes without repeated cells, increasing lengths and grid sizes, all four directions, invalid/duplicate move guards, complete playthrough/replay, and Ruth coverage.

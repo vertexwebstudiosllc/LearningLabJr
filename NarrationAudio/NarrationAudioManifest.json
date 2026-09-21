@@ -4114,6 +4114,14 @@
       "category": "shapes"
     },
     {
+      "text": "Follow the road. Tap the glowing square to the left of the car.",
+      "file": "llj-c811c9a565b29bd1b3903beb.mp3",
+      "spokenText": "Follow the road. Tap the glowing square to the left of the car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Follow the road. Tap the glowing square to the right of the car.",
       "file": "llj-d7975fbc8264028bae9f40e6.mp3",
       "spokenText": "Follow the road. Tap the glowing square to the right of the car.",
@@ -15010,6 +15018,14 @@
       "category": "shapes"
     },
     {
+      "text": "The next road square is glowing to the left of the car.",
+      "file": "llj-79020cdca97014f766600948.mp3",
+      "spokenText": "The next road square is glowing to the left of the car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "The next road square is glowing to the right of the car.",
       "file": "llj-611075379c96432add7993e1.mp3",
       "spokenText": "The next road square is glowing to the right of the car.",
@@ -16189,6 +16205,14 @@
       "text": "Twenty shape pictures! Our town is ready!",
       "file": "llj-7375c351b4297ac5bf3b1742.mp3",
       "spokenText": "Twenty shape pictures! Our town is ready!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Twenty-four road trips! You followed little roads and big roads all the way home!",
+      "file": "llj-592ab30aef938d423b3b4ab2.mp3",
+      "spokenText": "Twenty-four road trips! You followed little roads and big roads all the way home!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"

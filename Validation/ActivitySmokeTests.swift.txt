@@ -777,6 +777,48 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testRoadTripTwentyFourGrowingGridsAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Little Road Trip"]
+        try reveal(card, in: app); card.tap()
+        for index in 0..<24 {
+            let trip = app.staticTexts["shapes.roads.trip"]
+            XCTAssertTrue(trip.waitForExistence(timeout: 5))
+            let size = 3 + index / 6
+            XCTAssertEqual(trip.label, "Trip \(index + 1) of 24 · \(size) × \(size) grid")
+            let progress = app.staticTexts["shapes.roads.progress"]
+            XCTAssertTrue(progress.label.hasPrefix("0 of"))
+            let total = Int(progress.label.split(separator: " ")[2])!
+            let nextTrip = app.buttons["shapes.roads.next"]
+            XCTAssertFalse(nextTrip.exists)
+            let car = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Car, row'")).firstMatch
+            try reveal(car, in: app); car.tap()
+            XCTAssertTrue(progress.label.hasPrefix("0 of"))
+            for step in 1...total {
+                let next = app.buttons["shapes.roads.step"]
+                try reveal(next, in: app)
+                XCTAssertGreaterThanOrEqual(next.frame.width, 44)
+                next.tap()
+                XCTAssertEqual(progress.label, "\(step) of \(total) road steps")
+            }
+            XCTAssertFalse(app.buttons["shapes.roads.step"].exists)
+            XCTAssertTrue(nextTrip.exists)
+            if [0, 6, 12, 18, 23].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Road Trip grid \(size) trip \(index)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(nextTrip, in: app); nextTrip.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.roads.trip"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["shapes.roads.trip"].label, "Trip 1 of 24 · 3 × 3 grid")
+        XCTAssertTrue(app.staticTexts["shapes.roads.progress"].label.hasPrefix("0 of"))
+    }
+
+    @MainActor
     func testShapeBubblePopThirtyRoundsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

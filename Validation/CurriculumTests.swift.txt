@@ -5,6 +5,60 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testRoadJourneysConnectedProgressionAndReplay() {
+        var directions: Set<String> = []
+        for _ in 0..<100 {
+            var session = RoadTripSession()
+            XCTAssertEqual(session.journeys.count, 24)
+            XCTAssertEqual(Set(session.journeys.map(\.key)).count, 24)
+            var previousLength = 0
+            for index in 0..<24 {
+                let trip = session.current
+                XCTAssertEqual(trip.size, 3 + index / 6)
+                XCTAssertGreaterThanOrEqual(trip.route.count, previousLength)
+                previousLength = trip.route.count
+                XCTAssertEqual(Set(trip.route).count, trip.route.count)
+                XCTAssertTrue(trip.route.allSatisfy { (0..<(trip.size * trip.size)).contains($0) })
+                for (a, b) in zip(trip.route, trip.route.dropFirst()) {
+                    XCTAssertEqual(abs(a / trip.size - b / trip.size) + abs(a % trip.size - b % trip.size), 1)
+                }
+                session.next()
+                XCTAssertEqual(session.index, index)
+                XCTAssertEqual(session.step, 0)
+                for step in 1..<trip.route.count {
+                    directions.insert(trip.direction(after: step - 1))
+                    XCTAssertFalse(session.move(to: -1))
+                    XCTAssertFalse(session.move(to: trip.route[step - 1]))
+                    if step < trip.route.count - 1 { XCTAssertFalse(session.move(to: trip.route.last!)) }
+                    XCTAssertTrue(session.move(to: trip.route[step]))
+                    XCTAssertEqual(session.car, trip.route[step])
+                    XCTAssertFalse(session.move(to: trip.route[step]))
+                }
+                XCTAssertTrue(session.arrived)
+                XCTAssertNil(session.nextCell)
+                session.next()
+            }
+            XCTAssertTrue(session.finished)
+            session.next()
+            XCTAssertEqual(session.index, 24)
+            XCTAssertFalse(session.move(to: session.car))
+        }
+        XCTAssertEqual(directions, Set(RoadJourney.directions))
+        for size in 3...6 {
+            for width: CGFloat in [280, 362, 420] {
+                XCTAssertGreaterThanOrEqual((width - CGFloat(size - 1) * 3) / CGFloat(size), 44)
+            }
+        }
+    }
+
+    @MainActor
+    func testRoadTripRuthCoverage() {
+        for text in RoadJourney.directions.flatMap({ [RoadJourney.instruction($0), RoadJourney.retry($0)] }) + [RoadJourney.arrival, RoadJourney.completion] {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
     func testShapeBubblesRulesAndProgression() {
         XCTAssertNotNil(UIImage(systemName: "bubbles.and.sparkles"))
         for shape in PostShape.allCases { XCTAssertNotNil(UIImage(systemName: shape.symbol + ".fill")) }

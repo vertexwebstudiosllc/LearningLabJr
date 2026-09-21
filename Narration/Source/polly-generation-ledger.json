@@ -61094,7 +61094,61 @@
       "audioBytes": 25964,
       "awsRequestCharacters": 71,
       "reservedUSD": "0.00348"
+    },
+    {
+      "signature": "c811c9a565b29bd1b3903beb43badba1ab859f088a809f12d38830ca782db553",
+      "file": "llj-c811c9a565b29bd1b3903beb.mp3",
+      "text": "Follow the road. Tap the glowing square to the left of the car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak><prosody rate=\"95%\">Follow the road. Tap the glowing square to the left of the car.</prosody></speak>",
+      "status": "done",
+      "requestedAt": "2026-09-21T01:44:51.508886+00:00",
+      "billableCharacters": 63,
+      "estimatedUSD": "0.00189",
+      "humanReviewed": false,
+      "completedAt": "2026-09-21T01:44:53.198248+00:00",
+      "audioSHA256": "8ae6191984000d5f97ebf919cb6b73f14d43de769f9b97c4a5f0f0d30053634d",
+      "audioBytes": 22364,
+      "awsRequestCharacters": 63,
+      "reservedUSD": "0.00324"
+    },
+    {
+      "signature": "79020cdca97014f766600948d042efeabda1676f125e0b3f0aded24091f14121",
+      "file": "llj-79020cdca97014f766600948.mp3",
+      "text": "The next road square is glowing to the left of the car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak><prosody rate=\"95%\">The next road square is glowing to the left of the car.</prosody></speak>",
+      "status": "done",
+      "requestedAt": "2026-09-21T01:44:51.766546+00:00",
+      "billableCharacters": 55,
+      "estimatedUSD": "0.00165",
+      "humanReviewed": false,
+      "completedAt": "2026-09-21T01:44:52.999748+00:00",
+      "audioSHA256": "3b99c97396ad915b5abd19b833e9c426acae5a1a6dd13ae6028662a8c69e41f0",
+      "audioBytes": 19052,
+      "awsRequestCharacters": 55,
+      "reservedUSD": "0.003"
+    },
+    {
+      "signature": "592ab30aef938d423b3b4ab2c488841e035bc98ee243e59fce009ef586e0f474",
+      "file": "llj-592ab30aef938d423b3b4ab2.mp3",
+      "text": "Twenty-four road trips! You followed little roads and big roads all the way home!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "ssml": "<speak><prosody rate=\"95%\">Twenty-four road trips! You followed little roads and big roads all the way home!</prosody></speak>",
+      "status": "done",
+      "requestedAt": "2026-09-21T01:44:52.016112+00:00",
+      "billableCharacters": 81,
+      "estimatedUSD": "0.00243",
+      "humanReviewed": false,
+      "completedAt": "2026-09-21T01:44:53.408917+00:00",
+      "audioSHA256": "b1ea2bcfa9028284d83b537133583e8a51b667eb4cace2897d098d42237c5aef",
+      "audioBytes": 28556,
+      "awsRequestCharacters": 81,
+      "reservedUSD": "0.00378"
     }
   ],
-  "updatedAt": "2026-09-21T01:34:57.663317+00:00"
+  "updatedAt": "2026-09-21T01:44:53.408967+00:00"
 }

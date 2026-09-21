@@ -19,7 +19,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Lit
 | Shape Bubble Pop | Pop three matching bubbles among six; progress from colors to shapes to both attributes | Thirty shuffled challenges, gentle floating/pop animation, no timer, completion and replay |
 | Shape Safari | Find geometric forms in everyday object illustrations | Two objects per shape, three shapes |
 | Rainbow Windows | Open colored windows to reveal and hear color–object associations | Six windows |
-| Little Road Trip | Navigate a connected grid route using position words | Car reaches home |
+| Little Road Trip | Follow twenty-four connected routes, progressing from 3×3 to 6×6 grids and longer paths | Reach home on each route, choose the next trip, complete all twenty-four and replay |
 
 Colors are accompanied by words and characteristic symbols where possible. Shape outlines and the trace path keep their geometry at different screen sizes. Paint discovery uses a set, so repeating one mixture cannot prematurely complete the game. Art can be repainted until the child chooses to finish.
 
