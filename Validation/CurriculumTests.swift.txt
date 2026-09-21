@@ -5,6 +5,67 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testMosaicPicturesPaintingAndReplay() {
+        XCTAssertEqual(MosaicPicture.bank.count, 12)
+        XCTAssertEqual(Set(MosaicPicture.bank.map(\.id)).count, 12)
+        for picture in MosaicPicture.bank {
+            XCTAssertTrue((3...6).contains(picture.pieces.count))
+            XCTAssertEqual(Set(picture.pieces.map(\.id)).count, picture.pieces.count)
+            for width: CGFloat in [280, 362, 740] {
+                for piece in picture.pieces {
+                    let frame = piece.frame(boardWidth: width)
+                    XCTAssertTrue(CGRect(x: 0, y: 0, width: width, height: 270).contains(frame), picture.name)
+                    XCTAssertGreaterThanOrEqual(min(frame.width, frame.height), 44, piece.name)
+                    // Every part must retain an exposed tappable point after later layers are drawn.
+                    let shape = piece.glyph.path(in: frame)
+                    let overlays = picture.pieces.filter { $0.id > piece.id }.map { $0.glyph.path(in: $0.frame(boardWidth: width)) }
+                    let exposed = stride(from: frame.minX + 8, to: frame.maxX - 8, by: 8).contains { x in
+                        stride(from: frame.minY + 8, to: frame.maxY - 8, by: 8).contains { y in
+                            let point = CGPoint(x: x, y: y)
+                            return shape.contains(point) && !overlays.contains { $0.contains(point) }
+                        }
+                    }
+                    XCTAssertTrue(exposed, "Hidden part: \(picture.name) \(piece.name)")
+                }
+            }
+        }
+        for _ in 0..<50 {
+            var session = MosaicSession()
+            XCTAssertEqual(session.current.id, "flower")
+            var seen: Set<String> = []
+            for index in 0..<12 {
+                XCTAssertTrue(seen.insert(session.current.id).inserted)
+                XCTAssertTrue(session.fills.isEmpty)
+                session.next()
+                XCTAssertEqual(session.index, index)
+                XCTAssertFalse(session.fill(-1, paint: "red"))
+                XCTAssertFalse(session.fill(0, paint: "invalid"))
+                for piece in session.current.pieces.reversed() {
+                    XCTAssertTrue(session.fill(piece.id, paint: "blue"))
+                }
+                XCTAssertTrue(session.ready)
+                let count = session.fills.count
+                XCTAssertTrue(session.fill(0, paint: "pink"))
+                XCTAssertEqual(session.fills[0], "pink")
+                XCTAssertEqual(session.fills.count, count)
+                session.next()
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.fill(0, paint: "red"))
+            session.next()
+            XCTAssertEqual(session.index, 12)
+        }
+    }
+
+    @MainActor
+    func testMosaicRuthCoverage() {
+        let texts = MosaicPicture.bank.map(\.prompt) + MosaicPicture.paints.map(\.selectionPrompt) + [MosaicPicture.completion]
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
     func testShapeTrailsGeometryAndProgression() {
         XCTAssertEqual(ShapeTrail.bank.count, 25)
         XCTAssertEqual(Set(ShapeTrail.bank.map(\.id)).count, 25)

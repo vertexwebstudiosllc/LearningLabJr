@@ -338,43 +338,6 @@ struct ColorLaundryGame: View {
     }
 }
 
-struct MosaicGardenGame: View {
-    let onReplay: () -> Void
-    @State private var paint = SCPaint.red
-    @State private var petals: [SCPaint?] = Array(repeating: nil, count: 6)
-    @State private var finished = false
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "Mosaic Garden", prompt: finished ? "Your colorful flower is ready to share!" : "Choose a paint, then tap the flower petals. Every garden can be different.", accent: .pink, completion: finished, onReplay: onReplay) {
-            GeometryReader { geometry in
-                ZStack {
-                    ForEach(0..<6, id: \.self) { index in
-                        let angle = Double(index) * .pi / 3 - .pi / 2
-                        Button {
-                            petals[index] = paint
-                            narrator.speak("\(paint.name) petal.")
-                        } label: {
-                            Circle().fill(petals[index]?.color ?? .white)
-                                .overlay(Circle().stroke(.pink.opacity(0.25), lineWidth: 3))
-                                .overlay { if petals[index] == nil { Image(systemName: "paintbrush.pointed.fill").foregroundStyle(.pink.opacity(0.4)) } }
-                                .frame(width: 74, height: 74)
-                        }.buttonStyle(.plain)
-                            .position(x: geometry.size.width / 2 + cos(angle) * 80, y: 132 + sin(angle) * 80)
-                            .accessibilityLabel("Petal \(index + 1), \(petals[index]?.name ?? "unpainted")")
-                    }
-                    Image(systemName: "face.smiling.fill").font(.system(size: 63)).foregroundStyle(.yellow)
-                        .position(x: geometry.size.width / 2, y: 132).accessibilityHidden(true)
-                }
-            }.frame(height: 260)
-            SCPaintPicker(selection: $paint)
-            if petals.allSatisfy({ $0 != nil }) && !finished {
-                ToddlerActionButton(title: "My garden is ready", systemImage: "checkmark", color: .pink) { finished = true }
-            }
-            SCNote(text: "Describe a color your child chose. Invite them to tell you about their flower.")
-        }
-    }
-}
-
 struct MirrorWingsGame: View {
     let onReplay: () -> Void
     @State private var paint = SCPaint.blue

@@ -60,3 +60,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Nesting Shapes: ten-shape cycles, three distinct requested colors from seven choices, fresh per-shape color sequences, incorrect/stale selection protection, saved palette memory and Ruth coverage. UI checks complete two cycles and reenter the game.
 
 - Shape Trails: twenty-five distinct closed outlines, ordered checkpoints, complete guide/progress paths, geometry at three widths, guarded advancement, Ruth coverage, finger tracing, tap-to-trace completion and replay.
+
+Mosaic Garden coverage checks twelve unique pictures, exposed paint regions at three widths, any-color filling, repainting without duplicate progress, shuffled progression, completion, and replay. The UI fixture also checks Ruth recording coverage during play.

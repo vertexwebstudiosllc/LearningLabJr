@@ -777,6 +777,59 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testMosaicTwelvePicturesAndRepainting() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Mosaic Garden"]
+        try reveal(card, in: app); card.tap()
+        var seen: Set<String> = []
+        for index in 0..<12 {
+            let name = app.staticTexts["shapes.mosaic.name"]
+            XCTAssertTrue(name.waitForExistence(timeout: 5))
+            XCTAssertTrue(name.label.hasPrefix("Picture \(index + 1) of 12"))
+            let picture = name.label.components(separatedBy: " · ").last!
+            XCTAssertTrue(seen.insert(picture).inserted)
+            if index == 0 { XCTAssertEqual(picture, "Flower") }
+            let next = app.buttons["shapes.mosaic.next"]
+            XCTAssertFalse(next.exists)
+            let blue = app.buttons["shapes.mosaic.paint.blue"]
+            try reveal(blue, in: app); blue.tap()
+            let parts = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.mosaic.part.'"))
+            let count = parts.count
+            XCTAssertTrue((3...6).contains(count))
+            for id in 0..<count {
+                let part = app.buttons["shapes.mosaic.part.\(id)"]
+                try reveal(part, in: app)
+                // Some outline regions surround a smaller independently colored part.
+                for offset in [CGVector(dx: 0.5, dy: 0.5), CGVector(dx: 0.2, dy: 0.5), CGVector(dx: 0.5, dy: 0.85), CGVector(dx: 0.8, dy: 0.5)] {
+                    if part.label.hasSuffix(", Blue") { break }
+                    part.coordinate(withNormalizedOffset: offset).tap()
+                }
+                XCTAssertTrue(part.label.hasSuffix(", Blue"), part.label)
+            }
+            XCTAssertTrue(next.exists)
+            XCTAssertEqual(app.staticTexts["shapes.mosaic.progress"].label, "\(count) of \(count) parts painted")
+            let pink = app.buttons["shapes.mosaic.paint.pink"]
+            try reveal(pink, in: app); pink.tap()
+            let lastPart = app.buttons["shapes.mosaic.part.\(count - 1)"]
+            try reveal(lastPart, in: app); lastPart.tap()
+            XCTAssertTrue(lastPart.label.hasSuffix(", Pink"))
+            XCTAssertEqual(app.staticTexts["shapes.mosaic.progress"].label, "\(count) of \(count) parts painted")
+            if ["Flower", "House", "Butterfly", "Snail"].contains(picture) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Mosaic " + picture; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.mosaic.name"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["shapes.mosaic.name"].label, "Picture 1 of 12 · Flower")
+        XCTAssertEqual(app.staticTexts["shapes.mosaic.progress"].label, "0 of 6 parts painted")
+    }
+
+    @MainActor
     func testShapeTrailsTwentyFiveAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]

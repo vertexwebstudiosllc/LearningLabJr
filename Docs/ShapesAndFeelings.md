@@ -15,7 +15,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Mir
 | Build a Shape Town | Select tray shapes and drag into dimmed outlines in any order | Twenty pictures, each with three to five shapes |
 | Nesting Shapes | Follow three color requests to build nested layers across ten shapes | Continuous shuffled shape cycles |
 | Shape Trails | Follow a broad moving guide by dragging or tapping | Twenty-five complete shape outlines |
-| Mosaic Garden | Select a palette and freely paint individual petals | Six painted petals and explicit finish |
+| Mosaic Garden | Choose eight paints to fill and recolor twelve pictures, beginning with the original flower | Paint all parts, then choose the next picture; no repeats before all twelve |
 | Mirror Wings | Paint a wing spot and reveal its reflected partner | Three spot pairs and explicit finish |
 | Shape Safari | Find geometric forms in everyday object illustrations | Two objects per shape, three shapes |
 | Rainbow Windows | Open colored windows to reveal and hear color–object associations | Six windows |

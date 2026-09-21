@@ -6090,6 +6090,102 @@
       "category": "shapes"
     },
     {
+      "text": "Let's paint the balloon! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-15266216e63577fd492c812b.mp3",
+      "spokenText": "Let's paint the balloon! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the butterfly! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-737bdc8e9bd91dbf6a5f07b5.mp3",
+      "spokenText": "Let's paint the butterfly! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the fish! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-f627647f35745c72e9c7a846.mp3",
+      "spokenText": "Let's paint the fish! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the flower! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-eb1603f4babf3294d0dc852b.mp3",
+      "spokenText": "Let's paint the flower! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the house! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-a3c0d5f2601cfe6f7d3c3939.mp3",
+      "spokenText": "Let's paint the house! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the ice cream! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-51aec0433fd56e5c07872c46.mp3",
+      "spokenText": "Let's paint the ice cream! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the mushroom! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-a8b778b879ebac8b2d8bd9ca.mp3",
+      "spokenText": "Let's paint the mushroom! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the rocket! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-35f4a45a686bf393735f18f6.mp3",
+      "spokenText": "Let's paint the rocket! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the sailboat! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-c7f3602cc7204288884d5832.mp3",
+      "spokenText": "Let's paint the sailboat! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the snail! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-6e17be9a9e8da4a892fc0932.mp3",
+      "spokenText": "Let's paint the snail! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the tree! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-d1066a117ab8349307db5c5a.mp3",
+      "spokenText": "Let's paint the tree! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Let's paint the turtle! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "file": "llj-4cc16473754e93422178e0ab.mp3",
+      "spokenText": "Let's paint the turtle! Choose a color, then tap a part of the picture. You can use any colors you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Let's pick up the ball. Tap it to aim the claw. Then lower the claw.",
       "file": "llj-4bc36c21f9c821daa8613984.mp3",
       "spokenText": "Let's pick up the ball. Tap it to aim the claw. Then lower the claw.",
@@ -15368,6 +15464,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Twelve colorful pictures! You made a wonderful garden of art!",
+      "file": "llj-acd6951064570e57c62ce276.mp3",
+      "spokenText": "Twelve colorful pictures! You made a wonderful garden of art!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "Twenty shape pictures! Our town is ready!",
