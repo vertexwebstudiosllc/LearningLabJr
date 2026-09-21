@@ -10,12 +10,12 @@ struct ShapesAndColorsMenu: View {
         .init(id: "shapes.nest", title: "Nesting Shapes", skill: "Follow color directions and compare sizes", interaction: "Choose three requested colors to nest ten different shapes", ageBand: "2–4 with a grown-up", caregiverTip: "Name each requested color together, then watch the shapes nest inside one another."),
         .init(id: "shapes.trail", title: "Shape Trails", skill: "Explore lines and boundaries", interaction: "Trace or tap complete paths around twenty-five shapes", ageBand: "2–4 with a grown-up", caregiverTip: "A broad scribble is welcome. Guide a finger only if invited."),
         .init(id: "shapes.garden", title: "Mosaic Garden", skill: "Make creative color choices", interaction: "Choose colors and paint twelve different pictures", ageBand: "2–4 with a grown-up", caregiverTip: "Describe the choices without asking for a right answer."),
-        .init(id: "shapes.wings", title: "Mirror Wings", skill: "Notice matching sides", interaction: "Paint spots and reveal mirrored partners", ageBand: "3–4 with a grown-up", caregiverTip: "Point to the same spot on the other wing."),
+        .init(id: "shapes.bubbles", title: "Shape Bubble Pop", skill: "Match colors and shapes together", interaction: "Pop matching bubbles across thirty color, shape, and combined challenges", ageBand: "2–4 with a grown-up", caregiverTip: "Name the clue together. Later, look for both the color and the shape."),
         .init(id: "shapes.safari", title: "Shape Safari", skill: "Find shapes in everyday objects", interaction: "Find round, square, and triangular objects", ageBand: "2–4 with a grown-up", caregiverTip: "Find another example in the room after each round."),
         .init(id: "shapes.reveal", title: "Rainbow Windows", skill: "Connect color words and objects", interaction: "Open six windows to reveal a rainbow collection", ageBand: "2–4 with a grown-up", caregiverTip: "Ask which color your child wants to explore next."),
         .init(id: "shapes.roads", title: "Little Road Trip", skill: "Follow routes and position words", interaction: "Move a car along a winding path to its home", ageBand: "3–4 with a grown-up", caregiverTip: "Say across, up, and down as you guide the car together.")
     ]
-    private let symbols = ["envelope.fill", "tshirt.fill", "paintpalette.fill", "tram.fill", "house.fill", "square.3.layers.3d", "pencil.tip", "camera.macro", "butterfly.fill", "magnifyingglass", "rainbow", "car.fill"]
+    private let symbols = ["envelope.fill", "tshirt.fill", "paintpalette.fill", "tram.fill", "house.fill", "square.3.layers.3d", "pencil.tip", "camera.macro", "bubbles.and.sparkles", "magnifyingglass", "rainbow", "car.fill"]
     var body: some View {
         ActivityMenu(title: "Shapes & Colors", subtitle: "12 ways to sort, build, paint, and discover", accent: .blue) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
@@ -44,7 +44,7 @@ private struct SCActivityDestination: View {
         case 5: NestingShapesGame(onReplay: replay)
         case 6: ShapeTrailsGame(onReplay: replay)
         case 7: MosaicGardenGame(onReplay: replay)
-        case 8: MirrorWingsGame(onReplay: replay)
+        case 8: ShapeBubblePopGame(onReplay: replay)
         case 9: ShapeSafariGame(onReplay: replay)
         case 10: RainbowWindowsGame(onReplay: replay)
         default: LittleRoadTripGame(onReplay: replay)

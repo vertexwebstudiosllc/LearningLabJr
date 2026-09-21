@@ -5994,6 +5994,14 @@
       "category": "counting"
     },
     {
+      "text": "Let's look again. Find a bubble that matches our clue.",
+      "file": "llj-798f3a8a11884cff64c954c8.mp3",
+      "spokenText": "Let's look again. Find a bubble that matches our clue.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Let's look at the edges. Find the circle.",
       "file": "llj-f12fc42de20252e222ad0308.mp3",
       "spokenText": "Let's look at the edges. Find the circle.",
@@ -11786,6 +11794,710 @@
       "category": "literacy"
     },
     {
+      "text": "Pop three blue bubbles. Look for the color blue!",
+      "file": "llj-47a2197b4d43e6047b07e20b.mp3",
+      "spokenText": "Pop three blue bubbles. Look for the color blue!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue circle inside. Look for the color and the shape together!",
+      "file": "llj-4be571d973746ab98e63c4d5.mp3",
+      "spokenText": "Pop three bubbles with a blue circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue diamond inside. Look for the color and the shape together!",
+      "file": "llj-26c61dddb54fb4f49a7cc135.mp3",
+      "spokenText": "Pop three bubbles with a blue diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue heart inside. Look for the color and the shape together!",
+      "file": "llj-98ccbc8ad4659e5ae0fb292a.mp3",
+      "spokenText": "Pop three bubbles with a blue heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue hexagon inside. Look for the color and the shape together!",
+      "file": "llj-f94b2179769ec968d3251309.mp3",
+      "spokenText": "Pop three bubbles with a blue hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue oval inside. Look for the color and the shape together!",
+      "file": "llj-d291a80b8d0b01f3d4ff0b75.mp3",
+      "spokenText": "Pop three bubbles with a blue oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue pentagon inside. Look for the color and the shape together!",
+      "file": "llj-26c6bf393563928a9b5ad1bc.mp3",
+      "spokenText": "Pop three bubbles with a blue pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue rectangle inside. Look for the color and the shape together!",
+      "file": "llj-cfc2a1ccaf4d62679a6d73c3.mp3",
+      "spokenText": "Pop three bubbles with a blue rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue square inside. Look for the color and the shape together!",
+      "file": "llj-7726d2772c423577bcc8d4bc.mp3",
+      "spokenText": "Pop three bubbles with a blue square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue star inside. Look for the color and the shape together!",
+      "file": "llj-20ac1030492d68abc8b8e4c4.mp3",
+      "spokenText": "Pop three bubbles with a blue star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a blue triangle inside. Look for the color and the shape together!",
+      "file": "llj-c2eb3cb104e8eff6cee324b8.mp3",
+      "spokenText": "Pop three bubbles with a blue triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a circle inside. They can be any color!",
+      "file": "llj-25617b2779f1f17f65f4bcc3.mp3",
+      "spokenText": "Pop three bubbles with a circle inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a diamond inside. They can be any color!",
+      "file": "llj-6639eca70c9248246593cfaf.mp3",
+      "spokenText": "Pop three bubbles with a diamond inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green circle inside. Look for the color and the shape together!",
+      "file": "llj-d67ac2fed91709b37807d528.mp3",
+      "spokenText": "Pop three bubbles with a green circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green diamond inside. Look for the color and the shape together!",
+      "file": "llj-f9605a631e1faf6e3236243e.mp3",
+      "spokenText": "Pop three bubbles with a green diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green heart inside. Look for the color and the shape together!",
+      "file": "llj-2b31506c7d34f8970b24bb8c.mp3",
+      "spokenText": "Pop three bubbles with a green heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green hexagon inside. Look for the color and the shape together!",
+      "file": "llj-af1fb3f268e6ad9405fa1aed.mp3",
+      "spokenText": "Pop three bubbles with a green hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green oval inside. Look for the color and the shape together!",
+      "file": "llj-3ff71725aeb907164ab195dc.mp3",
+      "spokenText": "Pop three bubbles with a green oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green pentagon inside. Look for the color and the shape together!",
+      "file": "llj-be999debe4e9b239f9abd336.mp3",
+      "spokenText": "Pop three bubbles with a green pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green rectangle inside. Look for the color and the shape together!",
+      "file": "llj-9f4f2510d12f2f8452b713da.mp3",
+      "spokenText": "Pop three bubbles with a green rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green square inside. Look for the color and the shape together!",
+      "file": "llj-c91b00d6348a0bd2e423cdf7.mp3",
+      "spokenText": "Pop three bubbles with a green square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green star inside. Look for the color and the shape together!",
+      "file": "llj-b95cf6527d266c363b7a0fd6.mp3",
+      "spokenText": "Pop three bubbles with a green star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a green triangle inside. Look for the color and the shape together!",
+      "file": "llj-ffcc5e9c9d75de96104bdda8.mp3",
+      "spokenText": "Pop three bubbles with a green triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a heart inside. They can be any color!",
+      "file": "llj-a60843e8fee072bf931164e9.mp3",
+      "spokenText": "Pop three bubbles with a heart inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a hexagon inside. They can be any color!",
+      "file": "llj-8cf2bb51babafbd7a05745c0.mp3",
+      "spokenText": "Pop three bubbles with a hexagon inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange circle inside. Look for the color and the shape together!",
+      "file": "llj-636c44ea64d681c20dc5f492.mp3",
+      "spokenText": "Pop three bubbles with a orange circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange diamond inside. Look for the color and the shape together!",
+      "file": "llj-0207ee0f73083056389c17c5.mp3",
+      "spokenText": "Pop three bubbles with a orange diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange heart inside. Look for the color and the shape together!",
+      "file": "llj-e2318afe3d24eca2a7db7534.mp3",
+      "spokenText": "Pop three bubbles with a orange heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange hexagon inside. Look for the color and the shape together!",
+      "file": "llj-e81842b41d0ac9f2fb1c684d.mp3",
+      "spokenText": "Pop three bubbles with a orange hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange oval inside. Look for the color and the shape together!",
+      "file": "llj-ba29e1509b09f35b3d198b93.mp3",
+      "spokenText": "Pop three bubbles with a orange oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange pentagon inside. Look for the color and the shape together!",
+      "file": "llj-2d074ff7a7a865b1cf2e9693.mp3",
+      "spokenText": "Pop three bubbles with a orange pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange rectangle inside. Look for the color and the shape together!",
+      "file": "llj-0b51c4cc1ee9f3665362fe3a.mp3",
+      "spokenText": "Pop three bubbles with a orange rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange square inside. Look for the color and the shape together!",
+      "file": "llj-ecc9c3cc06b59f1edfc3b971.mp3",
+      "spokenText": "Pop three bubbles with a orange square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange star inside. Look for the color and the shape together!",
+      "file": "llj-2802f16f465e7b1aa1ed862f.mp3",
+      "spokenText": "Pop three bubbles with a orange star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a orange triangle inside. Look for the color and the shape together!",
+      "file": "llj-632b6f4aa335176225beb054.mp3",
+      "spokenText": "Pop three bubbles with a orange triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a oval inside. They can be any color!",
+      "file": "llj-a71ff01d86cba09915a88185.mp3",
+      "spokenText": "Pop three bubbles with a oval inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pentagon inside. They can be any color!",
+      "file": "llj-9ddbff3a55059a358be4a4ef.mp3",
+      "spokenText": "Pop three bubbles with a pentagon inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink circle inside. Look for the color and the shape together!",
+      "file": "llj-ac40dcebfee1f19d88ea17bb.mp3",
+      "spokenText": "Pop three bubbles with a pink circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink diamond inside. Look for the color and the shape together!",
+      "file": "llj-0068330e4993f1ca40bb1326.mp3",
+      "spokenText": "Pop three bubbles with a pink diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink heart inside. Look for the color and the shape together!",
+      "file": "llj-a0619eec6cc2a7af8c0340c3.mp3",
+      "spokenText": "Pop three bubbles with a pink heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink hexagon inside. Look for the color and the shape together!",
+      "file": "llj-16f86c754a99617b52dbf682.mp3",
+      "spokenText": "Pop three bubbles with a pink hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink oval inside. Look for the color and the shape together!",
+      "file": "llj-e855692954b2d694f0ef1bce.mp3",
+      "spokenText": "Pop three bubbles with a pink oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink pentagon inside. Look for the color and the shape together!",
+      "file": "llj-56435fd572b3cf37f245cd38.mp3",
+      "spokenText": "Pop three bubbles with a pink pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink rectangle inside. Look for the color and the shape together!",
+      "file": "llj-6e673b08b76d017f4547eb1c.mp3",
+      "spokenText": "Pop three bubbles with a pink rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink square inside. Look for the color and the shape together!",
+      "file": "llj-2b7f5a04632d0def1c92b16e.mp3",
+      "spokenText": "Pop three bubbles with a pink square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink star inside. Look for the color and the shape together!",
+      "file": "llj-7d83de085d8ae7f4aaef6714.mp3",
+      "spokenText": "Pop three bubbles with a pink star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a pink triangle inside. Look for the color and the shape together!",
+      "file": "llj-bd99149b3adece8e64ee2762.mp3",
+      "spokenText": "Pop three bubbles with a pink triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple circle inside. Look for the color and the shape together!",
+      "file": "llj-2d2ca0073238abae1092293c.mp3",
+      "spokenText": "Pop three bubbles with a purple circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple diamond inside. Look for the color and the shape together!",
+      "file": "llj-04cf26c8c3f9fee1a6adf0bc.mp3",
+      "spokenText": "Pop three bubbles with a purple diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple heart inside. Look for the color and the shape together!",
+      "file": "llj-acd9ebf2ddb863de230ee377.mp3",
+      "spokenText": "Pop three bubbles with a purple heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple hexagon inside. Look for the color and the shape together!",
+      "file": "llj-006ee17a7d46b91620e8c405.mp3",
+      "spokenText": "Pop three bubbles with a purple hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple oval inside. Look for the color and the shape together!",
+      "file": "llj-4d997934ce20eb9c8928831c.mp3",
+      "spokenText": "Pop three bubbles with a purple oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple pentagon inside. Look for the color and the shape together!",
+      "file": "llj-03a24871a17a685f58572be9.mp3",
+      "spokenText": "Pop three bubbles with a purple pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple rectangle inside. Look for the color and the shape together!",
+      "file": "llj-c11938d748c96b7de80316f4.mp3",
+      "spokenText": "Pop three bubbles with a purple rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple square inside. Look for the color and the shape together!",
+      "file": "llj-5903471f5975557bb593851a.mp3",
+      "spokenText": "Pop three bubbles with a purple square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple star inside. Look for the color and the shape together!",
+      "file": "llj-877ed8dd656b06992e2d5fdb.mp3",
+      "spokenText": "Pop three bubbles with a purple star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a purple triangle inside. Look for the color and the shape together!",
+      "file": "llj-85c0fa3116e682518170b63a.mp3",
+      "spokenText": "Pop three bubbles with a purple triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a rectangle inside. They can be any color!",
+      "file": "llj-8e810193ea80e3e9df55a7d6.mp3",
+      "spokenText": "Pop three bubbles with a rectangle inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red circle inside. Look for the color and the shape together!",
+      "file": "llj-8152240a26ba86ffa0e94f2e.mp3",
+      "spokenText": "Pop three bubbles with a red circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red diamond inside. Look for the color and the shape together!",
+      "file": "llj-b4c5ab84c9a70d2e1687e9eb.mp3",
+      "spokenText": "Pop three bubbles with a red diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red heart inside. Look for the color and the shape together!",
+      "file": "llj-473d463b0bdc4c9c1e33ed7d.mp3",
+      "spokenText": "Pop three bubbles with a red heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red hexagon inside. Look for the color and the shape together!",
+      "file": "llj-c0690378b1fba3cae0623e6b.mp3",
+      "spokenText": "Pop three bubbles with a red hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red oval inside. Look for the color and the shape together!",
+      "file": "llj-43754531b73cdbd820f65148.mp3",
+      "spokenText": "Pop three bubbles with a red oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red pentagon inside. Look for the color and the shape together!",
+      "file": "llj-8d6159d7e9af3a1a360e996e.mp3",
+      "spokenText": "Pop three bubbles with a red pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red rectangle inside. Look for the color and the shape together!",
+      "file": "llj-ac22bed24378b20e79d55185.mp3",
+      "spokenText": "Pop three bubbles with a red rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red square inside. Look for the color and the shape together!",
+      "file": "llj-51fa1584c0f3c679cd3836af.mp3",
+      "spokenText": "Pop three bubbles with a red square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red star inside. Look for the color and the shape together!",
+      "file": "llj-7db86f5cfe1b74c5fb3b07eb.mp3",
+      "spokenText": "Pop three bubbles with a red star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a red triangle inside. Look for the color and the shape together!",
+      "file": "llj-e33eed0d54c07deeaf40d204.mp3",
+      "spokenText": "Pop three bubbles with a red triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a square inside. They can be any color!",
+      "file": "llj-2b962a710f9a1385d6227351.mp3",
+      "spokenText": "Pop three bubbles with a square inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a star inside. They can be any color!",
+      "file": "llj-28d35f0cc65764ed1f48c042.mp3",
+      "spokenText": "Pop three bubbles with a star inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a triangle inside. They can be any color!",
+      "file": "llj-f305e711fdf2cfe97dc27756.mp3",
+      "spokenText": "Pop three bubbles with a triangle inside. They can be any color!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow circle inside. Look for the color and the shape together!",
+      "file": "llj-7ba17f304fa6d5f372c8f997.mp3",
+      "spokenText": "Pop three bubbles with a yellow circle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow diamond inside. Look for the color and the shape together!",
+      "file": "llj-6e81beac0a381e7e980be253.mp3",
+      "spokenText": "Pop three bubbles with a yellow diamond inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow heart inside. Look for the color and the shape together!",
+      "file": "llj-32a8e76e18c5fd2fa175462a.mp3",
+      "spokenText": "Pop three bubbles with a yellow heart inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow hexagon inside. Look for the color and the shape together!",
+      "file": "llj-8ba4738a2f9daf02d175cf89.mp3",
+      "spokenText": "Pop three bubbles with a yellow hexagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow oval inside. Look for the color and the shape together!",
+      "file": "llj-c7faf3deb835733db0753394.mp3",
+      "spokenText": "Pop three bubbles with a yellow oval inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow pentagon inside. Look for the color and the shape together!",
+      "file": "llj-26157a5d751dee9e27431abe.mp3",
+      "spokenText": "Pop three bubbles with a yellow pentagon inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow rectangle inside. Look for the color and the shape together!",
+      "file": "llj-c782eefbc7ead5e64e784976.mp3",
+      "spokenText": "Pop three bubbles with a yellow rectangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow square inside. Look for the color and the shape together!",
+      "file": "llj-13006a5fc8d694c0bb27ad80.mp3",
+      "spokenText": "Pop three bubbles with a yellow square inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow star inside. Look for the color and the shape together!",
+      "file": "llj-21cd783b7cd140a68b7a6399.mp3",
+      "spokenText": "Pop three bubbles with a yellow star inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three bubbles with a yellow triangle inside. Look for the color and the shape together!",
+      "file": "llj-002619a5d893b28ed1e75d82.mp3",
+      "spokenText": "Pop three bubbles with a yellow triangle inside. Look for the color and the shape together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three green bubbles. Look for the color green!",
+      "file": "llj-58c6a9affb0220387cda9d12.mp3",
+      "spokenText": "Pop three green bubbles. Look for the color green!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three orange bubbles. Look for the color orange!",
+      "file": "llj-e9925d02f2d87fc0b866cd38.mp3",
+      "spokenText": "Pop three orange bubbles. Look for the color orange!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three pink bubbles. Look for the color pink!",
+      "file": "llj-7433961b882491c912eae549.mp3",
+      "spokenText": "Pop three pink bubbles. Look for the color pink!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three purple bubbles. Look for the color purple!",
+      "file": "llj-e3aaf35edc7946273154ebe2.mp3",
+      "spokenText": "Pop three purple bubbles. Look for the color purple!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three red bubbles. Look for the color red!",
+      "file": "llj-d3a7e11cdb08f50edbd51a63.mp3",
+      "spokenText": "Pop three red bubbles. Look for the color red!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop three yellow bubbles. Look for the color yellow!",
+      "file": "llj-a974a180342f08a7f3df4dbc.mp3",
+      "spokenText": "Pop three yellow bubbles. Look for the color yellow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
+      "text": "Pop, pop, pop! You found all three!",
+      "file": "llj-9ec701f583122fafa247f7b6.mp3",
+      "spokenText": "Pop, pop, pop! You found all three!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
+    },
+    {
       "text": "Post the circle in its matching opening.",
       "file": "llj-f4831dc8cefe47ae715960d4.mp3",
       "spokenText": "Here's a circle! Can you put it in the circle opening?",
@@ -15960,6 +16672,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "What a colorful bubble adventure! You found colors and shapes together!",
+      "file": "llj-eaeb6cb747726e33927909b4.mp3",
+      "spokenText": "What a colorful bubble adventure! You found colors and shapes together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "shapes"
     },
     {
       "text": "What could Bunny use instead?",

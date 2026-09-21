@@ -62,3 +62,5 @@ UI navigation smoke tests establish that screens open; they do not establish tha
 - Shape Trails: twenty-five distinct closed outlines, ordered checkpoints, complete guide/progress paths, geometry at three widths, guarded advancement, Ruth coverage, finger tracing, tap-to-trace completion and replay.
 
 Mosaic Garden coverage checks twelve unique pictures, exposed paint regions at three widths, any-color filling, repainting without duplicate progress, shuffled progression, completion, and replay. The UI fixture also checks Ruth recording coverage during play.
+
+Shape Bubble Pop coverage checks thirty distinct clues per session across three stages, three valid targets among six bubbles, distractors that match only one attribute, invalid/duplicate taps, completion/replay, menu replacement, symbol availability, and exact Ruth coverage.

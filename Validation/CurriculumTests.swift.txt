@@ -5,6 +5,58 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testShapeBubblesRulesAndProgression() {
+        XCTAssertNotNil(UIImage(systemName: "bubbles.and.sparkles"))
+        for shape in PostShape.allCases { XCTAssertNotNil(UIImage(systemName: shape.symbol + ".fill")) }
+        for _ in 0..<100 {
+            var session = BubbleSession()
+            XCTAssertEqual(session.rounds.count, 30)
+            XCTAssertEqual(Set(session.rounds.map(\.key)).count, 30)
+            XCTAssertTrue(session.rounds.prefix(7).allSatisfy { $0.rule == .color })
+            XCTAssertTrue(session.rounds.dropFirst(7).prefix(10).allSatisfy { $0.rule == .shape })
+            XCTAssertTrue(session.rounds.suffix(13).allSatisfy { $0.rule == .both })
+            XCTAssertEqual(Set(session.rounds.prefix(7).map(\.paint)), Set(BubbleRound.paints))
+            XCTAssertEqual(Set(session.rounds.dropFirst(7).prefix(10).map(\.shape)), Set(PostShape.allCases))
+            for index in 0..<30 {
+                let round = session.current
+                XCTAssertEqual(round.bubbles.count, 6)
+                XCTAssertEqual(Set(round.bubbles.map(\.id)).count, 6)
+                let correct = round.bubbles.filter(round.matches)
+                XCTAssertEqual(correct.count, 3)
+                if round.rule == .both {
+                    XCTAssertTrue(round.bubbles.contains { $0.shape == round.shape && $0.paint != round.paint })
+                    XCTAssertTrue(round.bubbles.contains { $0.shape != round.shape && $0.paint == round.paint })
+                }
+                session.next()
+                XCTAssertEqual(session.index, index)
+                XCTAssertFalse(session.pop(-1))
+                for wrong in round.bubbles.filter({ !round.matches($0) }) { XCTAssertFalse(session.pop(wrong.id)) }
+                XCTAssertTrue(session.popped.isEmpty)
+                for bubble in correct {
+                    XCTAssertTrue(session.pop(bubble.id))
+                    XCTAssertFalse(session.pop(bubble.id))
+                }
+                XCTAssertTrue(session.solved)
+                session.next()
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.pop(0))
+            session.next()
+            XCTAssertEqual(session.index, 30)
+        }
+    }
+
+    @MainActor
+    func testShapeBubblesRuthCoverage() {
+        XCTAssertEqual(Set(BubbleRound.narration).count, 90)
+        for text in BubbleRound.narration {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+        XCTAssertTrue(ShapesAndColorsMenu.activities.contains { $0.id == "shapes.bubbles" && $0.title == "Shape Bubble Pop" })
+        XCTAssertFalse(ShapesAndColorsMenu.activities.contains { $0.title == "Mirror Wings" })
+    }
+
     func testMosaicPicturesPaintingAndReplay() {
         XCTAssertEqual(MosaicPicture.bank.count, 12)
         XCTAssertEqual(Set(MosaicPicture.bank.map(\.id)).count, 12)

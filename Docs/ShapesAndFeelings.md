@@ -2,7 +2,7 @@
 
 Each category exposes exactly 12 stable `LearningActivity` records and 12 dedicated SwiftUI destinations. The former copied phonics menus and coming-soon destinations have been removed from these two categories.
 
-The intended experience is ages 2–4 with caregiver support. Pattern Train, Mirror Wings, Little Road Trip, and Friendship Bridge are marked 3–4. The activities are short opportunities for shared play, not assessments, diagnostic tools, or claims of proven developmental benefit.
+The intended experience is ages 2–4 with caregiver support. Pattern Train, Little Road Trip, and Friendship Bridge are marked 3–4. The activities are short opportunities for shared play, not assessments, diagnostic tools, or claims of proven developmental benefit.
 
 ## Shapes & Colors
 
@@ -16,7 +16,7 @@ The intended experience is ages 2–4 with caregiver support. Pattern Train, Mir
 | Nesting Shapes | Follow three color requests to build nested layers across ten shapes | Continuous shuffled shape cycles |
 | Shape Trails | Follow a broad moving guide by dragging or tapping | Twenty-five complete shape outlines |
 | Mosaic Garden | Choose eight paints to fill and recolor twelve pictures, beginning with the original flower | Paint all parts, then choose the next picture; no repeats before all twelve |
-| Mirror Wings | Paint a wing spot and reveal its reflected partner | Three spot pairs and explicit finish |
+| Shape Bubble Pop | Pop three matching bubbles among six; progress from colors to shapes to both attributes | Thirty shuffled challenges, gentle floating/pop animation, no timer, completion and replay |
 | Shape Safari | Find geometric forms in everyday object illustrations | Two objects per shape, three shapes |
 | Rainbow Windows | Open colored windows to reveal and hear color–object associations | Six windows |
 | Little Road Trip | Navigate a connected grid route using position words | Car reaches home |

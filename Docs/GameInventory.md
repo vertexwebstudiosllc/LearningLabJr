@@ -27,7 +27,7 @@ The six menus contain 72 distinct activity destinations. The four original books
 6. Nesting Shapes
 7. Shape Trails
 8. Mosaic Garden
-9. Mirror Wings
+9. Shape Bubble Pop
 10. Shape Safari
 11. Rainbow Windows
 12. Little Road Trip

@@ -28,27 +28,6 @@ struct SCNote: View {
     }
 }
 
-private struct SCPaintPicker: View {
-    @Binding var selection: SCPaint
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 12) {
-            ForEach(SCPaint.allCases) { paint in
-                Button { selection = paint; narrator.speak("\(paint.name) paint selected.") } label: {
-                    VStack(spacing: 6) {
-                        Image(systemName: paint.symbol).font(.system(size: 27, weight: .bold))
-                        Text(paint.name).font(.system(.caption, design: .rounded, weight: .bold))
-                    }.foregroundStyle(paint == .yellow ? Color.black : .white)
-                        .frame(maxWidth: .infinity, minHeight: 80)
-                        .background(paint.color, in: RoundedRectangle(cornerRadius: 18))
-                        .overlay(RoundedRectangle(cornerRadius: 18).stroke(selection == paint ? Color.primary : .clear, lineWidth: 4))
-                }.buttonStyle(.plain).accessibilityLabel("\(paint.name) paint")
-                    .accessibilityAddTraits(selection == paint ? .isSelected : [])
-            }
-        }
-    }
-}
-
 enum PostShape: String, CaseIterable, Identifiable {
     case circle, square, triangle, rectangle, oval, diamond, star, heart, pentagon, hexagon
     var id: String { rawValue }
@@ -335,47 +314,6 @@ struct ColorLaundryGame: View {
         let matched = basket.map { laundry.sort(into: $0) } ?? false
         note = matched ? target.success : target.retry
         narrator.speak(note)
-    }
-}
-
-struct MirrorWingsGame: View {
-    let onReplay: () -> Void
-    @State private var paint = SCPaint.blue
-    @State private var spots: [SCPaint?] = Array(repeating: nil, count: 3)
-    @State private var finished = false
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "Mirror Wings", prompt: finished ? "Your butterfly has matching colors on both wings!" : "Paint a wing spot. Watch its matching spot appear on the other side!", accent: .purple, completion: finished, onReplay: onReplay) {
-            GeometryReader { geometry in
-                ZStack {
-                    HStack(spacing: 5) {
-                        Ellipse().fill(.purple.opacity(0.14))
-                        Ellipse().fill(.purple.opacity(0.14))
-                    }.padding(.horizontal, 12)
-                    Capsule().fill(.indigo).frame(width: 20, height: 225)
-                    ForEach(0..<3, id: \.self) { index in
-                        ForEach(0..<2, id: \.self) { side in
-                            Button {
-                                spots[index] = paint
-                                narrator.speak("\(paint.name) on both sides. They match!")
-                            } label: {
-                                Circle().fill(spots[index]?.color ?? .white)
-                                    .overlay(Circle().stroke(.purple.opacity(0.3), lineWidth: 3))
-                                    .overlay { if spots[index] == nil { Image(systemName: "plus").font(.title2).foregroundStyle(.purple) } }
-                                    .frame(width: 66, height: 66)
-                            }.buttonStyle(.plain)
-                                .position(x: geometry.size.width * (side == 0 ? 0.27 : 0.73), y: CGFloat(index) * 77 + 48)
-                                .accessibilityLabel("\(side == 0 ? "Left" : "Right") wing, spot \(index + 1), \(spots[index]?.name ?? "unpainted")")
-                        }
-                    }
-                }
-            }.frame(height: 260)
-            SCPaintPicker(selection: $paint)
-            if spots.allSatisfy({ $0 != nil }) && !finished {
-                ToddlerActionButton(title: "Let my butterfly fly", systemImage: "butterfly.fill", color: .purple) { finished = true }
-            }
-            SCNote(text: "Point to the matching spots. Your child's hands also make a matching pair.")
-        }
     }
 }
 

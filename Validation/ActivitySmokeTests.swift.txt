@@ -777,6 +777,53 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testShapeBubblePopThirtyRoundsAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Shapes & Colors"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Shape Bubble Pop"]
+        try reveal(card, in: app)
+        XCTAssertFalse(app.buttons["activity-card.Mirror Wings"].exists)
+        let menu = XCTAttachment(screenshot: app.screenshot())
+        menu.name = "Shape Bubble Pop menu"; menu.lifetime = .keepAlways; add(menu)
+        card.tap()
+        var seen: Set<String> = []
+        for index in 0..<30 {
+            let round = app.staticTexts["shapes.bubbles.round"]
+            XCTAssertTrue(round.waitForExistence(timeout: 5))
+            XCTAssertTrue(round.label.hasPrefix("Round \(index + 1) of 30"))
+            let clue = app.otherElements["shapes.bubbles.clue"].exists ? app.otherElements["shapes.bubbles.clue"] : app.staticTexts["shapes.bubbles.clue"]
+            let words = clue.label.lowercased().split(separator: " ").map(String.init).filter { !["find", "the", "shapes"].contains($0) }
+            XCTAssertFalse(words.isEmpty)
+            XCTAssertTrue(seen.insert(clue.label).inserted)
+            let choices = (0..<6).map { app.buttons["shapes.bubbles.choice.\($0)"] }
+            let correct = choices.filter { choice in words.allSatisfy { choice.label.lowercased().contains($0) } }
+            XCTAssertEqual(correct.count, 3)
+            let next = app.buttons["shapes.bubbles.next"]
+            XCTAssertFalse(next.exists)
+            let wrong = choices.first { choice in !words.allSatisfy { choice.label.lowercased().contains($0) } }!
+            try reveal(wrong, in: app); wrong.tap()
+            XCTAssertTrue(wrong.isEnabled)
+            for choice in correct {
+                try reveal(choice, in: app); choice.tap()
+                XCTAssertFalse(choice.isEnabled)
+                XCTAssertTrue(choice.label.hasSuffix(", popped"))
+            }
+            XCTAssertTrue(next.exists)
+            if [0, 7, 17].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Shape Bubble Pop stage \(index)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["shapes.bubbles.round"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["shapes.bubbles.round"].label.hasPrefix("Round 1 of 30"))
+        for id in 0..<6 { XCTAssertTrue(app.buttons["shapes.bubbles.choice.\(id)"].isEnabled) }
+    }
+
+    @MainActor
     func testMosaicTwelvePicturesAndRepainting() async throws {
         let app = try await launch()
         let category = app.buttons["category.Shapes & Colors"]
