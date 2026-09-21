@@ -68,3 +68,5 @@ Shape Bubble Pop coverage checks thirty distinct clues per session across three 
 Little Road Trip coverage checks twenty-four unique ordered journeys, connected routes without repeated cells, increasing lengths and grid sizes, all four directions, invalid/duplicate move guards, complete playthrough/replay, and Ruth coverage.
 
 Shape Safari coverage checks thirty illustrated examples, three shuffled ten-shape passes, nonrepeating matching pairs, wrong/duplicate taps, complete progression/replay, and exact Ruth narration coverage.
+
+Number Picnic coverage checks twenty-four unique food/count combinations, gradual growth from three to ten, valid shuffled answers, wrong/duplicate answer guards, asset availability, full playthrough/replay, and Ruth coverage.

@@ -777,6 +777,47 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testNumberPicnicTwentyFourGrowingCountsAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Number Picnic"]
+        try reveal(card, in: app); card.tap()
+        for index in 0..<24 {
+            let round = app.staticTexts["counting.picnic.round"]
+            XCTAssertTrue(round.waitForExistence(timeout: 5))
+            XCTAssertEqual(round.label, "Round \(index + 1) of 24")
+            let fruits = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.fruit.'"))
+            let count = fruits.count
+            XCTAssertEqual(count, 3 + index / 3)
+            let answers = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.answer.'")).allElementsBoundByIndex
+            XCTAssertEqual(answers.count, 3)
+            let next = app.buttons["counting.picnic.next"]
+            XCTAssertFalse(next.exists)
+            let wrong = answers.first { $0.label != "\(count)" }!
+            try reveal(wrong, in: app); wrong.tap()
+            XCTAssertFalse(next.exists)
+            XCTAssertTrue(wrong.isEnabled)
+            let correct = app.buttons["counting.picnic.answer.\(count)"]
+            try reveal(correct, in: app); correct.tap()
+            XCTAssertTrue(next.exists)
+            XCTAssertTrue(answers.allSatisfy { !$0.isEnabled })
+            XCTAssertTrue(app.staticTexts["counting.picnic.feedback"].label.hasPrefix("You counted \(count) "))
+            if [0, 21].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Number Picnic count \(count)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["counting.picnic.round"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["counting.picnic.round"].label, "Round 1 of 24")
+        XCTAssertEqual(app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.fruit.'")).count, 3)
+        XCTAssertTrue(app.buttons["counting.picnic.answer.3"].isEnabled)
+    }
+
+    @MainActor
     func testShapeSafariThirtyLevelsAndReplay() async throws {
         let examples: [String: Set<String>] = [
             "Circle": ["clock", "plate", "button"], "Square": ["window", "cracker", "square-tile"],

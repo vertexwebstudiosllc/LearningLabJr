@@ -1946,6 +1946,22 @@
       "category": "counting"
     },
     {
+      "text": "Count the oranges. Choose their number.",
+      "file": "llj-13a048e1037cbf1e384de1d3.mp3",
+      "spokenText": "Count the oranges. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count the strawberries. Choose their number.",
+      "file": "llj-5322d2fa3e139cf78e6dd725.mp3",
+      "spokenText": "Count the strawberries. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Cover the seed with a little soil.",
       "file": "llj-d6cd01574f1b587c3ce98e78.mp3",
       "spokenText": "Cover the seed with a little soil.",
@@ -6045,6 +6061,30 @@
       "text": "Let's count each row. Which has more oranges?",
       "file": "llj-ece9c0ab1ae996e749778d41.mp3",
       "spokenText": "Let's count each row. Which has more oranges?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the apples one at a time, then choose their number.",
+      "file": "llj-973ece78c383be83b4198ec2.mp3",
+      "spokenText": "Let's count the apples one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the oranges one at a time, then choose their number.",
+      "file": "llj-61527e55f934b4154f5bf363.mp3",
+      "spokenText": "Let's count the oranges one at a time, then choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's count the strawberries one at a time, then choose their number.",
+      "file": "llj-133475e9870e46a343deb1d7.mp3",
+      "spokenText": "Let's count the strawberries one at a time, then choose their number.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -17074,6 +17114,14 @@
       "category": "shapes"
     },
     {
+      "text": "What a picnic! You counted groups from three all the way to ten!",
+      "file": "llj-3d3f5782de15eeed0290b020.mp3",
+      "spokenText": "What a picnic! You counted groups from three all the way to ten!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "What could Bunny use instead?",
       "file": "llj-cac68d57b0a7ea50a9ce8607.mp3",
       "spokenText": "What could Bunny use instead?",
@@ -18298,6 +18346,30 @@
       "category": "counting"
     },
     {
+      "text": "You counted 10 apples!",
+      "file": "llj-bfd860145e8738cd325d2abc.mp3",
+      "spokenText": "You counted 10 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 oranges!",
+      "file": "llj-1a0e47970ca4e05d584365b2.mp3",
+      "spokenText": "You counted 10 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 10 strawberries!",
+      "file": "llj-1f54f54479399b5eb73185aa.mp3",
+      "spokenText": "You counted 10 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 2 apples!",
       "file": "llj-0779e608da6ef0a6b9573b33.mp3",
       "spokenText": "You counted 2 apples!",
@@ -18309,6 +18381,166 @@
       "text": "You counted 3 apples!",
       "file": "llj-bb0d71cd6bbcfc96f4720d98.mp3",
       "spokenText": "You counted 3 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 oranges!",
+      "file": "llj-6b9f64354c2aa1c0a3ebc996.mp3",
+      "spokenText": "You counted 3 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 3 strawberries!",
+      "file": "llj-fc0d21e05e7efd20d4f449c2.mp3",
+      "spokenText": "You counted 3 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 apples!",
+      "file": "llj-e16ca9cd36d43c4efff43d6a.mp3",
+      "spokenText": "You counted 4 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 oranges!",
+      "file": "llj-9f9623c373c6135b0ae5742a.mp3",
+      "spokenText": "You counted 4 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 4 strawberries!",
+      "file": "llj-3944b64f99f3eef154aab536.mp3",
+      "spokenText": "You counted 4 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 apples!",
+      "file": "llj-db404ea4d4c1a6a9eb346b15.mp3",
+      "spokenText": "You counted 5 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 oranges!",
+      "file": "llj-4a901da8f1f5a4a5f8b8587f.mp3",
+      "spokenText": "You counted 5 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 5 strawberries!",
+      "file": "llj-2aa8494b75c2364155957eb9.mp3",
+      "spokenText": "You counted 5 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 apples!",
+      "file": "llj-c7f3b7516413e719158f2409.mp3",
+      "spokenText": "You counted 6 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 oranges!",
+      "file": "llj-96af7ad72db37c2b7ed761f8.mp3",
+      "spokenText": "You counted 6 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 6 strawberries!",
+      "file": "llj-785771bb2335f470edeb8fb4.mp3",
+      "spokenText": "You counted 6 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 apples!",
+      "file": "llj-e9d1df9fe414be0993a78ebf.mp3",
+      "spokenText": "You counted 7 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 oranges!",
+      "file": "llj-b41d7c0d1e72877c57649fd6.mp3",
+      "spokenText": "You counted 7 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 7 strawberries!",
+      "file": "llj-3dbdcebe6754c5346281dc05.mp3",
+      "spokenText": "You counted 7 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 apples!",
+      "file": "llj-1a0c03fa7bf54ea218ad1666.mp3",
+      "spokenText": "You counted 8 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 oranges!",
+      "file": "llj-91cce881aabc820eb14a996d.mp3",
+      "spokenText": "You counted 8 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 8 strawberries!",
+      "file": "llj-e1fdcf9035934e88ce51fb23.mp3",
+      "spokenText": "You counted 8 strawberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 apples!",
+      "file": "llj-ebabec9e9115026ca5c4c374.mp3",
+      "spokenText": "You counted 9 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 oranges!",
+      "file": "llj-050a5634be8d838564661c86.mp3",
+      "spokenText": "You counted 9 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 9 strawberries!",
+      "file": "llj-0eff78a6fd6cc21d77e3b2b2.mp3",
+      "spokenText": "You counted 9 strawberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

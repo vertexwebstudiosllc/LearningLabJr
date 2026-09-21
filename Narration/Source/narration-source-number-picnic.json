@@ -1,0 +1,147 @@
+[
+  {
+    "text": "Count the oranges. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count the strawberries. Choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the apples one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the oranges one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Let's count the strawberries one at a time, then choose their number.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 3 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 4 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 5 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 6 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 7 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 8 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 9 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 apples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 10 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "What a picnic! You counted groups from three all the way to ten!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

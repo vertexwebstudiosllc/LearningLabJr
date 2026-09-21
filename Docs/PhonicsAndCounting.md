@@ -31,7 +31,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 
 | Activity | Distinct interaction | Quantities |
 | --- | --- | --- |
-| Number Picnic | Count an apple group and select its numeral, supported by dots | 1–3 |
+| Number Picnic | Count apples, oranges and strawberries; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
 | Touch & Count | Mark each individual duck once; repeated taps cannot count it twice | 2, 3, 5 |
 | Picnic Share | Give each empty plate exactly one apple | 2–4 plates |
 | Sleepy Sheep | Tuck sheep into bed and hear the shrinking awake group | 2–4, ending with none |

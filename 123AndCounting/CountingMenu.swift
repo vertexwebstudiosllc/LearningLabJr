@@ -3,7 +3,7 @@ import Combine
 
 struct CountingMenu: View {
     static let activities: [LearningActivity] = [
-        .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count a picture group and choose its number", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
+        .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count fruit groups from three to ten across twenty-four rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
         .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Touch each animal once to count the whole group", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Give every picnic plate one apple", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck sheep into bed and hear how many are still awake", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when a sheep goes to sleep."),
@@ -18,7 +18,7 @@ struct CountingMenu: View {
     ]
 
     var body: some View {
-        ActivityMenu(title: "123s & Counting", subtitle: "12 little adventures with quantities 1–5", accent: .indigo) {
+        ActivityMenu(title: "123s & Counting", subtitle: "12 little adventures with counting and quantities", accent: .indigo) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
                 NavigationLink {
                     destination(index).learningActivity(activity)
@@ -146,28 +146,6 @@ private struct CountNumberButton: View {
         .foregroundStyle(.indigo)
         .accessibilityLabel("\(number)")
         .accessibilityValue(selected ? "Selected" : "")
-    }
-}
-
-private struct NumberPicnicGame: View {
-    @StateObject private var play = CountingPlay()
-    private var target: Int { [2, 1, 3][play.round] }
-    var body: some View {
-        CountingStage(title: "Number Picnic", prompt: "Count the apples. Choose their number.", play: play) {
-            VStack(spacing: 24) {
-                HStack { ForEach(0..<target, id: \.self) { _ in CountingPicture(asset: "Apple") } }
-                    .accessibilityElement(children: .ignore)
-                    .accessibilityLabel("\(target) apples")
-                HStack(spacing: 10) {
-                    ForEach([1, 2, 3], id: \.self) { value in
-                        CountNumberButton(number: value) {
-                            if value == target { play.win("You counted \(target) \(target == 1 ? "apple" : "apples")!") }
-                            else { play.say("Let's touch each apple and count together.") }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

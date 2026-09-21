@@ -5,6 +5,47 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+    func testNumberPicnicProgressionAndChoices() {
+        for food in NumberPicnicFood.bank { XCTAssertNotNil(UIImage(named: food.asset), food.asset) }
+        for _ in 0..<100 {
+            var session = NumberPicnicSession()
+            XCTAssertEqual(session.rounds.count, 24)
+            XCTAssertEqual(session.current.count, 3)
+            XCTAssertEqual(session.current.food.id, "apple")
+            XCTAssertEqual(Set(session.rounds.map(\.key)).count, 24)
+            for index in 0..<24 {
+                let round = session.current
+                XCTAssertEqual(round.count, 3 + index / 3)
+                XCTAssertEqual(round.choices.count, 3)
+                XCTAssertEqual(Set(round.choices).count, 3)
+                XCTAssertTrue(round.choices.contains(round.count))
+                XCTAssertTrue(round.choices.allSatisfy { (1...12).contains($0) })
+                if index > 0 { XCTAssertNotEqual(round.food.id, session.rounds[index - 1].food.id) }
+                session.next(); XCTAssertEqual(session.index, index)
+                XCTAssertFalse(session.choose(-1))
+                for wrong in round.choices where wrong != round.count { XCTAssertFalse(session.choose(wrong)) }
+                XCTAssertFalse(session.solved)
+                XCTAssertTrue(session.choose(round.count))
+                XCTAssertFalse(session.choose(round.count))
+                session.next()
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.choose(session.current.count))
+            session.next(); XCTAssertEqual(session.index, 24)
+        }
+    }
+
+    @MainActor
+    func testNumberPicnicRuthCoverage() {
+        let texts = NumberPicnicFood.bank.flatMap { food in
+            [food.prompt, food.retry] + (3...10).map { NumberPicnicRound(count: $0, food: food, choices: []).success }
+        } + [NumberPicnicRound.completion]
+        for text in texts {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
     func testShapeSafariBankCyclesAndPairs() {
         XCTAssertEqual(SafariObject.bank.count, 30)
         XCTAssertEqual(Set(SafariObject.bank.map(\.id)).count, 30)
