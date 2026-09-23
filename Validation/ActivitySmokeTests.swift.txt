@@ -954,27 +954,44 @@ final class ActivitySmokeTests: XCTestCase {
     func testExpandedCountingDrum() async throws { try await playExpandedCounting("drum", title: "Counting Drum", total: 18) }
 
     @MainActor
-    func testTouchCountTwentySevenLevelsAndReplay() async throws {
+    func testTouchCountMixedGridsAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]
         try reveal(category, in: app); category.tap()
         let card = app.buttons["activity-card.Touch & Count"]
         try reveal(card, in: app); card.tap()
-        for index in 0..<27 {
+        var seenAnimals: Set<String> = []
+        var seenCounts: Set<Int> = []
+        for index in 0..<20 {
+            if [0, 4, 10].contains(index) { seenAnimals = []; seenCounts = [] }
             let level = app.staticTexts["counting.touch.level"]
             XCTAssertTrue(level.waitForExistence(timeout: 5))
-            XCTAssertEqual(level.label, "Level \(index + 1) of 27")
+            XCTAssertEqual(level.label, "Level \(index + 1) of 20")
+            let target = app.staticTexts["counting.touch.target"].label
+            XCTAssertTrue(seenAnimals.insert(target).inserted)
             let total = app.staticTexts["counting.touch.total"]
             XCTAssertEqual(total.label, "0 animals counted")
-            let animals = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'"))
-            let count = animals.count
-            XCTAssertEqual(count, 2 + index / 3)
+            let animals = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'")).allElementsBoundByIndex
+            let columns = index < 4 ? 3 : (index < 10 ? 4 : 5)
+            XCTAssertEqual(animals.count, columns * columns)
+            let targets = animals.filter { $0.label.lowercased().hasPrefix(target + " ") }
+            XCTAssertTrue(seenCounts.insert(targets.count).inserted)
             let next = app.buttons["counting.touch.next"]
             XCTAssertFalse(next.exists)
-            for (position, id) in (0..<count).reversed().enumerated() {
-                let animal = app.buttons["counting.touch.animal.\(id)"]
+            if let wrong = animals.first(where: { !$0.label.lowercased().hasPrefix(target + " ") }) {
+                try reveal(wrong, in: app); wrong.tap()
+                XCTAssertEqual(total.label, "0 animals counted")
+                XCTAssertTrue(app.staticTexts["counting.touch.hint"].exists)
+                XCTAssertFalse(next.exists)
+            }
+            if [0, 4, 10].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Touch Count \(columns) by \(columns)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            for (position, animal) in targets.reversed().enumerated() {
                 try reveal(animal, in: app)
                 XCTAssertGreaterThanOrEqual(animal.frame.width, 44)
+                XCTAssertGreaterThanOrEqual(animal.frame.height, 44)
                 animal.tap()
                 XCTAssertEqual(total.label, "\(position + 1) \(position == 0 ? "animal" : "animals") counted")
                 XCTAssertTrue(animal.label.hasSuffix("counted as \(position + 1)"))
@@ -982,22 +999,19 @@ final class ActivitySmokeTests: XCTestCase {
                 if position == 0 {
                     animal.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
                     XCTAssertEqual(total.label, "1 animal counted")
-                    XCTAssertFalse(next.exists)
                 }
+                if position + 1 < targets.count { XCTAssertFalse(next.exists) }
             }
             XCTAssertTrue(next.exists)
-            if [0, 24].contains(index) {
-                let shot = XCTAttachment(screenshot: app.screenshot())
-                shot.name = "Touch Count group \(count)"; shot.lifetime = .keepAlways; add(shot)
-            }
             try reveal(next, in: app); next.tap()
         }
         let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
         try reveal(replay, in: app); replay.tap()
         XCTAssertTrue(app.staticTexts["counting.touch.level"].waitForExistence(timeout: 5))
-        XCTAssertEqual(app.staticTexts["counting.touch.level"].label, "Level 1 of 27")
+        XCTAssertEqual(app.staticTexts["counting.touch.level"].label, "Level 1 of 20")
         XCTAssertEqual(app.staticTexts["counting.touch.total"].label, "0 animals counted")
-        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'")).count, 2)
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.touch.animal.'")).count, 9)
     }
 
     @MainActor
@@ -1602,25 +1616,4 @@ final class ActivitySmokeTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["0 of 10 shapes posted"].waitForExistence(timeout: 5))
     }
 
-    @MainActor
-    func testTouchCountCompletesAndReplays() async throws {
-        let app = try await launch()
-        app.buttons["category.123s & Counting"].tap()
-        app.buttons["activity-card.Touch & Count"].tap()
-        for _ in 0..<3 {
-            let next = app.buttons.matching(NSPredicate(format: "label == 'Next adventure' OR label == 'All done'")).firstMatch
-            for _ in 0..<6 {
-                if next.exists && next.isHittable { break }
-                let uncounted = app.buttons.matching(NSPredicate(format: "label CONTAINS 'touch to count'")).firstMatch
-                XCTAssertTrue(uncounted.exists, app.debugDescription)
-                uncounted.tap()
-            }
-            try reveal(next, in: app)
-            next.tap()
-        }
-        let replay = app.buttons["Play again"]
-        try reveal(replay, in: app)
-        replay.tap()
-        XCTAssertTrue(app.staticTexts["Adventure 1 of 3"].exists)
-    }
 }

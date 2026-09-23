@@ -4,7 +4,7 @@ import Combine
 struct CountingMenu: View {
     static let activities: [LearningActivity] = [
         .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count twelve kinds of fruit in shuffled groups from one to ten across thirty rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
-        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Count twelve kinds of animals across twenty-seven growing levels", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
+        .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Find and count a named animal in twenty mixed grids growing from 3×3 to 5×5", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Share twelve kinds of fruit, one then two per friend", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck twelve kinds of animal friends in across eighteen levels", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when an animal goes to sleep."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Compare quantities from ten to one hundred", interaction: "Choose more or less treasure across forty-six comparisons", ageBand: "Ages 3–4", caregiverTip: "Count full rows by tens, then count the extra coins together."),

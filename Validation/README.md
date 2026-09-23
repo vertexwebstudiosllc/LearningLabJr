@@ -41,7 +41,7 @@ Coverage:
 - Letter Draw completes all 26 unique letters, rejects skipping, and starts with a different letter on reentry/replay.
 - Sound Baskets covers all 26 target letters, available artwork, stable two-letter choices, stale/wrong drop rejection, tap-only narration, real drag-and-drop, reentry, and replay.
 - Menu-to-game navigation, the four-book library, and the six premium phonics routes using StoreKit's local test session.
-- Wrong and correct parent-gate responses, access to the parent learning guide, and a complete three-round Touch & Count session followed by replay.
+- Wrong and correct parent-gate responses, access to the parent learning guide, and a complete twenty-round Touch & Count session followed by replay.
 - Bundled Polly manifest lookup and every MP3 opening with a valid duration; all 60 story pages and literal narration calls are covered by the source checks.
 - Parent narration preview uses the bundled narrator and starts/stops while spoken game directions remain off.
 - Debug route checks assert that every narration key encountered has a bundled recording.
@@ -71,7 +71,7 @@ Shape Safari coverage checks thirty illustrated examples, three shuffled ten-sha
 
 Number Picnic coverage checks three complete shuffled passes through one to ten, no repeated counts within each pass or adjacent counts across passes, valid shuffled answers, wrong/duplicate answer guards, asset availability, full playthrough/replay, and Ruth coverage.
 
-Touch & Count coverage checks twenty-seven growing animal groups, arbitrary tap order, stable one-to-one counting labels, duplicate/outside taps, progression/replay, assets, and Ruth narration from one through ten.
+Touch & Count coverage checks four 3×3, six 4×4 and ten 5×5 mixed-animal boards; distinct counts and targets within each stage; no immediate repeats across boundaries; target-only counting, distractor/duplicate/outside taps, arbitrary tap order, progression/replay, 44-point touch targets, assets and Ruth narration through 25. Board construction is checked exhaustively for every animal and quantity in each grid size.
 
 The remaining ten counting activities now have native coverage for all 226 levels and dedicated full UI playthroughs, including replay. Coverage checks fair sharing, counting down to zero, treasure comparisons across every number 10–100, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
 

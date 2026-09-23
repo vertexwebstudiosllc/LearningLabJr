@@ -106,6 +106,102 @@
       "category": "counting"
     },
     {
+      "text": "1. You counted every cat!",
+      "file": "llj-54d70e586025b6e80142606b.mp3",
+      "spokenText": "1. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every chick!",
+      "file": "llj-a58a0483a17b34a8e03a5c5b.mp3",
+      "spokenText": "1. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every cow!",
+      "file": "llj-292b92fc1907b228b415f7b9.mp3",
+      "spokenText": "1. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every dog!",
+      "file": "llj-1aa68b5b8b6e77b5426e77a1.mp3",
+      "spokenText": "1. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every duck!",
+      "file": "llj-c503a2c595b30c6ac138832d.mp3",
+      "spokenText": "1. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every goat!",
+      "file": "llj-cb4dcad31719285950d353d6.mp3",
+      "spokenText": "1. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every horse!",
+      "file": "llj-532f187b13022142a503984e.mp3",
+      "spokenText": "1. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every penguin!",
+      "file": "llj-abed0d6006fb9e28a08e719e.mp3",
+      "spokenText": "1. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every pig!",
+      "file": "llj-7dd9e3d03d1bec8762dc5e28.mp3",
+      "spokenText": "1. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every rabbit!",
+      "file": "llj-84a85f32e02f47e75df776b5.mp3",
+      "spokenText": "1. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every sheep!",
+      "file": "llj-2b7bdec91ca80df5d24bd33b.mp3",
+      "spokenText": "1. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1. You counted every turtle!",
+      "file": "llj-8c516274cceba7c3d9a81489.mp3",
+      "spokenText": "1. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "10",
       "file": "llj-d38588e68927c221cdde9e2c.mp3",
       "spokenText": "10",
@@ -266,6 +362,102 @@
       "category": "counting"
     },
     {
+      "text": "11. You counted every cat!",
+      "file": "llj-19739caf5f57c89677749311.mp3",
+      "spokenText": "11. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every chick!",
+      "file": "llj-225a9ecda68045dbf1c5fd59.mp3",
+      "spokenText": "11. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every cow!",
+      "file": "llj-85e641b0617cd6e55f0bfc60.mp3",
+      "spokenText": "11. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every dog!",
+      "file": "llj-9a8014f0f91a219527ca71c5.mp3",
+      "spokenText": "11. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every duck!",
+      "file": "llj-faeae7cf49d2e83c59a0033e.mp3",
+      "spokenText": "11. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every goat!",
+      "file": "llj-2e27f60a6b6a610eedfc35d1.mp3",
+      "spokenText": "11. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every horse!",
+      "file": "llj-6354f3f7e4db68c38de931ae.mp3",
+      "spokenText": "11. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every penguin!",
+      "file": "llj-6ba7d69b587ed30bcd55a338.mp3",
+      "spokenText": "11. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every pig!",
+      "file": "llj-bbfd21eaba01abd549e0f300.mp3",
+      "spokenText": "11. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every rabbit!",
+      "file": "llj-516cf580802febf36bfb57c6.mp3",
+      "spokenText": "11. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every sheep!",
+      "file": "llj-44784a075d949fdc60413d50.mp3",
+      "spokenText": "11. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "11. You counted every turtle!",
+      "file": "llj-7dea41b2693d6a0f615dc5a0.mp3",
+      "spokenText": "11. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "12",
       "file": "llj-7acbe5a16d8e33000678f51f.mp3",
       "spokenText": "12",
@@ -290,9 +482,217 @@
       "category": "counting"
     },
     {
+      "text": "12. You counted every cat!",
+      "file": "llj-072c331143035e9d391921ab.mp3",
+      "spokenText": "12. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every chick!",
+      "file": "llj-92bae3d8192f0256c44a1c82.mp3",
+      "spokenText": "12. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every cow!",
+      "file": "llj-39b47b0a058348dbdc06f42e.mp3",
+      "spokenText": "12. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every dog!",
+      "file": "llj-7758d01942872c9e9cf045fc.mp3",
+      "spokenText": "12. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every duck!",
+      "file": "llj-03a65e736c8073df625d69c2.mp3",
+      "spokenText": "12. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every goat!",
+      "file": "llj-499c793f5c2046c98e3c2ca6.mp3",
+      "spokenText": "12. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every horse!",
+      "file": "llj-28915742ce2569659af9c38c.mp3",
+      "spokenText": "12. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every penguin!",
+      "file": "llj-cbe83a97ba4638f5aed3afe6.mp3",
+      "spokenText": "12. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every pig!",
+      "file": "llj-82abd903b91910169816abc0.mp3",
+      "spokenText": "12. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every rabbit!",
+      "file": "llj-b7c78af88997151094c66da7.mp3",
+      "spokenText": "12. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every sheep!",
+      "file": "llj-4ff75a8ad2f4a7ba21bfca65.mp3",
+      "spokenText": "12. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12. You counted every turtle!",
+      "file": "llj-2f14e66263ed614d94a81dff.mp3",
+      "spokenText": "12. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13",
+      "file": "llj-78ad61acc5462deeb7716471.mp3",
+      "spokenText": "13",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "13 coins.",
       "file": "llj-ad5f09962e63d98eb80e637b.mp3",
       "spokenText": "13 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every cat!",
+      "file": "llj-c95c86a30d2fc86b23fe274f.mp3",
+      "spokenText": "13. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every chick!",
+      "file": "llj-599e3e5eb3deda3e1d6ac20a.mp3",
+      "spokenText": "13. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every cow!",
+      "file": "llj-533a76767e31d2060e1c03a1.mp3",
+      "spokenText": "13. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every dog!",
+      "file": "llj-ce2677db789581b64becd22f.mp3",
+      "spokenText": "13. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every duck!",
+      "file": "llj-068fc43e67659f8fd76cf7f7.mp3",
+      "spokenText": "13. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every goat!",
+      "file": "llj-8d1e7fb33754c7117435b6a0.mp3",
+      "spokenText": "13. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every horse!",
+      "file": "llj-0d493a7f74fc12fcbd45b159.mp3",
+      "spokenText": "13. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every penguin!",
+      "file": "llj-68e6bf9424e73a98f974f3ed.mp3",
+      "spokenText": "13. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every pig!",
+      "file": "llj-a167e44b57e60b7f62b80312.mp3",
+      "spokenText": "13. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every rabbit!",
+      "file": "llj-96a93c7a697ac4e5824ce2e7.mp3",
+      "spokenText": "13. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every sheep!",
+      "file": "llj-47c41c92107fa293323a22f5.mp3",
+      "spokenText": "13. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13. You counted every turtle!",
+      "file": "llj-2137640a2c8a5ed46eef5af8.mp3",
+      "spokenText": "13. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14",
+      "file": "llj-6a645bfe05a17b2f461afa9d.mp3",
+      "spokenText": "14",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -306,9 +706,217 @@
       "category": "counting"
     },
     {
+      "text": "14. You counted every cat!",
+      "file": "llj-7b3c5d0046a3126278ae5081.mp3",
+      "spokenText": "14. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every chick!",
+      "file": "llj-dfedd8fc854da9558380e095.mp3",
+      "spokenText": "14. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every cow!",
+      "file": "llj-2e5c01d1d22a9c0d1b15ad88.mp3",
+      "spokenText": "14. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every dog!",
+      "file": "llj-868931edcbc1a77385d883c2.mp3",
+      "spokenText": "14. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every duck!",
+      "file": "llj-3d3353c95003b8a6c1b29f66.mp3",
+      "spokenText": "14. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every goat!",
+      "file": "llj-ed0b182ece9afd6f643315e1.mp3",
+      "spokenText": "14. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every horse!",
+      "file": "llj-30393e4393698384ee3ff7cc.mp3",
+      "spokenText": "14. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every penguin!",
+      "file": "llj-93aba14d7cdae270d2b23bf7.mp3",
+      "spokenText": "14. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every pig!",
+      "file": "llj-9a60075d4d67723e85e552eb.mp3",
+      "spokenText": "14. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every rabbit!",
+      "file": "llj-36121cb1d09938e1a488a7a1.mp3",
+      "spokenText": "14. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every sheep!",
+      "file": "llj-91fe5474c171d8cfdeaccb16.mp3",
+      "spokenText": "14. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14. You counted every turtle!",
+      "file": "llj-4058d1b55a642c416a505d29.mp3",
+      "spokenText": "14. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15",
+      "file": "llj-ffebdadd5d0cf2581bde8fae.mp3",
+      "spokenText": "15",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "15 coins.",
       "file": "llj-7feae422455f6c5f3c08615d.mp3",
       "spokenText": "15 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every cat!",
+      "file": "llj-8dd6a741e9b0b490de76f6ab.mp3",
+      "spokenText": "15. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every chick!",
+      "file": "llj-73648c74893b3330b136cb82.mp3",
+      "spokenText": "15. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every cow!",
+      "file": "llj-f8374bc83467bfe8677c69fa.mp3",
+      "spokenText": "15. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every dog!",
+      "file": "llj-8184a41fecdf4872bb8d5f87.mp3",
+      "spokenText": "15. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every duck!",
+      "file": "llj-87affaa4beb20585b68332e5.mp3",
+      "spokenText": "15. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every goat!",
+      "file": "llj-5869ddd073ea6be6a5f769af.mp3",
+      "spokenText": "15. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every horse!",
+      "file": "llj-b797ecb9a3a128a7d1e847cc.mp3",
+      "spokenText": "15. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every penguin!",
+      "file": "llj-b1db12fc2c5702faf268b219.mp3",
+      "spokenText": "15. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every pig!",
+      "file": "llj-6c8655a695ce64931230f8e1.mp3",
+      "spokenText": "15. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every rabbit!",
+      "file": "llj-6b95b7297a5e732bffee77e6.mp3",
+      "spokenText": "15. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every sheep!",
+      "file": "llj-ea761a9b8dc605cd3a35f58c.mp3",
+      "spokenText": "15. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15. You counted every turtle!",
+      "file": "llj-0def33604f6767027356a7ae.mp3",
+      "spokenText": "15. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16",
+      "file": "llj-efc02bd6d762d60f498ba1e1.mp3",
+      "spokenText": "16",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -322,9 +930,217 @@
       "category": "counting"
     },
     {
+      "text": "16. You counted every cat!",
+      "file": "llj-c6fca103361c21528750140d.mp3",
+      "spokenText": "16. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every chick!",
+      "file": "llj-d193088f2bc0bca2d298bac0.mp3",
+      "spokenText": "16. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every cow!",
+      "file": "llj-b4641c4c80fb9c47ebf79e00.mp3",
+      "spokenText": "16. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every dog!",
+      "file": "llj-3eee7f631400c5f039f45d01.mp3",
+      "spokenText": "16. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every duck!",
+      "file": "llj-d016dad9a90bbf177aae3f28.mp3",
+      "spokenText": "16. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every goat!",
+      "file": "llj-a762958773787fcad8dd3048.mp3",
+      "spokenText": "16. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every horse!",
+      "file": "llj-fdfd2f44f9cb6e7dc586dc7e.mp3",
+      "spokenText": "16. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every penguin!",
+      "file": "llj-95cae3d42f22465fafd80e5e.mp3",
+      "spokenText": "16. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every pig!",
+      "file": "llj-de5787ec960ba2a9fc01b99c.mp3",
+      "spokenText": "16. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every rabbit!",
+      "file": "llj-7ac866cce9fb9e35f5faad1c.mp3",
+      "spokenText": "16. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every sheep!",
+      "file": "llj-caa7c5ee51e18c0b235c9f7f.mp3",
+      "spokenText": "16. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16. You counted every turtle!",
+      "file": "llj-59bd817e2e9708882b61ed6d.mp3",
+      "spokenText": "16. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17",
+      "file": "llj-53b326995679444c3ba37f48.mp3",
+      "spokenText": "17",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "17 coins.",
       "file": "llj-3325c8a5a10e7ef63421a59b.mp3",
       "spokenText": "17 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every cat!",
+      "file": "llj-6f2408598997f44bd6cb26e2.mp3",
+      "spokenText": "17. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every chick!",
+      "file": "llj-952c96c158cefc293af0730f.mp3",
+      "spokenText": "17. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every cow!",
+      "file": "llj-01d9e725b3f06346c733a386.mp3",
+      "spokenText": "17. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every dog!",
+      "file": "llj-99ad8bb83b6f2d3920af9bcb.mp3",
+      "spokenText": "17. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every duck!",
+      "file": "llj-9351fb4f40cc9f132b4878b9.mp3",
+      "spokenText": "17. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every goat!",
+      "file": "llj-6c1b1986f4bf501a524d9cbe.mp3",
+      "spokenText": "17. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every horse!",
+      "file": "llj-fd48b0e082ff5d22f7f4a226.mp3",
+      "spokenText": "17. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every penguin!",
+      "file": "llj-4dce86fc79431f5b316c5e27.mp3",
+      "spokenText": "17. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every pig!",
+      "file": "llj-2df7579d5a354d506675825b.mp3",
+      "spokenText": "17. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every rabbit!",
+      "file": "llj-1b93909f4f99d5d338bd37ce.mp3",
+      "spokenText": "17. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every sheep!",
+      "file": "llj-0a444ff97bc727e69ef33adc.mp3",
+      "spokenText": "17. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17. You counted every turtle!",
+      "file": "llj-f2fd7a8fcaa9e18d882e9b15.mp3",
+      "spokenText": "17. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18",
+      "file": "llj-0e1895a5ec59a123b49d9772.mp3",
+      "spokenText": "18",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -338,9 +1154,209 @@
       "category": "counting"
     },
     {
+      "text": "18. You counted every cat!",
+      "file": "llj-7a86f29af027900b949f4a45.mp3",
+      "spokenText": "18. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every chick!",
+      "file": "llj-5155d3606953c2ab127caf68.mp3",
+      "spokenText": "18. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every cow!",
+      "file": "llj-fb2e1127298f55d7b4c4dde4.mp3",
+      "spokenText": "18. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every dog!",
+      "file": "llj-0195bfca7d212d0ff25a0220.mp3",
+      "spokenText": "18. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every duck!",
+      "file": "llj-9ac5b06e95c7553e08ded49b.mp3",
+      "spokenText": "18. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every goat!",
+      "file": "llj-16e2db1a3b030f5feaf39863.mp3",
+      "spokenText": "18. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every horse!",
+      "file": "llj-c47f46c49783c4392ae91b7a.mp3",
+      "spokenText": "18. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every penguin!",
+      "file": "llj-09f91dcbcd9dd83883d7ab6a.mp3",
+      "spokenText": "18. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every pig!",
+      "file": "llj-c3c7f83d1d0d4e3b2f436fdc.mp3",
+      "spokenText": "18. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every rabbit!",
+      "file": "llj-639dfdb47b9b49b7c96bdb1a.mp3",
+      "spokenText": "18. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every sheep!",
+      "file": "llj-9eb376d77e9c3b9878fefeaa.mp3",
+      "spokenText": "18. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18. You counted every turtle!",
+      "file": "llj-8d6ad7465f0fd69c4b3b8999.mp3",
+      "spokenText": "18. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19",
+      "file": "llj-0de666899794f26946b84d11.mp3",
+      "spokenText": "19",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "19 coins.",
       "file": "llj-64258d6641e007dc6843b0d7.mp3",
       "spokenText": "19 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every cat!",
+      "file": "llj-5b504fdf270e702829b78a88.mp3",
+      "spokenText": "19. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every chick!",
+      "file": "llj-d0f12b01fe83ea6f1afebc9f.mp3",
+      "spokenText": "19. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every cow!",
+      "file": "llj-2014f7f226d39cf66550e55c.mp3",
+      "spokenText": "19. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every dog!",
+      "file": "llj-51f1322e1f0e598ca9b276fb.mp3",
+      "spokenText": "19. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every duck!",
+      "file": "llj-e7ec87402430c8f4e45fd6c7.mp3",
+      "spokenText": "19. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every goat!",
+      "file": "llj-bcd9d951569beeeb4ae426b7.mp3",
+      "spokenText": "19. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every horse!",
+      "file": "llj-d1267946fe37f640887de3e6.mp3",
+      "spokenText": "19. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every penguin!",
+      "file": "llj-2a00e3b5695e223be6918ae8.mp3",
+      "spokenText": "19. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every pig!",
+      "file": "llj-33aa796b77fc88fbb727bef2.mp3",
+      "spokenText": "19. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every rabbit!",
+      "file": "llj-816b9a961de198f0eb999007.mp3",
+      "spokenText": "19. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every sheep!",
+      "file": "llj-d4485197d8435569d6f4da20.mp3",
+      "spokenText": "19. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19. You counted every turtle!",
+      "file": "llj-b01b5937dbf759491f428691.mp3",
+      "spokenText": "19. You counted every turtle!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -514,9 +1530,121 @@
       "category": "counting"
     },
     {
+      "text": "20",
+      "file": "llj-2e2d955470da1a9b27cb5232.mp3",
+      "spokenText": "20",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "20 coins.",
       "file": "llj-a3e95ff71da9c5769b63389b.mp3",
       "spokenText": "20 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every cat!",
+      "file": "llj-58b57d91342dde0038973500.mp3",
+      "spokenText": "20. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every chick!",
+      "file": "llj-0762b502dcd2c4a3322bbb85.mp3",
+      "spokenText": "20. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every cow!",
+      "file": "llj-02448601eb1e2d405f131e4e.mp3",
+      "spokenText": "20. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every dog!",
+      "file": "llj-41077352588456950664ec71.mp3",
+      "spokenText": "20. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every duck!",
+      "file": "llj-9033567762d40f5b59318d7f.mp3",
+      "spokenText": "20. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every goat!",
+      "file": "llj-81c6f3a767ad7dd4b6a66d63.mp3",
+      "spokenText": "20. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every horse!",
+      "file": "llj-d75d3910dd10e30fdb20f7c0.mp3",
+      "spokenText": "20. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every penguin!",
+      "file": "llj-6ec13fa20ce8ba080d154ea2.mp3",
+      "spokenText": "20. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every pig!",
+      "file": "llj-505f93c868ed08b5da33c75c.mp3",
+      "spokenText": "20. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every rabbit!",
+      "file": "llj-ea8712389c07966b200376fc.mp3",
+      "spokenText": "20. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every sheep!",
+      "file": "llj-01531071cefef0bdc6b69b7d.mp3",
+      "spokenText": "20. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "20. You counted every turtle!",
+      "file": "llj-92c5dba196c27842eccac8f0.mp3",
+      "spokenText": "20. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21",
+      "file": "llj-bc99afbc28b92881db4a69a9.mp3",
+      "spokenText": "21",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -530,9 +1658,217 @@
       "category": "counting"
     },
     {
+      "text": "21. You counted every cat!",
+      "file": "llj-9107c85d0b3e6761a503549e.mp3",
+      "spokenText": "21. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every chick!",
+      "file": "llj-ccdbce973f0db1001dda64a0.mp3",
+      "spokenText": "21. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every cow!",
+      "file": "llj-53a15fd3445332aad10777a3.mp3",
+      "spokenText": "21. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every dog!",
+      "file": "llj-b124692b6685d1ec57490030.mp3",
+      "spokenText": "21. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every duck!",
+      "file": "llj-2e8b1d1e4081c9ba179df0cf.mp3",
+      "spokenText": "21. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every goat!",
+      "file": "llj-8dc26276770de25d693ea9ab.mp3",
+      "spokenText": "21. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every horse!",
+      "file": "llj-52f11c0149b36fb0753e8eba.mp3",
+      "spokenText": "21. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every penguin!",
+      "file": "llj-81be9ade3ad8f79fcb763934.mp3",
+      "spokenText": "21. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every pig!",
+      "file": "llj-aed5f3bfb0229f02edb4baaa.mp3",
+      "spokenText": "21. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every rabbit!",
+      "file": "llj-65d4cfc3b6f3940f5c52e68c.mp3",
+      "spokenText": "21. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every sheep!",
+      "file": "llj-96ce353706f315afab68f041.mp3",
+      "spokenText": "21. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21. You counted every turtle!",
+      "file": "llj-6a65c91db4eabb80b759c446.mp3",
+      "spokenText": "21. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22",
+      "file": "llj-3bd28198b125697f13bd5e9b.mp3",
+      "spokenText": "22",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "22 coins.",
       "file": "llj-7477bc00774bdec446a5b82f.mp3",
       "spokenText": "22 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every cat!",
+      "file": "llj-fa5654b6aa64e0bd6647e0a8.mp3",
+      "spokenText": "22. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every chick!",
+      "file": "llj-a11760acb4466782a7bf2bd1.mp3",
+      "spokenText": "22. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every cow!",
+      "file": "llj-f0597af4dd9ae0c8dd69ef99.mp3",
+      "spokenText": "22. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every dog!",
+      "file": "llj-e137001b67a86badae001f01.mp3",
+      "spokenText": "22. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every duck!",
+      "file": "llj-5f68fa88e5998ab3404aa916.mp3",
+      "spokenText": "22. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every goat!",
+      "file": "llj-921a5c81d95dee583e4da5a0.mp3",
+      "spokenText": "22. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every horse!",
+      "file": "llj-eca0382b8ea8adf2f0bafc76.mp3",
+      "spokenText": "22. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every penguin!",
+      "file": "llj-3ace7ca17eb0dd80bfeda8ec.mp3",
+      "spokenText": "22. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every pig!",
+      "file": "llj-6d75480d289b8cf9718fb366.mp3",
+      "spokenText": "22. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every rabbit!",
+      "file": "llj-a5ad1f4bfe164905fd82463d.mp3",
+      "spokenText": "22. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every sheep!",
+      "file": "llj-045e565e48db17137d95f052.mp3",
+      "spokenText": "22. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22. You counted every turtle!",
+      "file": "llj-36fcdb1d44eb5823e8fcfb34.mp3",
+      "spokenText": "22. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23",
+      "file": "llj-fe630e15a2f8b9fc4602d0e7.mp3",
+      "spokenText": "23",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -546,6 +1882,110 @@
       "category": "counting"
     },
     {
+      "text": "23. You counted every cat!",
+      "file": "llj-2a3f2785a0a9642fddb04bfb.mp3",
+      "spokenText": "23. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every chick!",
+      "file": "llj-b63716b5c47e2a23a0b73a2c.mp3",
+      "spokenText": "23. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every cow!",
+      "file": "llj-5ad543640ef0bd649d8a7ccd.mp3",
+      "spokenText": "23. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every dog!",
+      "file": "llj-aa129b578b795ed301f70e1c.mp3",
+      "spokenText": "23. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every duck!",
+      "file": "llj-34881e10abf3f74b8e717442.mp3",
+      "spokenText": "23. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every goat!",
+      "file": "llj-cc5602a288de3e5940d7cf68.mp3",
+      "spokenText": "23. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every horse!",
+      "file": "llj-241cc027a024cff539e39bf5.mp3",
+      "spokenText": "23. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every penguin!",
+      "file": "llj-2121f19a5dbd105cfdf0bb8c.mp3",
+      "spokenText": "23. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every pig!",
+      "file": "llj-cd8dcee5cee81b262d595676.mp3",
+      "spokenText": "23. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every rabbit!",
+      "file": "llj-8ed22788759db668cdaf0412.mp3",
+      "spokenText": "23. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every sheep!",
+      "file": "llj-696f921b243878e273da7864.mp3",
+      "spokenText": "23. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23. You counted every turtle!",
+      "file": "llj-c43e52a069ab930759d38f43.mp3",
+      "spokenText": "23. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24",
+      "file": "llj-1b5949ea00ab372814fbdeff.mp3",
+      "spokenText": "24",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "24 coins.",
       "file": "llj-f29f9fc9a34b6bf65c44fe3b.mp3",
       "spokenText": "24 coins.",
@@ -554,9 +1994,201 @@
       "category": "counting"
     },
     {
+      "text": "24. You counted every cat!",
+      "file": "llj-5ffb2bff6521dc0a83ff5453.mp3",
+      "spokenText": "24. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every chick!",
+      "file": "llj-ef72507bbb9773509852326d.mp3",
+      "spokenText": "24. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every cow!",
+      "file": "llj-0f8998692fa7d6910f5408ff.mp3",
+      "spokenText": "24. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every dog!",
+      "file": "llj-395fa37476a2220556c49cd8.mp3",
+      "spokenText": "24. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every duck!",
+      "file": "llj-1c791237202920f36d6a18cc.mp3",
+      "spokenText": "24. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every goat!",
+      "file": "llj-79d05f312136ef2138443fe2.mp3",
+      "spokenText": "24. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every horse!",
+      "file": "llj-f68af807569c9c0431f12988.mp3",
+      "spokenText": "24. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every penguin!",
+      "file": "llj-ccbbf561573094fe2fbb689b.mp3",
+      "spokenText": "24. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every pig!",
+      "file": "llj-cfca2ae24e56a284f3475987.mp3",
+      "spokenText": "24. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every rabbit!",
+      "file": "llj-47624f8fe2f6cb3c3ecdb5ce.mp3",
+      "spokenText": "24. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every sheep!",
+      "file": "llj-fa633b2087467052992bdd4f.mp3",
+      "spokenText": "24. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24. You counted every turtle!",
+      "file": "llj-f7f6160261334757e2c60be9.mp3",
+      "spokenText": "24. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "25 coins.",
       "file": "llj-8e8f99d832ce332a3e619870.mp3",
       "spokenText": "25 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every cat!",
+      "file": "llj-50047da212fca899f9d7047e.mp3",
+      "spokenText": "25. You counted every cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every chick!",
+      "file": "llj-f1e3afec2b698a39cf0aa087.mp3",
+      "spokenText": "25. You counted every chick!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every cow!",
+      "file": "llj-57c270f2d01e8b133ec80af9.mp3",
+      "spokenText": "25. You counted every cow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every dog!",
+      "file": "llj-41a8950cf63ef128c6a2eeb2.mp3",
+      "spokenText": "25. You counted every dog!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every duck!",
+      "file": "llj-7aff996fe95707bb9c28bc70.mp3",
+      "spokenText": "25. You counted every duck!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every goat!",
+      "file": "llj-2d7a0ed4355be7c419a17e77.mp3",
+      "spokenText": "25. You counted every goat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every horse!",
+      "file": "llj-20e5a14c61f51a85f964e88e.mp3",
+      "spokenText": "25. You counted every horse!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every penguin!",
+      "file": "llj-bd2c435e2ff170fc3058fdb2.mp3",
+      "spokenText": "25. You counted every penguin!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every pig!",
+      "file": "llj-20781240d126c47502956bef.mp3",
+      "spokenText": "25. You counted every pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every rabbit!",
+      "file": "llj-37ceeabadcffb655ae97127e.mp3",
+      "spokenText": "25. You counted every rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every sheep!",
+      "file": "llj-00d1f6118f163b960818bc86.mp3",
+      "spokenText": "25. You counted every sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25. You counted every turtle!",
+      "file": "llj-b75df6a3518408e464e97de5.mp3",
+      "spokenText": "25. You counted every turtle!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -5570,6 +7202,54 @@
       "category": "shapes"
     },
     {
+      "text": "Find the cats. Touch each cat once. Let's count together.",
+      "file": "llj-12b0bb2070e90dfefbac42a2.mp3",
+      "spokenText": "Find the cats. Touch each cat once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the chicks. Touch each chick once. Let's count together.",
+      "file": "llj-dfc44b36b4200cb211969e71.mp3",
+      "spokenText": "Find the chicks. Touch each chick once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the cows. Touch each cow once. Let's count together.",
+      "file": "llj-cebc2d0d5ca6ae70ff487051.mp3",
+      "spokenText": "Find the cows. Touch each cow once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the dogs. Touch each dog once. Let's count together.",
+      "file": "llj-c93d660aeb9ffb26475c935b.mp3",
+      "spokenText": "Find the dogs. Touch each dog once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the ducks. Touch each duck once. Let's count together.",
+      "file": "llj-868cd9c9cda36f5cd5d65aeb.mp3",
+      "spokenText": "Find the ducks. Touch each duck once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the goats. Touch each goat once. Let's count together.",
+      "file": "llj-44a28523a01b6153fb1667eb.mp3",
+      "spokenText": "Find the goats. Touch each goat once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Find the green circle.",
       "file": "llj-8e1ba661ef22c81f75e4b832.mp3",
       "spokenText": "Find the green circle.",
@@ -5650,6 +7330,14 @@
       "category": "shapes"
     },
     {
+      "text": "Find the horses. Touch each horse once. Let's count together.",
+      "file": "llj-8faaf5468cb4d4b652524d06.mp3",
+      "spokenText": "Find the horses. Touch each horse once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Find the orange circle.",
       "file": "llj-f2efba92e193e3e675524720.mp3",
       "spokenText": "Find the orange circle.",
@@ -5728,6 +7416,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Find the penguins. Touch each penguin once. Let's count together.",
+      "file": "llj-327839425c614de15677269f.mp3",
+      "spokenText": "Find the penguins. Touch each penguin once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the pigs. Touch each pig once. Let's count together.",
+      "file": "llj-061db9eb2196d6dda24af9df.mp3",
+      "spokenText": "Find the pigs. Touch each pig once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Find the pink circle.",
@@ -5890,6 +7594,14 @@
       "category": "shapes"
     },
     {
+      "text": "Find the rabbits. Touch each rabbit once. Let's count together.",
+      "file": "llj-0f179caa65d91b17e75535fa.mp3",
+      "spokenText": "Find the rabbits. Touch each rabbit once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Find the red circle.",
       "file": "llj-6751f48fdad784282d6e73da.mp3",
       "spokenText": "Find the red circle.",
@@ -5968,6 +7680,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Find the sheep. Touch each sheep once. Let's count together.",
+      "file": "llj-8dd0f313715e278170c540f3.mp3",
+      "spokenText": "Find the sheep. Touch each sheep once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Find the turtles. Touch each turtle once. Let's count together.",
+      "file": "llj-3f3f03fe98b830f8db72aaf3.mp3",
+      "spokenText": "Find the turtles. Touch each turtle once. Let's count together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Find the yellow circle.",
@@ -11706,12 +13434,108 @@
       "category": "nature"
     },
     {
+      "text": "Look for the cats. Leave the other animals for now.",
+      "file": "llj-559a39e3aa737b2a43d18f06.mp3",
+      "spokenText": "Look for the cats. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the chicks. Leave the other animals for now.",
+      "file": "llj-eda70f6e860b1e45d56f5d73.mp3",
+      "spokenText": "Look for the chicks. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the cows. Leave the other animals for now.",
+      "file": "llj-64f74e04fb3815024c28554a.mp3",
+      "spokenText": "Look for the cows. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the dogs. Leave the other animals for now.",
+      "file": "llj-363bb4cbace2649ea4b100be.mp3",
+      "spokenText": "Look for the dogs. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the ducks. Leave the other animals for now.",
+      "file": "llj-829daae01653ac0bf345332f.mp3",
+      "spokenText": "Look for the ducks. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the goats. Leave the other animals for now.",
+      "file": "llj-7b477f2d1b4c88c343b0e435.mp3",
+      "spokenText": "Look for the goats. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the horses. Leave the other animals for now.",
+      "file": "llj-cadf3609d98ce94ea6a164be.mp3",
+      "spokenText": "Look for the horses. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the penguins. Leave the other animals for now.",
+      "file": "llj-d469503774e5a08ea0ae5227.mp3",
+      "spokenText": "Look for the penguins. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the pigs. Leave the other animals for now.",
+      "file": "llj-0f28f0bb70529b0cad43be7b.mp3",
+      "spokenText": "Look for the pigs. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the rabbits. Leave the other animals for now.",
+      "file": "llj-73d70e5d0a235cd41e647d84.mp3",
+      "spokenText": "Look for the rabbits. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Look for the repeating group of four. Which shape comes next?",
       "file": "llj-37eb869ed865c5ceb5ef4af0.mp3",
       "spokenText": "Look for the repeating group of four. Which shape comes next?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Look for the sheep. Leave the other animals for now.",
+      "file": "llj-34560551f41dff5a8e52220f.mp3",
+      "spokenText": "Look for the sheep. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Look for the turtles. Leave the other animals for now.",
+      "file": "llj-f6a4cdc211e7d587082e1fc7.mp3",
+      "spokenText": "Look for the turtles. Leave the other animals for now.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Look for three shapes that repeat. Which shape comes next?",
@@ -23256,6 +25080,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You found and counted all the animals! What careful looking and counting!",
+      "file": "llj-a4867f55d1b90cd5123a49c8.mp3",
+      "spokenText": "You found and counted all the animals! What careful looking and counting!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "You found every dot twin. What careful looking and remembering!",

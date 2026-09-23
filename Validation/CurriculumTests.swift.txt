@@ -189,18 +189,31 @@ final class CurriculumTests: XCTestCase {
         for animal in TouchCountAnimal.bank { XCTAssertNotNil(UIImage(named: animal.id), animal.id) }
         for _ in 0..<100 {
             var session = TouchCountSession()
-            XCTAssertEqual(session.rounds.count, 27)
-            XCTAssertEqual(Set(session.rounds.prefix(12).map { $0.animal.id }).count, 12)
-            XCTAssertEqual(Set(session.rounds.map(\.key)).count, 27)
-            for index in 0..<27 {
+            XCTAssertEqual(session.rounds.count, 20)
+            for range in [0..<4, 4..<10, 10..<20] {
+                XCTAssertEqual(Set(session.rounds[range].map(\.count)).count, range.count)
+                XCTAssertEqual(Set(session.rounds[range].map { $0.animal.id }).count, range.count)
+            }
+            for index in 0..<20 {
                 let round = session.current
-                XCTAssertEqual(round.count, 2 + index / 3)
+                let columns = index < 4 ? 3 : (index < 10 ? 4 : 5)
+                XCTAssertEqual(round.columns, columns)
+                XCTAssertEqual(round.animals.count, columns * columns)
+                XCTAssertTrue((1...columns * columns).contains(round.count))
+                XCTAssertEqual(round.animals.filter { $0.id == round.animal.id }.count, round.count)
                 XCTAssertTrue(session.counted.isEmpty)
-                if index > 0 { XCTAssertNotEqual(round.animal.id, session.rounds[index - 1].animal.id) }
+                if index > 0 {
+                    XCTAssertNotEqual(round.animal.id, session.rounds[index - 1].animal.id)
+                    XCTAssertNotEqual(round.count, session.rounds[index - 1].count)
+                }
                 session.next(); XCTAssertEqual(session.index, index)
                 XCTAssertFalse(session.count(-1))
-                XCTAssertFalse(session.count(round.count))
-                for (position, id) in (0..<round.count).shuffled().enumerated() {
+                XCTAssertFalse(session.count(round.animals.count))
+                for id in round.animals.indices where round.animals[id].id != round.animal.id {
+                    XCTAssertFalse(session.count(id)); XCTAssertTrue(session.counted.isEmpty)
+                }
+                let targets = round.animals.indices.filter { round.animals[$0].id == round.animal.id }.shuffled()
+                for (position, id) in targets.enumerated() {
                     XCTAssertTrue(session.count(id))
                     XCTAssertEqual(session.counted[id], position + 1)
                     XCTAssertFalse(session.count(id))
@@ -212,15 +225,26 @@ final class CurriculumTests: XCTestCase {
             }
             XCTAssertTrue(session.finished)
             XCTAssertFalse(session.count(0))
-            session.next(); XCTAssertEqual(session.index, 27)
+            session.next(); XCTAssertEqual(session.index, 20)
+        }
+        // Exhaustively check board construction, including single-target and full grids.
+        for columns in 3...5 {
+            for count in 1...columns * columns {
+                for animal in TouchCountAnimal.bank {
+                    let round = TouchCountRound(count: count, animal: animal, columns: columns)
+                    XCTAssertEqual(round.animals.count, columns * columns)
+                    XCTAssertEqual(round.animals.filter { $0.id == animal.id }.count, count)
+                }
+            }
         }
     }
 
     @MainActor
     func testTouchCountRuthCoverage() {
         let texts = TouchCountAnimal.bank.flatMap { animal in
-            [animal.prompt] + (2...10).map { TouchCountRound(count: $0, animal: animal).success }
-        } + (1...10).map(String.init) + [TouchCountRound.completion]
+            [animal.prompt, TouchCountRound(count: 1, animal: animal, columns: 5).retry]
+                + (1...25).map { TouchCountRound(count: $0, animal: animal, columns: 5).success }
+        } + (1...24).map(String.init) + [TouchCountRound.completion]
         for text in texts {
             XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
