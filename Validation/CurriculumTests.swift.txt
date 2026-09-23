@@ -68,7 +68,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 20, .sheep: 18, .trail: 24, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 20, .sheep: 18, .trail: 46, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -81,10 +81,9 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertEqual(play.round, index)
                 narration.insert(play.prompt)
                 let n = play.target
-                XCTAssertTrue((1...10).contains(n))
+                XCTAssertTrue((kind == .trail ? 10...100 : 1...10).contains(n))
                 XCTAssertEqual(Set(play.lesson.choices).count, play.lesson.choices.count)
                 XCTAssertTrue(play.lesson.choices.contains(n))
-                XCTAssertEqual(Set(play.lesson.stones), Set(1...n))
                 play.advance(); XCTAssertEqual(play.round, index)
                 switch kind {
                 case .share:
@@ -104,17 +103,11 @@ final class CurriculumTests: XCTestCase {
                         let before = play.marked.count
                         play.tuck(sheep); XCTAssertEqual(play.marked.count, before)
                     }
-                case .trail:
-                    for value in 1...n {
-                        play.stone(value + 1); record(play); XCTAssertEqual(play.count, value - 1)
-                        play.stone(value); record(play); XCTAssertEqual(play.count, value)
-                        play.stone(value); XCTAssertEqual(play.count, value)
-                    }
-                case .more, .tickets, .dots:
+                case .trail, .more, .tickets, .dots:
                     for wrong in play.lesson.choices where wrong != n {
                         play.choose(wrong); record(play); XCTAssertFalse(play.solved)
                     }
-                    if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
+                    if kind == .more || kind == .trail { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
                     play.choose(n); record(play)
                 case .garden:
                     play.check(); record(play); XCTAssertFalse(play.solved)
@@ -143,7 +136,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.serve(0); play.changeBlocks(1); play.stone(n)
+                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.serve(0); play.changeBlocks(1)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -163,8 +156,17 @@ final class CurriculumTests: XCTestCase {
         for kind in CountingActivity.allCases {
             for _ in 0..<20 {
                 let levels = kind.levels()
-                if ![.share, .more].contains(kind) {
+                if ![.share, .more, .trail].contains(kind) {
                     XCTAssertEqual(levels.map(\.target), levels.map(\.target).sorted())
+                }
+                if kind == .trail {
+                    XCTAssertEqual(Set(levels.flatMap { $0.choices }), Set(10...100))
+                    XCTAssertEqual(levels.filter { $0.fewer }.count, 23)
+                    XCTAssertTrue(levels.prefix(5).allSatisfy { $0.choices.allSatisfy { $0.isMultiple(of: 10) } })
+                    XCTAssertTrue(levels.dropFirst(5).allSatisfy { abs($0.target - $0.other) <= 2 })
+                    for n in 10...100 {
+                        XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: "\(n) coins.")?.voice, "Ruth")
+                    }
                 }
                 if kind == .share {
                     XCTAssertTrue(levels.prefix(10).allSatisfy { $0.amount == 1 })
@@ -178,7 +180,7 @@ final class CurriculumTests: XCTestCase {
                 if kind == .garden || kind == .towers {
                     XCTAssertTrue(levels.enumerated().allSatisfy { $0.offset.isMultiple(of: 2) ? $0.element.start == 0 : $0.element.start != $0.element.target })
                 }
-                for level in levels { XCTAssertTrue(level.choices.allSatisfy { (1...12).contains($0) }) }
+                for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 10...100 : 1...12).contains($0) }) }
             }
         }
     }

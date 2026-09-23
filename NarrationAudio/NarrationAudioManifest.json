@@ -122,6 +122,14 @@
       "category": "counting"
     },
     {
+      "text": "10 coins.",
+      "file": "llj-fdcf6ddd642a3aa6797bcfbe.mp3",
+      "spokenText": "10 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "10 flowers",
       "file": "llj-ac7d8550cca9fb72d4315e54.mp3",
       "spokenText": "10 flowers",
@@ -226,6 +234,14 @@
       "category": "counting"
     },
     {
+      "text": "100 coins.",
+      "file": "llj-a315631386a1bf6309284fb0.mp3",
+      "spokenText": "100 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "11",
       "file": "llj-4183359d3ad6275ce43824da.mp3",
       "spokenText": "11",
@@ -242,6 +258,14 @@
       "category": "counting"
     },
     {
+      "text": "11 coins.",
+      "file": "llj-52bb68148767f6dff8c1552e.mp3",
+      "spokenText": "11 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "12",
       "file": "llj-7acbe5a16d8e33000678f51f.mp3",
       "spokenText": "12",
@@ -253,6 +277,70 @@
       "text": "12 blocks",
       "file": "llj-d4b8827b6b7431282395809c.mp3",
       "spokenText": "12 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "12 coins.",
+      "file": "llj-e6e70ac4f1b922c53487e400.mp3",
+      "spokenText": "12 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "13 coins.",
+      "file": "llj-ad5f09962e63d98eb80e637b.mp3",
+      "spokenText": "13 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "14 coins.",
+      "file": "llj-b5aa726f431b4aedb6b0cf79.mp3",
+      "spokenText": "14 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "15 coins.",
+      "file": "llj-7feae422455f6c5f3c08615d.mp3",
+      "spokenText": "15 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "16 coins.",
+      "file": "llj-74663ef2f2a119630b054459.mp3",
+      "spokenText": "16 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "17 coins.",
+      "file": "llj-3325c8a5a10e7ef63421a59b.mp3",
+      "spokenText": "17 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "18 coins.",
+      "file": "llj-870966fb64a2d8877b0a883d.mp3",
+      "spokenText": "18 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "19 coins.",
+      "file": "llj-64258d6641e007dc6843b0d7.mp3",
+      "spokenText": "19 coins.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -426,6 +514,86 @@
       "category": "counting"
     },
     {
+      "text": "20 coins.",
+      "file": "llj-a3e95ff71da9c5769b63389b.mp3",
+      "spokenText": "20 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "21 coins.",
+      "file": "llj-c6b82cbc7cfc4aa60f2c7f8e.mp3",
+      "spokenText": "21 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "22 coins.",
+      "file": "llj-7477bc00774bdec446a5b82f.mp3",
+      "spokenText": "22 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "23 coins.",
+      "file": "llj-e832981d50da562c68c3fa53.mp3",
+      "spokenText": "23 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "24 coins.",
+      "file": "llj-f29f9fc9a34b6bf65c44fe3b.mp3",
+      "spokenText": "24 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "25 coins.",
+      "file": "llj-8e8f99d832ce332a3e619870.mp3",
+      "spokenText": "25 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "26 coins.",
+      "file": "llj-111de6c54630c6d25505a264.mp3",
+      "spokenText": "26 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "27 coins.",
+      "file": "llj-b3ef1c346e305d23972ed00d.mp3",
+      "spokenText": "27 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "28 coins.",
+      "file": "llj-a5b84315046fb55d9df48419.mp3",
+      "spokenText": "28 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "29 coins.",
+      "file": "llj-f8a4029994dd694bdbd773a1.mp3",
+      "spokenText": "29 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3",
       "file": "llj-b1a3548b285a5bce2f2cf660.mp3",
       "spokenText": "3",
@@ -589,6 +757,86 @@
       "text": "3. You counted every turtle!",
       "file": "llj-9872ecd25ac6b8180919d1b3.mp3",
       "spokenText": "3. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "30 coins.",
+      "file": "llj-c717e6fd3e77b408b2157ff8.mp3",
+      "spokenText": "30 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "31 coins.",
+      "file": "llj-3b8fd81be8ca8c7890477f4f.mp3",
+      "spokenText": "31 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "32 coins.",
+      "file": "llj-d1a8c95024e05f430372623f.mp3",
+      "spokenText": "32 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "33 coins.",
+      "file": "llj-c1d9b4c232680b60a5e244db.mp3",
+      "spokenText": "33 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "34 coins.",
+      "file": "llj-d83891d3369cb2c5c52683dd.mp3",
+      "spokenText": "34 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "35 coins.",
+      "file": "llj-80baf42998c57db0b9b983ea.mp3",
+      "spokenText": "35 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "36 coins.",
+      "file": "llj-db72f622677127e3b1abfaac.mp3",
+      "spokenText": "36 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "37 coins.",
+      "file": "llj-a744e05233f87189a451ac26.mp3",
+      "spokenText": "37 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "38 coins.",
+      "file": "llj-b30e800535f82cf4d300f58d.mp3",
+      "spokenText": "38 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "39 coins.",
+      "file": "llj-5b633e39c9cdcc195be6fca7.mp3",
+      "spokenText": "39 coins.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -762,6 +1010,86 @@
       "category": "counting"
     },
     {
+      "text": "40 coins.",
+      "file": "llj-95ac09102b56d619f9e6b761.mp3",
+      "spokenText": "40 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "41 coins.",
+      "file": "llj-2329aed90570beacdc88cf39.mp3",
+      "spokenText": "41 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "42 coins.",
+      "file": "llj-572b8c1bd3ef1c46ce3c6f94.mp3",
+      "spokenText": "42 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "43 coins.",
+      "file": "llj-feb0f662d29c2fd7c4086b08.mp3",
+      "spokenText": "43 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "44 coins.",
+      "file": "llj-19325c87c3166717b89fd787.mp3",
+      "spokenText": "44 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "45 coins.",
+      "file": "llj-6f8d7c4b7d2bf7324495b457.mp3",
+      "spokenText": "45 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "46 coins.",
+      "file": "llj-38dd75cc8d28f91bff41c448.mp3",
+      "spokenText": "46 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "47 coins.",
+      "file": "llj-e819f1c76d92c63fd19c6de8.mp3",
+      "spokenText": "47 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "48 coins.",
+      "file": "llj-62385a2d292c894190ce644b.mp3",
+      "spokenText": "48 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "49 coins.",
+      "file": "llj-7ef2f0f4e59d4003bbae486c.mp3",
+      "spokenText": "49 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "5",
       "file": "llj-8cc39fdbec866e83506d9f98.mp3",
       "spokenText": "5",
@@ -925,6 +1253,86 @@
       "text": "5. You counted every turtle!",
       "file": "llj-4ac0dd47f66308dfe3f95f1a.mp3",
       "spokenText": "5. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "50 coins.",
+      "file": "llj-5350175b6917057327560e55.mp3",
+      "spokenText": "50 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "51 coins.",
+      "file": "llj-32c030d0089fa1a99f5129f9.mp3",
+      "spokenText": "51 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "52 coins.",
+      "file": "llj-9874e9109f110b05f7e74348.mp3",
+      "spokenText": "52 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "53 coins.",
+      "file": "llj-901acddcfc46382b01c1b5e9.mp3",
+      "spokenText": "53 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "54 coins.",
+      "file": "llj-e570729cef1f183776e87a2d.mp3",
+      "spokenText": "54 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "55 coins.",
+      "file": "llj-71a8e64b361914436b53a068.mp3",
+      "spokenText": "55 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "56 coins.",
+      "file": "llj-a6f437d87c018397517c6cd4.mp3",
+      "spokenText": "56 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "57 coins.",
+      "file": "llj-096ab613407ad7abba08fdf1.mp3",
+      "spokenText": "57 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "58 coins.",
+      "file": "llj-dbc27d6cf7ff8296f62d58b4.mp3",
+      "spokenText": "58 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "59 coins.",
+      "file": "llj-a4d250afdfe2fa9859b64bc6.mp3",
+      "spokenText": "59 coins.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -1098,6 +1506,86 @@
       "category": "counting"
     },
     {
+      "text": "60 coins.",
+      "file": "llj-eb44acf97a85a89149fe158d.mp3",
+      "spokenText": "60 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "61 coins.",
+      "file": "llj-6482258f4c35a6a438240e37.mp3",
+      "spokenText": "61 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "62 coins.",
+      "file": "llj-3b309ede7de56900b403dfbc.mp3",
+      "spokenText": "62 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "63 coins.",
+      "file": "llj-f0f44b1d75b4d1793387da8d.mp3",
+      "spokenText": "63 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "64 coins.",
+      "file": "llj-f7353c191ff34db11a392435.mp3",
+      "spokenText": "64 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "65 coins.",
+      "file": "llj-a09356f572469b609c6f4c9d.mp3",
+      "spokenText": "65 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "66 coins.",
+      "file": "llj-8b06865d0e65542d61f3d807.mp3",
+      "spokenText": "66 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "67 coins.",
+      "file": "llj-ec774d1c5f68ec1f28047d6f.mp3",
+      "spokenText": "67 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "68 coins.",
+      "file": "llj-35b12faca305719bb0c435a6.mp3",
+      "spokenText": "68 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "69 coins.",
+      "file": "llj-271d1402ef96ca209caabb26.mp3",
+      "spokenText": "69 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7",
       "file": "llj-68f3d2397410bf75c71ecf1d.mp3",
       "spokenText": "7",
@@ -1245,6 +1733,86 @@
       "text": "7. You counted every turtle!",
       "file": "llj-7b63b01e0918141d975e4720.mp3",
       "spokenText": "7. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "70 coins.",
+      "file": "llj-103bc8f4147afaaea81c0627.mp3",
+      "spokenText": "70 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "71 coins.",
+      "file": "llj-bb2d88a241be0004d7257463.mp3",
+      "spokenText": "71 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "72 coins.",
+      "file": "llj-62419055887148b405d2e9e6.mp3",
+      "spokenText": "72 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "73 coins.",
+      "file": "llj-ee9152071d6e3c533f8dfd88.mp3",
+      "spokenText": "73 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "74 coins.",
+      "file": "llj-c0c0d2ed25ce76479220f736.mp3",
+      "spokenText": "74 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "75 coins.",
+      "file": "llj-da9f38434772c2ccbc2efbf9.mp3",
+      "spokenText": "75 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "76 coins.",
+      "file": "llj-c5af8129da76a6ef69623370.mp3",
+      "spokenText": "76 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "77 coins.",
+      "file": "llj-90822438c109fc934795eba8.mp3",
+      "spokenText": "77 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "78 coins.",
+      "file": "llj-41656efcce9894128360261c.mp3",
+      "spokenText": "78 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "79 coins.",
+      "file": "llj-1e1a667daef5ffeed4a61797.mp3",
+      "spokenText": "79 coins.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -1402,6 +1970,86 @@
       "category": "counting"
     },
     {
+      "text": "80 coins.",
+      "file": "llj-42c21a62a69cee50a43f9d1e.mp3",
+      "spokenText": "80 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "81 coins.",
+      "file": "llj-0094863529cdb447e23b7c04.mp3",
+      "spokenText": "81 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "82 coins.",
+      "file": "llj-687e16e9c58baf627fee750e.mp3",
+      "spokenText": "82 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "83 coins.",
+      "file": "llj-1bd63d68d65920e944f95856.mp3",
+      "spokenText": "83 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "84 coins.",
+      "file": "llj-30fe29cb148dedc6b096b3ac.mp3",
+      "spokenText": "84 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "85 coins.",
+      "file": "llj-1761fe041f10b84a87155041.mp3",
+      "spokenText": "85 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "86 coins.",
+      "file": "llj-ecda461a1c63a391d4416bcd.mp3",
+      "spokenText": "86 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "87 coins.",
+      "file": "llj-47ac80f01ebe499e8889f566.mp3",
+      "spokenText": "87 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "88 coins.",
+      "file": "llj-cadd7328a82e75ef1a018b80.mp3",
+      "spokenText": "88 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "89 coins.",
+      "file": "llj-8b037218bd27c2bf4bb61605.mp3",
+      "spokenText": "89 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "9",
       "file": "llj-28a4666c617349dac6d2e703.mp3",
       "spokenText": "9",
@@ -1549,6 +2197,86 @@
       "text": "9. You counted every turtle!",
       "file": "llj-175b51e6a7ccde3fff8f1259.mp3",
       "spokenText": "9. You counted every turtle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "90 coins.",
+      "file": "llj-5ea110d6186d440c591644f9.mp3",
+      "spokenText": "90 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "91 coins.",
+      "file": "llj-7eaf00bc7035ad062edae57c.mp3",
+      "spokenText": "91 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "92 coins.",
+      "file": "llj-2a93146774ddeedbc6e8f152.mp3",
+      "spokenText": "92 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "93 coins.",
+      "file": "llj-66d6a52b0c0b32a70f4d60fb.mp3",
+      "spokenText": "93 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "94 coins.",
+      "file": "llj-c80ad15ded54fe1833b03374.mp3",
+      "spokenText": "94 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "95 coins.",
+      "file": "llj-aeff46159731ef8cb01c4956.mp3",
+      "spokenText": "95 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "96 coins.",
+      "file": "llj-2d1609bf6d786e8661cab338.mp3",
+      "spokenText": "96 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "97 coins.",
+      "file": "llj-3ade54052dac11e14541cfd4.mp3",
+      "spokenText": "97 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "98 coins.",
+      "file": "llj-7cfb658c70168137aea86178.mp3",
+      "spokenText": "98 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "99 coins.",
+      "file": "llj-f71131a6cd671c2ac1065e39.mp3",
+      "spokenText": "99 coins.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -10512,6 +11240,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Look at both piles. Each full row has ten coins. Compare the rows, then the extra coins.",
+      "file": "llj-e494d66ad76ae6b4e4578b7f.mp3",
+      "spokenText": "Look at both piles. Each full row has ten coins. Compare the rows, then the extra coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Look at the ball. We are looking for a square shape.",
@@ -19642,6 +20378,22 @@
       "category": "counting"
     },
     {
+      "text": "Which pile has less treasure? Tap the pile with fewer coins.",
+      "file": "llj-2adb0e3ea9f35a96ac7411c9.mp3",
+      "spokenText": "Which pile has less treasure? Tap the pile with fewer coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which pile has more treasure? Tap the pile with more coins.",
+      "file": "llj-a93d362cfcef1ca7af37b085.mp3",
+      "spokenText": "Which pile has more treasure? Tap the pile with more coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "White paint selected.",
       "file": "llj-0cac5e72a781a87dcd0a7591.mp3",
       "spokenText": "White paint selected.",
@@ -20282,6 +21034,22 @@
       "category": "counting"
     },
     {
+      "text": "Yes! This pile has less treasure. It has fewer coins!",
+      "file": "llj-608543f21bf4b675f5d8bd23.mp3",
+      "spokenText": "Yes! This pile has less treasure. It has fewer coins!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! This pile has more treasure. It has more coins!",
+      "file": "llj-adc8ddafe527b99917cf101f.mp3",
+      "spokenText": "Yes! This pile has more treasure. It has more coins!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You and your grown-up rolled the ball back and forth three times!",
       "file": "llj-6eb609ccd45f614bea1f68e7.mp3",
       "spokenText": "You and your grown-up rolled the ball back and forth three times!",
@@ -20917,6 +21685,14 @@
       "text": "You compared every group. You found more and fewer!",
       "file": "llj-48fa2f3176beaa1ffd19ec52.mp3",
       "spokenText": "You compared every group. You found more and fewer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You compared treasure from ten to one hundred. What a treasure explorer!",
+      "file": "llj-140bce5ab459b42330779621.mp3",
+      "spokenText": "You compared treasure from ten to one hundred. What a treasure explorer!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

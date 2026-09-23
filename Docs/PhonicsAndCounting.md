@@ -35,7 +35,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Touch & Count | Tap twelve kinds of animals in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
 | Picnic Share | Share one piece of fruit per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
 | Sleepy Sheep | Tuck each animal in once and count the remaining flock down to zero | 18 levels, 2–10 animals |
-| Treasure Trail | Follow shuffled number stones in order with dot support and eight illustrated treasures | 24 levels, trails from 3–10 |
+| Treasure Trail | Choose the pile with more or less treasure; equal-size coins in rows of ten, numerals and Ruth quantity buttons | 46 shuffled comparisons covering every number 10–100; tens first, then nearby quantities |
 | Which Has More? | Compare aligned groups of twelve rotating fruits; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |
 | Five-Frame Garden | Build requested groups and correct preplanted groups in one or two five-frames with eight flower designs | 20 levels, targets 1–10 |
 | Ticket Train | Match exactly one ticket dot per passenger using twelve animal passengers and varied dot layouts | 24 levels, 2–9 passengers |

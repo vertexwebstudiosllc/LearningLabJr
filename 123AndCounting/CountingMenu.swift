@@ -7,7 +7,7 @@ struct CountingMenu: View {
         .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Count twelve kinds of animals across twenty-seven growing levels", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Share twelve kinds of fruit, one then two per friend", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck twelve kinds of animal friends in across eighteen levels", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when an animal goes to sleep."),
-        .init(id: "counting.trail", title: "Treasure Trail", skill: "Counting order from one to ten", interaction: "Follow twenty-four shuffled trails growing from three to ten stones", ageBand: "Ages 3–4", caregiverTip: "Point to the dots if the numerals are unfamiliar."),
+        .init(id: "counting.trail", title: "Treasure Trail", skill: "Compare quantities from ten to one hundred", interaction: "Choose more or less treasure across forty-six comparisons", ageBand: "Ages 3–4", caregiverTip: "Count full rows by tens, then count the extra coins together."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare more, then fewer across twenty increasingly close pairs", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
         .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames with eight flower styles", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
@@ -92,22 +92,6 @@ private struct QuantityDots: View {
     }
 }
 
-private struct CountNumberButton: View {
-    let number: Int
-    var selected = false
-    let action: () -> Void
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 6) {
-                Text("\(number)").font(.system(size: 30, weight: .bold, design: .rounded))
-                QuantityDots(count: number)
-            }.frame(maxWidth: .infinity, minHeight: 94)
-                .background(selected ? Color.indigo.opacity(0.16) : .white, in: RoundedRectangle(cornerRadius: 18))
-        }.buttonStyle(.plain).foregroundStyle(.indigo).accessibilityLabel("\(number)")
-            .accessibilityValue(selected ? "Visited" : "")
-    }
-}
-
 private struct PicnicShareGame: View {
     @StateObject private var play = CountingPlay(kind: .share)
     var body: some View {
@@ -159,17 +143,39 @@ private struct TreasureTrailGame: View {
     @StateObject private var play = CountingPlay(kind: .trail)
     var body: some View {
         CountingStage(play: play) {
-            Text(play.count == 0 ? "Start at 1" : "You reached \(play.count)").font(.title2.bold()).accessibilityIdentifier("counting.ext.reached")
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
-                ForEach(play.lesson.stones, id: \.self) { value in
-                    CountNumberButton(number: value, selected: value <= play.count) { play.stone(value) }
-                        .disabled(value <= play.count).accessibilityIdentifier("counting.ext.stone.\(value)")
+            Text(play.lesson.fewer ? "Find less treasure" : "Find more treasure")
+                .font(.title2.bold()).accessibilityIdentifier("counting.ext.clue")
+            Text("Each full row = 10 coins").font(.subheadline)
+            HStack(alignment: .top, spacing: 12) {
+                ForEach(play.lesson.choices, id: \.self) { value in
+                    VStack(spacing: 8) {
+                        Button { play.choose(value) } label: {
+                            VStack(spacing: 10) {
+                                Image(systemName: "shippingbox.fill").font(.largeTitle).foregroundStyle(.brown)
+                                // Fixed slots keep coin size and spacing identical in both piles.
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 10), spacing: 5) {
+                                    ForEach(0..<100, id: \.self) { index in
+                                        Circle().fill(Color.yellow.gradient)
+                                            .overlay(Circle().stroke(Color.orange, lineWidth: 1))
+                                            .aspectRatio(1, contentMode: .fit)
+                                            .opacity(index < value ? 1 : 0)
+                                    }
+                                }.accessibilityHidden(true)
+                                Text("\(value)").font(.system(size: 34, weight: .bold, design: .rounded))
+                                Text("coins").font(.headline)
+                            }.padding(10).frame(maxWidth: .infinity)
+                                .background(.white, in: RoundedRectangle(cornerRadius: 20))
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.orange.opacity(0.5), lineWidth: 2))
+                        }.buttonStyle(.plain)
+                            .accessibilityLabel("Pile with \(value) coins")
+                            .accessibilityIdentifier("counting.ext.choice.\(value)")
+                        Button { play.say("\(value) coins.") } label: {
+                            Label("Hear \(value)", systemImage: "speaker.wave.2.fill")
+                                .font(.headline).frame(maxWidth: .infinity, minHeight: 48)
+                        }.buttonStyle(.bordered).accessibilityIdentifier("counting.trail.hear.\(value)")
+                    }
                 }
             }
-            HStack(spacing: 12) {
-                ToddlerArt(asset: play.lesson.theme.asset, size: 64)
-                Text(play.solved ? "Treasure found!" : "Find the trail treasure").font(.headline)
-            }.accessibilityElement(children: .ignore).accessibilityLabel("\(play.lesson.theme.id) treasure")
         }
     }
 }

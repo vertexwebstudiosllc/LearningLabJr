@@ -73,6 +73,6 @@ Number Picnic coverage checks three complete shuffled passes through one to ten,
 
 Touch & Count coverage checks twenty-seven growing animal groups, arbitrary tap order, stable one-to-one counting labels, duplicate/outside taps, progression/replay, assets, and Ruth narration from one through ten.
 
-The remaining ten counting activities now have native coverage for all 204 levels and dedicated full UI playthroughs, including replay. Coverage checks fair sharing, counting down to zero, ordered stones, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
+The remaining ten counting activities now have native coverage for all 226 levels and dedicated full UI playthroughs, including replay. Coverage checks fair sharing, counting down to zero, treasure comparisons across every number 10–100, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
 
 Counting picture variety: twelve-fruit and twelve-animal collections, eight illustration themes, full collection use before repeats, and no repeats within three consecutive rounds. Native coverage checks assets, symbols, unchanged quantities and all dynamic Ruth phrases. The themed and food/animal layout tests exercise three rounds per game with screenshots; Number Picnic and Touch & Count retain full-session UI tests.

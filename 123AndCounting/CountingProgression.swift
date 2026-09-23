@@ -21,7 +21,7 @@ enum CountingActivity: String, CaseIterable {
         switch self {
         case .share: return "You shared the picnic fairly. Every friend got the same amount!"
         case .sheep: return "Every flock is tucked in. You counted down all the way to zero!"
-        case .trail: return "You followed all the counting trails, from one all the way to ten!"
+        case .trail: return "You compared treasure from ten to one hundred. What a treasure explorer!"
         case .more: return "You compared every group. You found more and fewer!"
         case .garden: return "Your gardens are blooming. You made groups from one to ten!"
         case .tickets: return "Every train has matching tickets. All aboard, counting explorer!"
@@ -49,7 +49,20 @@ enum CountingActivity: String, CaseIterable {
             return (2...6).flatMap { n in (0..<2).map { CountingLesson(target: n, variant: $0) } }
                 + (2...6).flatMap { n in (0..<2).map { CountingLesson(target: n, amount: 2, variant: $0) } }
         case .sheep: return (2...10).flatMap { n in (0..<2).map { CountingLesson(target: n, variant: $0) } }
-        case .trail: return (3...10).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
+        case .trail:
+            // Cover every quantity 10...100. Start with tens, then compare nearby numbers.
+            let tens = Array(stride(from: 10, through: 100, by: 10)).shuffled()
+            let singles = (10...100).filter { !$0.isMultiple(of: 10) }
+            var pairs = stride(from: 0, to: tens.count, by: 2).map { (tens[$0], tens[$0 + 1]) }
+            let closePairs = stride(from: 0, to: singles.count, by: 2).map { index in
+                (singles[index], index + 1 < singles.count ? singles[index + 1] : 100)
+            }.shuffled()
+            pairs += closePairs
+            return pairs.enumerated().map { index, pair in
+                let fewer = index.isMultiple(of: 2)
+                return CountingLesson(target: fewer ? min(pair.0, pair.1) : max(pair.0, pair.1),
+                                      other: fewer ? max(pair.0, pair.1) : min(pair.0, pair.1), fewer: fewer)
+            }
         case .more:
             let pairs = [(1,3),(2,4),(2,5),(3,5),(3,6),(4,6),(4,7),(5,7),(6,7),(7,8)]
             return (0..<2).flatMap { mode in pairs.enumerated().map { index, pair in
@@ -80,11 +93,9 @@ struct CountingLesson {
     var variant = 0
     var fewer = false
     var choices: [Int]
-    var stones: [Int]
     init(target: Int, other: Int = 0, amount: Int = 1, start: Int = 0, variant: Int = 0, fewer: Bool = false) {
         self.target = target; self.other = other; self.amount = amount; self.start = start; self.variant = variant; self.fewer = fewer
         choices = other > 0 ? [target, other].shuffled() : ([target] + (max(1, target - 2)...min(12, target + 2)).filter { $0 != target }.shuffled().prefix(2)).shuffled()
-        stones = Array(1...target).shuffled()
     }
     var gardenSize: Int { max(target, start) <= 5 ? 5 : 10 }
 }
@@ -111,7 +122,7 @@ final class CountingPlay: ObservableObject {
         switch kind {
         case .share: return lesson.amount == 1 ? "Give one \(lesson.food.id) to every plate. Tap an empty plate." : "Give two \(lesson.food.plural) to every plate. Tap each plate until it has two."
         case .sheep: return "Tap each animal to tuck it in. How many are still awake?"
-        case .trail: return "Follow the counting stones. Start at one."
+        case .trail: return lesson.fewer ? "Which pile has less treasure? Tap the pile with fewer coins." : "Which pile has more treasure? Tap the pile with more coins."
         case .more: return lesson.fewer ? "Which group has fewer \(lesson.food.plural)? Tap that group." : "Which group has more \(lesson.food.plural)? Tap that group."
         case .garden: return "Plant \(target) \(target == 1 ? "flower" : "flowers"). Tap a space to plant. Tap a flower to take it out."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
@@ -148,23 +159,18 @@ final class CountingPlay: ObservableObject {
         if left == 0 { win("No animals awake. All the animals are asleep. Good night!") }
         else { say("\(left) \(left == 1 ? "animal is" : "animals are") still awake.") }
     }
-    func stone(_ value: Int) {
-        guard kind == .trail, !solved, !complete, lesson.stones.contains(value), value > count else { return }
-        guard value == count + 1 else { say("Look for \(count + 1). Count the dots on the stones."); return }
-        count += 1
-        if count == target { win("You followed every counting stone. Treasure found!") }
-        else { say("\(value). Next comes \(value + 1).") }
-    }
     func choose(_ value: Int) {
-        guard [.more, .tickets, .dots].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
+        guard [.trail, .more, .tickets, .dots].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
         if value == target {
             switch kind {
+            case .trail: win(lesson.fewer ? "Yes! This pile has less treasure. It has fewer coins!" : "Yes! This pile has more treasure. It has more coins!")
             case .more: win(lesson.fewer ? "Yes! That group has fewer \(lesson.food.plural)." : "Yes! That group has more \(lesson.food.plural).")
             case .tickets: win("One dot for each passenger. All aboard!")
             default: win("You found the twin: \(target) dots!")
             }
         } else {
             switch kind {
+            case .trail: say("Look at both piles. Each full row has ten coins. Compare the rows, then the extra coins.")
             case .more: say("Count both groups carefully, then try again.")
             case .tickets: say("Match each passenger with one dot. Try another ticket.")
             default: say("You can peek at the clue again. Look for the same dots.")

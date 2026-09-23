@@ -826,26 +826,25 @@ final class ActivitySmokeTests: XCTestCase {
                     XCTAssertFalse(animal.isEnabled)
                     XCTAssertEqual(app.staticTexts["counting.ext.remaining"].label, "\(sheep.count - i - 1) awake")
                 }
-            case "trail":
-                let count = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.stone.'")).count
-                XCTAssertEqual(count, 3 + index / 3)
-                try tap("counting.ext.stone.\(count)")
-                XCTAssertEqual(app.staticTexts["counting.ext.reached"].label, "Start at 1")
-                for value in 1...count {
-                    try tap("counting.ext.stone.\(value)")
-                    XCTAssertFalse(app.buttons["counting.ext.stone.\(value)"].isEnabled)
-                }
-            case "more", "tickets", "dots":
+            case "trail", "more", "tickets", "dots":
                 let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
                 let values = choices.map { number($0.label) }
                 let target: Int
-                if kind == "more" {
-                    target = app.staticTexts["counting.ext.clue"].label == "Find fewer" ? values.min()! : values.max()!
+                if kind == "more" || kind == "trail" {
+                    target = ["Find fewer", "Find less treasure"].contains(app.staticTexts["counting.ext.clue"].label) ? values.min()! : values.max()!
                 } else if kind == "tickets" { target = number(element("counting.ext.passengers").label) }
                 else {
                     target = number(element("counting.ext.clue").label)
                     try tap("counting.ext.peek")
                     XCTAssertEqual(element("counting.ext.clue").label, "Hidden clue")
+                }
+                if kind == "trail" && index < 2 {
+                    XCTAssertEqual(choices.count, 2)
+                    for value in values {
+                        try tap("counting.trail.hear.\(value)")
+                        XCTAssertEqual(app.staticTexts["counting.ext.feedback"].label, "\(value) coins.")
+                        XCTAssertFalse(next.exists)
+                    }
                 }
                 try tap("counting.ext.choice.\(values.first { $0 != target }!)")
                 XCTAssertFalse(next.exists)
@@ -890,7 +889,7 @@ final class ActivitySmokeTests: XCTestCase {
                 try tap("counting.ext.check")
             }
             XCTAssertTrue(next.waitForExistence(timeout: 3), "\(title) level \(index + 1)")
-            if index == total - 1 || previewLevels != nil {
+            if index == total - 1 || previewLevels != nil || (kind == "trail" && index == 0) {
                 let shot = XCTAttachment(screenshot: app.screenshot())
                 shot.name = title + " level \(index + 1)"; shot.lifetime = .keepAlways; add(shot)
             }
@@ -907,7 +906,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingThemedLayouts() async throws {
-        let games = [("trail", "Treasure Trail", 24), ("garden", "Five-Frame Garden", 20),
+        let games = [("trail", "Treasure Trail", 46), ("garden", "Five-Frame Garden", 20),
                      ("towers", "Twin Towers", 18), ("dots", "Dot Detective", 18),
                      ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
@@ -931,7 +930,7 @@ final class ActivitySmokeTests: XCTestCase {
     func testExpandedSleepySheep() async throws { try await playExpandedCounting("sheep", title: "Sleepy Sheep", total: 18) }
 
     @MainActor
-    func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 24) }
+    func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 46) }
 
     @MainActor
     func testExpandedMoreGroups() async throws { try await playExpandedCounting("more", title: "Which Has More?", total: 20) }
