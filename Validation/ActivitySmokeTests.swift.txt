@@ -808,16 +808,25 @@ final class ActivitySmokeTests: XCTestCase {
             }
             switch kind {
             case "share":
-                let plates = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.plate.'")).allElementsBoundByIndex
-                let servings = index < 10 ? 1 : 2
-                XCTAssertEqual(plates.count, 2 + (index % 10) / 2)
-                for plate in plates.reversed() {
-                    for amount in 1...servings {
-                        try reveal(plate, in: app); plate.tap()
-                        XCTAssertTrue(plate.label.contains(", \(amount) "))
-                    }
-                    XCTAssertFalse(plate.isEnabled)
+                let have = number(app.staticTexts["counting.share.have"].label)
+                let need = number(app.staticTexts["counting.share.need"].label)
+                let target = abs(need - have)
+                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
+                XCTAssertEqual(choices.count, 3)
+                XCTAssertEqual(Set(choices.map { number($0.label) }).count, 3)
+                XCTAssertEqual(app.staticTexts["counting.ext.clue"].label, need > have ? "How many should we add?" : "How many should we take away?")
+                try tap(choices.first { number($0.label) != target }!.identifier)
+                XCTAssertEqual(level.label, "Level \(index + 1) of \(total)")
+                XCTAssertTrue(app.staticTexts["counting.ext.feedback"].exists)
+                if previewLevels != nil || index < 2 {
+                    let shot = XCTAttachment(screenshot: app.screenshot())
+                    shot.name = "Picnic math \(have) to \(need)"; shot.lifetime = .keepAlways; add(shot)
                 }
+                try tap("counting.ext.choice.\(target)")
+                let advanced = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", "Level \(index + 2) of \(total)"), object: level)
+                if index + 1 < total { XCTAssertEqual(XCTWaiter.wait(for: [advanced], timeout: 8), .completed) }
+                else { XCTAssertTrue(app.buttons["Play again"].waitForExistence(timeout: 8)) }
+                continue
             case "sheep":
                 let sheep = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.sheep.'")).allElementsBoundByIndex
                 XCTAssertEqual(sheep.count, 2 + index / 2)
@@ -916,7 +925,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingFoodAndAnimalLayouts() async throws {
-        let games = [("share", "Picnic Share", 20), ("sheep", "Sleepy Sheep", 18),
+        let games = [("share", "Picnic Share", 10), ("sheep", "Sleepy Sheep", 18),
                      ("more", "Which Has More?", 20), ("tickets", "Ticket Train", 24)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
@@ -924,7 +933,7 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    func testExpandedPicnicShare() async throws { try await playExpandedCounting("share", title: "Picnic Share", total: 20) }
+    func testExpandedPicnicShare() async throws { try await playExpandedCounting("share", title: "Picnic Share", total: 10) }
 
     @MainActor
     func testExpandedSleepySheep() async throws { try await playExpandedCounting("sheep", title: "Sleepy Sheep", total: 18) }

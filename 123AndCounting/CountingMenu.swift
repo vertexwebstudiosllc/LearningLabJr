@@ -1,11 +1,12 @@
 import SwiftUI
 import Combine
+import AVFoundation
 
 struct CountingMenu: View {
     static let activities: [LearningActivity] = [
         .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count twelve kinds of fruit in shuffled groups from one to ten across thirty rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
         .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Find and count a named animal in twenty mixed grids growing from 3×3 to 5×5", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
-        .init(id: "counting.picnic-share", title: "Picnic Share", skill: "One item for each person", interaction: "Share twelve kinds of fruit, one then two per friend", ageBand: "Ages 2–4", caregiverTip: "Set one spoon at each place at your own table."),
+        .init(id: "counting.picnic-share", title: "Picnic Share", skill: "Find the missing amount in addition and subtraction", interaction: "Solve ten new picnic math puzzles with totals up to ten", ageBand: "Ages 2–4", caregiverTip: "Use real snacks to show how adding or taking away reaches the total."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck twelve kinds of animal friends in across eighteen levels", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when an animal goes to sleep."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Compare quantities from ten to one hundred", interaction: "Choose more or less treasure across forty-six comparisons", ageBand: "Ages 3–4", caregiverTip: "Count full rows by tens, then count the extra coins together."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare more, then fewer across twenty increasingly close pairs", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
@@ -52,6 +53,7 @@ struct CountingMenu: View {
 
 private struct CountingStage<Content: View>: View {
     @ObservedObject var play: CountingPlay
+    var showsNext = true
     @ViewBuilder var content: () -> Content
     @StateObject private var narrator = GameNarrator()
     var body: some View {
@@ -64,7 +66,7 @@ private struct CountingStage<Content: View>: View {
                 Text(play.feedback).font(.system(.title3, design: .rounded, weight: .medium)).multilineTextAlignment(.center)
                     .accessibilityIdentifier("counting.ext.feedback")
             }
-            if play.solved && !play.complete {
+            if showsNext && play.solved && !play.complete {
                 ToddlerActionButton(title: play.round + 1 == play.total ? "Finish our adventure" : "Next level", systemImage: "arrow.right.circle.fill", color: .indigo, action: play.advance)
                     .accessibilityIdentifier("counting.ext.next")
             }
@@ -84,10 +86,12 @@ private struct QuantityDots: View {
     let count: Int
     var variant = 0
     private var columns: Int { [5, 3, 2][variant % 3] }
+    private var gridWidth: CGFloat { CGFloat(columns * 14 - 4) }
+    private var gridHeight: CGFloat { CGFloat(max(1, (count + columns - 1) / columns) * 14 - 4) }
     var body: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.fixed(10), spacing: 4), count: columns), spacing: 4) {
             ForEach(0..<count, id: \.self) { _ in Circle().fill(.indigo).frame(width: 10, height: 10) }
-        }.frame(width: CGFloat(columns * 14 - 4), height: CGFloat(max(1, (count + columns - 1) / columns) * 14 - 4))
+        }.frame(width: gridWidth, height: gridHeight)
             .accessibilityElement(children: .ignore).accessibilityLabel("\(count) dots")
     }
 }
@@ -95,25 +99,55 @@ private struct QuantityDots: View {
 private struct PicnicShareGame: View {
     @StateObject private var play = CountingPlay(kind: .share)
     var body: some View {
-        CountingStage(play: play) {
-            Text("\(play.target) friends · \(play.lesson.amount) \(play.lesson.amount == 1 ? play.lesson.food.id : play.lesson.food.plural) each").font(.headline)
-                .accessibilityIdentifier("counting.ext.clue")
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 12) {
-                ForEach(0..<play.target, id: \.self) { index in
-                    let amount = play.servings[index, default: 0]
-                    Button { play.serve(index) } label: {
-                        ZStack {
-                            Circle().fill(.white).overlay(Circle().stroke(.indigo.opacity(0.25), lineWidth: 4))
-                            if amount == 0 { Image(systemName: "plus").font(.title) }
-                            else { HStack(spacing: 0) { ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: play.lesson.food.asset, size: amount == 1 ? 48 : 32) } } }
-                        }.frame(height: 92)
+        CountingStage(play: play, showsNext: false) {
+            HStack(alignment: .top, spacing: 12) {
+                pile(title: "We have", count: play.lesson.start, id: "have")
+                pile(title: "We need", count: play.lesson.goal, id: "need")
+            }
+            Text("\(play.lesson.start) \(play.lesson.picnicAdds ? "+" : "−") \(play.solved ? String(play.target) : "?") = \(play.lesson.goal)")
+                .font(.system(.title, design: .rounded, weight: .bold))
+                .accessibilityIdentifier("counting.share.equation")
+            Text(play.lesson.picnicAdds ? "How many should we add?" : "How many should we take away?")
+                .font(.headline).accessibilityIdentifier("counting.ext.clue")
+            HStack(spacing: 12) {
+                ForEach(play.lesson.choices, id: \.self) { value in
+                    Button { play.choose(value) } label: {
+                        VStack(spacing: 6) {
+                            Text("\(value)").font(.system(size: 36, weight: .bold, design: .rounded))
+                            Text(play.lesson.picnicAdds ? "Add" : "Take away").font(.subheadline.bold())
+                        }.frame(maxWidth: .infinity, minHeight: 90)
+                            .background(.white, in: RoundedRectangle(cornerRadius: 18))
                     }.buttonStyle(.plain)
-                        .accessibilityLabel("Plate \(index + 1), \(amount) \(amount == 1 ? play.lesson.food.id : play.lesson.food.plural)")
-                        .accessibilityIdentifier("counting.ext.plate.\(index)")
-                        .disabled(amount == play.lesson.amount)
+                        .accessibilityLabel("\(play.lesson.picnicAdds ? "Add" : "Take away") \(value)")
+                        .accessibilityIdentifier("counting.ext.choice.\(value)")
                 }
             }
         }
+        .task(id: play.solved) {
+            guard play.solved, !play.complete else { return }
+            // Leave the solved equation visible until its Ruth explanation finishes.
+            let duration: TimeInterval
+            if GameNarrator.promptsEnabled(), let url = NarrationAudioCatalog.shared.url(for: play.lesson.picnicSuccess),
+               let audio = try? AVAudioPlayer(contentsOf: url) {
+                duration = max(2, audio.duration + 0.5)
+            } else { duration = 2 }
+            do { try await Task.sleep(for: .seconds(duration)) } catch { return }
+            play.advance()
+        }
+    }
+    private func pile(title: String, count: Int, id: String) -> some View {
+        VStack(spacing: 8) {
+            Text("\(title): \(count)").font(.headline)
+                .accessibilityIdentifier("counting.share.\(id)")
+            Text(count == 1 ? play.lesson.food.id : play.lesson.food.plural).font(.subheadline)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 3), spacing: 4) {
+                ForEach(0..<count, id: \.self) { _ in
+                    CountingPicture(asset: play.lesson.food.asset, size: 34)
+                        .accessibilityIdentifier("counting.share.\(id).item")
+                }
+            }
+        }.padding(12).frame(maxWidth: .infinity, minHeight: 215, alignment: .top)
+            .background(.white, in: RoundedRectangle(cornerRadius: 20))
     }
 }
 

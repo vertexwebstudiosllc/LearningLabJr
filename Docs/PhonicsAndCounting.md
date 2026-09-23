@@ -33,7 +33,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | --- | --- | --- |
 | Number Picnic | Count twelve kinds of fruit; select a numeral supported by dots in rows of five | 30 rounds: three shuffled passes through 1–10, with no repeats within a pass or across its boundary |
 | Touch & Count | Find the requested animal among mixed animal pictures; only matching taps count, with numbered checks and Ruth hints | 20 rounds: four 3×3 (1–9), six 4×4 (1–16), ten 5×5 (1–25); distinct target counts and animals within each stage |
-| Picnic Share | Share one piece of fruit per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
+| Picnic Share | Compare what we have with what we need, then choose how many to add or take away from three numbers | 10 random, distinct equations; five addition and five subtraction, totals within 10; advances after Ruth explains the answer |
 | Sleepy Sheep | Tuck each animal in once and count the remaining flock down to zero | 18 levels, 2–10 animals |
 | Treasure Trail | Choose the pile with more or less treasure; equal-size coins in rows of ten, numerals and Ruth quantity buttons | 46 shuffled comparisons covering every number 10–100; tens first, then nearby quantities |
 | Which Has More? | Compare aligned groups of twelve rotating fruits; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |

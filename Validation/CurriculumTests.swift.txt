@@ -68,7 +68,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 20, .sheep: 18, .trail: 46, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .sheep: 18, .trail: 46, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -86,16 +86,6 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertTrue(play.lesson.choices.contains(n))
                 play.advance(); XCTAssertEqual(play.round, index)
                 switch kind {
-                case .share:
-                    play.serve(-1); XCTAssertTrue(play.servings.isEmpty)
-                    for plate in (0..<n).reversed() {
-                        for amount in 1...play.lesson.amount {
-                            play.serve(plate); record(play)
-                            XCTAssertEqual(play.servings[plate], amount)
-                        }
-                        play.serve(plate); record(play)
-                        XCTAssertEqual(play.servings[plate], play.lesson.amount)
-                    }
                 case .sheep:
                     play.tuck(-1); XCTAssertTrue(play.marked.isEmpty)
                     for sheep in (0..<n).reversed() {
@@ -103,7 +93,7 @@ final class CurriculumTests: XCTestCase {
                         let before = play.marked.count
                         play.tuck(sheep); XCTAssertEqual(play.marked.count, before)
                     }
-                case .trail, .more, .tickets, .dots:
+                case .share, .trail, .more, .tickets, .dots:
                     for wrong in play.lesson.choices where wrong != n {
                         play.choose(wrong); record(play); XCTAssertFalse(play.solved)
                     }
@@ -136,7 +126,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.serve(0); play.changeBlocks(1)
+                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.changeBlocks(1)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -169,8 +159,17 @@ final class CurriculumTests: XCTestCase {
                     }
                 }
                 if kind == .share {
-                    XCTAssertTrue(levels.prefix(10).allSatisfy { $0.amount == 1 })
-                    XCTAssertTrue(levels.suffix(10).allSatisfy { $0.amount == 2 })
+                    XCTAssertEqual(levels.count, 10)
+                    XCTAssertEqual(levels.filter(\.picnicAdds).count, 5)
+                    XCTAssertEqual(Set(levels.map { "\($0.start):\($0.goal)" }).count, 10)
+                    XCTAssertEqual(Set(levels.map { $0.food.id }).count, 10)
+                    for lesson in levels {
+                        XCTAssertEqual(lesson.target, abs(lesson.goal - lesson.start))
+                        XCTAssertEqual(lesson.choices.count, 3)
+                        XCTAssertTrue((1...10).contains(lesson.start))
+                        XCTAssertTrue((1...10).contains(lesson.goal))
+                        XCTAssertTrue(lesson.choices.allSatisfy { (0...10).contains(lesson.picnicAdds ? lesson.start + $0 : lesson.start - $0) })
+                    }
                 }
                 if kind == .more {
                     XCTAssertTrue(levels.prefix(10).allSatisfy { !$0.fewer })
@@ -183,6 +182,31 @@ final class CurriculumTests: XCTestCase {
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 10...100 : 1...12).contains($0) }) }
             }
         }
+    }
+
+    @MainActor
+    func testPicnicShareEquationBankAndRuth() async {
+        var equations: Set<String> = []
+        for start in 1...10 {
+            for goal in 1...10 where (start <= 7 && goal > start) || (start >= 3 && goal < start) {
+                let lesson = CountingLesson.picnic(start: start, goal: goal)
+                XCTAssertEqual(lesson.target, abs(goal - start))
+                XCTAssertEqual(Set(lesson.choices).count, 3)
+                XCTAssertTrue(lesson.choices.contains(lesson.target))
+                for text in [lesson.picnicPrompt, lesson.picnicSuccess] {
+                    XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                    XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+                }
+            }
+        }
+        let play = CountingPlay(kind: .share)
+        for _ in 0..<100 {
+            equations.insert(play.levels.map { "\($0.start):\($0.goal)" }.joined(separator: ","))
+            play.choose(-1); XCTAssertFalse(play.solved)
+            play.choose(play.target); XCTAssertTrue(play.solved)
+            play.replay(); XCTAssertEqual(play.round, 0); XCTAssertFalse(play.solved)
+        }
+        XCTAssertGreaterThan(equations.count, 1)
     }
 
     func testTouchCountGrowingGroupsAndOneToOneCounting() {

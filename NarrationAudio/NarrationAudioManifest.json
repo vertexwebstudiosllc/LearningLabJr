@@ -82,6 +82,78 @@
       "category": "counting"
     },
     {
+      "text": "1 plus 1 makes 2. Just right for our picnic!",
+      "file": "llj-a4761068e88d5ca80fb3fcde.mp3",
+      "spokenText": "1 plus 1 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 2 makes 3. Just right for our picnic!",
+      "file": "llj-f08dd68a4a982b9886db8644.mp3",
+      "spokenText": "1 plus 2 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 3 makes 4. Just right for our picnic!",
+      "file": "llj-e15e18808818c0aeb07ff0f4.mp3",
+      "spokenText": "1 plus 3 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 4 makes 5. Just right for our picnic!",
+      "file": "llj-ef155c4a0cb55a2bb1b22d24.mp3",
+      "spokenText": "1 plus 4 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 5 makes 6. Just right for our picnic!",
+      "file": "llj-e2dbdbfb9011e8f5e49644f1.mp3",
+      "spokenText": "1 plus 5 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 6 makes 7. Just right for our picnic!",
+      "file": "llj-112c1250d175bda9596d324e.mp3",
+      "spokenText": "1 plus 6 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 7 makes 8. Just right for our picnic!",
+      "file": "llj-3ab2f2a850b61f502e2c4df5.mp3",
+      "spokenText": "1 plus 7 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 8 makes 9. Just right for our picnic!",
+      "file": "llj-43d757f776e23c4592710ae6.mp3",
+      "spokenText": "1 plus 8 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "1 plus 9 makes 10. Just right for our picnic!",
+      "file": "llj-3c55876a878cce442e349dee.mp3",
+      "spokenText": "1 plus 9 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "1 sheep is still awake.",
       "file": "llj-59198364f0f6339c574dd865.mp3",
       "spokenText": "1 sheep is still awake.",
@@ -229,6 +301,78 @@
       "text": "10 flowers",
       "file": "llj-ac7d8550cca9fb72d4315e54.mp3",
       "spokenText": "10 flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 1 makes 9. Just right for our picnic!",
+      "file": "llj-5e11c78898db487b687b177e.mp3",
+      "spokenText": "10 minus 1 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 2 makes 8. Just right for our picnic!",
+      "file": "llj-2da67840cca0aeb17955a8b8.mp3",
+      "spokenText": "10 minus 2 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 3 makes 7. Just right for our picnic!",
+      "file": "llj-6504bb42c58246e3fab239e3.mp3",
+      "spokenText": "10 minus 3 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 4 makes 6. Just right for our picnic!",
+      "file": "llj-dc4ade584700f67f284cfbbb.mp3",
+      "spokenText": "10 minus 4 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 5 makes 5. Just right for our picnic!",
+      "file": "llj-5bacba3576c0c1b867424bfc.mp3",
+      "spokenText": "10 minus 5 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 6 makes 4. Just right for our picnic!",
+      "file": "llj-4d391677b00d1338a888e076.mp3",
+      "spokenText": "10 minus 6 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 7 makes 3. Just right for our picnic!",
+      "file": "llj-2c29bd29e6d377cf02e03828.mp3",
+      "spokenText": "10 minus 7 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 8 makes 2. Just right for our picnic!",
+      "file": "llj-6cb8a131b7bf972e377203a1.mp3",
+      "spokenText": "10 minus 8 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "10 minus 9 makes 1. Just right for our picnic!",
+      "file": "llj-f68009c9c80a56ccb2fec7d6.mp3",
+      "spokenText": "10 minus 9 makes 1. Just right for our picnic!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -1410,6 +1554,70 @@
       "category": "counting"
     },
     {
+      "text": "2 plus 1 makes 3. Just right for our picnic!",
+      "file": "llj-57ee6e8bef193bd73f68d653.mp3",
+      "spokenText": "2 plus 1 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 2 makes 4. Just right for our picnic!",
+      "file": "llj-903c3d0ca5cd458d19c492d8.mp3",
+      "spokenText": "2 plus 2 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 3 makes 5. Just right for our picnic!",
+      "file": "llj-811c241a734d0cf3077fd3bf.mp3",
+      "spokenText": "2 plus 3 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 4 makes 6. Just right for our picnic!",
+      "file": "llj-4112c4249d1028900078a27b.mp3",
+      "spokenText": "2 plus 4 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 5 makes 7. Just right for our picnic!",
+      "file": "llj-e4ee9af70588136112b33654.mp3",
+      "spokenText": "2 plus 5 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 6 makes 8. Just right for our picnic!",
+      "file": "llj-ccf6846cc08e4652b2dac57d.mp3",
+      "spokenText": "2 plus 6 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 7 makes 9. Just right for our picnic!",
+      "file": "llj-136eae630e17f3f53ba19a57.mp3",
+      "spokenText": "2 plus 7 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "2 plus 8 makes 10. Just right for our picnic!",
+      "file": "llj-1a4239fe9605de4c55309e16.mp3",
+      "spokenText": "2 plus 8 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "2 sheep are still awake.",
       "file": "llj-8c89927e5c352f09b1d4065d.mp3",
       "spokenText": "2 sheep are still awake.",
@@ -2274,6 +2482,78 @@
       "category": "counting"
     },
     {
+      "text": "3 minus 1 makes 2. Just right for our picnic!",
+      "file": "llj-07c128f43d5de7aef80221d9.mp3",
+      "spokenText": "3 minus 1 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 minus 2 makes 1. Just right for our picnic!",
+      "file": "llj-7086c357b5ebd7f8dbe00ce1.mp3",
+      "spokenText": "3 minus 2 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 1 makes 4. Just right for our picnic!",
+      "file": "llj-044ac74711244f89c6266634.mp3",
+      "spokenText": "3 plus 1 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 2 makes 5. Just right for our picnic!",
+      "file": "llj-94000a96677b2f35298f1d09.mp3",
+      "spokenText": "3 plus 2 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 3 makes 6. Just right for our picnic!",
+      "file": "llj-b3eccd6267236864f704d39d.mp3",
+      "spokenText": "3 plus 3 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 4 makes 7. Just right for our picnic!",
+      "file": "llj-f17bcacb16f08912d723837b.mp3",
+      "spokenText": "3 plus 4 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 5 makes 8. Just right for our picnic!",
+      "file": "llj-dd49f650b25fd7c5db89c3f3.mp3",
+      "spokenText": "3 plus 5 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 6 makes 9. Just right for our picnic!",
+      "file": "llj-2942b0b615164fb0d0c09580.mp3",
+      "spokenText": "3 plus 6 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "3 plus 7 makes 10. Just right for our picnic!",
+      "file": "llj-7f589781a6db436f5731e0ee.mp3",
+      "spokenText": "3 plus 7 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3 sheep are still awake.",
       "file": "llj-42ba89eef9a6ad6c7ce9e7e8.mp3",
       "spokenText": "3 sheep are still awake.",
@@ -2517,6 +2797,78 @@
       "text": "4 hops! The frog reached the pond.",
       "file": "llj-7d85095d477fac94c2f8a860.mp3",
       "spokenText": "4 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 minus 1 makes 3. Just right for our picnic!",
+      "file": "llj-13f785a7934dd82dd7810e93.mp3",
+      "spokenText": "4 minus 1 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 minus 2 makes 2. Just right for our picnic!",
+      "file": "llj-66c84c6c3a08e6d6e6262756.mp3",
+      "spokenText": "4 minus 2 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 minus 3 makes 1. Just right for our picnic!",
+      "file": "llj-552fd5d5c6917648854483f1.mp3",
+      "spokenText": "4 minus 3 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 1 makes 5. Just right for our picnic!",
+      "file": "llj-f87ad66b5e1f7ee04f93044d.mp3",
+      "spokenText": "4 plus 1 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 2 makes 6. Just right for our picnic!",
+      "file": "llj-26079b7c7203131bd94f9dfc.mp3",
+      "spokenText": "4 plus 2 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 3 makes 7. Just right for our picnic!",
+      "file": "llj-412ed74d55ff0b2d2e13a34d.mp3",
+      "spokenText": "4 plus 3 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 4 makes 8. Just right for our picnic!",
+      "file": "llj-ef7d728c8bc36039075514fd.mp3",
+      "spokenText": "4 plus 4 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 5 makes 9. Just right for our picnic!",
+      "file": "llj-a76fcc9b6d3b89ead2829c12.mp3",
+      "spokenText": "4 plus 5 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "4 plus 6 makes 10. Just right for our picnic!",
+      "file": "llj-25e072ba0e7b10ecba78f69b.mp3",
+      "spokenText": "4 plus 6 makes 10. Just right for our picnic!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2770,6 +3122,78 @@
       "category": "counting"
     },
     {
+      "text": "5 minus 1 makes 4. Just right for our picnic!",
+      "file": "llj-a657e6f2616dd0edd2887332.mp3",
+      "spokenText": "5 minus 1 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 minus 2 makes 3. Just right for our picnic!",
+      "file": "llj-66c5388b1d30ddf143d819f8.mp3",
+      "spokenText": "5 minus 2 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 minus 3 makes 2. Just right for our picnic!",
+      "file": "llj-f8cfcf5503d4cb654eedd15a.mp3",
+      "spokenText": "5 minus 3 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 minus 4 makes 1. Just right for our picnic!",
+      "file": "llj-6a5bd758bbc55c9302916ccb.mp3",
+      "spokenText": "5 minus 4 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 plus 1 makes 6. Just right for our picnic!",
+      "file": "llj-e6e5cb75ba847f0229c8e407.mp3",
+      "spokenText": "5 plus 1 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 plus 2 makes 7. Just right for our picnic!",
+      "file": "llj-c5f9c54814bdb2764b14b709.mp3",
+      "spokenText": "5 plus 2 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 plus 3 makes 8. Just right for our picnic!",
+      "file": "llj-95b7409a4ca7fc03670dcf41.mp3",
+      "spokenText": "5 plus 3 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 plus 4 makes 9. Just right for our picnic!",
+      "file": "llj-4abe58ac1ec5bd39566358ad.mp3",
+      "spokenText": "5 plus 4 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 plus 5 makes 10. Just right for our picnic!",
+      "file": "llj-38aa6eb2e227cda69688fa1f.mp3",
+      "spokenText": "5 plus 5 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "5 sheep are still awake.",
       "file": "llj-90095bd278e1277c219fe73c.mp3",
       "spokenText": "5 sheep are still awake.",
@@ -3018,6 +3442,78 @@
       "category": "counting"
     },
     {
+      "text": "6 minus 1 makes 5. Just right for our picnic!",
+      "file": "llj-efa5756114d8b7f3fb380cd0.mp3",
+      "spokenText": "6 minus 1 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 minus 2 makes 4. Just right for our picnic!",
+      "file": "llj-bf4bddf24f96a4e46d4bb54c.mp3",
+      "spokenText": "6 minus 2 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 minus 3 makes 3. Just right for our picnic!",
+      "file": "llj-d2c2af9571fa3d9c5b2d5bff.mp3",
+      "spokenText": "6 minus 3 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 minus 4 makes 2. Just right for our picnic!",
+      "file": "llj-46584ee69f6f4c795640f003.mp3",
+      "spokenText": "6 minus 4 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 minus 5 makes 1. Just right for our picnic!",
+      "file": "llj-4630dae8b8da1ce4470b0675.mp3",
+      "spokenText": "6 minus 5 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 plus 1 makes 7. Just right for our picnic!",
+      "file": "llj-cd7cb2d802609c6017dee0a5.mp3",
+      "spokenText": "6 plus 1 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 plus 2 makes 8. Just right for our picnic!",
+      "file": "llj-14f62d641d27f5cb118a4706.mp3",
+      "spokenText": "6 plus 2 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 plus 3 makes 9. Just right for our picnic!",
+      "file": "llj-eb4bc773946412fa99cb6dbd.mp3",
+      "spokenText": "6 plus 3 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "6 plus 4 makes 10. Just right for our picnic!",
+      "file": "llj-fd53321c7f9f011b1d456025.mp3",
+      "spokenText": "6 plus 4 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6 sheep are still awake.",
       "file": "llj-c1e637275427220b2abacd89.mp3",
       "spokenText": "6 sheep are still awake.",
@@ -3258,6 +3754,78 @@
       "category": "counting"
     },
     {
+      "text": "7 minus 1 makes 6. Just right for our picnic!",
+      "file": "llj-f80cf141890e75c6e27e8d14.mp3",
+      "spokenText": "7 minus 1 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 minus 2 makes 5. Just right for our picnic!",
+      "file": "llj-63051dcecf786f43b568e0ea.mp3",
+      "spokenText": "7 minus 2 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 minus 3 makes 4. Just right for our picnic!",
+      "file": "llj-c83eec372b334c536cb12f03.mp3",
+      "spokenText": "7 minus 3 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 minus 4 makes 3. Just right for our picnic!",
+      "file": "llj-6e22707378bc0bb7aaa0fe60.mp3",
+      "spokenText": "7 minus 4 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 minus 5 makes 2. Just right for our picnic!",
+      "file": "llj-87a55ed4d4ba7e3db6e49525.mp3",
+      "spokenText": "7 minus 5 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 minus 6 makes 1. Just right for our picnic!",
+      "file": "llj-54808ba0229d30884706b069.mp3",
+      "spokenText": "7 minus 6 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 plus 1 makes 8. Just right for our picnic!",
+      "file": "llj-0cdd40a118a5c6ab72be804c.mp3",
+      "spokenText": "7 plus 1 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 plus 2 makes 9. Just right for our picnic!",
+      "file": "llj-fbb970c7d20c9f0dba73b541.mp3",
+      "spokenText": "7 plus 2 makes 9. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "7 plus 3 makes 10. Just right for our picnic!",
+      "file": "llj-8323a3d8ef0dc2d6e9bf8ee8.mp3",
+      "spokenText": "7 plus 3 makes 10. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7 sheep are still awake.",
       "file": "llj-91f4e3f961ec4a7edfce6f80.mp3",
       "spokenText": "7 sheep are still awake.",
@@ -3490,6 +4058,62 @@
       "category": "counting"
     },
     {
+      "text": "8 minus 1 makes 7. Just right for our picnic!",
+      "file": "llj-715dad99461668530e1ab734.mp3",
+      "spokenText": "8 minus 1 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 2 makes 6. Just right for our picnic!",
+      "file": "llj-b1b2a83c9f3a8cfe2dfe896c.mp3",
+      "spokenText": "8 minus 2 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 3 makes 5. Just right for our picnic!",
+      "file": "llj-40f13922c051bcd9140c809d.mp3",
+      "spokenText": "8 minus 3 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 4 makes 4. Just right for our picnic!",
+      "file": "llj-e4107aa6e613dbc854e856df.mp3",
+      "spokenText": "8 minus 4 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 5 makes 3. Just right for our picnic!",
+      "file": "llj-e0018bc53527171524198aad.mp3",
+      "spokenText": "8 minus 5 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 6 makes 2. Just right for our picnic!",
+      "file": "llj-cc3363744998a94d69330f54.mp3",
+      "spokenText": "8 minus 6 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 minus 7 makes 1. Just right for our picnic!",
+      "file": "llj-d6cedf285d84dcfddc3215df.mp3",
+      "spokenText": "8 minus 7 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "8 sheep are still awake.",
       "file": "llj-c65fab29a5f41b6ad1e53dc9.mp3",
       "spokenText": "8 sheep are still awake.",
@@ -3717,6 +4341,70 @@
       "text": "9 hops! The frog reached the pond.",
       "file": "llj-55209b4b9c1fb628df7d084e.mp3",
       "spokenText": "9 hops! The frog reached the pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 1 makes 8. Just right for our picnic!",
+      "file": "llj-c8c6796b06dbcb82b7768f28.mp3",
+      "spokenText": "9 minus 1 makes 8. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 2 makes 7. Just right for our picnic!",
+      "file": "llj-1e5ea2a0af7cccf3e43b91ff.mp3",
+      "spokenText": "9 minus 2 makes 7. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 3 makes 6. Just right for our picnic!",
+      "file": "llj-f90835b2134e8b3ed502b67c.mp3",
+      "spokenText": "9 minus 3 makes 6. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 4 makes 5. Just right for our picnic!",
+      "file": "llj-3c49e780131f78be47e35289.mp3",
+      "spokenText": "9 minus 4 makes 5. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 5 makes 4. Just right for our picnic!",
+      "file": "llj-cca122f779a24c27c777d67c.mp3",
+      "spokenText": "9 minus 5 makes 4. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 6 makes 3. Just right for our picnic!",
+      "file": "llj-ffb309889fa45c53d5375e53.mp3",
+      "spokenText": "9 minus 6 makes 3. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 7 makes 2. Just right for our picnic!",
+      "file": "llj-ae36fb2e424f1dab7c5ab988.mp3",
+      "spokenText": "9 minus 7 makes 2. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 minus 8 makes 1. Just right for our picnic!",
+      "file": "llj-89366a207202eb7f85e0b16f.mp3",
+      "spokenText": "9 minus 8 makes 1. Just right for our picnic!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -5717,6 +6405,22 @@
       "text": "Count the strawberries. Choose their number.",
       "file": "llj-5322d2fa3e139cf78e6dd725.mp3",
       "spokenText": "Count the strawberries. Choose their number.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count what we have. How many more will make the amount we need?",
+      "file": "llj-d70f06105b1884e364b5b594.mp3",
+      "spokenText": "Count what we have. How many more will make the amount we need?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Count what we have. How many should we take away to leave the amount we need?",
+      "file": "llj-1395e7948bbcc5bd080b233c.mp3",
+      "spokenText": "Count what we have. How many should we take away to leave the amount we need?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -21842,6 +22546,694 @@
       "category": "shapes"
     },
     {
+      "text": "We have 1. We need 10. How many should we add?",
+      "file": "llj-da2c490011420113e66cfd3a.mp3",
+      "spokenText": "We have 1. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 2. How many should we add?",
+      "file": "llj-2d4c1b4e5b4b4d7ad1f51c74.mp3",
+      "spokenText": "We have 1. We need 2. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 3. How many should we add?",
+      "file": "llj-cc700bac75bbd277f7623fc1.mp3",
+      "spokenText": "We have 1. We need 3. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 4. How many should we add?",
+      "file": "llj-dddf7b9105f13e8bd3ee4796.mp3",
+      "spokenText": "We have 1. We need 4. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 5. How many should we add?",
+      "file": "llj-f5bcbbaf8d3231257f7a68b8.mp3",
+      "spokenText": "We have 1. We need 5. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 6. How many should we add?",
+      "file": "llj-7ce93a2e30738b96abc73e28.mp3",
+      "spokenText": "We have 1. We need 6. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 7. How many should we add?",
+      "file": "llj-dfb89543338794eac6867058.mp3",
+      "spokenText": "We have 1. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 8. How many should we add?",
+      "file": "llj-a08db17d94480f0e62e01976.mp3",
+      "spokenText": "We have 1. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 1. We need 9. How many should we add?",
+      "file": "llj-5ea37584b40672c0a3f4fc90.mp3",
+      "spokenText": "We have 1. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 1. How many should we take away?",
+      "file": "llj-6f139a1e17af1b810131b68d.mp3",
+      "spokenText": "We have 10. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 2. How many should we take away?",
+      "file": "llj-af5f00c386cb4f38c7fe36e2.mp3",
+      "spokenText": "We have 10. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 3. How many should we take away?",
+      "file": "llj-210e7ab459d2a2eb0cb7f70f.mp3",
+      "spokenText": "We have 10. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 4. How many should we take away?",
+      "file": "llj-f7031a6a31f22c9254c2d3d0.mp3",
+      "spokenText": "We have 10. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 5. How many should we take away?",
+      "file": "llj-fe37caad339196a0ee49d206.mp3",
+      "spokenText": "We have 10. We need 5. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 6. How many should we take away?",
+      "file": "llj-7cfe1b73330b29472de37451.mp3",
+      "spokenText": "We have 10. We need 6. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 7. How many should we take away?",
+      "file": "llj-cfb70e95d0b56adf73ff60e2.mp3",
+      "spokenText": "We have 10. We need 7. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 8. How many should we take away?",
+      "file": "llj-3a57249dac23c9f9a693027c.mp3",
+      "spokenText": "We have 10. We need 8. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 10. We need 9. How many should we take away?",
+      "file": "llj-18bb1c851a19905baab3c3a6.mp3",
+      "spokenText": "We have 10. We need 9. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 10. How many should we add?",
+      "file": "llj-974d8599b5f296ef7167bfb4.mp3",
+      "spokenText": "We have 2. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 3. How many should we add?",
+      "file": "llj-fa6ab3601b33f6240abff603.mp3",
+      "spokenText": "We have 2. We need 3. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 4. How many should we add?",
+      "file": "llj-21ab7fcdf75c6a76a1966b78.mp3",
+      "spokenText": "We have 2. We need 4. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 5. How many should we add?",
+      "file": "llj-198ed5e3300ffc52a8ff931e.mp3",
+      "spokenText": "We have 2. We need 5. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 6. How many should we add?",
+      "file": "llj-86059a8a238efd5afea382f9.mp3",
+      "spokenText": "We have 2. We need 6. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 7. How many should we add?",
+      "file": "llj-744ae3dd31ea59c411a1a357.mp3",
+      "spokenText": "We have 2. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 8. How many should we add?",
+      "file": "llj-c240c35e7bb233df0d2daaea.mp3",
+      "spokenText": "We have 2. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 2. We need 9. How many should we add?",
+      "file": "llj-d2aaf128fbc55b198714f4ec.mp3",
+      "spokenText": "We have 2. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 1. How many should we take away?",
+      "file": "llj-be94a49d35a1fed4becdacba.mp3",
+      "spokenText": "We have 3. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 10. How many should we add?",
+      "file": "llj-498d83576230389e461733c0.mp3",
+      "spokenText": "We have 3. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 2. How many should we take away?",
+      "file": "llj-5fa9f025b38a2db783d2083c.mp3",
+      "spokenText": "We have 3. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 4. How many should we add?",
+      "file": "llj-5bcee6ec508c35dd90972432.mp3",
+      "spokenText": "We have 3. We need 4. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 5. How many should we add?",
+      "file": "llj-c8d2b011dc6b6802683edbc5.mp3",
+      "spokenText": "We have 3. We need 5. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 6. How many should we add?",
+      "file": "llj-571193d6926dfdeb1fe49116.mp3",
+      "spokenText": "We have 3. We need 6. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 7. How many should we add?",
+      "file": "llj-29559b9c93f261028deb9af5.mp3",
+      "spokenText": "We have 3. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 8. How many should we add?",
+      "file": "llj-d086a844b7782b4e9c66d320.mp3",
+      "spokenText": "We have 3. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 3. We need 9. How many should we add?",
+      "file": "llj-8b58d1e569b0ce4211ac6f9b.mp3",
+      "spokenText": "We have 3. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 1. How many should we take away?",
+      "file": "llj-2202643a09432622dfad07c6.mp3",
+      "spokenText": "We have 4. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 10. How many should we add?",
+      "file": "llj-7bf954f42656d2d86e0776ac.mp3",
+      "spokenText": "We have 4. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 2. How many should we take away?",
+      "file": "llj-34e1d79d76c7be95131d921b.mp3",
+      "spokenText": "We have 4. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 3. How many should we take away?",
+      "file": "llj-71833bfb6636e2e10b17dbfb.mp3",
+      "spokenText": "We have 4. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 5. How many should we add?",
+      "file": "llj-98ee5f1babcf5d3066e15cae.mp3",
+      "spokenText": "We have 4. We need 5. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 6. How many should we add?",
+      "file": "llj-179ba2fd7b395a5648283765.mp3",
+      "spokenText": "We have 4. We need 6. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 7. How many should we add?",
+      "file": "llj-729eaa0b08295d2923bc6338.mp3",
+      "spokenText": "We have 4. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 8. How many should we add?",
+      "file": "llj-745c0e37810acbe2b6b69f71.mp3",
+      "spokenText": "We have 4. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 4. We need 9. How many should we add?",
+      "file": "llj-f38f771239074fd36814a972.mp3",
+      "spokenText": "We have 4. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 1. How many should we take away?",
+      "file": "llj-5b9b07dabee5d9f70218de02.mp3",
+      "spokenText": "We have 5. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 10. How many should we add?",
+      "file": "llj-7383da8fd0b16291a304d808.mp3",
+      "spokenText": "We have 5. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 2. How many should we take away?",
+      "file": "llj-ff5725991ce341e8cc8e0af0.mp3",
+      "spokenText": "We have 5. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 3. How many should we take away?",
+      "file": "llj-ff0aac9102bfbc4ef7180ded.mp3",
+      "spokenText": "We have 5. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 4. How many should we take away?",
+      "file": "llj-3f4407d4f99686a4dd2ea067.mp3",
+      "spokenText": "We have 5. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 6. How many should we add?",
+      "file": "llj-20eadf997c78b7789e9c7f42.mp3",
+      "spokenText": "We have 5. We need 6. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 7. How many should we add?",
+      "file": "llj-b50c1aaec3ba87e38ae0b4bf.mp3",
+      "spokenText": "We have 5. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 8. How many should we add?",
+      "file": "llj-814b26eb53154074274e390a.mp3",
+      "spokenText": "We have 5. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 5. We need 9. How many should we add?",
+      "file": "llj-f3375d6bf29be43c9c98943b.mp3",
+      "spokenText": "We have 5. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 1. How many should we take away?",
+      "file": "llj-09299f4fef4c3147848dc672.mp3",
+      "spokenText": "We have 6. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 10. How many should we add?",
+      "file": "llj-3beb5ae45ce51698dea758c6.mp3",
+      "spokenText": "We have 6. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 2. How many should we take away?",
+      "file": "llj-767cd3476534850d8fde5699.mp3",
+      "spokenText": "We have 6. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 3. How many should we take away?",
+      "file": "llj-ffa2727279d9a90904c931cd.mp3",
+      "spokenText": "We have 6. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 4. How many should we take away?",
+      "file": "llj-7f5a45e55b08778a58ed064c.mp3",
+      "spokenText": "We have 6. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 5. How many should we take away?",
+      "file": "llj-638ba5b72c2fe53ab5b067b5.mp3",
+      "spokenText": "We have 6. We need 5. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 7. How many should we add?",
+      "file": "llj-08e4602c7275e0314fa60dcf.mp3",
+      "spokenText": "We have 6. We need 7. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 8. How many should we add?",
+      "file": "llj-7e84c6013e73e3b8fdb6078c.mp3",
+      "spokenText": "We have 6. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 6. We need 9. How many should we add?",
+      "file": "llj-19fff2a13a3186eb4e9b488d.mp3",
+      "spokenText": "We have 6. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 1. How many should we take away?",
+      "file": "llj-e167de75c19d5f0a9caf60bd.mp3",
+      "spokenText": "We have 7. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 10. How many should we add?",
+      "file": "llj-c866375ab143147cce0a14c8.mp3",
+      "spokenText": "We have 7. We need 10. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 2. How many should we take away?",
+      "file": "llj-cd9141e28383e41e28539ade.mp3",
+      "spokenText": "We have 7. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 3. How many should we take away?",
+      "file": "llj-e3bfa1360b0c385682b2aeeb.mp3",
+      "spokenText": "We have 7. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 4. How many should we take away?",
+      "file": "llj-1c3d4ea1593e203260ee3b76.mp3",
+      "spokenText": "We have 7. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 5. How many should we take away?",
+      "file": "llj-987cf392802d64d6a2a31403.mp3",
+      "spokenText": "We have 7. We need 5. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 6. How many should we take away?",
+      "file": "llj-2f5c94960fd1a66747096182.mp3",
+      "spokenText": "We have 7. We need 6. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 8. How many should we add?",
+      "file": "llj-ecf2ce2ac564734a730472a0.mp3",
+      "spokenText": "We have 7. We need 8. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 7. We need 9. How many should we add?",
+      "file": "llj-acffe76ea7eee825c29cda8b.mp3",
+      "spokenText": "We have 7. We need 9. How many should we add?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 1. How many should we take away?",
+      "file": "llj-f6fe9f79ab1809f30b35a775.mp3",
+      "spokenText": "We have 8. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 2. How many should we take away?",
+      "file": "llj-5d2491be0dec280231123294.mp3",
+      "spokenText": "We have 8. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 3. How many should we take away?",
+      "file": "llj-590a27789f0cab2ec825533c.mp3",
+      "spokenText": "We have 8. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 4. How many should we take away?",
+      "file": "llj-2546ad969a65f8d66481f073.mp3",
+      "spokenText": "We have 8. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 5. How many should we take away?",
+      "file": "llj-200c11543008fbaead5f8372.mp3",
+      "spokenText": "We have 8. We need 5. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 6. How many should we take away?",
+      "file": "llj-fc8210c78539965cfe0b91cc.mp3",
+      "spokenText": "We have 8. We need 6. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 8. We need 7. How many should we take away?",
+      "file": "llj-f8af265053ee3e62aba9818b.mp3",
+      "spokenText": "We have 8. We need 7. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 1. How many should we take away?",
+      "file": "llj-b51036407516f626e43337bd.mp3",
+      "spokenText": "We have 9. We need 1. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 2. How many should we take away?",
+      "file": "llj-8eb3739ee3f424353fafad58.mp3",
+      "spokenText": "We have 9. We need 2. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 3. How many should we take away?",
+      "file": "llj-4053dd006f26f7332d782724.mp3",
+      "spokenText": "We have 9. We need 3. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 4. How many should we take away?",
+      "file": "llj-5589c58af81efdedf483e683.mp3",
+      "spokenText": "We have 9. We need 4. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 5. How many should we take away?",
+      "file": "llj-ce9673a9d2058e630f5781c3.mp3",
+      "spokenText": "We have 9. We need 5. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 6. How many should we take away?",
+      "file": "llj-a1fa096b39397c939a4574c4.mp3",
+      "spokenText": "We have 9. We need 6. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 7. How many should we take away?",
+      "file": "llj-1bba4f70490fbcac10cda906.mp3",
+      "spokenText": "We have 9. We need 7. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "We have 9. We need 8. How many should we take away?",
+      "file": "llj-1a604f39f25805c840d7769b.mp3",
+      "spokenText": "We have 9. We need 8. How many should we take away?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "We landed! Tap the astronaut to explore.",
       "file": "llj-7c86838b2f1d2c844d952c0f.mp3",
       "spokenText": "We landed! Tap the astronaut to explore.",
@@ -25877,6 +27269,14 @@
       "text": "You shared the picnic fairly. Every friend got the same amount!",
       "file": "llj-01dfe3fcd1ee36edcc10b52a.mp3",
       "spokenText": "You shared the picnic fairly. Every friend got the same amount!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You solved ten picnic puzzles with adding and taking away. What a helpful picnic partner!",
+      "file": "llj-826b9909a9acad1b33c46a4c.mp3",
+      "spokenText": "You solved ten picnic puzzles with adding and taking away. What a helpful picnic partner!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

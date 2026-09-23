@@ -1,0 +1,877 @@
+[
+  {
+    "text": "You solved ten picnic puzzles with adding and taking away. What a helpful picnic partner!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count what we have. How many more will make the amount we need?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Count what we have. How many should we take away to leave the amount we need?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 2. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 1 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 3. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 2 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 4. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 3 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 5. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 4 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 6. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 5 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 6 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 7 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 8 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 1. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "1 plus 9 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 3. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 1 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 4. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 2 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 5. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 3 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 6. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 4 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 5 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 6 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 7 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 2. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "2 plus 8 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 minus 2 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 minus 1 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 4. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 1 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 5. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 2 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 6. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 3 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 4 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 5 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 6 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 3. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "3 plus 7 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 minus 3 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 minus 2 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 minus 1 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 5. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 1 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 6. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 2 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 3 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 4 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 5 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 4. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "4 plus 6 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 minus 4 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 minus 3 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 minus 2 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 minus 1 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 6. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 1 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 2 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 3 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 4 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 5 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 minus 5 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 minus 4 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 minus 3 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 minus 2 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 5. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 minus 1 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 7. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 plus 1 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 plus 2 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 plus 3 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 6. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "6 plus 4 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 6 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 5 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 4 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 3 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 5. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 2 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 6. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 minus 1 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 8. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 plus 1 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 9. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 plus 2 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 7. We need 10. How many should we add?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "7 plus 3 makes 10. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 7 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 6 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 5 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 4 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 5. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 3 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 6. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 2 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 8. We need 7. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "8 minus 1 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 8 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 7 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 6 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 5 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 5. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 4 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 6. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 3 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 7. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 2 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 9. We need 8. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "9 minus 1 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 1. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 9 makes 1. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 2. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 8 makes 2. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 3. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 7 makes 3. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 4. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 6 makes 4. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 5. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 5 makes 5. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 6. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 4 makes 6. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 7. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 3 makes 7. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 8. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 2 makes 8. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10. We need 9. How many should we take away?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 minus 1 makes 9. Just right for our picnic!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]
