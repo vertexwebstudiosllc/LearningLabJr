@@ -1,0 +1,117 @@
+[
+  {
+    "text": "You counted 1 orange!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 oranges!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 strawberry!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 strawberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 pear!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 pears!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 peach!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 peaches!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 plum!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 plums!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 lemon!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 lemons!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 lime!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 limes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 mango!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 mangoes!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 pineapple!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 pineapples!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 blueberry!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 blueberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 1 raspberry!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You counted 2 raspberries!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "What a picnic! You counted groups from one all the way to ten!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

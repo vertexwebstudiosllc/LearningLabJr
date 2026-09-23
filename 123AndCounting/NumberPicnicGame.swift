@@ -27,15 +27,18 @@ struct NumberPicnicRound {
     let food: NumberPicnicFood
     let choices: [Int]
     var key: String { "\(count):\(food.id)" }
-    var success: String { "You counted \(count) \(food.plural)!" }
-    static let completion = "What a picnic! You counted groups from three all the way to ten!"
+    var success: String { "You counted \(count) \(count == 1 ? food.id : food.plural)!" }
+    static let completion = "What a picnic! You counted groups from one all the way to ten!"
     static func session() -> [Self] {
         var rounds: [Self] = []
-        let foods = countingPictureCycle(NumberPicnicFood.bank, count: 24)
-        for index in 0..<24 {
-            let count = 3 + index / 3
-            let alternatives = (max(1, count - 2)...min(12, count + 2)).filter { $0 != count }.shuffled().prefix(2)
-            rounds.append(Self(count: count, food: foods[index], choices: ([count] + alternatives).shuffled()))
+        let foods = countingPictureCycle(NumberPicnicFood.bank, count: 30)
+        for _ in 0..<3 {
+            var counts = Array(1...10).shuffled()
+            if counts.first == rounds.last?.count { counts.swapAt(0, 1) }
+            for count in counts {
+                let alternatives = (max(1, count - 2)...min(10, count + 2)).filter { $0 != count }.shuffled().prefix(2)
+                rounds.append(Self(count: count, food: foods[rounds.count], choices: ([count] + alternatives).shuffled()))
+            }
         }
         return rounds
     }

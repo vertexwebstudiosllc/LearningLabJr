@@ -19306,6 +19306,14 @@
       "category": "shapes"
     },
     {
+      "text": "What a picnic! You counted groups from one all the way to ten!",
+      "file": "llj-6c6a223fa20c29a351e6f08c.mp3",
+      "spokenText": "What a picnic! You counted groups from one all the way to ten!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "What a picnic! You counted groups from three all the way to ten!",
       "file": "llj-3d3f5782de15eeed0290b020.mp3",
       "spokenText": "What a picnic! You counted groups from three all the way to ten!",
@@ -20922,6 +20930,94 @@
       "category": "counting"
     },
     {
+      "text": "You counted 1 blueberry!",
+      "file": "llj-43e782b921ac05e6c1941f87.mp3",
+      "spokenText": "You counted 1 blueberry!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 lemon!",
+      "file": "llj-5252b7a297cb563577a13272.mp3",
+      "spokenText": "You counted 1 lemon!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 lime!",
+      "file": "llj-258bf6c17fabad66bef9402d.mp3",
+      "spokenText": "You counted 1 lime!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 mango!",
+      "file": "llj-131e45cdb05282efcbd8bbff.mp3",
+      "spokenText": "You counted 1 mango!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 orange!",
+      "file": "llj-bf1e7ed72d17f68206cd6f8b.mp3",
+      "spokenText": "You counted 1 orange!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 peach!",
+      "file": "llj-db5b3be192fe4654aa340db7.mp3",
+      "spokenText": "You counted 1 peach!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 pear!",
+      "file": "llj-dc95b0ab53a36acaaa80e80f.mp3",
+      "spokenText": "You counted 1 pear!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 pineapple!",
+      "file": "llj-f84e93c9b18e6eea40732138.mp3",
+      "spokenText": "You counted 1 pineapple!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 plum!",
+      "file": "llj-d6b6f0521f20c1ef3fe58155.mp3",
+      "spokenText": "You counted 1 plum!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 raspberry!",
+      "file": "llj-a6bceb832c14d89638e0bb7f.mp3",
+      "spokenText": "You counted 1 raspberry!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 1 strawberry!",
+      "file": "llj-030f7a9b21e493b5ffc0aaf3.mp3",
+      "spokenText": "You counted 1 strawberry!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 10 apples!",
       "file": "llj-bfd860145e8738cd325d2abc.mp3",
       "spokenText": "You counted 10 apples!",
@@ -21021,6 +21117,94 @@
       "text": "You counted 2 apples!",
       "file": "llj-0779e608da6ef0a6b9573b33.mp3",
       "spokenText": "You counted 2 apples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 blueberries!",
+      "file": "llj-db439a3aa4f1b19f2559eb18.mp3",
+      "spokenText": "You counted 2 blueberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 lemons!",
+      "file": "llj-c369fca22af4d8297833a93b.mp3",
+      "spokenText": "You counted 2 lemons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 limes!",
+      "file": "llj-a4169915f8fc41954d9b5ed4.mp3",
+      "spokenText": "You counted 2 limes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 mangoes!",
+      "file": "llj-082bd394d100f3b166368a3e.mp3",
+      "spokenText": "You counted 2 mangoes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 oranges!",
+      "file": "llj-ebe102c0976f054ddc1b68a2.mp3",
+      "spokenText": "You counted 2 oranges!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 peaches!",
+      "file": "llj-47668ecc691422c5e5e0b0fa.mp3",
+      "spokenText": "You counted 2 peaches!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 pears!",
+      "file": "llj-b8680953c7f4e1318f738b4e.mp3",
+      "spokenText": "You counted 2 pears!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 pineapples!",
+      "file": "llj-3794e6ff13c58b84078d5b3e.mp3",
+      "spokenText": "You counted 2 pineapples!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 plums!",
+      "file": "llj-47cb2431e3047341b85ceacd.mp3",
+      "spokenText": "You counted 2 plums!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 raspberries!",
+      "file": "llj-4ee78d01e0094d8d677abdaf.mp3",
+      "spokenText": "You counted 2 raspberries!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You counted 2 strawberries!",
+      "file": "llj-fa9d19b88e3a85593420f53b.mp3",
+      "spokenText": "You counted 2 strawberries!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

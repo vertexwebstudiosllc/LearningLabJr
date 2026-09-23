@@ -1002,19 +1002,25 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    func testNumberPicnicTwentyFourGrowingCountsAndReplay() async throws {
+    func testNumberPicnicThreeShuffledCyclesAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]
         try reveal(category, in: app); category.tap()
         let card = app.buttons["activity-card.Number Picnic"]
         try reveal(card, in: app); card.tap()
-        for index in 0..<24 {
+        var seen: Set<Int> = []
+        var previous: Int?
+        for index in 0..<30 {
             let round = app.staticTexts["counting.picnic.round"]
             XCTAssertTrue(round.waitForExistence(timeout: 5))
-            XCTAssertEqual(round.label, "Round \(index + 1) of 24")
+            XCTAssertEqual(round.label, "Round \(index + 1) of 30")
             let fruits = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.fruit.'"))
             let count = fruits.count
-            XCTAssertEqual(count, 3 + index / 3)
+            XCTAssertTrue((1...10).contains(count))
+            XCTAssertNotEqual(previous, count)
+            XCTAssertTrue(seen.insert(count).inserted)
+            previous = count
+            if index % 10 == 9 { XCTAssertEqual(seen, Set(1...10)); seen = [] }
             let answers = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.answer.'")).allElementsBoundByIndex
             XCTAssertEqual(answers.count, 3)
             let next = app.buttons["counting.picnic.next"]
@@ -1028,7 +1034,7 @@ final class ActivitySmokeTests: XCTestCase {
             XCTAssertTrue(next.exists)
             XCTAssertTrue(answers.allSatisfy { !$0.isEnabled })
             XCTAssertTrue(app.staticTexts["counting.picnic.feedback"].label.hasPrefix("You counted \(count) "))
-            if [0, 21].contains(index) {
+            if [1, 10].contains(count) && index < 10 {
                 let shot = XCTAttachment(screenshot: app.screenshot())
                 shot.name = "Number Picnic count \(count)"; shot.lifetime = .keepAlways; add(shot)
             }
@@ -1037,9 +1043,10 @@ final class ActivitySmokeTests: XCTestCase {
         let replay = app.buttons["Play again"]
         try reveal(replay, in: app); replay.tap()
         XCTAssertTrue(app.staticTexts["counting.picnic.round"].waitForExistence(timeout: 5))
-        XCTAssertEqual(app.staticTexts["counting.picnic.round"].label, "Round 1 of 24")
-        XCTAssertEqual(app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.fruit.'")).count, 3)
-        XCTAssertTrue(app.buttons["counting.picnic.answer.3"].isEnabled)
+        XCTAssertEqual(app.staticTexts["counting.picnic.round"].label, "Round 1 of 30")
+        let freshCount = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.picnic.fruit.'")).count
+        XCTAssertTrue((1...10).contains(freshCount))
+        XCTAssertTrue(app.buttons["counting.picnic.answer.\(freshCount)"].isEnabled)
     }
 
     @MainActor

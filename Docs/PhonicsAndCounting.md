@@ -31,7 +31,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 
 | Activity | Distinct interaction | Quantities |
 | --- | --- | --- |
-| Number Picnic | Count twelve kinds of fruit; select a numeral supported by dots in rows of five | 24 rounds, progressing from 3 to 10 with three rounds per count |
+| Number Picnic | Count twelve kinds of fruit; select a numeral supported by dots in rows of five | 30 rounds: three shuffled passes through 1–10, with no repeats within a pass or across its boundary |
 | Touch & Count | Tap twelve kinds of animals in any order; each shows its counting-order number and cannot count twice | 27 levels progressing from 2 to 10, with three groups per count |
 | Picnic Share | Share one piece of fruit per friend, then two equally; filled plates stop accepting more | 20 levels, 2–6 friends |
 | Sleepy Sheep | Tuck each animal in once and count the remaining flock down to zero | 18 levels, 2–10 animals |
@@ -69,6 +69,6 @@ Simulator interaction tests, real-device audio listening, larger accessibility t
 
 ### Counting picture variety
 
-All twelve counting games retain their difficulty progression. Number Picnic, Picnic Share and Which Has More? draw from twelve fruits: apple, orange, strawberry, pear, peach, plum, lemon, lime, mango, pineapple, blueberry and raspberry. Touch & Count, Sleepy Sheep and Ticket Train use twelve animal friends: duck, sheep, rabbit, cat, dog, cow, horse, goat, pig, chick, turtle and penguin. Sleepy Sheep keeps its menu name while welcoming other sleepy animals.
+Number Picnic uses shuffled 1–10 counting passes; the other eleven games retain their difficulty progression. Number Picnic, Picnic Share and Which Has More? draw from twelve fruits: apple, orange, strawberry, pear, peach, plum, lemon, lime, mango, pineapple, blueberry and raspberry. Touch & Count, Sleepy Sheep and Ticket Train use twelve animal friends: duck, sheep, rabbit, cat, dog, cow, horse, goat, pig, chick, turtle and penguin. Sleepy Sheep keeps its menu name while welcoming other sleepy animals.
 
 Collections are shuffled at session creation and exhausted before repeating, with no repeats within any three consecutive rounds. Eight visual themes vary trail treasures, tower decorations, dot-card illustrations, drum faces and pond scenery. The garden uses eight colored petal designs. Every round keeps a stable picture/style across its countable items; comparisons use equal-size pictures, tower blocks retain equal dimensions, and card decorations are identical across choices. Replay creates a fresh picture order. Ruth names the selected foods and animals where applicable.
