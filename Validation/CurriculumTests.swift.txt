@@ -6,6 +6,69 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testSpaceMissionRotationStoriesTransparencyAndRuth() throws {
+        XCTAssertEqual(SpaceStory.bank.count, 12)
+        XCTAssertEqual(Set(SpaceStory.bank.map(\.id)).count, 12)
+        var deck = SpaceMissionDeck()
+        var prior: Set<SpaceMissionCategory> = []
+        var cycle: Set<SpaceMissionCategory> = []
+        var priorStory: [SpaceMissionCategory: String] = [:]
+        for offerIndex in 0..<300 {
+            let offer = deck.offer()
+            XCTAssertEqual(offer.count, 2)
+            let categories = Set(offer.map(\.category))
+            XCTAssertEqual(categories.count, 2)
+            XCTAssertTrue(categories.isDisjoint(with: prior))
+            XCTAssertTrue(categories.isDisjoint(with: cycle))
+            cycle.formUnion(categories)
+            if offerIndex % 3 == 2 { XCTAssertEqual(cycle.count, 6); cycle = [] }
+            for story in offer {
+                XCTAssertNotEqual(story.id, priorStory[story.category])
+                priorStory[story.category] = story.id
+            }
+            prior = categories
+            deck = try JSONDecoder().decode(SpaceMissionDeck.self, from: JSONEncoder().encode(deck))
+        }
+        XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: SpaceMissionSession.choicePrompt)?.voice, "Ruth")
+        for story in SpaceStory.bank {
+            XCTAssertEqual(story.pages.count, 6)
+            var play = SpaceMissionSession(choices: [story])
+            play.next(); play.back(); XCTAssertEqual(play.pageIndex, 0)
+            play.select("invalid"); XCTAssertNil(play.selected)
+            play.select(story.id)
+            for index in 0..<6 {
+                XCTAssertEqual(play.pageIndex, index)
+                XCTAssertEqual(play.prompt, story.pages[index].text)
+                XCTAssertEqual(play.finished, index == 5)
+                let page = story.pages[index]
+                XCTAssertNotNil(UIImage(named: "SpaceClean/" + page.art), page.art)
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: page.text), page.text)
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: page.text)?.voice, "Ruth", page.text)
+                XCTAssertEqual(page.action.isEmpty, index == 5)
+                if index > 0 { play.back(); XCTAssertEqual(play.pageIndex, index - 1); play.next() }
+                play.select(story.id); XCTAssertEqual(play.pageIndex, index)
+                play.next()
+            }
+            XCTAssertEqual(play.pageIndex, 5)
+        }
+        for name in ["Moon", "Earth", "Mars", "Jupiter", "Saturn", "Sun", "Rocket"] {
+            let image = try XCTUnwrap(UIImage(named: "SpaceClean/" + name)?.cgImage)
+            let width = 32, height = 32
+            var pixels = [UInt8](repeating: 0, count: width * height * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: width, height: height,
+                    bitsPerComponent: 8, bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, name)
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 100, name)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, name) }
+        }
+    }
+
+    @MainActor
     func testDinosaurTrailsPairSpacingProgressionAndRuth() {
         var recent: [String] = []
         for dino in TrailDinosaur.bank {

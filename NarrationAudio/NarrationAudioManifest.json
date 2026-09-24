@@ -7274,9 +7274,25 @@
       "category": "nature"
     },
     {
+      "text": "A pretend little seed is waiting on Earth. What helps it grow? Let's follow the story of sunlight together.",
+      "file": "llj-15e70b3dc4abb2fd511342d8.mp3",
+      "spokenText": "A pretend little seed is waiting on Earth. What helps it grow? Let's follow the story of sunlight together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A rabbit hops. Bounce your hands or hop together.",
       "file": "llj-5fa7a317ee21ed536bf62d37.mp3",
       "spokenText": "A rabbit hops. Bounce your hands or hop together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A rover is a robot that drives and explores. Real rovers help scientists study Mars. Roll your hands like little wheels.",
+      "file": "llj-c3d706b60004dc48ccca2a00.mp3",
+      "spokenText": "A rover is a robot that drives and explores. Real rovers help scientists study Mars. Roll your hands like little wheels.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -7746,6 +7762,22 @@
       "category": "stories"
     },
     {
+      "text": "Beep! Our pretend rover sends a message to Earth. We found a rocky, reddish world!",
+      "file": "llj-ab0f228187090d567582904a.mp3",
+      "spokenText": "Beep! Our pretend rover sends a message to Earth. We found a rocky, reddish world!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Beep, beep! Our pretend rocket is taking a robot explorer to Mars. Can you make a little robot beep?",
+      "file": "llj-b2fad9c3f4a805036748fae6.mp3",
+      "spokenText": "Beep, beep! Our pretend rocket is taking a robot explorer to Mars. Can you make a little robot beep?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
       "file": "llj-31f34ecffa5053dfdfa33fb9.mp3",
       "spokenText": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
@@ -7864,6 +7896,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Both little moons travel around Mars. Make two tiny shapes with your hands and move them around an imaginary planet.",
+      "file": "llj-b3a26e971845b8977a375ec1.mp3",
+      "spokenText": "Both little moons travel around Mars. Make two tiny shapes with your hands and move them around an imaginary planet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Both towers have 10 blocks. They are the same height!",
@@ -8706,6 +8746,14 @@
       "category": "shapes"
     },
     {
+      "text": "Choose a space adventure. Tap a picture, and we'll explore together!",
+      "file": "llj-d4a2b3be1ae859a155da991b.mp3",
+      "spokenText": "Choose a space adventure. Tap a picture, and we'll explore together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Choose a ticket with exactly one dot for each passenger.",
       "file": "llj-fb4ff5dbc2219e23b19a81cb.mp3",
       "spokenText": "Choose a ticket with exactly one dot for each passenger.",
@@ -9192,6 +9240,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Day and night happen as Earth spins. We delivered both waves. Good exploring, little space friend!",
+      "file": "llj-ec1dd71c71e78aa1dc8ec024.mp3",
+      "spokenText": "Day and night happen as Earth spins. We delivered both waves. Good exploring, little space friend!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Daytime sky.",
@@ -10032,6 +10088,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Earth has land, too. People, plants, and many animals live on land. Pretend to wave to a tiny tree below.",
+      "file": "llj-5b94359668e5f6db60cff978.mp3",
+      "spokenText": "Earth has land, too. People, plants, and many animals live on land. Pretend to wave to a tiny tree below.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Earth slowly spins. Imagine turning a ball in your hands. A place on Earth turns toward the sunlight, then away.",
+      "file": "llj-cf943a7451088aeedb222127.mp3",
+      "spokenText": "Earth slowly spins. Imagine turning a ball in your hands. A place on Earth turns toward the sunlight, then away.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Every animal has a home!",
@@ -11826,6 +11898,14 @@
       "category": "nature"
     },
     {
+      "text": "From Earth, the bright part of the Moon can look different on different nights. The Moon itself stays round.",
+      "file": "llj-88bd5c6a97171807c6a08ce4.mp3",
+      "spokenText": "From Earth, the bright part of the Moon can look different on different nights. The Moon itself stays round.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "G is for goat.",
       "file": "llj-5fe4b0cb69843fd67648b80d.mp3",
       "spokenText": "G is for goat.",
@@ -12138,6 +12218,14 @@
       "category": "stories"
     },
     {
+      "text": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
+      "file": "llj-e089122f05c337bb915ada3d.mp3",
+      "spokenText": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Green and black make dark green!",
       "file": "llj-5fc61b29c3f9d1106cae132c.mp3",
       "spokenText": "Green and black make dark green!",
@@ -12322,6 +12410,30 @@
       "category": "stories"
     },
     {
+      "text": "Hello, Moon! Those round dents are called craters. Let's look for a big one and a little one.",
+      "file": "llj-573ae260fedded76e8b93130.mp3",
+      "spokenText": "Hello, Moon! Those round dents are called craters. Let's look for a big one and a little one.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Hello, Moon! You reflect sunlight. Our pretend plant and our shining Moon both remind us of the Sun.",
+      "file": "llj-a9a24a50e2879229d7e04dbc.mp3",
+      "spokenText": "Hello, Moon! You reflect sunlight. Our pretend plant and our shining Moon both remind us of the Sun.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Hello, Saturn! Its rings go around the planet. Make a wide ring with your arms or your fingers.",
+      "file": "llj-c7c3c8e5c12c98466f003780.mp3",
+      "spokenText": "Hello, Saturn! Its rings go around the planet. Make a wide ring with your arms or your fingers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Hello, friend! Come sit with me.",
       "file": "llj-99e0fc2188115d6557901b27.mp3",
       "spokenText": "Hello, friend! Come sit with me.",
@@ -12480,6 +12592,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Home again! Earth has one Moon, and Mars has two. We counted and explored together. Well done!",
+      "file": "llj-ecd1e0ce7c8c765d24dd7861.mp3",
+      "spokenText": "Home again! Earth has one Moon, and Mars has two. We counted and explored together. Well done!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "How might your puppet feel? Any choice is welcome.",
@@ -12874,6 +12994,22 @@
       "category": "stories"
     },
     {
+      "text": "Its bright rings circle the planet. Trace a long, round shape in the air. What a lovely pretend drawing!",
+      "file": "llj-ec79fb8b4f4b05af38495e22.mp3",
+      "spokenText": "Its bright rings circle the planet. Trace a long, round shape in the air. What a lovely pretend drawing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Its other moon is called Deimos. One, two! These moons are small and lumpy, not smooth round balls.",
+      "file": "llj-30512dba46d57d5c733aeb93.mp3",
+      "spokenText": "Its other moon is called Deimos. One, two! These moons are small and lumpy, not smooth round balls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "It’s a cow! Moo, moo! Can you make that sound?",
       "file": "llj-912a7740bfb90e4628bcd81b.mp3",
       "spokenText": "It’s a cow! Moo, moo! Can you make that sound?",
@@ -12944,6 +13080,46 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Jupiter has a huge storm called the Great Red Spot. Can you find the spot on our planet picture?",
+      "file": "llj-d39a172b1993eea1030fcf5d.mp3",
+      "spokenText": "Jupiter has a huge storm called the Great Red Spot. Can you find the spot on our planet picture?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Jupiter has no solid ground to stand on like Earth. We'll explore from our pretend spaceship instead of landing.",
+      "file": "llj-459e5514c84e1148e785cbfb.mp3",
+      "spokenText": "Jupiter has no solid ground to stand on like Earth. We'll explore from our pretend spaceship instead of landing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Jupiter is bigger than every other planet in our solar system. What a big world for a big storm!",
+      "file": "llj-c7867ce056379f9a33d6ece7.mp3",
+      "spokenText": "Jupiter is bigger than every other planet in our solar system. What a big world for a big storm!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Jupiter is the biggest planet in our solar system. Stretch your arms wide, or make a big circle with your hands.",
+      "file": "llj-5d801066d1f924ec50d389fd.mp3",
+      "spokenText": "Jupiter is the biggest planet in our solar system. Stretch your arms wide, or make a big circle with your hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Jupiter's colorful stripes are bands of clouds. Trace an imaginary stripe from one side to the other.",
+      "file": "llj-4b0152ac4dec51422e9f9fbb.mp3",
+      "spokenText": "Jupiter's colorful stripes are bands of clouds. Trace an imaginary stripe from one side to the other.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "K is for kiwi.",
@@ -13954,6 +14130,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's make a pretend space postcard for a friend. Our picture will show Saturn and its lovely rings!",
+      "file": "llj-a8d08c08a67aee2e3e6a09ee.mp3",
+      "spokenText": "Let's make a pretend space postcard for a friend. Our picture will show Saturn and its lovely rings!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's mix blue, white, and black. Choose two different paints, then stir.",
       "file": "llj-a724c2cd4e9bd7585a4e3d60.mp3",
       "spokenText": "Let's mix blue, white, and black. Choose two different paints, then stir.",
@@ -14800,6 +14984,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Light stripe, dark stripe! The clouds make wonderful patterns. What colors can you find in our picture?",
+      "file": "llj-0eb0a5c1d610f1dd617fe223.mp3",
+      "spokenText": "Light stripe, dark stripe! The clouds make wonderful patterns. What colors can you find in our picture?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Listen for words with the same ending. beef, leaf. beef, pear. Which pair rhymes?",
@@ -16682,6 +16874,22 @@
       "category": "literacy"
     },
     {
+      "text": "Long ago, space rocks bumped into the Moon and made many craters. Make a little circle with your finger.",
+      "file": "llj-4e8209cdc99eb6c2a57c74cc.mp3",
+      "spokenText": "Long ago, space rocks bumped into the Moon and made many craters. Make a little circle with your finger.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Look at all that blue! Oceans cover much of Earth. Can you point to a blue part of our picture?",
+      "file": "llj-772b30d2e523cf0d915f50af.mp3",
+      "spokenText": "Look at all that blue! Oceans cover much of Earth. Can you point to a blue part of our picture?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Look at both piles. Each full row has ten coins. Compare the rows, then the extra coins.",
       "file": "llj-e494d66ad76ae6b4e4578b7f.mp3",
       "spokenText": "Look at both piles. Each full row has ten coins. Compare the rows, then the extra coins.",
@@ -17386,6 +17594,30 @@
       "category": "nature"
     },
     {
+      "text": "Mars has a moon called Phobos. That's one moon. Hold up one finger if you like.",
+      "file": "llj-c1c10edabf9eda0abe26249f.mp3",
+      "spokenText": "Mars has a moon called Phobos. That's one moon. Hold up one finger if you like.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Mars has rocks, hills, and dusty ground. Our pretend rover stops to look carefully. Scientists learn by noticing things.",
+      "file": "llj-e07dec9ea04ede74fd1b359c.mp3",
+      "spokenText": "Mars has rocks, hills, and dusty ground. Our pretend rover stops to look carefully. Scientists learn by noticing things.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Mars is smaller than Earth. Its dusty surface looks reddish. Hello, Mars! We're here to meet your moons.",
+      "file": "llj-959afa78da5894a622f29ed3.mp3",
+      "spokenText": "Mars is smaller than Earth. Its dusty surface looks reddish. Hello, Mars! We're here to meet your moons.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Match each passenger with one dot. Try another ticket.",
       "file": "llj-5f2e20b9dfa27619d2f82a66.mp3",
       "spokenText": "Match each passenger with one dot. Try another ticket.",
@@ -17448,6 +17680,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Mission complete! Saturn's rings are made of ice and rock. You are a wonderful ring explorer!",
+      "file": "llj-4448ca41cdb7a73a491f571f.mp3",
+      "spokenText": "Mission complete! Saturn's rings are made of ice and rock. You are a wonderful ring explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Mission complete! We discovered craters and practiced pretend Moon steps. You are a wonderful crater detective!",
+      "file": "llj-df815876aa8cb291b53d306d.mp3",
+      "spokenText": "Mission complete! We discovered craters and practiced pretend Moon steps. You are a wonderful crater detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Moo, moo! Good morning, says Cow.",
@@ -17994,9 +18242,105 @@
       "category": "feelings"
     },
     {
+      "text": "Our little pretend plant has leaves! We learned about sunlight, our star, and reflected moonlight. Great discovering!",
+      "file": "llj-d02292313ef3bc941df9083b.mp3",
+      "spokenText": "Our little pretend plant has leaves! We learned about sunlight, our star, and reflected moonlight. Great discovering!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our message says: hello from Saturn! We explored from our spaceship because Saturn has no solid ground like Earth.",
+      "file": "llj-fc0db697d22cd41b57618b05.mp3",
+      "spokenText": "Our message says: hello from Saturn! We explored from our spaceship because Saturn has no solid ground like Earth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our planet travels around the Sun. Imagine moving a little Earth around a big star. Around we go!",
+      "file": "llj-baad1d0fcc5fab1a325ef9e5.mp3",
+      "spokenText": "Our planet travels around the Sun. Imagine moving a little Earth around a big star. Around we go!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend delivery is done! Earth keeps turning while we play and while we sleep.",
+      "file": "llj-4c05be13aa7476c191b5d813.mp3",
+      "spokenText": "Our pretend delivery is done! Earth keeps turning while we play and while we sleep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Our pretend nest is ready. Tap to settle the eggs gently.",
       "file": "llj-ba5a7dec56cb8e9f8f9cf71f.mp3",
       "spokenText": "Our pretend nest is ready. Tap to settle the eggs gently.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend picture is home! Jupiter is a giant planet with cloud bands. You were a wonderful stripe spotter!",
+      "file": "llj-4c88a15d75bf7027647edb08.mp3",
+      "spokenText": "Our pretend picture is home! Jupiter is a giant planet with cloud bands. You were a wonderful stripe spotter!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend postcard has arrived! Tell a grown-up one thing you noticed about Saturn. Thank you, space artist!",
+      "file": "llj-aa6f0f138f4e6afcbd2449ec.mp3",
+      "spokenText": "Our pretend postcard has arrived! Tell a grown-up one thing you noticed about Saturn. Thank you, space artist!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend rocket has a mystery to solve. How does the Moon look bright? Let's investigate together!",
+      "file": "llj-66606313c1fa0ee40e8d02a8.mp3",
+      "spokenText": "Our pretend rocket has a mystery to solve. How does the Moon look bright? Let's investigate together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend rocket has a special mission: find the planet with the beautiful rings. Let's visit Saturn!",
+      "file": "llj-5fd75657c7a924924f88e402.mp3",
+      "spokenText": "Our pretend rocket has a special mission: find the planet with the beautiful rings. Let's visit Saturn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend rocket is coming home. On Earth we have water to drink and air to breathe. What a special home!",
+      "file": "llj-eebbba4ebc3576935441fe77.mp3",
+      "spokenText": "Our pretend rocket is coming home. On Earth we have water to drink and air to breathe. What a special home!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend rocket is looking for a giant striped planet. Let's visit Jupiter and see what we notice!",
+      "file": "llj-53c2d33051d9fa9037123b42.mp3",
+      "spokenText": "Our pretend rocket is looking for a giant striped planet. Let's visit Jupiter and see what we notice!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend rocket is visiting Mars to find its two little moons. Let's count together on our trip!",
+      "file": "llj-8551ee6e30c2bd59499961af.mp3",
+      "spokenText": "Our pretend rocket is visiting Mars to find its two little moons. Let's count together on our trip!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend spaceship is going to watch Jupiter from far above its clouds. Let's be gentle storm watchers!",
+      "file": "llj-dafb36538f82bd5f0ac11813.mp3",
+      "spokenText": "Our pretend spaceship is going to watch Jupiter from far above its clouds. Let's be gentle storm watchers!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -18200,6 +18544,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Pack an imaginary picnic! Our pretend rocket will peek at Earth from space, then bring us home.",
+      "file": "llj-a51b631a15e2457658538161.mp3",
+      "spokenText": "Pack an imaginary picnic! Our pretend rocket will peek at Earth from space, then bring us home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Pack apple, banana, and bread. Tap the foods in any order.",
@@ -20146,6 +20498,14 @@
       "category": "literacy"
     },
     {
+      "text": "Picnic time! We found oceans, land, and clouds. Let's care for our home planet together.",
+      "file": "llj-eae542892e446243da919b30.mp3",
+      "spokenText": "Picnic time! We found oceans, land, and clouds. Let's care for our home planet together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Pig. Oink, oink!",
       "file": "llj-455b018980e7f0bf7963e4e6.mp3",
       "spokenText": "Pig. Oink, oink!",
@@ -21394,6 +21754,14 @@
       "category": "feelings"
     },
     {
+      "text": "Ready, little explorer? Our pretend rocket is visiting the Moon. Three, two, one, lift off!",
+      "file": "llj-3fa238e9b78673fe60ff3f90.mp3",
+      "spokenText": "Ready, little explorer? Our pretend rocket is visiting the Moon. Three, two, one, lift off!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Red Motorcycle",
       "file": "llj-f65af67eb8285538303c2d7e.mp3",
       "spokenText": "Red Motorcycle",
@@ -21640,6 +22008,22 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Saturn is a giant planet without a solid surface like Earth's. We'll wave from our pretend spaceship.",
+      "file": "llj-f1eea88ed64d8fbe1f8620a7.mp3",
+      "spokenText": "Saturn is a giant planet without a solid surface like Earth's. We'll wave from our pretend spaceship.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Saturn is the second-biggest planet in our solar system. Jupiter is bigger. Our postcard needs room for a giant!",
+      "file": "llj-4e015cbbc7c9374609d72307.mp3",
+      "spokenText": "Saturn is the second-biggest planet in our solar system. Jupiter is bigger. Our postcard needs room for a giant!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Say apple with your grown-up. Clap once for each word part, then tap the hop button for each clap.",
@@ -22786,6 +23170,22 @@
       "category": "nature"
     },
     {
+      "text": "Sunlight bounces off the Moon toward us. The Moon does not make its own light. Mystery solved!",
+      "file": "llj-137cee4b3d5ed821c93924f3.mp3",
+      "spokenText": "Sunlight bounces off the Moon toward us. The Moon does not make its own light. Mystery solved!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Sunlight helps plants grow on Earth. Pretend your hands are little leaves opening in the light.",
+      "file": "llj-2133301a755ce0311553ef68.mp3",
+      "spokenText": "Sunlight helps plants grow on Earth. Pretend your hands are little leaves opening in the light.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Sunshine. Tap the window to explore.",
       "file": "llj-fb3780fa55bbeafc79ac7410.mp3",
       "spokenText": "Sunshine. Tap the window to explore.",
@@ -23082,6 +23482,14 @@
       "category": "stories"
     },
     {
+      "text": "Thank you, Sun, for light and warmth! We learned that the Sun is a star. What a bright discovery!",
+      "file": "llj-ef4622315131e48966d7e6ff.mp3",
+      "spokenText": "Thank you, Sun, for light and warmth! We learned that the Sun is a star. What a bright discovery!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "That is B. Look for M.",
       "file": "llj-9159baebf8f21c4ae077782f.mp3",
       "spokenText": "That is B. Look for M.",
@@ -23362,6 +23770,22 @@
       "category": "stories"
     },
     {
+      "text": "The Moon is Earth's space neighbor. Sometimes we can see it in the daytime, too. Hello, neighbor!",
+      "file": "llj-ebc6ad91b6cef9dbfc8dbf31.mp3",
+      "spokenText": "The Moon is Earth's space neighbor. Sometimes we can see it in the daytime, too. Hello, neighbor!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Moon pulls us down less strongly than Earth does. Astronauts can take bouncy steps there. Wiggle your fingers like tiny feet!",
+      "file": "llj-32c4a783112df171edadab4d.mp3",
+      "spokenText": "The Moon pulls us down less strongly than Earth does. Astronauts can take bouncy steps there. Wiggle your fingers like tiny feet!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "The Moon reflects sunlight. Sometimes we see it in the daytime too.",
       "file": "llj-d500dce4b1c7c9af26ac2871.mp3",
       "spokenText": "The Moon reflects sunlight. Sometimes we see it in the daytime too.",
@@ -23381,6 +23805,46 @@
       "text": "The Sun gives us light. Make a big circle with your arms.",
       "file": "llj-4a42d0d8fa973a75db69c490.mp3",
       "spokenText": "The Sun gives us light. Make a big circle with your arms.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Sun is a star. It makes light and gives warmth to Earth. Our cheerful picture is pretending to smile!",
+      "file": "llj-faefadf20cbf91002d2950a0.mp3",
+      "spokenText": "The Sun is a star. It makes light and gives warmth to Earth. Our cheerful picture is pretending to smile!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Sun lights one side of Earth at a time. That side has daytime. Say, good morning!",
+      "file": "llj-2a4d3ebdc91103e28c857e92.mp3",
+      "spokenText": "The Sun lights one side of Earth at a time. That side has daytime. Say, good morning!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Sun makes its own light. Some sunlight reaches the Moon. We'll explore with pictures and never look straight at the real Sun.",
+      "file": "llj-1ef7fb5053ddd73a7da97482.mp3",
+      "spokenText": "The Sun makes its own light. Some sunlight reaches the Moon. We'll explore with pictures and never look straight at the real Sun.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Sun makes its own light. The Moon does not. Moonlight is sunlight that bounces off the Moon.",
+      "file": "llj-b649fde6883fa6683d531c17.mp3",
+      "spokenText": "The Sun makes its own light. The Moon does not. Moonlight is sunlight that bounces off the Moon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The Sun sends light toward Earth. It is our nearest star. We use our story picture instead of looking at the real Sun.",
+      "file": "llj-3c6b2dcf4a8095387e4f4245.mp3",
+      "spokenText": "The Sun sends light toward Earth. It is our nearest star. We use our story picture instead of looking at the real Sun.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -23842,6 +24306,14 @@
       "category": "stories"
     },
     {
+      "text": "The real Sun is very hot. We never look straight at it. Our story picture is a safe way to explore together.",
+      "file": "llj-fd01ae8e1bcba76624e31e72.mp3",
+      "spokenText": "The real Sun is very hot. We never look straight at it. Our story picture is a safe way to explore together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "The rectangle fits!",
       "file": "llj-5f96083ec0b8ace1bd4fd8aa.mp3",
       "spokenText": "The rectangle fits!",
@@ -23856,6 +24328,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The rings are made of many pieces of ice and rock. They are not one solid hoop. Imagine lots of tiny pieces together.",
+      "file": "llj-f9700a5faefd660acb79a001.mp3",
+      "spokenText": "The rings are made of many pieces of ice and rock. They are not one solid hoop. Imagine lots of tiny pieces together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The rings contain lots of ice and rock pieces. Wiggle your fingers like many little pieces traveling together.",
+      "file": "llj-11f1f35f291050258363e543.mp3",
+      "spokenText": "The rings contain lots of ice and rock pieces. Wiggle your fingers like many little pieces traveling together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "The round plate has a circle shape.",
@@ -23962,6 +24450,14 @@
       "category": "shapes"
     },
     {
+      "text": "The storm swirls around. Draw a slow circle in the air with one finger. Round and round!",
+      "file": "llj-61c7319255290535a1d6ad7b.mp3",
+      "spokenText": "The storm swirls around. Draw a slow circle in the air with one finger. Round and round!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
       "file": "llj-24c7de42046fc8f8260dce40.mp3",
       "spokenText": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
@@ -24064,6 +24560,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "There's Earth, our home! The Moon travels around Earth. Let's wave to our blue planet.",
+      "file": "llj-5f7e957fda7a8abc1d718ac9.mp3",
+      "spokenText": "There's Earth, our home! The Moon travels around Earth. Let's wave to our blue planet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "There's Mars! Rusty minerals in its dusty ground make it look reddish. Point to our red planet picture.",
+      "file": "llj-2aed1836e811009393d39b1d.mp3",
+      "spokenText": "There's Mars! Rusty minerals in its dusty ground make it look reddish. Point to our red planet picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Think of someone who helped. Try saying or signing thank you.",
@@ -24842,6 +25354,14 @@
       "category": "shapes"
     },
     {
+      "text": "Those fluffy white shapes remind us of clouds. Earth has air around it. Take a gentle breath with me.",
+      "file": "llj-8b8235534f5f71bc43a29332.mp3",
+      "spokenText": "Those fluffy white shapes remind us of clouds. Earth has air around it. Take a gentle breath with me.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Three families together!",
       "file": "llj-9096aac231ddfcc5ad6d6697.mp3",
       "spokenText": "Three families together!",
@@ -24885,6 +25405,14 @@
       "text": "Time to go home. Tap Earth.",
       "file": "llj-2ed85aea15af66447fdb520c.mp3",
       "spokenText": "Time to go home. Tap Earth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Today our pretend rocket stays far from the Sun. We will learn about it through pictures. Ready to meet our special star?",
+      "file": "llj-bbf7b059d43866d397c726b4.mp3",
+      "spokenText": "Today our pretend rocket stays far from the Sun. We will learn about it through pictures. Ready to meet our special star?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -25789,6 +26317,14 @@
       "text": "We are traveling in space. Tap the Moon to land.",
       "file": "llj-445f07eb89f7c632780b41de.mp3",
       "spokenText": "We are traveling in space. Tap the Moon to land.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We cannot walk on Saturn's rings like a road. Our pretend rocket watches from a safe distance.",
+      "file": "llj-fcb975e0ced416172884bee1.mp3",
+      "spokenText": "We cannot walk on Saturn's rings like a road. Our pretend rocket watches from a safe distance.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -28178,9 +28714,25 @@
       "category": "counting"
     },
     {
+      "text": "We have a pretend delivery for Earth: a good-morning wave and a good-night wave. Let's find where they belong!",
+      "file": "llj-4023a43d18924299fd483ad3.mp3",
+      "spokenText": "We have a pretend delivery for Earth: a good-morning wave and a good-night wave. Let's find where they belong!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "We landed! Tap the astronaut to explore.",
       "file": "llj-7c86838b2f1d2c844d952c0f.mp3",
       "spokenText": "We landed! Tap the astronaut to explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We watched a giant planet and learned about its swirling storm. Our pretend adventure is safely home. Hooray!",
+      "file": "llj-e7d10937276661c2981a63da.mp3",
+      "spokenText": "We watched a giant planet and learned about its swirling storm. Our pretend adventure is safely home. Hooray!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -28312,6 +28864,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "When our part of Earth faces away from the Sun, it is nighttime. Give a little good-night wave.",
+      "file": "llj-402ea4980686a48fd8e21b8e.mp3",
+      "spokenText": "When our part of Earth faces away from the Sun, it is nighttime. Give a little good-night wave.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Where can the ant live? Choose its home.",
@@ -28805,6 +29365,22 @@
       "text": "Wind. Tap the window to explore.",
       "file": "llj-386d432804c1f7789dcc58d5.mp3",
       "spokenText": "Wind. Tap the window to explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Winds move Jupiter's clouds into bands. We stay in our pretend spaceship and watch from far away.",
+      "file": "llj-251c70b4fe4da0b71cab5aa3.mp3",
+      "spokenText": "Winds move Jupiter's clouds into bands. We stay in our pretend spaceship and watch from far away.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "With water, air, and light, many plants can grow. Pretend your little seed is stretching into a leafy plant.",
+      "file": "llj-bf7dcca25b397fba5249fb51.mp3",
+      "spokenText": "With water, air, and light, many plants can grow. Pretend your little seed is stretching into a leafy plant.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -32568,6 +33144,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You solved the moonlight mystery! When you're outside with a grown-up, see if you can spot the Moon.",
+      "file": "llj-e3be5d3cf218e7f5ef9bf7d9.mp3",
+      "spokenText": "You solved the moonlight mystery! When you're outside with a grown-up, see if you can spot the Moon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You sorted every word by its first sound!",

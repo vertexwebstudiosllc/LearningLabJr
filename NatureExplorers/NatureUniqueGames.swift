@@ -1,25 +1,5 @@
 import SwiftUI
 
-struct MoonMissionGame: View {
-    @State private var step = 0
-    private let prompts = ["We are on Earth. Put on a spacesuit for our pretend trip.", "The spacesuit is on. Tap the rocket to launch.", "We are traveling in space. Tap the Moon to land.", "We landed! Tap the astronaut to explore.", "Time to go home. Tap Earth.", "Welcome home to Earth! The Moon is our nearest neighbor in space."]
-    private let actions = [("Put on spacesuit", "Space/SpaceSuit"), ("Launch rocket", "Space/Rocket"), ("Land on the Moon", "Space/Moon"), ("Explore the Moon", "Space/Spaceman_Child_1"), ("Return to Earth", "Space/Earth")]
-
-    var body: some View {
-        ToddlerGameScaffold(title: "Moon Mission", prompt: prompts[step], accent: .indigo, completion: step == 5, onReplay: { step = 0 }) {
-            HStack {
-                ToddlerArt(asset: "Space/Earth", size: 82)
-                Image(systemName: "arrow.left.arrow.right").font(.largeTitle).foregroundStyle(.indigo)
-                ToddlerArt(asset: "Space/Moon", size: 82)
-            }
-            if step < 5 {
-                NaturePictureButton(title: actions[step].0, asset: actions[step].1) { step = min(step + 1, 5) }
-                Text("Pretend adventure • Step \(step + 1) of 5").foregroundStyle(.secondary)
-            }
-        }
-    }
-}
-
 struct NatureBarnGame: View {
     private let animals = [("cow", "Cow", "Moo, moo!"), ("duck", "Duck", "Quack, quack!"), ("sheep", "Sheep", "Baa, baa!"), ("pig", "Pig", "Oink, oink!")]
     @State private var round = 0

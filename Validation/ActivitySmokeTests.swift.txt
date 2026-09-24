@@ -104,6 +104,59 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testMoonMissionStories() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Moon Mission"]
+        try reveal(card, in: app); card.tap()
+        func options() -> [String] {
+            app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("space.mission.") }.map(\.identifier)
+        }
+        func categoryFor(_ identifier: String) -> String { String(identifier.dropFirst("space.mission.".count).split(separator: "-")[0]) }
+        var previous: Set<String> = []
+        var seenStories: Set<String> = []
+        for round in 0..<12 {
+            let choices = options(); XCTAssertEqual(choices.count, 2)
+            let categories = Set(choices.map(categoryFor))
+            XCTAssertTrue(categories.isDisjoint(with: previous))
+            previous = categories
+            let chosen = choices.first { !seenStories.contains($0) } ?? choices[round % 2]
+            seenStories.insert(chosen)
+            let option = app.buttons[chosen]; try reveal(option, in: app); option.tap()
+            let page = app.staticTexts["space.page"]
+            XCTAssertTrue(page.waitForExistence(timeout: 5))
+            for index in 0..<6 {
+                XCTAssertEqual(page.label, "Page \(index + 1) of 6")
+                if index == 1 {
+                    let previousPage = app.buttons["space.previous"]
+                    try reveal(previousPage, in: app); previousPage.tap()
+                    XCTAssertEqual(page.label, "Page 1 of 6")
+                    let scene = app.buttons["space.scene"]; try reveal(scene, in: app); scene.tap()
+                    XCTAssertEqual(page.label, "Page 2 of 6")
+                }
+                if round < 3 && index == 2 {
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Space story \(chosen)"; shot.lifetime = .keepAlways; add(shot)
+                }
+                if index < 5 {
+                    let next = app.buttons[index.isMultiple(of: 2) ? "space.scene" : "space.next"]
+                    try reveal(next, in: app); next.tap()
+                }
+            }
+            XCTAssertFalse(app.buttons["space.next"].exists)
+            let again = app.buttons["space.chooseAgain"]; try reveal(again, in: app); again.tap()
+        }
+        let beforeExit = Set(options().map(categoryFor))
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertEqual(options().count, 2)
+        XCTAssertTrue(Set(options().map(categoryFor)).isDisjoint(with: beforeExit))
+        let option = app.buttons[options()[0]]; try reveal(option, in: app); option.tap()
+        let change = app.buttons["space.changeMission"]; try reveal(change, in: app); change.tap()
+        XCTAssertEqual(options().count, 2)
+    }
+
+    @MainActor
     func testDinosaurTwoTrails() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]
