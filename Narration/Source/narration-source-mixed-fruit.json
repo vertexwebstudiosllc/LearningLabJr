@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Which group has fewer pieces of fruit? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Which group has more pieces of fruit? Tap that group.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has fewer pieces of fruit.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Yes! That group has more pieces of fruit.",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

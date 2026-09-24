@@ -27482,6 +27482,14 @@
       "category": "counting"
     },
     {
+      "text": "Which group has fewer pieces of fruit? Tap that group.",
+      "file": "llj-68cb7d76347d63ee54b13cc2.mp3",
+      "spokenText": "Which group has fewer pieces of fruit? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Which group has fewer pineapples? Tap that group.",
       "file": "llj-77341b8b750724ea3a6550f1.mp3",
       "spokenText": "Which group has fewer pineapples? Tap that group.",
@@ -27573,6 +27581,14 @@
       "text": "Which group has more pears? Tap that group.",
       "file": "llj-358e5b54fed4711b27b45d40.mp3",
       "spokenText": "Which group has more pears? Tap that group.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Which group has more pieces of fruit? Tap that group.",
+      "file": "llj-2a498546911912296998e78e.mp3",
+      "spokenText": "Which group has more pieces of fruit? Tap that group.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -28138,6 +28154,14 @@
       "category": "counting"
     },
     {
+      "text": "Yes! That group has fewer pieces of fruit.",
+      "file": "llj-8dea6c51f6f83747e1888ba7.mp3",
+      "spokenText": "Yes! That group has fewer pieces of fruit.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Yes! That group has fewer pineapples.",
       "file": "llj-56542bbb70c5e15b371e9ea7.mp3",
       "spokenText": "Yes! That group has fewer pineapples.",
@@ -28229,6 +28253,14 @@
       "text": "Yes! That group has more pears.",
       "file": "llj-d2b5dc65a7ee74abf483537b.mp3",
       "spokenText": "Yes! That group has more pears.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Yes! That group has more pieces of fruit.",
+      "file": "llj-ba4a0a4474f183a8824399c9.mp3",
+      "spokenText": "Yes! That group has more pieces of fruit.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

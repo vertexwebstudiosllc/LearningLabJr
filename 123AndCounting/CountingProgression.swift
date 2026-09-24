@@ -32,10 +32,12 @@ enum CountingActivity: String, CaseIterable {
     func levels() -> [CountingLesson] {
         var result = quantityLevels()
         let foods = countingPictureCycle(NumberPicnicFood.bank, count: result.count)
+        let pairs = self == .more ? countingFruitPairs(count: result.count) : []
         let animals = countingPictureCycle(TouchCountAnimal.bank, count: result.count)
         let themes = countingPictureCycle(CountingTheme.bank, count: result.count)
         for index in result.indices {
-            result[index].food = foods[index]
+            result[index].food = self == .more ? pairs[index].0 : foods[index]
+            if self == .more { result[index].comparisonFood = pairs[index].1 }
             result[index].animal = animals[index]
             result[index].theme = themes[index]
         }
@@ -77,6 +79,7 @@ enum CountingActivity: String, CaseIterable {
 struct CountingLesson {
     let target: Int
     var food = NumberPicnicFood.bank[0]
+    var comparisonFood = NumberPicnicFood.bank[1]
     var animal = TouchCountAnimal.bank[0]
     var theme = CountingTheme.bank[0]
     var other = 0
@@ -115,6 +118,7 @@ struct CountingLesson {
     var treasureSuccess: String {
         "\(start) plus \(target) makes \(goal). Both treasure piles match!"
     }
+    func comparisonFood(for amount: Int) -> NumberPicnicFood { amount == target ? food : comparisonFood }
     var gardenSize: Int { max(target, start) <= 5 ? 5 : 10 }
 }
 
@@ -139,7 +143,7 @@ final class CountingPlay: ObservableObject {
         switch kind {
         case .share: return lesson.picnicPrompt
         case .trail: return lesson.treasurePrompt
-        case .more: return lesson.fewer ? "Which group has fewer \(lesson.food.plural)? Tap that group." : "Which group has more \(lesson.food.plural)? Tap that group."
+        case .more: return lesson.fewer ? "Which group has fewer pieces of fruit? Tap that group." : "Which group has more pieces of fruit? Tap that group."
         case .garden: return "Plant \(target) \(target == 1 ? "flower" : "flowers"). Tap a space to plant. Tap a flower to take it out."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
         case .towers: return "Build a tower the same height as mine. Add or take away blocks."
@@ -172,7 +176,7 @@ final class CountingPlay: ObservableObject {
             switch kind {
             case .share: win(lesson.picnicSuccess)
             case .trail: count = lesson.goal; win(lesson.treasureSuccess)
-            case .more: win(lesson.fewer ? "Yes! That group has fewer \(lesson.food.plural)." : "Yes! That group has more \(lesson.food.plural).")
+            case .more: win(lesson.fewer ? "Yes! That group has fewer pieces of fruit." : "Yes! That group has more pieces of fruit.")
             case .tickets: win("One dot for each passenger. All aboard!")
             default: win("You found the twin: \(target) dots!")
             }

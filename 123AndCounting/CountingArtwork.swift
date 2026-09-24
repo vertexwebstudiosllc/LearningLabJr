@@ -69,3 +69,23 @@ struct CountingPond: View {
         }.frame(height: 112).accessibilityHidden(true)
     }
 }
+
+/// Sample unordered fruit pairs without replacement; avoid sharing a fruit with
+/// the previous round whenever possible. Swapping group positions isn't a new pair.
+func countingFruitPairs(count: Int) -> [(NumberPicnicFood, NumberPicnicFood)] {
+    let bank = NumberPicnicFood.bank
+    let allPairs = bank.indices.flatMap { i in
+        bank.indices.filter { $0 > i }.map { (bank[i], bank[$0]) }
+    }
+    var pool = allPairs.shuffled()
+    var result: [(NumberPicnicFood, NumberPicnicFood)] = []
+    for _ in 0..<count {
+        if pool.isEmpty { pool = allPairs.shuffled() }
+        let recent = result.last.map { Set([$0.0.id, $0.1.id]) } ?? []
+        let index = pool.firstIndex { !recent.contains($0.0.id) && !recent.contains($0.1.id) }
+            ?? pool.firstIndex { Set([$0.0.id, $0.1.id]) != recent } ?? 0
+        let pair = pool.remove(at: index)
+        result.append(Bool.random() ? pair : (pair.1, pair.0))
+    }
+    return result
+}

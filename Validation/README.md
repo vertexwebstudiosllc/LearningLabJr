@@ -82,3 +82,5 @@ Picnic Share checks every supported equation and Ruth phrase, balanced ten-round
 Sleepy Sheep has separate native checks for all 100 counts, hop/arrival guards, completion and Ruth coverage. Its full UI test checks the automatic first sheep, each count through 100, completion, replay and fresh re-entry.
 
 Treasure Trail checks all 210 valid start/goal pairs and their Ruth coverage, twenty shuffled goals, three distinct chest choices, rejected wrong amounts/locations, successful left-pile updates, duplicate-drop guards, completion and replay. Its UI test drags actual chests onto both piles.
+
+Which Has More? checks two distinct fruit types per comparison, 20 unique unordered pairings per session, no shared fruit in consecutive rounds, matching artwork/accessibility labels, both comparison modes, and Ruth directions/feedback for mixed fruit groups.

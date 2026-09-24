@@ -32,6 +32,7 @@ final class CurriculumTests: XCTestCase {
                 let levels = kind.levels()
                 let sequences = [levels.map { $0.food.id }, levels.map { $0.animal.id }, levels.map { $0.theme.id }]
                 for (index, sequence) in sequences.enumerated() {
+                    if kind == .more && index == 0 { continue }
                     let size = index == 2 ? 8 : 12
                     for start in stride(from: 0, to: sequence.count, by: size) {
                         let cycle = Array(sequence[start..<min(start + size, sequence.count)])
@@ -177,6 +178,27 @@ final class CurriculumTests: XCTestCase {
                 }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    func testMixedFruitComparisons() {
+        for _ in 0..<100 {
+            let levels = CountingActivity.more.levels()
+            let keys = levels.map { [$0.food.id, $0.comparisonFood.id].sorted().joined(separator: ":") }
+            XCTAssertEqual(Set(keys).count, 20)
+            for (index, lesson) in levels.enumerated() {
+                XCTAssertNotEqual(lesson.food.id, lesson.comparisonFood.id)
+                XCTAssertEqual(lesson.comparisonFood(for: lesson.target).id, lesson.food.id)
+                XCTAssertEqual(lesson.comparisonFood(for: lesson.other).id, lesson.comparisonFood.id)
+                if index > 0 {
+                    let previous = levels[index - 1]
+                    XCTAssertTrue(Set([lesson.food.id, lesson.comparisonFood.id]).isDisjoint(with: [previous.food.id, previous.comparisonFood.id]))
+                }
+            }
+        }
+        let cycle = countingFruitPairs(count: 132)
+        for start in [0, 66] {
+            XCTAssertEqual(Set(cycle[start..<start + 66].map { [$0.0.id, $0.1.id].sorted().joined(separator: ":") }).count, 66)
         }
     }
 

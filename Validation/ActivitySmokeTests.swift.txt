@@ -796,6 +796,7 @@ final class ActivitySmokeTests: XCTestCase {
             let ready = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: drum)
             XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 15), .completed)
         }
+        var fruitPairs: Set<String> = []
         for index in 0..<(previewLevels ?? total) {
             let level = app.staticTexts["counting.ext.level"]
             XCTAssertTrue(level.waitForExistence(timeout: 5))
@@ -854,6 +855,9 @@ final class ActivitySmokeTests: XCTestCase {
                 let values = choices.map { number($0.label) }
                 let target: Int
                 if kind == "more" {
+                    let fruits = choices.map { $0.value as! String }
+                    XCTAssertEqual(Set(fruits).count, 2)
+                    XCTAssertTrue(fruitPairs.insert(fruits.sorted().joined(separator: ":")).inserted)
                     target = ["Find fewer", "Find less treasure"].contains(app.staticTexts["counting.ext.clue"].label) ? values.min()! : values.max()!
                 } else if kind == "tickets" { target = number(element("counting.ext.passengers").label) }
                 else {
@@ -904,7 +908,7 @@ final class ActivitySmokeTests: XCTestCase {
                 try tap("counting.ext.check")
             }
             XCTAssertTrue(next.waitForExistence(timeout: 3), "\(title) level \(index + 1)")
-            if index == total - 1 || previewLevels != nil || (kind == "trail" && index == 0) {
+            if index == total - 1 || previewLevels != nil || (["trail", "more"].contains(kind) && index == 0) {
                 let shot = XCTAttachment(screenshot: app.screenshot())
                 shot.name = title + " level \(index + 1)"; shot.lifetime = .keepAlways; add(shot)
             }
