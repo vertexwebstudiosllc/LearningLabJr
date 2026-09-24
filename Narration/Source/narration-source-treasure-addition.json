@@ -1,0 +1,2127 @@
+[
+  {
+    "text": "You made every treasure pile match! Great adding by fives!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Not quite. Try another chest. Count on by fives to make the piles match.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Drag your chest onto the left pile. That is the pile we are adding to.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 coins.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 coins.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 5?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 5 makes 5. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 10?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 10 makes 10. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 10?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 5 makes 10. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 15?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 15 makes 15. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 15?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 10 makes 15. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 15?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 5 makes 15. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 20?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 20 makes 20. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 20?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 15 makes 20. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 20?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 10 makes 20. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 20?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 5 makes 20. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 25?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 25 makes 25. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 25?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 20 makes 25. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 25?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 15 makes 25. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 25?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 10 makes 25. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 25?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 5 makes 25. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 30 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 25 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 20 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 15 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 10 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 30?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 5 makes 30. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 35 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 30 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 25 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 20 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 15 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 10 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 35?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 5 makes 35. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 40 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 35 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 30 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 25 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 20 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 15 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 10 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 40?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 5 makes 40. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 45 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 40 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 35 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 30 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 25 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 20 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 15 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 10 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 45?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 5 makes 45. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 50 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 45 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 40 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 35 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 30 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 25 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 20 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 15 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 10 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 50?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 5 makes 50. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 55 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 50 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 45 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 40 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 35 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 30 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 25 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 20 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 15 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 10 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 55?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 5 makes 55. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 60 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 55 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 50 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 45 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 40 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 35 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 30 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 25 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 20 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 15 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 10 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 60?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 5 makes 60. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 65 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 60 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 55 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 50 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 45 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 40 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 35 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 30 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 25 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 20 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 15 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 10 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 65?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 5 makes 65. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 70 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 65 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 60 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 55 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 50 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 45 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 40 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 35 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 30 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 25 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 20 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 15 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 10 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 70?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 5 makes 70. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 75 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 70 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 65 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 60 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 55 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 50 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 45 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 40 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 35 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 30 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 25 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 20 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 15 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 10 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 75?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 5 makes 75. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 80 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 75 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 70 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 65 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 60 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 55 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 50 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 45 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 40 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 35 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 30 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 25 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 20 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 15 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 10 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 75 coins. How many more will make 80?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "75 plus 5 makes 80. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 85 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 80 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 75 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 70 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 65 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 60 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 55 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 50 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 45 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 40 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 35 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 30 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 25 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 20 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 15 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 75 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "75 plus 10 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 80 coins. How many more will make 85?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "80 plus 5 makes 85. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 90 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 85 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 80 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 75 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 70 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 65 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 60 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 55 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 50 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 45 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 40 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 35 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 30 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 25 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 20 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 75 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "75 plus 15 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 80 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "80 plus 10 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 85 coins. How many more will make 90?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "85 plus 5 makes 90. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 95 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 90 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 85 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 80 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 75 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 70 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 65 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 60 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 55 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 50 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 45 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 40 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 35 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 30 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 25 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 75 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "75 plus 20 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 80 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "80 plus 15 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 85 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "85 plus 10 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 90 coins. How many more will make 95?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "90 plus 5 makes 95. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 0 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "0 plus 100 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 5 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "5 plus 95 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 10 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "10 plus 90 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 15 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "15 plus 85 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 20 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "20 plus 80 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 25 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "25 plus 75 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 30 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "30 plus 70 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 35 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "35 plus 65 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 40 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "40 plus 60 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 45 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "45 plus 55 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 50 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "50 plus 50 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 55 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "55 plus 45 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 60 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "60 plus 40 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 65 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "65 plus 35 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 70 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "70 plus 30 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 75 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "75 plus 25 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 80 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "80 plus 20 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 85 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "85 plus 15 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 90 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "90 plus 10 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "We have 95 coins. How many more will make 100?",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "95 plus 5 makes 100. Both treasure piles match!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

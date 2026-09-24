@@ -35,7 +35,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Touch & Count | Find the requested animal among mixed animal pictures; only matching taps count, with numbered checks and Ruth hints | 20 rounds: four 3×3 (1–9), six 4×4 (1–16), ten 5×5 (1–25); distinct target counts and animals within each stage |
 | Picnic Share | Compare what we have with what we need, then choose how many to add or take away from three numbers | 10 random, distinct equations; five addition and five subtraction, totals within 10; advances after Ruth explains the answer |
 | Sleepy Sheep | One sheep hops in automatically; Count sheep sends it right and brings another in from the left | Continuous count 0–100, Ruth number calls, guarded taps, reduced-motion support and replay |
-| Treasure Trail | Choose the pile with more or less treasure; equal-size coins in rows of ten, numerals and Ruth quantity buttons | 46 shuffled comparisons covering every number 10–100; tens first, then nearby quantities |
+| Treasure Trail | Drag one of three numbered chests onto the smaller left pile to match the right pile; count coins in rows of ten | 20 shuffled target totals 5–100, starting amounts and choices 0–100 in steps of five; includes an empty pile |
 | Which Has More? | Compare aligned groups of twelve rotating fruits; find more first, then fewer, with closer differences later | 20 comparisons, quantities 1–8 |
 | Five-Frame Garden | Build requested groups and correct preplanted groups in one or two five-frames with eight flower designs | 20 levels, targets 1–10 |
 | Ticket Train | Match exactly one ticket dot per passenger using twelve animal passengers and varied dot layouts | 24 levels, 2–9 passengers |

@@ -8,7 +8,7 @@ struct CountingMenu: View {
         .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Find and count a named animal in twenty mixed grids growing from 3×3 to 5×5", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "Find the missing amount in addition and subtraction", interaction: "Solve ten new picnic math puzzles with totals up to ten", ageBand: "Ages 2–4", caregiverTip: "Use real snacks to show how adding or taking away reaches the total."),
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Count forward one at a time to one hundred", interaction: "Welcome one hopping sheep at a time and count with Ruth to one hundred", ageBand: "Ages 2–4", caregiverTip: "Say the next number together when each sheep lands."),
-        .init(id: "counting.trail", title: "Treasure Trail", skill: "Compare quantities from ten to one hundred", interaction: "Choose more or less treasure across forty-six comparisons", ageBand: "Ages 3–4", caregiverTip: "Count full rows by tens, then count the extra coins together."),
+        .init(id: "counting.trail", title: "Treasure Trail", skill: "Add treasure in steps of five", interaction: "Drag the missing amount to match twenty treasure piles from five to one hundred", ageBand: "Ages 3–4", caregiverTip: "Count on by fives to find how much treasure is missing."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare more, then fewer across twenty increasingly close pairs", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
         .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames with eight flower styles", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
@@ -151,44 +151,89 @@ private struct PicnicShareGame: View {
     }
 }
 
+private struct TreasureChestArt: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 12).fill(Color.brown.gradient)
+            RoundedRectangle(cornerRadius: 12).stroke(Color.orange, lineWidth: 3)
+            Rectangle().fill(Color.orange).frame(height: 4).offset(y: -6)
+            RoundedRectangle(cornerRadius: 3).fill(Color.yellow).frame(width: 14, height: 20)
+        }.frame(width: 62, height: 42).accessibilityHidden(true)
+    }
+}
+
 private struct TreasureTrailGame: View {
     @StateObject private var play = CountingPlay(kind: .trail)
+    @State private var dragged: Int?
+    @State private var offset = CGSize.zero
+    @State private var hovering = false
+
     var body: some View {
         CountingStage(play: play) {
-            Text(play.lesson.fewer ? "Find less treasure" : "Find more treasure")
-                .font(.title2.bold()).accessibilityIdentifier("counting.ext.clue")
-            Text("Each full row = 10 coins").font(.subheadline)
-            HStack(alignment: .top, spacing: 12) {
-                ForEach(play.lesson.choices, id: \.self) { value in
-                    VStack(spacing: 8) {
-                        Button { play.choose(value) } label: {
-                            VStack(spacing: 10) {
-                                Image(systemName: "shippingbox.fill").font(.largeTitle).foregroundStyle(.brown)
-                                // Fixed slots keep coin size and spacing identical in both piles.
-                                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 10), spacing: 5) {
-                                    ForEach(0..<100, id: \.self) { index in
-                                        Circle().fill(Color.yellow.gradient)
-                                            .overlay(Circle().stroke(Color.orange, lineWidth: 1))
-                                            .aspectRatio(1, contentMode: .fit)
-                                            .opacity(index < value ? 1 : 0)
-                                    }
-                                }.accessibilityHidden(true)
-                                Text("\(value)").font(.system(size: 34, weight: .bold, design: .rounded))
-                                Text("coins").font(.headline)
-                            }.padding(10).frame(maxWidth: .infinity)
-                                .background(.white, in: RoundedRectangle(cornerRadius: 20))
-                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.orange.opacity(0.5), lineWidth: 2))
-                        }.buttonStyle(.plain)
-                            .accessibilityLabel("Pile with \(value) coins")
-                            .accessibilityIdentifier("counting.ext.choice.\(value)")
-                        Button { play.say("\(value) coins.") } label: {
-                            Label("Hear \(value)", systemImage: "speaker.wave.2.fill")
-                                .font(.headline).frame(maxWidth: .infinity, minHeight: 48)
-                        }.buttonStyle(.bordered).accessibilityIdentifier("counting.trail.hear.\(value)")
+            Text("\(play.lesson.start) + \(play.solved ? String(play.target) : "?") = \(play.lesson.goal)")
+                .font(.system(.title, design: .rounded, weight: .bold))
+            Text("Drag a chest to your pile. Each full row has 10 coins.").font(.subheadline).multilineTextAlignment(.center)
+            GeometryReader { geometry in
+                let width = geometry.size.width
+                let pileWidth = (width - 12) / 2
+                let left = CGRect(x: 0, y: 0, width: pileWidth, height: 222)
+                ZStack(alignment: .topLeading) {
+                    pile(count: play.count, title: "Your pile", id: "left")
+                        .frame(width: pileWidth, height: 222)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(hovering ? Color.green : Color.orange, lineWidth: hovering ? 4 : 2))
+                        .position(x: left.midX, y: left.midY)
+                    pile(count: play.lesson.goal, title: "Match this", id: "right")
+                        .frame(width: pileWidth, height: 222)
+                        .position(x: width - pileWidth / 2, y: 111)
+                    ForEach(Array(play.lesson.choices.enumerated()), id: \.element) { index, value in
+                        VStack(spacing: 6) {
+                            TreasureChestArt()
+                            Text("+\(value)").font(.system(.title2, design: .rounded, weight: .bold))
+                        }.frame(width: (width - 20) / 3, height: 90)
+                            .background(.white, in: RoundedRectangle(cornerRadius: 16))
+                            .contentShape(Rectangle())
+                            .highPriorityGesture(DragGesture(minimumDistance: 4, coordinateSpace: .named("treasure-board"))
+                                .onChanged { drag in
+                                    guard !play.solved, !play.complete else { return }
+                                    dragged = value; offset = drag.translation; hovering = left.contains(drag.location)
+                                }
+                                .onEnded { drag in
+                                    dragged = nil; offset = .zero; hovering = false
+                                    play.addTreasure(value, toLeftPile: left.contains(drag.location))
+                                }, including: play.solved || play.complete ? .none : .all)
+                            .offset(dragged == value ? offset : .zero)
+                            .position(x: (CGFloat(index) + 0.5) * (width / 3), y: 283)
+                            .zIndex(dragged == value ? 1 : 0)
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel("Chest with \(value) coins")
+                            .accessibilityHint("Drag onto your pile, or use Add to your pile.")
+                            .accessibilityIdentifier("counting.trail.chest.\(value)")
+                            .accessibilityAction(named: "Add to your pile") { play.addTreasure(value, toLeftPile: true) }
                     }
-                }
-            }
+                }.coordinateSpace(name: "treasure-board")
+            }.frame(height: 335)
         }
+        .onChange(of: play.round) { _, _ in dragged = nil; offset = .zero; hovering = false }
+    }
+
+    private func pile(count: Int, title: String, id: String) -> some View {
+        VStack(spacing: 6) {
+            Text(title).font(.headline)
+            Text("\(count)").font(.system(size: 30, weight: .bold, design: .rounded))
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 10), spacing: 3) {
+                ForEach(0..<100, id: \.self) { index in
+                    Circle().fill(Color.yellow).overlay(Circle().stroke(Color.orange, lineWidth: 1))
+                        .frame(height: 9).opacity(index < count ? 1 : 0)
+                }
+            }.accessibilityHidden(true)
+        }.padding(10).frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.white, in: RoundedRectangle(cornerRadius: 20))
+            .contentShape(Rectangle())
+            .onTapGesture { play.say("\(count) coins.") }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(title), \(count) coins")
+            .accessibilityIdentifier("counting.trail.\(id)")
+            .accessibilityAction(named: "Hear quantity") { play.say("\(count) coins.") }
     }
 }
 

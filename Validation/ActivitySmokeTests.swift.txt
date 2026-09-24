@@ -827,25 +827,39 @@ final class ActivitySmokeTests: XCTestCase {
                 if index + 1 < total { XCTAssertEqual(XCTWaiter.wait(for: [advanced], timeout: 8), .completed) }
                 else { XCTAssertTrue(app.buttons["Play again"].waitForExistence(timeout: 8)) }
                 continue
-            case "trail", "more", "tickets", "dots":
+            case "trail":
+                let left = element("counting.trail.left")
+                let right = element("counting.trail.right")
+                let start = number(left.label)
+                let goal = number(right.label)
+                let target = goal - start
+                XCTAssertLessThan(start, goal)
+                XCTAssertEqual(start % 5, 0); XCTAssertEqual(goal % 5, 0)
+                let chests = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.trail.chest.'")).allElementsBoundByIndex
+                XCTAssertEqual(chests.count, 3)
+                let correct = element("counting.trail.chest.\(target)")
+                func drop(_ chest: XCUIElement, onto pile: XCUIElement) throws {
+                    try reveal(chest, in: app)
+                    chest.press(forDuration: 0.15, thenDragTo: pile)
+                }
+                try drop(correct, onto: right)
+                XCTAssertFalse(next.exists); XCTAssertEqual(number(left.label), start)
+                let wrong = chests.first { number($0.label) != target }!
+                try drop(wrong, onto: left)
+                XCTAssertFalse(next.exists); XCTAssertEqual(number(left.label), start)
+                try drop(correct, onto: left)
+                XCTAssertEqual(number(left.label), goal)
+            case "more", "tickets", "dots":
                 let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
                 let values = choices.map { number($0.label) }
                 let target: Int
-                if kind == "more" || kind == "trail" {
+                if kind == "more" {
                     target = ["Find fewer", "Find less treasure"].contains(app.staticTexts["counting.ext.clue"].label) ? values.min()! : values.max()!
                 } else if kind == "tickets" { target = number(element("counting.ext.passengers").label) }
                 else {
                     target = number(element("counting.ext.clue").label)
                     try tap("counting.ext.peek")
                     XCTAssertEqual(element("counting.ext.clue").label, "Hidden clue")
-                }
-                if kind == "trail" && index < 2 {
-                    XCTAssertEqual(choices.count, 2)
-                    for value in values {
-                        try tap("counting.trail.hear.\(value)")
-                        XCTAssertEqual(app.staticTexts["counting.ext.feedback"].label, "\(value) coins.")
-                        XCTAssertFalse(next.exists)
-                    }
                 }
                 try tap("counting.ext.choice.\(values.first { $0 != target }!)")
                 XCTAssertFalse(next.exists)
@@ -907,7 +921,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingThemedLayouts() async throws {
-        let games = [("trail", "Treasure Trail", 46), ("garden", "Five-Frame Garden", 20),
+        let games = [("trail", "Treasure Trail", 20), ("garden", "Five-Frame Garden", 20),
                      ("towers", "Twin Towers", 18), ("dots", "Dot Detective", 18),
                      ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
@@ -961,7 +975,7 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 46) }
+    func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 20) }
 
     @MainActor
     func testExpandedMoreGroups() async throws { try await playExpandedCounting("more", title: "Which Has More?", total: 20) }
