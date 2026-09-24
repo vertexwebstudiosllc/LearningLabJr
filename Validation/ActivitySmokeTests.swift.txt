@@ -786,16 +786,6 @@ final class ActivitySmokeTests: XCTestCase {
         func element(_ id: String) -> XCUIElement { app.descendants(matching: .any).matching(identifier: id).firstMatch }
         func number(_ label: String) -> Int { label.split(whereSeparator: { !$0.isNumber }).compactMap { Int($0) }.first! }
         func tap(_ id: String) throws { let button = app.buttons[id]; try reveal(button, in: app); button.tap() }
-        func listen() throws {
-            try tap("counting.ext.listen")
-            let drum = app.buttons["counting.ext.tap"]
-            let waiting = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == false"), object: drum)
-            XCTAssertEqual(XCTWaiter.wait(for: [waiting], timeout: 4), .completed)
-            XCTAssertFalse(app.buttons["counting.ext.check"].isEnabled)
-            XCTAssertFalse(app.buttons["counting.ext.clear"].isEnabled)
-            let ready = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: drum)
-            XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 15), .completed)
-        }
         var fruitPairs: Set<String> = []
         for index in 0..<(previewLevels ?? total) {
             let level = app.staticTexts["counting.ext.level"]
@@ -863,12 +853,7 @@ final class ActivitySmokeTests: XCTestCase {
                 try tap("counting.ext.choice.\(values.first { $0 != target }!)")
                 XCTAssertFalse(next.exists)
                 try tap("counting.ext.choice.\(target)")
-            default:
-                try listen()
-                let target = 1 + index / 3
-                XCTAssertEqual(app.staticTexts["counting.ext.count"].label, "Your beats: 0")
-                for _ in 0..<target { try tap("counting.ext.tap") }
-                try tap("counting.ext.check")
+            default: XCTFail("Unknown counting game")
             }
             XCTAssertTrue(next.waitForExistence(timeout: 3), "\(title) level \(index + 1)")
             if index == total - 1 || previewLevels != nil || (["trail", "more"].contains(kind) && index == 0) {
@@ -888,8 +873,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingThemedLayouts() async throws {
-        let games = [("trail", "Treasure Trail", 20),
-                     ("drum", "Counting Drum", 18)]
+        let games = [("trail", "Treasure Trail", 20)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
         }
@@ -993,6 +977,82 @@ final class ActivitySmokeTests: XCTestCase {
         try reveal(replay, in: app); replay.tap()
         XCTAssertEqual(app.staticTexts["counting.garden.level"].label, "Garden 1 of 20")
         XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "0 of 5 flowers planted")
+    }
+
+    @MainActor
+    func testThreeDrumPatterns() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Counting Drum"]
+        try reveal(card, in: app); card.tap()
+        let phase = app.staticTexts["counting.drum.phase"]
+        let level = app.staticTexts["counting.drum.level"]
+        let progress = app.staticTexts["counting.drum.progress"]
+        func waitFor(_ label: String, element: XCUIElement, timeout: Double = 15) {
+            let expected = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", label), object: element)
+            XCTAssertEqual(XCTWaiter.wait(for: [expected], timeout: timeout), .completed)
+        }
+        func notes() -> [String] {
+            app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.drum.example.'")).allElementsBoundByIndex
+                .sorted { $0.identifier < $1.identifier }.map { $0.label.components(separatedBy: ", ").last! }
+        }
+        let names = ["Small drum", "Medium drum", "Big drum"]
+        func pad(_ name: String) -> XCUIElement { app.buttons["counting.drum.pad.\(names.firstIndex(of: name)!)"] }
+        XCTAssertTrue(level.waitForExistence(timeout: 5))
+        let first = notes()
+        var patterns: Set<String> = []
+        for index in 0..<18 {
+            let length = 2 + index / 3
+            waitFor("Pattern \(index + 1) of 18 · \(length) beats", element: level)
+            let pattern = notes()
+            XCTAssertEqual(pattern.count, length)
+            XCTAssertTrue(patterns.insert(pattern.joined(separator: ",")).inserted)
+            waitFor("Your turn", element: phase)
+            if index % 3 == 0 {
+                let firstPad = pad(pattern[0]); try reveal(firstPad, in: app); firstPad.tap()
+                waitFor("1 of \(length) beats copied", element: progress)
+                let wrong = pad(names.first { $0 != pattern[1] }!)
+                try reveal(wrong, in: app); wrong.tap()
+                waitFor("Watch my pattern", element: phase, timeout: 3)
+                XCTAssertEqual(progress.label, "0 of \(length) beats copied")
+                XCTAssertEqual(notes(), pattern)
+                XCTAssertFalse(app.buttons["counting.drum.watch"].isEnabled)
+                waitFor("Your turn", element: phase)
+            }
+            if index == 0 {
+                app.buttons["counting.drum.watch"].tap()
+                waitFor("Watch my pattern", element: phase, timeout: 3)
+                XCUIDevice.shared.press(.home); app.activate()
+                waitFor("Your turn", element: phase)
+                XCTAssertEqual(progress.label, "0 of 2 beats copied")
+            }
+            for (position, name) in pattern.enumerated() {
+                let button = pad(name); try reveal(button, in: app)
+                XCTAssertGreaterThanOrEqual(button.frame.width, 44)
+                button.tap(); waitFor("\(position + 1) of \(length) beats copied", element: progress)
+            }
+            waitFor("Pattern complete!", element: phase)
+            if [0, 9, 17].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Three drums, \(length) beats"; shot.lifetime = .keepAlways; add(shot)
+            }
+            let next = app.buttons["counting.drum.next"]
+            try reveal(next, in: app)
+            if next.frame.maxY > app.windows.firstMatch.frame.maxY - 50 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        waitFor("Pattern 1 of 18 · 2 beats", element: level)
+        XCTAssertNotEqual(notes(), first)
+        let replayFirst = notes()
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        waitFor("Your turn", element: phase)
+        XCTAssertNotEqual(notes(), replayFirst)
+        XCTAssertEqual(progress.label, "0 of 2 beats copied")
     }
 
     @MainActor
@@ -1170,8 +1230,6 @@ final class ActivitySmokeTests: XCTestCase {
 
 
 
-    @MainActor
-    func testExpandedCountingDrum() async throws { try await playExpandedCounting("drum", title: "Counting Drum", total: 18) }
 
     @MainActor
     func testTouchCountMixedGridsAndReplay() async throws {

@@ -42,7 +42,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Build-A-Tower | Drag blocks onto a building mat to copy a model from bottom to top: equal blocks, different sizes, then different shapes | 24 rounds, 3–10 blocks per stage |
 | Dot Detective | Choose the dot pattern that fills the empty rings in a highlighted grid window; three equal-count choices emphasize spatial matching | 24 randomized rounds, grids grow from 3×3 to 10×10 |
 | Frog Hops | Hop from grass across stationary vehicles into adjacent open road squares and finish at the pond; forward and diagonal moves only | 18 randomized crossings: six each on 4×4, 5×5 and 6×6 boards |
-| Counting Drum | Request spoken beats, then echo their count on eight illustrated drums; replay remains available without a timing score | 18 levels, 1–6 beats |
+| Counting Drum | Watch three differently sized drums light up, then copy the order; mistakes automatically replay the example, which remains visible | 18 randomized patterns, growing from 2 to 7 beats |
 
 Abstract addition, subtraction equations, number bonds, `>`/`<`, and ordering numbers to 20 are absent from the active toddler counting menu. The new activities use concrete small groups, objects, actions, and spatial comparison. Dot cards and visible reference models support children who are still learning numerals.
 

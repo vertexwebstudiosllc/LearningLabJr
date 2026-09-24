@@ -7754,6 +7754,14 @@
       "category": "stories"
     },
     {
+      "text": "Big drum",
+      "file": "llj-e6cd2080a2d6f7e13d1d9bf0.mp3",
+      "spokenText": "Big drum",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Black and white make gray!",
       "file": "llj-1b9f9f6655fb357d535ee85b.mp3",
       "spokenText": "Black and white make gray!",
@@ -14474,6 +14482,14 @@
       "category": "literacy"
     },
     {
+      "text": "Let's watch that pattern again, from the beginning.",
+      "file": "llj-8684d5b2875ca0f38493804b.mp3",
+      "spokenText": "Let's watch that pattern again, from the beginning.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
       "file": "llj-cacf30c98cb38f5772f89873.mp3",
       "spokenText": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
@@ -17125,6 +17141,14 @@
       "text": "Match the petals! Drag each flower to its matching garden spot.",
       "file": "llj-8c930ca0d359d158c77eb6c7.mp3",
       "spokenText": "Match the petals! Drag each flower to its matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Medium drum",
+      "file": "llj-344183305fbba49ffc7a3c0c.mp3",
+      "spokenText": "Medium drum",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -22346,6 +22370,14 @@
       "category": "shapes"
     },
     {
+      "text": "Small drum",
+      "file": "llj-e2d02e5e5729cc1bb5d3f63c.mp3",
+      "spokenText": "Small drum",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Small fits in the nest.",
       "file": "llj-e26570866eb7a1a5d70fb487.mp3",
       "spokenText": "Small fits in the nest.",
@@ -25360,6 +25392,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Watch our three drums! Then tap the same drums in the same order.",
+      "file": "llj-2874b2bd7f9093be3e186c4c.mp3",
+      "spokenText": "Watch our three drums! Then tap the same drums in the same order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Watch the pattern. My turn!",
+      "file": "llj-dee7911873ab163705e4d72d.mp3",
+      "spokenText": "Watch the pattern. My turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Wave to your grown-up, or show how a puppet could wave.",
@@ -29490,6 +29538,14 @@
       "category": "counting"
     },
     {
+      "text": "You copied every drum pattern! Let's give our drummer a cheer!",
+      "file": "llj-e94d923a7f5d29e4d038c165.mp3",
+      "spokenText": "You copied every drum pattern! Let's give our drummer a cheer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You counted 1 apple!",
       "file": "llj-5b3d8424ee3f9cb3b9afa3fd.mp3",
       "spokenText": "You counted 1 apple!",
@@ -31858,6 +31914,14 @@
       "category": "nature"
     },
     {
+      "text": "You played the whole pattern! What a wonderful drummer!",
+      "file": "llj-0594c54433cb9674203fe0ff.mp3",
+      "spokenText": "You played the whole pattern! What a wonderful drummer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You practiced wiggling, slowing, and pausing together!",
       "file": "llj-60add7fd3f49a02e3eb7de9c.mp3",
       "spokenText": "You practiced wiggling, slowing, and pausing together!",
@@ -32320,6 +32384,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Your turn! Tap the drums in the same order.",
+      "file": "llj-030c798044c6f8fca2534671.mp3",
+      "spokenText": "Your turn! Tap the drums in the same order.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Your turn! Tap to roll the ball to your grown-up.",

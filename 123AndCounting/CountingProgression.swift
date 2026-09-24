@@ -2,14 +2,13 @@ import SwiftUI
 import Combine
 
 enum CountingActivity: String, CaseIterable {
-    case share, trail, more, tickets, drum
+    case share, trail, more, tickets
     var title: String {
         switch self {
         case .share: return "Picnic Share"
         case .trail: return "Treasure Trail"
         case .more: return "Which Has More?"
         case .tickets: return "Ticket Train"
-        case .drum: return "Counting Drum"
         }
     }
     var completion: String {
@@ -18,7 +17,6 @@ enum CountingActivity: String, CaseIterable {
         case .trail: return "You made every treasure pile match! Great adding by fives!"
         case .more: return "You compared every group. You found more and fewer!"
         case .tickets: return "Every train has matching tickets. All aboard, counting explorer!"
-        case .drum: return "You echoed all the counting beats. What a musical adventure!"
         }
     }
     func levels() -> [CountingLesson] {
@@ -55,7 +53,6 @@ enum CountingActivity: String, CaseIterable {
                 CountingLesson(target: mode == 0 ? pair.1 : pair.0, other: mode == 0 ? pair.0 : pair.1, variant: index, fewer: mode == 1)
             } }
         case .tickets: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
-        case .drum: return (1...6).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         }
     }
 }
@@ -118,7 +115,6 @@ final class CountingPlay: ObservableObject {
     var total: Int { levels.count }
     var lesson: CountingLesson { levels[round] }
     var target: Int { lesson.target }
-    var limit: Int { min(12, target + 2) }
     init(kind: CountingActivity) { self.kind = kind; levels = kind.levels(); resetRound() }
     var prompt: String {
         switch kind {
@@ -126,7 +122,6 @@ final class CountingPlay: ObservableObject {
         case .trail: return lesson.treasurePrompt
         case .more: return lesson.fewer ? "Which group has fewer pieces of fruit? Tap that group." : "Which group has more pieces of fruit? Tap that group."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
-        case .drum: return "Listen to my counting beats. Tap the drum the same number of times."
         }
     }
     func say(_ text: String) { guard !complete else { return }; feedback = text; feedbackRevision += 1 }
@@ -141,7 +136,6 @@ final class CountingPlay: ObservableObject {
         count = lesson.start
         solved = false; feedback = ""
     }
-    func clear() { guard !complete, !solved else { return }; count = 0; feedback = "" }
     func addTreasure(_ value: Int, toLeftPile: Bool) {
         guard kind == .trail, !solved, !complete, lesson.choices.contains(value) else { return }
         guard toLeftPile else { say("Drag your chest onto the left pile. That is the pile we are adding to."); return }
@@ -165,19 +159,6 @@ final class CountingPlay: ObservableObject {
             case .tickets: say("Match each passenger with one dot. Try another ticket.")
             default: break
             }
-        }
-    }
-    func tap() {
-        guard kind == .drum, !solved, !complete, count < limit else { return }
-        count += 1; say("\(count)")
-    }
-    func check() {
-        guard !solved, !complete else { return }
-        switch kind {
-        case .drum:
-            if count == target { win("\(target) beats. You echoed my drum!") }
-            else { count = 0; say("Let's listen again, then tap along.") }
-        default: break
         }
     }
 }

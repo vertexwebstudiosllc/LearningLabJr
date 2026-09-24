@@ -15,7 +15,7 @@ struct CountingMenu: View {
         .init(id: "counting.tower", title: "Build-A-Tower", skill: "Count blocks and copy sizes and shapes", interaction: "Build twenty-four towers with three to ten blocks, matching a model from bottom to top", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
         .init(id: "counting.dots", title: "Dot Detective", skill: "Match missing dot patterns", interaction: "Solve twenty-four randomized missing-pattern puzzles in grids growing from three by three to ten by ten", ageBand: "Ages 3–4", caregiverTip: "Point to the empty rings and compare their positions with each pattern card."),
         .init(id: "counting.hops", title: "Frog Hops", skill: "Plan a route and count hops", interaction: "Hop along eighteen randomized routes across four, five and six square road grids", ageBand: "Ages 2–4", caregiverTip: "Point to the next open square and count each hop toward the pond."),
-        .init(id: "counting.drum", title: "Counting Drum", skill: "Count and remember a short rhythm", interaction: "Echo eighteen groups of one to six beats at your own pace", ageBand: "Ages 3–4", caregiverTip: "Echo the beat with claps; there is no speed test.")
+        .init(id: "counting.drum", title: "Counting Drum", skill: "Copy drum patterns in order", interaction: "Watch and copy eighteen randomized patterns on three drums, growing from two to seven beats", ageBand: "Ages 3–4", caregiverTip: "Say small, medium or big together while following the example.")
     ]
 
     var body: some View {
@@ -271,56 +271,5 @@ private struct TicketTrainGame: View {
                 }.buttonStyle(.plain).accessibilityLabel("Ticket with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
             }
         }
-    }
-}
-
-private struct CountingDrumGame: View {
-    @StateObject private var play = CountingPlay(kind: .drum)
-    @StateObject private var narrator = GameNarrator()
-    @State private var demonstration = 0
-    @State private var playing = false
-    @State private var beat = 0
-    @Environment(\.scenePhase) private var scenePhase
-    var body: some View {
-        CountingStage(play: play) {
-            ToddlerActionButton(title: "Hear my beats", systemImage: "speaker.wave.2.fill", color: .indigo) { demonstration += 1 }
-                .accessibilityIdentifier("counting.ext.listen")
-            Text(playing ? "Listen: \(beat)" : "Your beats: \(play.count)").font(.title.bold()).accessibilityIdentifier("counting.ext.count")
-            Button { if !playing { play.tap() } } label: {
-                ZStack {
-                    Circle().fill(play.lesson.theme.color.opacity(0.18))
-                    Circle().stroke(play.lesson.theme.color, lineWidth: 8).padding(5)
-                    ToddlerArt(asset: play.lesson.theme.asset, size: 72)
-                }.frame(width: 124, height: 124)
-                    .scaleEffect(playing && beat > 0 ? 1.04 : 1)
-                    .frame(maxWidth: .infinity, minHeight: 140).background(.white, in: RoundedRectangle(cornerRadius: 28))
-            }.buttonStyle(.plain).disabled(playing || play.count >= play.limit).accessibilityLabel("Drum. Tap one beat").accessibilityIdentifier("counting.ext.tap")
-            ToddlerActionButton(title: "Check my beats", systemImage: "checkmark.circle.fill", color: .indigo) {
-                play.check()
-                if !play.solved { demonstration += 1 }
-            }.disabled(playing).accessibilityIdentifier("counting.ext.check")
-            ToddlerActionButton(title: "Clear my beats", systemImage: "arrow.counterclockwise", color: .indigo, action: play.clear)
-                .disabled(playing).accessibilityIdentifier("counting.ext.clear")
-        }
-        .task(id: demonstration) {
-            let request = demonstration
-            guard request > 0 else { playing = false; beat = 0; return }
-            playing = true; beat = 0; play.clear()
-            do {
-                try await Task.sleep(for: .milliseconds(600))
-                for value in 1...play.target {
-                    try Task.checkCancellation()
-                    beat = value; narrator.speak("\(value). Boom.")
-                    try await Task.sleep(for: .milliseconds(1300))
-                }
-                if request == demonstration { playing = false }
-            } catch {
-                if request == demonstration { narrator.stop(); playing = false }
-            }
-        }
-        .onChange(of: play.round) { _, _ in demonstration = 0 }
-        .onChange(of: play.complete) { _, _ in demonstration = 0 }
-        .onChange(of: scenePhase) { _, phase in if phase != .active { demonstration = 0; narrator.stop() } }
-        .onDisappear { narrator.stop() }
     }
 }

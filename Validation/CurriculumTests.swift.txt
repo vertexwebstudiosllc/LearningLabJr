@@ -69,7 +69,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -93,17 +93,10 @@ final class CurriculumTests: XCTestCase {
                     }
                     if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
                     play.choose(n); record(play)
-                case .drum:
-                    play.check(); record(play); XCTAssertFalse(play.solved)
-                    for _ in 0..<(play.limit + 2) { play.tap(); record(play) }
-                    XCTAssertEqual(play.count, play.limit)
-                    play.check(); record(play); XCTAssertEqual(play.count, 0)
-                    for _ in 0..<n { play.tap(); record(play) }
-                    play.check(); record(play)
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n)
+                play.choose(n)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -111,7 +104,6 @@ final class CurriculumTests: XCTestCase {
             play.advance(); XCTAssertEqual(play.round, play.total - 1)
             play.replay(); XCTAssertEqual(play.round, 0); XCTAssertFalse(play.complete); XCTAssertFalse(play.solved)
         }
-        for n in 1...6 { narration.insert("\(n). Boom.") }
         for text in narration {
             XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
@@ -158,6 +150,56 @@ final class CurriculumTests: XCTestCase {
                 }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    @MainActor
+    func testDrumPatternsProgressionRetriesAndRuth() throws {
+        var previous: String?
+        for _ in 0..<100 {
+            var play = DrumPatternSession(previousFirst: previous)
+            XCTAssertEqual(play.rounds.count, 18)
+            XCTAssertEqual(Set(play.rounds.map(\.signature)).count, 18)
+            XCTAssertNotEqual(play.rounds[0].signature, previous)
+            previous = play.rounds[0].signature
+            for index in 0..<18 {
+                let notes = play.current.notes
+                XCTAssertEqual(notes.count, 2 + index / 3)
+                XCTAssertGreaterThanOrEqual(Set(notes).count, 2)
+                XCTAssertEqual(play.phase, .showing)
+                XCTAssertEqual(play.tap(notes[0]), .ignored)
+                play.next(); XCTAssertEqual(play.index, index)
+                for wrongPosition in notes.indices {
+                    play.finishDemo()
+                    for note in notes.prefix(wrongPosition) { XCTAssertEqual(play.tap(note), .correct) }
+                    let wrong = PatternDrum.allCases.first { $0 != notes[wrongPosition] }!
+                    XCTAssertEqual(play.tap(wrong), .retry)
+                    XCTAssertEqual(play.position, 0); XCTAssertEqual(play.phase, .showing)
+                    XCTAssertEqual(play.tap(notes[0]), .ignored)
+                    XCTAssertEqual(play.current.notes, notes)
+                }
+                play.finishDemo(); _ = play.tap(notes[0]); play.beginDemo()
+                XCTAssertEqual(play.position, 0); XCTAssertEqual(play.phase, .showing)
+                play.finishDemo()
+                for (position, note) in notes.enumerated() {
+                    XCTAssertEqual(play.tap(note), position == notes.count - 1 ? .solved : .correct)
+                }
+                XCTAssertEqual(play.phase, .solved)
+                XCTAssertEqual(play.tap(notes[0]), .ignored)
+                play.beginDemo(); play.finishDemo(); XCTAssertEqual(play.phase, .solved)
+                play.next()
+            }
+            XCTAssertTrue(play.finished)
+            play.next(); XCTAssertEqual(play.index, 18)
+        }
+        for drum in PatternDrum.allCases {
+            let url = try XCTUnwrap(Bundle.main.url(forResource: drum.soundName, withExtension: "wav"))
+            let audio = try AVAudioPlayer(contentsOf: url)
+            XCTAssertTrue(audio.prepareToPlay()); XCTAssertEqual(audio.duration, 0.5, accuracy: 0.01)
+        }
+        for text in [DrumPatternRound.prompt, DrumPatternRound.watch, DrumPatternRound.ready, DrumPatternRound.retry, DrumPatternRound.success, DrumPatternRound.completion] + PatternDrum.allCases.map(\.name) {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
         }
     }
 
