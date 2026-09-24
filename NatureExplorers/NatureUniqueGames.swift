@@ -1,52 +1,5 @@
 import SwiftUI
 
-struct DinosaurTrailGame: View {
-    @State private var visited = 0
-    private let route = [0, 1, 3, 2, 4, 5]
-    private let captions = ["Start at the glowing footprint.", "Follow the next glowing footprint.", "The tracks turn this way.", "Keep following the trail.", "Nearly there. Another footprint!", "One last footprint!", "A Triceratops! It had three horns and ate plants."]
-
-    var body: some View {
-        ToddlerGameScaffold(title: "Dinosaur Trail", prompt: captions[visited], completion: visited == 6, onReplay: { visited = 0 }) {
-            if visited == 6 { ToddlerArt(asset: "Triceratops", size: 180) }
-            else {
-                Text("Follow the trail with a finger.").font(.headline)
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 18) {
-                    ForEach(0..<6) { tile in
-                        let order = route.firstIndex(of: tile) ?? 0
-                        Button {
-                            if order == visited { visited += 1 }
-                        } label: {
-                            VStack(spacing: 8) {
-                                Image(systemName: order < visited ? "checkmark.circle.fill" : "pawprint.fill")
-                                    .font(.system(size: 45)).rotationEffect(.degrees(tile.isMultiple(of: 2) ? 22 : -22))
-                                Text(order == visited ? "Here!" : order < visited ? "Found" : "Footprint")
-                                    .font(.system(.headline, design: .rounded))
-                            }
-                            .frame(maxWidth: .infinity, minHeight: 120)
-                            .foregroundStyle(order == visited ? Color.white : Color.teal)
-                            .background(order == visited ? Color.teal : Color.teal.opacity(0.10), in: RoundedRectangle(cornerRadius: 25))
-                            .overlay(RoundedRectangle(cornerRadius: 25).stroke(order == visited ? Color.teal : .clear, lineWidth: 4))
-                        }.buttonStyle(.plain)
-                            .accessibilityLabel(order == visited ? "Next footprint" : order < visited ? "Footprint found" : "A later footprint")
-                    }
-                }
-                .background {
-                    GeometryReader { geometry in
-                        Path { path in
-                            for (index, tile) in route.enumerated() {
-                                let point = CGPoint(x: geometry.size.width * (tile.isMultiple(of: 2) ? 0.25 : 0.75),
-                                                    y: geometry.size.height * (CGFloat(tile / 2) + 0.5) / 3)
-                                if index == 0 { path.move(to: point) } else { path.addLine(to: point) }
-                            }
-                        }.stroke(Color.teal.opacity(0.35), style: StrokeStyle(lineWidth: 7, dash: [6, 8]))
-                    }.accessibilityHidden(true)
-                }
-                ToddlerArt(asset: "Triceratops", size: 100).opacity(0.2)
-            }
-        }
-    }
-}
-
 struct MoonMissionGame: View {
     @State private var step = 0
     private let prompts = ["We are on Earth. Put on a spacesuit for our pretend trip.", "The spacesuit is on. Tap the rocket to launch.", "We are traveling in space. Tap the Moon to land.", "We landed! Tap the astronaut to explore.", "Time to go home. Tap Earth.", "Welcome home to Earth! The Moon is our nearest neighbor in space."]

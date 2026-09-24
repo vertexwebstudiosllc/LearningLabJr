@@ -6,6 +6,61 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testDinosaurTrailsPairSpacingProgressionAndRuth() {
+        var recent: [String] = []
+        for dino in TrailDinosaur.bank {
+            XCTAssertNotNil(UIImage(named: dino.id), dino.id)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: dino.name)?.voice, "Ruth", dino.name)
+        }
+        for text in [DinosaurTrailSession.stepHint, DinosaurTrailSession.completion] {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+        for _ in 0..<100 {
+            var play = DinosaurTrailSession(recentPairs: recent)
+            XCTAssertEqual(play.rounds.count, 15)
+            XCTAssertEqual(Set(play.rounds.map(\.pairID)).count, 15)
+            for index in 0..<15 {
+                let round = play.current
+                XCTAssertEqual(round.steps, 4 + (index / 5) * 2)
+                XCTAssertEqual(Set(round.dinosaurs.map(\.id)).count, 2)
+                XCTAssertFalse(recent.suffix(5).contains(round.pairID))
+                recent.append(round.pairID)
+                for text in [round.prompt, round.success, round.retry] {
+                    XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                    XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+                }
+                for bends in round.bends {
+                    XCTAssertEqual(bends.count, round.steps)
+                    XCTAssertEqual(bends.first, 0.5); XCTAssertEqual(bends.last, 0.5)
+                    XCTAssertTrue(bends.allSatisfy { (0.12...0.88).contains($0) })
+                }
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.step(trail: -1, footprint: 0))
+                XCTAssertFalse(play.step(trail: 2, footprint: 0))
+                XCTAssertFalse(play.step(trail: 0, footprint: -1))
+                for trail in [1 - round.target, round.target] {
+                    for step in 0..<round.steps {
+                        XCTAssertFalse(play.step(trail: trail, footprint: step + 1))
+                        XCTAssertTrue(play.step(trail: trail, footprint: step))
+                        XCTAssertFalse(play.step(trail: trail, footprint: step))
+                        XCTAssertEqual(play.progress[trail], step + 1)
+                    }
+                    if trail != round.target {
+                        XCTAssertFalse(play.solved)
+                        play.next(); XCTAssertEqual(play.index, index)
+                    }
+                }
+                XCTAssertTrue(play.solved)
+                play.next()
+            }
+            XCTAssertTrue(play.complete)
+            play.next(); XCTAssertEqual(play.index, 15)
+            XCTAssertFalse(play.step(trail: 0, footprint: 0))
+            recent = Array(recent.suffix(5))
+        }
+    }
+
+    @MainActor
     func testHabitatGroupsNoRepeatsProgressionAndRuth() {
         var previous: String?
         var signatures: Set<String> = []

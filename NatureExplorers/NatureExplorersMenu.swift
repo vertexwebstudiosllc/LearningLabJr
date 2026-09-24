@@ -27,7 +27,7 @@ enum NatureActivity: String, CaseIterable, Identifiable {
         let details: (String, String, String, String)
         switch self {
         case .habitats: details = ("Habitat Helpers", "Animal homes", "Match four animals to two homes, then explore a new group", "Animals can use more than one habitat. Look for birds in trees and insects among plants together.")
-        case .tracks: details = ("Dinosaur Trail", "Observation & discovery", "Follow connected footprints to uncover a dinosaur", "Make pretend dinosaur footprints with your hands.")
+        case .tracks: details = ("Dinosaur Trail", "Observation & discovery", "Choose between two colored trails to find the named dinosaur", "Make pretend dinosaur footprints with your hands.")
         case .moon: details = ("Moon Mission", "Earth & space", "Pack a spacesuit, launch, land, and return home", "Look for the Moon together, even during the day.")
         case .families: details = ("Animal Families", "Animal vocabulary", "Connect adults with their babies", "A baby horse is a foal. A pony is a small horse, not a baby.")
         case .barn: details = ("Peekaboo Barnyard", "Listening & cause and effect", "Open the doors, meet an animal, and imitate its sound", "Take turns making your own animal sounds.")

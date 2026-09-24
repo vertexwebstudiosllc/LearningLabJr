@@ -104,6 +104,59 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testDinosaurTwoTrails() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Dinosaur Trail"]
+        try reveal(card, in: app); card.tap()
+        let level = app.staticTexts["dinosaur.level"]
+        XCTAssertTrue(level.waitForExistence(timeout: 5))
+        var pairs: [String] = []
+        func pair() -> String { (0..<2).map { app.buttons["dinosaur.destination.\($0)"].label }.sorted().joined(separator: ":") }
+        for index in 0..<15 {
+            let steps = 4 + (index / 5) * 2
+            let entered = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", "Adventure \(index + 1) of 15 · \(steps) footprints"), object: level)
+            XCTAssertEqual(XCTWaiter.wait(for: [entered], timeout: 5), .completed)
+            let key = pair(); XCTAssertFalse(pairs.contains(key)); pairs.append(key)
+            let target = try XCTUnwrap((0..<2).first { trail in
+                let name = app.buttons["dinosaur.destination.\(trail)"].label
+                return app.staticTexts["Can you find the \(name)? Follow the footprints to that dinosaur."].exists
+            })
+            let next = app.buttons["dinosaur.next"]
+            let destination = app.buttons["dinosaur.destination.\(target)"]
+            try reveal(destination, in: app); destination.tap()
+            XCTAssertFalse(next.exists)
+            if index.isMultiple(of: 5) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Dinosaur trails \(steps) footprints"; shot.lifetime = .keepAlways; add(shot)
+            }
+            let skip = app.buttons["dinosaur.step.\(target).1"]
+            try reveal(skip, in: app); skip.tap()
+            XCTAssertFalse(skip.label.contains("followed"))
+            for trail in [1 - target, target] {
+                for step in 0..<steps {
+                    let footprint = app.buttons["dinosaur.step.\(trail).\(step)"]
+                    try reveal(footprint, in: app); footprint.tap()
+                    XCTAssertTrue(footprint.label.contains("followed"))
+                }
+                if trail != target {
+                    XCTAssertFalse(next.exists)
+                    XCTAssertTrue(app.staticTexts["dinosaur.feedback"].label.contains("other trail"))
+                }
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5)); try reveal(replay, in: app); replay.tap()
+        XCTAssertEqual(level.label, "Adventure 1 of 15 · 4 footprints")
+        let second = pair(); XCTAssertFalse(pairs.suffix(5).contains(second))
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertTrue(level.waitForExistence(timeout: 5))
+        XCTAssertNotEqual(pair(), second)
+    }
+
+    @MainActor
     func testHabitatGroups() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]

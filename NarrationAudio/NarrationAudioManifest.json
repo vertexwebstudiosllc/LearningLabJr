@@ -7938,6 +7938,14 @@
       "category": "counting"
     },
     {
+      "text": "Brontosaurus",
+      "file": "llj-8f2ed63fb10677434017b9e9.mp3",
+      "spokenText": "Brontosaurus",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Brown and black make dark brown!",
       "file": "llj-1a4eae85940fcadc764ee395.mp3",
       "spokenText": "Brown and black make dark brown!",
@@ -8552,6 +8560,54 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
+      "file": "llj-7460196eb61d777521939390.mp3",
+      "spokenText": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you find the Spinosaurus? Follow the footprints to that dinosaur.",
+      "file": "llj-a518314684abcd85e931e065.mp3",
+      "spokenText": "Can you find the Spinosaurus? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you find the Stegosaurus? Follow the footprints to that dinosaur.",
+      "file": "llj-4d9f87a655620eaec93d08c6.mp3",
+      "spokenText": "Can you find the Stegosaurus? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you find the Triceratops? Follow the footprints to that dinosaur.",
+      "file": "llj-b2d7afa618e64f2235105bac.mp3",
+      "spokenText": "Can you find the Triceratops? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you find the Tyrannosaurus rex? Follow the footprints to that dinosaur.",
+      "file": "llj-81bc769ab3507535fe946acb.mp3",
+      "spokenText": "Can you find the Tyrannosaurus rex? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you find the Velociraptor? Follow the footprints to that dinosaur.",
+      "file": "llj-73758b523648d65e563f1fce.mp3",
+      "spokenText": "Can you find the Velociraptor? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Cat carries a ball.",
@@ -22658,6 +22714,14 @@
       "category": "stories"
     },
     {
+      "text": "Spinosaurus",
+      "file": "llj-5cafa3a6a7b76408633e60d0.mp3",
+      "spokenText": "Spinosaurus",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Splash! Our frog reached the pond!",
       "file": "llj-90cf98b9c5d92890469d4f91.mp3",
       "spokenText": "Splash! Our frog reached the pond!",
@@ -22698,9 +22762,25 @@
       "category": "shapes"
     },
     {
+      "text": "Start at the bottom. Tap the next footprint on the same colored trail.",
+      "file": "llj-98033bbefed5d05a3360de20.mp3",
+      "spokenText": "Start at the bottom. Tap the next footprint on the same colored trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Start at the glowing footprint.",
       "file": "llj-1a21f43c64132d9992b13a1a.mp3",
       "spokenText": "Start at the glowing footprint.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Stegosaurus",
+      "file": "llj-e7b15cd4483bb961be300270.mp3",
+      "spokenText": "Stegosaurus",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -23224,6 +23304,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "That trail found the Brontosaurus. Let's try the other trail.",
+      "file": "llj-60adf88d8b4af0eb703e1b15.mp3",
+      "spokenText": "That trail found the Brontosaurus. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "That trail found the Spinosaurus. Let's try the other trail.",
+      "file": "llj-6b288446518df6fde84a6b5c.mp3",
+      "spokenText": "That trail found the Spinosaurus. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "That trail found the Stegosaurus. Let's try the other trail.",
+      "file": "llj-476073f431eace0fd506dfe9.mp3",
+      "spokenText": "That trail found the Stegosaurus. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "That trail found the Triceratops. Let's try the other trail.",
+      "file": "llj-f6490da4cd99f3acae267031.mp3",
+      "spokenText": "That trail found the Triceratops. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "That trail found the Tyrannosaurus rex. Let's try the other trail.",
+      "file": "llj-c0075a5530b30022d37998e8.mp3",
+      "spokenText": "That trail found the Tyrannosaurus rex. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "That trail found the Velociraptor. Let's try the other trail.",
+      "file": "llj-8f4680e804639d4c264cd1de.mp3",
+      "spokenText": "That trail found the Velociraptor. Let's try the other trail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "That was fun. Goodbye, Cat!",
@@ -24986,6 +25114,14 @@
       "category": "shapes"
     },
     {
+      "text": "Triceratops",
+      "file": "llj-fb4bb688e069e7a8ee24d383.mp3",
+      "spokenText": "Triceratops",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Try the spot with 1 petal.",
       "file": "llj-37b29747f629efba4bdc8281.mp3",
       "spokenText": "Try the spot with 1 petal.",
@@ -25394,6 +25530,14 @@
       "category": "feelings"
     },
     {
+      "text": "Tyrannosaurus rex",
+      "file": "llj-43aa6e05b85451cf206722dc.mp3",
+      "spokenText": "Tyrannosaurus rex",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "U is for umbrella.",
       "file": "llj-dc8de7eed7781e021052d2b4.mp3",
       "spokenText": "U is for umbrella.",
@@ -25504,6 +25648,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Velociraptor",
+      "file": "llj-06c77af16d58e4ec2bc03e20.mp3",
+      "spokenText": "Velociraptor",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
@@ -31226,6 +31378,14 @@
       "category": "counting"
     },
     {
+      "text": "You followed every dinosaur trail! What an adventure!",
+      "file": "llj-a6dabf0d686866282719b8d6.mp3",
+      "spokenText": "You followed every dinosaur trail! What an adventure!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You followed the winding road all the way home!",
       "file": "llj-8084fefc7d1e77df2ebb8b7d.mp3",
       "spokenText": "You followed the winding road all the way home!",
@@ -31528,6 +31688,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You found the Brontosaurus! What a great explorer!",
+      "file": "llj-fd29198ca656b94ae60ad811.mp3",
+      "spokenText": "You found the Brontosaurus! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the Spinosaurus! What a great explorer!",
+      "file": "llj-9b519bf3c52e0b339597be85.mp3",
+      "spokenText": "You found the Spinosaurus! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the Stegosaurus! What a great explorer!",
+      "file": "llj-01bed4859eeea4c128a5d635.mp3",
+      "spokenText": "You found the Stegosaurus! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the Triceratops! What a great explorer!",
+      "file": "llj-709eb8c429f245e06a0fd87b.mp3",
+      "spokenText": "You found the Triceratops! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the Tyrannosaurus rex! What a great explorer!",
+      "file": "llj-97778b416a43dad802f6affc.mp3",
+      "spokenText": "You found the Tyrannosaurus rex! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the Velociraptor! What a great explorer!",
+      "file": "llj-f76b0e295746db9bbe46ed2f.mp3",
+      "spokenText": "You found the Velociraptor! What a great explorer!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You found the chicken!",
