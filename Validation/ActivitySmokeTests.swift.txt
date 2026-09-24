@@ -104,6 +104,46 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testLittleGardenIndoorAndOutdoorBloom() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Little Garden"]
+        try reveal(card, in: app); card.tap()
+        for (flower, place) in [("sunflower", "inside"), ("zinnia", "outside")] {
+            for id in ["sunflower", "daisy", "zinnia", "marigold"] { XCTAssertTrue(app.buttons["garden.flower.\(id)"].exists) }
+            let choice = app.buttons["garden.flower.\(flower)"]
+            try reveal(choice, in: app); choice.tap()
+            let location = app.buttons["garden.place.\(place)"]
+            try reveal(location, in: app); location.tap()
+            let next = app.buttons["garden.next"]
+            let scene = app.descendants(matching: .any).matching(identifier: "garden.scene").firstMatch
+            for step in 0..<11 {
+                try reveal(next, in: app); next.tap()
+                if step >= 6 {
+                    let expected = ["Roots", "Sprout", "Leaves", "Flower bud", "Full bloom"][step - 6]
+                    let stageReady = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", expected), object: app.staticTexts["garden.stage"])
+                    XCTAssertEqual(XCTWaiter.wait(for: [stageReady], timeout: 5), .completed)
+                    XCTAssertTrue(scene.label.contains(expected))
+                }
+                if step == 7 || step == 10 {
+                    try reveal(scene, in: app)
+                    let shot = XCTAttachment(screenshot: app.screenshot())
+                    shot.name = "Little Garden \(place) stage \(step)"; shot.lifetime = .keepAlways; add(shot)
+                }
+            }
+            XCTAssertTrue(app.staticTexts["garden.complete"].exists)
+            XCTAssertFalse(next.exists)
+            let replay = app.buttons["garden.replay"]
+            try reveal(replay, in: app); replay.tap()
+            XCTAssertTrue(app.buttons["garden.flower.sunflower"].waitForExistence(timeout: 5))
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertTrue(app.buttons["garden.flower.daisy"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor
     func testRestoredBarnyardDiscoveries() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]

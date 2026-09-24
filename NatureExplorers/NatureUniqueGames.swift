@@ -1,25 +1,5 @@
 import SwiftUI
 
-struct LittleGardenGame: View {
-    @State private var step = 0
-    private let prompts = ["A seed can grow into a plant. Tap to put it in the pot.", "Cover the seed with a little soil.", "Give the seed a little water.", "Put the pot near sunlight.", "Growing takes many days. Pretend to wait as the days pass.", "A little plant has grown! Keep giving it the care it needs."]
-    private let tools = [("Plant a seed", "circle.fill"), ("Add soil", "square.stack.3d.up.fill"), ("Water gently", "drop.fill"), ("Find sunlight", "sun.max.fill"), ("Days pass", "calendar")]
-    var body: some View {
-        ToddlerGameScaffold(title: "Little Garden", prompt: prompts[step], accent: .green, completion: step == 5, onReplay: { step = 0 }) {
-            VStack(spacing: 0) {
-                Image(systemName: step == 5 ? "leaf.fill" : step >= 4 ? "sun.max.fill" : step >= 3 ? "drop.fill" : "circle.fill")
-                    .font(.system(size: step == 5 ? 95 : 52)).foregroundStyle(step == 5 ? Color.green : step >= 4 ? .orange : step == 3 ? .blue : .brown)
-                    .frame(height: 120)
-                UnevenRoundedRectangle(bottomLeadingRadius: 38, bottomTrailingRadius: 38)
-                    .fill(Color.brown.opacity(0.7)).frame(width: 160, height: 105)
-            }.accessibilityLabel(step == 5 ? "A leafy plant in a pot" : "A flower pot")
-            if step < 5 {
-                NaturePictureButton(title: tools[step].0, symbol: tools[step].1) { step = min(step + 1, 5) }
-            }
-        }
-    }
-}
-
 struct OceanHelpersGame: View {
     @State private var collected: Set<Int> = []
     @StateObject private var narrator = GameNarrator()

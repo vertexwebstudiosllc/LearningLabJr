@@ -6,6 +6,50 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testLittleGardenChoicesGrowthBothPathsAndRuth() throws {
+        XCTAssertEqual(GardenFlower.all.count, 4)
+        XCTAssertEqual(Set(GardenFlower.all.map(\.id)).count, 4)
+        for flower in GardenFlower.all {
+            for place in GardenPlace.allCases {
+                var play = LittleGardenPlay()
+                play.advance(); play.choosePlace(place)
+                XCTAssertNil(play.place); XCTAssertEqual(play.step, -1)
+                play.chooseFlower(flower)
+                play.chooseFlower(GardenFlower.all.first { $0 != flower }!)
+                XCTAssertEqual(play.flower, flower)
+                XCTAssertTrue(play.prompt.contains(flower.name))
+                play.choosePlace(place)
+                play.choosePlace(place == .inside ? .outside : .inside)
+                XCTAssertEqual(play.place, place)
+                XCTAssertEqual(play.steps.count, 11)
+                XCTAssertEqual(Set(play.steps.map(\.id)).count, 11)
+                var stages: Set<Int> = []
+                for index in 0..<11 {
+                    XCTAssertFalse(play.complete)
+                    XCTAssertNotNil(play.nextStep)
+                    play.advance()
+                    XCTAssertEqual(play.step, index)
+                    XCTAssertEqual(play.prompt, play.steps[index].narration)
+                    stages.insert(play.growth)
+                }
+                XCTAssertEqual(stages, Set(0...5))
+                XCTAssertTrue(play.complete); XCTAssertNil(play.nextStep)
+                XCTAssertEqual(play.stageName, "Full bloom")
+                play.advance(); XCTAssertEqual(play.step, 10)
+                play.restart()
+                XCTAssertNil(play.flower); XCTAssertNil(play.place)
+                XCTAssertEqual(play.prompt, LittleGardenPlay.flowerPrompt)
+                XCTAssertEqual(play.step, -1); XCTAssertFalse(play.complete)
+            }
+        }
+        XCTAssertNotEqual(GardenGrowingStep.steps(for: .inside).map(\.narration), GardenGrowingStep.steps(for: .outside).map(\.narration))
+        for text in LittleGardenPlay.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+        }
+    }
+
+    @MainActor
     func testRestoredBarnyardDeckTransitionsArtworkAndRuth() throws {
         XCTAssertEqual(BarnyardDiscovery.bank.count, 19)
         XCTAssertEqual(Set(BarnyardDiscovery.bank.map(\.id)).count, 19)
