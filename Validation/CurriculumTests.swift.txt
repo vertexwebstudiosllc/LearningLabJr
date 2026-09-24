@@ -6,6 +6,67 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testHabitatGroupsNoRepeatsProgressionAndRuth() {
+        var previous: String?
+        var signatures: Set<String> = []
+        for animal in HabitatAnimal.bank {
+            if let asset = animal.asset { XCTAssertNotNil(UIImage(named: asset), asset) }
+            for text in [animal.prompt, animal.hint] {
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+            }
+        }
+        for text in [HabitatSession.groupPrompt, HabitatSession.completion, "Choose an animal. Then choose its home."] {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+        for _ in 0..<100 {
+            var play = HabitatSession(previousFirst: previous)
+            XCTAssertEqual(play.rounds.count, 6)
+            XCTAssertNotEqual(play.selected, previous)
+            previous = play.selected
+            let all = play.rounds.flatMap(\.animals)
+            XCTAssertEqual(all.count, 24)
+            XCTAssertEqual(Set(all.map(\.id)).count, 24)
+            signatures.insert(all.map(\.id).joined(separator: ","))
+            XCTAssertEqual(Set(play.rounds.map { $0.homes.map(\.rawValue).sorted().joined(separator: ",") }).count, 6)
+            for index in 0..<6 {
+                XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.complete)
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertEqual(Set(play.current.homes).count, 2)
+                let pair = Set(play.current.homes)
+                XCTAssertNotEqual(pair, Set([AnimalHabitat.trees, .rainforest]))
+                XCTAssertNotEqual(pair, Set([AnimalHabitat.farm, .pond]))
+                if pair.contains(.garden) { XCTAssertTrue(pair.contains(.farm) || pair.contains(.ocean)) }
+                for home in play.current.homes {
+                    XCTAssertEqual(play.current.animals.filter { $0.habitat == home }.count, 2)
+                }
+                for animal in play.current.animals.reversed() {
+                    play.select(animal.id)
+                    let count = play.matched.count
+                    for wrong in AnimalHabitat.allCases where wrong != animal.habitat {
+                        XCTAssertFalse(play.place(in: wrong))
+                        XCTAssertEqual(play.matched.count, count)
+                    }
+                    XCTAssertTrue(play.place(in: animal.habitat))
+                    XCTAssertEqual(play.matched.count, count + 1)
+                    let selected = play.selected
+                    play.select(animal.id); XCTAssertEqual(play.selected, selected)
+                    play.select("invalid"); XCTAssertEqual(play.selected, selected)
+                }
+                XCTAssertTrue(play.solved)
+                XCTAssertFalse(play.place(in: play.current.homes[0]))
+                play.next()
+            }
+            XCTAssertTrue(play.complete)
+            play.next(); XCTAssertEqual(play.index, 6)
+            play.select("cow"); XCTAssertNil(play.selected)
+            XCTAssertFalse(play.place(in: .farm))
+        }
+        XCTAssertEqual(signatures.count, 100)
+    }
+
+    @MainActor
     func testNarrationMuteAcceptsBooleanAndLaunchArgumentValues() {
         let suite = "LearningLabJr.MuteTest." + UUID().uuidString
         let defaults = UserDefaults(suiteName: suite)!

@@ -103,6 +103,60 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testPhonicsRoutes() async throws { try await checkCategory("ABCs & Phonics") }
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
+    @MainActor
+    func testHabitatGroups() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Habitat Helpers"]
+        try reveal(card, in: app); card.tap()
+        let homes = ["dolphin": "ocean", "octopus": "ocean", "shark": "ocean", "seahorse": "ocean",
+                     "cow": "farm", "sheep": "farm", "horse": "farm", "pig": "farm",
+                     "bee": "garden", "butterfly": "garden", "ladybug": "garden", "ant": "garden",
+                     "owl": "trees", "eagle": "trees", "bluebird": "trees", "squirrel": "trees",
+                     "gorilla": "rainforest", "orangutan": "rainforest", "tiger": "rainforest", "sloth": "rainforest",
+                     "frog": "pond", "duck": "pond", "goose": "pond", "turtle": "pond"]
+        let progress = app.staticTexts["habitats.progress"]
+        XCTAssertTrue(progress.waitForExistence(timeout: 5))
+        let first = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        var seen: Set<String> = []
+        for round in 0..<6 {
+            XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · 0 of 4 at home")
+            let animals = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("habitats.animal.") }.map(\.identifier)
+            XCTAssertEqual(animals.count, 4)
+            if round == 0 {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Habitat Helpers four-animal set"; shot.lifetime = .keepAlways; add(shot)
+            }
+            for (count, identifier) in animals.reversed().enumerated() {
+                let animal = app.buttons[identifier]
+                let id = String(identifier.dropFirst("habitats.animal.".count))
+                XCTAssertTrue(seen.insert(id).inserted)
+                try reveal(animal, in: app); animal.tap()
+                let home = try XCTUnwrap(homes[id])
+                let wrong = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.home.") && $0.identifier != "habitats.home." + home })
+                try reveal(wrong, in: app); wrong.tap()
+                XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · \(count) of 4 at home")
+                let correct = app.buttons["habitats.home." + home]
+                try reveal(correct, in: app); correct.tap()
+                XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · \(count + 1) of 4 at home")
+                XCTAssertFalse(animal.isEnabled)
+            }
+            let next = app.buttons["habitats.next"]
+            try reveal(next, in: app); next.tap()
+        }
+        XCTAssertEqual(seen.count, 24)
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5)); try reveal(replay, in: app); replay.tap()
+        XCTAssertEqual(progress.label, "Set 1 of 6 · 0 of 4 at home")
+        let second = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        XCTAssertNotEqual(first, second)
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertTrue(progress.waitForExistence(timeout: 5))
+        let third = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        XCTAssertNotEqual(second, third)
+    }
+
     @MainActor func testNatureRoutes() async throws { try await checkCategory("Nature Explorers") }
     @MainActor func testStoryRoutes() async throws { try await checkCategory("Story Time") }
     @MainActor func testFeelingsRoutes() async throws { try await checkCategory("Big Feelings") }

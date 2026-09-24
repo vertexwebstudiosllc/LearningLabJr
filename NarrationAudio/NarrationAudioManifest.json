@@ -8666,6 +8666,14 @@
       "category": "feelings"
     },
     {
+      "text": "Choose an animal. Then choose its home.",
+      "file": "llj-1ce2754955f614b2debb6b10.mp3",
+      "spokenText": "Choose an animal. Then choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Choose the thing in your sentence.",
       "file": "llj-39336479eea4a3e6815d9a7e.mp3",
       "spokenText": "Choose the thing in your sentence.",
@@ -11754,6 +11762,14 @@
       "category": "literacy"
     },
     {
+      "text": "Four animals found their homes! Let's meet some new friends.",
+      "file": "llj-5395ceea10a942318ac8fe09.mp3",
+      "spokenText": "Four animals found their homes! Let's meet some new friends.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "G is for goat.",
       "file": "llj-5fe4b0cb69843fd67648b80d.mp3",
       "spokenText": "G is for goat.",
@@ -14218,12 +14234,204 @@
       "category": "shapes"
     },
     {
+      "text": "Let's try the farm for the cow.",
+      "file": "llj-81d4d2606eb5d72f48bea76f.mp3",
+      "spokenText": "Let's try the farm for the cow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the farm for the horse.",
+      "file": "llj-4b7e19b35af83dee60615469.mp3",
+      "spokenText": "Let's try the farm for the horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the farm for the pig.",
+      "file": "llj-6df1177a9ce2f87c351ab492.mp3",
+      "spokenText": "Let's try the farm for the pig.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the farm for the sheep.",
+      "file": "llj-af25030e809476eaee4214d8.mp3",
+      "spokenText": "Let's try the farm for the sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the garden for the ant.",
+      "file": "llj-0c5943a4a0db68542367532f.mp3",
+      "spokenText": "Let's try the garden for the ant.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the garden for the bee.",
+      "file": "llj-062b542c998c3d1069d71e91.mp3",
+      "spokenText": "Let's try the garden for the bee.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the garden for the butterfly.",
+      "file": "llj-901f00dac06b8c6148d903b4.mp3",
+      "spokenText": "Let's try the garden for the butterfly.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the garden for the ladybug.",
+      "file": "llj-d0d4fef7b0a944528cd7debe.mp3",
+      "spokenText": "Let's try the garden for the ladybug.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the ocean for the dolphin.",
+      "file": "llj-171eca1d3c412fe2a0c3e148.mp3",
+      "spokenText": "Let's try the ocean for the dolphin.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the ocean for the octopus.",
+      "file": "llj-f48ee86ec5c15dc63c165212.mp3",
+      "spokenText": "Let's try the ocean for the octopus.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the ocean for the seahorse.",
+      "file": "llj-38def49427c4912f168f3295.mp3",
+      "spokenText": "Let's try the ocean for the seahorse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the ocean for the shark.",
+      "file": "llj-31488bc551fd21c6c74b31bc.mp3",
+      "spokenText": "Let's try the ocean for the shark.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's try the other basket. Tap its letter and listen.",
       "file": "llj-c7dbbc645050800993b516ac.mp3",
       "spokenText": "Let's try the other basket. Tap its letter and listen.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Let's try the pond for the duck.",
+      "file": "llj-6448122744b919e826b9dc81.mp3",
+      "spokenText": "Let's try the pond for the duck.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the pond for the frog.",
+      "file": "llj-b705ba81e9f5ecf939501186.mp3",
+      "spokenText": "Let's try the pond for the frog.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the pond for the goose.",
+      "file": "llj-d02dbde579d2199a23aa0783.mp3",
+      "spokenText": "Let's try the pond for the goose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the pond for the turtle.",
+      "file": "llj-8d0df1013ceec0f8edb01846.mp3",
+      "spokenText": "Let's try the pond for the turtle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the rainforest for the gorilla.",
+      "file": "llj-55c6d8875d5f6717abdf3908.mp3",
+      "spokenText": "Let's try the rainforest for the gorilla.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the rainforest for the orangutan.",
+      "file": "llj-65e0a391e0b49c5d493195c7.mp3",
+      "spokenText": "Let's try the rainforest for the orangutan.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the rainforest for the sloth.",
+      "file": "llj-ce773a9020c63f826f4e17c1.mp3",
+      "spokenText": "Let's try the rainforest for the sloth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the rainforest for the tiger.",
+      "file": "llj-134601a86fa9083b0b6ddecd.mp3",
+      "spokenText": "Let's try the rainforest for the tiger.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the trees for the bluebird.",
+      "file": "llj-c189e165aaa733c432d2793c.mp3",
+      "spokenText": "Let's try the trees for the bluebird.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the trees for the eagle.",
+      "file": "llj-175b70394a33e4818fcd4190.mp3",
+      "spokenText": "Let's try the trees for the eagle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the trees for the owl.",
+      "file": "llj-7fc6698d511104c949f88ba0.mp3",
+      "spokenText": "Let's try the trees for the owl.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try the trees for the squirrel.",
+      "file": "llj-f9ef2e1bd4cede92344475af.mp3",
+      "spokenText": "Let's try the trees for the squirrel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's try together: apple. Make 2 claps.",
@@ -27954,6 +28162,198 @@
       "category": "stories"
     },
     {
+      "text": "Where can the ant live? Choose its home.",
+      "file": "llj-9656c5b4edffa8e7143ee953.mp3",
+      "spokenText": "Where can the ant live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the bee live? Choose its home.",
+      "file": "llj-579da62b5a75161cd1afb5b7.mp3",
+      "spokenText": "Where can the bee live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the bluebird live? Choose its home.",
+      "file": "llj-6670e48d58400c8d851695ad.mp3",
+      "spokenText": "Where can the bluebird live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the butterfly live? Choose its home.",
+      "file": "llj-94771d280579bbe0e8a4dae2.mp3",
+      "spokenText": "Where can the butterfly live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the cow live? Choose its home.",
+      "file": "llj-ba58f707184366de6d4fb846.mp3",
+      "spokenText": "Where can the cow live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the dolphin live? Choose its home.",
+      "file": "llj-ebd6ae25df11107c35bb7faa.mp3",
+      "spokenText": "Where can the dolphin live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the duck live? Choose its home.",
+      "file": "llj-f3383beb183f20a23dc61395.mp3",
+      "spokenText": "Where can the duck live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the eagle live? Choose its home.",
+      "file": "llj-efdd2a741423a22d47fb23aa.mp3",
+      "spokenText": "Where can the eagle live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the frog live? Choose its home.",
+      "file": "llj-358381a5b93de842093dd502.mp3",
+      "spokenText": "Where can the frog live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the goose live? Choose its home.",
+      "file": "llj-e2d5f76430da0e3290cdd5a2.mp3",
+      "spokenText": "Where can the goose live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the gorilla live? Choose its home.",
+      "file": "llj-ddea994af610e79e928ffda0.mp3",
+      "spokenText": "Where can the gorilla live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the horse live? Choose its home.",
+      "file": "llj-1dac69aec78b200e7c09870d.mp3",
+      "spokenText": "Where can the horse live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the ladybug live? Choose its home.",
+      "file": "llj-91b890a6d4041933a4d9ff7b.mp3",
+      "spokenText": "Where can the ladybug live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the octopus live? Choose its home.",
+      "file": "llj-6eb74c0c07c511b6c77645c7.mp3",
+      "spokenText": "Where can the octopus live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the orangutan live? Choose its home.",
+      "file": "llj-fbf805febf597f9277b1f681.mp3",
+      "spokenText": "Where can the orangutan live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the owl live? Choose its home.",
+      "file": "llj-ff619169f0b8aed71a6fd956.mp3",
+      "spokenText": "Where can the owl live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the pig live? Choose its home.",
+      "file": "llj-6b9604df32d10ad7ff6a9b8b.mp3",
+      "spokenText": "Where can the pig live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the seahorse live? Choose its home.",
+      "file": "llj-264330f87096c388a5dcfb1d.mp3",
+      "spokenText": "Where can the seahorse live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the shark live? Choose its home.",
+      "file": "llj-3ed58c81a66a7f547157c435.mp3",
+      "spokenText": "Where can the shark live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the sheep live? Choose its home.",
+      "file": "llj-95e1e57d21e30c1291216242.mp3",
+      "spokenText": "Where can the sheep live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the sloth live? Choose its home.",
+      "file": "llj-390ef961ef1ff2257a6d7cee.mp3",
+      "spokenText": "Where can the sloth live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the squirrel live? Choose its home.",
+      "file": "llj-7adfe08a31e2b9c999209118.mp3",
+      "spokenText": "Where can the squirrel live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the tiger live? Choose its home.",
+      "file": "llj-443fd7d8972b8b67f344f157.mp3",
+      "spokenText": "Where can the tiger live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Where can the turtle live? Choose its home.",
+      "file": "llj-9ebcf59f2d87feeaeb71fa12.mp3",
+      "spokenText": "Where can the turtle live? Choose its home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Where does the cow live?",
       "file": "llj-8d73d495424f3b47a3ca0cea.mp3",
       "spokenText": "Where does the cow live?",
@@ -31208,6 +31608,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You helped every animal find a home!",
+      "file": "llj-3da4ee7189313ecd6d09043b.mp3",
+      "spokenText": "You helped every animal find a home!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You helped finish three sentences!",

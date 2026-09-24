@@ -46,42 +46,6 @@ struct NatureGameDestination: View {
     }
 }
 
-struct HabitatHelpersGame: View {
-    private let animals = [("dolphin", "Dolphin", "Ocean"), ("cow", "Cow", "Farm"), ("octopus", "Octopus", "Ocean"), ("sheep", "Sheep", "Farm")]
-    @State private var round = 0
-    @State private var feedback = ""
-    @StateObject private var narrator = GameNarrator()
-    private var complete: Bool { round >= animals.count }
-
-    var body: some View {
-        ToddlerGameScaffold(title: "Habitat Helpers", prompt: complete ? "Every animal has a home!" : "Where does the \(animals[round].1.lowercased()) live?", completion: complete, onReplay: { round = 0; feedback = "" }) {
-            if !complete {
-                ToddlerArt(asset: animals[round].0, size: 150)
-                Text("Animal \(round + 1) of \(animals.count)").foregroundStyle(.secondary)
-                HStack(spacing: 16) {
-                    home("Ocean", symbol: "water.waves")
-                    home("Farm", symbol: "house.fill")
-                }
-                Text(feedback).font(.headline).multilineTextAlignment(.center)
-            }
-        }
-        .onDisappear { narrator.stop() }
-    }
-
-    private func home(_ title: String, symbol: String) -> some View {
-        NaturePictureButton(title: title, symbol: symbol) {
-            guard !complete else { return }
-            if title == animals[round].2 {
-                round += 1
-                feedback = ""
-            } else {
-                feedback = "The \(animals[round].1.lowercased()) lives in the \(animals[round].2.lowercased()). Let’s find it."
-                narrator.speak(feedback)
-            }
-        }
-    }
-}
-
 struct AnimalFamilyGame: View {
     private let pairs = [("cow", "Cow", "calf", "Calf"), ("horse", "Horse", "foal", "Foal"), ("sheep", "Sheep", "lamb", "Lamb")]
     @State private var adult: Int?
