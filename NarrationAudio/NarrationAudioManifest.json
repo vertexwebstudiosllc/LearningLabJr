@@ -466,6 +466,14 @@
       "category": "counting"
     },
     {
+      "text": "10 blocks! Your tower matches mine!",
+      "file": "llj-e918a8ab2c12a56469df71ef.mp3",
+      "spokenText": "10 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "10 coins.",
       "file": "llj-fdcf6ddd642a3aa6797bcfbe.mp3",
       "spokenText": "10 coins.",
@@ -3226,6 +3234,14 @@
       "category": "counting"
     },
     {
+      "text": "3 blocks! Your tower matches mine!",
+      "file": "llj-383607961de64b29de9896ae.mp3",
+      "spokenText": "3 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3 flowers",
       "file": "llj-95cd1fdf2f8aa4abe917c19d.mp3",
       "spokenText": "3 flowers",
@@ -3850,6 +3866,14 @@
       "category": "counting"
     },
     {
+      "text": "4 blocks! Your tower matches mine!",
+      "file": "llj-7d8a3afb78bebecb80249cba.mp3",
+      "spokenText": "4 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "4 flowers",
       "file": "llj-938085a72cf08e95099f1429.mp3",
       "spokenText": "4 flowers",
@@ -4437,6 +4461,14 @@
       "text": "5 blocks",
       "file": "llj-27685b0d8fbe5abb1409f6fa.mp3",
       "spokenText": "5 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 blocks! Your tower matches mine!",
+      "file": "llj-5dfc75ef1f69547b7662b8cb.mp3",
+      "spokenText": "5 blocks! Your tower matches mine!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -5162,6 +5194,14 @@
       "category": "counting"
     },
     {
+      "text": "6 blocks! Your tower matches mine!",
+      "file": "llj-d2525500cd246c1566310c42.mp3",
+      "spokenText": "6 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6 flowers",
       "file": "llj-d6e63d11fb0375bbbfd2bd1d.mp3",
       "spokenText": "6 flowers",
@@ -5682,6 +5722,14 @@
       "category": "counting"
     },
     {
+      "text": "7 blocks! Your tower matches mine!",
+      "file": "llj-ae9b6e0cd16f11a6c8b05ca2.mp3",
+      "spokenText": "7 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7 flowers",
       "file": "llj-0b42f0575b2c9829c5819cac.mp3",
       "spokenText": "7 flowers",
@@ -6162,6 +6210,14 @@
       "category": "counting"
     },
     {
+      "text": "8 blocks! Your tower matches mine!",
+      "file": "llj-fe2e7590c504d39c05efbf3b.mp3",
+      "spokenText": "8 blocks! Your tower matches mine!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "8 flowers",
       "file": "llj-0d63d83812409114c1e1ebbc.mp3",
       "spokenText": "8 flowers",
@@ -6589,6 +6645,14 @@
       "text": "9 blocks",
       "file": "llj-82715df7f418c705246481a5.mp3",
       "spokenText": "9 blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "9 blocks! Your tower matches mine!",
+      "file": "llj-cdfe499c8aebc52d90c3139a.mp3",
+      "spokenText": "9 blocks! Your tower matches mine!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -7901,6 +7965,134 @@
       "text": "Build a tower the same height as mine. Add or take away blocks.",
       "file": "llj-c17fb0a1be72f436235d344b.mp3",
       "spokenText": "Build a tower the same height as mine. Add or take away blocks.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 10 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-f4b199197972315378899374.mp3",
+      "spokenText": "Build with 10 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 10 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-7bd96553396959279aec6616.mp3",
+      "spokenText": "Build with 10 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 3 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-14c536b31cd57c6e916a0afe.mp3",
+      "spokenText": "Build with 3 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 3 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-c33561be9b4b519486eee7e9.mp3",
+      "spokenText": "Build with 3 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 4 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-14a1343f427efea885b3a958.mp3",
+      "spokenText": "Build with 4 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 4 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-f75c79b9a7d4603cee67f324.mp3",
+      "spokenText": "Build with 4 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 5 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-5beec45de314dc8fece7178a.mp3",
+      "spokenText": "Build with 5 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 5 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-13ad3333b3697055baf77d92.mp3",
+      "spokenText": "Build with 5 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 6 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-5358c28ecfdb25d153a92121.mp3",
+      "spokenText": "Build with 6 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 6 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-deead1518bda2cf4c5a0995e.mp3",
+      "spokenText": "Build with 6 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 7 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-a6b37c6a9a61a1e8f88d210c.mp3",
+      "spokenText": "Build with 7 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 7 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-8c411a35fd1c829307a20995.mp3",
+      "spokenText": "Build with 7 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 8 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-fc34ba6e8dbd53b5762e3eb1.mp3",
+      "spokenText": "Build with 8 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 8 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-04aef6b889af54564c9a2fc2.mp3",
+      "spokenText": "Build with 8 blocks. Copy the sizes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 9 blocks. Copy the shapes in my tower, from bottom to top.",
+      "file": "llj-8dcb42c5146913189b3d6ab6.mp3",
+      "spokenText": "Build with 9 blocks. Copy the shapes in my tower, from bottom to top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Build with 9 blocks. Copy the sizes in my tower, from bottom to top.",
+      "file": "llj-7e0d9283668c989bde16c9f7.mp3",
+      "spokenText": "Build with 9 blocks. Copy the sizes in my tower, from bottom to top.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -9392,6 +9584,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Drag your block onto your building mat.",
+      "file": "llj-72124b2eedd306c4c87867c5.mp3",
+      "spokenText": "Drag your block onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Drag your chest onto the left pile. That is the pile we are adding to.",
@@ -12816,6 +13016,70 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Let's build a tower with 10 blocks. Drag blocks onto your building mat.",
+      "file": "llj-924ec1cae0993e383bd14a48.mp3",
+      "spokenText": "Let's build a tower with 10 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 3 blocks. Drag blocks onto your building mat.",
+      "file": "llj-821ca74545ba6cd63ac4f8a2.mp3",
+      "spokenText": "Let's build a tower with 3 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 4 blocks. Drag blocks onto your building mat.",
+      "file": "llj-a25b387692ccd84cabe32424.mp3",
+      "spokenText": "Let's build a tower with 4 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 5 blocks. Drag blocks onto your building mat.",
+      "file": "llj-ee97c6af9d815cc9acc7da3c.mp3",
+      "spokenText": "Let's build a tower with 5 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 6 blocks. Drag blocks onto your building mat.",
+      "file": "llj-24b5ac98a1a4a800e4296a70.mp3",
+      "spokenText": "Let's build a tower with 6 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 7 blocks. Drag blocks onto your building mat.",
+      "file": "llj-8c5ea02efd75911e3f585f05.mp3",
+      "spokenText": "Let's build a tower with 7 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 8 blocks. Drag blocks onto your building mat.",
+      "file": "llj-875d1ea18ba5affae9c48c66.mp3",
+      "spokenText": "Let's build a tower with 8 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Let's build a tower with 9 blocks. Drag blocks onto your building mat.",
+      "file": "llj-a77004d2ead7bdbf0675bcc9.mp3",
+      "spokenText": "Let's build a tower with 9 blocks. Drag blocks onto your building mat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Let's build apple. Copy the letters from left to right. Your grown-up can help.",
@@ -16416,6 +16680,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Look at the next block in my tower. Try a block that matches.",
+      "file": "llj-34f8491eb2a4e222e2913e1d.mp3",
+      "spokenText": "Look at the next block in my tower. Try a block that matches.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Look at the repeating train. Which shape comes next?",
@@ -28640,6 +28912,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "You built every tower! You counted blocks and matched their sizes and shapes.",
+      "file": "llj-fdebf242ded2b936edc75c22.mp3",
+      "spokenText": "You built every tower! You counted blocks and matched their sizes and shapes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "You built fish! F, I, S, H. fish.",

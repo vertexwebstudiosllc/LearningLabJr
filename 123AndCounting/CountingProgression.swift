@@ -2,14 +2,13 @@ import SwiftUI
 import Combine
 
 enum CountingActivity: String, CaseIterable {
-    case share, trail, more, tickets, towers, dots, hops, drum
+    case share, trail, more, tickets, dots, hops, drum
     var title: String {
         switch self {
         case .share: return "Picnic Share"
         case .trail: return "Treasure Trail"
         case .more: return "Which Has More?"
         case .tickets: return "Ticket Train"
-        case .towers: return "Twin Towers"
         case .dots: return "Dot Detective"
         case .hops: return "Frog Hops"
         case .drum: return "Counting Drum"
@@ -21,7 +20,6 @@ enum CountingActivity: String, CaseIterable {
         case .trail: return "You made every treasure pile match! Great adding by fives!"
         case .more: return "You compared every group. You found more and fewer!"
         case .tickets: return "Every train has matching tickets. All aboard, counting explorer!"
-        case .towers: return "Your towers match! You used adding and taking away to build them!"
         case .dots: return "You found every dot twin. What careful looking and remembering!"
         case .hops: return "The frog finished every hopping trip. Thanks for counting along!"
         case .drum: return "You echoed all the counting beats. What a musical adventure!"
@@ -61,9 +59,6 @@ enum CountingActivity: String, CaseIterable {
                 CountingLesson(target: mode == 0 ? pair.1 : pair.0, other: mode == 0 ? pair.0 : pair.1, variant: index, fewer: mode == 1)
             } }
         case .tickets: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
-        case .towers: return (2...10).flatMap { n in
-            [CountingLesson(target: n), CountingLesson(target: n, start: n + 1, variant: 1)]
-        }
         case .dots: return (1...6).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         case .hops: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         case .drum: return (1...6).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
@@ -138,7 +133,6 @@ final class CountingPlay: ObservableObject {
         case .trail: return lesson.treasurePrompt
         case .more: return lesson.fewer ? "Which group has fewer pieces of fruit? Tap that group." : "Which group has more pieces of fruit? Tap that group."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
-        case .towers: return "Build a tower the same height as mine. Add or take away blocks."
         case .dots: return "Look at the clue dots. Hide the clue when you are ready, then find its twin."
         case .hops: return "Help the frog make \(target) hops. Then tap All hopped."
         case .drum: return "Listen to my counting beats. Tap the drum the same number of times."
@@ -182,10 +176,6 @@ final class CountingPlay: ObservableObject {
             }
         }
     }
-    func changeBlocks(_ delta: Int) {
-        guard kind == .towers, !solved, !complete, abs(delta) == 1, (0...12).contains(count + delta) else { return }
-        count += delta; say("\(count) \(count == 1 ? "block" : "blocks")")
-    }
     func tap() {
         guard [.hops, .drum].contains(kind), !solved, !complete, count < limit else { return }
         count += 1; say("\(count)")
@@ -193,9 +183,6 @@ final class CountingPlay: ObservableObject {
     func check() {
         guard !solved, !complete else { return }
         switch kind {
-        case .towers:
-            if count == target { win("Both towers have \(target) blocks. They are the same height!") }
-            else { say(count < target ? "Your tower is shorter. Add a block." : "Your tower is taller. Take one block away.") }
         case .hops:
             if count == target { win("\(target) hops! The frog reached the pond.") }
             else if count < target { say("Make one more hop, then count again.") }

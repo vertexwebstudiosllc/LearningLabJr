@@ -39,7 +39,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Which Has More? | Compare aligned groups of two different fruits; 20 distinct unordered pairings per session, with different fruits in consecutive rounds; find more first, then fewer | 20 comparisons, quantities 1–8 |
 | Five-Frame Garden | Drag five flowers into matching garden outlines by petal count | 20 distinct five-flower combinations; 1–8 petals, shuffled spots and choices |
 | Ticket Train | Match exactly one ticket dot per passenger using twelve animal passengers and varied dot layouts | 24 levels, 2–9 passengers |
-| Twin Towers | Build from empty, then shorten an oversized tower to match a model; eight matching picture themes | 18 levels, targets 2–10 |
+| Build-A-Tower | Drag blocks onto a building mat to copy a model from bottom to top: equal blocks, different sizes, then different shapes | 24 rounds, 3–10 blocks per stage |
 | Dot Detective | Inspect a dot pattern, optionally hide/peek, then find its matching card; eight illustrated card themes | 18 levels, 1–6 dots in three layouts |
 | Frog Hops | Count actions as a frog moves toward eight illustrated pond scenes; check, reset and retry freely | 24 trips, 2–9 hops |
 | Counting Drum | Request spoken beats, then echo their count on eight illustrated drums; replay remains available without a timing score | 18 levels, 1–6 beats |

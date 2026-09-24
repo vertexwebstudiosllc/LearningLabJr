@@ -12,7 +12,7 @@ struct CountingMenu: View {
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare different fruits across twenty increasingly close groups without repeating fruit pairings", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
         .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Count and match flower petals", interaction: "Fit five flowers into garden outlines by matching one to eight petals across twenty gardens", ageBand: "Ages 3–4", caregiverTip: "Count each petal together, then find the matching outline."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
-        .init(id: "counting.tower", title: "Twin Towers", skill: "Compare height and count units", interaction: "Build and adjust eighteen towers from two to ten blocks", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
+        .init(id: "counting.tower", title: "Build-A-Tower", skill: "Count blocks and copy sizes and shapes", interaction: "Build twenty-four towers with three to ten blocks, matching a model from bottom to top", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
         .init(id: "counting.dots", title: "Dot Detective", skill: "Recognize small dot patterns", interaction: "Explore eighteen dot clues from one to six with optional hiding", ageBand: "Ages 3–4", caregiverTip: "Keep the clue open as long as your child wants."),
         .init(id: "counting.hops", title: "Frog Hops", skill: "Count actions", interaction: "Guide twenty-four trips of two to nine hops with count checks", ageBand: "Ages 2–4", caregiverTip: "Clap or make seated arm movements along with each hop."),
         .init(id: "counting.drum", title: "Counting Drum", skill: "Count and remember a short rhythm", interaction: "Echo eighteen groups of one to six beats at your own pace", ageBand: "Ages 3–4", caregiverTip: "Echo the beat with claps; there is no speed test.")
@@ -43,7 +43,7 @@ struct CountingMenu: View {
         case 5: MoreGroupsGame()
         case 6: FiveFrameGardenGame()
         case 7: TicketTrainGame()
-        case 8: TwinTowersGame()
+        case 8: BuildATowerGame()
         case 9: DotDetectiveGame()
         case 10: FrogHopsGame()
         default: CountingDrumGame()
@@ -271,33 +271,6 @@ private struct TicketTrainGame: View {
                 }.buttonStyle(.plain).accessibilityLabel("Ticket with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
             }
         }
-    }
-}
-
-private struct TwinTowersGame: View {
-    @StateObject private var play = CountingPlay(kind: .towers)
-    var body: some View {
-        CountingStage(play: play) {
-            HStack(alignment: .bottom, spacing: 28) { tower(play.target, label: "My tower", color: play.lesson.theme.color); tower(play.count, label: "Your tower", color: play.lesson.theme.color) }
-            HStack {
-                ToddlerActionButton(title: "Take one", systemImage: "minus.circle.fill", color: .indigo) { play.changeBlocks(-1) }
-                    .disabled(play.count == 0).accessibilityIdentifier("counting.ext.minus")
-                ToddlerActionButton(title: "Add one", systemImage: "plus.circle.fill", color: .indigo) { play.changeBlocks(1) }
-                    .disabled(play.count == 12).accessibilityIdentifier("counting.ext.plus")
-            }
-            ToddlerActionButton(title: "Same height?", systemImage: "checkmark.circle.fill", color: .indigo, action: play.check).accessibilityIdentifier("counting.ext.check")
-        }
-    }
-    private func tower(_ count: Int, label: String, color: Color) -> some View {
-        VStack(spacing: 6) {
-            VStack(spacing: 4) {
-                Spacer(minLength: 0)
-                ForEach(0..<count, id: \.self) { _ in RoundedRectangle(cornerRadius: 4).fill(color).frame(width: 72, height: 16) }
-            }.frame(height: 240)
-            Rectangle().fill(.secondary).frame(width: 90, height: 3)
-            HStack(spacing: 6) { ToddlerArt(asset: play.lesson.theme.asset, size: 28); Text(label).font(.headline) }
-        }.accessibilityElement(children: .ignore).accessibilityLabel("\(label), \(count) blocks")
-            .accessibilityIdentifier(label == "My tower" ? "counting.ext.model" : "counting.ext.built")
     }
 }
 

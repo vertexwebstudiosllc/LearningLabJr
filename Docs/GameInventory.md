@@ -42,7 +42,7 @@ The six menus contain 72 distinct activity destinations. The four original books
 6. Which Has More?
 7. Five-Frame Garden
 8. Ticket Train
-9. Twin Towers
+9. Build-A-Tower
 10. Dot Detective
 11. Frog Hops
 12. Counting Drum

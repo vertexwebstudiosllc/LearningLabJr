@@ -69,7 +69,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -93,15 +93,6 @@ final class CurriculumTests: XCTestCase {
                     }
                     if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
                     play.choose(n); record(play)
-                case .towers:
-                    play.check(); record(play); XCTAssertFalse(play.solved)
-                    while play.count > 0 { play.changeBlocks(-1); record(play) }
-                    play.changeBlocks(-1); XCTAssertEqual(play.count, 0)
-                    for _ in 0..<12 { play.changeBlocks(1); record(play) }
-                    play.changeBlocks(1); XCTAssertEqual(play.count, 12)
-                    play.check(); record(play); XCTAssertFalse(play.solved)
-                    while play.count > n { play.changeBlocks(-1); record(play) }
-                    play.check(); record(play)
                 case .hops, .drum:
                     play.check(); record(play); XCTAssertFalse(play.solved)
                     for _ in 0..<(play.limit + 2) { play.tap(); record(play) }
@@ -112,7 +103,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n); play.changeBlocks(1)
+                play.tap(); play.check(); play.choose(n)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -165,11 +156,52 @@ final class CurriculumTests: XCTestCase {
                     XCTAssertTrue(levels.suffix(10).allSatisfy { $0.fewer })
                     XCTAssertTrue(levels.allSatisfy { $0.target != $0.other })
                 }
-                if kind == .towers {
-                    XCTAssertTrue(levels.enumerated().allSatisfy { $0.offset.isMultiple(of: 2) ? $0.element.start == 0 : $0.element.start != $0.element.target })
-                }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    @MainActor
+    func testBuildATowerProgressionAndRuth() {
+        var narration: Set<String> = [TowerRound.completion, TowerRound.retry, TowerRound.outside]
+        for _ in 0..<100 {
+            var play = TowerSession()
+            XCTAssertEqual(play.rounds.count, 24)
+            for index in 0..<24 {
+                let round = play.current
+                XCTAssertEqual(round.stage.rawValue, index / 8)
+                XCTAssertEqual(round.blocks.count, 3 + index % 8)
+                XCTAssertEqual(Set(round.choices), Set(round.stage.choices))
+                XCTAssertEqual(round.choices.count, Set(round.choices).count)
+                XCTAssertEqual(play.count, 0)
+                play.next(); XCTAssertEqual(play.index, index)
+                narration.insert(round.prompt)
+                for (position, block) in round.blocks.enumerated() {
+                    XCTAssertFalse(play.place(block, onMat: false))
+                    XCTAssertEqual(play.count, position)
+                    for wrong in TowerBlock.allCases where wrong != block {
+                        XCTAssertFalse(play.place(wrong, onMat: true))
+                        XCTAssertEqual(play.count, position)
+                    }
+                    if round.stage != .counting && position > 0 {
+                        XCTAssertNotEqual(block, round.blocks[position - 1])
+                    }
+                    XCTAssertTrue(play.place(block, onMat: true))
+                    XCTAssertEqual(play.count, position + 1)
+                    narration.insert(TowerRound.counted(play.count))
+                }
+                XCTAssertTrue(play.solved)
+                narration.insert(TowerRound.success(play.count))
+                XCTAssertFalse(play.place(round.blocks[0], onMat: true))
+                play.next()
+            }
+            XCTAssertTrue(play.finished)
+            play.next(); XCTAssertEqual(play.index, 24)
+            XCTAssertFalse(play.place(.medium, onMat: true))
+        }
+        for text in narration {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
         }
     }
 

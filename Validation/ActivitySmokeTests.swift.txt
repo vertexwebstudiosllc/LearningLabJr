@@ -872,15 +872,6 @@ final class ActivitySmokeTests: XCTestCase {
                     XCTAssertTrue(element("counting.ext.clue").label.contains("\(target) dots"))
                 }
                 try tap("counting.ext.choice.\(target)")
-            case "towers":
-                let target = number(element("counting.ext.model").label)
-                var built = number(element("counting.ext.built").label)
-                try tap("counting.ext.check"); XCTAssertFalse(next.exists)
-                while built != target {
-                    try tap(built < target ? "counting.ext.plus" : "counting.ext.minus")
-                    built = number(element("counting.ext.built").label)
-                }
-                try tap("counting.ext.check")
             case "hops":
                 let target = number(app.staticTexts["counting.ext.clue"].label)
                 try tap("counting.ext.check"); XCTAssertFalse(next.exists)
@@ -914,7 +905,7 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor
     func testCountingThemedLayouts() async throws {
         let games = [("trail", "Treasure Trail", 20),
-                     ("towers", "Twin Towers", 18), ("dots", "Dot Detective", 18),
+                     ("dots", "Dot Detective", 18),
                      ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
@@ -1022,10 +1013,61 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    func testExpandedTicketTrain() async throws { try await playExpandedCounting("tickets", title: "Ticket Train", total: 24) }
+    func testBuildATower() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Build-A-Tower"]
+        try reveal(card, in: app); card.tap()
+        func item(_ id: String) -> XCUIElement { app.descendants(matching: .any).matching(identifier: id).firstMatch }
+        for index in 0..<24 {
+            let level = app.staticTexts["counting.tower.level"]
+            XCTAssertTrue(level.waitForExistence(timeout: 5))
+            XCTAssertTrue(level.label.hasPrefix("Tower \(index + 1) of 24"))
+            let total = 3 + index % 8
+            let progress = app.staticTexts["counting.tower.progress"]
+            XCTAssertEqual(progress.label, "0 of \(total) blocks")
+            let choices = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.tower.block.'")).allElementsBoundByIndex
+            XCTAssertEqual(choices.count, [1, 3, 4][index / 8])
+            let mat = item("counting.tower.mat")
+            let next = app.buttons["counting.tower.next"]
+            for position in 0..<total {
+                let model = item("counting.tower.model.\(position)")
+                let label = model.label.components(separatedBy: ", ").last!
+                let block = choices.first { $0.label == label }!
+                try reveal(block, in: app)
+                XCTAssertGreaterThanOrEqual(block.frame.width, 44)
+                if position == 0 && index % 8 == 0 {
+                    block.press(forDuration: 0.15, thenDragTo: model)
+                    XCTAssertEqual(progress.label, "0 of \(total) blocks")
+                    if let wrong = choices.first(where: { $0.label != label }) {
+                        wrong.press(forDuration: 0.15, thenDragTo: mat)
+                        XCTAssertEqual(progress.label, "0 of \(total) blocks")
+                    }
+                }
+                block.press(forDuration: 0.15, thenDragTo: mat)
+                XCTAssertEqual(progress.label, "\(position + 1) of \(total) blocks")
+                if position < total - 1 { XCTAssertFalse(next.exists) }
+            }
+            if [7, 15, 23].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Build-A-Tower stage \(index / 8 + 1)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertTrue(app.staticTexts["counting.tower.level"].label.hasPrefix("Tower 1 of 24"))
+        XCTAssertEqual(app.staticTexts["counting.tower.progress"].label, "0 of 3 blocks")
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertEqual(app.staticTexts["counting.tower.progress"].label, "0 of 3 blocks")
+    }
 
     @MainActor
-    func testExpandedTwinTowers() async throws { try await playExpandedCounting("towers", title: "Twin Towers", total: 18) }
+    func testExpandedTicketTrain() async throws { try await playExpandedCounting("tickets", title: "Ticket Train", total: 24) }
+
 
     @MainActor
     func testExpandedDotDetective() async throws { try await playExpandedCounting("dots", title: "Dot Detective", total: 18) }
