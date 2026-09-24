@@ -1,0 +1,27 @@
+[
+  {
+    "text": "Help our frog reach the pond! Tap the empty spot just ahead, straight or diagonally.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Find the empty spot in the very next row. Hop forward, or diagonally forward.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "That spot has a vehicle. Find the open spot for our frog.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Splash! Our frog reached the pond!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You helped our frog cross every road and reach the pond!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

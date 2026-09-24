@@ -863,13 +863,6 @@ final class ActivitySmokeTests: XCTestCase {
                 try tap("counting.ext.choice.\(values.first { $0 != target }!)")
                 XCTAssertFalse(next.exists)
                 try tap("counting.ext.choice.\(target)")
-            case "hops":
-                let target = number(app.staticTexts["counting.ext.clue"].label)
-                try tap("counting.ext.check"); XCTAssertFalse(next.exists)
-                try tap("counting.ext.tap"); try tap("counting.ext.clear")
-                XCTAssertEqual(app.staticTexts["counting.ext.count"].label, "0 hops")
-                for _ in 0..<target { try tap("counting.ext.tap") }
-                try tap("counting.ext.check")
             default:
                 try listen()
                 let target = 1 + index / 3
@@ -896,7 +889,7 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor
     func testCountingThemedLayouts() async throws {
         let games = [("trail", "Treasure Trail", 20),
-                     ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
+                     ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
         }
@@ -1000,6 +993,73 @@ final class ActivitySmokeTests: XCTestCase {
         try reveal(replay, in: app); replay.tap()
         XCTAssertEqual(app.staticTexts["counting.garden.level"].label, "Garden 1 of 20")
         XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "0 of 5 flowers planted")
+    }
+
+    @MainActor
+    func testFrogRoadCrossings() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Frog Hops"]
+        try reveal(card, in: app); card.tap()
+        func cell(_ row: Int, _ col: Int) -> XCUIElement { app.buttons["counting.frog.cell.\(row).\(col)"] }
+        func route(_ size: Int) throws -> [Int] {
+            try (0..<size).map { row in try XCTUnwrap((0..<size).first { col in
+                let label = cell(row, col).label
+                return label.hasSuffix("frog") || label.hasSuffix("open road") || label.hasSuffix("pond landing")
+            }) }
+        }
+        let level = app.staticTexts["counting.frog.level"]
+        XCTAssertTrue(level.waitForExistence(timeout: 5))
+        let first = try route(4)
+        var paths: Set<String> = []
+        for index in 0..<18 {
+            let size = 4 + index / 6
+            let entered = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", "Crossing \(index + 1) of 18 · \(size) × \(size)"), object: level)
+            XCTAssertEqual(XCTWaiter.wait(for: [entered], timeout: 5), .completed)
+            let path = try route(size)
+            XCTAssertTrue(paths.insert("\(size):" + path.map(String.init).joined(separator: ",")).inserted)
+            let progress = app.staticTexts["counting.frog.progress"]
+            let goal = cell(size - 1, path.last!)
+            try reveal(goal, in: app); goal.tap()
+            XCTAssertEqual(progress.label, "0 of \(size - 1) hops")
+            for row in 1..<size {
+                let next = app.buttons["counting.frog.next"]
+                XCTAssertFalse(next.exists)
+                XCTAssertLessThanOrEqual(abs(path[row] - path[row - 1]), 1)
+                let wrong = cell(row, (path[row] + 1) % size)
+                try reveal(wrong, in: app); wrong.tap()
+                XCTAssertEqual(progress.label, "\(row - 1) of \(size - 1) hops")
+                let correct = cell(row, path[row])
+                XCTAssertGreaterThanOrEqual(correct.frame.width, 44)
+                try reveal(correct, in: app); correct.tap()
+                let expected = row == size - 1 ? "At the pond!" : "\(row) of \(size - 1) hops"
+                let hopped = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", expected), object: progress)
+                XCTAssertEqual(XCTWaiter.wait(for: [hopped], timeout: 5), .completed)
+                XCTAssertTrue(correct.label.hasSuffix("frog"))
+                if row < size - 1 {
+                    correct.tap(); XCTAssertEqual(progress.label, expected)
+                }
+            }
+            if [0, 6, 17].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Frog road \(size) by \(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            let next = app.buttons["counting.frog.next"]
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            if next.frame.maxY > app.windows.firstMatch.frame.maxY - 50 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertNotEqual(try route(4), first)
+        XCTAssertEqual(level.label, "Crossing 1 of 18 · 4 × 4")
+        let replayRoute = try route(4)
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertNotEqual(try route(4), replayRoute)
+        XCTAssertEqual(app.staticTexts["counting.frog.progress"].label, "0 of 3 hops")
     }
 
     @MainActor
@@ -1109,8 +1169,6 @@ final class ActivitySmokeTests: XCTestCase {
 
 
 
-    @MainActor
-    func testExpandedFrogHops() async throws { try await playExpandedCounting("hops", title: "Frog Hops", total: 24) }
 
     @MainActor
     func testExpandedCountingDrum() async throws { try await playExpandedCounting("drum", title: "Counting Drum", total: 18) }

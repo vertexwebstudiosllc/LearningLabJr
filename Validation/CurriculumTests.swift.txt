@@ -69,7 +69,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -93,7 +93,7 @@ final class CurriculumTests: XCTestCase {
                     }
                     if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
                     play.choose(n); record(play)
-                case .hops, .drum:
+                case .drum:
                     play.check(); record(play); XCTAssertFalse(play.solved)
                     for _ in 0..<(play.limit + 2) { play.tap(); record(play) }
                     XCTAssertEqual(play.count, play.limit)
@@ -158,6 +158,49 @@ final class CurriculumTests: XCTestCase {
                 }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    @MainActor
+    func testFrogRoadRoutesMovesAndRuth() {
+        var previous: String?
+        for _ in 0..<100 {
+            var play = FrogRoadSession(previousFirst: previous)
+            XCTAssertEqual(play.rounds.count, 18)
+            XCTAssertEqual(Set(play.rounds.map(\.signature)).count, 18)
+            XCTAssertNotEqual(play.rounds[0].signature, previous)
+            previous = play.rounds[0].signature
+            for index in 0..<18 {
+                let route = play.current
+                XCTAssertEqual(route.size, 4 + index / 6)
+                XCTAssertEqual(route.path.count, route.size)
+                XCTAssertEqual(route.vehicles.count, route.size * route.size)
+                XCTAssertTrue(route.path.allSatisfy { (0..<route.size).contains($0) })
+                XCTAssertEqual(play.row, 0)
+                play.next(); XCTAssertEqual(play.index, index)
+                for row in 1..<route.size {
+                    XCTAssertLessThanOrEqual(abs(route.path[row] - route.path[row - 1]), 1)
+                    for wrongRow in -1...route.size { for col in -1...route.size {
+                        if wrongRow == row && col == route.path[row] { continue }
+                        XCTAssertFalse(play.hop(row: wrongRow, column: col))
+                        XCTAssertEqual(play.row, row - 1)
+                    } }
+                    XCTAssertTrue(play.hop(row: row, column: route.path[row]))
+                    XCTAssertEqual(play.column, route.path[row])
+                    XCTAssertFalse(play.hop(row: row, column: route.path[row]))
+                }
+                XCTAssertTrue(play.solved)
+                XCTAssertFalse(play.hop(row: route.size, column: 0))
+                play.next()
+            }
+            XCTAssertTrue(play.finished)
+            play.next(); XCTAssertEqual(play.index, 18)
+            XCTAssertFalse(play.hop(row: 0, column: 0))
+        }
+        for asset in FrogCrossing.vehicleAssets { XCTAssertNotNil(UIImage(named: asset), asset) }
+        for text in [FrogCrossing.prompt, FrogCrossing.retry, FrogCrossing.blocked, FrogCrossing.success, FrogCrossing.completion] + (1...4).map(String.init) {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
         }
     }
 

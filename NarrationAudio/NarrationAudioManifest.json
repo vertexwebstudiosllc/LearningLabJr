@@ -10586,6 +10586,14 @@
       "category": "counting"
     },
     {
+      "text": "Find the empty spot in the very next row. Hop forward, or diagonally forward.",
+      "file": "llj-a084ee853f4d474024b3790e.mp3",
+      "spokenText": "Find the empty spot in the very next row. Hop forward, or diagonally forward.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Find the goats. Touch each goat once. Let's count together.",
       "file": "llj-44a28523a01b6153fb1667eb.mp3",
       "spokenText": "Find the goats. Touch each goat once. Let's count together.",
@@ -12272,6 +12280,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Help our frog reach the pond! Tap the empty spot just ahead, straight or diagonally.",
+      "file": "llj-3633fb1b6234d88ccd8e7edf.mp3",
+      "spokenText": "Help our frog reach the pond! Tap the empty spot just ahead, straight or diagonally.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Help the frog make 2 hops. Then tap All hopped.",
@@ -22402,6 +22418,14 @@
       "category": "stories"
     },
     {
+      "text": "Splash! Our frog reached the pond!",
+      "file": "llj-90cf98b9c5d92890469d4f91.mp3",
+      "spokenText": "Splash! Our frog reached the pond!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Splash, splash. Pretend to wash your hands.",
       "file": "llj-725cf95af041516c0873ff37.mp3",
       "spokenText": "Splash, splash. Pretend to wash your hands.",
@@ -22952,6 +22976,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "That spot has a vehicle. Find the open spot for our frog.",
+      "file": "llj-25edb5306601e3e327ddd929.mp3",
+      "spokenText": "That spot has a vehicle. Find the open spot for our frog.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "That was fun. Goodbye, Cat!",
@@ -31128,6 +31160,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "You helped our frog cross every road and reach the pond!",
+      "file": "llj-ab4f823df8c3c125023924fb.mp3",
+      "spokenText": "You helped our frog cross every road and reach the pond!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "You helped two friends tell a story!",

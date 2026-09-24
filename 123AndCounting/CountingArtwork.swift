@@ -33,26 +33,6 @@ struct CountingTheme: Identifiable {
     ]
 }
 
-struct CountingPond: View {
-    let theme: CountingTheme
-    let progress: Double
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .bottom) {
-                RoundedRectangle(cornerRadius: 22).fill(theme.color.opacity(0.12))
-                HStack {
-                    Image(systemName: theme.scenery).font(.system(size: 34)).foregroundStyle(theme.color)
-                    Spacer()
-                    Image(systemName: theme.scenery).font(.system(size: 28)).foregroundStyle(theme.color.opacity(0.7))
-                }.padding(14).frame(maxHeight: .infinity, alignment: .top)
-                Ellipse().fill(.cyan.opacity(0.4)).frame(width: 82, height: 28).offset(x: geometry.size.width / 2 - 52, y: -8)
-                Text("🐸").font(.system(size: 48))
-                    .position(x: 32 + progress * max(0, geometry.size.width - 84), y: 72)
-            }
-        }.frame(height: 112).accessibilityHidden(true)
-    }
-}
-
 /// Sample unordered fruit pairs without replacement; avoid sharing a fruit with
 /// the previous round whenever possible. Swapping group positions isn't a new pair.
 func countingFruitPairs(count: Int) -> [(NumberPicnicFood, NumberPicnicFood)] {

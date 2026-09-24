@@ -14,7 +14,7 @@ struct CountingMenu: View {
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
         .init(id: "counting.tower", title: "Build-A-Tower", skill: "Count blocks and copy sizes and shapes", interaction: "Build twenty-four towers with three to ten blocks, matching a model from bottom to top", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
         .init(id: "counting.dots", title: "Dot Detective", skill: "Match missing dot patterns", interaction: "Solve twenty-four randomized missing-pattern puzzles in grids growing from three by three to ten by ten", ageBand: "Ages 3–4", caregiverTip: "Point to the empty rings and compare their positions with each pattern card."),
-        .init(id: "counting.hops", title: "Frog Hops", skill: "Count actions", interaction: "Guide twenty-four trips of two to nine hops with count checks", ageBand: "Ages 2–4", caregiverTip: "Clap or make seated arm movements along with each hop."),
+        .init(id: "counting.hops", title: "Frog Hops", skill: "Plan a route and count hops", interaction: "Hop along eighteen randomized routes across four, five and six square road grids", ageBand: "Ages 2–4", caregiverTip: "Point to the next open square and count each hop toward the pond."),
         .init(id: "counting.drum", title: "Counting Drum", skill: "Count and remember a short rhythm", interaction: "Echo eighteen groups of one to six beats at your own pace", ageBand: "Ages 3–4", caregiverTip: "Echo the beat with claps; there is no speed test.")
     ]
 
@@ -270,23 +270,6 @@ private struct TicketTrainGame: View {
                     }.padding(16).frame(minHeight: 76).background(.white, in: RoundedRectangle(cornerRadius: 18))
                 }.buttonStyle(.plain).accessibilityLabel("Ticket with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
             }
-        }
-    }
-}
-
-private struct FrogHopsGame: View {
-    @StateObject private var play = CountingPlay(kind: .hops)
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    var body: some View {
-        CountingStage(play: play) {
-            Text("Make \(play.target) hops").font(.headline).accessibilityIdentifier("counting.ext.clue")
-            CountingPond(theme: play.lesson.theme, progress: Double(min(play.count, play.target)) / Double(play.target))
-                .animation(reduceMotion ? nil : .spring(duration: 0.3), value: play.count)
-            Text("\(play.count) hops").font(.title.bold()).accessibilityIdentifier("counting.ext.count")
-            ToddlerActionButton(title: "Hop!", systemImage: "arrow.up.circle.fill", color: .indigo, action: play.tap)
-                .disabled(play.count >= play.limit).accessibilityIdentifier("counting.ext.tap")
-            ToddlerActionButton(title: "All hopped", systemImage: "checkmark.circle.fill", color: .indigo, action: play.check).accessibilityIdentifier("counting.ext.check")
-            ToddlerActionButton(title: "Start hops again", systemImage: "arrow.counterclockwise", color: .indigo, action: play.clear).accessibilityIdentifier("counting.ext.clear")
         }
     }
 }

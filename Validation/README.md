@@ -73,7 +73,7 @@ Number Picnic coverage checks three complete shuffled passes through one to ten,
 
 Touch & Count coverage checks four 3×3, six 4×4 and ten 5×5 mixed-animal boards; distinct counts and targets within each stage; no immediate repeats across boundaries; target-only counting, distractor/duplicate/outside taps, arbitrary tap order, progression/replay, 44-point touch targets, assets and Ruth narration through 25. Board construction is checked exhaustively for every animal and quantity in each grid size.
 
-Six counting activities now have native coverage for all 116 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, treasure addition in steps of five from 0–100, more/fewer comparisons, exact dot tickets, hop counts, and drum demonstration controls.
+Five counting activities now have native coverage for all 92 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, treasure addition in steps of five from 0–100, more/fewer comparisons, exact dot tickets, and drum demonstration controls.
 
 Counting picture variety: twelve-fruit and twelve-animal collections, eight illustration themes, full collection use before repeats, and no repeats within three consecutive rounds. Native coverage checks assets, symbols, unchanged quantities and all dynamic Ruth phrases. The themed and food/animal layout tests exercise three rounds per game with screenshots; Number Picnic and Touch & Count retain full-session UI tests.
 
@@ -90,3 +90,5 @@ Five-Frame Garden checks 20 distinct five-flower combinations drawn from all 56 
 Build-A-Tower has 24 rounds across counting, size matching and shape matching, with three to ten blocks per stage. Native checks cover 100 sessions, stage boundaries, wrong blocks, outside drops, completion guards and exact Ruth recordings. Its UI playthrough builds all 156 blocks, exercises incorrect drops and checks completion, replay and fresh entry.
 
 Dot Detective has 24 missing-pattern puzzles, three per grid size from 3×3 through 10×10. Native checks cover 100 sessions, unique puzzles, changed opening puzzles, window bounds, exact missing-dot mapping, three distinct equal-count choices, guarded progression and Ruth coverage. The UI test checks every grid size, wrong/correct answers, completed grids, replay and changed opening puzzles on fresh entry.
+
+Frog Hops has eighteen randomized road crossings, six each on 4×4, 5×5 and 6×6 boards. Native checks exercise 100 sessions, unique connected routes, opening-route changes, all invalid board moves, progression, vehicle assets and exact Ruth coverage. Its full UI test checks all 72 hops, blocked cells, row skipping, repeated taps, completion, replay and fresh entry.
