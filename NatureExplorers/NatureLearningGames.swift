@@ -46,49 +46,6 @@ struct NatureGameDestination: View {
     }
 }
 
-struct AnimalFamilyGame: View {
-    private let pairs = [("cow", "Cow", "calf", "Calf"), ("horse", "Horse", "foal", "Foal"), ("sheep", "Sheep", "lamb", "Lamb")]
-    @State private var adult: Int?
-    @State private var matched: Set<Int> = []
-    @State private var babyOrder = [2, 0, 1]
-    @State private var feedback = ""
-    @StateObject private var narrator = GameNarrator()
-
-    var body: some View {
-        ToddlerGameScaffold(title: "Animal Families", prompt: matched.count == 3 ? "Three families together!" : "Tap a grown-up animal. Then tap its baby.", completion: matched.count == 3, onReplay: { matched = []; adult = nil; babyOrder.shuffle(); feedback = "" }) {
-            if matched.count < 3 {
-                HStack(alignment: .top, spacing: 14) {
-                    VStack(spacing: 12) {
-                        ForEach(0..<3) { index in
-                            NaturePictureButton(title: matched.contains(index) ? "Together!" : pairs[index].1, asset: pairs[index].0, selected: adult == index || matched.contains(index)) {
-                                guard !matched.contains(index) else { return }
-                                adult = index
-                                feedback = ""
-                                narrator.speak("Find the baby \(pairs[index].1.lowercased()).")
-                            }.disabled(matched.contains(index))
-                        }
-                    }
-                    VStack(spacing: 12) {
-                        ForEach(babyOrder, id: \.self) { index in
-                            NaturePictureButton(title: pairs[index].3, asset: pairs[index].2, selected: matched.contains(index)) {
-                                guard !matched.contains(index) else { return }
-                                guard let adult, !matched.contains(adult) else { narrator.speak("First choose a grown-up animal."); return }
-                                if adult == index {
-                                    matched.insert(index)
-                                    self.adult = nil
-                                    feedback = "A baby \(pairs[index].1.lowercased()) is a \(pairs[index].3.lowercased())."
-                                } else { feedback = "Look for the baby that belongs with the \(pairs[adult].1.lowercased())." }
-                                narrator.speak(feedback)
-                            }.disabled(matched.contains(index))
-                        }
-                    }
-                }
-                Text(feedback).multilineTextAlignment(.center)
-            }
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct NatureDetectiveGame: View {
     private let mysteries = [
         ("octopus", "Octopus", ["I live in the ocean.", "I have eight arms."], ["cow", "octopus", "rabbit"]),

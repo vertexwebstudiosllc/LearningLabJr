@@ -6,6 +6,61 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testAnimalFamilyRoundsMatchingTransparencyAndRuth() throws {
+        XCTAssertEqual(AnimalFamily.bank.count, 6)
+        var previous = "cow"
+        for _ in 0..<100 {
+            var play = AnimalFamilySession(previousFirst: previous)
+            XCTAssertEqual(play.rounds.count, 18)
+            XCTAssertEqual(Set(play.rounds.map(\.id)).count, 18)
+            XCTAssertNotEqual(play.current.family.id, previous)
+            previous = play.current.family.id
+            for kind in FamilyMatchKind.allCases {
+                XCTAssertEqual(Set(play.rounds.filter { $0.kind == kind }.map { $0.family.id }).count, 6)
+            }
+            for index in 0..<18 {
+                XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.complete)
+                let round = play.current
+                XCTAssertEqual(round.choices.count, round.kind == .baby ? 2 : 3)
+                XCTAssertEqual(Set(round.choices.map(\.id)).count, round.choices.count)
+                if index > 0 { XCTAssertNotEqual(round.family.id, play.rounds[index - 1].family.id) }
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.choose("unknown"))
+                for wrong in round.choices where wrong.id != round.family.id { XCTAssertFalse(play.choose(wrong.id)) }
+                XCTAssertFalse(play.solved)
+                XCTAssertTrue(play.choose(round.family.id))
+                XCTAssertFalse(play.choose(round.family.id))
+                XCTAssertEqual(play.prompt, round.family.discovery)
+                play.next()
+            }
+            XCTAssertTrue(play.complete)
+            XCTAssertFalse(play.choose(play.current.family.id))
+            play.next(); XCTAssertEqual(play.index, 18)
+        }
+        let play = AnimalFamilySession()
+        let texts = play.rounds.flatMap { [$0.prompt, $0.hint, $0.family.discovery] } + [AnimalFamilySession.completion]
+        for text in texts {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+        }
+        for name in AnimalFamily.bank.flatMap({ [$0.adultArt, $0.babyArt] }) {
+            let image = try XCTUnwrap(UIImage(named: name)?.cgImage, name)
+            var pixels = [UInt8](repeating: 0, count: 32 * 32 * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: 32, height: 32,
+                    bitsPerComponent: 8, bytesPerRow: 128, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: 32, height: 32))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, name)
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 100, name)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, name) }
+        }
+    }
+
+    @MainActor
     func testSpaceMissionRotationStoriesTransparencyAndRuth() throws {
         XCTAssertEqual(SpaceStory.bank.count, 12)
         XCTAssertEqual(Set(SpaceStory.bank.map(\.id)).count, 12)

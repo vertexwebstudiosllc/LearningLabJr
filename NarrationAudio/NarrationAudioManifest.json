@@ -7698,6 +7698,22 @@
       "category": "literacy"
     },
     {
+      "text": "Baa, baa! That's a sheep sound. Find the sheep family.",
+      "file": "llj-8d38025d59eaecdb690101d3.mp3",
+      "spokenText": "Baa, baa! That's a sheep sound. Find the sheep family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Baa, baa! Which animal family makes that sound?",
+      "file": "llj-492979b41febae310fe3d4d3.mp3",
+      "spokenText": "Baa, baa! Which animal family makes that sound?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
       "file": "llj-a61fbc8a0b64c8223c759320.mp3",
       "spokenText": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
@@ -9024,6 +9040,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Cluck, cluck! That's a chicken sound. Find the chicken family.",
+      "file": "llj-2efe52b19cabf1d32de030ee.mp3",
+      "spokenText": "Cluck, cluck! That's a chicken sound. Find the chicken family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Cluck, cluck! Which animal family makes that sound?",
+      "file": "llj-9d8eabf620bbaaf4f7292502.mp3",
+      "spokenText": "Cluck, cluck! Which animal family makes that sound?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. “Owen, Owen, listen here. You are my friend. Come sit right near.” He scooted close and gave a grin. “I like you outside, and within.”",
@@ -12570,6 +12602,54 @@
       "category": "stories"
     },
     {
+      "text": "Here's a grown-up cat. Can you find its baby?",
+      "file": "llj-0e64b94e266fa52495901d8c.mp3",
+      "spokenText": "Here's a grown-up cat. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here's a grown-up chicken. Can you find its baby?",
+      "file": "llj-1e0ecb6d4c297404e58d1249.mp3",
+      "spokenText": "Here's a grown-up chicken. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here's a grown-up cow. Can you find its baby?",
+      "file": "llj-8d2c2f0f73d1bee9d3e24e7c.mp3",
+      "spokenText": "Here's a grown-up cow. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here's a grown-up dog. Can you find its baby?",
+      "file": "llj-996280cacffdae1458b6439d.mp3",
+      "spokenText": "Here's a grown-up dog. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here's a grown-up horse. Can you find its baby?",
+      "file": "llj-5619f1f1610483499960798b.mp3",
+      "spokenText": "Here's a grown-up horse. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here's a grown-up sheep. Can you find its baby?",
+      "file": "llj-866085aec41c307ec4e7537b.mp3",
+      "spokenText": "Here's a grown-up sheep. Can you find its baby?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Hi, friend! Let's look together. Can you find the little duck? There it is! You found it.",
       "file": "llj-57950c540708fc4238b262ef.mp3",
       "spokenText": "Hi, friend! Ooh, let's look for a little duck. Can you find it? There it is! You found the duck!",
@@ -14018,6 +14098,54 @@
       "category": "counting"
     },
     {
+      "text": "Let's look again. A calf grows into a cow.",
+      "file": "llj-a01dcf55cd40f61784d90749.mp3",
+      "spokenText": "Let's look again. A calf grows into a cow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. A chick grows into a chicken.",
+      "file": "llj-620890acb811c85d5ba01c91.mp3",
+      "spokenText": "Let's look again. A chick grows into a chicken.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. A foal grows into a horse.",
+      "file": "llj-61558aeacdafdb718fa48b8a.mp3",
+      "spokenText": "Let's look again. A foal grows into a horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. A kitten grows into a cat.",
+      "file": "llj-624c358b8c1b2b69c2a7e78b.mp3",
+      "spokenText": "Let's look again. A kitten grows into a cat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. A lamb grows into a sheep.",
+      "file": "llj-c51c6a68eec0cb5868b21a59.mp3",
+      "spokenText": "Let's look again. A lamb grows into a sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. A puppy grows into a dog.",
+      "file": "llj-117e7dafd894c7aeb410b472.mp3",
+      "spokenText": "Let's look again. A puppy grows into a dog.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's look again. Find a bubble that matches our clue.",
       "file": "llj-798f3a8a11884cff64c954c8.mp3",
       "spokenText": "Let's look again. Find a bubble that matches our clue.",
@@ -14104,6 +14232,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's look again. The cat's baby is a kitten.",
+      "file": "llj-6b7142d923e4129b3e7081f5.mp3",
+      "spokenText": "Let's look again. The cat's baby is a kitten.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. The chicken's baby is a chick.",
+      "file": "llj-d145ba26504519d3b8fa40f5.mp3",
+      "spokenText": "Let's look again. The chicken's baby is a chick.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. The cow's baby is a calf.",
+      "file": "llj-8ef7b2d7ace285f3c50711a7.mp3",
+      "spokenText": "Let's look again. The cow's baby is a calf.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. The dog's baby is a puppy.",
+      "file": "llj-37f661c78048355554b98673.mp3",
+      "spokenText": "Let's look again. The dog's baby is a puppy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. The horse's baby is a foal.",
+      "file": "llj-7f3917c25cca1fc834e2abf1.mp3",
+      "spokenText": "Let's look again. The horse's baby is a foal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. The sheep's baby is a lamb.",
+      "file": "llj-d34d4da8f141f6fa5fef243c.mp3",
+      "spokenText": "Let's look again. The sheep's baby is a lamb.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's look at the edges. Find the circle.",
@@ -17658,6 +17834,22 @@
       "category": "shapes"
     },
     {
+      "text": "Meow, meow! That's a cat sound. Find the cat family.",
+      "file": "llj-e5ac1bf489be9689d39eb33c.mp3",
+      "spokenText": "Meow, meow! That's a cat sound. Find the cat family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Meow, meow! Which animal family makes that sound?",
+      "file": "llj-5e4c51596fa2eb875357ab18.mp3",
+      "spokenText": "Meow, meow! Which animal family makes that sound?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Milo helped Trey up. “Falling is part of skating,” said Milo. Sasha nodded. “And trying again is part of winning.” Trey looked at the ice. It still looked slippery. But his friends looked kind.",
       "file": "llj-71414fede9d8a26c77e052f5.mp3",
       "spokenText": "Milo helped Trey up. “Falling is part of skating,” said Milo. Sasha nodded. “And trying again is part of winning.” Trey looked at the ice. It still looked slippery. But his friends looked kind.",
@@ -17704,6 +17896,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Moo, moo! That's a cow sound. Find the cow family.",
+      "file": "llj-3ac5df40a1537f6683b848fc.mp3",
+      "spokenText": "Moo, moo! That's a cow sound. Find the cow family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Moo, moo! Which animal family makes that sound?",
+      "file": "llj-54b1537f180eff08a9da392a.mp3",
+      "spokenText": "Moo, moo! Which animal family makes that sound?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Mouth curves downward.",
@@ -17773,6 +17981,22 @@
       "text": "Nearly there. Another footprint!",
       "file": "llj-95d2036f7a8fbf07707801d0.mp3",
       "spokenText": "Nearly there. Another footprint!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Neigh, neigh! That's a horse sound. Find the horse family.",
+      "file": "llj-8d9f733317a2875d7e8b262c.mp3",
+      "spokenText": "Neigh, neigh! That's a horse sound. Find the horse family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Neigh, neigh! Which animal family makes that sound?",
+      "file": "llj-9af460fcfe9e66a4c32a2fc9.mp3",
+      "spokenText": "Neigh, neigh! Which animal family makes that sound?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -25250,6 +25474,54 @@
       "category": "literacy"
     },
     {
+      "text": "This little calf is looking for its family. Find the grown-up cow.",
+      "file": "llj-4caec854901cbd02bbc22bee.mp3",
+      "spokenText": "This little calf is looking for its family. Find the grown-up cow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "This little chick is looking for its family. Find the grown-up chicken.",
+      "file": "llj-14c2edbdc0a352e1590ebd1a.mp3",
+      "spokenText": "This little chick is looking for its family. Find the grown-up chicken.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "This little foal is looking for its family. Find the grown-up horse.",
+      "file": "llj-f5a714aa4540f94b768c6701.mp3",
+      "spokenText": "This little foal is looking for its family. Find the grown-up horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "This little kitten is looking for its family. Find the grown-up cat.",
+      "file": "llj-cd5963780e533edecea8a059.mp3",
+      "spokenText": "This little kitten is looking for its family. Find the grown-up cat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "This little lamb is looking for its family. Find the grown-up sheep.",
+      "file": "llj-ef4c2cade081083496310c82.mp3",
+      "spokenText": "This little lamb is looking for its family. Find the grown-up sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "This little puppy is looking for its family. Find the grown-up dog.",
+      "file": "llj-938db9dfe83ea0017c80a0c0.mp3",
+      "spokenText": "This little puppy is looking for its family. Find the grown-up dog.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "This plate has enough. Find a plate that needs more.",
       "file": "llj-9bfc485a52604ced8188f5cc.mp3",
       "spokenText": "This plate has enough. Find a plate that needs more.",
@@ -25413,6 +25685,54 @@
       "text": "Today our pretend rocket stays far from the Sun. We will learn about it through pictures. Ready to meet our special star?",
       "file": "llj-bbf7b059d43866d397c726b4.mp3",
       "spokenText": "Today our pretend rocket stays far from the Sun. We will learn about it through pictures. Ready to meet our special star?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby cat is called a kitten.",
+      "file": "llj-ad6850315ad84fe7777d0e31.mp3",
+      "spokenText": "Together! A baby cat is called a kitten.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby chicken is called a chick.",
+      "file": "llj-5c43ab1b56e1373ac756d1d8.mp3",
+      "spokenText": "Together! A baby chicken is called a chick.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby cow is called a calf.",
+      "file": "llj-c31b8a01b0f0704cc3b8c217.mp3",
+      "spokenText": "Together! A baby cow is called a calf.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby dog is called a puppy.",
+      "file": "llj-86ee29dbd4eff6396bf40981.mp3",
+      "spokenText": "Together! A baby dog is called a puppy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby horse is called a foal.",
+      "file": "llj-b6ad421597184f7cd43ace8d.mp3",
+      "spokenText": "Together! A baby horse is called a foal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Together! A baby sheep is called a lamb.",
+      "file": "llj-7890190644f4313af4e27581.mp3",
+      "spokenText": "Together! A baby sheep is called a lamb.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -29386,6 +29706,22 @@
       "category": "nature"
     },
     {
+      "text": "Woof, woof! That's a dog sound. Find the dog family.",
+      "file": "llj-174459bc81c259859dac859d.mp3",
+      "spokenText": "Woof, woof! That's a dog sound. Find the dog family.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Woof, woof! Which animal family makes that sound?",
+      "file": "llj-f0d27fd526ef9784e4358917.mp3",
+      "spokenText": "Woof, woof! Which animal family makes that sound?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Words that start with the letter A.",
       "file": "llj-92c88dd559ab56a465de9770.mp3",
       "spokenText": "Words that start with the letter A.",
@@ -30032,6 +30368,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "You brought eighteen animal families together! What a caring animal helper!",
+      "file": "llj-dfc9f5c46806a40caa6983f2.mp3",
+      "spokenText": "You brought eighteen animal families together! What a caring animal helper!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You built apple! A, P, P, L, E. apple.",

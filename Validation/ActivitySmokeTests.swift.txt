@@ -104,6 +104,53 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testAnimalFamiliesAllRounds() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Animal Families"]
+        try reveal(card, in: app); card.tap()
+        func clueID() -> String {
+            app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("families.clue.") }!.identifier
+        }
+        let first = clueID()
+        var seen: Set<String> = []
+        for index in 0..<18 {
+            let progress = app.staticTexts["families.round"]
+            XCTAssertTrue(progress.waitForExistence(timeout: 5))
+            XCTAssertEqual(progress.label, "Round \(index + 1) of 18")
+            let clue = clueID()
+            XCTAssertTrue(seen.insert(clue).inserted)
+            let animal = String(clue.split(separator: ".").last!)
+            let choices = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("families.choice.") }.map(\.identifier)
+            XCTAssertEqual(choices.count, index < 6 ? 2 : 3)
+            let listen = app.buttons[clue]; try reveal(listen, in: app); listen.tap()
+            let wrongID = choices.first { $0 != "families.choice.\(animal)" }!
+            let wrong = app.buttons[wrongID]; try reveal(wrong, in: app); wrong.tap()
+            XCTAssertTrue(app.staticTexts["families.hint"].exists)
+            XCTAssertFalse(app.buttons["families.next"].exists)
+            let correct = app.buttons["families.choice.\(animal)"]
+            try reveal(correct, in: app); correct.tap()
+            let next = app.buttons["families.next"]
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            if index.isMultiple(of: 6) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Animal families stage \(index / 6 + 1)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertEqual(app.staticTexts["families.round"].label, "Round 1 of 18")
+        XCTAssertNotEqual(clueID(), first)
+        let replayFirst = clueID()
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertEqual(app.staticTexts["families.round"].label, "Round 1 of 18")
+        XCTAssertNotEqual(clueID(), replayFirst)
+    }
+
+    @MainActor
     func testMoonMissionStories() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]
