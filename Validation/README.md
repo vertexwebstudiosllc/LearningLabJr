@@ -73,8 +73,10 @@ Number Picnic coverage checks three complete shuffled passes through one to ten,
 
 Touch & Count coverage checks four 3×3, six 4×4 and ten 5×5 mixed-animal boards; distinct counts and targets within each stage; no immediate repeats across boundaries; target-only counting, distractor/duplicate/outside taps, arbitrary tap order, progression/replay, 44-point touch targets, assets and Ruth narration through 25. Board construction is checked exhaustively for every animal and quantity in each grid size.
 
-The remaining ten counting activities now have native coverage for all 216 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, counting down to zero, treasure comparisons across every number 10–100, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
+Nine counting activities now have native coverage for all 198 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, treasure comparisons across every number 10–100, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
 
 Counting picture variety: twelve-fruit and twelve-animal collections, eight illustration themes, full collection use before repeats, and no repeats within three consecutive rounds. Native coverage checks assets, symbols, unchanged quantities and all dynamic Ruth phrases. The themed and food/animal layout tests exercise three rounds per game with screenshots; Number Picnic and Touch & Count retain full-session UI tests.
 
 Picnic Share checks every supported equation and Ruth phrase, balanced ten-round sessions, three unique valid answer choices, wrong answers, automatic advancement after success, replay and fresh session generation.
+
+Sleepy Sheep has separate native checks for all 100 counts, hop/arrival guards, completion and Ruth coverage. Its full UI test checks the automatic first sheep, each count through 100, completion, replay and fresh re-entry.

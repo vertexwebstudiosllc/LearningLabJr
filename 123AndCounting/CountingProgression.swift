@@ -2,11 +2,10 @@ import SwiftUI
 import Combine
 
 enum CountingActivity: String, CaseIterable {
-    case share, sheep, trail, more, garden, tickets, towers, dots, hops, drum
+    case share, trail, more, garden, tickets, towers, dots, hops, drum
     var title: String {
         switch self {
         case .share: return "Picnic Share"
-        case .sheep: return "Sleepy Sheep"
         case .trail: return "Treasure Trail"
         case .more: return "Which Has More?"
         case .garden: return "Five-Frame Garden"
@@ -20,7 +19,6 @@ enum CountingActivity: String, CaseIterable {
     var completion: String {
         switch self {
         case .share: return "You solved ten picnic puzzles with adding and taking away. What a helpful picnic partner!"
-        case .sheep: return "Every flock is tucked in. You counted down all the way to zero!"
         case .trail: return "You compared treasure from ten to one hundred. What a treasure explorer!"
         case .more: return "You compared every group. You found more and fewer!"
         case .garden: return "Your gardens are blooming. You made groups from one to ten!"
@@ -53,7 +51,6 @@ enum CountingActivity: String, CaseIterable {
                 (1..<start).map { CountingLesson.picnic(start: start, goal: $0) }
             }.shuffled().prefix(5)
             return (Array(additions) + Array(subtractions)).shuffled()
-        case .sheep: return (2...10).flatMap { n in (0..<2).map { CountingLesson(target: n, variant: $0) } }
         case .trail:
             // Cover every quantity 10...100. Start with tens, then compare nearby numbers.
             let tens = Array(stride(from: 10, through: 100, by: 10)).shuffled()
@@ -138,7 +135,6 @@ final class CountingPlay: ObservableObject {
     var prompt: String {
         switch kind {
         case .share: return lesson.picnicPrompt
-        case .sheep: return "Tap each animal to tuck it in. How many are still awake?"
         case .trail: return lesson.fewer ? "Which pile has less treasure? Tap the pile with fewer coins." : "Which pile has more treasure? Tap the pile with more coins."
         case .more: return lesson.fewer ? "Which group has fewer \(lesson.food.plural)? Tap that group." : "Which group has more \(lesson.food.plural)? Tap that group."
         case .garden: return "Plant \(target) \(target == 1 ? "flower" : "flowers"). Tap a space to plant. Tap a flower to take it out."
@@ -162,12 +158,6 @@ final class CountingPlay: ObservableObject {
         revealed = false; solved = false; feedback = ""
     }
     func clear() { guard !complete, !solved else { return }; count = 0; feedback = "" }
-    func tuck(_ index: Int) {
-        guard kind == .sheep, !solved, !complete, (0..<target).contains(index), marked.insert(index).inserted else { return }
-        let left = target - marked.count
-        if left == 0 { win("No animals awake. All the animals are asleep. Good night!") }
-        else { say("\(left) \(left == 1 ? "animal is" : "animals are") still awake.") }
-    }
     func choose(_ value: Int) {
         guard [.share, .trail, .more, .tickets, .dots].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
         if value == target {

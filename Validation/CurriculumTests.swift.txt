@@ -68,7 +68,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .sheep: 18, .trail: 46, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 46, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -86,13 +86,6 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertTrue(play.lesson.choices.contains(n))
                 play.advance(); XCTAssertEqual(play.round, index)
                 switch kind {
-                case .sheep:
-                    play.tuck(-1); XCTAssertTrue(play.marked.isEmpty)
-                    for sheep in (0..<n).reversed() {
-                        play.tuck(sheep); record(play)
-                        let before = play.marked.count
-                        play.tuck(sheep); XCTAssertEqual(play.marked.count, before)
-                    }
                 case .share, .trail, .more, .tickets, .dots:
                     for wrong in play.lesson.choices where wrong != n {
                         play.choose(wrong); record(play); XCTAssertFalse(play.solved)
@@ -126,7 +119,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n); play.plant(0); play.tuck(0); play.changeBlocks(1)
+                play.tap(); play.check(); play.choose(n); play.plant(0); play.changeBlocks(1)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -207,6 +200,34 @@ final class CurriculumTests: XCTestCase {
             play.replay(); XCTAssertEqual(play.round, 0); XCTAssertFalse(play.solved)
         }
         XCTAssertGreaterThan(equations.count, 1)
+    }
+
+    @MainActor
+    func testSleepySheepCountingAndRuth() {
+        var session = SleepySheepSession()
+        XCTAssertEqual(session.count, 0)
+        session.arrive(); session.finishCount(); XCTAssertEqual(session.count, 0)
+        for expected in 1...100 {
+            XCTAssertTrue(session.beginHop())
+            XCTAssertFalse(session.beginHop())
+            session.finishCount(); XCTAssertTrue(session.isCounting)
+            XCTAssertEqual(session.count, expected - 1)
+            session.arrive(); XCTAssertEqual(session.count, expected)
+            session.arrive(); XCTAssertEqual(session.count, expected)
+            XCTAssertFalse(session.beginHop())
+            XCTAssertFalse(session.finished)
+            session.finishCount(); XCTAssertFalse(session.isCounting)
+            XCTAssertEqual(session.finished, expected == 100)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: String(expected))?.voice, "Ruth")
+        }
+        XCTAssertFalse(session.beginHop())
+        session.arrive(); session.finishCount(); XCTAssertEqual(session.count, 100)
+        XCTAssertTrue(session.finished)
+        session = SleepySheepSession(); XCTAssertEqual(session.count, 0); XCTAssertTrue(session.beginHop())
+        for text in [SleepySheepSession.prompt, SleepySheepSession.completion] {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
+        }
+        XCTAssertNotNil(UIImage(named: "sheep"))
     }
 
     func testTouchCountGrowingGroupsAndOneToOneCounting() {

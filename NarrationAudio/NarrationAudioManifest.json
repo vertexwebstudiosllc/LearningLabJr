@@ -474,6 +474,14 @@
       "category": "counting"
     },
     {
+      "text": "100",
+      "file": "llj-a52bc62182b7f2adf3fe35b3.mp3",
+      "spokenText": "100",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "100 coins.",
       "file": "llj-a315631386a1bf6309284fb0.mp3",
       "spokenText": "100 coins.",
@@ -2298,6 +2306,14 @@
       "category": "counting"
     },
     {
+      "text": "25",
+      "file": "llj-26a32ac575c07b3bf7856e7a.mp3",
+      "spokenText": "25",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "25 coins.",
       "file": "llj-8e8f99d832ce332a3e619870.mp3",
       "spokenText": "25 coins.",
@@ -2402,9 +2418,25 @@
       "category": "counting"
     },
     {
+      "text": "26",
+      "file": "llj-91d6838abe8fd305e6cc6bae.mp3",
+      "spokenText": "26",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "26 coins.",
       "file": "llj-111de6c54630c6d25505a264.mp3",
       "spokenText": "26 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "27",
+      "file": "llj-37f516185da13b728cddd4fd.mp3",
+      "spokenText": "27",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2418,9 +2450,25 @@
       "category": "counting"
     },
     {
+      "text": "28",
+      "file": "llj-e04e6a9a8207ca59cd7e4d2a.mp3",
+      "spokenText": "28",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "28 coins.",
       "file": "llj-a5b84315046fb55d9df48419.mp3",
       "spokenText": "28 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "29",
+      "file": "llj-dcf1f73e28b13781d67f094e.mp3",
+      "spokenText": "29",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2674,9 +2722,25 @@
       "category": "counting"
     },
     {
+      "text": "30",
+      "file": "llj-aa59dea675f5fdff5f239b0c.mp3",
+      "spokenText": "30",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "30 coins.",
       "file": "llj-c717e6fd3e77b408b2157ff8.mp3",
       "spokenText": "30 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "31",
+      "file": "llj-3158a001ccb1c1312aa14fd0.mp3",
+      "spokenText": "31",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2690,9 +2754,25 @@
       "category": "counting"
     },
     {
+      "text": "32",
+      "file": "llj-5d79215439bb02531ebec5ac.mp3",
+      "spokenText": "32",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "32 coins.",
       "file": "llj-d1a8c95024e05f430372623f.mp3",
       "spokenText": "32 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "33",
+      "file": "llj-20149b96ebf24a8d08741ab0.mp3",
+      "spokenText": "33",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2706,9 +2786,25 @@
       "category": "counting"
     },
     {
+      "text": "34",
+      "file": "llj-bae8802142b3a2bd72724875.mp3",
+      "spokenText": "34",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "34 coins.",
       "file": "llj-d83891d3369cb2c5c52683dd.mp3",
       "spokenText": "34 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "35",
+      "file": "llj-a245f056696c7eee107dd47e.mp3",
+      "spokenText": "35",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2722,9 +2818,25 @@
       "category": "counting"
     },
     {
+      "text": "36",
+      "file": "llj-67528f3e7f9cb3ede9a076cb.mp3",
+      "spokenText": "36",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "36 coins.",
       "file": "llj-db72f622677127e3b1abfaac.mp3",
       "spokenText": "36 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "37",
+      "file": "llj-47f3aa2f9f4ab9bf507635e7.mp3",
+      "spokenText": "37",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2738,9 +2850,25 @@
       "category": "counting"
     },
     {
+      "text": "38",
+      "file": "llj-11ae65dd76ed9b292012faec.mp3",
+      "spokenText": "38",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "38 coins.",
       "file": "llj-b30e800535f82cf4d300f58d.mp3",
       "spokenText": "38 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "39",
+      "file": "llj-6feebc7c2fce33441b679512.mp3",
+      "spokenText": "39",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -2994,9 +3122,25 @@
       "category": "counting"
     },
     {
+      "text": "40",
+      "file": "llj-0838460fccd8d757909d765e.mp3",
+      "spokenText": "40",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "40 coins.",
       "file": "llj-95ac09102b56d619f9e6b761.mp3",
       "spokenText": "40 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "41",
+      "file": "llj-02ddcbb46b37e9ef6e844b7c.mp3",
+      "spokenText": "41",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3010,9 +3154,25 @@
       "category": "counting"
     },
     {
+      "text": "42",
+      "file": "llj-957697e680ac0c1202d22648.mp3",
+      "spokenText": "42",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "42 coins.",
       "file": "llj-572b8c1bd3ef1c46ce3c6f94.mp3",
       "spokenText": "42 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "43",
+      "file": "llj-fc73e2b13c8199e1a93a1aa7.mp3",
+      "spokenText": "43",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3026,9 +3186,25 @@
       "category": "counting"
     },
     {
+      "text": "44",
+      "file": "llj-ad3fb643551323cf55c0065d.mp3",
+      "spokenText": "44",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "44 coins.",
       "file": "llj-19325c87c3166717b89fd787.mp3",
       "spokenText": "44 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "45",
+      "file": "llj-8623fee13f4cd5d23ad655c2.mp3",
+      "spokenText": "45",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3042,9 +3218,25 @@
       "category": "counting"
     },
     {
+      "text": "46",
+      "file": "llj-d8a0c7095efb676437d852c9.mp3",
+      "spokenText": "46",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "46 coins.",
       "file": "llj-38dd75cc8d28f91bff41c448.mp3",
       "spokenText": "46 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "47",
+      "file": "llj-f89ac255efe812e7aae05b46.mp3",
+      "spokenText": "47",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3058,9 +3250,25 @@
       "category": "counting"
     },
     {
+      "text": "48",
+      "file": "llj-f4785a4519fa6b6dcb321d2e.mp3",
+      "spokenText": "48",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "48 coins.",
       "file": "llj-62385a2d292c894190ce644b.mp3",
       "spokenText": "48 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "49",
+      "file": "llj-174cd5465001fecb80a46521.mp3",
+      "spokenText": "49",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3314,9 +3522,25 @@
       "category": "counting"
     },
     {
+      "text": "50",
+      "file": "llj-82884b07ea0b7a63d71f017e.mp3",
+      "spokenText": "50",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "50 coins.",
       "file": "llj-5350175b6917057327560e55.mp3",
       "spokenText": "50 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "51",
+      "file": "llj-8544553de2939d66308329c6.mp3",
+      "spokenText": "51",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3330,9 +3554,25 @@
       "category": "counting"
     },
     {
+      "text": "52",
+      "file": "llj-e8c61f2244c5e168dcc585ee.mp3",
+      "spokenText": "52",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "52 coins.",
       "file": "llj-9874e9109f110b05f7e74348.mp3",
       "spokenText": "52 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "53",
+      "file": "llj-05364a8995ab6c0bf9d4444d.mp3",
+      "spokenText": "53",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3346,9 +3586,25 @@
       "category": "counting"
     },
     {
+      "text": "54",
+      "file": "llj-f6ab40ce8fcc3dc775fd5b8e.mp3",
+      "spokenText": "54",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "54 coins.",
       "file": "llj-e570729cef1f183776e87a2d.mp3",
       "spokenText": "54 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "55",
+      "file": "llj-c2ffb879d61adc1dc55388d7.mp3",
+      "spokenText": "55",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3362,9 +3618,25 @@
       "category": "counting"
     },
     {
+      "text": "56",
+      "file": "llj-d4d4910dff4e0f5413b57718.mp3",
+      "spokenText": "56",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "56 coins.",
       "file": "llj-a6f437d87c018397517c6cd4.mp3",
       "spokenText": "56 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "57",
+      "file": "llj-c477f7d24b4da17d76b39465.mp3",
+      "spokenText": "57",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3378,9 +3650,25 @@
       "category": "counting"
     },
     {
+      "text": "58",
+      "file": "llj-d14af8af1de04a3274ab127a.mp3",
+      "spokenText": "58",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "58 coins.",
       "file": "llj-dbc27d6cf7ff8296f62d58b4.mp3",
       "spokenText": "58 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "59",
+      "file": "llj-d8c5d1825de9248eedf19132.mp3",
+      "spokenText": "59",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3634,9 +3922,25 @@
       "category": "counting"
     },
     {
+      "text": "60",
+      "file": "llj-682d0b2a69af817447ec73b4.mp3",
+      "spokenText": "60",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "60 coins.",
       "file": "llj-eb44acf97a85a89149fe158d.mp3",
       "spokenText": "60 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "61",
+      "file": "llj-fd0cbafb2b7a7e941b679e36.mp3",
+      "spokenText": "61",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3650,9 +3954,25 @@
       "category": "counting"
     },
     {
+      "text": "62",
+      "file": "llj-3f0624f3f984188217373e9a.mp3",
+      "spokenText": "62",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "62 coins.",
       "file": "llj-3b309ede7de56900b403dfbc.mp3",
       "spokenText": "62 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "63",
+      "file": "llj-4ca637604987a05877bf9d1d.mp3",
+      "spokenText": "63",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3666,9 +3986,25 @@
       "category": "counting"
     },
     {
+      "text": "64",
+      "file": "llj-950a7135d41aff76d01fed16.mp3",
+      "spokenText": "64",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "64 coins.",
       "file": "llj-f7353c191ff34db11a392435.mp3",
       "spokenText": "64 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "65",
+      "file": "llj-be0a73444679151a5ffb9d34.mp3",
+      "spokenText": "65",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3682,9 +4018,25 @@
       "category": "counting"
     },
     {
+      "text": "66",
+      "file": "llj-d21b9bdf2787814d50def90d.mp3",
+      "spokenText": "66",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "66 coins.",
       "file": "llj-8b06865d0e65542d61f3d807.mp3",
       "spokenText": "66 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "67",
+      "file": "llj-eb5cb911aec81a483dfa4305.mp3",
+      "spokenText": "67",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3698,9 +4050,25 @@
       "category": "counting"
     },
     {
+      "text": "68",
+      "file": "llj-384d645a8ea62ce7e64c7e54.mp3",
+      "spokenText": "68",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "68 coins.",
       "file": "llj-35b12faca305719bb0c435a6.mp3",
       "spokenText": "68 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "69",
+      "file": "llj-8463f3811da56dfd8059e983.mp3",
+      "spokenText": "69",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3938,9 +4306,25 @@
       "category": "counting"
     },
     {
+      "text": "70",
+      "file": "llj-00a51bda247be4460622bb10.mp3",
+      "spokenText": "70",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "70 coins.",
       "file": "llj-103bc8f4147afaaea81c0627.mp3",
       "spokenText": "70 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "71",
+      "file": "llj-ab9ab9b1faaf345d5604e305.mp3",
+      "spokenText": "71",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3954,9 +4338,25 @@
       "category": "counting"
     },
     {
+      "text": "72",
+      "file": "llj-9d65acbec5bf24e7d196cd86.mp3",
+      "spokenText": "72",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "72 coins.",
       "file": "llj-62419055887148b405d2e9e6.mp3",
       "spokenText": "72 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "73",
+      "file": "llj-eff7822f4d3c03104f653da7.mp3",
+      "spokenText": "73",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3970,9 +4370,25 @@
       "category": "counting"
     },
     {
+      "text": "74",
+      "file": "llj-656c32b357b68eada0c7ba6e.mp3",
+      "spokenText": "74",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "74 coins.",
       "file": "llj-c0c0d2ed25ce76479220f736.mp3",
       "spokenText": "74 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "75",
+      "file": "llj-8482b2c03fa55ab2b6b587d3.mp3",
+      "spokenText": "75",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -3986,9 +4402,25 @@
       "category": "counting"
     },
     {
+      "text": "76",
+      "file": "llj-bf1b7a45efad9ef6f60a696e.mp3",
+      "spokenText": "76",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "76 coins.",
       "file": "llj-c5af8129da76a6ef69623370.mp3",
       "spokenText": "76 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "77",
+      "file": "llj-fdaf5b6c43e10d8c59396a10.mp3",
+      "spokenText": "77",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4002,9 +4434,25 @@
       "category": "counting"
     },
     {
+      "text": "78",
+      "file": "llj-5518c62b36499e1b0172d07a.mp3",
+      "spokenText": "78",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "78 coins.",
       "file": "llj-41656efcce9894128360261c.mp3",
       "spokenText": "78 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "79",
+      "file": "llj-cd7c77dbfb24b955673e5982.mp3",
+      "spokenText": "79",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4226,9 +4674,25 @@
       "category": "counting"
     },
     {
+      "text": "80",
+      "file": "llj-9d69c24d205722a706dfb53a.mp3",
+      "spokenText": "80",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "80 coins.",
       "file": "llj-42c21a62a69cee50a43f9d1e.mp3",
       "spokenText": "80 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "81",
+      "file": "llj-7ba86fad27e572b38a0b1cc3.mp3",
+      "spokenText": "81",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4242,9 +4706,25 @@
       "category": "counting"
     },
     {
+      "text": "82",
+      "file": "llj-4f77c10fea45ec89bc5ba9bb.mp3",
+      "spokenText": "82",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "82 coins.",
       "file": "llj-687e16e9c58baf627fee750e.mp3",
       "spokenText": "82 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "83",
+      "file": "llj-486237c98d62e56daad50020.mp3",
+      "spokenText": "83",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4258,9 +4738,25 @@
       "category": "counting"
     },
     {
+      "text": "84",
+      "file": "llj-888d14a015376a60b10675bc.mp3",
+      "spokenText": "84",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "84 coins.",
       "file": "llj-30fe29cb148dedc6b096b3ac.mp3",
       "spokenText": "84 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "85",
+      "file": "llj-e88081c17a1074f1c436f68a.mp3",
+      "spokenText": "85",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4274,9 +4770,25 @@
       "category": "counting"
     },
     {
+      "text": "86",
+      "file": "llj-801e8012c767130bda851baa.mp3",
+      "spokenText": "86",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "86 coins.",
       "file": "llj-ecda461a1c63a391d4416bcd.mp3",
       "spokenText": "86 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "87",
+      "file": "llj-012fa50e9b8119e8157bff75.mp3",
+      "spokenText": "87",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4290,9 +4802,25 @@
       "category": "counting"
     },
     {
+      "text": "88",
+      "file": "llj-77e03e3f5691edb17aa8ac51.mp3",
+      "spokenText": "88",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "88 coins.",
       "file": "llj-cadd7328a82e75ef1a018b80.mp3",
       "spokenText": "88 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "89",
+      "file": "llj-53e02c001a1e2a5cc4f65997.mp3",
+      "spokenText": "89",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4522,9 +5050,25 @@
       "category": "counting"
     },
     {
+      "text": "90",
+      "file": "llj-9b0e1c472ccb476c027f9694.mp3",
+      "spokenText": "90",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "90 coins.",
       "file": "llj-5ea110d6186d440c591644f9.mp3",
       "spokenText": "90 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "91",
+      "file": "llj-1fb1ca33dcc4bccf074ba681.mp3",
+      "spokenText": "91",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4538,9 +5082,25 @@
       "category": "counting"
     },
     {
+      "text": "92",
+      "file": "llj-3aaea35be78e49d713c3f64e.mp3",
+      "spokenText": "92",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "92 coins.",
       "file": "llj-2a93146774ddeedbc6e8f152.mp3",
       "spokenText": "92 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "93",
+      "file": "llj-5b261cf876f6fd13b6ccd847.mp3",
+      "spokenText": "93",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4554,9 +5114,25 @@
       "category": "counting"
     },
     {
+      "text": "94",
+      "file": "llj-c58cb25ef9dfa44b708f56b5.mp3",
+      "spokenText": "94",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "94 coins.",
       "file": "llj-c80ad15ded54fe1833b03374.mp3",
       "spokenText": "94 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "95",
+      "file": "llj-7a8865243487952001a99789.mp3",
+      "spokenText": "95",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4570,9 +5146,25 @@
       "category": "counting"
     },
     {
+      "text": "96",
+      "file": "llj-ddd568d19adc17f21d9972ef.mp3",
+      "spokenText": "96",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "96 coins.",
       "file": "llj-2d1609bf6d786e8661cab338.mp3",
       "spokenText": "96 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "97",
+      "file": "llj-9efb3592fb3c4862309ab6fa.mp3",
+      "spokenText": "97",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -4586,9 +5178,25 @@
       "category": "counting"
     },
     {
+      "text": "98",
+      "file": "llj-2a17d4e870b38f8a9b52ed59.mp3",
+      "spokenText": "98",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "98 coins.",
       "file": "llj-7cfb658c70168137aea86178.mp3",
       "spokenText": "98 coins.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "99",
+      "file": "llj-44aa58ccc6fec8e242d78ced.mp3",
+      "spokenText": "99",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -10930,6 +11538,14 @@
       "category": "counting"
     },
     {
+      "text": "Let's count sheep!",
+      "file": "llj-92f8b17a238fcabd11c8e46f.mp3",
+      "spokenText": "Let's count sheep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Let's count the apples one at a time, then choose their number.",
       "file": "llj-973ece78c383be83b4198ec2.mp3",
       "spokenText": "Let's count the apples one at a time, then choose their number.",
@@ -14685,6 +15301,14 @@
       "text": "One dot for each passenger. All aboard!",
       "file": "llj-08e6e39f7da0dac8e34a60b3.mp3",
       "spokenText": "One dot for each passenger. All aboard!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "One hundred sheep! You counted all the way to one hundred. Sweet dreams!",
+      "file": "llj-43502a38da4ff93a605c1962.mp3",
+      "spokenText": "One hundred sheep! You counted all the way to one hundred. Sweet dreams!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

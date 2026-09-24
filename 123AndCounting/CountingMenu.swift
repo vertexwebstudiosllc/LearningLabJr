@@ -7,7 +7,7 @@ struct CountingMenu: View {
         .init(id: "counting.pile-match", title: "Number Picnic", skill: "Connect a small quantity to a numeral", interaction: "Count twelve kinds of fruit in shuffled groups from one to ten across thirty rounds", ageBand: "Ages 3–4", caregiverTip: "Touch each item together before choosing its number."),
         .init(id: "counting.touch-count", title: "Touch & Count", skill: "One-to-one counting", interaction: "Find and count a named animal in twenty mixed grids growing from 3×3 to 5×5", ageBand: "Ages 2–4", caregiverTip: "Say one number for every animal you touch."),
         .init(id: "counting.picnic-share", title: "Picnic Share", skill: "Find the missing amount in addition and subtraction", interaction: "Solve ten new picnic math puzzles with totals up to ten", ageBand: "Ages 2–4", caregiverTip: "Use real snacks to show how adding or taking away reaches the total."),
-        .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Notice a group getting smaller", interaction: "Tuck twelve kinds of animal friends in across eighteen levels", ageBand: "Ages 2–4", caregiverTip: "Say 'one fewer' when an animal goes to sleep."),
+        .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Count forward one at a time to one hundred", interaction: "Welcome one hopping sheep at a time and count with Ruth to one hundred", ageBand: "Ages 2–4", caregiverTip: "Say the next number together when each sheep lands."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Compare quantities from ten to one hundred", interaction: "Choose more or less treasure across forty-six comparisons", ageBand: "Ages 3–4", caregiverTip: "Count full rows by tens, then count the extra coins together."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare more, then fewer across twenty increasingly close pairs", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
         .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames with eight flower styles", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
@@ -148,28 +148,6 @@ private struct PicnicShareGame: View {
             }
         }.padding(12).frame(maxWidth: .infinity, minHeight: 215, alignment: .top)
             .background(.white, in: RoundedRectangle(cornerRadius: 20))
-    }
-}
-
-private struct SleepySheepGame: View {
-    @StateObject private var play = CountingPlay(kind: .sheep)
-    var body: some View {
-        CountingStage(play: play) {
-            Text("\(play.target - play.marked.count) awake").font(.title.bold()).accessibilityIdentifier("counting.ext.remaining")
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: play.target <= 6 ? 3 : 4), spacing: 10) {
-                ForEach(0..<play.target, id: \.self) { index in
-                    Button { play.tuck(index) } label: {
-                        VStack(spacing: 4) {
-                            if play.marked.contains(index) { Image(systemName: "moon.zzz.fill").font(.system(size: 34)).frame(height: 48) }
-                            else { CountingPicture(asset: play.lesson.animal.id) }
-                            Text(play.marked.contains(index) ? "Asleep" : "Awake").font(.caption)
-                        }.frame(maxWidth: .infinity, minHeight: 88).background(.white, in: RoundedRectangle(cornerRadius: 18))
-                    }.buttonStyle(.plain).disabled(play.marked.contains(index))
-                        .accessibilityLabel("\(play.lesson.animal.id.capitalized) \(index + 1), \(play.marked.contains(index) ? "asleep" : "awake")")
-                        .accessibilityIdentifier("counting.ext.sheep.\(index)")
-                }
-            }
-        }
     }
 }
 

@@ -827,14 +827,6 @@ final class ActivitySmokeTests: XCTestCase {
                 if index + 1 < total { XCTAssertEqual(XCTWaiter.wait(for: [advanced], timeout: 8), .completed) }
                 else { XCTAssertTrue(app.buttons["Play again"].waitForExistence(timeout: 8)) }
                 continue
-            case "sheep":
-                let sheep = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.sheep.'")).allElementsBoundByIndex
-                XCTAssertEqual(sheep.count, 2 + index / 2)
-                for (i, animal) in sheep.reversed().enumerated() {
-                    try reveal(animal, in: app); animal.tap()
-                    XCTAssertFalse(animal.isEnabled)
-                    XCTAssertEqual(app.staticTexts["counting.ext.remaining"].label, "\(sheep.count - i - 1) awake")
-                }
             case "trail", "more", "tickets", "dots":
                 let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
                 let values = choices.map { number($0.label) }
@@ -925,7 +917,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingFoodAndAnimalLayouts() async throws {
-        let games = [("share", "Picnic Share", 10), ("sheep", "Sleepy Sheep", 18),
+        let games = [("share", "Picnic Share", 10),
                      ("more", "Which Has More?", 20), ("tickets", "Ticket Train", 24)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
@@ -936,7 +928,37 @@ final class ActivitySmokeTests: XCTestCase {
     func testExpandedPicnicShare() async throws { try await playExpandedCounting("share", title: "Picnic Share", total: 10) }
 
     @MainActor
-    func testExpandedSleepySheep() async throws { try await playExpandedCounting("sheep", title: "Sleepy Sheep", total: 18) }
+    func testExpandedSleepySheep() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Sleepy Sheep"]
+        try reveal(card, in: app); card.tap()
+        let counter = app.staticTexts["counting.sheep.total"]
+        let count = app.buttons["counting.sheep.count"]
+        for expected in 1...100 {
+            let reached = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == %@", "\(expected) sheep counted"), object: counter)
+            XCTAssertEqual(XCTWaiter.wait(for: [reached], timeout: 6), .completed)
+            if [1, 50, 100].contains(expected) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Sleepy Sheep \(expected)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            if expected < 100 {
+                let ready = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: count)
+                XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 6), .completed)
+                try reveal(count, in: app); count.tap()
+            }
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 6))
+        try reveal(replay, in: app); replay.tap()
+        let restarted = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == '1 sheep counted'"), object: counter)
+        XCTAssertEqual(XCTWaiter.wait(for: [restarted], timeout: 6), .completed)
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        let reentered = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == '1 sheep counted'"), object: counter)
+        XCTAssertEqual(XCTWaiter.wait(for: [reentered], timeout: 6), .completed)
+    }
 
     @MainActor
     func testExpandedTreasureTrail() async throws { try await playExpandedCounting("trail", title: "Treasure Trail", total: 46) }
