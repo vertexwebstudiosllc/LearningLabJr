@@ -33,23 +33,6 @@ struct CountingTheme: Identifiable {
     ]
 }
 
-/// One complete flower per counting space, with a stable style for the entire round.
-struct CountingFlower: View {
-    let theme: CountingTheme
-    var body: some View {
-        ZStack {
-            Capsule().fill(.green).frame(width: 3, height: 24).offset(y: 9)
-            Ellipse().fill(.green).frame(width: 13, height: 6).rotationEffect(.degrees(-30)).offset(x: 5, y: 12)
-            ForEach(0..<theme.petals, id: \.self) { petal in
-                Ellipse().fill(theme.color).frame(width: 9, height: 17).offset(y: -8)
-                    .rotationEffect(.degrees(Double(petal) * 360 / Double(theme.petals)))
-                    .offset(y: -5)
-            }
-            Circle().fill(.yellow).overlay(Circle().stroke(.orange, lineWidth: 1)).frame(width: 10, height: 10).offset(y: -5)
-        }.frame(width: 38, height: 46).accessibilityHidden(true)
-    }
-}
-
 struct CountingPond: View {
     let theme: CountingTheme
     let progress: Double

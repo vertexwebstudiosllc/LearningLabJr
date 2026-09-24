@@ -2,13 +2,12 @@ import SwiftUI
 import Combine
 
 enum CountingActivity: String, CaseIterable {
-    case share, trail, more, garden, tickets, towers, dots, hops, drum
+    case share, trail, more, tickets, towers, dots, hops, drum
     var title: String {
         switch self {
         case .share: return "Picnic Share"
         case .trail: return "Treasure Trail"
         case .more: return "Which Has More?"
-        case .garden: return "Five-Frame Garden"
         case .tickets: return "Ticket Train"
         case .towers: return "Twin Towers"
         case .dots: return "Dot Detective"
@@ -21,7 +20,6 @@ enum CountingActivity: String, CaseIterable {
         case .share: return "You solved ten picnic puzzles with adding and taking away. What a helpful picnic partner!"
         case .trail: return "You made every treasure pile match! Great adding by fives!"
         case .more: return "You compared every group. You found more and fewer!"
-        case .garden: return "Your gardens are blooming. You made groups from one to ten!"
         case .tickets: return "Every train has matching tickets. All aboard, counting explorer!"
         case .towers: return "Your towers match! You used adding and taking away to build them!"
         case .dots: return "You found every dot twin. What careful looking and remembering!"
@@ -62,9 +60,6 @@ enum CountingActivity: String, CaseIterable {
             return (0..<2).flatMap { mode in pairs.enumerated().map { index, pair in
                 CountingLesson(target: mode == 0 ? pair.1 : pair.0, other: mode == 0 ? pair.0 : pair.1, variant: index, fewer: mode == 1)
             } }
-        case .garden: return (1...10).flatMap { n in
-            [CountingLesson(target: n), CountingLesson(target: n, start: n == 10 ? 9 : n + 1, variant: 1)]
-        }
         case .tickets: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         case .towers: return (2...10).flatMap { n in
             [CountingLesson(target: n), CountingLesson(target: n, start: n + 1, variant: 1)]
@@ -119,7 +114,6 @@ struct CountingLesson {
         "\(start) plus \(target) makes \(goal). Both treasure piles match!"
     }
     func comparisonFood(for amount: Int) -> NumberPicnicFood { amount == target ? food : comparisonFood }
-    var gardenSize: Int { max(target, start) <= 5 ? 5 : 10 }
 }
 
 @MainActor
@@ -128,7 +122,6 @@ final class CountingPlay: ObservableObject {
     @Published private(set) var levels: [CountingLesson]
     @Published private(set) var round = 0
     @Published private(set) var count = 0
-    @Published private(set) var marked: Set<Int> = []
     @Published var revealed = false
     @Published private(set) var solved = false
     @Published private(set) var complete = false
@@ -144,7 +137,6 @@ final class CountingPlay: ObservableObject {
         case .share: return lesson.picnicPrompt
         case .trail: return lesson.treasurePrompt
         case .more: return lesson.fewer ? "Which group has fewer pieces of fruit? Tap that group." : "Which group has more pieces of fruit? Tap that group."
-        case .garden: return "Plant \(target) \(target == 1 ? "flower" : "flowers"). Tap a space to plant. Tap a flower to take it out."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
         case .towers: return "Build a tower the same height as mine. Add or take away blocks."
         case .dots: return "Look at the clue dots. Hide the clue when you are ready, then find its twin."
@@ -161,7 +153,7 @@ final class CountingPlay: ObservableObject {
     }
     func replay() { levels = kind.levels(); round = 0; complete = false; resetRound() }
     private func resetRound() {
-        count = lesson.start; marked = kind == .garden ? Set(0..<lesson.start) : []
+        count = lesson.start
         revealed = false; solved = false; feedback = ""
     }
     func clear() { guard !complete, !solved else { return }; count = 0; feedback = "" }
@@ -190,11 +182,6 @@ final class CountingPlay: ObservableObject {
             }
         }
     }
-    func plant(_ index: Int) {
-        guard kind == .garden, !solved, !complete, (0..<lesson.gardenSize).contains(index) else { return }
-        if marked.contains(index) { marked.remove(index) } else { marked.insert(index) }
-        say("\(marked.count) \(marked.count == 1 ? "flower" : "flowers")")
-    }
     func changeBlocks(_ delta: Int) {
         guard kind == .towers, !solved, !complete, abs(delta) == 1, (0...12).contains(count + delta) else { return }
         count += delta; say("\(count) \(count == 1 ? "block" : "blocks")")
@@ -206,9 +193,6 @@ final class CountingPlay: ObservableObject {
     func check() {
         guard !solved, !complete else { return }
         switch kind {
-        case .garden:
-            if marked.count == target { win("Exactly \(target) \(target == 1 ? "flower" : "flowers"). Your garden is growing!") }
-            else { say(marked.count < target ? "Add another flower, then count again." : "Take out a flower, then count again.") }
         case .towers:
             if count == target { win("Both towers have \(target) blocks. They are the same height!") }
             else { say(count < target ? "Your tower is shorter. Add a block." : "Your tower is taller. Take one block away.") }

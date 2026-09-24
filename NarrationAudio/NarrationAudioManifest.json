@@ -250,6 +250,14 @@
       "category": "counting"
     },
     {
+      "text": "1 petal. Find the matching garden spot.",
+      "file": "llj-d4323db9c178f5f7cef3e71f.mp3",
+      "spokenText": "1 petal. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "1 plus 1 makes 2. Just right for our picnic!",
       "file": "llj-a4761068e88d5ca80fb3fcde.mp3",
       "spokenText": "1 plus 1 makes 2. Just right for our picnic!",
@@ -2010,6 +2018,14 @@
       "category": "counting"
     },
     {
+      "text": "2 petals. Find the matching garden spot.",
+      "file": "llj-c944fa935d90ac1dd1235d2c.mp3",
+      "spokenText": "2 petals. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "2 plus 1 makes 3. Just right for our picnic!",
       "file": "llj-57ee6e8bef193bd73f68d653.mp3",
       "spokenText": "2 plus 1 makes 3. Just right for our picnic!",
@@ -3242,6 +3258,14 @@
       "category": "counting"
     },
     {
+      "text": "3 petals. Find the matching garden spot.",
+      "file": "llj-f7f52317cbd3b54548edeab5.mp3",
+      "spokenText": "3 petals. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "3 plus 1 makes 4. Just right for our picnic!",
       "file": "llj-044ac74711244f89c6266634.mp3",
       "spokenText": "3 plus 1 makes 4. Just right for our picnic!",
@@ -3866,6 +3890,14 @@
       "category": "counting"
     },
     {
+      "text": "4 petals. Find the matching garden spot.",
+      "file": "llj-354abc248a6da70fcaab5766.mp3",
+      "spokenText": "4 petals. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "4 plus 1 makes 5. Just right for our picnic!",
       "file": "llj-f87ad66b5e1f7ee04f93044d.mp3",
       "spokenText": "4 plus 1 makes 5. Just right for our picnic!",
@@ -4461,6 +4493,14 @@
       "text": "5 minus 4 makes 1. Just right for our picnic!",
       "file": "llj-6a5bd758bbc55c9302916ccb.mp3",
       "spokenText": "5 minus 4 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "5 petals. Find the matching garden spot.",
+      "file": "llj-aefb8eaea9f0aeff410beeed.mp3",
+      "spokenText": "5 petals. Find the matching garden spot.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -5178,6 +5218,14 @@
       "category": "counting"
     },
     {
+      "text": "6 petals. Find the matching garden spot.",
+      "file": "llj-244043f846e3b3c64248af5b.mp3",
+      "spokenText": "6 petals. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "6 plus 1 makes 7. Just right for our picnic!",
       "file": "llj-cd7cb2d802609c6017dee0a5.mp3",
       "spokenText": "6 plus 1 makes 7. Just right for our picnic!",
@@ -5698,6 +5746,14 @@
       "category": "counting"
     },
     {
+      "text": "7 petals. Find the matching garden spot.",
+      "file": "llj-122db17a81579a130ce3579b.mp3",
+      "spokenText": "7 petals. Find the matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "7 plus 1 makes 8. Just right for our picnic!",
       "file": "llj-0cdd40a118a5c6ab72be804c.mp3",
       "spokenText": "7 plus 1 makes 8. Just right for our picnic!",
@@ -6173,6 +6229,14 @@
       "text": "8 minus 7 makes 1. Just right for our picnic!",
       "file": "llj-d6cedf285d84dcfddc3215df.mp3",
       "spokenText": "8 minus 7 makes 1. Just right for our picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "8 petals. Find the matching garden spot.",
+      "file": "llj-8e0920fd627ebfe521a5682d.mp3",
+      "spokenText": "8 petals. Find the matching garden spot.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
@@ -7016,6 +7080,70 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A flower with 1 petal! You planted it!",
+      "file": "llj-8afce54c9409a98e0f870921.mp3",
+      "spokenText": "A flower with 1 petal! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 2 petals! You planted it!",
+      "file": "llj-8e23608b2229fb2d83961dc9.mp3",
+      "spokenText": "A flower with 2 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 3 petals! You planted it!",
+      "file": "llj-1d6635cd406b5b95c1f71e67.mp3",
+      "spokenText": "A flower with 3 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 4 petals! You planted it!",
+      "file": "llj-5cf57a9dcba3d8d1b43e39a2.mp3",
+      "spokenText": "A flower with 4 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 5 petals! You planted it!",
+      "file": "llj-cc627863a95f8a5181c75cd0.mp3",
+      "spokenText": "A flower with 5 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 6 petals! You planted it!",
+      "file": "llj-97cb650c2bc400dfee447a23.mp3",
+      "spokenText": "A flower with 6 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 7 petals! You planted it!",
+      "file": "llj-eae62ed5b2e6d991b59b42c3.mp3",
+      "spokenText": "A flower with 7 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "A flower with 8 petals! You planted it!",
+      "file": "llj-81ec18c928c7ccdffada4aec.mp3",
+      "spokenText": "A flower with 8 petals! You planted it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "A fork helps Bunny eat lunch.",
@@ -16698,6 +16826,14 @@
       "category": "counting"
     },
     {
+      "text": "Match the petals! Drag each flower to its matching garden spot.",
+      "file": "llj-8c930ca0d359d158c77eb6c7.mp3",
+      "spokenText": "Match the petals! Drag each flower to its matching garden spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Medium fits in the nest.",
       "file": "llj-104dba33b478f68337a82fbd.mp3",
       "spokenText": "Medium fits in the nest.",
@@ -24290,6 +24426,70 @@
       "category": "shapes"
     },
     {
+      "text": "Try the spot with 1 petal.",
+      "file": "llj-37b29747f629efba4bdc8281.mp3",
+      "spokenText": "Try the spot with 1 petal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 2 petals.",
+      "file": "llj-928bf6bcb82dc03e5d73fb61.mp3",
+      "spokenText": "Try the spot with 2 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 3 petals.",
+      "file": "llj-40679545da8946c1617d88dc.mp3",
+      "spokenText": "Try the spot with 3 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 4 petals.",
+      "file": "llj-ccbccadc2e5a307166643ef9.mp3",
+      "spokenText": "Try the spot with 4 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 5 petals.",
+      "file": "llj-79846a0abf17bde0a5a6f394.mp3",
+      "spokenText": "Try the spot with 5 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 6 petals.",
+      "file": "llj-491629285d6f9c107d0e2d6c.mp3",
+      "spokenText": "Try the spot with 6 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 7 petals.",
+      "file": "llj-5fb4c537a131fd5e445e26b6.mp3",
+      "spokenText": "Try the spot with 7 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "Try the spot with 8 petals.",
+      "file": "llj-3e2f621902c3d531ce5163dc.mp3",
+      "spokenText": "Try the spot with 8 petals.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Turn the sky from day to night. Tap both pictures in each sky.",
       "file": "llj-27bd2bd817ed91a0ba897fe3.mp3",
       "spokenText": "Turn the sky from day to night. Tap both pictures in each sky.",
@@ -31600,6 +31800,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Your flower gardens are blooming! You matched all the petals!",
+      "file": "llj-43aa3e080247b3d40751064f.mp3",
+      "spokenText": "Your flower gardens are blooming! You matched all the petals!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Your friend says, 'I am still using this block.' What could you try?",

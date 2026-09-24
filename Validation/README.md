@@ -73,7 +73,7 @@ Number Picnic coverage checks three complete shuffled passes through one to ten,
 
 Touch & Count coverage checks four 3×3, six 4×4 and ten 5×5 mixed-animal boards; distinct counts and targets within each stage; no immediate repeats across boundaries; target-only counting, distractor/duplicate/outside taps, arbitrary tap order, progression/replay, 44-point touch targets, assets and Ruth narration through 25. Board construction is checked exhaustively for every animal and quantity in each grid size.
 
-Nine counting activities now have native coverage for all 172 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, treasure addition in steps of five from 0–100, more/fewer comparisons, corrective planting/building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
+Eight counting activities now have native coverage for all 152 levels and dedicated full UI playthroughs, including replay. Coverage checks randomized missing-amount addition/subtraction, treasure addition in steps of five from 0–100, more/fewer comparisons, corrective tower building, exact dot tickets, optional memory clues, hop counts, and drum demonstration controls.
 
 Counting picture variety: twelve-fruit and twelve-animal collections, eight illustration themes, full collection use before repeats, and no repeats within three consecutive rounds. Native coverage checks assets, symbols, unchanged quantities and all dynamic Ruth phrases. The themed and food/animal layout tests exercise three rounds per game with screenshots; Number Picnic and Touch & Count retain full-session UI tests.
 
@@ -84,3 +84,5 @@ Sleepy Sheep has separate native checks for all 100 counts, hop/arrival guards, 
 Treasure Trail checks all 210 valid start/goal pairs and their Ruth coverage, twenty shuffled goals, three distinct chest choices, rejected wrong amounts/locations, successful left-pile updates, duplicate-drop guards, completion and replay. Its UI test drags actual chests onto both piles.
 
 Which Has More? checks two distinct fruit types per comparison, 20 unique unordered pairings per session, no shared fruit in consecutive rounds, matching artwork/accessibility labels, both comparison modes, and Ruth directions/feedback for mixed fruit groups.
+
+Five-Frame Garden checks 20 distinct five-flower combinations drawn from all 56 possible sets, coverage of petal counts 1–8, matching outline/tray contents, wrong-location and duplicate-drop rejection, five required plants, completion/replay and every Ruth line. Its full UI test plants all 100 flowers.

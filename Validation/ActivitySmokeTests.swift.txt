@@ -872,18 +872,6 @@ final class ActivitySmokeTests: XCTestCase {
                     XCTAssertTrue(element("counting.ext.clue").label.contains("\(target) dots"))
                 }
                 try tap("counting.ext.choice.\(target)")
-            case "garden":
-                let target = number(app.staticTexts["counting.ext.clue"].label)
-                try tap("counting.ext.check")
-                XCTAssertFalse(next.exists)
-                let plots = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.plot.'")).allElementsBoundByIndex
-                XCTAssertTrue([5, 10].contains(plots.count))
-                for plot in plots {
-                    let id = number(plot.identifier)
-                    if plot.label.hasSuffix("planted") != (id < target) { try reveal(plot, in: app); plot.tap() }
-                }
-                XCTAssertEqual(app.staticTexts["counting.ext.planted"].label, "\(target) planted")
-                try tap("counting.ext.check")
             case "towers":
                 let target = number(element("counting.ext.model").label)
                 var built = number(element("counting.ext.built").label)
@@ -925,7 +913,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testCountingThemedLayouts() async throws {
-        let games = [("trail", "Treasure Trail", 20), ("garden", "Five-Frame Garden", 20),
+        let games = [("trail", "Treasure Trail", 20),
                      ("towers", "Twin Towers", 18), ("dots", "Dot Detective", 18),
                      ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
@@ -985,7 +973,53 @@ final class ActivitySmokeTests: XCTestCase {
     func testExpandedMoreGroups() async throws { try await playExpandedCounting("more", title: "Which Has More?", total: 20) }
 
     @MainActor
-    func testExpandedGarden() async throws { try await playExpandedCounting("garden", title: "Five-Frame Garden", total: 20) }
+    func testExpandedGarden() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Five-Frame Garden"]
+        try reveal(card, in: app); card.tap()
+        func item(_ id: String) -> XCUIElement { app.descendants(matching: .any).matching(identifier: id).firstMatch }
+        var combinations: Set<String> = []
+        for index in 0..<20 {
+            let level = app.staticTexts["counting.garden.level"]
+            XCTAssertTrue(level.waitForExistence(timeout: 5))
+            XCTAssertEqual(level.label, "Garden \(index + 1) of 20")
+            XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "0 of 5 flowers planted")
+            let flowers = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'counting.garden.flower.'")).allElementsBoundByIndex
+            XCTAssertEqual(flowers.count, 5)
+            let petals = flowers.map { Int($0.identifier.split(separator: ".").last!)! }
+            XCTAssertTrue(combinations.insert(petals.sorted().map(String.init).joined(separator: ":")).inserted)
+            let next = app.buttons["counting.garden.next"]
+            for (position, n) in petals.enumerated() {
+                let flower = item("counting.garden.flower.\(n)")
+                let spot = item("counting.garden.spot.\(n)")
+                try reveal(flower, in: app)
+                XCTAssertGreaterThanOrEqual(flower.frame.width, 44)
+                if position == 0 {
+                    let wrong = item("counting.garden.spot.\(petals[1])")
+                    flower.press(forDuration: 0.15, thenDragTo: wrong)
+                    XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "0 of 5 flowers planted")
+                    XCTAssertFalse(next.exists)
+                }
+                flower.press(forDuration: 0.15, thenDragTo: spot)
+                XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "\(position + 1) of 5 flowers planted")
+                XCTAssertTrue(spot.label.hasSuffix("planted"))
+                XCTAssertEqual(flower.value as? String, "Planted")
+                if position < 4 { XCTAssertFalse(next.exists) }
+            }
+            if [0, 19].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Garden fit \(index + 1)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertEqual(app.staticTexts["counting.garden.level"].label, "Garden 1 of 20")
+        XCTAssertEqual(app.staticTexts["counting.garden.progress"].label, "0 of 5 flowers planted")
+    }
 
     @MainActor
     func testExpandedTicketTrain() async throws { try await playExpandedCounting("tickets", title: "Ticket Train", total: 24) }

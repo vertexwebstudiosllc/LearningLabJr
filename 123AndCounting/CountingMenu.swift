@@ -10,7 +10,7 @@ struct CountingMenu: View {
         .init(id: "counting.bedtime", title: "Sleepy Sheep", skill: "Count forward one at a time to one hundred", interaction: "Welcome one hopping sheep at a time and count with Ruth to one hundred", ageBand: "Ages 2–4", caregiverTip: "Say the next number together when each sheep lands."),
         .init(id: "counting.trail", title: "Treasure Trail", skill: "Add treasure in steps of five", interaction: "Drag the missing amount to match twenty treasure piles from five to one hundred", ageBand: "Ages 3–4", caregiverTip: "Count on by fives to find how much treasure is missing."),
         .init(id: "counting.more", title: "Which Has More?", skill: "Compare small groups", interaction: "Compare different fruits across twenty increasingly close groups without repeating fruit pairings", ageBand: "Ages 2–4", caregiverTip: "Line up real toys in two rows to see which has more."),
-        .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Make a requested quantity", interaction: "Build and adjust groups from one to ten in one or two five-frames with eight flower styles", ageBand: "Ages 3–4", caregiverTip: "Count flowers, then notice the empty spaces."),
+        .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Count and match flower petals", interaction: "Fit five flowers into garden outlines by matching one to eight petals across twenty gardens", ageBand: "Ages 3–4", caregiverTip: "Count each petal together, then find the matching outline."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
         .init(id: "counting.tower", title: "Twin Towers", skill: "Compare height and count units", interaction: "Build and adjust eighteen towers from two to ten blocks", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
         .init(id: "counting.dots", title: "Dot Detective", skill: "Recognize small dot patterns", interaction: "Explore eighteen dot clues from one to six with optional hiding", ageBand: "Ages 3–4", caregiverTip: "Keep the clue open as long as your child wants."),
@@ -250,37 +250,6 @@ private struct MoreGroupsGame: View {
                     }.padding(12).frame(maxWidth: .infinity, minHeight: 112).background(.white, in: RoundedRectangle(cornerRadius: 20))
                 }.buttonStyle(.plain).accessibilityLabel("Group with \(amount) \(amount == 1 ? food.id : food.plural)").accessibilityIdentifier("counting.ext.choice.\(amount)").accessibilityValue(food.id)
             }
-        }
-    }
-}
-
-private struct FiveFrameGardenGame: View {
-    @StateObject private var play = CountingPlay(kind: .garden)
-    var body: some View {
-        CountingStage(play: play) {
-            Text("Grow \(play.target)").font(.title.bold()).accessibilityIdentifier("counting.ext.clue")
-            Text(play.lesson.gardenSize == 5 ? "One five-frame" : "Two five-frames").font(.subheadline)
-            VStack(spacing: 12) {
-                ForEach(0..<(play.lesson.gardenSize / 5), id: \.self) { row in
-                    HStack(spacing: 6) {
-                        ForEach(0..<5, id: \.self) { column in
-                            let index = row * 5 + column
-                            Button { play.plant(index) } label: {
-                                Group {
-                                    if play.marked.contains(index) { CountingFlower(theme: play.lesson.theme) }
-                                    else { Image(systemName: "plus").font(.system(size: 25)) }
-                                }.frame(maxWidth: .infinity, minHeight: 66)
-                                    .background(.white, in: RoundedRectangle(cornerRadius: 12))
-                            }.buttonStyle(.plain)
-                                .accessibilityLabel("Space \(index + 1), \(play.marked.contains(index) ? "planted" : "empty")")
-                                .accessibilityIdentifier("counting.ext.plot.\(index)")
-                        }
-                    }
-                }
-            }
-            Text("\(play.marked.count) planted").accessibilityIdentifier("counting.ext.planted")
-            ToddlerActionButton(title: "Check my flowers", systemImage: "checkmark.circle.fill", color: .indigo, action: play.check)
-                .accessibilityIdentifier("counting.ext.check")
         }
     }
 }

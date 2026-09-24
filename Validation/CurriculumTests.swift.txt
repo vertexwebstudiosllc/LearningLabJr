@@ -69,7 +69,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .garden: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .towers: 18, .dots: 18, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -93,14 +93,6 @@ final class CurriculumTests: XCTestCase {
                     }
                     if kind == .more { XCTAssertEqual(n, play.lesson.fewer ? play.lesson.choices.min() : play.lesson.choices.max()) }
                     play.choose(n); record(play)
-                case .garden:
-                    play.check(); record(play); XCTAssertFalse(play.solved)
-                    play.plant(-1)
-                    for plot in 0..<play.lesson.gardenSize where !play.marked.contains(plot) { play.plant(plot); record(play) }
-                    if play.marked.count > n { play.check(); record(play); XCTAssertFalse(play.solved) }
-                    for plot in play.marked.sorted().dropFirst(n) { play.plant(plot); record(play) }
-                    XCTAssertEqual(play.marked.count, n)
-                    play.check(); record(play)
                 case .towers:
                     play.check(); record(play); XCTAssertFalse(play.solved)
                     while play.count > 0 { play.changeBlocks(-1); record(play) }
@@ -120,7 +112,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.solved, "\(kind) level \(index)")
                 let before = play.feedbackRevision
-                play.tap(); play.check(); play.choose(n); play.plant(0); play.changeBlocks(1)
+                play.tap(); play.check(); play.choose(n); play.changeBlocks(1)
                 XCTAssertEqual(play.feedbackRevision, before)
                 play.advance()
             }
@@ -173,11 +165,52 @@ final class CurriculumTests: XCTestCase {
                     XCTAssertTrue(levels.suffix(10).allSatisfy { $0.fewer })
                     XCTAssertTrue(levels.allSatisfy { $0.target != $0.other })
                 }
-                if kind == .garden || kind == .towers {
+                if kind == .towers {
                     XCTAssertTrue(levels.enumerated().allSatisfy { $0.offset.isMultiple(of: 2) ? $0.element.start == 0 : $0.element.start != $0.element.target })
                 }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    @MainActor
+    func testGardenFitPetalsAndRuth() {
+        XCTAssertEqual(GardenFitRound.combinations.count, 56)
+        for _ in 0..<100 {
+            var session = GardenFitSession()
+            XCTAssertEqual(session.rounds.count, 20)
+            XCTAssertEqual(Set(session.rounds.map { $0.choices.sorted().map(String.init).joined(separator: ":") }).count, 20)
+            XCTAssertEqual(Set(session.rounds.flatMap(\.choices)), Set(1...8))
+            for index in 0..<20 {
+                let round = session.current
+                XCTAssertEqual(Set(round.spots), Set(round.choices))
+                XCTAssertEqual(Set(round.choices).count, 5)
+                XCTAssertTrue(session.planted.isEmpty)
+                session.next(); XCTAssertEqual(session.index, index)
+                XCTAssertFalse(session.plant(0, at: 0))
+                for petals in round.choices {
+                    let spot = round.spots.firstIndex(of: petals)!
+                    let before = session.planted
+                    XCTAssertFalse(session.plant(petals, at: nil))
+                    XCTAssertFalse(session.plant(petals, at: -1))
+                    XCTAssertFalse(session.plant(petals, at: 5))
+                    XCTAssertFalse(session.plant(petals, at: (spot + 1) % 5))
+                    XCTAssertEqual(session.planted, before)
+                    XCTAssertTrue(session.plant(petals, at: spot))
+                    XCTAssertFalse(session.plant(petals, at: spot))
+                }
+                XCTAssertTrue(session.solved); session.next()
+            }
+            XCTAssertTrue(session.finished)
+            XCTAssertFalse(session.plant(session.current.choices[0], at: 0))
+            session.next(); XCTAssertEqual(session.index, 20)
+        }
+        let texts = [GardenFitRound.prompt, GardenFitRound.completion] + (1...8).flatMap {
+            [GardenFitRound.clue($0), GardenFitRound.retry($0), GardenFitRound.success($0)]
+        }
+        for text in texts {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
         }
     }
 
