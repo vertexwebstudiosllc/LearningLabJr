@@ -288,6 +288,8 @@ struct ToddlerArt: View {
         Group {
             if let image = resolvedImage {
                 Image(uiImage: image).resizable().scaledToFit()
+            } else if symbol.hasPrefix("nature."), let activity = NatureActivity(rawValue: String(symbol.dropFirst(7))) {
+                NatureMenuIcon(activity: activity).padding(size * 0.16)
             } else if symbol == "frog.fill" {
                 FrogMenuSymbol().padding(size * 0.16)
             } else {

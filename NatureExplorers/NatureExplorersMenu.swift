@@ -11,7 +11,7 @@ struct NatureExplorersMenu: View {
                         .learningActivity(activity.metadata)
                 } label: {
                     ActivityCard(title: activity.metadata.title, subtitle: activity.metadata.skill,
-                                 symbol: activity.symbol, asset: activity.asset, accent: .teal)
+                                 symbol: activity.symbol, accent: .teal)
                 }
                 .buttonStyle(.plain)
             }
@@ -43,35 +43,5 @@ enum NatureActivity: String, CaseIterable, Identifiable {
                                 ageBand: self == .clues ? "3–4 with a grown-up" : "2–4 with a grown-up", caregiverTip: details.3)
     }
 
-    var symbol: String {
-        switch self {
-        case .habitats: "house.fill"
-        case .tracks: "pawprint.fill"
-        case .moon: "moon.stars.fill"
-        case .families: "heart.fill"
-        case .barn: "door.left.hand.open"
-        case .garden: "leaf.fill"
-        case .cleanup: "water.waves"
-        case .weather: "cloud.sun.rain.fill"
-        case .movement: "figure.walk"
-        case .dayNight: "sun.max.fill"
-        case .clues: "magnifyingglass"
-        case .nest: "bird.fill"
-        }
-    }
-
-    var asset: String? {
-        switch self {
-        case .habitats: "dolphin"
-        case .tracks: "Triceratops"
-        case .moon: "Space/Rocket"
-        case .families: "calf"
-        case .barn: "cow"
-        case .cleanup: "turtle"
-        case .movement: "rabbit"
-        case .clues: "octopus"
-        case .dayNight: "Space/Sun"
-        default: nil
-        }
-    }
+    var symbol: String { id }
 }
