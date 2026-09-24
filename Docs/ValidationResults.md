@@ -336,4 +336,9 @@ The following local artifacts were inspected for this report. They are temporary
 - All 59 native tests and the full eighteen-crossing iPhone UI test passed in `/private/tmp/LearningLabJr-frog-road-final.xcresult`. Native coverage exercises 100 sessions, unique connected routes, opening-route changes, all invalid row/column moves, bounds, completion guards, vehicle assets and exact Ruth recordings. UI coverage completes all 72 hops and checks vehicle/pond-water taps, row skipping, duplicate taps, minimum 44-point targets, completion, replay and fresh entry. The 4×4 and 6×6 phone scenes were visually reviewed.
 - The first UI run completed its initial crossing but attempted the next-round tap near the bottom screen edge. Reduced the board footprint and removed a redundant pond heading, then strengthened test scrolling and transition waits. The complete rerun passed.
 
+## Frog Hops menu icon — September 24, 2026
+
+- Replaced the jump-rope person with a native vector frog silhouette, using the same inherited indigo accent, icon footprint and white card style as neighboring counting activities.
+- The new SwiftUI icon passed a direct simulator-target Swift type check and the diff passed whitespace checks. Full app builds stalled in Xcode's existing asset-catalog scan on two attempts and were cancelled; no full-build success is claimed for this cosmetic change.
+
 Real-device audio review, VoiceOver interaction testing, TestFlight purchase/restore checks, and caregiver/toddler playtesting remain pending. Every game's mechanics, all story content, large-text and motor-access behavior, and representative real-device layouts need release review. Route coverage and two completed gameplay loops do not establish educational efficacy, comprehensive accessibility, or full gameplay quality. App Store privacy materials and release screenshots also need their own review.

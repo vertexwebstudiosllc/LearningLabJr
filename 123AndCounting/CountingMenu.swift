@@ -31,7 +31,7 @@ struct CountingMenu: View {
         }
     }
 
-    private static let symbols = ["number.circle.fill", "hand.tap.fill", "fork.knife", "moon.stars.fill", "map.fill", "circle.grid.2x2.fill", "leaf.fill", "tram.fill", "square.stack.3d.up.fill", "die.face.3.fill", "figure.jumprope", "music.note"]
+    private static let symbols = ["number.circle.fill", "hand.tap.fill", "fork.knife", "moon.stars.fill", "map.fill", "circle.grid.2x2.fill", "leaf.fill", "tram.fill", "square.stack.3d.up.fill", "die.face.3.fill", "frog.fill", "music.note"]
 
     @ViewBuilder private func destination(_ index: Int) -> some View {
         switch index {

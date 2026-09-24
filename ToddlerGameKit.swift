@@ -288,12 +288,37 @@ struct ToddlerArt: View {
         Group {
             if let image = resolvedImage {
                 Image(uiImage: image).resizable().scaledToFit()
+            } else if symbol == "frog.fill" {
+                FrogMenuSymbol().padding(size * 0.16)
             } else {
                 Image(systemName: symbol).resizable().scaledToFit().padding(size * 0.16)
             }
         }
         .frame(width: size, height: size)
         .accessibilityHidden(true)
+    }
+}
+
+// A vector frog that inherits the same accent as the neighboring menu symbols.
+private struct FrogMenuSymbol: View {
+    var body: some View {
+        GeometryReader { geometry in
+            let w = geometry.size.width
+            let h = geometry.size.height
+            ZStack {
+                Ellipse().frame(width: w * 0.74, height: h * 0.62).offset(y: h * 0.05)
+                ForEach([-1.0, 1.0], id: \.self) { side in
+                    Ellipse().frame(width: w * 0.4, height: h * 0.22).offset(x: side * w * 0.27, y: h * 0.33)
+                    Circle().frame(width: w * 0.36).offset(x: side * w * 0.23, y: -h * 0.23)
+                    Circle().fill(.white).frame(width: w * 0.22).offset(x: side * w * 0.23, y: -h * 0.23)
+                    Circle().frame(width: w * 0.1).offset(x: side * w * 0.23, y: -h * 0.23)
+                }
+                Path { path in
+                    path.move(to: CGPoint(x: w * 0.34, y: h * 0.53))
+                    path.addQuadCurve(to: CGPoint(x: w * 0.66, y: h * 0.53), control: CGPoint(x: w * 0.5, y: h * 0.77))
+                }.stroke(.white, style: StrokeStyle(lineWidth: w * 0.05, lineCap: .round))
+            }.frame(width: w, height: h)
+        }
     }
 }
 
