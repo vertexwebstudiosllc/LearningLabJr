@@ -2,14 +2,13 @@ import SwiftUI
 import Combine
 
 enum CountingActivity: String, CaseIterable {
-    case share, trail, more, tickets, dots, hops, drum
+    case share, trail, more, tickets, hops, drum
     var title: String {
         switch self {
         case .share: return "Picnic Share"
         case .trail: return "Treasure Trail"
         case .more: return "Which Has More?"
         case .tickets: return "Ticket Train"
-        case .dots: return "Dot Detective"
         case .hops: return "Frog Hops"
         case .drum: return "Counting Drum"
         }
@@ -20,7 +19,6 @@ enum CountingActivity: String, CaseIterable {
         case .trail: return "You made every treasure pile match! Great adding by fives!"
         case .more: return "You compared every group. You found more and fewer!"
         case .tickets: return "Every train has matching tickets. All aboard, counting explorer!"
-        case .dots: return "You found every dot twin. What careful looking and remembering!"
         case .hops: return "The frog finished every hopping trip. Thanks for counting along!"
         case .drum: return "You echoed all the counting beats. What a musical adventure!"
         }
@@ -59,7 +57,6 @@ enum CountingActivity: String, CaseIterable {
                 CountingLesson(target: mode == 0 ? pair.1 : pair.0, other: mode == 0 ? pair.0 : pair.1, variant: index, fewer: mode == 1)
             } }
         case .tickets: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
-        case .dots: return (1...6).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         case .hops: return (2...9).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         case .drum: return (1...6).flatMap { n in (0..<3).map { CountingLesson(target: n, variant: $0) } }
         }
@@ -117,7 +114,6 @@ final class CountingPlay: ObservableObject {
     @Published private(set) var levels: [CountingLesson]
     @Published private(set) var round = 0
     @Published private(set) var count = 0
-    @Published var revealed = false
     @Published private(set) var solved = false
     @Published private(set) var complete = false
     @Published private(set) var feedback = ""
@@ -133,7 +129,6 @@ final class CountingPlay: ObservableObject {
         case .trail: return lesson.treasurePrompt
         case .more: return lesson.fewer ? "Which group has fewer pieces of fruit? Tap that group." : "Which group has more pieces of fruit? Tap that group."
         case .tickets: return "Choose a ticket with exactly one dot for each passenger."
-        case .dots: return "Look at the clue dots. Hide the clue when you are ready, then find its twin."
         case .hops: return "Help the frog make \(target) hops. Then tap All hopped."
         case .drum: return "Listen to my counting beats. Tap the drum the same number of times."
         }
@@ -148,7 +143,7 @@ final class CountingPlay: ObservableObject {
     func replay() { levels = kind.levels(); round = 0; complete = false; resetRound() }
     private func resetRound() {
         count = lesson.start
-        revealed = false; solved = false; feedback = ""
+        solved = false; feedback = ""
     }
     func clear() { guard !complete, !solved else { return }; count = 0; feedback = "" }
     func addTreasure(_ value: Int, toLeftPile: Bool) {
@@ -157,14 +152,14 @@ final class CountingPlay: ObservableObject {
         choose(value)
     }
     func choose(_ value: Int) {
-        guard [.share, .trail, .more, .tickets, .dots].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
+        guard [.share, .trail, .more, .tickets].contains(kind), !solved, !complete, lesson.choices.contains(value) else { return }
         if value == target {
             switch kind {
             case .share: win(lesson.picnicSuccess)
             case .trail: count = lesson.goal; win(lesson.treasureSuccess)
             case .more: win(lesson.fewer ? "Yes! That group has fewer pieces of fruit." : "Yes! That group has more pieces of fruit.")
             case .tickets: win("One dot for each passenger. All aboard!")
-            default: win("You found the twin: \(target) dots!")
+            default: break
             }
         } else {
             switch kind {
@@ -172,7 +167,7 @@ final class CountingPlay: ObservableObject {
             case .trail: say("Not quite. Try another chest. Count on by fives to make the piles match.")
             case .more: say("Count both groups carefully, then try again.")
             case .tickets: say("Match each passenger with one dot. Try another ticket.")
-            default: say("You can peek at the clue again. Look for the same dots.")
+            default: break
             }
         }
     }

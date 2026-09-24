@@ -850,7 +850,7 @@ final class ActivitySmokeTests: XCTestCase {
                 XCTAssertFalse(next.exists); XCTAssertEqual(number(left.label), start)
                 try drop(correct, onto: left)
                 XCTAssertEqual(number(left.label), goal)
-            case "more", "tickets", "dots":
+            case "more", "tickets":
                 let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.ext.choice.'")).allElementsBoundByIndex
                 let values = choices.map { number($0.label) }
                 let target: Int
@@ -859,18 +859,9 @@ final class ActivitySmokeTests: XCTestCase {
                     XCTAssertEqual(Set(fruits).count, 2)
                     XCTAssertTrue(fruitPairs.insert(fruits.sorted().joined(separator: ":")).inserted)
                     target = ["Find fewer", "Find less treasure"].contains(app.staticTexts["counting.ext.clue"].label) ? values.min()! : values.max()!
-                } else if kind == "tickets" { target = number(element("counting.ext.passengers").label) }
-                else {
-                    target = number(element("counting.ext.clue").label)
-                    try tap("counting.ext.peek")
-                    XCTAssertEqual(element("counting.ext.clue").label, "Hidden clue")
-                }
+                } else { target = number(element("counting.ext.passengers").label) }
                 try tap("counting.ext.choice.\(values.first { $0 != target }!)")
                 XCTAssertFalse(next.exists)
-                if kind == "dots" {
-                    try tap("counting.ext.peek")
-                    XCTAssertTrue(element("counting.ext.clue").label.contains("\(target) dots"))
-                }
                 try tap("counting.ext.choice.\(target)")
             case "hops":
                 let target = number(app.staticTexts["counting.ext.clue"].label)
@@ -905,7 +896,6 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor
     func testCountingThemedLayouts() async throws {
         let games = [("trail", "Treasure Trail", 20),
-                     ("dots", "Dot Detective", 18),
                      ("hops", "Frog Hops", 24), ("drum", "Counting Drum", 18)]
         for (kind, title, total) in games {
             try await playExpandedCounting(kind, title: title, total: total, previewLevels: 3)
@@ -1013,6 +1003,55 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
+    func testDotDetectiveMissingPatterns() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.123s & Counting"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Dot Detective"]
+        try reveal(card, in: app); card.tap()
+        let grid = app.descendants(matching: .any).matching(identifier: "counting.dots.grid").firstMatch
+        XCTAssertTrue(grid.waitForExistence(timeout: 5))
+        let first = grid.label
+        var puzzles: Set<String> = []
+        for index in 0..<24 {
+            let size = 3 + index / 3
+            XCTAssertEqual(app.staticTexts["counting.dots.level"].label, "Puzzle \(index + 1) of 24 · \(size) × \(size)")
+            XCTAssertTrue(puzzles.insert(grid.label).inserted)
+            let missing = grid.label.components(separatedBy: "Missing ").last!
+            let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'counting.dots.choice.'")).allElementsBoundByIndex
+            XCTAssertEqual(choices.count, 3)
+            let correct = choices.first { $0.label.components(separatedBy: ". ").last! == missing }!
+            let wrong = choices.first { $0.identifier != correct.identifier }!
+            try reveal(wrong, in: app); wrong.tap()
+            XCTAssertEqual(app.staticTexts["counting.dots.progress"].label, "Which pattern fills the rings?")
+            XCTAssertFalse(app.buttons["counting.dots.next"].exists)
+            XCTAssertGreaterThanOrEqual(correct.frame.width, 44)
+            try reveal(correct, in: app); correct.tap()
+            let found = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label == 'Pattern found!'"), object: app.staticTexts["counting.dots.progress"])
+            XCTAssertEqual(XCTWaiter.wait(for: [found], timeout: 5), .completed)
+            XCTAssertTrue(grid.label.hasSuffix("All dots filled."))
+            XCTAssertTrue(choices.allSatisfy { !$0.isEnabled })
+            if [0, 12, 23].contains(index) {
+                let shot = XCTAttachment(screenshot: app.screenshot())
+                shot.name = "Dot Detective \(size) by \(size)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            let next = app.buttons["counting.dots.next"]
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            try reveal(next, in: app); next.tap()
+        }
+        let replay = app.buttons["Play again"]
+        XCTAssertTrue(replay.waitForExistence(timeout: 5))
+        try reveal(replay, in: app); replay.tap()
+        XCTAssertNotEqual(grid.label, first)
+        XCTAssertEqual(app.staticTexts["counting.dots.level"].label, "Puzzle 1 of 24 · 3 × 3")
+        let replayFirst = grid.label
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertNotEqual(grid.label, replayFirst)
+        XCTAssertEqual(app.staticTexts["counting.dots.progress"].label, "Which pattern fills the rings?")
+    }
+
+    @MainActor
     func testBuildATower() async throws {
         let app = try await launch()
         let category = app.buttons["category.123s & Counting"]
@@ -1069,8 +1108,6 @@ final class ActivitySmokeTests: XCTestCase {
     func testExpandedTicketTrain() async throws { try await playExpandedCounting("tickets", title: "Ticket Train", total: 24) }
 
 
-    @MainActor
-    func testExpandedDotDetective() async throws { try await playExpandedCounting("dots", title: "Dot Detective", total: 18) }
 
     @MainActor
     func testExpandedFrogHops() async throws { try await playExpandedCounting("hops", title: "Frog Hops", total: 24) }

@@ -69,7 +69,7 @@ final class CurriculumTests: XCTestCase {
 
     @MainActor
     func testRemainingCountingGamesProgressionAndNarration() async {
-        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .dots: 18, .hops: 24, .drum: 18]
+        let totals: [CountingActivity: Int] = [.share: 10, .trail: 20, .more: 20, .tickets: 24, .hops: 24, .drum: 18]
         var narration: Set<String> = []
         func record(_ play: CountingPlay) { if !play.feedback.isEmpty { narration.insert(play.feedback) } }
         for kind in CountingActivity.allCases {
@@ -87,7 +87,7 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertTrue(play.lesson.choices.contains(n))
                 play.advance(); XCTAssertEqual(play.round, index)
                 switch kind {
-                case .share, .trail, .more, .tickets, .dots:
+                case .share, .trail, .more, .tickets:
                     for wrong in play.lesson.choices where wrong != n {
                         play.choose(wrong); record(play); XCTAssertFalse(play.solved)
                     }
@@ -158,6 +158,57 @@ final class CurriculumTests: XCTestCase {
                 }
                 for level in levels { XCTAssertTrue(level.choices.allSatisfy { (kind == .trail ? 0...100 : 1...12).contains($0) }) }
             }
+        }
+    }
+
+    @MainActor
+    func testDotPuzzleProgressionRandomizationAndRuth() {
+        var previous: String?
+        var sessions: Set<String> = []
+        for _ in 0..<100 {
+            var play = DotPuzzleSession(previousFirst: previous)
+            XCTAssertEqual(play.rounds.count, 24)
+            XCTAssertNotEqual(play.rounds[0].signature, previous)
+            previous = play.rounds[0].signature
+            XCTAssertTrue(sessions.insert(play.rounds.map(\.signature).joined(separator: "|")).inserted)
+            XCTAssertEqual(Set(play.rounds.map(\.signature)).count, 24)
+            for index in 0..<24 {
+                let puzzle = play.current
+                XCTAssertEqual(puzzle.size, 3 + index / 3)
+                XCTAssertTrue((0...(puzzle.size - puzzle.patchSize)).contains(puzzle.row))
+                XCTAssertTrue((0...(puzzle.size - puzzle.patchSize)).contains(puzzle.column))
+                XCTAssertEqual(puzzle.choices.count, 3)
+                XCTAssertEqual(Set(puzzle.choices).count, 3)
+                XCTAssertEqual(puzzle.choices.filter { $0 == puzzle.missing }.count, 1)
+                for choice in puzzle.choices {
+                    XCTAssertEqual(choice.count, puzzle.missing.count)
+                    XCTAssertTrue(choice.allSatisfy { (0..<(puzzle.patchSize * puzzle.patchSize)).contains($0) })
+                }
+                var missingCount = 0
+                for row in 0..<puzzle.size { for col in 0..<puzzle.size {
+                    let local = (row - puzzle.row) * puzzle.patchSize + col - puzzle.column
+                    let inside = row >= puzzle.row && row < puzzle.row + puzzle.patchSize && col >= puzzle.column && col < puzzle.column + puzzle.patchSize
+                    let expected = inside && puzzle.missing.contains(local)
+                    XCTAssertEqual(puzzle.missingAt(row: row, column: col), expected)
+                    if expected { missingCount += 1 }
+                } }
+                XCTAssertEqual(missingCount, puzzle.missing.count)
+                XCTAssertFalse(puzzle.missingAt(row: -1, column: -1))
+                play.next(); XCTAssertEqual(play.index, index)
+                for wrong in [-1, 3] + puzzle.choices.indices.filter({ $0 != puzzle.answer }) {
+                    XCTAssertFalse(play.choose(wrong)); XCTAssertFalse(play.solved)
+                }
+                XCTAssertTrue(play.choose(puzzle.answer)); XCTAssertTrue(play.solved)
+                XCTAssertFalse(play.choose(puzzle.answer))
+                play.next()
+            }
+            XCTAssertTrue(play.finished)
+            play.next(); XCTAssertEqual(play.index, 24)
+            XCTAssertFalse(play.choose(play.current.answer))
+        }
+        for text in [DotPuzzle.prompt, DotPuzzle.retry, DotPuzzle.success, DotPuzzle.completion] {
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
         }
     }
 

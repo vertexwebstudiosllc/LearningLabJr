@@ -40,7 +40,7 @@ Word and picture matches were checked against the catalog. The active destinatio
 | Five-Frame Garden | Drag five flowers into matching garden outlines by petal count | 20 distinct five-flower combinations; 1–8 petals, shuffled spots and choices |
 | Ticket Train | Match exactly one ticket dot per passenger using twelve animal passengers and varied dot layouts | 24 levels, 2–9 passengers |
 | Build-A-Tower | Drag blocks onto a building mat to copy a model from bottom to top: equal blocks, different sizes, then different shapes | 24 rounds, 3–10 blocks per stage |
-| Dot Detective | Inspect a dot pattern, optionally hide/peek, then find its matching card; eight illustrated card themes | 18 levels, 1–6 dots in three layouts |
+| Dot Detective | Choose the dot pattern that fills the empty rings in a highlighted grid window; three equal-count choices emphasize spatial matching | 24 randomized rounds, grids grow from 3×3 to 10×10 |
 | Frog Hops | Count actions as a frog moves toward eight illustrated pond scenes; check, reset and retry freely | 24 trips, 2–9 hops |
 | Counting Drum | Request spoken beats, then echo their count on eight illustrated drums; replay remains available without a timing score | 18 levels, 1–6 beats |
 

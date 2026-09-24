@@ -16434,6 +16434,14 @@
       "category": "counting"
     },
     {
+      "text": "Look at the empty rings in the golden window. Find dots in those same spots.",
+      "file": "llj-810b1e8229d5f31e022d3ca3.mp3",
+      "spokenText": "Look at the empty rings in the golden window. Find dots in those same spots.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "Look at the gift box. We are looking for a circle shape.",
       "file": "llj-bbb6947c1e7363f9e643ce58.mp3",
       "spokenText": "Look at the gift box. We are looking for a circle shape.",
@@ -22368,6 +22376,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Some dots are missing! Pick the card that fits the empty rings in the golden window.",
+      "file": "llj-e06079d49433d557aee991eb.mp3",
+      "spokenText": "Some dots are missing! Pick the card that fits the empty rings in the golden window.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
     },
     {
       "text": "Some shapes come in pairs. Which shape comes next?",
@@ -31034,6 +31050,14 @@
       "category": "nature"
     },
     {
+      "text": "You found the missing pattern! Our dot grid is complete!",
+      "file": "llj-77385852b9722f790ba4648b.mp3",
+      "spokenText": "You found the missing pattern! Our dot grid is complete!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
       "text": "You found the octopus!",
       "file": "llj-e317b678a95a41ec23c1a24d.mp3",
       "spokenText": "You found the octopus!",
@@ -31805,6 +31829,14 @@
       "text": "You shared the picnic fairly. Every friend got the same amount!",
       "file": "llj-01dfe3fcd1ee36edcc10b52a.mp3",
       "spokenText": "You shared the picnic fairly. Every friend got the same amount!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "counting"
+    },
+    {
+      "text": "You solved every dot puzzle! What careful looking, dot detective!",
+      "file": "llj-3509fdacec567980bbba2717.mp3",
+      "spokenText": "You solved every dot puzzle! What careful looking, dot detective!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"

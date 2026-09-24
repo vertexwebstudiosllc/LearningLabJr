@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Some dots are missing! Pick the card that fits the empty rings in the golden window.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "Look at the empty rings in the golden window. Find dots in those same spots.",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You found the missing pattern! Our dot grid is complete!",
+    "category": "counting",
+    "delivery": "clear"
+  },
+  {
+    "text": "You solved every dot puzzle! What careful looking, dot detective!",
+    "category": "counting",
+    "delivery": "clear"
+  }
+]

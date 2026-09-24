@@ -13,7 +13,7 @@ struct CountingMenu: View {
         .init(id: "counting.garden", title: "Five-Frame Garden", skill: "Count and match flower petals", interaction: "Fit five flowers into garden outlines by matching one to eight petals across twenty gardens", ageBand: "Ages 3–4", caregiverTip: "Count each petal together, then find the matching outline."),
         .init(id: "counting.tickets", title: "Ticket Train", skill: "Match equivalent quantities", interaction: "Match exact dot tickets across twenty-four trains of two to nine passengers", ageBand: "Ages 3–4", caregiverTip: "Match one ticket dot to each passenger."),
         .init(id: "counting.tower", title: "Build-A-Tower", skill: "Count blocks and copy sizes and shapes", interaction: "Build twenty-four towers with three to ten blocks, matching a model from bottom to top", ageBand: "Ages 2–4", caregiverTip: "Try building matching towers with real blocks afterward."),
-        .init(id: "counting.dots", title: "Dot Detective", skill: "Recognize small dot patterns", interaction: "Explore eighteen dot clues from one to six with optional hiding", ageBand: "Ages 3–4", caregiverTip: "Keep the clue open as long as your child wants."),
+        .init(id: "counting.dots", title: "Dot Detective", skill: "Match missing dot patterns", interaction: "Solve twenty-four randomized missing-pattern puzzles in grids growing from three by three to ten by ten", ageBand: "Ages 3–4", caregiverTip: "Point to the empty rings and compare their positions with each pattern card."),
         .init(id: "counting.hops", title: "Frog Hops", skill: "Count actions", interaction: "Guide twenty-four trips of two to nine hops with count checks", ageBand: "Ages 2–4", caregiverTip: "Clap or make seated arm movements along with each hop."),
         .init(id: "counting.drum", title: "Counting Drum", skill: "Count and remember a short rhythm", interaction: "Echo eighteen groups of one to six beats at your own pace", ageBand: "Ages 3–4", caregiverTip: "Echo the beat with claps; there is no speed test.")
     ]
@@ -269,32 +269,6 @@ private struct TicketTrainGame: View {
                         Spacer(); QuantityDots(count: value, variant: play.lesson.variant); Spacer()
                     }.padding(16).frame(minHeight: 76).background(.white, in: RoundedRectangle(cornerRadius: 18))
                 }.buttonStyle(.plain).accessibilityLabel("Ticket with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
-            }
-        }
-    }
-}
-
-private struct DotDetectiveGame: View {
-    @StateObject private var play = CountingPlay(kind: .dots)
-    var body: some View {
-        CountingStage(play: play) {
-            VStack(spacing: 10) {
-                HStack { CountingPicture(asset: play.lesson.theme.asset, size: 32); Text("Clue card").font(.headline) }
-                if play.revealed { Image(systemName: "questionmark").font(.title).frame(height: 42) }
-                else { QuantityDots(count: play.target, variant: play.lesson.variant).frame(height: 42) }
-            }.frame(maxWidth: .infinity, minHeight: 104).background(.yellow.opacity(0.2), in: RoundedRectangle(cornerRadius: 20))
-                .accessibilityElement(children: .ignore).accessibilityLabel(play.revealed ? "Hidden clue" : "Clue with \(play.target) dots").accessibilityIdentifier("counting.ext.clue")
-            ToddlerActionButton(title: play.revealed ? "See the clue again" : "Hide the clue", systemImage: "eye.fill", color: .indigo) { play.revealed.toggle() }
-                .accessibilityIdentifier("counting.ext.peek")
-            HStack(spacing: 10) {
-                ForEach(play.lesson.choices, id: \.self) { value in
-                    Button { play.choose(value) } label: {
-                        VStack(spacing: 12) {
-                            CountingPicture(asset: play.lesson.theme.asset, size: 28)
-                            QuantityDots(count: value, variant: play.lesson.variant)
-                        }.frame(maxWidth: .infinity, minHeight: 120).background(.white, in: RoundedRectangle(cornerRadius: 18))
-                    }.buttonStyle(.plain).accessibilityLabel("Card with \(value) dots").accessibilityIdentifier("counting.ext.choice.\(value)")
-                }
             }
         }
     }
