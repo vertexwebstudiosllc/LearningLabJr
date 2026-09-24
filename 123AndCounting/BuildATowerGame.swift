@@ -153,6 +153,7 @@ struct BuildATowerGame: View {
                     ForEach(Array(session.current.choices.enumerated()), id: \.element) { index, block in
                         VStack(spacing: 8) {
                             TowerBlockArt(block: block).scaleEffect(session.current.stage == .sizes ? 0.8 : 1).frame(width: 66, height: 30)
+                                .offset(dragged == block ? offset : .zero)
                             Text(block.label).font(.caption).multilineTextAlignment(.center)
                         }.frame(width: width / CGFloat(session.current.choices.count) - 6, height: 80)
                             .background(.white, in: RoundedRectangle(cornerRadius: 12))
@@ -164,7 +165,6 @@ struct BuildATowerGame: View {
                                 }
                                 .onEnded { value in resetDrag(); place(block, onMat: mat.contains(value.location)) },
                                 including: session.solved || session.finished ? .none : .all)
-                            .offset(dragged == block ? offset : .zero)
                             .position(x: (CGFloat(index) + 0.5) * width / CGFloat(session.current.choices.count), y: 393)
                             .zIndex(dragged == block ? 1 : 0)
                             .accessibilityElement(children: .ignore).accessibilityLabel(block.label)
