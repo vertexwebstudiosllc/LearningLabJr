@@ -1,41 +1,5 @@
 import SwiftUI
 
-struct NatureBarnGame: View {
-    private let animals = [("cow", "Cow", "Moo, moo!"), ("duck", "Duck", "Quack, quack!"), ("sheep", "Sheep", "Baa, baa!"), ("pig", "Pig", "Oink, oink!")]
-    @State private var round = 0
-    @State private var open = false
-    @StateObject private var narrator = GameNarrator()
-
-    var body: some View {
-        ToddlerGameScaffold(title: "Peekaboo Barnyard", prompt: round == 4 ? "You met four farm friends!" : open ? "It’s a \(animals[round].1.lowercased())! \(animals[round].2) Can you make that sound?" : "Who is in the barn? Open the doors.", completion: round == 4, onReplay: { round = 0; open = false }) {
-            if round < 4 {
-                Button {
-                    guard round < animals.count else { return }
-                    if open { narrator.speak("\(animals[round].1). \(animals[round].2)") }
-                    else { open = true }
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 28).fill(Color.orange.opacity(0.12))
-                        if open { ToddlerArt(asset: animals[round].0, size: 170) }
-                        else {
-                            HStack(spacing: 3) {
-                                Image("barnDoorLeft").resizable().scaledToFit()
-                                Image("barnDoorRight").resizable().scaledToFit()
-                            }.padding(20)
-                        }
-                    }.frame(height: 250)
-                }.buttonStyle(.plain).accessibilityLabel(open ? "Hear the \(animals[round].1.lowercased()) again" : "Open barn doors")
-                if open {
-                    ToddlerActionButton(title: round == 3 ? "Say goodbye" : "Meet another friend", systemImage: "hand.wave.fill", color: .orange) {
-                        guard open, round < animals.count else { return }
-                        round += 1; open = false
-                    }
-                }
-            }
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct LittleGardenGame: View {
     @State private var step = 0
     private let prompts = ["A seed can grow into a plant. Tap to put it in the pot.", "Cover the seed with a little soil.", "Give the seed a little water.", "Put the pot near sunlight.", "Growing takes many days. Pretend to wait as the days pass.", "A little plant has grown! Keep giving it the care it needs."]

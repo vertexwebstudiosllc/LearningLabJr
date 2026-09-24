@@ -104,6 +104,57 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testRestoredBarnyardDiscoveries() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Peekaboo Barnyard"]
+        try reveal(card, in: app); card.tap()
+        let canvas = app.descendants(matching: .any).matching(identifier: "barnyard.canvas").firstMatch
+        XCTAssertTrue(canvas.waitForExistence(timeout: 5))
+        let action = app.buttons["barnyard.activate"]
+        let name = app.staticTexts["barnyard.name"]
+        var seen: Set<String> = []
+        var previous = ""
+        var initialPosition: Int?
+        for index in 0..<20 {
+            XCTAssertTrue(app.staticTexts["Barn closed. Tap to open the doors."].waitForExistence(timeout: 5))
+            let progress = app.staticTexts["barnyard.progress"].label
+            let position = Int(progress.split(separator: " ")[1])!
+            if initialPosition == nil { initialPosition = position }
+            if position == 1 { seen = [] }
+            if index.isMultiple(of: 2) { try reveal(canvas, in: app); canvas.tap() }
+            else { try reveal(action, in: app); action.tap() }
+            XCTAssertTrue(app.staticTexts["Peekaboo! Tap to meet our visitor."].waitForExistence(timeout: 5))
+            XCTAssertFalse(name.exists)
+            try reveal(canvas, in: app); canvas.tap()
+            XCTAssertTrue(name.waitForExistence(timeout: 5))
+            XCTAssertNotEqual(name.label, previous)
+            XCTAssertTrue(seen.insert(name.label).inserted)
+            previous = name.label
+            let hear = app.buttons["barnyard.repeat"]
+            try reveal(hear, in: app); hear.tap()
+            let fact = app.staticTexts["barnyard.discovery"].label
+            let pretend = app.buttons["barnyard.pretend"]
+            try reveal(pretend, in: app); pretend.tap()
+            XCTAssertNotEqual(app.staticTexts["barnyard.discovery"].label, fact)
+            if index < 2 || previous == "Farmer" || previous == "Tractor" {
+                try reveal(canvas, in: app)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Restored barn \(previous)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            if index < 19 { try reveal(action, in: app); action.tap() }
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertTrue(app.staticTexts["Barn closed. Tap to open the doors."].waitForExistence(timeout: 5))
+        try reveal(canvas, in: app); canvas.tap()
+        XCTAssertTrue(app.staticTexts["Peekaboo! Tap to meet our visitor."].waitForExistence(timeout: 5))
+        canvas.tap()
+        XCTAssertTrue(name.waitForExistence(timeout: 5))
+        XCTAssertNotEqual(name.label, previous)
+    }
+
+    @MainActor
     func testAnimalFamiliesAllRounds() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]

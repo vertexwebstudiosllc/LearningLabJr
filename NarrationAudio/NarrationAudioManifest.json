@@ -8618,6 +8618,14 @@
       "category": "literacy"
     },
     {
+      "text": "Calf! A calf is a baby cow.",
+      "file": "llj-24989b8783b2069f1855b58d.mp3",
+      "spokenText": "Calf! A calf is a baby cow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
       "file": "llj-7460196eb61d777521939390.mp3",
       "spokenText": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
@@ -8661,6 +8669,158 @@
       "text": "Can you find the Velociraptor? Follow the footprints to that dinosaur.",
       "file": "llj-73758b523648d65e563f1fce.mp3",
       "spokenText": "Can you find the Velociraptor? Follow the footprints to that dinosaur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you flap your arms like little wings?",
+      "file": "llj-f75e2bfa07233e7ab1fabfcb.mp3",
+      "spokenText": "Can you flap your arms like little wings?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you give our farm dog a friendly wave?",
+      "file": "llj-7c32f4e5461882d7df57eeba.mp3",
+      "spokenText": "Can you give our farm dog a friendly wave?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you give the puppy a little woof?",
+      "file": "llj-7006e0cc9d542cccb2eff7e7.mp3",
+      "spokenText": "Can you give the puppy a little woof?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make a gentle moo?",
+      "file": "llj-a5a074bc576740c774dbb497.mp3",
+      "spokenText": "Can you make a gentle moo?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make a little baa for the lamb?",
+      "file": "llj-f5d90a5b1a209dcaa23095dd.mp3",
+      "spokenText": "Can you make a little baa for the lamb?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make a little meow?",
+      "file": "llj-052bd808b7f7f5e882eeef35.mp3",
+      "spokenText": "Can you make a little meow?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make a soft baa?",
+      "file": "llj-1eeafe7e20d46351b1226766.mp3",
+      "spokenText": "Can you make a soft baa?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make a tiny clip-clop with your fingers?",
+      "file": "llj-d672d992bb18899efebf809c.mp3",
+      "spokenText": "Can you make a tiny clip-clop with your fingers?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you make two fingers hop on your hand?",
+      "file": "llj-2dbab73aaf2f36b18b45ea1c.mp3",
+      "spokenText": "Can you make two fingers hop on your hand?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you paddle your hands like a swimming duck?",
+      "file": "llj-fa8e44072d38410f8e50dbd3.mp3",
+      "spokenText": "Can you paddle your hands like a swimming duck?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you pat your knees to make a clip-clop beat?",
+      "file": "llj-2971ead7daf7768c2aa273f5.mp3",
+      "spokenText": "Can you pat your knees to make a clip-clop beat?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you point beside your nose where whiskers would be?",
+      "file": "llj-aebcbfb50df7e72daf6a28b7.mp3",
+      "spokenText": "Can you point beside your nose where whiskers would be?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you pretend to sprinkle seeds in the soil?",
+      "file": "llj-d317eda8472f2d1263dabc6a.mp3",
+      "spokenText": "Can you pretend to sprinkle seeds in the soil?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you pretend your fingers are climbing a little hill?",
+      "file": "llj-24f4b219488a42dc6b50624d.mp3",
+      "spokenText": "Can you pretend your fingers are climbing a little hill?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you say hello to the little calf?",
+      "file": "llj-55d5c15b6af35cb6f0b9cbd1.mp3",
+      "spokenText": "Can you say hello to the little calf?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you say peep, peep in a tiny voice?",
+      "file": "llj-413ac93ca2a7e25903fac5e2.mp3",
+      "spokenText": "Can you say peep, peep in a tiny voice?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you spread your fingers like tail feathers?",
+      "file": "llj-6e3e77bb92c3eba035828bb5.mp3",
+      "spokenText": "Can you spread your fingers like tail feathers?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you turn a pretend steering wheel?",
+      "file": "llj-90aaec6cdc2e841aa9095078.mp3",
+      "spokenText": "Can you turn a pretend steering wheel?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Can you wiggle your nose like a pig?",
+      "file": "llj-e18678b3cf5cad44e6c122c1.mp3",
+      "spokenText": "Can you wiggle your nose like a pig?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -8738,9 +8898,33 @@
       "category": "stories"
     },
     {
+      "text": "Cat! Meow, meow! A cat has whiskers beside its nose.",
+      "file": "llj-64b22bcc89978436bfcc59a7.mp3",
+      "spokenText": "Cat! Meow, meow! A cat has whiskers beside its nose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Change the weather window. Tap inside to explore what happens.",
       "file": "llj-381bd7e0c42619aa442ac061.mp3",
       "spokenText": "Change the weather window. Tap inside to explore what happens.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Chick! Peep, peep! A chick is a baby chicken.",
+      "file": "llj-cb8f036b89fc6909dfd72b9b.mp3",
+      "spokenText": "Chick! Peep, peep! A chick is a baby chicken.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Chicken! Cluck, cluck! Chickens have feathers and two feet.",
+      "file": "llj-9cf5bc02328a0d27fa8d7cdc.mp3",
+      "spokenText": "Chicken! Cluck, cluck! Chickens have feathers and two feet.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -9210,6 +9394,14 @@
       "category": "nature"
     },
     {
+      "text": "Cow! Moo, moo! Cows munch on grass.",
+      "file": "llj-9c041251bc74092f8d869e1b.mp3",
+      "spokenText": "Cow! Moo, moo! Cows munch on grass.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Cow. Moo, moo!",
       "file": "llj-1f6a7a2bd728f551b3b15ddb.mp3",
       "spokenText": "Cow. Moo, moo!",
@@ -9368,6 +9560,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Dog! Woof, woof! Some dogs help farmers look after sheep.",
+      "file": "llj-5efb3c864f111b5888fda621.mp3",
+      "spokenText": "Dog! Woof, woof! Some dogs help farmers look after sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Down the road!",
@@ -9986,6 +10186,14 @@
       "category": "stories"
     },
     {
+      "text": "Duck! Quack, quack! Ducks have wide, webbed feet for swimming.",
+      "file": "llj-7a02ada4ca80334907ed7e36.mp3",
+      "spokenText": "Duck! Quack, quack! Ducks have wide, webbed feet for swimming.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Duck. Quack, quack!",
       "file": "llj-5c8a4f614311cbf8089fe946.mp3",
       "spokenText": "Duck. Quack, quack!",
@@ -10304,6 +10512,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Farmer! Farmers care for animals and grow food.",
+      "file": "llj-c3e6a0b333261000058bde0a.mp3",
+      "spokenText": "Farmer! Farmers care for animals and grow food.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. “Run, Trey, run!” shouted Vincent.",
@@ -11410,6 +11626,14 @@
       "category": "nature"
     },
     {
+      "text": "Foal! A foal is a baby horse.",
+      "file": "llj-34bedbaddc8891070aec2b41.mp3",
+      "spokenText": "Foal! A foal is a baby horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Follow the counting stones. Start at one.",
       "file": "llj-4b7e3935b7498432f78a2d6d.mp3",
       "spokenText": "Follow the counting stones. Start at one.",
@@ -12226,6 +12450,14 @@
       "category": "counting"
     },
     {
+      "text": "Goat! Goats are curious animals that like to climb.",
+      "file": "llj-6a7772bdde1868e5ac3839ab.mp3",
+      "spokenText": "Goat! Goats are curious animals that like to climb.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Golf Ball",
       "file": "llj-e42a706147a4a47a2fa11370.mp3",
       "spokenText": "Golf Ball",
@@ -12677,6 +12909,14 @@
       "text": "Home again! Earth has one Moon, and Mars has two. We counted and explored together. Well done!",
       "file": "llj-ecd1e0ce7c8c765d24dd7861.mp3",
       "spokenText": "Home again! Earth has one Moon, and Mars has two. We counted and explored together. Well done!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Horse! Neigh, neigh! Horses have hooves.",
+      "file": "llj-fb111f3c262bf43222f44cbe.mp3",
+      "spokenText": "Horse! Neigh, neigh! Horses have hooves.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -13250,6 +13490,14 @@
       "category": "nature"
     },
     {
+      "text": "Kitten! A kitten is a baby cat.",
+      "file": "llj-a254296d5cfa2b629a5ca144.mp3",
+      "spokenText": "Kitten! A kitten is a baby cat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "L is for lamb.",
       "file": "llj-e2c1e6d47fe487768014ac7a.mp3",
       "spokenText": "L is for lamb.",
@@ -13352,6 +13600,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Lamb! A lamb is a baby sheep.",
+      "file": "llj-786007dfe33247d94b327d7a.mp3",
+      "spokenText": "Lamb! A lamb is a baby sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Large fits in the nest.",
@@ -20730,6 +20986,14 @@
       "category": "nature"
     },
     {
+      "text": "Pig! Oink, oink! A pig uses its snout to explore.",
+      "file": "llj-4a8b1081831ad647b3843bc7.mp3",
+      "spokenText": "Pig! Oink, oink! A pig uses its snout to explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Pig. Oink, oink!",
       "file": "llj-455b018980e7f0bf7963e4e6.mp3",
       "spokenText": "Pig. Oink, oink!",
@@ -21602,6 +21866,14 @@
       "category": "feelings"
     },
     {
+      "text": "Puppy! A puppy is a baby dog.",
+      "file": "llj-931bb1d2ed734c9b9485e59d.mp3",
+      "spokenText": "Puppy! A puppy is a baby dog.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Purple and black make dark purple!",
       "file": "llj-039f0a5ea340a08c18ed2391.mp3",
       "spokenText": "Purple and black make dark purple!",
@@ -21952,6 +22224,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Rabbit! Look at those long ears. Rabbits can hop.",
+      "file": "llj-4389b7627e3dddaf18e0ab53.mp3",
+      "spokenText": "Rabbit! Look at those long ears. Rabbits can hop.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Rain falls from clouds. Pat your knees like raindrops.",
@@ -23226,6 +23506,14 @@
       "category": "feelings"
     },
     {
+      "text": "Sheep! Baa, baa! A sheep has a woolly coat.",
+      "file": "llj-37b83d21db3903671684e9dd.mp3",
+      "spokenText": "Sheep! Baa, baa! A sheep has a woolly coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Sheep. Baa, baa!",
       "file": "llj-77e113bcd361a07832d926d1.mp3",
       "spokenText": "Sheep. Baa, baa!",
@@ -23541,6 +23829,14 @@
       "text": "Tap each twig to weave it into a cozy nest.",
       "file": "llj-8ef8367e0181941e7860334e.mp3",
       "spokenText": "Tap each twig to weave it into a cozy nest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Tap the barn to slide the doors open. Tap again to meet who's inside!",
+      "file": "llj-9a5dc377ad5c25d9c466cc6f.mp3",
+      "spokenText": "Tap the barn to slide the doors open. Tap again to meet who's inside!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -25842,6 +26138,14 @@
       "category": "literacy"
     },
     {
+      "text": "Tractor! Farmers drive tractors to help with heavy jobs.",
+      "file": "llj-76347fc4951c28e1e93c4397.mp3",
+      "spokenText": "Tractor! Farmers drive tractors to help with heavy jobs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Trash Truck",
       "file": "llj-74036d839070e8997890269e.mp3",
       "spokenText": "Trash Truck",
@@ -26032,6 +26336,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Turkey! Look at that fan-shaped tail.",
+      "file": "llj-4b9a79e951f28bd8f44e5078.mp3",
+      "spokenText": "Turkey! Look at that fan-shaped tail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Turn the sky from day to night. Tap both pictures in each sky.",

@@ -6,6 +6,61 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testRestoredBarnyardDeckTransitionsArtworkAndRuth() throws {
+        XCTAssertEqual(BarnyardDiscovery.bank.count, 19)
+        XCTAssertEqual(Set(BarnyardDiscovery.bank.map(\.id)).count, 19)
+        var deck = BarnyardDeck()
+        var last = ""
+        for _ in 0..<100 {
+            var seen: Set<String> = []
+            for _ in 0..<19 {
+                let item = deck.next()
+                XCTAssertTrue(seen.insert(item.id).inserted)
+                XCTAssertNotEqual(item.id, last)
+                last = item.id
+                deck = try JSONDecoder().decode(BarnyardDeck.self, from: JSONEncoder().encode(deck))
+            }
+        }
+        var play = BarnyardPlay()
+        for _ in 0..<100 {
+            let current = play.current.id
+            XCTAssertEqual(play.phase, .closed)
+            play.finishAnimation(); XCTAssertEqual(play.phase, .closed)
+            play.activate(); XCTAssertEqual(play.phase, .opening)
+            play.activate(); XCTAssertEqual(play.phase, .opening)
+            play.finishAnimation(); XCTAssertEqual(play.phase, .open)
+            play.finishAnimation(); XCTAssertEqual(play.phase, .open)
+            play.activate(); XCTAssertEqual(play.phase, .introduced)
+            XCTAssertEqual(play.current.id, current)
+            play.activate(); XCTAssertEqual(play.phase, .closing)
+            play.activate(); XCTAssertEqual(play.phase, .closing)
+            play.finishAnimation(); XCTAssertEqual(play.phase, .closed)
+            XCTAssertNotEqual(play.current.id, current)
+            XCTAssertTrue((1...19).contains(play.position))
+        }
+        let texts = [BarnyardDiscovery.prompt] + BarnyardDiscovery.bank.flatMap { [$0.introduction, $0.playPrompt] }
+        for text in texts {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+        }
+        for asset in ["barnBackground", "barnDoorLeft", "barnDoorRight"] { XCTAssertNotNil(UIImage(named: asset)) }
+        for item in BarnyardDiscovery.bank {
+            let image = try XCTUnwrap(UIImage(named: item.asset)?.cgImage, item.asset)
+            var pixels = [UInt8](repeating: 0, count: 32 * 32 * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: 32, height: 32,
+                    bitsPerComponent: 8, bytesPerRow: 128, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: 32, height: 32))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, item.asset)
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 100, item.asset)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, item.asset) }
+        }
+    }
+
+    @MainActor
     func testAnimalFamilyRoundsMatchingTransparencyAndRuth() throws {
         XCTAssertEqual(AnimalFamily.bank.count, 6)
         var previous = "cow"

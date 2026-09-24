@@ -30,7 +30,7 @@ enum NatureActivity: String, CaseIterable, Identifiable {
         case .tracks: details = ("Dinosaur Trail", "Observation & discovery", "Choose between two colored trails to find the named dinosaur", "Make pretend dinosaur footprints with your hands.")
         case .moon: details = ("Moon Mission", "Earth & space", "Choose a narrated space story and discover planets, our Moon and our star", "These are pretend trips with real space facts. Ask your child to share one discovery.")
         case .families: details = ("Animal Families", "Animal vocabulary", "Match babies, grown-ups and animal sounds across eighteen rounds", "A baby horse is a foal. A pony is a small horse, not a baby.")
-        case .barn: details = ("Peekaboo Barnyard", "Listening & cause and effect", "Open the doors, meet an animal, and imitate its sound", "Take turns making your own animal sounds.")
+        case .barn: details = ("Peekaboo Barnyard", "Listening & cause and effect", "Slide open the original barn doors and discover nineteen farm surprises", "Make farm sounds together, name baby animals, and pretend to help the farmer.")
         case .garden: details = ("Little Garden", "What plants need", "Plant a seed and give it soil, water, and sunshine", "Care for a real plant together. Growing takes time.")
         case .cleanup: details = ("Ocean Helpers", "Care for living things", "Pick up litter while leaving sea animals in their home", "An adult can help put litter in a bin on your next walk.")
         case .weather: details = ("Weather Window", "Notice the weather", "Change a weather window and explore rain, wind, and sunshine", "Look out of a real window and describe today’s weather.")
