@@ -36,7 +36,7 @@ enum NatureActivity: String, CaseIterable, Identifiable {
         case .weather: details = ("Weather Window", "Notice the weather", "Swipe through sunshine, rain, wind, nighttime, snow, and fall", "Look out of a real window together. Notice the weather, time of day, and seasonal changes.")
         case .movement: details = ("Move Like an Animal", "Animal movement", "Move together with sixteen shuffled animal friends", "Invite a grown-up to play and make a little space together. Every animal has a seated movement to try.")
         case .dayNight: details = ("Day & Night", "Practice everyday routines", "Explore eighteen daytime and bedtime activities", "Talk about your own family routines. Brushing teeth, reading, and tidying can happen at more than one time of day.")
-        case .clues: details = ("Nature Detective", "Describe living things", "Open spoken clues and identify the animal", "Describe an animal without naming it and invite a guess.")
+        case .clues: details = ("Nature Detective", "Describe living things", "Solve twenty-four animal and insect mysteries with three spoken clues", "Play detective together. Listen for body parts, sounds, and movements; insects are animals, too.")
         case .nest: details = ("A Cozy Nest", "How birds build", "Choose twigs, weave a nest, and settle the eggs", "Watch a nest from far away and leave it undisturbed.")
         }
         return LearningActivity(id: id, title: details.0, skill: details.1, interaction: details.2,

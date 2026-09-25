@@ -6,6 +6,75 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testNatureDetectiveVarietyCluesGuardsArtworkAndRuth() throws {
+        XCTAssertEqual(DetectiveAnimal.bank.count, 24)
+        XCTAssertEqual(Set(DetectiveAnimal.bank.map(\.id)).count, 24)
+        XCTAssertEqual(DetectiveAnimal.bank.filter { $0.asset.hasPrefix("DetectiveClean/") }.count, 4)
+        var first = "rabbit"
+        var last = "cat"
+        for _ in 0..<200 {
+            var play = NatureDetectivePlay(previousFirst: first, previousAnimal: last)
+            XCTAssertNotEqual(play.current.animal.id, first)
+            XCTAssertNotEqual(play.current.animal.id, last)
+            first = play.current.animal.id
+            XCTAssertEqual(Set(play.rounds.map { $0.animal.id }).count, 24)
+            var previousChoices: Set<String> = []
+            for index in 0..<24 {
+                let round = play.current
+                let target = round.animal.id
+                XCTAssertEqual(play.index, index); XCTAssertFalse(play.complete)
+                XCTAssertEqual(round.animal.clues.count, 3)
+                let choices = Set(round.choices.map(\.id))
+                XCTAssertEqual(choices.count, 3); XCTAssertTrue(choices.contains(target))
+                XCTAssertTrue(choices.subtracting([target]).isDisjoint(with: previousChoices))
+                previousChoices = choices
+                play.advance(from: target); XCTAssertEqual(play.index, index)
+                play.choose(target, for: "stale"); XCTAssertFalse(play.solved)
+                play.choose("unknown", for: target); XCTAssertFalse(play.needsHelp)
+                play.revealClue(in: "stale"); XCTAssertEqual(play.clueCount, 1)
+                for _ in 0..<5 { play.revealClue(in: target) }
+                XCTAssertEqual(play.clueCount, 3)
+                XCTAssertEqual(play.prompt, "Here is a clue! " + round.animal.fullClues)
+                let wrong = try XCTUnwrap(round.choices.first { $0.id != target })
+                play.choose(wrong.id, for: target)
+                XCTAssertTrue(play.needsHelp); XCTAssertFalse(play.solved)
+                XCTAssertEqual(play.prompt, round.animal.retry)
+                XCTAssertEqual(Set(play.current.choices.map(\.id)), choices)
+                play.choose(target, for: target)
+                XCTAssertTrue(play.solved); XCTAssertFalse(play.needsHelp)
+                XCTAssertEqual(play.prompt, round.animal.success)
+                play.choose(wrong.id, for: target); XCTAssertTrue(play.solved)
+                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
+                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
+                last = target
+            }
+            XCTAssertTrue(play.complete)
+            play.choose(last, for: last); play.advance(from: last); XCTAssertEqual(play.index, 24)
+        }
+        var early = NatureDetectivePlay()
+        let animal = early.current.animal.id
+        early.choose(animal, for: animal); XCTAssertTrue(early.solved)
+        for text in DetectiveAnimal.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+        for animal in DetectiveAnimal.bank {
+            let image = try XCTUnwrap(UIImage(named: animal.asset)?.cgImage, animal.asset)
+            var pixels = [UInt8](repeating: 0, count: 32 * 32 * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: 32, height: 32,
+                    bitsPerComponent: 8, bytesPerRow: 128, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: 32, height: 32))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, animal.asset)
+            // Slender insects occupy less of the square than broad animal bodies.
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 50, animal.asset)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, animal.asset) }
+        }
+    }
+
+    @MainActor
     func testDayNightRoutinesProgressionNoRepeatsAndInteractions() throws {
         XCTAssertEqual(DayNightRoutine.bank.count, 18)
         XCTAssertEqual(Set(DayNightRoutine.bank.map(\.id)).count, 18)

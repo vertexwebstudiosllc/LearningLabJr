@@ -13234,6 +13234,574 @@
       "category": "stories"
     },
     {
+      "text": "Here is a clue! I am a big animal with hooves.",
+      "file": "llj-63c28c57d81d2c59453230a7.mp3",
+      "spokenText": "Here is a clue! I am a big animal with hooves.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail.",
+      "file": "llj-bf8779e36b608a6ab0a1d878.mp3",
+      "spokenText": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+      "file": "llj-ffc0745024594556fa343dac.mp3",
+      "spokenText": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a big farm animal.",
+      "file": "llj-82aa136c0c4e16a73d0c2db5.mp3",
+      "spokenText": "Here is a clue! I am a big farm animal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a big farm animal. I eat grass and have hooves.",
+      "file": "llj-4d5e6ec2d1cb40e2a1b5dc65.mp3",
+      "spokenText": "Here is a clue! I am a big farm animal. I eat grass and have hooves.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a big farm animal. I eat grass and have hooves. I say moo.",
+      "file": "llj-b93a3081a7b00fa2b69eeb83.mp3",
+      "spokenText": "Here is a clue! I am a big farm animal. I eat grass and have hooves. I say moo.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird that can swim.",
+      "file": "llj-e3b47538c866419401a76986.mp3",
+      "spokenText": "Here is a clue! I am a bird that can swim.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle.",
+      "file": "llj-639ca3585b5a7fbd0398d805.mp3",
+      "spokenText": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+      "file": "llj-ee0d705fca897e91347d1208.mp3",
+      "spokenText": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird with feathers.",
+      "file": "llj-cc61009fe3d1f5a1e85cc980.mp3",
+      "spokenText": "Here is a clue! I am a bird with feathers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food.",
+      "file": "llj-15af35222af4c66dc5377c73.mp3",
+      "spokenText": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+      "file": "llj-61873a0f99570a132ca2f992.mp3",
+      "spokenText": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a farm animal with hooves.",
+      "file": "llj-9d43b91c53485b74f8ffb471.mp3",
+      "spokenText": "Here is a clue! I am a farm animal with hooves.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore.",
+      "file": "llj-23bcc9048d0d25f530582d33.mp3",
+      "spokenText": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+      "file": "llj-140aac6c8013d9f114896bfd.mp3",
+      "spokenText": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a flying insect.",
+      "file": "llj-8dc35e1f3b3b0910b60b1e56.mp3",
+      "spokenText": "Here is a clue! I am a flying insect.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen.",
+      "file": "llj-1540dc05ebdfbb762dabcc8e.mp3",
+      "spokenText": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+      "file": "llj-d2a18864d222731c1bc062a8.mp3",
+      "spokenText": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large bird.",
+      "file": "llj-b3620c0c020c9a1de2caf57a.mp3",
+      "spokenText": "Here is a clue! I am a large bird.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan.",
+      "file": "llj-4a524f8249963aa653ce7321.mp3",
+      "spokenText": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+      "file": "llj-31ddc40f030f1d86812eb78c.mp3",
+      "spokenText": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large ocean animal.",
+      "file": "llj-210b25bf75aaa390f5f705a9.mp3",
+      "spokenText": "Here is a clue! I am a large ocean animal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head.",
+      "file": "llj-f175a755d7d2128398113edb.mp3",
+      "spokenText": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+      "file": "llj-5be1bcc76bd658f533b6ba6d.mp3",
+      "spokenText": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small beetle with six legs.",
+      "file": "llj-30245396498d0b9b392661f8.mp3",
+      "spokenText": "Here is a clue! I am a small beetle with six legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers.",
+      "file": "llj-118183f0984e81ce7dcb7565.mp3",
+      "spokenText": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+      "file": "llj-f671fc5d11ef6dd2a54edaa1.mp3",
+      "spokenText": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small insect with six legs.",
+      "file": "llj-07d558ae10f02d76e638ac5a.mp3",
+      "spokenText": "Here is a clue! I am a small insect with six legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist.",
+      "file": "llj-2ad2f374c3ae4671416707d3.mp3",
+      "spokenText": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+      "file": "llj-5c09df8ffcd432161d9f28c4.mp3",
+      "spokenText": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small ocean fish.",
+      "file": "llj-f7063705a2516e2dea7e71af.mp3",
+      "spokenText": "Here is a clue! I am a small ocean fish.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things.",
+      "file": "llj-56b608a8592933d56c905429.mp3",
+      "spokenText": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+      "file": "llj-e0209f4064f707b132ef5c55.mp3",
+      "spokenText": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an insect with six legs.",
+      "file": "llj-4eae1205befdca79c3f5c15a.mp3",
+      "spokenText": "Here is a clue! I am an insect with six legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an insect with six legs. I have broad, colorful wings.",
+      "file": "llj-c6c93b28f3c5979d696bb8de.mp3",
+      "spokenText": "Here is a clue! I am an insect with six legs. I have broad, colorful wings.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+      "file": "llj-ca0540e99e39f4fd95264d6e.mp3",
+      "spokenText": "Here is a clue! I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an ocean fish.",
+      "file": "llj-8a2e8991687f9f330ae12120.mp3",
+      "spokenText": "Here is a clue! I am an ocean fish.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an ocean fish. I breathe using gills.",
+      "file": "llj-50b9455dc2463d7295e30938.mp3",
+      "spokenText": "Here is a clue! I am an ocean fish. I breathe using gills.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+      "file": "llj-76be14969254d40680ada747.mp3",
+      "spokenText": "Here is a clue! I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have a hard shell.",
+      "file": "llj-5a8dc6fb9e945dc42b20dbcd.mp3",
+      "spokenText": "Here is a clue! I have a hard shell.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have a hard shell. I have two claws.",
+      "file": "llj-de4f6ac015f78f507eaba399.mp3",
+      "spokenText": "Here is a clue! I have a hard shell. I have two claws.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+      "file": "llj-2fcf6758a2626eddc6ac8c73.mp3",
+      "spokenText": "Here is a clue! I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have fur and a tail.",
+      "file": "llj-e1239908445b5b3dff9dee2d.mp3",
+      "spokenText": "Here is a clue! I have fur and a tail.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose.",
+      "file": "llj-97eaa99024b13f2a88fa0590.mp3",
+      "spokenText": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+      "file": "llj-9e48b33af4c27f4e28bac5e9.mp3",
+      "spokenText": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have hooves and can climb.",
+      "file": "llj-c0e3e1c34b77841f4bcf29bc.mp3",
+      "spokenText": "Here is a clue! I have hooves and can climb.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard.",
+      "file": "llj-cf31189bc2cd51eb054544d3.mp3",
+      "spokenText": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+      "file": "llj-5c6ffb82c16c4260c29fb800.mp3",
+      "spokenText": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have soft fur.",
+      "file": "llj-c75c79354f1e5d7e875f499d.mp3",
+      "spokenText": "Here is a clue! I have soft fur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have soft fur. My ears are long.",
+      "file": "llj-66a3ddb3a6959f8363eefb1f.mp3",
+      "spokenText": "Here is a clue! I have soft fur. My ears are long.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have soft fur. My ears are long. I move with little hops.",
+      "file": "llj-a39370fc8c264905dac97c68.mp3",
+      "spokenText": "Here is a clue! I have soft fur. My ears are long. I move with little hops.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have whiskers and soft fur.",
+      "file": "llj-8c2c9f5507e4e3c04926cf7b.mp3",
+      "spokenText": "Here is a clue! I have whiskers and soft fur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable.",
+      "file": "llj-e175630174a709b76316a873.mp3",
+      "spokenText": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+      "file": "llj-cd3724220992888c74652fa7.mp3",
+      "spokenText": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean and have a soft body.",
+      "file": "llj-a4159321dd121cbfe2d0fa6a.mp3",
+      "spokenText": "Here is a clue! I live in the ocean and have a soft body.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers.",
+      "file": "llj-773463d4255dab1c998c0c12.mp3",
+      "spokenText": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+      "file": "llj-ae9fea412cec589a6080256b.mp3",
+      "spokenText": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella.",
+      "file": "llj-a3100e1b01d0b98e1d27299a.mp3",
+      "spokenText": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+      "file": "llj-115d7655efda76a0ac31e6e1.mp3",
+      "spokenText": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean.",
+      "file": "llj-74729e320a9144ceb1fee2f6.mp3",
+      "spokenText": "Here is a clue! I live in the ocean.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean. Little tube feet help me move slowly.",
+      "file": "llj-94aafacd4174146d4cb5d9ad.mp3",
+      "spokenText": "Here is a clue! I live in the ocean. Little tube feet help me move slowly.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+      "file": "llj-76826602a2ea159c23f09641.mp3",
+      "spokenText": "Here is a clue! I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean and also rest out of the water.",
+      "file": "llj-ff81f04d7f0192ab050cb66e.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean and also rest out of the water.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur.",
+      "file": "llj-70d46693737aed70e5f10cf8.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+      "file": "llj-1f5336de061d5458b02cdfe7.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean.",
+      "file": "llj-9efa78fc7ec6477cdce67e8a.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean. I come to the surface to breathe air.",
+      "file": "llj-6ec7cd4c7684d8d058852d0f.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean. I come to the surface to breathe air.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+      "file": "llj-9d9730af9c88739defb9e1a0.mp3",
+      "spokenText": "Here is a clue! I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! My coat is fluffy wool.",
+      "file": "llj-01dc8b06c7aa17bd7dcd6184.mp3",
+      "spokenText": "Here is a clue! My coat is fluffy wool.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass.",
+      "file": "llj-dec4db4b371bdd35a3c7b3f6.mp3",
+      "spokenText": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+      "file": "llj-39b86ee787c8d3cad277366c.mp3",
+      "spokenText": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Here is an apple for you. Crunch, crunch!",
       "file": "llj-1692848108341efd42b5f3f3.mp3",
       "spokenText": "Here is an apple for you. Crunch, crunch!",
@@ -14162,6 +14730,14 @@
       "category": "nature"
     },
     {
+      "text": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
+      "file": "llj-53c5d0248713047896422b3d.mp3",
+      "spokenText": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's build a tower with 10 blocks. Drag blocks onto your building mat.",
       "file": "llj-924ec1cae0993e383bd14a48.mp3",
       "spokenText": "Let's build a tower with 10 blocks. Drag blocks onto your building mat.",
@@ -15056,6 +15632,198 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's look again. I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+      "file": "llj-8dc0c5111b88d15c1debec59.mp3",
+      "spokenText": "Let's look again. I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a big farm animal. I eat grass and have hooves. I say moo.",
+      "file": "llj-14ec04de666d75bb5111cf26.mp3",
+      "spokenText": "Let's look again. I am a big farm animal. I eat grass and have hooves. I say moo.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+      "file": "llj-905b9b68fc8626d33fb1b371.mp3",
+      "spokenText": "Let's look again. I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+      "file": "llj-ef0ece225bfe8e20858e7aa4.mp3",
+      "spokenText": "Let's look again. I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+      "file": "llj-f2d86404270971861987d105.mp3",
+      "spokenText": "Let's look again. I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+      "file": "llj-d7b1bcacf85a87828f13396b.mp3",
+      "spokenText": "Let's look again. I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+      "file": "llj-3cefe648420c726458f4f6e8.mp3",
+      "spokenText": "Let's look again. I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+      "file": "llj-6260635a80bbdc83d894c907.mp3",
+      "spokenText": "Let's look again. I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+      "file": "llj-381d881990e8301b30088cca.mp3",
+      "spokenText": "Let's look again. I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+      "file": "llj-ed740d50e1bf0268ffe63e47.mp3",
+      "spokenText": "Let's look again. I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+      "file": "llj-a2c7b68e91fb13c519080540.mp3",
+      "spokenText": "Let's look again. I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+      "file": "llj-fea23ec4c6156e51743e1dc7.mp3",
+      "spokenText": "Let's look again. I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+      "file": "llj-ea31fd3c8b8628c522421e42.mp3",
+      "spokenText": "Let's look again. I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+      "file": "llj-5ddfc44ec45da0218e0a94ce.mp3",
+      "spokenText": "Let's look again. I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+      "file": "llj-da3a080871a8b776d18961a3.mp3",
+      "spokenText": "Let's look again. I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+      "file": "llj-944017df9d51e9c677449a5a.mp3",
+      "spokenText": "Let's look again. I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I have soft fur. My ears are long. I move with little hops.",
+      "file": "llj-96cdf8f065b33126a5796100.mp3",
+      "spokenText": "Let's look again. I have soft fur. My ears are long. I move with little hops.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+      "file": "llj-07c3dd95946069b8038d48a3.mp3",
+      "spokenText": "Let's look again. I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+      "file": "llj-7641c8f21d0c9737df6b2ae1.mp3",
+      "spokenText": "Let's look again. I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+      "file": "llj-e94c70bf8a830ee37d969634.mp3",
+      "spokenText": "Let's look again. I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+      "file": "llj-7735142fabb28153e3ab3a45.mp3",
+      "spokenText": "Let's look again. I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+      "file": "llj-20173acc5a336ec8cb41d92b.mp3",
+      "spokenText": "Let's look again. I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+      "file": "llj-e7b79a5cc23b715a8a03776a.mp3",
+      "spokenText": "Let's look again. I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look again. My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+      "file": "llj-932922513aaa21f890ed0020.mp3",
+      "spokenText": "Let's look again. My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's look again. The cat's baby is a kitten.",
@@ -34434,6 +35202,14 @@
       "category": "nature"
     },
     {
+      "text": "You found the ant! Great noticing, nature detective!",
+      "file": "llj-280d2681dff9073bebe6d9dd.mp3",
+      "spokenText": "You found the ant! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found the apple! Families enjoy many different foods at breakfast.",
       "file": "llj-88ccaefb05210903d0d753e3.mp3",
       "spokenText": "You found the apple! Families enjoy many different foods at breakfast.",
@@ -34442,9 +35218,113 @@
       "category": "nature"
     },
     {
+      "text": "You found the bee! Great noticing, nature detective!",
+      "file": "llj-2ac9b61731b6b086cfc0ae40.mp3",
+      "spokenText": "You found the bee! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the butterfly! Great noticing, nature detective!",
+      "file": "llj-52ddea19fd768f309848458e.mp3",
+      "spokenText": "You found the butterfly! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the cat! Great noticing, nature detective!",
+      "file": "llj-fb6a029625b35ed6855b84e6.mp3",
+      "spokenText": "You found the cat! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found the chicken!",
       "file": "llj-65101865a75d6284163bee66.mp3",
       "spokenText": "You found the chicken!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the chicken! Great noticing, nature detective!",
+      "file": "llj-2d8f34220cf6792bd8ae1b57.mp3",
+      "spokenText": "You found the chicken! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the cow! Great noticing, nature detective!",
+      "file": "llj-7642dae85ffaa493b78d8da0.mp3",
+      "spokenText": "You found the cow! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the crab! Great noticing, nature detective!",
+      "file": "llj-47f6f9a443806ca4d8c60ed8.mp3",
+      "spokenText": "You found the crab! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the dog! Great noticing, nature detective!",
+      "file": "llj-238af3a6a3cb9f6abd8714da.mp3",
+      "spokenText": "You found the dog! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the dolphin! Great noticing, nature detective!",
+      "file": "llj-989e00589b2c10bda68f033c.mp3",
+      "spokenText": "You found the dolphin! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the duck! Great noticing, nature detective!",
+      "file": "llj-34f15fed47ead37c575a8165.mp3",
+      "spokenText": "You found the duck! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the goat! Great noticing, nature detective!",
+      "file": "llj-99798fd0d6c89b50b889e6d4.mp3",
+      "spokenText": "You found the goat! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the horse! Great noticing, nature detective!",
+      "file": "llj-dcfbab963ef175a1220f3a2c.mp3",
+      "spokenText": "You found the horse! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the jellyfish! Great noticing, nature detective!",
+      "file": "llj-661648936cad7956402c5f32.mp3",
+      "spokenText": "You found the jellyfish! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the ladybug! Great noticing, nature detective!",
+      "file": "llj-c6f71ef9496403abec38390c.mp3",
+      "spokenText": "You found the ladybug! Great noticing, nature detective!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -34466,9 +35346,81 @@
       "category": "nature"
     },
     {
+      "text": "You found the octopus! Great noticing, nature detective!",
+      "file": "llj-006f7540ec1ca54dedf5484f.mp3",
+      "spokenText": "You found the octopus! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the pig! Great noticing, nature detective!",
+      "file": "llj-a07d7146b92ad24113959b88.mp3",
+      "spokenText": "You found the pig! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found the rabbit!",
       "file": "llj-d125e857bc3f28df62deac69.mp3",
       "spokenText": "You found the rabbit!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the rabbit! Great noticing, nature detective!",
+      "file": "llj-b4b1ebee0ea1f568b1041dbe.mp3",
+      "spokenText": "You found the rabbit! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the sea star! Great noticing, nature detective!",
+      "file": "llj-a724eeefeb6e94e1ccc77beb.mp3",
+      "spokenText": "You found the sea star! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the seahorse! Great noticing, nature detective!",
+      "file": "llj-7005366305c6701e85ae82ea.mp3",
+      "spokenText": "You found the seahorse! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the seal! Great noticing, nature detective!",
+      "file": "llj-c1b3f195594bc89a2f6eefe6.mp3",
+      "spokenText": "You found the seal! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the shark! Great noticing, nature detective!",
+      "file": "llj-4f55206039a708ec74665dc8.mp3",
+      "spokenText": "You found the shark! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the sheep! Great noticing, nature detective!",
+      "file": "llj-bea166b07b5abfe13ba16bec.mp3",
+      "spokenText": "You found the sheep! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found the turkey! Great noticing, nature detective!",
+      "file": "llj-fa1ab3c09fb9ba57847f6840.mp3",
+      "spokenText": "You found the turkey! Great noticing, nature detective!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -34520,6 +35472,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You found the whale! Great noticing, nature detective!",
+      "file": "llj-9a89838f1ce779ebfc563ecd.mp3",
+      "spokenText": "You found the whale! Great noticing, nature detective!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You helped every animal find a home!",

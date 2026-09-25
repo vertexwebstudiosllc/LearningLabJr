@@ -1,0 +1,607 @@
+[
+  {
+    "text": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have soft fur.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have soft fur. My ears are long.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have soft fur. My ears are long. I move with little hops.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I have soft fur. My ears are long. I move with little hops.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the rabbit! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have whiskers and soft fur.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the cat! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have fur and a tail.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the dog! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big farm animal.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big farm animal. I eat grass and have hooves.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big farm animal. I eat grass and have hooves. I say moo.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a big farm animal. I eat grass and have hooves. I say moo.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the cow! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! My coat is fluffy wool.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. My coat is fluffy wool. I have hooves and eat grass. I say baa.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the sheep! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big animal with hooves.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the horse! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird with feathers.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the chicken! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird that can swim.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the duck! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a farm animal with hooves.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the pig! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large bird.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the turkey! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have hooves and can climb.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the goat! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean. I come to the surface to breathe air.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the dolphin! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the octopus! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have a hard shell.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have a hard shell. I have two claws.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the crab! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small ocean fish.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the seahorse! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large ocean animal.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the whale! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean and also rest out of the water.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the seal! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an ocean fish.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an ocean fish. I breathe using gills.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the shark! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean. Little tube feet help me move slowly.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I live in the ocean. Little tube feet help me move slowly. My body looks like a star.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the sea star! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the jellyfish! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an insect with six legs.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an insect with six legs. I have broad, colorful wings.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the butterfly! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a flying insect.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the bee! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small beetle with six legs.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the ladybug! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small insect with six legs.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's look again. I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the ant! Great noticing, nature detective!",
+    "category": "nature",
+    "delivery": "playful"
+  }
+]

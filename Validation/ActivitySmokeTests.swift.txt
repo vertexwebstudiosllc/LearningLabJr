@@ -104,6 +104,80 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testNatureDetectiveTwentyFourMysteriesAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Nature Detective"]
+        try reveal(card, in: app); card.tap()
+        func tapVisible(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        let targets: [String: String] = [
+            "Here is a clue! I have soft fur. My ears are long. I move with little hops.": "rabbit",
+            "Here is a clue! I have whiskers and soft fur. I can purr when I feel comfortable. I say meow.": "cat",
+            "Here is a clue! I have fur and a tail. I can wag my tail and sniff with my nose. I say woof.": "dog",
+            "Here is a clue! I am a big farm animal. I eat grass and have hooves. I say moo.": "cow",
+            "Here is a clue! My coat is fluffy wool. I have hooves and eat grass. I say baa.": "sheep",
+            "Here is a clue! I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.": "horse",
+            "Here is a clue! I am a bird with feathers. I have a beak and scratch the ground to find food. I cluck, and a hen lays eggs.": "chicken",
+            "Here is a clue! I am a bird that can swim. My webbed feet help me paddle. Many of us make a quacking sound.": "duck",
+            "Here is a clue! I am a farm animal with hooves. I use my snout to sniff and explore. I say oink.": "pig",
+            "Here is a clue! I am a large bird. I can spread my tail feathers like a fan. A male makes a gobble-gobble sound.": "turkey",
+            "Here is a clue! I have hooves and can climb. Many of us have horns and a little beard. I am a farm animal that says maa.": "goat",
+            "Here is a clue! I swim in the ocean. I come to the surface to breathe air. I have a long snout, flippers, and a curved fin on my back.": "dolphin",
+            "Here is a clue! I live in the ocean and have a soft body. My arms have little suckers. I have eight arms.": "octopus",
+            "Here is a clue! I have a hard shell. I have two claws. Many of us scuttle sideways near the sea.": "crab",
+            "Here is a clue! I am a small ocean fish. I have a curled tail that can hold onto things. My head looks a little like a tiny horse.": "seahorse",
+            "Here is a clue! I am a large ocean animal. I breathe air through a blowhole on top of my head. My wide tail moves up and down as I swim.": "whale",
+            "Here is a clue! I swim in the ocean and also rest out of the water. I have flippers and smooth-looking fur. I have long whiskers around my nose.": "seal",
+            "Here is a clue! I am an ocean fish. I breathe using gills. I have a pointed fin on my back and rows of teeth.": "shark",
+            "Here is a clue! I live in the ocean. Little tube feet help me move slowly. My body looks like a star.": "starfish",
+            "Here is a clue! I live in the ocean and have a soft body. My body can look like a floating umbrella. Tentacles hang below me as I drift and swim.": "jellyfish",
+            "Here is a clue! I am an insect with six legs. I have broad, colorful wings. I flutter from flower to flower.": "butterfly",
+            "Here is a clue! I am a flying insect. I have a fuzzy body and visit flowers for nectar and pollen. I can buzz, and the one in our picture has yellow and dark stripes.": "bee",
+            "Here is a clue! I am a small beetle with six legs. My rounded back has hard wing covers. The one in our picture is red with black spots.": "ladybug",
+            "Here is a clue! I am a small insect with six legs. I have bent antennae and a narrow waist. You may see many of us walking together in a line.": "ant",
+        ]
+        func revealTarget() throws -> String {
+            for _ in 0..<2 { try tapVisible(app.buttons["detective.clue"]) }
+            XCTAssertFalse(app.buttons["detective.clue"].exists)
+            let text = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Here is a clue! '")).firstMatch.label
+            return try XCTUnwrap(targets[text], text)
+        }
+        try tapVisible(app.buttons["detective.begin"])
+        var seen = Set<String>()
+        var first = ""
+        for round in 1...24 {
+            XCTAssertEqual(app.staticTexts["detective.progress"].label, "Mystery \(round) of 24")
+            let target = try revealTarget()
+            if round == 1 { first = target }
+            XCTAssertTrue(seen.insert(target).inserted)
+            let choices = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("detective.choice.") }
+            XCTAssertEqual(choices.count, 3)
+            let wrong = try XCTUnwrap(choices.first { $0.identifier != "detective.choice.\(target)" })
+            try tapVisible(wrong)
+            XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "detective.retry").firstMatch.exists)
+            XCTAssertFalse(app.buttons["detective.next"].exists)
+            try tapVisible(app.buttons["detective.choice.\(target)"])
+            XCTAssertTrue(app.images["detective.found.\(target)"].waitForExistence(timeout: 5))
+            if ["ant", "bee", "ladybug", "butterfly"].contains(target) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Nature Detective \(target)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tapVisible(app.buttons["detective.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tapVisible(app.buttons["Play again"]); try tapVisible(app.buttons["detective.begin"])
+        let replay = try revealTarget(); XCTAssertNotEqual(replay, first)
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        try tapVisible(app.buttons["detective.begin"])
+        XCTAssertNotEqual(try revealTarget(), replay)
+    }
+
+    @MainActor
     func testDayNightEighteenRoutinesDragSequenceAndReplay() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]
