@@ -294,6 +294,8 @@ struct ToddlerArt: View {
                 Image(uiImage: image).resizable().scaledToFit()
             } else if symbol.hasPrefix("nature."), let activity = NatureActivity(rawValue: String(symbol.dropFirst(7))) {
                 NatureMenuIcon(activity: activity).padding(size * 0.16)
+            } else if symbol.hasPrefix("stories."), let activity = StoryActivity(rawValue: String(symbol.dropFirst(8))) {
+                StoryMenuIcon(activity: activity).padding(size * 0.16)
             } else if symbol == "frog.fill" {
                 FrogMenuSymbol().padding(size * 0.16)
             } else {

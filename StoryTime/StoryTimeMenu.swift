@@ -11,7 +11,7 @@ struct StoryTimeMenu: View {
                         .learningActivity(activity.metadata)
                 } label: {
                     ActivityCard(title: activity.metadata.title, subtitle: activity.metadata.skill,
-                                 symbol: activity.symbol, asset: activity.asset, accent: .purple)
+                                 symbol: activity.id, accent: .purple)
                 }.buttonStyle(.plain)
             }
         }
