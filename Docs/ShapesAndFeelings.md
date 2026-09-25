@@ -36,7 +36,7 @@ Colors are accompanied by words and characteristic symbols where possible. Shape
 | Kindness Garden | Choose, act out, and plant flowers for caring actions | Three different caring actions |
 | My Solution Toolbox | Open a picture toolbox and choose one or two helpful items for everyday problems | Eighteen shuffled problems, with a solved scene after each |
 | Body Clue Buddies | Identify body parts by tapping a diverse picture buddy | Eighteen clues with a new buddy each time |
-| Friendship Bridge | Role-play asking, waiting or choosing, and shared planning | Three bridge conversations |
+| Friendship Bridge | Choose friendly words, then share six kinds of interactive play with a buddy | Twelve shuffled playdates connect a bridge |
 | Cozy Evening Path | Sequence Teddy's pictured evening routine | Four routine steps |
 | See You Soon | Select goodbye and comfort choices, then reveal a pretend reunion | One complete pretend goodbye story |
 
@@ -63,3 +63,7 @@ Eighteen unique everyday problems run once each in a shuffled session. The first
 ### Body Clue Buddies
 
 Eighteen distinct clues teach nine body parts, with two clues per part and no consecutive repeated part. Eighteen named buddies include nine boys and nine girls, six skin tones represented across both genders, and varied hair and clothing. Each buddy appears once per session. Questions and people shuffle independently; re-entry changes the first buddy and clue. Both sides of paired body parts accept taps. Tap targets remain at least 44 points with no overlaps from 280–390 point layouts. Two unsuccessful taps offer an outline hint; a hint is also available on demand. Correct answers highlight the part and explain the clue before moving on. All clue, answer, retry, hint, and introduction lines use bundled generative Ruth narration.
+
+### Friendship Bridge
+
+Choose one of eight diverse illustrated buddies, then explore twelve shuffled playdates. Each starts with two valid friendly-word choices and a narrated response. Activities include waving or smiling, sharing building blocks, passing a ball or toy car, matching silly faces or pretend animals, alternating bubble or star turns, and dragging toys or hearts into a shared space. Dragging has a tap-to-pick-up and tap-to-place alternative. Turn checks, single-use bubble checks, and per-action drag tokens prevent accidental double counting or stale drops. Each completed activity adds one bridge piece. Greeting choices change the greeting picture; giving a friend space keeps that friend watching. Replay returns to buddy selection, with a different first playdate. Prompts, choices, replies, activity instructions, retries, and outcomes use bundled generative Ruth recordings.

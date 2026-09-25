@@ -7546,6 +7546,22 @@
       "category": "feelings"
     },
     {
+      "text": "A little wave says hello. Let us practice a friendly greeting.",
+      "file": "llj-3508c47df32de755332fde01.mp3",
+      "spokenText": "A little wave says hello. Let us practice a friendly greeting.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A new friend is here. How would you like to say hello?",
+      "file": "llj-5b965715ab8a6ac46cdd33e0.mp3",
+      "spokenText": "A new friend is here. How would you like to say hello?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A paper patch and glue help mend our picture.",
       "file": "llj-fec04beb90a9819cf7bfddb9.mp3",
       "spokenText": "A paper patch and glue help mend our picture.",
@@ -7674,6 +7690,22 @@
       "category": "nature"
     },
     {
+      "text": "A smile can say hello, too. Let us practice a friendly greeting.",
+      "file": "llj-7c0421e99699c0ffcfa04244.mp3",
+      "spokenText": "A smile can say hello, too. Let us practice a friendly greeting.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A smile gives your friend a welcome without asking them to join.",
+      "file": "llj-156736e67b56b4a194ea1e0e.mp3",
+      "spokenText": "A smile gives your friend a welcome without asking them to join.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A snowflake is made of ice. Look closely at its branching shape.",
       "file": "llj-d22d0a510bb0d961c7047ee0.mp3",
       "spokenText": "A snowflake is made of ice. Look closely at its branching shape.",
@@ -7778,9 +7810,25 @@
       "category": "nature"
     },
     {
+      "text": "A turn for each of us",
+      "file": "llj-9b67de45b0f943b0a649b1b5.mp3",
+      "spokenText": "A turn for each of us",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A turn for each of you. That is sharing!",
       "file": "llj-5fe3161f55969e9ff9e1b4c9.mp3",
       "spokenText": "A turn for each of you. That is sharing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A wave from here gives your friend space to watch.",
+      "file": "llj-67828fc91d8ad57fea9a637c.mp3",
+      "spokenText": "A wave from here gives your friend space to watch.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -8181,6 +8229,14 @@
       "text": "Ask if they are okay",
       "file": "llj-c6f65f7d9255164b5d0c68fb.mp3",
       "spokenText": "Ask if they are okay",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask to build together",
+      "file": "llj-108ccb7c6ac490e44a29ca33.mp3",
+      "spokenText": "Ask to build together",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -8632,6 +8688,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Both friends got sparkles. A fair turn can feel good!",
+      "file": "llj-413cabc369f15a377e5acb5f.mp3",
+      "spokenText": "Both friends got sparkles. A fair turn can feel good!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Both little moons travel around Mars. Make two tiny shapes with your hands and move them around an imaginary planet.",
@@ -9426,6 +9490,14 @@
       "category": "nature"
     },
     {
+      "text": "Can I help tidy up?",
+      "file": "llj-01f1ddf1dd4e7117860c2965.mp3",
+      "spokenText": "Can I help tidy up?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Can you copy our puppet's face? Try a big smile with open eyes and relaxed eyebrows. You can try with a grown-up, or watch together.",
       "file": "llj-5ae45085c0a244d6d462a5cf.mp3",
       "spokenText": "Can you copy our puppet's face? Try a big smile with open eyes and relaxed eyebrows. You can try with a grown-up, or watch together.",
@@ -9800,6 +9872,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Choose a buddy for a friendship adventure. We can say hello, share, and play together!",
+      "file": "llj-378679ae8a8152b8aafae331.mp3",
+      "spokenText": "Choose a buddy for a friendship adventure. We can say hello, share, and play together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Choose a caring action. Try it together, then plant a flower.",
@@ -10560,6 +10640,38 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Drag each block to the glowing building spot. Your friend's turn!",
+      "file": "llj-8e202499845ec18cf5e8b7b6.mp3",
+      "spokenText": "Drag each block to the glowing building spot. Your friend's turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag each block to the glowing building spot. Your turn!",
+      "file": "llj-d7e989e441594909770811c5.mp3",
+      "spokenText": "Drag each block to the glowing building spot. Your turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag each heart onto the friendship picture.",
+      "file": "llj-44bb3eaa809951bdd88b8f03.mp3",
+      "spokenText": "Drag each heart onto the friendship picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag each toy into the toy box.",
+      "file": "llj-9a040b8b4dc42b3b6f7ec33d.mp3",
+      "spokenText": "Drag each toy into the toy box.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Drag the black circle to its outline.",
@@ -12242,6 +12354,54 @@
       "category": "counting"
     },
     {
+      "text": "Find the picture that matches your friend. Tap bird.",
+      "file": "llj-4531c0c5769e0cc2dcde66ae.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap bird.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Find the picture that matches your friend. Tap bunny.",
+      "file": "llj-269b9f375cd0d99456dd2752.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap bunny.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Find the picture that matches your friend. Tap fish.",
+      "file": "llj-2b6bbc22f16e9c9557ed82cf.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap fish.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Find the picture that matches your friend. Tap smile.",
+      "file": "llj-84020f3966325b596c8cf223.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap smile.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Find the picture that matches your friend. Tap surprise.",
+      "file": "llj-16edda132419d590df930559.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap surprise.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Find the picture that matches your friend. Tap wink.",
+      "file": "llj-913d99c4618b640e7835cd56.mp3",
+      "spokenText": "Find the picture that matches your friend. Tap wink.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Find the pigs. Touch each pig once. Let's count together.",
       "file": "llj-061db9eb2196d6dda24af9df.mp3",
       "spokenText": "Find the pigs. Touch each pig once. Let's count together.",
@@ -13437,6 +13597,22 @@
       "text": "Girl Teddy is ready to help!",
       "file": "llj-ce8b453e1d6abeb448605c58.mp3",
       "spokenText": "Girl Teddy is ready to help!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Give a friendly smile",
+      "file": "llj-9d0a471dbc0871ef6bb2796a.mp3",
+      "spokenText": "Give a friendly smile",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Give a little wave",
+      "file": "llj-416eb51f4855b15cfcddb3ab.mp3",
+      "spokenText": "Give a little wave",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -15914,12 +16090,44 @@
       "category": "nature"
     },
     {
+      "text": "Let us copy each other",
+      "file": "llj-f09efc1aac17a63be9c44c1b.mp3",
+      "spokenText": "Let us copy each other",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let us decorate together",
+      "file": "llj-cd10cd5b09e8a74bb0194c74.mp3",
+      "spokenText": "Let us decorate together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let us each put some away",
+      "file": "llj-58aa6d435ff6f70536075c67.mp3",
+      "spokenText": "Let us each put some away",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let us explore day and night! We can practice daytime activities and cozy bedtime routines. Every family has its own routines.",
       "file": "llj-02e805bbce1e0d04a255739b.mp3",
       "spokenText": "Let us explore day and night! We can practice daytime activities and cozy bedtime routines. Every family has its own routines.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Let us leave some for each other",
+      "file": "llj-45073fd450266f45f40d114f.mp3",
+      "spokenText": "Let us leave some for each other",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
@@ -15944,6 +16152,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Let us pass it back and forth",
+      "file": "llj-45c4900a934cb427de8df4b6.mp3",
+      "spokenText": "Let us pass it back and forth",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let us pretend together",
+      "file": "llj-c1c60a919f4edc87846bc9c3.mp3",
+      "spokenText": "Let us pretend together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let us take turns",
+      "file": "llj-ca03597f3a2348bc20553357.mp3",
+      "spokenText": "Let us take turns",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let your breath out comfortably, like a little breeze. There is no need to hold your breath. Tap when you are ready.",
@@ -17018,6 +17250,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's look again. Find the same picture as your friend.",
+      "file": "llj-10fa99ede68c4ba46cb16971.mp3",
+      "spokenText": "Let's look again. Find the same picture as your friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let's look again. I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
       "file": "llj-8dc0c5111b88d15c1debec59.mp3",
       "spokenText": "Let's look again. I am a big animal with hooves. I have a mane and a long tail. My hooves can make a clip-clop sound when I trot.",
@@ -17328,6 +17568,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's look at whose turn it is. Try the glowing spot.",
+      "file": "llj-880faf739b28a8928be94535.mp3",
+      "spokenText": "Let's look at whose turn it is. Try the glowing spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's look together. Listen for the next piece, then tap its picture.",
@@ -21642,6 +21890,14 @@
       "category": "counting"
     },
     {
+      "text": "May I add a heart?",
+      "file": "llj-a1e4709e919a560db3834184.mp3",
+      "spokenText": "May I add a heart?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Maya says, thank you for playing with me!",
       "file": "llj-2cdb9b7605a0c2aac09188a0.mp3",
       "spokenText": "Maya says, thank you for playing with me!",
@@ -22418,6 +22674,14 @@
       "category": "feelings"
     },
     {
+      "text": "Offer the first block",
+      "file": "llj-5e8857e0f53b3c892d244dfa.mp3",
+      "spokenText": "Offer the first block",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Offer the next turn",
       "file": "llj-0fc1210a7d787534285a09a1.mp3",
       "spokenText": "Offer the next turn",
@@ -22512,6 +22776,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "One for me, one for you",
+      "file": "llj-bdbb37d5784e26bfecfc814f.mp3",
+      "spokenText": "One for me, one for you",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "One hundred sheep! You counted all the way to one hundred. Sweet dreams!",
@@ -25578,6 +25850,22 @@
       "category": "literacy"
     },
     {
+      "text": "Pop a teal bubble for you, then a purple bubble for your friend. Your friend's turn!",
+      "file": "llj-df37d590718f1c10cf20f39f.mp3",
+      "spokenText": "Pop a teal bubble for you, then a purple bubble for your friend. Your friend's turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pop a teal bubble for you, then a purple bubble for your friend. Your turn!",
+      "file": "llj-71ede00c4a628e78da3cada6.mp3",
+      "spokenText": "Pop a teal bubble for you, then a purple bubble for your friend. Your turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Pop three blue bubbles. Look for the color blue!",
       "file": "llj-47a2197b4d43e6047b07e20b.mp3",
       "spokenText": "Pop three blue bubbles. Look for the color blue!",
@@ -28274,6 +28562,14 @@
       "category": "nature"
     },
     {
+      "text": "Send three gentle greetings from your side. Your friend can watch.",
+      "file": "llj-faea9471550a81c18574d408.mp3",
+      "spokenText": "Send three gentle greetings from your side. Your friend can watch.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Set the pot by a sunny window. Light helps our plant grow.",
       "file": "llj-fc23c062383abb361c51ae8a.mp3",
       "spokenText": "Set the pot by a sunny window. Light helps our plant grow.",
@@ -28288,6 +28584,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Shall we play together?",
+      "file": "llj-13e75bd6446771e2a443192e.mp3",
+      "spokenText": "Shall we play together?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Shall we sit together? We can invite someone to join us, and let them choose.",
@@ -28373,6 +28677,14 @@
       "text": "Shouting over your friend makes it hard to hear them. Try listening for your turn.",
       "file": "llj-e9ee6c9965aea2a3edb7e669.mp3",
       "spokenText": "Shouting over your friend makes it hard to hear them. Try listening for your turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Show me a silly face",
+      "file": "llj-eb16d5f6aa701753a73e3ad9.mp3",
+      "spokenText": "Show me a silly face",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -28488,6 +28800,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Smile and give space",
+      "file": "llj-cfd75620a8cd4f3f88ad9ec8.mp3",
+      "spokenText": "Smile and give space",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Snack",
@@ -28624,6 +28944,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Some for you and some for me",
+      "file": "llj-ddef261d67a81d550e7ce6d4.mp3",
+      "spokenText": "Some for you and some for me",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Some shapes come in pairs. Which shape comes next?",
@@ -29050,6 +29378,22 @@
       "category": "nature"
     },
     {
+      "text": "Tap a teal star for you, then a purple star for your friend. Your friend's turn!",
+      "file": "llj-2b1d3d90035c05f214605dba.mp3",
+      "spokenText": "Tap a teal star for you, then a purple star for your friend. Your friend's turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap a teal star for you, then a purple star for your friend. Your turn!",
+      "file": "llj-b021d86178c79c0933274673.mp3",
+      "spokenText": "Tap a teal star for you, then a purple star for your friend. Your turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap an item and watch the claw pick it up!",
       "file": "llj-0169f12de031e3ffaec0c4ea.mp3",
       "spokenText": "Tap an item and watch the claw pick it up!",
@@ -29082,12 +29426,44 @@
       "category": "nature"
     },
     {
+      "text": "Tap the ball to roll it back and forth. Your friend's turn!",
+      "file": "llj-2da55acff5eee9d050dadcf0.mp3",
+      "spokenText": "Tap the ball to roll it back and forth. Your friend's turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the ball to roll it back and forth. Your turn!",
+      "file": "llj-d4ee3c67f2e98366c125ecba.mp3",
+      "spokenText": "Tap the ball to roll it back and forth. Your turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap the barn to slide the doors open. Tap again to meet who's inside!",
       "file": "llj-9a5dc377ad5c25d9c466cc6f.mp3",
       "spokenText": "Tap the barn to slide the doors open. Tap again to meet who's inside!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Tap the car to send it along your shared road. Your friend's turn!",
+      "file": "llj-a9f6ce51fa32e8f9abacfe4e.mp3",
+      "spokenText": "Tap the car to send it along your shared road. Your friend's turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the car to send it along your shared road. Your turn!",
+      "file": "llj-876009c3050e4fd931cb3c27.mp3",
+      "spokenText": "Tap the car to send it along your shared road. Your turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Tap the face parts to change your puppet. Can you copy its expression?",
@@ -29117,6 +29493,14 @@
       "text": "Tap the tennis ball to your friend. Then we will wait for a turn back.",
       "file": "llj-7f49c1f3f7dfcb9ae984c609.mp3",
       "spokenText": "Tap the tennis ball to your friend. Then we will wait for a turn back.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap to send three friendly greetings.",
+      "file": "llj-a4deeee5a78edaea908e5b42.mp3",
+      "spokenText": "Tap to send three friendly greetings.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -30290,6 +30674,14 @@
       "category": "shapes"
     },
     {
+      "text": "The car went to both friends. Waiting made room for another turn.",
+      "file": "llj-8fec257afe70e277ad42fd1f.mp3",
+      "spokenText": "The car went to both friends. Waiting made room for another turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "The carrots are ready to pick. Find a basket to carry them.",
       "file": "llj-783c2c5e48f3d215b2748f2c.mp3",
       "spokenText": "The carrots are ready to pick. Find a basket to carry them.",
@@ -31088,6 +31480,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "There are shared blocks for both of you. How could you start?",
+      "file": "llj-65a03168a3e714266cc5a147.mp3",
+      "spokenText": "There are shared blocks for both of you. How could you start?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "There are sparkly stars for both friends. How could you share?",
+      "file": "llj-31e8fad9000360d56e88a965.mp3",
+      "spokenText": "There are sparkly stars for both friends. How could you share?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "There are stars for both of you. Let us take turns.",
+      "file": "llj-ca926a3e935d2ec2a976aec1.mp3",
+      "spokenText": "There are stars for both of you. Let us take turns.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "There are stars in the sky during the day too, but the bright sky hides them.",
@@ -32986,6 +33402,14 @@
       "category": "counting"
     },
     {
+      "text": "Two builders made a bridge together. Sharing ideas helps us play!",
+      "file": "llj-a9108b66793c61a785e59fd2.mp3",
+      "spokenText": "Two builders made a bridge together. Sharing ideas helps us play!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Two lemons for this friend.",
       "file": "llj-bbcbfea1dacdd32d5a5d24ca.mp3",
       "spokenText": "Two lemons for this friend.",
@@ -33546,6 +33970,14 @@
       "category": "feelings"
     },
     {
+      "text": "Want to roll the ball?",
+      "file": "llj-925e9c6a77523a5a41b9519f.mp3",
+      "spokenText": "Want to roll the ball?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Warm coat",
       "file": "llj-4d8ff66576a87c62e15e5ab5.mp3",
       "spokenText": "Warm coat",
@@ -33634,6 +34066,14 @@
       "category": "feelings"
     },
     {
+      "text": "Wave from here",
+      "file": "llj-de8efc8c8807a9b37183c292.mp3",
+      "spokenText": "Wave from here",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Wave to your grown-up, or show how a puppet could wave.",
       "file": "llj-f75a2a86e9cd93e13e4f190d.mp3",
       "spokenText": "Wave to your grown-up, or show how a puppet could wave.",
@@ -33698,9 +34138,25 @@
       "category": "nature"
     },
     {
+      "text": "We can share these blocks",
+      "file": "llj-3a8041caf294f2f3400a27bd.mp3",
+      "spokenText": "We can share these blocks",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "We can share!",
       "file": "llj-76f03b49b693a2043df0fc1e.mp3",
       "spokenText": "We can share!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "We can take turns",
+      "file": "llj-0ebb299fe1a0775f9faa1d1a.mp3",
+      "spokenText": "We can take turns",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -38042,9 +38498,25 @@
       "category": "stories"
     },
     {
+      "text": "You both want a turn with a toy car. What is a friendly plan?",
+      "file": "llj-1ac07132ce39ed28da30e22d.mp3",
+      "spokenText": "You both want a turn with a toy car. What is a friendly plan?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You both want to build. How could you make a plan together?",
       "file": "llj-8a6aee9e33e45d93a43bd59e.mp3",
       "spokenText": "You both want to build. How could you make a plan together?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You both want to pop bubbles. What would help you share?",
+      "file": "llj-b6dfc7a160b74aeee85123f9.mp3",
+      "spokenText": "You both want to pop bubbles. What would help you share?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -38602,6 +39074,14 @@
       "category": "counting"
     },
     {
+      "text": "You choose, then I will try",
+      "file": "llj-f20dcd022fbcc1828da83d36.mp3",
+      "spokenText": "You choose, then I will try",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You chose Calm. Does this feeling seem little, medium, or big? Not sure is okay too.",
       "file": "llj-651090a1f58ef4b7529c3248.mp3",
       "spokenText": "You chose Calm. Does this feeling seem little, medium, or big? Not sure is okay too.",
@@ -38792,6 +39272,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You copied silly faces together. Friends can share a giggle!",
+      "file": "llj-7dee1dbb9d2c91d10ac4ec9c.mp3",
+      "spokenText": "You copied silly faces together. Friends can share a giggle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You counted 1 apple!",
@@ -40850,6 +41338,14 @@
       "category": "nature"
     },
     {
+      "text": "You gave your friend space. Friends can choose to watch or play.",
+      "file": "llj-2bca4e71a4ae730a62f44878.mp3",
+      "spokenText": "You gave your friend space. Friends can choose to watch or play.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You helped every animal find a home!",
       "file": "llj-3da4ee7189313ecd6d09043b.mp3",
       "spokenText": "You helped every animal find a home!",
@@ -40978,12 +41474,44 @@
       "category": "nature"
     },
     {
+      "text": "You helped tidy the shared space. Helping is a way to care for a friend.",
+      "file": "llj-c1437d3ca6ea32da566f9f92.mp3",
+      "spokenText": "You helped tidy the shared space. Helping is a way to care for a friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You helped two friends tell a story!",
       "file": "llj-0a6656aa96a67b6271ebd081.mp3",
       "spokenText": "You helped two friends tell a story!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "You leave bubbles for your friend. Let us take turns.",
+      "file": "llj-9ee24ad13d9b96bff6a609bc.mp3",
+      "spokenText": "You leave bubbles for your friend. Let us take turns.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You left bubbles for each other. Sharing kept the fun going!",
+      "file": "llj-66917a4023e2e3c2d82e0482.mp3",
+      "spokenText": "You left bubbles for each other. Sharing kept the fun going!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You made a picture together. Different ideas can belong side by side.",
+      "file": "llj-2622847f53f6ff8e975dcbed.mp3",
+      "spokenText": "You made a picture together. Different ideas can belong side by side.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You made a sentence! Bunny carries a ball.",
@@ -41690,6 +42218,22 @@
       "category": "feelings"
     },
     {
+      "text": "You rolled, waited, and got a turn again. That is taking turns!",
+      "file": "llj-541944c417c1e985307e2c4d.mp3",
+      "spokenText": "You rolled, waited, and got a turn again. That is taking turns!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You said hello! A wave or a smile can help start a friendship.",
+      "file": "llj-7d681eff9eea1e6d2fea5013.mp3",
+      "spokenText": "You said hello! A wave or a smile can help start a friendship.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You see a tiny snail beside the garden path. Which choice helps?",
       "file": "llj-54b804c7fd0ceb44cb91e303.mp3",
       "spokenText": "You see a tiny snail beside the garden path. Which choice helps?",
@@ -41701,6 +42245,14 @@
       "text": "You shared a turn!",
       "file": "llj-07f830b7d56b9bb75e443e4e.mp3",
       "spokenText": "You shared a turn!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You shared the blocks and built together. Each friend had a turn!",
+      "file": "llj-05353be455aea6da665782b3.mp3",
+      "spokenText": "You shared the blocks and built together. Each friend had a turn!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -41784,6 +42336,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You tried a pretend game together. Watching and tiny movements count, too.",
+      "file": "llj-ca69c8036bed745d423da1f4.mp3",
+      "spokenText": "You tried a pretend game together. Watching and tiny movements count, too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You waited and your friend passed back!",
@@ -42138,6 +42698,14 @@
       "category": "feelings"
     },
     {
+      "text": "You would like to play ball with your friend. How could you ask?",
+      "file": "llj-019a4e179cee7fe336b4f10b.mp3",
+      "spokenText": "You would like to play ball with your friend. How could you ask?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You would like to play together. Ask someone if they would like to join you!",
       "file": "llj-020cb2d8b122edf98b0af0fc.mp3",
       "spokenText": "You would like to play together. Ask someone if they would like to join you!",
@@ -42234,9 +42802,57 @@
       "category": "counting"
     },
     {
+      "text": "Your friend accepts a block. Let us build together.",
+      "file": "llj-b45adb31bc7a44f9823af970.mp3",
+      "spokenText": "Your friend accepts a block. Let us build together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend agrees to take turns choosing stars.",
+      "file": "llj-3a66958a17e0c7e95921e3b9.mp3",
+      "spokenText": "Your friend agrees to take turns choosing stars.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend agrees to take turns driving the toy car.",
+      "file": "llj-68600cddb3dd3cb1f9099d46.mp3",
+      "spokenText": "Your friend agrees to take turns driving the toy car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend agrees. A turn for each builder!",
+      "file": "llj-6a98f6ac5518e6c8dcd3ee53.mp3",
+      "spokenText": "Your friend agrees. A turn for each builder!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Your friend asks for a little quiet space. Which choice helps?",
       "file": "llj-46fa309e5656a1ce539120f0.mp3",
       "spokenText": "Your friend asks for a little quiet space. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend chooses an animal. Find the matching animal picture.",
+      "file": "llj-f9c1bf11b852d3821eebc145.mp3",
+      "spokenText": "Your friend chooses an animal. Find the matching animal picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend chooses first. You can copy the picture or pretend along.",
+      "file": "llj-e390eea088bf5cd34644f907.mp3",
+      "spokenText": "Your friend chooses first. You can copy the picture or pretend along.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -42250,6 +42866,22 @@
       "category": "feelings"
     },
     {
+      "text": "Your friend has a silly face to show. Let us copy it.",
+      "file": "llj-9f1a7af5334deddc7fb67c59.mp3",
+      "spokenText": "Your friend has a silly face to show. Let us copy it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend has toys to put away. How could you help?",
+      "file": "llj-5d0b4f7a1ea00fd73734b53a.mp3",
+      "spokenText": "Your friend has toys to put away. How could you help?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Your friend is carefully building a block tower. Which choice helps?",
       "file": "llj-686b1eb6c4b773b093628789.mp3",
       "spokenText": "Your friend is carefully building a block tower. Which choice helps?",
@@ -42258,9 +42890,25 @@
       "category": "feelings"
     },
     {
+      "text": "Your friend is making a picture. How could you join?",
+      "file": "llj-ddca6f3eb2908d291d3e89cf.mp3",
+      "spokenText": "Your friend is making a picture. How could you join?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Your friend is ready to play catch with you. Which choice helps?",
       "file": "llj-8eaea1b638ab37851e3b3847.mp3",
       "spokenText": "Your friend is ready to play catch with you. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend is ready to share the building blocks.",
+      "file": "llj-32f43fcc287d4ba5221db6df.mp3",
+      "spokenText": "Your friend is ready to share the building blocks.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -42282,6 +42930,38 @@
       "category": "feelings"
     },
     {
+      "text": "Your friend likes sharing the tidy-up job.",
+      "file": "llj-79f34181afbb1c9f80f6f5a0.mp3",
+      "spokenText": "Your friend likes sharing the tidy-up job.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend likes taking turns with the bubbles.",
+      "file": "llj-b31cbe85497f81d64544e632.mp3",
+      "spokenText": "Your friend likes taking turns with the bubbles.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend likes that plan. Let us share the toy car.",
+      "file": "llj-1529951b70f887b64ea818da.mp3",
+      "spokenText": "Your friend likes that plan. Let us share the toy car.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend makes a face. Let us find the matching silly face.",
+      "file": "llj-f2a1c09714b6362eba289e2e.mp3",
+      "spokenText": "Your friend makes a face. Let us find the matching silly face.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Your friend says they do not want a hug. Which choice helps?",
       "file": "llj-a723eb33039838aabcd97138.mp3",
       "spokenText": "Your friend says they do not want a hug. Which choice helps?",
@@ -42290,9 +42970,41 @@
       "category": "feelings"
     },
     {
+      "text": "Your friend says yes to a gentle rolling game.",
+      "file": "llj-437156040a029f0dbc587991.mp3",
+      "spokenText": "Your friend says yes to a gentle rolling game.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend says yes. Add hearts to your shared picture.",
+      "file": "llj-0b3dd24354a576917fa87eef.mp3",
+      "spokenText": "Your friend says yes. Add hearts to your shared picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Your friend says yes. Asking helps us play together!",
       "file": "llj-968a9d15f5d2b7a3b348f5a6.mp3",
       "spokenText": "Your friend says yes. Asking helps us play together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend says yes. Let us put the toys in the box together.",
+      "file": "llj-49c1d038c1718abf5cc9e93c.mp3",
+      "spokenText": "Your friend says yes. Let us put the toys in the box together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend says yes. Let us take turns adding blocks.",
+      "file": "llj-32f88f852149985a183aaa64.mp3",
+      "spokenText": "Your friend says yes. Let us take turns adding blocks.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -42341,6 +43053,54 @@
       "text": "Your friend wants a crayon from the shared box. Which choice helps?",
       "file": "llj-b2d55f925c7fafd09a273988.mp3",
       "spokenText": "Your friend wants a crayon from the shared box. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants a silly face game. How could you join?",
+      "file": "llj-4c7b04c31b8b5dfb1d0649f0.mp3",
+      "spokenText": "Your friend wants a silly face game. How could you join?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants to decorate together. Add hearts to the picture.",
+      "file": "llj-27d2d988fd2cbab62ac45015.mp3",
+      "spokenText": "Your friend wants to decorate together. Add hearts to the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants to help build a bridge. What could you say?",
+      "file": "llj-ec9523c48b1865c21d405c6a.mp3",
+      "spokenText": "Your friend wants to help build a bridge. What could you say?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants to play. Let us share the ball.",
+      "file": "llj-a25e89f417b5eb6ce0724a60.mp3",
+      "spokenText": "Your friend wants to play. Let us share the ball.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants to pretend to be animals. What could you say?",
+      "file": "llj-4387164295f14327bb87921a.mp3",
+      "spokenText": "Your friend wants to pretend to be animals. What could you say?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend would like to watch for now. What could you do?",
+      "file": "llj-2f93743857b4cdb2d032bf13.mp3",
+      "spokenText": "Your friend would like to watch for now. What could you do?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"

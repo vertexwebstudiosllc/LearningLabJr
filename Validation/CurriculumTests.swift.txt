@@ -7,6 +7,76 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testFriendshipBridgeAllActivitiesTurnGuardsReplayAndRuth() throws {
+        XCTAssertEqual(BridgeAdventure.bank.count, 12)
+        XCTAssertEqual(Set(BridgeAdventure.bank.map(\.id)).count, 12)
+        XCTAssertEqual(Set(BridgeAdventure.bank.map { $0.kind.rawValue }).count, 6)
+        var previous = "", orders = Set<String>()
+        for session in 0..<100 {
+            var play = BridgePlay(previousFirst: previous)
+            XCTAssertNotEqual(play.current.id, previous); previous = play.current.id
+            orders.insert(play.adventures.map(\.id).joined())
+            XCTAssertEqual(play.phase, .friends); XCTAssertEqual(play.bridgePieces, 0)
+            play.start(); play.next(); play.chooseFriend("invalid"); XCTAssertEqual(play.phase, .friends)
+            play.chooseFriend(TogetherFriend.bank[session % TogetherFriend.bank.count].id)
+            let chosen = play.friend?.id
+            for round in 0..<12 {
+                XCTAssertEqual(play.index, round); XCTAssertEqual(play.bridgePieces, round)
+                XCTAssertEqual(play.phase, .choosing); XCTAssertEqual(play.actions, 0)
+                play.chooseWords(-1); play.chooseWords(2); XCTAssertEqual(play.phase, .choosing)
+                play.chooseWords(session % 2); XCTAssertEqual(play.phase, .ready)
+                XCTAssertEqual(play.prompt, play.current.choices[session % 2].response)
+                play.next(); XCTAssertEqual(play.index, round)
+                play.chooseFriend("maya"); XCTAssertEqual(play.friend?.id, chosen)
+                play.start(); XCTAssertEqual(play.phase, .playing)
+                XCTAssertEqual(Set(play.bubbles), Set(0..<6)); XCTAssertEqual(Set(play.copyChoices), [0, 1, 2])
+                for i in 1..<4 { XCTAssertNotEqual(play.copySequence[i], play.copySequence[i - 1]) }
+                for step in 0..<play.current.goal {
+                    let token = play.token, turn = play.turn, kind = play.current.kind
+                    XCTAssertFalse(play.act(-1, token: token)); XCTAssertEqual(play.actions, step)
+                    XCTAssertFalse(play.act(0, token: "stale")); XCTAssertEqual(play.actions, step)
+                    var value = 0, target = 0
+                    switch kind {
+                    case .wave: value = 0
+                    case .pass:
+                        XCTAssertFalse(play.act(1 - turn, token: token)); value = turn
+                    case .copy:
+                        XCTAssertFalse(play.act((play.copyTarget + 1) % 3, token: token)); value = play.copyTarget
+                    case .build:
+                        XCTAssertFalse(play.act(step, token: token, target: 1 - turn)); value = step; target = turn
+                    case .tidy:
+                        XCTAssertFalse(play.act(step, token: token, target: 1)); value = step
+                    case .bubbles:
+                        value = play.bubbles.first { $0 % 2 == turn && !play.popped.contains($0) }!
+                        for popped in play.popped { XCTAssertFalse(play.act(popped, token: token)) }
+                    }
+                    XCTAssertTrue(play.act(value, token: token, target: target)); XCTAssertEqual(play.actions, step + 1)
+                    XCTAssertFalse(play.act(value, token: token, target: target)); XCTAssertEqual(play.actions, step + 1)
+                }
+                XCTAssertEqual(play.phase, .celebration); XCTAssertEqual(play.bridgePieces, round + 1)
+                XCTAssertEqual(play.prompt, play.current.outcome)
+                play.start(); XCTAssertEqual(play.phase, .celebration)
+                play.next(); play.next(); XCTAssertEqual(play.index, round + 1)
+            }
+            XCTAssertEqual(play.phase, .complete); XCTAssertEqual(play.bridgePieces, 12)
+            play.chooseWords(0); play.start(); play.next(); XCTAssertEqual(play.phase, .complete)
+        }
+        XCTAssertEqual(orders.count, 100)
+        for text in Set(BridgeAdventure.narration) {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth"); XCTAssertEqual(clip.engine, "generative")
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text))
+        }
+        for friend in TogetherFriend.bank {
+            for pieces in [0, 6, 12] {
+                let renderer = ImageRenderer(content: BridgeFriendScene(friend: friend, pieces: pieces, waving: true).frame(width: 350).background(.white))
+                let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Friendship \(friend.name) bridge \(pieces)"; shot.lifetime = .keepAlways; add(shot)
+            }
+        }
+    }
+
+
+    @MainActor
     func testBodyCluesDiversePeopleQuestionsTouchTargetsHintsAndRuth() throws {
         XCTAssertEqual(BodyClue.bank.count, 18); XCTAssertEqual(BodyBuddy.bank.count, 18)
         XCTAssertEqual(Set(BodyClue.bank.map(\.id)).count, 18)

@@ -10,46 +10,6 @@ private struct BFNote: View {
     }
 }
 
-struct FriendshipBridgeGame: View {
-    let onReplay: () -> Void
-    @State private var step = 0
-    @State private var response: String?
-    @StateObject private var narrator = GameNarrator()
-    private let stories = ["A friend is building. You would like to play, too. What could you say?", "Your friend says, 'I am still using this block.' What could you try?", "You both want to build. How could you make a plan together?"]
-    private let choices = [["Can I play with you?", "May I build beside you?"], ["I can wait for a turn", "I can choose another block"], ["Let's build one tower together", "Let's build two towers side by side"]]
-    private let replies = [["Your friend says, 'Yes, let's make a plan.' Practice asking in your own words.", "Your friend says, 'Yes, there is space here.' Point to a place beside you."], ["Your friend says, 'I will tell you when I am done.' Waiting can be hard; a grown-up can help.", "You find another block. There is more than one way to keep playing."], ["One shared tower! Pretend to add a block, then invite your friend to add one.", "Two towers! Pretend to show your friend what you made."]]
-    private var safeStep: Int { min(step, 2) }
-    var body: some View {
-        ToddlerGameScaffold(title: "Friendship Bridge", prompt: step == 3 ? "Your friendship bridge is ready. You practiced asking and making a plan together!" : stories[safeStep], accent: .teal, completion: step == 3, onReplay: onReplay) {
-            HStack(spacing: 10) {
-                Image(systemName: "person.fill").font(.system(size: 38)).foregroundStyle(.pink)
-                ForEach(0..<3, id: \.self) { index in
-                    RoundedRectangle(cornerRadius: 10).fill(index < step || (index == step && response != nil) ? Color.teal : Color.teal.opacity(0.12))
-                        .frame(maxWidth: .infinity).frame(height: 35)
-                        .overlay { if index < step { Image(systemName: "heart.fill").foregroundStyle(.white) } }
-                }
-                Image(systemName: "person.fill").font(.system(size: 38)).foregroundStyle(.purple)
-            }.frame(height: 140).accessibilityLabel("Friendship bridge, \(step) of 3 conversations")
-            if let response {
-                BFNote(text: response)
-                ToddlerActionButton(title: step == 2 ? "Our bridge is ready" : "We tried the words", systemImage: "arrow.right", color: .teal) {
-                    guard step < 3, self.response != nil else { return }
-                    step += 1
-                    self.response = nil
-                }
-            } else {
-                ForEach(0..<2, id: \.self) { index in
-                    ToddlerActionButton(title: choices[safeStep][index], systemImage: "bubble.left.fill", color: .teal) {
-                        response = replies[safeStep][index]
-                        narrator.speak(response ?? "")
-                    }
-                }
-            }
-            BFNote(text: "Practice with puppets or your grown-up. A friend can say no, and you can ask a grown-up for help.")
-        }
-    }
-}
-
 struct CozyEveningPathGame: View {
     let onReplay: () -> Void
     @State private var placed = 0

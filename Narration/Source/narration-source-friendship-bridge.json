@@ -1,0 +1,482 @@
+[
+  {
+    "text": "Choose a buddy for a friendship adventure. We can say hello, share, and play together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's look at whose turn it is. Try the glowing spot.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's look again. Find the same picture as your friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A new friend is here. How would you like to say hello?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You said hello! A wave or a smile can help start a friendship.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Give a little wave",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A little wave says hello. Let us practice a friendly greeting.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Give a friendly smile",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A smile can say hello, too. Let us practice a friendly greeting.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap to send three friendly greetings.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend would like to watch for now. What could you do?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You gave your friend space. Friends can choose to watch or play.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wave from here",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A wave from here gives your friend space to watch.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Smile and give space",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A smile gives your friend a welcome without asking them to join.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Send three gentle greetings from your side. Your friend can watch.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "There are shared blocks for both of you. How could you start?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You shared the blocks and built together. Each friend had a turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask to build together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says yes. Let us take turns adding blocks.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer the first block",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend accepts a block. Let us build together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag each block to the glowing building spot. Your turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag each block to the glowing building spot. Your friend's turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants to help build a bridge. What could you say?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Two builders made a bridge together. Sharing ideas helps us play!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us take turns",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend agrees. A turn for each builder!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We can share these blocks",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is ready to share the building blocks.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to play ball with your friend. How could you ask?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You rolled, waited, and got a turn again. That is taking turns!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Want to roll the ball?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says yes to a gentle rolling game.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shall we play together?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants to play. Let us share the ball.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the ball to roll it back and forth. Your turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the ball to roll it back and forth. Your friend's turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You both want a turn with a toy car. What is a friendly plan?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The car went to both friends. Waiting made room for another turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A turn for each of us",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend agrees to take turns driving the toy car.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us pass it back and forth",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend likes that plan. Let us share the toy car.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the car to send it along your shared road. Your turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the car to send it along your shared road. Your friend's turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants a silly face game. How could you join?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You copied silly faces together. Friends can share a giggle!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us copy each other",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend makes a face. Let us find the matching silly face.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Show me a silly face",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend has a silly face to show. Let us copy it.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap smile.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap wink.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap surprise.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants to pretend to be animals. What could you say?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You tried a pretend game together. Watching and tiny movements count, too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us pretend together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend chooses an animal. Find the matching animal picture.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You choose, then I will try",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend chooses first. You can copy the picture or pretend along.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap bunny.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap bird.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the picture that matches your friend. Tap fish.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You both want to pop bubbles. What would help you share?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You left bubbles for each other. Sharing kept the fun going!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "One for me, one for you",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend likes taking turns with the bubbles.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us leave some for each other",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You leave bubbles for your friend. Let us take turns.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pop a teal bubble for you, then a purple bubble for your friend. Your turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pop a teal bubble for you, then a purple bubble for your friend. Your friend's turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "There are sparkly stars for both friends. How could you share?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Both friends got sparkles. A fair turn can feel good!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We can take turns",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend agrees to take turns choosing stars.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Some for you and some for me",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "There are stars for both of you. Let us take turns.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap a teal star for you, then a purple star for your friend. Your turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap a teal star for you, then a purple star for your friend. Your friend's turn!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend has toys to put away. How could you help?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You helped tidy the shared space. Helping is a way to care for a friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Can I help tidy up?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says yes. Let us put the toys in the box together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us each put some away",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend likes sharing the tidy-up job.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag each toy into the toy box.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is making a picture. How could you join?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You made a picture together. Different ideas can belong side by side.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "May I add a heart?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says yes. Add hearts to your shared picture.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us decorate together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants to decorate together. Add hearts to the picture.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag each heart onto the friendship picture.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

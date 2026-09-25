@@ -88,6 +88,6 @@ The six menus contain 72 distinct activity destinations. The four original books
 7. Kindness Garden
 8. My Solution Toolbox
 9. Body Clue Buddies — eighteen picture-based body-part clues
-10. Friendship Bridge
+10. Friendship Bridge — twelve cooperative playdates and six play styles
 11. Cozy Evening Path
 12. See You Soon
