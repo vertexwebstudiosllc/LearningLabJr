@@ -6,6 +6,82 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testTeddyRescueDressCustomizeScenesAndRuth() throws {
+        XCTAssertEqual(TeddyRescue.bank.count, 12)
+        XCTAssertEqual(Set(TeddyRescue.bank.map(\.id)).count, 12)
+        XCTAssertEqual(TeddyFur.allCases.count, 6)
+        var previous = ""
+        var orders = Set<String>()
+        for _ in 0..<100 {
+            var play = TeddyRescuePlay(previousSecond: previous)
+            XCTAssertEqual(play.fur, .brown); XCTAssertEqual(play.identity, .boy)
+            XCTAssertEqual(play.phase, .create)
+            XCTAssertEqual(play.current.scene.id, "cat")
+            XCTAssertNotEqual(play.rounds[1].scene.id, previous)
+            previous = play.rounds[1].scene.id
+            orders.insert(play.rounds.map { $0.scene.id }.joined())
+            play.help("cat"); XCTAssertEqual(play.phase, .create)
+            play.fur = .purple; play.identity = .girl
+            play.begin(); play.begin(); XCTAssertEqual(play.phase, .dress)
+            var seen = Set<String>()
+            for index in 0..<12 {
+                let scene = play.current.scene
+                XCTAssertTrue(seen.insert(scene.id).inserted)
+                XCTAssertTrue(play.equipped.isEmpty)
+                play.advance(scene.id); XCTAssertEqual(play.index, index)
+                for slot in RescueSlot.allCases {
+                    let choices = play.current.choices[slot.rawValue]
+                    XCTAssertEqual(Set(choices.map(\.id)).count, 3)
+                    XCTAssertTrue(choices.allSatisfy { $0.slot == slot })
+                    XCTAssertTrue(choices.contains { $0.role == scene.id })
+                    XCTAssertEqual(play.prompt, scene.instruction(slot))
+                    let wrong = try XCTUnwrap(choices.first { $0.role != scene.id })
+                    let correct = scene.items[slot.rawValue]
+                    play.choose("invalid", scene: scene.id, slot: slot); XCTAssertFalse(play.needsHelp)
+                    play.choose(correct.id, scene: "stale", slot: slot); XCTAssertEqual(play.stage, slot.rawValue)
+                    play.help(scene.id); XCTAssertEqual(play.phase, .dress)
+                    play.choose(wrong.id, scene: scene.id, slot: slot)
+                    XCTAssertTrue(play.needsHelp); XCTAssertEqual(play.prompt, scene.retry(slot))
+                    play.choose(correct.id, scene: scene.id, slot: slot)
+                    XCTAssertFalse(play.needsHelp); XCTAssertEqual(play.stage, slot.rawValue + 1)
+                    play.choose(correct.id, scene: scene.id, slot: slot); XCTAssertEqual(play.stage, slot.rawValue + 1)
+                    XCTAssertEqual(play.equipped.count, slot.rawValue + 1)
+                }
+                XCTAssertEqual(play.phase, .ready); XCTAssertEqual(play.prompt, scene.ready)
+                play.advance(scene.id); XCTAssertEqual(play.index, index)
+                play.help("stale"); XCTAssertEqual(play.phase, .ready)
+                play.help(scene.id); play.help(scene.id); XCTAssertEqual(play.phase, .rescued)
+                XCTAssertEqual(play.prompt, scene.success)
+                play.advance(scene.id); play.advance(scene.id); XCTAssertEqual(play.index, index + 1)
+                XCTAssertEqual(play.fur, .purple); XCTAssertEqual(play.identity, .girl)
+            }
+            XCTAssertTrue(play.complete)
+            play.begin(); play.help(play.current.scene.id); XCTAssertEqual(play.index, 12)
+        }
+        XCTAssertGreaterThan(orders.count, 90)
+        for text in TeddyRescue.narration { XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text) }
+        for scene in TeddyRescue.bank {
+            XCTAssertTrue(scene.paint == "teal" || LabPaint.bank.contains { $0.id == scene.paint })
+            let before = ImageRenderer(content: TeddyRescueScene(scene: scene, rescued: false).frame(width: 320, height: 200))
+            let after = ImageRenderer(content: TeddyRescueScene(scene: scene, rescued: true).frame(width: 320, height: 200))
+            XCTAssertNotEqual(try XCTUnwrap(before.uiImage?.pngData()), try XCTUnwrap(after.uiImage?.pngData()), scene.id)
+            let pair = ImageRenderer(content: HStack(spacing: 8) {
+                TeddyRescueScene(scene: scene, rescued: false).frame(width: 320, height: 200)
+                TeddyRescueScene(scene: scene, rescued: true).frame(width: 320, height: 200)
+            })
+            let shot = XCTAttachment(image: try XCTUnwrap(pair.uiImage)); shot.name = "Rescue scene \(scene.id) before-after"; shot.lifetime = .keepAlways; add(shot)
+            let dressed = ImageRenderer(content: RescueTeddy(fur: .brown, identity: .girl, items: scene.items).frame(width: 200, height: 250))
+            let costume = XCTAttachment(image: try XCTUnwrap(dressed.uiImage)); costume.name = "Rescue outfit \(scene.id)"; costume.lifetime = .keepAlways; add(costume)
+        }
+        var colors = Set<Data>()
+        for fur in TeddyFur.allCases {
+            let render = ImageRenderer(content: RescueTeddy(fur: fur, identity: .boy, items: []).frame(width: 200, height: 250))
+            colors.insert(try XCTUnwrap(render.uiImage?.pngData()))
+        }
+        XCTAssertEqual(colors.count, 6)
+    }
+
+    @MainActor
     func testFlowerBreathsEightGentleActivitiesAndRuth() throws {
         XCTAssertEqual(GentleLevel.bank.count, 8)
         XCTAssertEqual(Set(GentleLevel.bank.map(\.kind)).count, 8)

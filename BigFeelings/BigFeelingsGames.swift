@@ -18,44 +18,6 @@ private enum BFFeeling: Int, CaseIterable, Identifiable {
     var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
 }
 
-struct TeddyHelpingHandsGame: View {
-    let onReplay: () -> Void
-    @State private var scene = 0
-    @State private var response: String?
-    @StateObject private var narrator = GameNarrator()
-    private let stories = ["Teddy's tower fell down. Teddy says, 'I feel sad.'", "There is a loud sound. Teddy says, 'I feel worried.'", "Teddy is tired after playing. Teddy wants some space."]
-    private let options = [["Ask: would you like help?", "Sit nearby and listen"], ["Find a trusted grown-up", "Offer a quieter place"], ["Make a cozy spot nearby", "Say: I will give you space"]]
-    private let responses = [["Teddy says, 'Yes, let's rebuild together.' Pretend to stack three blocks.", "Teddy says, 'Thank you for listening.' Practice sitting nearby without rushing."], ["A trusted grown-up stays with Teddy. Say, 'We are here together.'", "Teddy chooses a quiet corner. Pretend to walk there together."], ["Teddy says, 'Thank you. I can rest here.' Make a little nest with your hands.", "Teddy says, 'Thank you for asking.' Practice a little wave from nearby."]]
-    private var safeScene: Int { min(scene, 2) }
-    var body: some View {
-        ToddlerGameScaffold(title: "Teddy's Helping Hands", prompt: scene == 3 ? "You explored three ways to care for Teddy!" : stories[safeScene], accent: .pink, completion: scene == 3, onReplay: onReplay) {
-            Image(systemName: "teddybear.fill").font(.system(size: 135)).foregroundStyle(.brown)
-                .frame(height: 165).accessibilityLabel("Teddy")
-            HStack(spacing: 16) {
-                ForEach(0..<3, id: \.self) { index in
-                    Image(systemName: index < scene ? "heart.fill" : "heart").font(.title).foregroundStyle(.pink)
-                }
-            }
-            if let response {
-                BFNote(text: response)
-                ToddlerActionButton(title: scene == 2 ? "We cared for Teddy" : "Another Teddy story", systemImage: "heart.fill", color: .pink) {
-                    guard scene < 3, self.response != nil else { return }
-                    scene += 1
-                    self.response = nil
-                }
-            } else {
-                ForEach(0..<2, id: \.self) { index in
-                    ToddlerActionButton(title: options[safeScene][index], systemImage: index == 0 ? "hand.raised.fill" : "heart.fill", color: .pink) {
-                        response = responses[safeScene][index]
-                        narrator.speak(response ?? "")
-                    }
-                }
-            }
-            BFNote(text: "There are many ways to help. Ask before hugging or touching someone.")
-        }
-    }
-}
-
 struct RollItTogetherGame: View {
     let onReplay: () -> Void
     @Environment(\.accessibilityReduceMotion) private var reduceMotion

@@ -108,3 +108,5 @@ Cozy Nest: `testCozyProjectsSequenceGuardsVarietyAndRuth` checks 100 complete te
 Funny Face Studio: `testFunnyFaceCopyIdentifySequenceAndRuth` validates six distinct renders, 200 sessions, interaction guards, and Ruth coverage. `testFunnyFaceCopyIdentifyAllSixAndReplay` covers copying, identification, answer speakers, gentle retries, completion, replay/reentry, and the shared Mad label.
 
 Flower Breaths: `testFlowerBreathsEightGentleActivitiesAndRuth` checks all eight activities, both play/watch paths, input guards, drop validation, kind-word choices, and Ruth coverage. `testFlowerBreathsAllActivitiesDragWatchAndReplay` covers the full playthrough, blanket drag, all watching options, replay, and reentry.
+
+Teddy's Helping Hands: `testTeddyRescueDressCustomizeScenesAndRuth` covers 100 twelve-scene sessions, all equipment slots, input guards, character persistence, Ruth coverage, and artwork renders. `testTeddyRescueTwelveScenesCustomizationAndReplay` completes the entire rescue sequence, changes Teddy while dressed, and checks replay/reentry defaults.

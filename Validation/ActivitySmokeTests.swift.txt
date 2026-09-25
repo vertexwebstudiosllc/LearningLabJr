@@ -9,6 +9,72 @@ final class ActivitySmokeTests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
     @MainActor
+    func testTeddyRescueTwelveScenesCustomizationAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Teddy's Helping Hands"]
+        try tap(card)
+        XCTAssertEqual(app.buttons["rescue.fur.brown"].value as? String, "Selected")
+        try tap(app.buttons["rescue.identity.girl"])
+        try tap(app.buttons["rescue.fur.pink"])
+        try tap(app.buttons["rescue.begin"])
+        var seen = Set<String>()
+        var second = ""
+        for round in 1...12 {
+            let title = app.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH 'rescue.scene.'")).firstMatch
+            XCTAssertTrue(title.waitForExistence(timeout: 5))
+            let id = String(title.identifier.dropFirst("rescue.scene.".count))
+            XCTAssertTrue(seen.insert(id).inserted)
+            if round == 1 { XCTAssertEqual(id, "cat") }
+            if round == 2 { second = id }
+            XCTAssertEqual(app.staticTexts["rescue.progress"].label, "Scene \(round) of 12")
+            for slot in 0..<3 {
+                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'rescue.item.'"))
+                XCTAssertEqual(choices.count, 3)
+                let correct = "rescue.item.\(id).\(slot)"
+                let wrong = try XCTUnwrap(choices.allElementsBoundByIndex.first { $0.identifier != correct })
+                try tap(app.buttons["rescue.hear.\(id).\(slot)"])
+                try tap(wrong)
+                XCTAssertTrue(app.staticTexts["rescue.retry"].exists)
+                XCTAssertFalse(app.buttons["rescue.help"].exists)
+                try tap(app.buttons[correct])
+            }
+            XCTAssertTrue(app.buttons["rescue.help"].exists)
+            if round == 1 {
+                try tap(app.buttons["rescue.customize"])
+                XCTAssertEqual(app.buttons["rescue.fur.pink"].value as? String, "Selected")
+                try tap(app.buttons["rescue.identity.boy"])
+                try tap(app.buttons["rescue.fur.cream"])
+                try tap(app.buttons["rescue.customize.done"])
+                XCTAssertTrue(app.buttons["rescue.help"].waitForExistence(timeout: 5))
+                XCTAssertEqual(app.staticTexts["rescue.equipped"].label, "3 of 3 helper pieces")
+            }
+            try tap(app.buttons["rescue.help"])
+            XCTAssertTrue(app.buttons["rescue.next"].exists)
+            if ["cat", "puppy", "bunny", "rain"].contains(id) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Teddy rescue \(id)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["rescue.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        XCTAssertEqual(app.buttons["rescue.fur.brown"].value as? String, "Selected")
+        try tap(app.buttons["rescue.begin"])
+        XCTAssertTrue(app.staticTexts["rescue.scene.cat"].exists)
+        for slot in 0..<3 { try tap(app.buttons["rescue.item.cat.\(slot)"]) }
+        try tap(app.buttons["rescue.help"]); try tap(app.buttons["rescue.next"])
+        XCTAssertFalse(app.staticTexts["rescue.scene.\(second)"].exists)
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertEqual(app.buttons["rescue.fur.brown"].value as? String, "Selected")
+        XCTAssertTrue(app.buttons["rescue.begin"].exists)
+    }
+
+    @MainActor
     func testFlowerBreathsAllActivitiesDragWatchAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

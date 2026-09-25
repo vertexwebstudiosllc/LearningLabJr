@@ -7042,9 +7042,9 @@
       "category": "nature"
     },
     {
-      "text": "A apple? Let’s listen again. When it rains, I stay dry under an…",
+      "text": "A apple? Let\u2019s listen again. When it rains, I stay dry under an\u2026",
       "file": "llj-3af2dbe2bfa00d4795217b12.mp3",
-      "spokenText": "An apple? Let’s listen again. When it rains, I stay dry under an…",
+      "spokenText": "An apple? Let\u2019s listen again. When it rains, I stay dry under an\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -7082,25 +7082,25 @@
       "category": "stories"
     },
     {
-      "text": "A ball? Let’s listen again. At bedtime, I get cozy in my…",
+      "text": "A ball? Let\u2019s listen again. At bedtime, I get cozy in my\u2026",
       "file": "llj-b4b06c46e003092364ed9d0f.mp3",
-      "spokenText": "A ball? Let’s listen again. At bedtime, I get cozy in my…",
+      "spokenText": "A ball? Let\u2019s listen again. At bedtime, I get cozy in my\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "A ball? Let’s listen again. When I am thirsty, I drink from a…",
+      "text": "A ball? Let\u2019s listen again. When I am thirsty, I drink from a\u2026",
       "file": "llj-0d8ea78f00c27284befcc53a.mp3",
-      "spokenText": "A ball? Let’s listen again. When I am thirsty, I drink from a…",
+      "spokenText": "A ball? Let\u2019s listen again. When I am thirsty, I drink from a\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "A book? Let’s listen again. When it rains, I stay dry under an…",
+      "text": "A book? Let\u2019s listen again. When it rains, I stay dry under an\u2026",
       "file": "llj-25071cd50abcc30b3c0eaec9.mp3",
-      "spokenText": "A book? Let’s listen again. When it rains, I stay dry under an…",
+      "spokenText": "A book? Let\u2019s listen again. When it rains, I stay dry under an\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -7114,12 +7114,36 @@
       "category": "nature"
     },
     {
-      "text": "A car? Let’s listen again. At bedtime, I get cozy in my…",
+      "text": "A car? Let\u2019s listen again. At bedtime, I get cozy in my\u2026",
       "file": "llj-442eac18a26b25fe7b2a968c.mp3",
-      "spokenText": "A car? Let’s listen again. At bedtime, I get cozy in my…",
+      "spokenText": "A car? Let\u2019s listen again. At bedtime, I get cozy in my\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the fire coat.",
+      "file": "llj-ee9330a1482358cc71891136.mp3",
+      "spokenText": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the fire coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the fire helmet.",
+      "file": "llj-a0f42029db1dcb8a5dd6bee4.mp3",
+      "spokenText": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the fire helmet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the ladder.",
+      "file": "llj-8f2bf2b93b041edabff31d3a.mp3",
+      "spokenText": "A cat is stuck in our pretend tree. A firefighter can help. Let's dress Teddy as a firefighter. Choose the ladder.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "A cat is watching the quiet street. Hello, little cat!",
@@ -7200,6 +7224,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the map.",
+      "file": "llj-380740c278857b72f6bfcf60.mp3",
+      "spokenText": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the map.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the ranger hat.",
+      "file": "llj-599a20dbecc886003243b89e.mp3",
+      "spokenText": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the ranger hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the ranger jacket.",
+      "file": "llj-4024b8106a451688f6613a20.mp3",
+      "spokenText": "A duckling cannot find the pond. A park ranger knows the way. Let's dress Teddy as a park ranger. Choose the ranger jacket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "A family can ride in me. Find the car. Tap a garage to open it.",
@@ -7301,6 +7349,30 @@
       "text": "A friend is building. You would like to play, too. What could you say?",
       "file": "llj-b45c0bf72357a465c9385b51.mp3",
       "spokenText": "A friend is building. You would like to play, too. What could you say?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the rain hat.",
+      "file": "llj-464d2ce30dbe47b81f6c2eaf.mp3",
+      "spokenText": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the rain hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the raincoat.",
+      "file": "llj-6bcfb115ce18f8f1b6624c45.mp3",
+      "spokenText": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the raincoat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the umbrella.",
+      "file": "llj-200be45dbf202d2f1ae34ec5.mp3",
+      "spokenText": "A friend is waiting in the rain. Our rainy-day helper can offer an umbrella. Let's dress Teddy as a rainy-day helper. Choose the umbrella.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -7410,6 +7482,30 @@
       "category": "nature"
     },
     {
+      "text": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the bandage.",
+      "file": "llj-23638c72a4c021632201d8ee.mp3",
+      "spokenText": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the bandage.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the vet cap.",
+      "file": "llj-4e657d42568dd24027813905.mp3",
+      "spokenText": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the vet cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the vet scrubs.",
+      "file": "llj-7f6f883009c38ff7a8502542.mp3",
+      "spokenText": "A puppy needs a gentle checkup. A vet can care for animals. Let's dress Teddy as a vet. Choose the vet scrubs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A rabbit hops! Play with your grown-up. Make little hops with your hands, or try a gentle hop together.",
       "file": "llj-7ecbb5a16f3120ecfafcb036.mp3",
       "spokenText": "A rabbit hops! Play with your grown-up. Make little hops with your hands, or try a gentle hop together.",
@@ -7466,9 +7562,9 @@
       "category": "nature"
     },
     {
-      "text": "A shoe? Let’s listen again. When I am thirsty, I drink from a…",
+      "text": "A shoe? Let\u2019s listen again. When I am thirsty, I drink from a\u2026",
       "file": "llj-dba646fe917332e93f18656e.mp3",
-      "spokenText": "A shoe? Let’s listen again. When I am thirsty, I drink from a…",
+      "spokenText": "A shoe? Let\u2019s listen again. When I am thirsty, I drink from a\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -7536,6 +7632,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the mechanic cap.",
+      "file": "llj-ce99248fa65347eb01a5e374.mp3",
+      "spokenText": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the mechanic cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the overalls.",
+      "file": "llj-4917d0a809853395ff8ce5d1.mp3",
+      "spokenText": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the overalls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the wrench.",
+      "file": "llj-e68029745230d54b1d62a7de.mp3",
+      "spokenText": "A toy bicycle has a loose wheel. A bike mechanic can help. Let's dress Teddy as a bike mechanic. Choose the wrench.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "A trusted grown-up stays with Teddy. Say, 'We are here together.'",
@@ -7850,9 +7970,9 @@
       "category": "shapes"
     },
     {
-      "text": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. “I’ll sit with Owen for a while.” Owen peeked. His fear felt small. Beau did not seem scared at all.",
+      "text": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. \u201cI\u2019ll sit with Owen for a while.\u201d Owen peeked. His fear felt small. Beau did not seem scared at all.",
       "file": "llj-c384de0e739c6059667e5697.mp3",
-      "spokenText": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. “I’ll sit with Owen for a while.” Owen peeked. His fear felt small. Beau did not seem scared at all.",
+      "spokenText": "Along rolled Beau, a sandwich roll, with happy heart and gentle soul. Beau Bread smiled his soft bread smile. \u201cI\u2019ll sit with Owen for a while.\u201d Owen peeked. His fear felt small. Beau did not seem scared at all.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -7906,41 +8026,41 @@
       "category": "stories"
     },
     {
-      "text": "At bedtime, I get cozy in my…",
+      "text": "At bedtime, I get cozy in my\u2026",
       "file": "llj-cb025d324451d800486eecc8.mp3",
-      "spokenText": "At bedtime, I get cozy in my…",
+      "spokenText": "At bedtime, I get cozy in my\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "At first base stood Annie Ankylosaurus. Annie was strong. Annie was steady. Annie had a mighty tail and a happy grin. When Annie hit the ball… CRACK! It flew over the ferns. “Whoa,” said Trey.",
+      "text": "At first base stood Annie Ankylosaurus. Annie was strong. Annie was steady. Annie had a mighty tail and a happy grin. When Annie hit the ball\u2026 CRACK! It flew over the ferns. \u201cWhoa,\u201d said Trey.",
       "file": "llj-7618ca1aa2c8aa96cc8be8d6.mp3",
-      "spokenText": "At first base stood Annie Ankylosaurus. Annie was strong. Annie was steady. Annie had a mighty tail and a happy grin. When Annie hit the ball… CRACK! It flew over the ferns. “Whoa,” said Trey.",
+      "spokenText": "At first base stood Annie Ankylosaurus. Annie was strong. Annie was steady. Annie had a mighty tail and a happy grin. When Annie hit the ball\u2026 CRACK! It flew over the ferns. \u201cWhoa,\u201d said Trey.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. “What if I miss?” he whispered.",
+      "text": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. \u201cWhat if I miss?\u201d he whispered.",
       "file": "llj-75b3588454fa90c6483b3677.mp3",
-      "spokenText": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. “What if I miss?” he whispered.",
+      "spokenText": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. \u201cWhat if I miss?\u201d he whispered.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "At last, it was game day. Snow dinos filled the rink. Penguins waved little flags. A pterodactyl blew the whistle. Trey held his stick tight. “What if I miss?” he asked. Milo said, “Then we keep playing.” Sasha said, “And we help our team.”",
+      "text": "At last, it was game day. Snow dinos filled the rink. Penguins waved little flags. A pterodactyl blew the whistle. Trey held his stick tight. \u201cWhat if I miss?\u201d he asked. Milo said, \u201cThen we keep playing.\u201d Sasha said, \u201cAnd we help our team.\u201d",
       "file": "llj-64a8d09e2e18e333d285b833.mp3",
-      "spokenText": "At last, it was game day. Snow dinos filled the rink. Penguins waved little flags. A pterodactyl blew the whistle. Trey held his stick tight. “What if I miss?” he asked. Milo said, “Then we keep playing.” Sasha said, “And we help our team.”",
+      "spokenText": "At last, it was game day. Snow dinos filled the rink. Penguins waved little flags. A pterodactyl blew the whistle. Trey held his stick tight. \u201cWhat if I miss?\u201d he asked. Milo said, \u201cThen we keep playing.\u201d Sasha said, \u201cAnd we help our team.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "At last, it was game day. The Dino Court was full. Stegosaurus cheered. Pterodactyls flapped. Raptor twins waved flags. Trey’s tummy felt wiggly. “What if I miss?” he whispered.",
+      "text": "At last, it was game day. The Dino Court was full. Stegosaurus cheered. Pterodactyls flapped. Raptor twins waved flags. Trey\u2019s tummy felt wiggly. \u201cWhat if I miss?\u201d he whispered.",
       "file": "llj-bc0d64dccfa37a9d747c4932.mp3",
-      "spokenText": "At last, it was game day. The Dino Court was full. Stegosaurus cheered. Pterodactyls flapped. Raptor twins waved flags. Trey’s tummy felt wiggly. “What if I miss?” he whispered.",
+      "spokenText": "At last, it was game day. The Dino Court was full. Stegosaurus cheered. Pterodactyls flapped. Raptor twins waved flags. Trey\u2019s tummy felt wiggly. \u201cWhat if I miss?\u201d he whispered.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -8074,33 +8194,33 @@
       "category": "nature"
     },
     {
-      "text": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
+      "text": "Barry bent his long neck low. \u201cBasketball is for every dino,\u201d he said. \u201cSome dunk. Some pass. Some run fast.\u201d Rex grinned. \u201cAnd some learn to shoot from far away.\u201d",
       "file": "llj-a61fbc8a0b64c8223c759320.mp3",
-      "spokenText": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
+      "spokenText": "Barry bent his long neck low. \u201cBasketball is for every dino,\u201d he said. \u201cSome dunk. Some pass. Some run fast.\u201d Rex grinned. \u201cAnd some learn to shoot from far away.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Barry looked at him gently. “Then we try again.” Rex smiled. “You are on our team because you worked hard.” The score was tied. Three seconds left. The ball bounced to Trey. Barry shouted, “You can do it!” Rex shouted, “Shoot!”",
+      "text": "Barry looked at him gently. \u201cThen we try again.\u201d Rex smiled. \u201cYou are on our team because you worked hard.\u201d The score was tied. Three seconds left. The ball bounced to Trey. Barry shouted, \u201cYou can do it!\u201d Rex shouted, \u201cShoot!\u201d",
       "file": "llj-dc244b349fc46f85d49ea409.mp3",
-      "spokenText": "Barry looked at him gently. “Then we try again.” Rex smiled. “You are on our team because you worked hard.” The score was tied. Three seconds left. The ball bounced to Trey. Barry shouted, “You can do it!” Rex shouted, “Shoot!”",
+      "spokenText": "Barry looked at him gently. \u201cThen we try again.\u201d Rex smiled. \u201cYou are on our team because you worked hard.\u201d The score was tied. Three seconds left. The ball bounced to Trey. Barry shouted, \u201cYou can do it!\u201d Rex shouted, \u201cShoot!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Barry nodded. “Hard means you are learning.” Rex spun the ball on one claw. “Practice does not make it easy.” He winked. “Practice makes you braver.” Trey took a deep breath. Then he tried again.",
+      "text": "Barry nodded. \u201cHard means you are learning.\u201d Rex spun the ball on one claw. \u201cPractice does not make it easy.\u201d He winked. \u201cPractice makes you braver.\u201d Trey took a deep breath. Then he tried again.",
       "file": "llj-e152a603204b1e51b64c924d.mp3",
-      "spokenText": "Barry nodded. “Hard means you are learning.” Rex spun the ball on one claw. “Practice does not make it easy.” He winked. “Practice makes you braver.” Trey took a deep breath. Then he tried again.",
+      "spokenText": "Barry nodded. \u201cHard means you are learning.\u201d Rex spun the ball on one claw. \u201cPractice does not make it easy.\u201d He winked. \u201cPractice makes you braver.\u201d Trey took a deep breath. Then he tried again.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Barry smiled kindly. “Missing is part of learning.” Rex patted Trey’s back. “Every great shooter missed first.” Trey looked at the ball. “Even you?” Rex nodded. “Especially me.”",
+      "text": "Barry smiled kindly. \u201cMissing is part of learning.\u201d Rex patted Trey\u2019s back. \u201cEvery great shooter missed first.\u201d Trey looked at the ball. \u201cEven you?\u201d Rex nodded. \u201cEspecially me.\u201d",
       "file": "llj-e93d059ce53780d0388c5fe6.mp3",
-      "spokenText": "Barry smiled kindly. “Missing is part of learning.” Rex patted Trey’s back. “Every great shooter missed first.” Trey looked at the ball. “Even you?” Rex nodded. “Especially me.”",
+      "spokenText": "Barry smiled kindly. \u201cMissing is part of learning.\u201d Rex patted Trey\u2019s back. \u201cEvery great shooter missed first.\u201d Trey looked at the ball. \u201cEven you?\u201d Rex nodded. \u201cEspecially me.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -8122,17 +8242,17 @@
       "category": "literacy"
     },
     {
-      "text": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
+      "text": "Beau Bread jumped and caught the pea. Cooper shouted, \u201cVictory!\u201d Quinn said, \u201cOwen, that was you. Your brave word helped the pea get through.\u201d The little pea smiled up with glee. \u201cThank you, Owen Oniony!\u201d",
       "file": "llj-c3aad5406636f31c4eb63c2b.mp3",
-      "spokenText": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
+      "spokenText": "Beau Bread jumped and caught the pea. Cooper shouted, \u201cVictory!\u201d Quinn said, \u201cOwen, that was you. Your brave word helped the pea get through.\u201d The little pea smiled up with glee. \u201cThank you, Owen Oniony!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Beau Bread said, “Let’s practice. See? You can say a word with me.” Beau took a breath. He gave a try. He smiled and softly said, “Hi.”",
+      "text": "Beau Bread said, \u201cLet\u2019s practice. See? You can say a word with me.\u201d Beau took a breath. He gave a try. He smiled and softly said, \u201cHi.\u201d",
       "file": "llj-fbc32b494a91319dce3803db.mp3",
-      "spokenText": "Beau Bread said, “Let’s practice. See? You can say a word with me.” Beau took a breath. He gave a try. He smiled and softly said, “Hi.”",
+      "spokenText": "Beau Bread said, \u201cLet\u2019s practice. See? You can say a word with me.\u201d Beau took a breath. He gave a try. He smiled and softly said, \u201cHi.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -8162,9 +8282,9 @@
       "category": "nature"
     },
     {
-      "text": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
+      "text": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. \u201cZoom, zoom, zip!\u201d she cheered. \u201cHockey is fast and fun!\u201d",
       "file": "llj-31f34ecffa5053dfdfa33fb9.mp3",
-      "spokenText": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
+      "spokenText": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. \u201cZoom, zoom, zip!\u201d she cheered. \u201cHockey is fast and fun!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -8362,6 +8482,14 @@
       "category": "counting"
     },
     {
+      "text": "Boy Teddy is ready to help!",
+      "file": "llj-717784de0dc92f9fd65a8fb7.mp3",
+      "spokenText": "Boy Teddy is ready to help!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Brontosaurus",
       "file": "llj-8f2ed63fb10677434017b9e9.mp3",
       "spokenText": "Brontosaurus",
@@ -8384,6 +8512,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Brown fur for Teddy.",
+      "file": "llj-20efb02997c9c795d07048b6.mp3",
+      "spokenText": "Brown fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Brown paint selected.",
@@ -8744,6 +8880,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the carrot basket.",
+      "file": "llj-3ba0a86c41e1861f4129a057.mp3",
+      "spokenText": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the carrot basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the chef apron.",
+      "file": "llj-94dff573b264e0c50f88ebbe.mp3",
+      "spokenText": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the chef apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the chef hat.",
+      "file": "llj-5414671b9af0bb4445e709d6.mp3",
+      "spokenText": "Bunny is waiting for a picnic snack. A cook can prepare food. Let's dress Teddy as a cook. Choose the chef hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Bunny looks at a ball.",
@@ -9690,25 +9850,25 @@
       "category": "nature"
     },
     {
-      "text": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. “Owen, Owen, listen here. You are my friend. Come sit right near.” He scooted close and gave a grin. “I like you outside, and within.”",
+      "text": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. \u201cOwen, Owen, listen here. You are my friend. Come sit right near.\u201d He scooted close and gave a grin. \u201cI like you outside, and within.\u201d",
       "file": "llj-26cafc51391fd77bc93324aa.mp3",
-      "spokenText": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. “Owen, Owen, listen here. You are my friend. Come sit right near.” He scooted close and gave a grin. “I like you outside, and within.”",
+      "spokenText": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. \u201cOwen, Owen, listen here. You are my friend. Come sit right near.\u201d He scooted close and gave a grin. \u201cI like you outside, and within.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Cooper bounced and shouted, “Hi!” His cheesy voice went flying by. Quinn said, “Hi,” so calm and sweet. Beau tapped rhythm with his feet. Then Cooper whispered, “Now you try. Just one small word. Just one small hi.”",
+      "text": "Cooper bounced and shouted, \u201cHi!\u201d His cheesy voice went flying by. Quinn said, \u201cHi,\u201d so calm and sweet. Beau tapped rhythm with his feet. Then Cooper whispered, \u201cNow you try. Just one small word. Just one small hi.\u201d",
       "file": "llj-2eb5d553bb8c37e3d47857cb.mp3",
-      "spokenText": "Cooper bounced and shouted, “Hi!” His cheesy voice went flying by. Quinn said, “Hi,” so calm and sweet. Beau tapped rhythm with his feet. Then Cooper whispered, “Now you try. Just one small word. Just one small hi.”",
+      "spokenText": "Cooper bounced and shouted, \u201cHi!\u201d His cheesy voice went flying by. Quinn said, \u201cHi,\u201d so calm and sweet. Beau tapped rhythm with his feet. Then Cooper whispered, \u201cNow you try. Just one small word. Just one small hi.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Cooper clapped. Beau Bread cheered. Quinn smiled bright and stood up near. “You did it, Owen!” Cooper cried. “You found the voice you kept inside!” Owen smiled from cheek to cheek. Maybe it was safe to speak.",
+      "text": "Cooper clapped. Beau Bread cheered. Quinn smiled bright and stood up near. \u201cYou did it, Owen!\u201d Cooper cried. \u201cYou found the voice you kept inside!\u201d Owen smiled from cheek to cheek. Maybe it was safe to speak.",
       "file": "llj-51ae9fef1d16e62cc472e9d1.mp3",
-      "spokenText": "Cooper clapped. Beau Bread cheered. Quinn smiled bright and stood up near. “You did it, Owen!” Cooper cried. “You found the voice you kept inside!” Owen smiled from cheek to cheek. Maybe it was safe to speak.",
+      "spokenText": "Cooper clapped. Beau Bread cheered. Quinn smiled bright and stood up near. \u201cYou did it, Owen!\u201d Cooper cried. \u201cYou found the voice you kept inside!\u201d Owen smiled from cheek to cheek. Maybe it was safe to speak.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -9880,6 +10040,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Cream fur for Teddy.",
+      "file": "llj-802c0b2024ce51c914ff4d15.mp3",
+      "spokenText": "Cream fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "D is for dog.",
@@ -11018,9 +11186,9 @@
       "category": "nature"
     },
     {
-      "text": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. “Run, Trey, run!” shouted Vincent.",
+      "text": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. \u201cRun, Trey, run!\u201d shouted Vincent.",
       "file": "llj-12301316cc3daf5fe045279a.mp3",
-      "spokenText": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. “Run, Trey, run!” shouted Vincent.",
+      "spokenText": "Feet set. Eyes on the ball. Swing smooth. Hold tight. The ball came in. Trey swung. CRACK! The ball soared over first base. It bounced past second. It rolled deep into center field. \u201cRun, Trey, run!\u201d shouted Vincent.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -12858,6 +13026,14 @@
       "category": "feelings"
     },
     {
+      "text": "Girl Teddy is ready to help!",
+      "file": "llj-ce8b453e1d6abeb448605c58.mp3",
+      "spokenText": "Girl Teddy is ready to help!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Give one apple to every plate. Tap an empty plate.",
       "file": "llj-864aa479722357ff3285f9a7.mp3",
       "spokenText": "Give one apple to every plate. Tap an empty plate.",
@@ -13106,6 +13282,14 @@
       "category": "nature"
     },
     {
+      "text": "Gray fur for Teddy.",
+      "file": "llj-5f90225c5eade1502bd20d7c.mp3",
+      "spokenText": "Gray fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
       "file": "llj-e089122f05c337bb915ada3d.mp3",
       "spokenText": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
@@ -13314,9 +13498,9 @@
       "category": "stories"
     },
     {
-      "text": "Hello, Dog! Yes, let’s roll a ball.",
+      "text": "Hello, Dog! Yes, let\u2019s roll a ball.",
       "file": "llj-9eb050a96e8e5137dc14a4b5.mp3",
-      "spokenText": "Hello, Dog! Yes, let’s roll a ball.",
+      "spokenText": "Hello, Dog! Yes, let\u2019s roll a ball.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -14122,9 +14306,9 @@
       "category": "shared"
     },
     {
-      "text": "His best friend Cooper Cheese was loud. He talked to chairs. He talked to clouds. He talked while running through the room. He talked while sweeping with a broom. “Talking’s fun!” said Cooper Cheese. “Try it, Owen. Pretty please?”",
+      "text": "His best friend Cooper Cheese was loud. He talked to chairs. He talked to clouds. He talked while running through the room. He talked while sweeping with a broom. \u201cTalking\u2019s fun!\u201d said Cooper Cheese. \u201cTry it, Owen. Pretty please?\u201d",
       "file": "llj-602f500f729cb2ab83c3718b.mp3",
-      "spokenText": "His best friend Cooper Cheese was loud. He talked to chairs. He talked to clouds. He talked while running through the room. He talked while sweeping with a broom. “Talking’s fun!” said Cooper Cheese. “Try it, Owen. Pretty please?”",
+      "spokenText": "His best friend Cooper Cheese was loud. He talked to chairs. He talked to clouds. He talked while running through the room. He talked while sweeping with a broom. \u201cTalking\u2019s fun!\u201d said Cooper Cheese. \u201cTry it, Owen. Pretty please?\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -14506,33 +14690,33 @@
       "category": "shapes"
     },
     {
-      "text": "It is Cat’s turn. Tap the puppet and try its voice.",
+      "text": "It is Cat\u2019s turn. Tap the puppet and try its voice.",
       "file": "llj-0264d8df0d51bc6f23f95a26.mp3",
-      "spokenText": "It is Cat’s turn. Tap the puppet and try its voice.",
+      "spokenText": "It is Cat\u2019s turn. Tap the puppet and try its voice.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "It is Cat’s turn. Your turn is coming.",
+      "text": "It is Cat\u2019s turn. Your turn is coming.",
       "file": "llj-345ce60f747fbbc0b976dcd6.mp3",
-      "spokenText": "It is Cat’s turn. Your turn is coming.",
+      "spokenText": "It is Cat\u2019s turn. Your turn is coming.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "It is Dog’s turn. Tap the puppet and try its voice.",
+      "text": "It is Dog\u2019s turn. Tap the puppet and try its voice.",
       "file": "llj-af25a6c1163a17ff98340d95.mp3",
-      "spokenText": "It is Dog’s turn. Tap the puppet and try its voice.",
+      "spokenText": "It is Dog\u2019s turn. Tap the puppet and try its voice.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "It is Dog’s turn. Your turn is coming.",
+      "text": "It is Dog\u2019s turn. Your turn is coming.",
       "file": "llj-2f3260a10f6689da73e21231.mp3",
-      "spokenText": "It is Dog’s turn. Your turn is coming.",
+      "spokenText": "It is Dog\u2019s turn. Your turn is coming.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -14602,9 +14786,9 @@
       "category": "nature"
     },
     {
-      "text": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, “You can do it!” Annie called, “Remember the chant!” Trey took one brave breath.",
+      "text": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, \u201cYou can do it!\u201d Annie called, \u201cRemember the chant!\u201d Trey took one brave breath.",
       "file": "llj-c5a3aeff3eb820387fd7ac9d.mp3",
-      "spokenText": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, “You can do it!” Annie called, “Remember the chant!” Trey took one brave breath.",
+      "spokenText": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, \u201cYou can do it!\u201d Annie called, \u201cRemember the chant!\u201d Trey took one brave breath.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -14626,33 +14810,33 @@
       "category": "nature"
     },
     {
-      "text": "It’s a cow! Moo, moo! Can you make that sound?",
+      "text": "It\u2019s a cow! Moo, moo! Can you make that sound?",
       "file": "llj-912a7740bfb90e4628bcd81b.mp3",
-      "spokenText": "It’s a cow! Moo, moo! Can you make that sound?",
+      "spokenText": "It\u2019s a cow! Moo, moo! Can you make that sound?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "It’s a duck! Quack, quack! Can you make that sound?",
+      "text": "It\u2019s a duck! Quack, quack! Can you make that sound?",
       "file": "llj-5804bfe2ad0a57e8a2a4ce34.mp3",
-      "spokenText": "It’s a duck! Quack, quack! Can you make that sound?",
+      "spokenText": "It\u2019s a duck! Quack, quack! Can you make that sound?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "It’s a pig! Oink, oink! Can you make that sound?",
+      "text": "It\u2019s a pig! Oink, oink! Can you make that sound?",
       "file": "llj-642cc97d0db48acb2ca5183c.mp3",
-      "spokenText": "It’s a pig! Oink, oink! Can you make that sound?",
+      "spokenText": "It\u2019s a pig! Oink, oink! Can you make that sound?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "It’s a sheep! Baa, baa! Can you make that sound?",
+      "text": "It\u2019s a sheep! Baa, baa! Can you make that sound?",
       "file": "llj-f1aded8429025a19278ac55c.mp3",
-      "spokenText": "It’s a sheep! Baa, baa! Can you make that sound?",
+      "spokenText": "It\u2019s a sheep! Baa, baa! Can you make that sound?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -15072,6 +15256,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Let's build a helper Teddy! Choose boy or girl Teddy and a fur color. Then we will dress Teddy for twelve pretend helping adventures.",
+      "file": "llj-0b3dc9999bfd864438951a19.mp3",
+      "spokenText": "Let's build a helper Teddy! Choose boy or girl Teddy and a fur color. Then we will dress Teddy for twelve pretend helping adventures.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's build a little bridge! Set two supports under our pretend bridge.",
@@ -17738,41 +17930,41 @@
       "category": "counting"
     },
     {
-      "text": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
+      "text": "Let\u2019s listen to the clues again. I have feathers. I cluck and lay eggs.",
       "file": "llj-cacf30c98cb38f5772f89873.mp3",
-      "spokenText": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
+      "spokenText": "Let\u2019s listen to the clues again. I have feathers. I cluck and lay eggs.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "Let’s listen to the clues again. I have soft fur. I have long ears and hop.",
+      "text": "Let\u2019s listen to the clues again. I have soft fur. I have long ears and hop.",
       "file": "llj-9887e614b1c838c7d87a9bcd.mp3",
-      "spokenText": "Let’s listen to the clues again. I have soft fur. I have long ears and hop.",
+      "spokenText": "Let\u2019s listen to the clues again. I have soft fur. I have long ears and hop.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "Let’s listen to the clues again. I live in the ocean. I have eight arms.",
+      "text": "Let\u2019s listen to the clues again. I live in the ocean. I have eight arms.",
       "file": "llj-0a90b10bdf6476f5724894ca.mp3",
-      "spokenText": "Let’s listen to the clues again. I live in the ocean. I have eight arms.",
+      "spokenText": "Let\u2019s listen to the clues again. I live in the ocean. I have eight arms.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
     },
     {
-      "text": "Let’s look at a book together.",
+      "text": "Let\u2019s look at a book together.",
       "file": "llj-0d01579299751475c87a55cc.mp3",
-      "spokenText": "Let’s look at a book together.",
+      "spokenText": "Let\u2019s look at a book together.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Let’s take turns rolling the ball.",
+      "text": "Let\u2019s take turns rolling the ball.",
       "file": "llj-04bdcd1f85250b8a4e7ddfa8.mp3",
-      "spokenText": "Let’s take turns rolling the ball.",
+      "spokenText": "Let\u2019s take turns rolling the ball.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -19682,6 +19874,30 @@
       "category": "literacy"
     },
     {
+      "text": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the cleanup cap.",
+      "file": "llj-30739ec6c9cd2a8afd069874.mp3",
+      "spokenText": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the cleanup cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the cleanup vest.",
+      "file": "llj-16a8ae890013beebeea8feba.mp3",
+      "spokenText": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the cleanup vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the litter grabber.",
+      "file": "llj-0500d9a3b3a5f4970f8f889e.mp3",
+      "spokenText": "Litter is scattered on our pretend beach. A cleanup helper can care for this place. Let's dress Teddy as a cleanup helper. Choose the litter grabber.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Lobster! Let's help our ocean friend clean ten places. Ready to begin?",
       "file": "llj-cfd930a8c120b0cb255e56ee.mp3",
       "spokenText": "Lobster! Let's help our ocean friend clean ten places. Ready to begin?",
@@ -20538,25 +20754,25 @@
       "category": "nature"
     },
     {
-      "text": "Milo helped Trey up. “Falling is part of skating,” said Milo. Sasha nodded. “And trying again is part of winning.” Trey looked at the ice. It still looked slippery. But his friends looked kind.",
+      "text": "Milo helped Trey up. \u201cFalling is part of skating,\u201d said Milo. Sasha nodded. \u201cAnd trying again is part of winning.\u201d Trey looked at the ice. It still looked slippery. But his friends looked kind.",
       "file": "llj-71414fede9d8a26c77e052f5.mp3",
-      "spokenText": "Milo helped Trey up. “Falling is part of skating,” said Milo. Sasha nodded. “And trying again is part of winning.” Trey looked at the ice. It still looked slippery. But his friends looked kind.",
+      "spokenText": "Milo helped Trey up. \u201cFalling is part of skating,\u201d said Milo. Sasha nodded. \u201cAnd trying again is part of winning.\u201d Trey looked at the ice. It still looked slippery. But his friends looked kind.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Milo showed Trey how to stand. “Feet wide. Knees bent. Horn up high.” Sasha showed him how to glide. “Small push. Little slide. Try, try, try.” Trey whispered, “Try, try, try.”",
+      "text": "Milo showed Trey how to stand. \u201cFeet wide. Knees bent. Horn up high.\u201d Sasha showed him how to glide. \u201cSmall push. Little slide. Try, try, try.\u201d Trey whispered, \u201cTry, try, try.\u201d",
       "file": "llj-a7080e68d3f242b6fa1e217c.mp3",
-      "spokenText": "Milo showed Trey how to stand. “Feet wide. Knees bent. Horn up high.” Sasha showed him how to glide. “Small push. Little slide. Try, try, try.” Trey whispered, “Try, try, try.”",
+      "spokenText": "Milo showed Trey how to stand. \u201cFeet wide. Knees bent. Horn up high.\u201d Sasha showed him how to glide. \u201cSmall push. Little slide. Try, try, try.\u201d Trey whispered, \u201cTry, try, try.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Milo smiled. “Not yet.” Sasha smiled too. “Yet is a little word with a big job.” So Trey practiced. Stick down. Eyes up. Swing back. Slap! Again. And again. And again.",
+      "text": "Milo smiled. \u201cNot yet.\u201d Sasha smiled too. \u201cYet is a little word with a big job.\u201d So Trey practiced. Stick down. Eyes up. Swing back. Slap! Again. And again. And again.",
       "file": "llj-137333226a19a23fc4f40a7b.mp3",
-      "spokenText": "Milo smiled. “Not yet.” Sasha smiled too. “Yet is a little word with a big job.” So Trey practiced. Stick down. Eyes up. Swing back. Slap! Again. And again. And again.",
+      "spokenText": "Milo smiled. \u201cNot yet.\u201d Sasha smiled too. \u201cYet is a little word with a big job.\u201d So Trey practiced. Stick down. Eyes up. Swing back. Slap! Again. And again. And again.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -20818,9 +21034,9 @@
       "category": "feelings"
     },
     {
-      "text": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: “Hi, friends.” And every friend came close to hear. Owen’s voice was welcome here.",
+      "text": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: \u201cHi, friends.\u201d And every friend came close to hear. Owen\u2019s voice was welcome here.",
       "file": "llj-980c3aa7c3bf9cfbe065a1db.mp3",
-      "spokenText": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: “Hi, friends.” And every friend came close to hear. Owen’s voice was welcome here.",
+      "spokenText": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: \u201cHi, friends.\u201d And every friend came close to hear. Owen\u2019s voice was welcome here.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -20994,9 +21210,9 @@
       "category": "nature"
     },
     {
-      "text": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. “Come on, Trey,” he called. “Hockey starts with one brave glide.”",
+      "text": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. \u201cCome on, Trey,\u201d he called. \u201cHockey starts with one brave glide.\u201d",
       "file": "llj-2d38abcd8269df457c4492c2.mp3",
-      "spokenText": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. “Come on, Trey,” he called. “Hockey starts with one brave glide.”",
+      "spokenText": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. \u201cCome on, Trey,\u201d he called. \u201cHockey starts with one brave glide.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -21362,6 +21578,14 @@
       "category": "feelings"
     },
     {
+      "text": "Our friend said yes to an umbrella. Teddy helped make a cozy rainy walk!",
+      "file": "llj-26d11cea21407c84e587e5d5.mp3",
+      "spokenText": "Our friend said yes to an umbrella. Teddy helped make a cozy rainy walk!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Our indoor garden is ready. Let's choose a pot for our flower.",
       "file": "llj-545e054c05624f76524f80ab.mp3",
       "spokenText": "Our indoor garden is ready. Let's choose a pot for our flower.",
@@ -21376,6 +21600,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the hard hat.",
+      "file": "llj-f438b3886b122257b105d11c.mp3",
+      "spokenText": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the hard hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the safety vest.",
+      "file": "llj-85e564906cf817727dcf4171.mp3",
+      "spokenText": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the safety vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the wooden boards.",
+      "file": "llj-64bad69321efe58d171ad1c8.mp3",
+      "spokenText": "Our little bridge has a gap. A builder can help repair it. Let's dress Teddy as a builder. Choose the wooden boards.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Our little pretend plant has leaves! We learned about sunlight, our star, and reflected moonlight. Great discovering!",
@@ -21458,6 +21706,14 @@
       "category": "nature"
     },
     {
+      "text": "Our pretend firefighter brought the cat down safely. The cat is back on the grass!",
+      "file": "llj-220901276405239a26ea09da.mp3",
+      "spokenText": "Our pretend firefighter brought the cat down safely. The cat is back on the grass!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Our pretend nest is ready. Tap to settle the eggs gently.",
       "file": "llj-ba5a7dec56cb8e9f8f9cf71f.mp3",
       "spokenText": "Our pretend nest is ready. Tap to settle the eggs gently.",
@@ -21538,6 +21794,14 @@
       "category": "nature"
     },
     {
+      "text": "Our pretend vet cared for the puppy. Teddy used gentle hands!",
+      "file": "llj-0a5db23148ff0fecf9d5674f.mp3",
+      "spokenText": "Our pretend vet cared for the puppy. Teddy used gentle hands!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Our puppet is pretending to feel calm. You found its feeling word!",
       "file": "llj-2399c0c745f5b01c7be16338.mp3",
       "spokenText": "Our puppet is pretending to feel calm. You found its feeling word!",
@@ -21586,49 +21850,49 @@
       "category": "feelings"
     },
     {
-      "text": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. “Baseball is fun,” Vincent called. “Come try with us, Trey!”",
+      "text": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. \u201cBaseball is fun,\u201d Vincent called. \u201cCome try with us, Trey!\u201d",
       "file": "llj-dfc2afa5b6cb9289db90e870.mp3",
-      "spokenText": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. “Baseball is fun,” Vincent called. “Come try with us, Trey!”",
+      "spokenText": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. \u201cBaseball is fun,\u201d Vincent called. \u201cCome try with us, Trey!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Owen Onion was round and small, with purple skin and layers tall. He had two feet, a tiny nose, and little hands with little toes. Owen had a voice inside… but most days, Owen liked to hide.",
+      "text": "Owen Onion was round and small, with purple skin and layers tall. He had two feet, a tiny nose, and little hands with little toes. Owen had a voice inside\u2026 but most days, Owen liked to hide.",
       "file": "llj-d8b3e498f8aadb109046ed9f.mp3",
-      "spokenText": "Owen Onion was round and small, with purple skin and layers tall. He had two feet, a tiny nose, and little hands with little toes. Owen had a voice inside… but most days, Owen liked to hide.",
+      "spokenText": "Owen Onion was round and small, with purple skin and layers tall. He had two feet, a tiny nose, and little hands with little toes. Owen had a voice inside\u2026 but most days, Owen liked to hide.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Owen breathed in. Owen breathed out. His little knees went shake-shake-shout. His voice came out so soft and shy, “Hi.” The room was still. The room was kind. No one left him far behind.",
+      "text": "Owen breathed in. Owen breathed out. His little knees went shake-shake-shout. His voice came out so soft and shy, \u201cHi.\u201d The room was still. The room was kind. No one left him far behind.",
       "file": "llj-2927241962103dc0b37cb85b.mp3",
-      "spokenText": "Owen breathed in. Owen breathed out. His little knees went shake-shake-shout. His voice came out so soft and shy, “Hi.” The room was still. The room was kind. No one left him far behind.",
+      "spokenText": "Owen breathed in. Owen breathed out. His little knees went shake-shake-shout. His voice came out so soft and shy, \u201cHi.\u201d The room was still. The room was kind. No one left him far behind.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Owen laughed a tiny laugh. Then Cooper gave his hand a pat. “Your voice is yours,” said Cooper Cheese. “Use it loud or soft with ease.” Quinn said, “Words can help. It’s true.” Beau Bread nodded, “We hear you.”",
+      "text": "Owen laughed a tiny laugh. Then Cooper gave his hand a pat. \u201cYour voice is yours,\u201d said Cooper Cheese. \u201cUse it loud or soft with ease.\u201d Quinn said, \u201cWords can help. It\u2019s true.\u201d Beau Bread nodded, \u201cWe hear you.\u201d",
       "file": "llj-6528c59ac375ae7d48e7ff1b.mp3",
-      "spokenText": "Owen laughed a tiny laugh. Then Cooper gave his hand a pat. “Your voice is yours,” said Cooper Cheese. “Use it loud or soft with ease.” Quinn said, “Words can help. It’s true.” Beau Bread nodded, “We hear you.”",
+      "spokenText": "Owen laughed a tiny laugh. Then Cooper gave his hand a pat. \u201cYour voice is yours,\u201d said Cooper Cheese. \u201cUse it loud or soft with ease.\u201d Quinn said, \u201cWords can help. It\u2019s true.\u201d Beau Bread nodded, \u201cWe hear you.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Owen looked down at his shoes. He had a worry he could not lose. “I’m an onion,” Owen said. Then he tucked his chin and hid his head. “What if my breath smells oniony? What if no one stands near me?”",
+      "text": "Owen looked down at his shoes. He had a worry he could not lose. \u201cI\u2019m an onion,\u201d Owen said. Then he tucked his chin and hid his head. \u201cWhat if my breath smells oniony? What if no one stands near me?\u201d",
       "file": "llj-26af7c0bfcde5a2ab12072f3.mp3",
-      "spokenText": "Owen looked down at his shoes. He had a worry he could not lose. “I’m an onion,” Owen said. Then he tucked his chin and hid his head. “What if my breath smells oniony? What if no one stands near me?”",
+      "spokenText": "Owen looked down at his shoes. He had a worry he could not lose. \u201cI\u2019m an onion,\u201d Owen said. Then he tucked his chin and hid his head. \u201cWhat if my breath smells oniony? What if no one stands near me?\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Owen’s fingers touched his mouth. His worried thoughts went north and south. “What if I speak and people know? What if they wrinkle up and go?” Cooper said, “Then start out small. One tiny word. That’s all. That’s all.”",
+      "text": "Owen\u2019s fingers touched his mouth. His worried thoughts went north and south. \u201cWhat if I speak and people know? What if they wrinkle up and go?\u201d Cooper said, \u201cThen start out small. One tiny word. That\u2019s all. That\u2019s all.\u201d",
       "file": "llj-95110ca8b36fb49ab5eec533.mp3",
-      "spokenText": "Owen’s fingers touched his mouth. His worried thoughts went north and south. “What if I speak and people know? What if they wrinkle up and go?” Cooper said, “Then start out small. One tiny word. That’s all. That’s all.”",
+      "spokenText": "Owen\u2019s fingers touched his mouth. His worried thoughts went north and south. \u201cWhat if I speak and people know? What if they wrinkle up and go?\u201d Cooper said, \u201cThen start out small. One tiny word. That\u2019s all. That\u2019s all.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -23786,6 +24050,14 @@
       "category": "shapes"
     },
     {
+      "text": "Pink fur for Teddy.",
+      "file": "llj-ee1b053fa8c25270dbe06909.mp3",
+      "spokenText": "Pink fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Pink paint selected.",
       "file": "llj-0a658275ce42f391bf2a7d33.mp3",
       "spokenText": "Pink paint selected.",
@@ -24664,6 +24936,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Purple fur for Teddy.",
+      "file": "llj-aa319c7367faced42e913843.mp3",
+      "spokenText": "Purple fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Purple on both sides. They match!",
@@ -26482,6 +26762,30 @@
       "category": "shapes"
     },
     {
+      "text": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the snow shovel.",
+      "file": "llj-2b39c8ea5568f95092ed339b.mp3",
+      "spokenText": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the snow shovel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the winter coat.",
+      "file": "llj-32c8e39a93532b81d514826f.mp3",
+      "spokenText": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the winter coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the winter hat.",
+      "file": "llj-fcc5bef0140c7488a6a196bd.mp3",
+      "spokenText": "Snow covers the path to a home. A grown-up snow helper can clear a way. Let's dress Teddy as a snow helper. Choose the winter hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Snow! Little snowflakes fall on a cold day. Swipe left or right to explore our snowy view.",
       "file": "llj-b139f83d70a602d43ef303c1.mp3",
       "spokenText": "Snow! Little snowflakes fall on a cold day. Swipe left or right to explore our snowy view.",
@@ -26490,33 +26794,33 @@
       "category": "nature"
     },
     {
-      "text": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. “I want to play hockey,” he said. Then he took one tiny slide.",
+      "text": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. \u201cI want to play hockey,\u201d he said. Then he took one tiny slide.",
       "file": "llj-2fcff6787ba8137b0dd4e2ee.mp3",
-      "spokenText": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. “I want to play hockey,” he said. Then he took one tiny slide.",
+      "spokenText": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. \u201cI want to play hockey,\u201d he said. Then he took one tiny slide.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard… but practice could be fun.",
+      "text": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard\u2026 but practice could be fun.",
       "file": "llj-ead5461867f09f162ba58c9c.mp3",
-      "spokenText": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard… but practice could be fun.",
+      "spokenText": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard\u2026 but practice could be fun.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "So they practiced together. Barry taught Trey to stand strong. “Point your toes to the hoop.” Rex taught Trey to bend his knees. “Use your legs, little buddy!” Trey whispered: Feet set. Eyes up. Toss it high. Try, try, try.",
+      "text": "So they practiced together. Barry taught Trey to stand strong. \u201cPoint your toes to the hoop.\u201d Rex taught Trey to bend his knees. \u201cUse your legs, little buddy!\u201d Trey whispered: Feet set. Eyes up. Toss it high. Try, try, try.",
       "file": "llj-0f665ad41308b53e15d45edb.mp3",
-      "spokenText": "So they practiced together. Barry taught Trey to stand strong. “Point your toes to the hoop.” Rex taught Trey to bend his knees. “Use your legs, little buddy!” Trey whispered: Feet set. Eyes up. Toss it high. Try, try, try.",
+      "spokenText": "So they practiced together. Barry taught Trey to stand strong. \u201cPoint your toes to the hoop.\u201d Rex taught Trey to bend his knees. \u201cUse your legs, little buddy!\u201d Trey whispered: Feet set. Eyes up. Toss it high. Try, try, try.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Some balls went left. Vincent chased them. Some balls went right. Annie scooped them up. Some balls barely moved at all. Trey sighed. “This is taking a long time.” Annie smiled. “Good things can take time.” Vincent said, “Try again.”",
+      "text": "Some balls went left. Vincent chased them. Some balls went right. Annie scooped them up. Some balls barely moved at all. Trey sighed. \u201cThis is taking a long time.\u201d Annie smiled. \u201cGood things can take time.\u201d Vincent said, \u201cTry again.\u201d",
       "file": "llj-bf614eb6c161833828c903c6.mp3",
-      "spokenText": "Some balls went left. Vincent chased them. Some balls went right. Annie scooped them up. Some balls barely moved at all. Trey sighed. “This is taking a long time.” Annie smiled. “Good things can take time.” Vincent said, “Try again.”",
+      "spokenText": "Some balls went left. Vincent chased them. Some balls went right. Annie scooped them up. Some balls barely moved at all. Trey sighed. \u201cThis is taking a long time.\u201d Annie smiled. \u201cGood things can take time.\u201d Vincent said, \u201cTry again.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -26554,9 +26858,9 @@
       "category": "nature"
     },
     {
-      "text": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. “I’m skating!” Milo trumpeted. Sasha cheered.",
+      "text": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. \u201cI\u2019m skating!\u201d Milo trumpeted. Sasha cheered.",
       "file": "llj-aacde78987641913d061303c.mp3",
-      "spokenText": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. “I’m skating!” Milo trumpeted. Sasha cheered.",
+      "spokenText": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. \u201cI\u2019m skating!\u201d Milo trumpeted. Sasha cheered.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -26818,6 +27122,14 @@
       "category": "counting"
     },
     {
+      "text": "Tan fur for Teddy.",
+      "file": "llj-2b3f5ce3a3af22a19a2862fa.mp3",
+      "spokenText": "Tan fur for Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap a colored window. What is hiding behind it?",
       "file": "llj-d05833fb61fc3a9663c4e96a.mp3",
       "spokenText": "Tap a colored window. What is hiding behind it?",
@@ -26898,6 +27210,14 @@
       "category": "nature"
     },
     {
+      "text": "Teddy brought Bunny a basket of carrots for a pretend picnic!",
+      "file": "llj-508d2dcb2dec8b0a3cca0d54.mp3",
+      "spokenText": "Teddy brought Bunny a basket of carrots for a pretend picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Teddy chooses a quiet corner. Pretend to walk there together.",
       "file": "llj-fc4a67574728d7c016105122.mp3",
       "spokenText": "Teddy chooses a quiet corner. Pretend to walk there together.",
@@ -26906,9 +27226,121 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy cleared our pretend path. Our neighbor has a way to the door!",
+      "file": "llj-10f17bae92fd323e0d5da01c.mp3",
+      "spokenText": "Teddy cleared our pretend path. Our neighbor has a way to the door!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy fixed the wheel on our toy bicycle. Both wheels are in place!",
+      "file": "llj-32e0530d76f4112e227cc6b1.mp3",
+      "spokenText": "Teddy fixed the wheel on our toy bicycle. Both wheels are in place!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy followed the map and helped the duckling reach the pond!",
+      "file": "llj-afe1e1ab7a74c584703e74f3.mp3",
+      "spokenText": "Teddy followed the map and helped the duckling reach the pond!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
       "file": "llj-98f7b0f2c949a959802ad972.mp3",
       "spokenText": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a bike mechanic! Fix the toy bicycle when you are ready.",
+      "file": "llj-2d6d8ae25e62d879d29b9b7c.mp3",
+      "spokenText": "Teddy is dressed as a bike mechanic! Fix the toy bicycle when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a builder! Fix the bridge when you are ready.",
+      "file": "llj-9d409f1a2e61fea8312ed0b8.mp3",
+      "spokenText": "Teddy is dressed as a builder! Fix the bridge when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a cleanup helper! Clean the beach when you are ready.",
+      "file": "llj-8186ab97b82ed92a40e03f65.mp3",
+      "spokenText": "Teddy is dressed as a cleanup helper! Clean the beach when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a cook! Bring Bunny a snack when you are ready.",
+      "file": "llj-aecd20ad04829e16d8ad0f57.mp3",
+      "spokenText": "Teddy is dressed as a cook! Bring Bunny a snack when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a firefighter! Help the cat down when you are ready.",
+      "file": "llj-b9985f4573229095436cc73b.mp3",
+      "spokenText": "Teddy is dressed as a firefighter! Help the cat down when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a gardener! Water the flowers when you are ready.",
+      "file": "llj-ca7b3b816128764c4680331e.mp3",
+      "spokenText": "Teddy is dressed as a gardener! Water the flowers when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a library helper! Put the books away when you are ready.",
+      "file": "llj-d9d7dfff005ad08ada704cba.mp3",
+      "spokenText": "Teddy is dressed as a library helper! Put the books away when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a park ranger! Guide the duckling when you are ready.",
+      "file": "llj-41deac6f0c67500bf3b3b6e2.mp3",
+      "spokenText": "Teddy is dressed as a park ranger! Guide the duckling when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a rainy-day helper! Offer the umbrella when you are ready.",
+      "file": "llj-3142af5533ca4248be4b421f.mp3",
+      "spokenText": "Teddy is dressed as a rainy-day helper! Offer the umbrella when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a snow helper! Clear the pretend path when you are ready.",
+      "file": "llj-84175e8d2b6e687afa2a07d0.mp3",
+      "spokenText": "Teddy is dressed as a snow helper! Clear the pretend path when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as a vet! Care for the puppy when you are ready.",
+      "file": "llj-e5538b62890e68b65f97a876.mp3",
+      "spokenText": "Teddy is dressed as a vet! Care for the puppy when you are ready.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -26925,6 +27357,38 @@
       "text": "Teddy knows what comes next. Time to rest.",
       "file": "llj-bc3c90a52285631351a78082.mp3",
       "spokenText": "Teddy knows what comes next. Time to rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy made a soft resting spot. The kitten can settle on its blanket!",
+      "file": "llj-91a3325181aa0a4a3995fb4a.mp3",
+      "spokenText": "Teddy made a soft resting spot. The kitten can settle on its blanket!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy moved the pretend litter into the bin. There is room for animals to enjoy the beach!",
+      "file": "llj-a4d99dd1ce1716416e0d9888.mp3",
+      "spokenText": "Teddy moved the pretend litter into the bin. There is room for animals to enjoy the beach!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy placed the missing boards. Our pretend bridge connects both sides again!",
+      "file": "llj-8acc45c43b3f4f931e81e8c4.mp3",
+      "spokenText": "Teddy placed the missing boards. Our pretend bridge connects both sides again!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy put the books back on the shelf. Our reading corner is ready!",
+      "file": "llj-9ce186d0fa0c25e922990b1e.mp3",
+      "spokenText": "Teddy put the books back on the shelf. Our reading corner is ready!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -26965,6 +27429,14 @@
       "text": "Teddy settles down. Say a gentle good night.",
       "file": "llj-09ee2c6d563a7e6c1ee9b06d.mp3",
       "spokenText": "Teddy settles down. Say a gentle good night.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy watered the flowers. Their colorful petals are opening!",
+      "file": "llj-2b327647120c56006489ed50.mp3",
+      "spokenText": "Teddy watered the flowers. Their colorful petals are opening!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -27034,9 +27506,9 @@
       "category": "feelings"
     },
     {
-      "text": "Thank you! I’ll roll it back.",
+      "text": "Thank you! I\u2019ll roll it back.",
       "file": "llj-a1b469cd6b33dc0f17e5f507.mp3",
-      "spokenText": "Thank you! I’ll roll it back.",
+      "spokenText": "Thank you! I\u2019ll roll it back.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -27128,6 +27600,294 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the bandage.",
+      "file": "llj-14f09a00aa1c6b54f5df0a25.mp3",
+      "spokenText": "That is for another helper. For this scene, find the bandage.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the blanket.",
+      "file": "llj-4a34edcad756970adcc8f862.mp3",
+      "spokenText": "That is for another helper. For this scene, find the blanket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the book cart.",
+      "file": "llj-a1bdd6f41308be001566e544.mp3",
+      "spokenText": "That is for another helper. For this scene, find the book cart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the cardigan.",
+      "file": "llj-fc611b74375e392ed024f03a.mp3",
+      "spokenText": "That is for another helper. For this scene, find the cardigan.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the carrot basket.",
+      "file": "llj-0e98a34c1c7aa080979a9f63.mp3",
+      "spokenText": "That is for another helper. For this scene, find the carrot basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the chef apron.",
+      "file": "llj-0bbbf184ced13767c1beeec9.mp3",
+      "spokenText": "That is for another helper. For this scene, find the chef apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the chef hat.",
+      "file": "llj-fea76198b29e2eb1f651485a.mp3",
+      "spokenText": "That is for another helper. For this scene, find the chef hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the cleanup cap.",
+      "file": "llj-6c417fc0fa9e4864290112bd.mp3",
+      "spokenText": "That is for another helper. For this scene, find the cleanup cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the cleanup vest.",
+      "file": "llj-f95f15ab1e7a9d1020d6d1a3.mp3",
+      "spokenText": "That is for another helper. For this scene, find the cleanup vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the cozy hat.",
+      "file": "llj-05cb4ffd0e4acecd30705e37.mp3",
+      "spokenText": "That is for another helper. For this scene, find the cozy hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the fire coat.",
+      "file": "llj-9380a19846dc7e479ab94454.mp3",
+      "spokenText": "That is for another helper. For this scene, find the fire coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the fire helmet.",
+      "file": "llj-0a3ab400ffaa462ed6f18ad6.mp3",
+      "spokenText": "That is for another helper. For this scene, find the fire helmet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the garden apron.",
+      "file": "llj-3040989b80d658fe3f1ab2e5.mp3",
+      "spokenText": "That is for another helper. For this scene, find the garden apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the hard hat.",
+      "file": "llj-b0b249020c5f5f7592e5b6b1.mp3",
+      "spokenText": "That is for another helper. For this scene, find the hard hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the ladder.",
+      "file": "llj-4f7f7f7bbbe17e5de1225d4a.mp3",
+      "spokenText": "That is for another helper. For this scene, find the ladder.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the litter grabber.",
+      "file": "llj-2b3ed754cfe93e7e95709d86.mp3",
+      "spokenText": "That is for another helper. For this scene, find the litter grabber.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the map.",
+      "file": "llj-28725a18e9676a2cb407d1fd.mp3",
+      "spokenText": "That is for another helper. For this scene, find the map.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the mechanic cap.",
+      "file": "llj-095789a2b67f5d823d59c844.mp3",
+      "spokenText": "That is for another helper. For this scene, find the mechanic cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the overalls.",
+      "file": "llj-ce8239564f9a650b97ee3e84.mp3",
+      "spokenText": "That is for another helper. For this scene, find the overalls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the rain hat.",
+      "file": "llj-bf15dc4e628c0bef25a61044.mp3",
+      "spokenText": "That is for another helper. For this scene, find the rain hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the raincoat.",
+      "file": "llj-36cd7fd572f781eb73e80b27.mp3",
+      "spokenText": "That is for another helper. For this scene, find the raincoat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the ranger hat.",
+      "file": "llj-e95ae01e1549b06db8141f01.mp3",
+      "spokenText": "That is for another helper. For this scene, find the ranger hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the ranger jacket.",
+      "file": "llj-e1f687e8a54d8eab06a76f0f.mp3",
+      "spokenText": "That is for another helper. For this scene, find the ranger jacket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the reading glasses.",
+      "file": "llj-2d75408c07b69bc207463460.mp3",
+      "spokenText": "That is for another helper. For this scene, find the reading glasses.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the safety vest.",
+      "file": "llj-38d3eb6934bea3afcf5ee3d3.mp3",
+      "spokenText": "That is for another helper. For this scene, find the safety vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the shelter vest.",
+      "file": "llj-368242db82ddceb083a8d592.mp3",
+      "spokenText": "That is for another helper. For this scene, find the shelter vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the snow shovel.",
+      "file": "llj-4f743c7f86d2648dc4d88abb.mp3",
+      "spokenText": "That is for another helper. For this scene, find the snow shovel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the sun hat.",
+      "file": "llj-f7152b226498d62457ec1080.mp3",
+      "spokenText": "That is for another helper. For this scene, find the sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the umbrella.",
+      "file": "llj-e1d7e6dad724f9f26f692643.mp3",
+      "spokenText": "That is for another helper. For this scene, find the umbrella.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the vet cap.",
+      "file": "llj-145f914e863cce3322bb6ead.mp3",
+      "spokenText": "That is for another helper. For this scene, find the vet cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the vet scrubs.",
+      "file": "llj-9be800d8634b5e74bb2a11e1.mp3",
+      "spokenText": "That is for another helper. For this scene, find the vet scrubs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the watering can.",
+      "file": "llj-8e9801352357eee68adbbdaf.mp3",
+      "spokenText": "That is for another helper. For this scene, find the watering can.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the winter coat.",
+      "file": "llj-e2b32c1814ccdc6b2e3479ab.mp3",
+      "spokenText": "That is for another helper. For this scene, find the winter coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the winter hat.",
+      "file": "llj-23df7fdf5f4406d91423d93c.mp3",
+      "spokenText": "That is for another helper. For this scene, find the winter hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the wooden boards.",
+      "file": "llj-bd463397487c60df91646256.mp3",
+      "spokenText": "That is for another helper. For this scene, find the wooden boards.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is for another helper. For this scene, find the wrench.",
+      "file": "llj-6b42b93d36c99294e27b0d58.mp3",
+      "spokenText": "That is for another helper. For this scene, find the wrench.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "That is the apple. Look for the bunny.",
@@ -27546,9 +28306,9 @@
       "category": "shapes"
     },
     {
-      "text": "The cow lives in the farm. Let’s find it.",
+      "text": "The cow lives in the farm. Let\u2019s find it.",
       "file": "llj-1f00932a87ebb4cddef66f8a.mp3",
-      "spokenText": "The cow lives on the farm. Let’s find it.",
+      "spokenText": "The cow lives on the farm. Let\u2019s find it.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -27562,9 +28322,9 @@
       "category": "nature"
     },
     {
-      "text": "The crowd roared. Barry lifted Trey high. Rex danced a T-Rex dance. Trey laughed. “I made a three!” Barry smiled. “You practiced.” Rex grinned. “You got brave.” And Trey Triceratops knew: Big wins can start with one small try.",
+      "text": "The crowd roared. Barry lifted Trey high. Rex danced a T-Rex dance. Trey laughed. \u201cI made a three!\u201d Barry smiled. \u201cYou practiced.\u201d Rex grinned. \u201cYou got brave.\u201d And Trey Triceratops knew: Big wins can start with one small try.",
       "file": "llj-12b8a002b49b9892a96a6a1b.mp3",
-      "spokenText": "The crowd roared. Barry lifted Trey high. Rex danced a T-Rex dance. Trey laughed. “I made a three!” Barry smiled. “You practiced.” Rex grinned. “You got brave.” And Trey Triceratops knew: Big wins can start with one small try.",
+      "spokenText": "The crowd roared. Barry lifted Trey high. Rex danced a T-Rex dance. Trey laughed. \u201cI made a three!\u201d Barry smiled. \u201cYou practiced.\u201d Rex grinned. \u201cYou got brave.\u201d And Trey Triceratops knew: Big wins can start with one small try.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -27610,9 +28370,9 @@
       "category": "nature"
     },
     {
-      "text": "The dolphin lives in the ocean. Let’s find it.",
+      "text": "The dolphin lives in the ocean. Let\u2019s find it.",
       "file": "llj-a54898116731dd182a0069cf.mp3",
-      "spokenText": "The dolphin lives in the ocean. Let’s find it.",
+      "spokenText": "The dolphin lives in the ocean. Let\u2019s find it.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -27746,6 +28506,30 @@
       "category": "nature"
     },
     {
+      "text": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the book cart.",
+      "file": "llj-ba02b8a4e3e694b37c4a84f7.mp3",
+      "spokenText": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the book cart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the cardigan.",
+      "file": "llj-895071f904ed733a405b059c.mp3",
+      "spokenText": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the cardigan.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the reading glasses.",
+      "file": "llj-bc80382c0cbe59c392fb577e.mp3",
+      "spokenText": "The library books have tumbled off their shelf. A library helper can put them back. Let's dress Teddy as a library helper. Choose the reading glasses.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "The mountain peak has a triangle shape.",
       "file": "llj-74a04df27ab93d717b0bf0c4.mp3",
       "spokenText": "The mountain peak has a triangle shape.",
@@ -27794,9 +28578,9 @@
       "category": "nature"
     },
     {
-      "text": "The octopus lives in the ocean. Let’s find it.",
+      "text": "The octopus lives in the ocean. Let\u2019s find it.",
       "file": "llj-c397ffcb6fcf4c7b2b46ff0f.mp3",
-      "spokenText": "The octopus lives in the ocean. Let’s find it.",
+      "spokenText": "The octopus lives in the ocean. Let\u2019s find it.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -27874,9 +28658,9 @@
       "category": "shapes"
     },
     {
-      "text": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
+      "text": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. \u201cI did it!\u201d",
       "file": "llj-7f0bbe11429704066678edc3.mp3",
-      "spokenText": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
+      "spokenText": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. \u201cI did it!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -27954,9 +28738,9 @@
       "category": "nature"
     },
     {
-      "text": "The sheep lives in the farm. Let’s find it.",
+      "text": "The sheep lives in the farm. Let\u2019s find it.",
       "file": "llj-aea5cd50d22593529b83080d.mp3",
-      "spokenText": "The sheep lives on the farm. Let’s find it.",
+      "spokenText": "The sheep lives on the farm. Let\u2019s find it.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -28042,9 +28826,9 @@
       "category": "nature"
     },
     {
-      "text": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
+      "text": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. \u201cI want to play baseball,\u201d he said. Then he looked at home plate. \u201cAnd I want to hit the ball.\u201d",
       "file": "llj-24c7de42046fc8f8260dce40.mp3",
-      "spokenText": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. “I want to play baseball,” he said. Then he looked at home plate. “And I want to hit the ball.”",
+      "spokenText": "The sun was bright on Dino Field. The grass was soft and green. Trey Triceratops held a bat. \u201cI want to play baseball,\u201d he said. Then he looked at home plate. \u201cAnd I want to hit the ball.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -28146,25 +28930,25 @@
       "category": "shapes"
     },
     {
-      "text": "Then Quinn Quinoa hopped in too. She wore a bow of leafy blue. “Words are how we share and say the things we feel throughout the day.” She tapped Owen’s hand with care. “Your words are welcome everywhere.”",
+      "text": "Then Quinn Quinoa hopped in too. She wore a bow of leafy blue. \u201cWords are how we share and say the things we feel throughout the day.\u201d She tapped Owen\u2019s hand with care. \u201cYour words are welcome everywhere.\u201d",
       "file": "llj-63b279aa7c15c6b032e99945.mp3",
-      "spokenText": "Then Quinn Quinoa hopped in too. She wore a bow of leafy blue. “Words are how we share and say the things we feel throughout the day.” She tapped Owen’s hand with care. “Your words are welcome everywhere.”",
+      "spokenText": "Then Quinn Quinoa hopped in too. She wore a bow of leafy blue. \u201cWords are how we share and say the things we feel throughout the day.\u201d She tapped Owen\u2019s hand with care. \u201cYour words are welcome everywhere.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Then Trey saw Milo shoot the puck. SLAP! The puck zipped across the ice. Sasha shot next. SLAP! The puck zoomed into the net. Trey’s eyes grew wide. “I want to learn that!”",
+      "text": "Then Trey saw Milo shoot the puck. SLAP! The puck zipped across the ice. Sasha shot next. SLAP! The puck zoomed into the net. Trey\u2019s eyes grew wide. \u201cI want to learn that!\u201d",
       "file": "llj-9f63ae5a00778cc86c51b9d9.mp3",
-      "spokenText": "Then Trey saw Milo shoot the puck. SLAP! The puck zipped across the ice. Sasha shot next. SLAP! The puck zoomed into the net. Trey’s eyes grew wide. “I want to learn that!”",
+      "spokenText": "Then Trey saw Milo shoot the puck. SLAP! The puck zipped across the ice. Sasha shot next. SLAP! The puck zoomed into the net. Trey\u2019s eyes grew wide. \u201cI want to learn that!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Then from the table came a squeak. A tiny pea rolled down the peak. It rolled past Beau. It rolled past Quinn. It nearly dropped into the bin. The pea cried, “Help! I cannot stop!” Owen’s eyes went big. “Stop!”",
+      "text": "Then from the table came a squeak. A tiny pea rolled down the peak. It rolled past Beau. It rolled past Quinn. It nearly dropped into the bin. The pea cried, \u201cHelp! I cannot stop!\u201d Owen\u2019s eyes went big. \u201cStop!\u201d",
       "file": "llj-1f2ae4c07adbe74ff574bac2.mp3",
-      "spokenText": "Then from the table came a squeak. A tiny pea rolled down the peak. It rolled past Beau. It rolled past Quinn. It nearly dropped into the bin. The pea cried, “Help! I cannot stop!” Owen’s eyes went big. “Stop!”",
+      "spokenText": "Then from the table came a squeak. A tiny pea rolled down the peak. It rolled past Beau. It rolled past Quinn. It nearly dropped into the bin. The pea cried, \u201cHelp! I cannot stop!\u201d Owen\u2019s eyes went big. \u201cStop!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -28208,6 +28992,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the garden apron.",
+      "file": "llj-6dd1f38c3eec45993b55517a.mp3",
+      "spokenText": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the garden apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the sun hat.",
+      "file": "llj-f1562d944561ad6d43572afa.mp3",
+      "spokenText": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the watering can.",
+      "file": "llj-876cd1b69986554aa1b562f3.mp3",
+      "spokenText": "These garden flowers need water. A gardener can help. Let's dress Teddy as a gardener. Choose the watering can.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Think of someone who helped. Try saying or signing thank you.",
@@ -28866,6 +29674,262 @@
       "category": "literacy"
     },
     {
+      "text": "This is the bandage.",
+      "file": "llj-56135e07d08ea0fed2478e69.mp3",
+      "spokenText": "This is the bandage.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the blanket.",
+      "file": "llj-75badc9aec77eafdf3188004.mp3",
+      "spokenText": "This is the blanket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the book cart.",
+      "file": "llj-710ba61f633377db949a2aba.mp3",
+      "spokenText": "This is the book cart.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the cardigan.",
+      "file": "llj-71ef24ff199acb19b7bc5a89.mp3",
+      "spokenText": "This is the cardigan.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the carrot basket.",
+      "file": "llj-d2e5f95bbe66c33cbffd79ff.mp3",
+      "spokenText": "This is the carrot basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the chef apron.",
+      "file": "llj-9c111e9115290ec61c3c3950.mp3",
+      "spokenText": "This is the chef apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the chef hat.",
+      "file": "llj-e489a7c65942473eb56ece0d.mp3",
+      "spokenText": "This is the chef hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the cleanup cap.",
+      "file": "llj-3b004056954a937b581a93a4.mp3",
+      "spokenText": "This is the cleanup cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the cleanup vest.",
+      "file": "llj-a7d28b40c6ed84adc93fb466.mp3",
+      "spokenText": "This is the cleanup vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the cozy hat.",
+      "file": "llj-4fbf8c65ae0b309a8d811675.mp3",
+      "spokenText": "This is the cozy hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the fire coat.",
+      "file": "llj-905065f1ec6178ac975c3d3f.mp3",
+      "spokenText": "This is the fire coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the fire helmet.",
+      "file": "llj-dd264adeb9c7eedd87ab26d6.mp3",
+      "spokenText": "This is the fire helmet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the garden apron.",
+      "file": "llj-bfa2a8d731793c21c5bda3f8.mp3",
+      "spokenText": "This is the garden apron.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the hard hat.",
+      "file": "llj-74ffe863647218f294acdce2.mp3",
+      "spokenText": "This is the hard hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the ladder.",
+      "file": "llj-afe8793a9bf012d1546d4e60.mp3",
+      "spokenText": "This is the ladder.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the litter grabber.",
+      "file": "llj-251b462d7220041a8b23f746.mp3",
+      "spokenText": "This is the litter grabber.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the map.",
+      "file": "llj-e50ea5da353a655b3aeb4922.mp3",
+      "spokenText": "This is the map.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the mechanic cap.",
+      "file": "llj-47971e8ec8e4dea9f3ee5cf6.mp3",
+      "spokenText": "This is the mechanic cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the rain hat.",
+      "file": "llj-772e35e019595f951d0d844c.mp3",
+      "spokenText": "This is the rain hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the raincoat.",
+      "file": "llj-53dcb29427e779886d74c67f.mp3",
+      "spokenText": "This is the raincoat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the ranger hat.",
+      "file": "llj-32abbe4b1bd4657af4068c3c.mp3",
+      "spokenText": "This is the ranger hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the ranger jacket.",
+      "file": "llj-ca668568af5e4802c6ba63db.mp3",
+      "spokenText": "This is the ranger jacket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the safety vest.",
+      "file": "llj-f9bfb5db35f663032638bf74.mp3",
+      "spokenText": "This is the safety vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the shelter vest.",
+      "file": "llj-a15f50d6bd1515389eb2f300.mp3",
+      "spokenText": "This is the shelter vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the snow shovel.",
+      "file": "llj-f28a6f64a651d2904ef309db.mp3",
+      "spokenText": "This is the snow shovel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the sun hat.",
+      "file": "llj-5f3603819aec7d7e1bb49ded.mp3",
+      "spokenText": "This is the sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the umbrella.",
+      "file": "llj-e9aa8d9e98eee4f8218cbac4.mp3",
+      "spokenText": "This is the umbrella.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the vet cap.",
+      "file": "llj-58a1074ca530a03d0e59dd22.mp3",
+      "spokenText": "This is the vet cap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the watering can.",
+      "file": "llj-40ce15ca689c303fa4ff4490.mp3",
+      "spokenText": "This is the watering can.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the winter coat.",
+      "file": "llj-7b670674af98fc1227fd30b9.mp3",
+      "spokenText": "This is the winter coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the winter hat.",
+      "file": "llj-4c2004dac70864df0192fe21.mp3",
+      "spokenText": "This is the winter hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is the wrench.",
+      "file": "llj-2d760785fce22002c9bf2254.mp3",
+      "spokenText": "This is the wrench.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "This is turtle. Tap each basket to hear its letter. Drag the picture to the letter that starts turtle.",
       "file": "llj-8ce984902e3ad6144e3eb2eb.mp3",
       "spokenText": "This is turtle. Tap each basket to hear its letter. Drag the picture to the letter that starts turtle.",
@@ -29346,49 +30410,49 @@
       "category": "stories"
     },
     {
-      "text": "Trey gulped. “That is very far.” Barry nodded. “It is.” Rex nodded too. “But far things get closer when you practice.” Then they chanted: Feet set. Eyes up. Toss it high. Try, try, try.",
+      "text": "Trey gulped. \u201cThat is very far.\u201d Barry nodded. \u201cIt is.\u201d Rex nodded too. \u201cBut far things get closer when you practice.\u201d Then they chanted: Feet set. Eyes up. Toss it high. Try, try, try.",
       "file": "llj-01698952fb138bb3ac506e2c.mp3",
-      "spokenText": "Trey gulped. “That is very far.” Barry nodded. “It is.” Rex nodded too. “But far things get closer when you practice.” Then they chanted: Feet set. Eyes up. Toss it high. Try, try, try.",
+      "spokenText": "Trey gulped. \u201cThat is very far.\u201d Barry nodded. \u201cIt is.\u201d Rex nodded too. \u201cBut far things get closer when you practice.\u201d Then they chanted: Feet set. Eyes up. Toss it high. Try, try, try.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey looked up. The basket looked high. Very high. “I’m not tall like Barry,” said Trey. “I can’t jump like Rex.” His little horns drooped. “Maybe basketball is not for me.”",
+      "text": "Trey looked up. The basket looked high. Very high. \u201cI\u2019m not tall like Barry,\u201d said Trey. \u201cI can\u2019t jump like Rex.\u201d His little horns drooped. \u201cMaybe basketball is not for me.\u201d",
       "file": "llj-57e08e9087854febb3fa10bd.mp3",
-      "spokenText": "Trey looked up. The basket looked high. Very high. “I’m not tall like Barry,” said Trey. “I can’t jump like Rex.” His little horns drooped. “Maybe basketball is not for me.”",
+      "spokenText": "Trey looked up. The basket looked high. Very high. \u201cI\u2019m not tall like Barry,\u201d said Trey. \u201cI can\u2019t jump like Rex.\u201d His little horns drooped. \u201cMaybe basketball is not for me.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey ran to first. Then second. Then third. SAFE! Three dinos scored. The crowd roared. “Trey hit a triple!” shouted Annie. Vincent jumped high. Trey smiled big. He had learned something true: Practice helps. Friends help too. And one brave swing can win the game.",
+      "text": "Trey ran to first. Then second. Then third. SAFE! Three dinos scored. The crowd roared. \u201cTrey hit a triple!\u201d shouted Annie. Vincent jumped high. Trey smiled big. He had learned something true: Practice helps. Friends help too. And one brave swing can win the game.",
       "file": "llj-992f101c552b7d55100e0cdc.mp3",
-      "spokenText": "Trey ran to first. Then second. Then third. SAFE! Three dinos scored. The crowd roared. “Trey hit a triple!” shouted Annie. Vincent jumped high. Trey smiled big. He had learned something true: Practice helps. Friends help too. And one brave swing can win the game.",
+      "spokenText": "Trey ran to first. Then second. Then third. SAFE! Three dinos scored. The crowd roared. \u201cTrey hit a triple!\u201d shouted Annie. Vincent jumped high. Trey smiled big. He had learned something true: Practice helps. Friends help too. And one brave swing can win the game.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey shot in the morning. He shot after snack. He shot when the sun turned orange. Some shots missed. Some shots bounced. One shot rolled around the rim… and fell out. Trey stomped his foot. “This is hard!”",
+      "text": "Trey shot in the morning. He shot after snack. He shot when the sun turned orange. Some shots missed. Some shots bounced. One shot rolled around the rim\u2026 and fell out. Trey stomped his foot. \u201cThis is hard!\u201d",
       "file": "llj-c6c33f4ae7ea2dee5caa5127.mp3",
-      "spokenText": "Trey shot in the morning. He shot after snack. He shot when the sun turned orange. Some shots missed. Some shots bounced. One shot rolled around the rim… and fell out. Trey stomped his foot. “This is hard!”",
+      "spokenText": "Trey shot in the morning. He shot after snack. He shot when the sun turned orange. Some shots missed. Some shots bounced. One shot rolled around the rim\u2026 and fell out. Trey stomped his foot. \u201cThis is hard!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey stepped onto the ice. Slip. Slide. Wobble. WHUMP! Trey landed on his belly. His hockey stick flew into the snow. “I am not good at ice,” Trey sighed.",
+      "text": "Trey stepped onto the ice. Slip. Slide. Wobble. WHUMP! Trey landed on his belly. His hockey stick flew into the snow. \u201cI am not good at ice,\u201d Trey sighed.",
       "file": "llj-24fceb3a0c959cf8fa06abf5.mp3",
-      "spokenText": "Trey stepped onto the ice. Slip. Slide. Wobble. WHUMP! Trey landed on his belly. His hockey stick flew into the snow. “I am not good at ice,” Trey sighed.",
+      "spokenText": "Trey stepped onto the ice. Slip. Slide. Wobble. WHUMP! Trey landed on his belly. His hockey stick flew into the snow. \u201cI am not good at ice,\u201d Trey sighed.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey stepped up to bat. Vincent tossed the ball softly. Trey swung. WHOOSH! He missed. Annie tossed another. Trey swung again. WHOOSH! He missed again. Trey’s horns drooped.",
+      "text": "Trey stepped up to bat. Vincent tossed the ball softly. Trey swung. WHOOSH! He missed. Annie tossed another. Trey swung again. WHOOSH! He missed again. Trey\u2019s horns drooped.",
       "file": "llj-ff976022fc7839a58f85b0b8.mp3",
-      "spokenText": "Trey stepped up to bat. Vincent tossed the ball softly. Trey swung. WHOOSH! He missed. Annie tossed another. Trey swung again. WHOOSH! He missed again. Trey’s horns drooped.",
+      "spokenText": "Trey stepped up to bat. Vincent tossed the ball softly. Trey swung. WHOOSH! He missed. Annie tossed another. Trey swung again. WHOOSH! He missed again. Trey\u2019s horns drooped.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -29402,41 +30466,41 @@
       "category": "stories"
     },
     {
-      "text": "Trey took a breath. Feet set. Eyes bright. Swing smooth. Hold tight. CRACK! The ball bounced past Annie. It rolled all the way to the fern fence. Trey’s eyes grew wide. “I did it!”",
+      "text": "Trey took a breath. Feet set. Eyes bright. Swing smooth. Hold tight. CRACK! The ball bounced past Annie. It rolled all the way to the fern fence. Trey\u2019s eyes grew wide. \u201cI did it!\u201d",
       "file": "llj-55146ff3e53be3888498a560.mp3",
-      "spokenText": "Trey took a breath. Feet set. Eyes bright. Swing smooth. Hold tight. CRACK! The ball bounced past Annie. It rolled all the way to the fern fence. Trey’s eyes grew wide. “I did it!”",
+      "spokenText": "Trey took a breath. Feet set. Eyes bright. Swing smooth. Hold tight. CRACK! The ball bounced past Annie. It rolled all the way to the fern fence. Trey\u2019s eyes grew wide. \u201cI did it!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey took one brave breath. Stick down. Eyes up. Swing back. Slap! The puck flew. The net shook. Goal three! “A hat trick!” cried Milo. Sasha spun in happy circles. Trey smiled big. He had learned something true: Practice makes you better. And trying again can help you score.",
+      "text": "Trey took one brave breath. Stick down. Eyes up. Swing back. Slap! The puck flew. The net shook. Goal three! \u201cA hat trick!\u201d cried Milo. Sasha spun in happy circles. Trey smiled big. He had learned something true: Practice makes you better. And trying again can help you score.",
       "file": "llj-042e3361745beab5b4dff27c.mp3",
-      "spokenText": "Trey took one brave breath. Stick down. Eyes up. Swing back. Slap! The puck flew. The net shook. Goal three! “A hat trick!” cried Milo. Sasha spun in happy circles. Trey smiled big. He had learned something true: Practice makes you better. And trying again can help you score.",
+      "spokenText": "Trey took one brave breath. Stick down. Eyes up. Swing back. Slap! The puck flew. The net shook. Goal three! \u201cA hat trick!\u201d cried Milo. Sasha spun in happy circles. Trey smiled big. He had learned something true: Practice makes you better. And trying again can help you score.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey tried again. Feet set. Eyes on the ball. Swing smooth. Hold tight. TAP! The ball rolled two tiny steps. Trey blinked. “I hit it?” Vincent cheered. “You hit it!” Annie clapped. “That is where hitting starts.”",
+      "text": "Trey tried again. Feet set. Eyes on the ball. Swing smooth. Hold tight. TAP! The ball rolled two tiny steps. Trey blinked. \u201cI hit it?\u201d Vincent cheered. \u201cYou hit it!\u201d Annie clapped. \u201cThat is where hitting starts.\u201d",
       "file": "llj-c2da19b865c969473c150d5f.mp3",
-      "spokenText": "Trey tried again. Feet set. Eyes on the ball. Swing smooth. Hold tight. TAP! The ball rolled two tiny steps. Trey blinked. “I hit it?” Vincent cheered. “You hit it!” Annie clapped. “That is where hitting starts.”",
+      "spokenText": "Trey tried again. Feet set. Eyes on the ball. Swing smooth. Hold tight. TAP! The ball rolled two tiny steps. Trey blinked. \u201cI hit it?\u201d Vincent cheered. \u201cYou hit it!\u201d Annie clapped. \u201cThat is where hitting starts.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey tried his first shot. BONK! The ball hit the rim. He tried again. BOING! The ball bounced away. He tried one more time. WHOOSH! Right over the hoop. Trey sighed. “I missed them all.”",
+      "text": "Trey tried his first shot. BONK! The ball hit the rim. He tried again. BOING! The ball bounced away. He tried one more time. WHOOSH! Right over the hoop. Trey sighed. \u201cI missed them all.\u201d",
       "file": "llj-995f368e3d7d94f9df49f076.mp3",
-      "spokenText": "Trey tried his first shot. BONK! The ball hit the rim. He tried again. BOING! The ball bounced away. He tried one more time. WHOOSH! Right over the hoop. Trey sighed. “I missed them all.”",
+      "spokenText": "Trey tried his first shot. BONK! The ball hit the rim. He tried again. BOING! The ball bounced away. He tried one more time. WHOOSH! Right over the hoop. Trey sighed. \u201cI missed them all.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Trey tried. Tap. The puck moved one inch. He tried again. Bonk. The puck spun in a circle. He tried once more. Whoops! Trey spun in a circle too. “I can’t do it,” he said.",
+      "text": "Trey tried. Tap. The puck moved one inch. He tried again. Bonk. The puck spun in a circle. He tried once more. Whoops! Trey spun in a circle too. \u201cI can\u2019t do it,\u201d he said.",
       "file": "llj-8c5819b36faf8b6b4919f2bc.mp3",
-      "spokenText": "Trey tried. Tap. The puck moved one inch. He tried again. Bonk. The puck spun in a circle. He tried once more. Whoops! Trey spun in a circle too. “I can’t do it,” he said.",
+      "spokenText": "Trey tried. Tap. The puck moved one inch. He tried again. Bonk. The puck spun in a circle. He tried once more. Whoops! Trey spun in a circle too. \u201cI can\u2019t do it,\u201d he said.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -30026,17 +31090,17 @@
       "category": "nature"
     },
     {
-      "text": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
+      "text": "Vincent showed Trey his feet. \u201cStand strong.\u201d Annie showed Trey his hands. \u201cHold tight.\u201d Vincent pointed to the ball. \u201cWatch close.\u201d Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
       "file": "llj-c42d48650d9765bbeb281891.mp3",
-      "spokenText": "Vincent showed Trey his feet. “Stand strong.” Annie showed Trey his hands. “Hold tight.” Vincent pointed to the ball. “Watch close.” Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
+      "spokenText": "Vincent showed Trey his feet. \u201cStand strong.\u201d Annie showed Trey his hands. \u201cHold tight.\u201d Vincent pointed to the ball. \u201cWatch close.\u201d Together they chanted: Feet set. Eyes bright. Swing smooth. Hold tight.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "Vincent stood beside him. “Then we cheer for the next try.” Annie gave Trey a gentle nod. “You practiced.” Vincent smiled. “You worked hard.” Annie smiled too. “So now, trust your swing.”",
+      "text": "Vincent stood beside him. \u201cThen we cheer for the next try.\u201d Annie gave Trey a gentle nod. \u201cYou practiced.\u201d Vincent smiled. \u201cYou worked hard.\u201d Annie smiled too. \u201cSo now, trust your swing.\u201d",
       "file": "llj-67b5488b30ac7d4e7f01a7e8.mp3",
-      "spokenText": "Vincent stood beside him. “Then we cheer for the next try.” Annie gave Trey a gentle nod. “You practiced.” Vincent smiled. “You worked hard.” Annie smiled too. “So now, trust your swing.”",
+      "spokenText": "Vincent stood beside him. \u201cThen we cheer for the next try.\u201d Annie gave Trey a gentle nod. \u201cYou practiced.\u201d Vincent smiled. \u201cYou worked hard.\u201d Annie smiled too. \u201cSo now, trust your swing.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -32794,9 +33858,9 @@
       "category": "stories"
     },
     {
-      "text": "When I am thirsty, I drink from a…",
+      "text": "When I am thirsty, I drink from a\u2026",
       "file": "llj-ef4c4b09c94150894920a5f7.mp3",
-      "spokenText": "When I am thirsty, I drink from a…",
+      "spokenText": "When I am thirsty, I drink from a\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -32810,9 +33874,9 @@
       "category": "stories"
     },
     {
-      "text": "When it rains, I stay dry under an…",
+      "text": "When it rains, I stay dry under an\u2026",
       "file": "llj-fd0e86d3cfa6ad7a7c88a778.mp3",
-      "spokenText": "When it rains, I stay dry under an…",
+      "spokenText": "When it rains, I stay dry under an\u2026",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -39082,28 +40146,92 @@
       "category": "literacy"
     },
     {
-      "text": "“From far away?” asked Trey. Rex bounced the ball. Barry pointed to a line on the court. “This is the three-point line,” said Barry. Rex smiled. “Make it from here, and it counts as three!”",
+      "text": "\u201cFrom far away?\u201d asked Trey. Rex bounced the ball. Barry pointed to a line on the court. \u201cThis is the three-point line,\u201d said Barry. Rex smiled. \u201cMake it from here, and it counts as three!\u201d",
       "file": "llj-b5bb9d5280ac44fdef67ea96.mp3",
-      "spokenText": "“From far away?” asked Trey. Rex bounced the ball. Barry pointed to a line on the court. “This is the three-point line,” said Barry. Rex smiled. “Make it from here, and it counts as three!”",
+      "spokenText": "\u201cFrom far away?\u201d asked Trey. Rex bounced the ball. Barry pointed to a line on the court. \u201cThis is the three-point line,\u201d said Barry. Rex smiled. \u201cMake it from here, and it counts as three!\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "“I can’t hit,” Trey said. Vincent jogged in from center field. “Not yet,” he said. Annie nodded. “Every hitter starts with practice.” Trey looked at the bat. “Even big hitters?” Annie smiled. “Especially big hitters.”",
+      "text": "\u201cI can\u2019t hit,\u201d Trey said. Vincent jogged in from center field. \u201cNot yet,\u201d he said. Annie nodded. \u201cEvery hitter starts with practice.\u201d Trey looked at the bat. \u201cEven big hitters?\u201d Annie smiled. \u201cEspecially big hitters.\u201d",
       "file": "llj-98a4316cd405d425cdddd0f4.mp3",
-      "spokenText": "“I can’t hit,” Trey said. Vincent jogged in from center field. “Not yet,” he said. Annie nodded. “Every hitter starts with practice.” Trey looked at the bat. “Even big hitters?” Annie smiled. “Especially big hitters.”",
+      "spokenText": "\u201cI can\u2019t hit,\u201d Trey said. Vincent jogged in from center field. \u201cNot yet,\u201d he said. Annie nodded. \u201cEvery hitter starts with practice.\u201d Trey looked at the bat. \u201cEven big hitters?\u201d Annie smiled. \u201cEspecially big hitters.\u201d",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
     },
     {
-      "text": "“That is a slapshot,” said Milo. “It takes practice.” Sasha tapped Trey’s stick. “Stick down. Eyes up. Swing back. Slap!” Trey nodded. “Slapshot,” he whispered.",
+      "text": "\u201cThat is a slapshot,\u201d said Milo. \u201cIt takes practice.\u201d Sasha tapped Trey\u2019s stick. \u201cStick down. Eyes up. Swing back. Slap!\u201d Trey nodded. \u201cSlapshot,\u201d he whispered.",
       "file": "llj-5f32f2d9a9d55816be362023.mp3",
-      "spokenText": "“That is a slapshot,” said Milo. “It takes practice.” Sasha tapped Trey’s stick. “Stick down. Eyes up. Swing back. Slap!” Trey nodded. “Slapshot,” he whispered.",
+      "spokenText": "\u201cThat is a slapshot,\u201d said Milo. \u201cIt takes practice.\u201d Sasha tapped Trey\u2019s stick. \u201cStick down. Eyes up. Swing back. Slap!\u201d Trey nodded. \u201cSlapshot,\u201d he whispered.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the blanket.",
+      "file": "llj-322bdf834d9786c33dd7f63f.mp3",
+      "spokenText": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the blanket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the cozy hat.",
+      "file": "llj-4847dc9d6a5c7961e9285333.mp3",
+      "spokenText": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the cozy hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the shelter vest.",
+      "file": "llj-f5c29b2497c93c01e1f493a1.mp3",
+      "spokenText": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the shelter vest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed as an animal shelter helper! Make a cozy spot when you are ready.",
+      "file": "llj-0e24645e7ebf8488c8a40bd8.mp3",
+      "spokenText": "Teddy is dressed as an animal shelter helper! Make a cozy spot when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These are the overalls.",
+      "file": "llj-c5cbabd1271c0524d99625fe.mp3",
+      "spokenText": "These are the overalls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These are the reading glasses.",
+      "file": "llj-ef08e322cb7cb3fda92cfd84.mp3",
+      "spokenText": "These are the reading glasses.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These are the vet scrubs.",
+      "file": "llj-08eb99da0d28257e6663d3ec.mp3",
+      "spokenText": "These are the vet scrubs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "These are the wooden boards.",
+      "file": "llj-3904ac17c3bdb972b9c79be5.mp3",
+      "spokenText": "These are the wooden boards.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     }
   ]
 }

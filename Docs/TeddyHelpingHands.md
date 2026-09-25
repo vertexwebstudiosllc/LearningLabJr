@@ -1,0 +1,11 @@
+# Teddy's Helping Hands
+
+A character builder and twelve pretend helping adventures replace the original three conversation prompts. Every new entry and replay starts with brown fur. Children choose Boy Teddy or Girl Teddy and one of six fur colors: brown, tan, cream, gray, pink, or purple. Both identities have the same wardrobe choices and can complete every scene. A bow distinguishes Girl Teddy's styling. Identity and fur persist between scenes and can be changed through the Change Teddy sheet without losing equipped items.
+
+The cat-in-a-tree firefighter scene is always first. Eleven other scenes shuffle without repetition; replay/reentry avoid the previous second scene. Other helpers include a vet caring for a puppy, a bridge builder, a gardener, a cook bringing Bunny carrots, a park ranger guiding a duckling, a beach cleanup helper, a bicycle mechanic, a rainy-day helper, an animal shelter helper, a snow helper, and a library helper.
+
+Each scene presents its problem and three sequential wardrobe choices: headwear, clothing, and a helping tool. Each step offers three shuffled picture choices with spoken labels. Matching choices visibly dress Teddy; another choice gives a gentle hint without advancing. An explicit helping action changes the scene to its resolved version, followed by Ruth's story outcome and a next button. The character itself is not judged by identity or fur color.
+
+All artwork is local SwiftUI vector art or existing transparent animal cutouts. The twelve scenes visibly change when helped, and all thirty-six wardrobe items have illustrations. No camera, microphone, or character data is uploaded. All 141 new narration lines use bundled Ruth generative Polly recordings. The caregiver note frames these as pretend adventures and encourages asking what help is wanted and involving a trusted adult for real problems.
+
+Validation includes 100 complete sessions, default customization, all wardrobe slots, wrong/stale/duplicate inputs, character persistence, scene coverage, shuffle exclusions, exact Ruth coverage, six distinct fur renders, and before/after images for all scenes. UI validation completes all twelve scenes, tests spoken labels and wrong choices, changes a fully dressed Teddy, and checks completion, replay, and reentry.
