@@ -7106,12 +7106,44 @@
       "category": "stories"
     },
     {
+      "text": "A butterfly is visiting a flower. Watch its wings flutter.",
+      "file": "llj-e436f88523bc331c2c6fd011.mp3",
+      "spokenText": "A butterfly is visiting a flower. Watch its wings flutter.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A car? Let’s listen again. At bedtime, I get cozy in my…",
       "file": "llj-442eac18a26b25fe7b2a968c.mp3",
       "spokenText": "A car? Let’s listen again. At bedtime, I get cozy in my…",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "A cat is watching the quiet street. Hello, little cat!",
+      "file": "llj-bc448d5cf98c7b8b1b24da4d.mp3",
+      "spokenText": "A cat is watching the quiet street. Hello, little cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A cat stretches! Reach your arms out slowly, then bring them back. A little stretch feels good.",
+      "file": "llj-e2a151ea33565d793002e538.mp3",
+      "spokenText": "A cat stretches! Reach your arms out slowly, then bring them back. A little stretch feels good.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A chicken flaps its wings! Bend your elbows and give your little wings a gentle flap.",
+      "file": "llj-14271390c494e814b068c254.mp3",
+      "spokenText": "A chicken flaps its wings! Bend your elbows and give your little wings a gentle flap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "A cozy nest for three eggs! Watch real nests from far away.",
@@ -7122,9 +7154,41 @@
       "category": "nature"
     },
     {
+      "text": "A crab can walk sideways! Walk your fingers sideways across your lap, or take little side steps with your grown-up.",
+      "file": "llj-c99f8d05397058e5fdba76df.mp3",
+      "spokenText": "A crab can walk sideways! Walk your fingers sideways across your lap, or take little side steps with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A dog wags its tail! Pretend your hand is a tail. Wag it gently from side to side.",
+      "file": "llj-603c57ea0c16afbeb77b4c19.mp3",
+      "spokenText": "A dog wags its tail! Pretend your hand is a tail. Wag it gently from side to side.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A dolphin swims through the water! Move one hand up and down like a gentle ocean wave.",
+      "file": "llj-b327cf9dee52dc771f58c77a.mp3",
+      "spokenText": "A dolphin swims through the water! Move one hand up and down like a gentle ocean wave.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A dolphin swims. Sweep your arms like swimming flippers.",
       "file": "llj-787d8bb513331231f96a780b.mp3",
       "spokenText": "A dolphin swims. Sweep your arms like swimming flippers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A duck waddles! Sit or stand with your grown-up and gently rock from side to side.",
+      "file": "llj-83d878253f810457c66ab7e9.mp3",
+      "spokenText": "A duck waddles! Sit or stand with your grown-up and gently rock from side to side.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -7226,6 +7290,22 @@
       "category": "feelings"
     },
     {
+      "text": "A goat climbs! Pretend your fingers are little feet. Walk them slowly up your other arm.",
+      "file": "llj-35c410cb7f97df763ded49d6.mp3",
+      "spokenText": "A goat climbs! Pretend your fingers are little feet. Walk them slowly up your other arm.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
+      "file": "llj-d297e0d334d59b3343fcfdca.mp3",
+      "spokenText": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A is for alpaca.",
       "file": "llj-bf88fdcbb92ef1d096c2cacb.mp3",
       "spokenText": "A is for alpaca.",
@@ -7258,6 +7338,22 @@
       "category": "literacy"
     },
     {
+      "text": "A jellyfish squeezes its body to swim! Open your hands wide, then gently close them. Open and close!",
+      "file": "llj-8a400c01c2b0798a8e89ac1e.mp3",
+      "spokenText": "A jellyfish squeezes its body to swim! Open your hands wide, then gently close them. Open and close!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A little bird is outside our sunny window. Can you pretend to flap your wings?",
+      "file": "llj-5165bdaeb09dac4163e6b2ec.mp3",
+      "spokenText": "A little bird is outside our sunny window. Can you pretend to flap your wings?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A little plant has grown! Keep giving it the care it needs.",
       "file": "llj-b56996c277748836636cb6c0.mp3",
       "spokenText": "A little plant has grown! Keep giving it the care it needs.",
@@ -7274,9 +7370,25 @@
       "category": "nature"
     },
     {
+      "text": "A pig sniffs with its snout! Wiggle your nose and take a little sniff. What a curious pig!",
+      "file": "llj-5e8d2b4e862ec52e524ff120.mp3",
+      "spokenText": "A pig sniffs with its snout! Wiggle your nose and take a little sniff. What a curious pig!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A pretend little seed is waiting on Earth. What helps it grow? Let's follow the story of sunlight together.",
       "file": "llj-15e70b3dc4abb2fd511342d8.mp3",
       "spokenText": "A pretend little seed is waiting on Earth. What helps it grow? Let's follow the story of sunlight together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A rabbit hops! Play with your grown-up. Make little hops with your hands, or try a gentle hop together.",
+      "file": "llj-7ecbb5a16f3120ecfafcb036.mp3",
+      "spokenText": "A rabbit hops! Play with your grown-up. Make little hops with your hands, or try a gentle hop together.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -7290,9 +7402,25 @@
       "category": "nature"
     },
     {
+      "text": "A round orange pumpkin is outside our window. Pumpkins grow on vines.",
+      "file": "llj-91c7af5e04c7ee6df78f93e0.mp3",
+      "spokenText": "A round orange pumpkin is outside our window. Pumpkins grow on vines.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A rover is a robot that drives and explores. Real rovers help scientists study Mars. Roll your hands like little wheels.",
       "file": "llj-c3d706b60004dc48ccca2a00.mp3",
       "spokenText": "A rover is a robot that drives and explores. Real rovers help scientists study Mars. Roll your hands like little wheels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A seal swims with flippers! Keep your elbows close and gently sweep your hands through pretend water.",
+      "file": "llj-0c9740fa5fb9136d6af561e5.mp3",
+      "spokenText": "A seal swims with flippers! Keep your elbows close and gently sweep your hands through pretend water.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -7306,12 +7434,68 @@
       "category": "nature"
     },
     {
+      "text": "A sheep walks through the grass! Take tiny steps in place, or walk two fingers across your lap.",
+      "file": "llj-779acfc724be7cb24a013cfe.mp3",
+      "spokenText": "A sheep walks through the grass! Take tiny steps in place, or walk two fingers across your lap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A shoe? Let’s listen again. When I am thirsty, I drink from a…",
       "file": "llj-dba646fe917332e93f18656e.mp3",
       "spokenText": "A shoe? Let’s listen again. When I am thirsty, I drink from a…",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "A sled can slide over snow. A grown-up can help us find a safe place to ride.",
+      "file": "llj-07737edf3217cd518327c675.mp3",
+      "spokenText": "A sled can slide over snow. A grown-up can help us find a safe place to ride.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A snowflake is made of ice. Look closely at its branching shape.",
+      "file": "llj-d22d0a510bb0d961c7047ee0.mp3",
+      "spokenText": "A snowflake is made of ice. Look closely at its branching shape.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A soft washcloth can help us get clean. We can wash our face at other times, too!",
+      "file": "llj-564a43a4ee6313b83809156d.mp3",
+      "spokenText": "A soft washcloth can help us get clean. We can wash our face at other times, too!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A squirrel is gathering food. Some squirrels store food to eat later.",
+      "file": "llj-d8788df133cad621c0d61c9d.mp3",
+      "spokenText": "A squirrel is gathering food. Some squirrels store food to eat later.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A stingray glides through the sea! Hold your arms out a little and move them softly up and down.",
+      "file": "llj-d3a3253a9c220877f62eafbd.mp3",
+      "spokenText": "A stingray glides through the sea! Hold your arms out a little and move them softly up and down.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A story can help us settle down. We can enjoy books during the day, too!",
+      "file": "llj-104606e48776d84c84a2897d.mp3",
+      "spokenText": "A story can help us settle down. We can enjoy books during the day, too!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "A story only you could tell!",
@@ -7336,6 +7520,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A turkey can spread its tail feathers! Spread your fingers wide like a fan, then relax your hands.",
+      "file": "llj-86a040ff75913d3098fed9bf.mp3",
+      "spokenText": "A turkey can spread its tail feathers! Spread your fingers wide like a fan, then relax your hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "A. Next find B.",
@@ -7528,6 +7720,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "An acorn is a seed from an oak tree. A new oak tree can grow from it.",
+      "file": "llj-b7fc199bb0a90af92641cb28.mp3",
+      "spokenText": "An acorn is a seed from an oak tree. A new oak tree can grow from it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "An octopus moves its arms! Wiggle your fingers and slowly wave your arms through our pretend ocean.",
+      "file": "llj-76779af30e71e575289c9b93.mp3",
+      "spokenText": "An octopus moves its arms! Wiggle your fingers and slowly wave your arms through our pretend ocean.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "An umbrella helps keep the rain off. Look at the drops around it!",
+      "file": "llj-aa23233628dafaa0543a67ed.mp3",
+      "spokenText": "An umbrella helps keep the rain off. Look at the drops around it!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "At Dino Court, the hoops stood tall. So did Barry Brontosaurus. So did Rex T-Rex. Barry could dunk with his long, long neck. Rex could jump with a thunderous STOMP!",
@@ -7789,6 +8005,14 @@
       "text": "Beep, beep! Our pretend rocket is taking a robot explorer to Mars. Can you make a little robot beep?",
       "file": "llj-b2fad9c3f4a805036748fae6.mp3",
       "spokenText": "Beep, beep! Our pretend rocket is taking a robot explorer to Mars. Can you make a little robot beep?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
+      "file": "llj-4bb73f34552e2c01af36fb2f.mp3",
+      "spokenText": "Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -9242,6 +9466,14 @@
       "category": "literacy"
     },
     {
+      "text": "Clean and cozy! Some families wash in the evening, and some wash earlier in the day.",
+      "file": "llj-7a70ede869eb336d66538495.mp3",
+      "spokenText": "Clean and cozy! Some families wash in the evening, and some wash earlier in the day.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Closed eyes.",
       "file": "llj-bbb68e72b0fb24b96139cf43.mp3",
       "spokenText": "Closed eyes.",
@@ -10568,6 +10800,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Fall is a season. Some trees change color and lose their leaves. Swipe left or right to explore our fall view.",
+      "file": "llj-8fdb6f14d7ca1712e67f83a0.mp3",
+      "spokenText": "Fall is a season. Some trees change color and lose their leaves. Swipe left or right to explore our fall view.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Farmer! Farmers care for animals and grow food.",
@@ -12026,6 +12266,14 @@
       "category": "literacy"
     },
     {
+      "text": "Footprints show where someone walked through the snow. Can you follow them with your eyes?",
+      "file": "llj-4aa7acf9e5bd4d31924fb4b6.mp3",
+      "spokenText": "Footprints show where someone walked through the snow. Can you follow them with your eyes?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "For Teddy's plan, book comes next.",
       "file": "llj-760f3248a5b08a9ff94d6b97.mp3",
       "spokenText": "For Teddy's plan, book comes next.",
@@ -12608,6 +12856,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Goodnight! Rest helps our bodies get ready for another day.",
+      "file": "llj-be9743919a06657f20a57bcd.mp3",
+      "spokenText": "Goodnight! Rest helps our bodies get ready for another day.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
@@ -13466,6 +13722,70 @@
       "category": "stories"
     },
     {
+      "text": "It is a quiet evening. Find a book to share with a grown-up before bed.",
+      "file": "llj-917af4473336bf693e20f062.mp3",
+      "spokenText": "It is a quiet evening. Find a book to share with a grown-up before bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+      "file": "llj-1c1837d50ed92bbbb2107e41.mp3",
+      "spokenText": "It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+      "file": "llj-c4cc66335e11a9236b4f6f54.mp3",
+      "spokenText": "It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is breakfast time! Find the apple we can eat with our morning meal.",
+      "file": "llj-f99c2374cabcd7a45331ef38.mp3",
+      "spokenText": "It is breakfast time! Find the apple we can eat with our morning meal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+      "file": "llj-fbbecb3525be6d26c1ef1c1e.mp3",
+      "spokenText": "It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is lunchtime! Move the plate, cup, and spoon onto the table.",
+      "file": "llj-b8519c9d856cb3a6bd69316b.mp3",
+      "spokenText": "It is lunchtime! Move the plate, cup, and spoon onto the table.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is morning! Find the curtains so we can open them and let in daylight.",
+      "file": "llj-56f417fc4cff908cb0e5df13.mp3",
+      "spokenText": "It is morning! Find the curtains so we can open them and let in daylight.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+      "file": "llj-459597db5fac4a35b48e2024.mp3",
+      "spokenText": "It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, “You can do it!” Annie called, “Remember the chant!” Trey took one brave breath.",
       "file": "llj-c5a3aeff3eb820387fd7ac9d.mp3",
       "spokenText": "It was the last inning. Three dinos were on base. The game was almost done. Trey stepped up to home plate. The crowd got quiet. Vincent called, “You can do it!” Annie called, “Remember the chant!” Trey took one brave breath.",
@@ -13800,6 +14120,46 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+      "file": "llj-3c18f355f657d8b536806864.mp3",
+      "spokenText": "Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let us explore day and night! We can practice daytime activities and cozy bedtime routines. Every family has its own routines.",
+      "file": "llj-02e805bbce1e0d04a255739b.mp3",
+      "spokenText": "Let us explore day and night! We can practice daytime activities and cozy bedtime routines. Every family has its own routines.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+      "file": "llj-f58cf14da58e03c0f8695d66.mp3",
+      "spokenText": "Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+      "file": "llj-5bdefe21d972c52f2eb92f7b.mp3",
+      "spokenText": "Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+      "file": "llj-eda276ae4d23e2dccc897ed3.mp3",
+      "spokenText": "Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's build a tower with 10 blocks. Drag blocks onto your building mat.",
@@ -14850,6 +15210,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's move like animals with a grown-up! Make a little space together. You can try every move while sitting down.",
+      "file": "llj-643729bfeb6e0c871277a20b.mp3",
+      "spokenText": "Let's move like animals with a grown-up! Make a little space together. You can try every move while sitting down.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's paint the balloon! Choose a color, then tap a part of the picture. You can use any colors you like.",
       "file": "llj-15266216e63577fd492c812b.mp3",
       "spokenText": "Let's paint the balloon! Choose a color, then tap a part of the picture. You can use any colors you like.",
@@ -15026,6 +15394,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's try again. Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
+      "file": "llj-31124cb22251227ae9b82635.mp3",
+      "spokenText": "Let's try again. Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's try again. Drag the circle to the matching opening.",
       "file": "llj-cfa53c0af4f1324f90c011a7.mp3",
       "spokenText": "Let's try again. Drag the circle to the matching opening.",
@@ -15112,6 +15488,238 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's try again. It is a quiet evening. Find a book to share with a grown-up before bed.",
+      "file": "llj-7c3b0a18c38cc7fc581f3291.mp3",
+      "spokenText": "Let's try again. It is a quiet evening. Find a book to share with a grown-up before bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+      "file": "llj-307f5251eda798ddcae48483.mp3",
+      "spokenText": "Let's try again. It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+      "file": "llj-a99023d8e044564941da2f5b.mp3",
+      "spokenText": "Let's try again. It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is breakfast time! Find the apple we can eat with our morning meal.",
+      "file": "llj-f6cd5e10047295a2b815026d.mp3",
+      "spokenText": "Let's try again. It is breakfast time! Find the apple we can eat with our morning meal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+      "file": "llj-c15fa0bedd5d88c30f8775d6.mp3",
+      "spokenText": "Let's try again. It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is lunchtime! Move the plate, cup, and spoon onto the table.",
+      "file": "llj-6d59293665149e2032c7fa76.mp3",
+      "spokenText": "Let's try again. It is lunchtime! Move the plate, cup, and spoon onto the table.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is morning! Find the curtains so we can open them and let in daylight.",
+      "file": "llj-c2886cef6a2727084bea24bc.mp3",
+      "spokenText": "Let's try again. It is morning! Find the curtains so we can open them and let in daylight.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+      "file": "llj-3333dc0b2120c163995f57ea.mp3",
+      "spokenText": "Let's try again. It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+      "file": "llj-44b8429bcc9551dbed6db316.mp3",
+      "spokenText": "Let's try again. Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+      "file": "llj-a110f5cd6769deb1156495be.mp3",
+      "spokenText": "Let's try again. Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+      "file": "llj-5a403a423e82f70dade7acee.mp3",
+      "spokenText": "Let's try again. Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+      "file": "llj-69d0ac72889bb968de6fa1c9.mp3",
+      "spokenText": "Let's try again. Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+      "file": "llj-1eafa9dfd1bc9f3d50f8af2f.mp3",
+      "spokenText": "Let's try again. Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Next, choose the grown-up. We stay together when we go outside.",
+      "file": "llj-123bea2c0128afeff00ddba7.mp3",
+      "spokenText": "Let's try again. Next, choose the grown-up. We stay together when we go outside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+      "file": "llj-959cd2ec283570889b6e8b2a.mp3",
+      "spokenText": "Let's try again. Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Next, choose the soap. Our grown-up helps us wash and rinse.",
+      "file": "llj-2fb9daefa9915eb6ca970216.mp3",
+      "spokenText": "Let's try again. Next, choose the soap. Our grown-up helps us wash and rinse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Next, choose the soap. Pretend to rub our hands together with soap.",
+      "file": "llj-2c1be25f63d609968322b1e1.mp3",
+      "spokenText": "Let's try again. Next, choose the soap. Pretend to rub our hands together with soap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the bed. It is time to settle down and rest.",
+      "file": "llj-1e5e9beaa5b753d2836f0d85.mp3",
+      "spokenText": "Let's try again. Now choose the bed. It is time to settle down and rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the heart. Relax your hands and enjoy a quiet moment.",
+      "file": "llj-70e2f9f829c5c8ef225413f3.mp3",
+      "spokenText": "Let's try again. Now choose the heart. Relax your hands and enjoy a quiet moment.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the sunny window. Our plant can get the light it needs there.",
+      "file": "llj-46fc03dc1396f991d87841b4.mp3",
+      "spokenText": "Let's try again. Now choose the sunny window. Our plant can get the light it needs there.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the towel. Our grown-up helps us dry off.",
+      "file": "llj-1bceffee49f2261ab6cc9316.mp3",
+      "spokenText": "Let's try again. Now choose the towel. Our grown-up helps us dry off.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the towel. We rinse off the soap with water, then dry our hands.",
+      "file": "llj-edff4b7c98a65e14918f27f3.mp3",
+      "spokenText": "Let's try again. Now choose the towel. We rinse off the soap with water, then dry our hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Now choose the tree. We are ready to enjoy a little nature walk together!",
+      "file": "llj-cb26998ff0dcf443a923a42a.mp3",
+      "spokenText": "Let's try again. Now choose the tree. We are ready to enjoy a little nature walk together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Our pretend plant needs water. Choose the watering can to give it a little drink.",
+      "file": "llj-69057b42bfb5b46926ab7fb2.mp3",
+      "spokenText": "Let's try again. Our pretend plant needs water. Choose the watering can to give it a little drink.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+      "file": "llj-9e174fcbb5bd250039c5ef89.mp3",
+      "spokenText": "Let's try again. Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. We are getting ready for bed. Find the soft washcloth to help wash our face.",
+      "file": "llj-f3c14796e1f3a1104abf704f.mp3",
+      "spokenText": "Let's try again. We are getting ready for bed. Find the soft washcloth to help wash our face.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+      "file": "llj-ed8e47282304d92a7ad9f9bc.mp3",
+      "spokenText": "Let's try again. We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. We are going outside on a sunny day. First, choose our sun hat.",
+      "file": "llj-21775ba8c942e8e924fa80ef.mp3",
+      "spokenText": "Let's try again. We are going outside on a sunny day. First, choose our sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's try again. We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
+      "file": "llj-df359db46572e13eca7c7dde.mp3",
+      "spokenText": "Let's try again. We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's try the farm for the cow.",
@@ -15629,6 +16237,14 @@
       "text": "Light stripe, dark stripe! The clouds make wonderful patterns. What colors can you find in our picture?",
       "file": "llj-0eb0a5c1d610f1dd617fe223.mp3",
       "spokenText": "Light stripe, dark stripe! The clouds make wonderful patterns. What colors can you find in our picture?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Lights glow inside the houses. The lights help people see when it is dark.",
+      "file": "llj-49928c502eb898bd3e63874f.mp3",
+      "spokenText": "Lights glow inside the houses. The lights help people see when it is dark.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -17594,6 +18210,22 @@
       "category": "counting"
     },
     {
+      "text": "Look at the flag fluttering in the wind. Can you wave your hand like a flag?",
+      "file": "llj-088f8c5a64a34c3d62bfd4db.mp3",
+      "spokenText": "Look at the flag fluttering in the wind. Can you wave your hand like a flag?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Look at the flower! Sunlight helps plants grow.",
+      "file": "llj-3c7b7513f8919301f638e0af.mp3",
+      "spokenText": "Look at the flower! Sunlight helps plants grow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Look at the gift box. We are looking for a circle shape.",
       "file": "llj-bbb6947c1e7363f9e643ce58.mp3",
       "spokenText": "Look at the gift box. We are looking for a circle shape.",
@@ -18426,6 +19058,14 @@
       "category": "feelings"
     },
     {
+      "text": "Moving air can turn a pinwheel. Round and round it goes!",
+      "file": "llj-6ba5477ab8cfafeaf42d7ff4.mp3",
+      "spokenText": "Moving air can turn a pinwheel. Round and round it goes!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "N is for nest.",
       "file": "llj-6e1f158fc490c4b53357ba8a.mp3",
       "spokenText": "N is for nest.",
@@ -18498,9 +19138,57 @@
       "category": "nature"
     },
     {
+      "text": "Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+      "file": "llj-a9c3dfc6326af7fe06bac04e.mp3",
+      "spokenText": "Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Next, choose the grown-up. We stay together when we go outside.",
+      "file": "llj-1eff4e05b06d7d9af7278e6d.mp3",
+      "spokenText": "Next, choose the grown-up. We stay together when we go outside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+      "file": "llj-4208ed460242c79c59044cc2.mp3",
+      "spokenText": "Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Next, choose the soap. Our grown-up helps us wash and rinse.",
+      "file": "llj-ed7f9e422f892765acbc93a6.mp3",
+      "spokenText": "Next, choose the soap. Our grown-up helps us wash and rinse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Next, choose the soap. Pretend to rub our hands together with soap.",
+      "file": "llj-d11b7d1d2c70f3c92b276215.mp3",
+      "spokenText": "Next, choose the soap. Pretend to rub our hands together with soap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Nighttime sky.",
       "file": "llj-29a0f2d929a807ea613f63d6.mp3",
       "spokenText": "Nighttime sky.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Nighttime! Our view is dark and quiet. Swipe left or right to explore the night.",
+      "file": "llj-87b2d015151cad2e79c6689d.mp3",
+      "spokenText": "Nighttime! Our view is dark and quiet. Swipe left or right to explore the night.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -18552,6 +19240,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Now choose the bed. It is time to settle down and rest.",
+      "file": "llj-86b2709772acee80ba3bd1e6.mp3",
+      "spokenText": "Now choose the bed. It is time to settle down and rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Now choose the heart. Relax your hands and enjoy a quiet moment.",
+      "file": "llj-c98c15a454867f92b11362a1.mp3",
+      "spokenText": "Now choose the heart. Relax your hands and enjoy a quiet moment.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Now choose the sunny window. Our plant can get the light it needs there.",
+      "file": "llj-6b4355b4b734fe7f4e85582e.mp3",
+      "spokenText": "Now choose the sunny window. Our plant can get the light it needs there.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Now choose the towel. Our grown-up helps us dry off.",
+      "file": "llj-948803bc64539bee0e513375.mp3",
+      "spokenText": "Now choose the towel. Our grown-up helps us dry off.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Now choose the towel. We rinse off the soap with water, then dry our hands.",
+      "file": "llj-be709b20a0d1224d9d466106.mp3",
+      "spokenText": "Now choose the towel. We rinse off the soap with water, then dry our hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Now choose the tree. We are ready to enjoy a little nature walk together!",
+      "file": "llj-6d16482a09c85e75e9882213.mp3",
+      "spokenText": "Now choose the tree. We are ready to enjoy a little nature walk together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "O is for onion.",
@@ -18962,6 +19698,30 @@
       "category": "shapes"
     },
     {
+      "text": "Our art supplies are ready! We can make colorful pictures together.",
+      "file": "llj-3e7e9810b4d6536fa6aa8816.mp3",
+      "spokenText": "Our art supplies are ready! We can make colorful pictures together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our bag is ready! A grown-up can help us choose what we need outside.",
+      "file": "llj-380800de8d6417f4207efb91.mp3",
+      "spokenText": "Our bag is ready! A grown-up can help us choose what we need outside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our bedtime clothes are ready! Your family can choose what feels comfortable for sleep.",
+      "file": "llj-dd488deb01d74cbc02cbb3ff.mp3",
+      "spokenText": "Our bedtime clothes are ready! Your family can choose what feels comfortable for sleep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Our bodies can give us clues. Choose a place to notice.",
       "file": "llj-92d505d906ecd823f96c5289.mp3",
       "spokenText": "Our bodies can give us clues. Choose a place to notice.",
@@ -19010,6 +19770,14 @@
       "category": "nature"
     },
     {
+      "text": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
+      "file": "llj-a854f18686e45745288716f8.mp3",
+      "spokenText": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Our pretend delivery is done! Earth keeps turning while we play and while we sleep.",
       "file": "llj-4c05be13aa7476c191b5d813.mp3",
       "spokenText": "Our pretend delivery is done! Earth keeps turning while we play and while we sleep.",
@@ -19029,6 +19797,14 @@
       "text": "Our pretend picture is home! Jupiter is a giant planet with cloud bands. You were a wonderful stripe spotter!",
       "file": "llj-4c88a15d75bf7027647edb08.mp3",
       "spokenText": "Our pretend picture is home! Jupiter is a giant planet with cloud bands. You were a wonderful stripe spotter!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend plant needs water. Choose the watering can to give it a little drink.",
+      "file": "llj-59c0aeada1e68c58f4c11412.mp3",
+      "spokenText": "Our pretend plant needs water. Choose the watering can to give it a little drink.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -21394,6 +22170,14 @@
       "category": "shapes"
     },
     {
+      "text": "Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+      "file": "llj-a3c19f38e43e46168fca63e2.mp3",
+      "spokenText": "Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Police Car",
       "file": "llj-85bfc1016ee5d2f618ced823.mp3",
       "spokenText": "Police Car",
@@ -22514,6 +23298,14 @@
       "category": "nature"
     },
     {
+      "text": "Rain boots help keep feet dry when we step outside.",
+      "file": "llj-843cb7cfec2a3a8bb1b9e9ac.mp3",
+      "spokenText": "Rain boots help keep feet dry when we step outside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Rain falls from clouds. Pat your knees like raindrops.",
       "file": "llj-6bab74fe8047a56e8ea6c111.mp3",
       "spokenText": "Rain falls from clouds. Pat your knees like raindrops.",
@@ -22522,9 +23314,33 @@
       "category": "nature"
     },
     {
+      "text": "Rain! Drops of water fall from clouds. Swipe left or right to explore our rainy view.",
+      "file": "llj-9cc1dd3aad5053db043395ff.mp3",
+      "spokenText": "Rain! Drops of water fall from clouds. Swipe left or right to explore our rainy view.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Rain. Tap the window to explore.",
       "file": "llj-2df5269c7697f4f9ff4bee8c.mp3",
       "spokenText": "Rain. Tap the window to explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Raindrops rest on the leaves. Plants need water to grow.",
+      "file": "llj-14a9d0c3c364487c10271e1b.mp3",
+      "spokenText": "Raindrops rest on the leaves. Plants need water to grow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Rainwater has gathered in a puddle. Drip, drop! See the little ripples.",
+      "file": "llj-6dcfbf5eef348781025b6e2d.mp3",
+      "spokenText": "Rainwater has gathered in a puddle. Drip, drop! See the little ripples.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -22632,6 +23448,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Red, yellow, and orange leaves have fallen from the tree. Which color do you notice?",
+      "file": "llj-bbf2d7cd4611e6e9b9a1a5ed.mp3",
+      "spokenText": "Red, yellow, and orange leaves have fallen from the tree. Which color do you notice?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Red: rest your hands for a moment.",
@@ -23834,6 +24658,14 @@
       "category": "nature"
     },
     {
+      "text": "Shoes on! We can explore outside together during the day.",
+      "file": "llj-e96cb9d091cbefdbb3ed8691.mp3",
+      "spokenText": "Shoes on! We can explore outside together during the day.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Sixty different pattern trains! Choo choo!",
       "file": "llj-13e1d1d46f8ac2e5a47006c5.mp3",
       "spokenText": "Sixty different pattern trains! Choo choo!",
@@ -23856,6 +24688,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Snow! Little snowflakes fall on a cold day. Swipe left or right to explore our snowy view.",
+      "file": "llj-b139f83d70a602d43ef303c1.mp3",
+      "spokenText": "Snow! Little snowflakes fall on a cold day. Swipe left or right to explore our snowy view.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Snowflakes danced on Dino Pond. The ice was shiny, smooth, and wide. Trey Triceratops peeked out slowly. “I want to play hockey,” he said. Then he took one tiny slide.",
@@ -23912,6 +24752,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Someone has made a snowman. Look at the big snowballs stacked together!",
+      "file": "llj-ba011ce2e46db6afe4c4601c.mp3",
+      "spokenText": "Someone has made a snowman. Look at the big snowballs stacked together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Soon Trey could glide. Not fast. Not fancy. But forward. Swish. Trey smiled. “I’m skating!” Milo trumpeted. Sasha cheered.",
@@ -23986,6 +24834,14 @@
       "category": "nature"
     },
     {
+      "text": "Stars shine in the night sky. Can you wiggle your fingers like twinkling stars?",
+      "file": "llj-1ca32a3d5be60e0586e1b227.mp3",
+      "spokenText": "Stars shine in the night sky. Can you wiggle your fingers like twinkling stars?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Start at the bottom. Tap the next footprint on the same colored trail.",
       "file": "llj-98033bbefed5d05a3360de20.mp3",
       "spokenText": "Start at the bottom. Tap the next footprint on the same colored trail.",
@@ -24037,6 +24893,14 @@
       "text": "Sunlight helps plants grow on Earth. Pretend your hands are little leaves opening in the light.",
       "file": "llj-2133301a755ce0311553ef68.mp3",
       "spokenText": "Sunlight helps plants grow on Earth. Pretend your hands are little leaves opening in the light.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Sunshine! The Sun lights up our view. Swipe left or right to see what is outside.",
+      "file": "llj-9795e0ff17772118f640a827.mp3",
+      "spokenText": "Sunshine! The Sun lights up our view. Swipe left or right to see what is outside.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -24560,6 +25424,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "That is the toothbrush! We brush in the morning and before bed, with help from a grown-up.",
+      "file": "llj-37cbddaca30fbb17faf3b48e.mp3",
+      "spokenText": "That is the toothbrush! We brush in the morning and before bed, with help from a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "That might be silly too. A ball is fun to bounce.",
@@ -25354,6 +26226,14 @@
       "category": "stories"
     },
     {
+      "text": "The table is ready for lunch. We helped get ready for a daytime meal!",
+      "file": "llj-1d19d20e59691c93ab72af27.mp3",
+      "spokenText": "The table is ready for lunch. We helped get ready for a daytime meal!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "The tent front has a triangle shape.",
       "file": "llj-f2d70e3ca3212a5d3094ca2b.mp3",
       "spokenText": "The tent front has a triangle shape.",
@@ -25370,9 +26250,25 @@
       "category": "shapes"
     },
     {
+      "text": "The toys are put away! Tidying helps us get ready for a quieter evening.",
+      "file": "llj-8a8ba7494c054e273a3a8315.mp3",
+      "spokenText": "The toys are put away! Tidying helps us get ready for a quieter evening.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "The tracks turn this way.",
       "file": "llj-005c2e89923437910255e92a.mp3",
       "spokenText": "The tracks turn this way.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The tree blocks some sunlight. Look at its shadow on the ground.",
+      "file": "llj-0c8bea348dc79cdbaa433b02.mp3",
+      "spokenText": "The tree blocks some sunlight. Look at its shadow on the ground.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -25392,6 +26288,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The wind can lift a kite. A grown-up can help us fly one in an open space.",
+      "file": "llj-cd90303ed1578dced1e1e0ae.mp3",
+      "spokenText": "The wind can lift a kite. A grown-up can help us fly one in an open space.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "The wind is carrying loose leaves. Watch them tumble through the air.",
+      "file": "llj-30ef5d62008b63b10089569d.mp3",
+      "spokenText": "The wind is carrying loose leaves. Watch them tumble through the air.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "The window has a square shape.",
@@ -25448,6 +26360,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "There is the Moon! The Moon reflects light from the Sun.",
+      "file": "llj-e928e7aea083ff880b34a3c7.mp3",
+      "spokenText": "There is the Moon! The Moon reflects light from the Sun.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "There's Earth, our home! The Moon travels around Earth. Let's wave to our blue planet.",
@@ -27338,9 +28258,41 @@
       "category": "feelings"
     },
     {
+      "text": "We are getting ready for bed. Find the soft washcloth to help wash our face.",
+      "file": "llj-b9529a32d08c614cc373e389.mp3",
+      "spokenText": "We are getting ready for bed. Find the soft washcloth to help wash our face.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+      "file": "llj-5c1e2310dc364cbb9d4434ad.mp3",
+      "spokenText": "We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We are going outside on a sunny day. First, choose our sun hat.",
+      "file": "llj-d33c429e191c03091512ea37.mp3",
+      "spokenText": "We are going outside on a sunny day. First, choose our sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "We are on Earth. Put on a spacesuit for our pretend trip.",
       "file": "llj-931f1964a35529ded3d26062.mp3",
       "spokenText": "We are on Earth. Put on a spacesuit for our pretend trip.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
+      "file": "llj-39224bd1f7783abe6d2b924a.mp3",
+      "spokenText": "We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -27362,6 +28314,14 @@
       "category": "nature"
     },
     {
+      "text": "We cared for our plant! A grown-up can help us learn when a real plant needs water.",
+      "file": "llj-cbc428d929e71934db1ca814.mp3",
+      "spokenText": "We cared for our plant! A grown-up can help us learn when a real plant needs water.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "We did it together! You can play again or choose all done.",
       "file": "llj-0ccbce0a348d5ac19efed958.mp3",
       "spokenText": "We did it together! That was fun. Want to play again? Or are you all done for now?",
@@ -27376,6 +28336,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "We got ready and stayed with our grown-up. There is so much to notice outside in the daytime!",
+      "file": "llj-f2af18c70ff99e515d122415.mp3",
+      "spokenText": "We got ready and stayed with our grown-up. There is so much to notice outside in the daytime!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "We have 0 coins. How many more will make 100?",
@@ -29762,6 +30730,22 @@
       "category": "nature"
     },
     {
+      "text": "We practiced wetting, washing, rinsing, and drying our hands before a meal!",
+      "file": "llj-0e505cc472754403ecd40cd0.mp3",
+      "spokenText": "We practiced wetting, washing, rinsing, and drying our hands before a meal!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "We took a quiet pause together. Calm moments can help us get ready to rest.",
+      "file": "llj-13d1c26f759c77bf5c91e9b9.mp3",
+      "spokenText": "We took a quiet pause together. Calm moments can help us get ready to rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "We watched a giant planet and learned about its swirling storm. Our pretend adventure is safely home. Hooray!",
       "file": "llj-e7d10937276661c2981a63da.mp3",
       "spokenText": "We watched a giant planet and learned about its swirling storm. Our pretend adventure is safely home. Hooray!",
@@ -30405,6 +31389,14 @@
       "text": "Wind is moving air. Sway like a tree in the breeze.",
       "file": "llj-508d6c1efc1ba1cad297739e.mp3",
       "spokenText": "Wind is moving air. Sway like a tree in the breeze.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Wind! Moving air makes the branches sway. Swipe left or right to see things the wind can move.",
+      "file": "llj-9856806b6d9de9d08c08449f.mp3",
+      "spokenText": "Wind! Moving air makes the branches sway. Swipe left or right to see things the wind can move.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -33442,6 +34434,14 @@
       "category": "nature"
     },
     {
+      "text": "You found the apple! Families enjoy many different foods at breakfast.",
+      "file": "llj-88ccaefb05210903d0d753e3.mp3",
+      "spokenText": "You found the apple! Families enjoy many different foods at breakfast.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found the chicken!",
       "file": "llj-65101865a75d6284163bee66.mp3",
       "spokenText": "You found the chicken!",
@@ -34333,6 +35333,14 @@
       "text": "You noticed so many animal clues!",
       "file": "llj-a3cbc67c340dec5d7f7e7923.mp3",
       "spokenText": "You noticed so many animal clues!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You opened the curtains! Daylight can help us see our room.",
+      "file": "llj-370424e0d76011732d2cef06.mp3",
+      "spokenText": "You opened the curtains! Daylight can help us see our room.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"

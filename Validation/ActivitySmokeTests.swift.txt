@@ -104,6 +104,198 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testDayNightEighteenRoutinesDragSequenceAndReplay() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Day & Night"]
+        try reveal(card, in: app); card.tap()
+        func tapVisible(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        func currentID() throws -> String {
+            let title = app.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH 'routine.level.'")).firstMatch
+            XCTAssertTrue(title.waitForExistence(timeout: 5))
+            return String(title.identifier.dropFirst("routine.level.".count))
+        }
+        let expected: [String: [String]] = [
+            "curtains": ["curtains"],
+            "breakfast": ["apple"],
+            "shoes": ["shoes"],
+            "teeth": ["toothbrush"],
+            "face": ["washcloth"],
+            "story": ["book"],
+            "bag": ["bottle", "hat", "shoes"],
+            "lunch": ["plate", "cup", "spoon"],
+            "art": ["crayons", "paper", "paintbrush"],
+            "tidy": ["ball", "teddy", "block"],
+            "pajamas": ["shirt", "pants", "socks"],
+            "bed": ["pillow", "blanket", "teddy"],
+            "hands": ["water", "soap", "washcloth"],
+            "plant": ["plant", "wateringcan", "sun"],
+            "outing": ["hat", "adult", "tree"],
+            "bath": ["adult", "soap", "washcloth"],
+            "calm": ["chair", "breathe", "heart"],
+            "goodnight": ["wave", "lamp", "bed"],
+        ]
+        try tapVisible(app.buttons["routine.begin"])
+        let first = try currentID()
+        var seen = Set<String>()
+        for round in 1...18 {
+            let id = try currentID()
+            XCTAssertTrue(seen.insert(id).inserted)
+            XCTAssertEqual(app.staticTexts["routine.progress"].label, "\(round) of 18")
+            let items = try XCTUnwrap(expected[id])
+            let next = app.buttons["routine.next"]
+            XCTAssertFalse(next.exists)
+            if round <= 12 {
+                let wrong = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first {
+                    $0.identifier.hasPrefix("routine.item.") && !items.contains(String($0.identifier.dropFirst("routine.item.".count)))
+                })
+                try tapVisible(wrong)
+                if round > 6 { try tapVisible(app.buttons["routine.destination"]) }
+                XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "routine.retry").firstMatch.exists)
+                XCTAssertFalse(next.exists)
+            } else {
+                try tapVisible(app.buttons["routine.item.\(items[1])"])
+                XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "routine.retry").firstMatch.exists)
+                XCTAssertEqual(app.staticTexts["routine.step"].label, "Step 1 of 3 · First")
+            }
+            for (index, item) in items.enumerated() {
+                let choice = app.buttons["routine.item.\(item)"]
+                if (7...12).contains(round) {
+                    if index == 0 {
+                        try reveal(choice, in: app)
+                        if choice.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+                        let target = app.buttons["routine.destination"]
+                        try reveal(target, in: app)
+                        choice.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.3))
+                            .press(forDuration: 0.8, thenDragTo: target.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)), withVelocity: .slow, thenHoldForDuration: 0.4)
+                        XCTAssertFalse(choice.isEnabled)
+                    } else {
+                        try tapVisible(choice); try tapVisible(app.buttons["routine.destination"])
+                    }
+                } else { try tapVisible(choice) }
+            }
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            if [1, 7, 13].contains(round) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Day and night activity \(round)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tapVisible(next)
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tapVisible(app.buttons["Play again"]); try tapVisible(app.buttons["routine.begin"])
+        let replay = try currentID(); XCTAssertNotEqual(replay, first)
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        try tapVisible(app.buttons["routine.begin"])
+        XCTAssertNotEqual(try currentID(), replay)
+    }
+
+    @MainActor
+    func testAnimalMovementAllAnimalsReplayReentryAndRelaunch() async throws {
+        var app = try await launch()
+        func openGame() throws {
+            let category = app.buttons["category.Nature Explorers"]
+            try reveal(category, in: app); category.tap()
+            let card = app.buttons["activity-card.Move Like an Animal"]
+            try reveal(card, in: app); card.tap()
+        }
+        func tapVisible(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        func animal() throws -> String {
+            let image = app.images.matching(NSPredicate(format: "identifier BEGINSWITH 'movement.animal.'")).firstMatch
+            XCTAssertTrue(image.waitForExistence(timeout: 5))
+            return image.identifier
+        }
+        try openGame()
+        XCTAssertTrue(app.staticTexts["Play with a grown-up"].exists)
+        try tapVisible(app.buttons["movement.begin"])
+        var seen = Set<String>()
+        var last = ""
+        for round in 1...16 {
+            XCTAssertEqual(app.staticTexts["movement.progress"].label, "Animal \(round) of 16")
+            last = try animal()
+            XCTAssertTrue(seen.insert(last).inserted)
+            XCTAssertTrue(app.staticTexts["Play with a grown-up"].exists)
+            if [1, 8, 16].contains(round) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Animal movement \(round)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tapVisible(app.buttons["movement.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tapVisible(app.buttons["Play again"])
+        try tapVisible(app.buttons["movement.begin"])
+        XCTAssertNotEqual(try animal(), last)
+        last = try animal()
+        app.navigationBars.buttons.firstMatch.tap()
+        let card = app.buttons["activity-card.Move Like an Animal"]
+        try reveal(card, in: app); card.tap()
+        try tapVisible(app.buttons["movement.begin"])
+        XCTAssertNotEqual(try animal(), last)
+        last = try animal()
+        app.terminate()
+        app = try await launch()
+        try openGame()
+        try tapVisible(app.buttons["movement.begin"])
+        XCTAssertNotEqual(try animal(), last)
+    }
+
+    @MainActor
+    func testWeatherWindowChoicesSwipesAndReset() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Weather Window"]
+        try reveal(card, in: app); card.tap()
+        let page = app.staticTexts["weather.page"]
+        let window = app.descendants(matching: .any).matching(identifier: "weather.window").firstMatch
+        let next = app.buttons["weather.next"]
+        func tapVisible(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        for (id, title, first, last) in [
+            ("sunshine", "A sunny day", "A sunny flower", "A garden bird"),
+            ("rain", "A rainy day", "An umbrella", "Raindrops on leaves"),
+            ("wind", "A windy day", "A kite", "A pinwheel"),
+            ("night", "A nighttime view", "The Moon", "Glowing windows"),
+            ("snow", "A snowy day", "A snowman", "A snowflake"),
+            ("fall", "A fall day", "Colorful leaves", "A squirrel")
+        ] {
+            try tapVisible(app.buttons["weather.choose.\(id)"])
+            XCTAssertEqual(page.label, title)
+            try reveal(window, in: app)
+            // Use the center of the picture, away from the parent scroll view edges.
+            window.swipeLeft()
+            XCTAssertEqual(page.label, first)
+            window.swipeRight()
+            XCTAssertEqual(page.label, title)
+            try tapVisible(app.buttons["weather.previous"])
+            XCTAssertEqual(page.label, last)
+            try tapVisible(next)
+            XCTAssertEqual(page.label, title)
+            for _ in 0..<4 { try tapVisible(next) }
+            XCTAssertEqual(page.label, last)
+            let shot = XCTAttachment(screenshot: app.screenshot())
+            shot.name = "Weather Window \(id)"; shot.lifetime = .keepAlways; add(shot)
+            try tapVisible(app.buttons["weather.choose.\(id)"])
+            XCTAssertEqual(page.label, title)
+        }
+        XCTAssertEqual(app.staticTexts["weather.progress"].label, "30 of 30 discoveries explored")
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        XCTAssertEqual(page.label, "A sunny day")
+        XCTAssertEqual(app.staticTexts["weather.progress"].label, "1 of 30 discoveries explored")
+    }
+
+    @MainActor
     func testOceanCleanupTenRoundsAndNewBuddies() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]

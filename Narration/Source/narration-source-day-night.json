@@ -1,0 +1,397 @@
+[
+  {
+    "text": "Let us explore day and night! We can practice daytime activities and cozy bedtime routines. Every family has its own routines.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "It is morning! Find the curtains so we can open them and let in daylight.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is morning! Find the curtains so we can open them and let in daylight.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You opened the curtains! Daylight can help us see our room.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is breakfast time! Find the apple we can eat with our morning meal.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is breakfast time! Find the apple we can eat with our morning meal.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "You found the apple! Families enjoy many different foods at breakfast.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. We are going for a daytime walk with a grown-up. Find the shoes for our feet.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Shoes on! We can explore outside together during the day.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. It is bedtime. Find the toothbrush so a grown-up can help us brush our teeth.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the toothbrush! We brush in the morning and before bed, with help from a grown-up.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We are getting ready for bed. Find the soft washcloth to help wash our face.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. We are getting ready for bed. Find the soft washcloth to help wash our face.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A soft washcloth can help us get clean. We can wash our face at other times, too!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is a quiet evening. Find a book to share with a grown-up before bed.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. It is a quiet evening. Find a book to share with a grown-up before bed.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A story can help us settle down. We can enjoy books during the day, too!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Let us pack for a daytime trip! Move the water bottle, hat, and shoes into the backpack.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Our bag is ready! A grown-up can help us choose what we need outside.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is lunchtime! Move the plate, cup, and spoon onto the table.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is lunchtime! Move the plate, cup, and spoon onto the table.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The table is ready for lunch. We helped get ready for a daytime meal!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Let us make art this afternoon! Move the crayons, paper, and paintbrush into the art tray.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Our art supplies are ready! We can make colorful pictures together.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Playtime is finished for the evening. Move the ball, teddy bear, and block into the toy box.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "The toys are put away! Tidying helps us get ready for a quieter evening.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. Let us choose bedtime clothes! Move the pajama top, pajama pants, and socks into the basket.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Our bedtime clothes are ready! Your family can choose what feels comfortable for sleep.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. Let us make our pretend bed cozy! Move the pillow, blanket, and teddy bear onto the bed.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Next, choose the soap. Pretend to rub our hands together with soap.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the towel. We rinse off the soap with water, then dry our hands.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Before our daytime meal, we wash our hands with a grown-up. First, choose the water to wet our hands.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Next, choose the soap. Pretend to rub our hands together with soap.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the towel. We rinse off the soap with water, then dry our hands.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We practiced wetting, washing, rinsing, and drying our hands before a meal!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Our pretend plant needs water. Choose the watering can to give it a little drink.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the sunny window. Our plant can get the light it needs there.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is daytime plant care! First, choose our plant and look at its soil with a grown-up.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Our pretend plant needs water. Choose the watering can to give it a little drink.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the sunny window. Our plant can get the light it needs there.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We cared for our plant! A grown-up can help us learn when a real plant needs water.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We are going outside on a sunny day. First, choose our sun hat.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Next, choose the grown-up. We stay together when we go outside.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the tree. We are ready to enjoy a little nature walk together!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. We are going outside on a sunny day. First, choose our sun hat.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Next, choose the grown-up. We stay together when we go outside.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the tree. We are ready to enjoy a little nature walk together!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We got ready and stayed with our grown-up. There is so much to notice outside in the daytime!",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Next, choose the soap. Our grown-up helps us wash and rinse.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the towel. Our grown-up helps us dry off.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is time for an evening wash. First, choose the grown-up who stays with us and checks the water.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Next, choose the soap. Our grown-up helps us wash and rinse.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the towel. Our grown-up helps us dry off.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Clean and cozy! Some families wash in the evening, and some wash earlier in the day.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the heart. Relax your hands and enjoy a quiet moment.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. It is bedtime wind-down time. First, choose the chair and sit comfortably with your grown-up.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. Next, choose the gentle breeze. Let us take an easy breath in and out together.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the heart. Relax your hands and enjoy a quiet moment.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We took a quiet pause together. Calm moments can help us get ready to rest.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now choose the bed. It is time to settle down and rest.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. We are ready for bed. First, choose the waving hand to say goodnight to our grown-up.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try again. Next, choose the lamp. Our grown-up can make the room dim and cozy.",
+    "category": "nature",
+    "delivery": "playful"
+  },
+  {
+    "text": "Let's try again. Now choose the bed. It is time to settle down and rest.",
+    "category": "nature",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Goodnight! Rest helps our bodies get ready for another day.",
+    "category": "nature",
+    "delivery": "gentle"
+  }
+]

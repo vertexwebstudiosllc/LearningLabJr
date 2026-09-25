@@ -6,6 +6,168 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testDayNightRoutinesProgressionNoRepeatsAndInteractions() throws {
+        XCTAssertEqual(DayNightRoutine.bank.count, 18)
+        XCTAssertEqual(Set(DayNightRoutine.bank.map(\.id)).count, 18)
+        XCTAssertEqual(DayNightRoutine.bank.filter { $0.time == .day }.count, 9)
+        XCTAssertEqual(DayNightRoutine.bank.filter { $0.time == .night }.count, 9)
+        for routine in DayNightRoutine.bank {
+            XCTAssertEqual(Set(routine.choices).count, routine.choices.count)
+            XCTAssertEqual(routine.items.count, routine.kind == .find ? 1 : 3)
+            XCTAssertEqual(routine.instructions.count, routine.kind == .sequence ? 3 : 1)
+            for id in routine.choices { XCTAssertTrue(RoutineItem.bank.contains { $0.id == id }, id) }
+        }
+        var previousFirst = "curtains"
+        var previousLast = "breakfast"
+        for _ in 0..<200 {
+            var play = DayNightPlay(previousFirst: previousFirst, previousLevel: previousLast)
+            XCTAssertNotEqual(play.current.id, previousFirst)
+            XCTAssertNotEqual(play.current.id, previousLast)
+            previousFirst = play.current.id
+            XCTAssertEqual(Set(play.rounds.map(\.id)).count, 18)
+            for index in 0..<18 {
+                let round = play.current
+                XCTAssertEqual(play.index, index)
+                XCTAssertEqual(round.kind, RoutineKind.allCases[index / 6])
+                XCTAssertFalse(play.complete); XCTAssertFalse(play.solved)
+                XCTAssertEqual(Set(play.choices[index]), Set(round.choices))
+                play.advance(from: round.id); XCTAssertEqual(play.index, index)
+                play.choose("unknown", in: round.id); XCTAssertFalse(play.needsHelp)
+                play.choose(round.items[0], in: "stale"); XCTAssertTrue(play.collected.isEmpty)
+                XCTAssertFalse(play.drop("stale|" + round.items[0]))
+                XCTAssertFalse(play.drop("malformed"))
+                if round.kind == .collect {
+                    let wrong = try XCTUnwrap(round.distractors.first)
+                    XCTAssertFalse(play.drop(round.id + "|" + wrong)); XCTAssertTrue(play.needsHelp)
+                    for id in round.items.reversed() {
+                        play.choose(id, in: round.id); XCTAssertEqual(play.selected, id)
+                        XCTAssertTrue(play.place(id, in: round.id))
+                        XCTAssertFalse(play.place(id, in: round.id))
+                    }
+                } else {
+                    let wrong = round.kind == .find ? round.distractors[0] : round.items[1]
+                    play.choose(wrong, in: round.id)
+                    XCTAssertTrue(play.needsHelp); XCTAssertEqual(play.step, 0)
+                    for id in round.items { play.choose(id, in: round.id) }
+                }
+                XCTAssertTrue(play.solved); XCTAssertFalse(play.needsHelp)
+                XCTAssertEqual(play.prompt, round.success)
+                play.choose(round.items[0], in: round.id); XCTAssertTrue(play.solved)
+                play.advance(from: round.id)
+                XCTAssertEqual(play.index, index + 1)
+                play.advance(from: round.id); XCTAssertEqual(play.index, index + 1)
+                previousLast = round.id
+            }
+            XCTAssertTrue(play.complete)
+            play.advance(from: previousLast); XCTAssertEqual(play.index, 18)
+        }
+        for item in RoutineItem.bank {
+            if item.art.hasPrefix("asset:") { XCTAssertNotNil(UIImage(named: String(item.art.dropFirst(6)))) }
+            else if item.art != "custom" { XCTAssertNotNil(UIImage(systemName: item.art), item.art) }
+        }
+        for symbol in ["backpack.fill", "table.furniture.fill", "tray.fill", "shippingbox.fill", "basket.fill", "bathtub.fill", "door.left.hand.open", "bed.double.fill", "triangle.fill"] {
+            XCTAssertNotNil(UIImage(systemName: symbol), symbol)
+        }
+    }
+
+    @MainActor
+    func testDayNightRoutineRuthNarration() {
+        for text in DayNightRoutine.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
+    @MainActor
+    func testAnimalMovementDeckPersistenceGuardsAndTransparentArt() throws {
+        XCTAssertEqual(AnimalMove.bank.count, 16)
+        XCTAssertEqual(Set(AnimalMove.bank.map(\.id)).count, 16)
+        var previous = "rabbit"
+        for _ in 0..<200 {
+            var play = AnimalMovementPlay(previousAnimal: previous)
+            XCTAssertNotEqual(play.current.id, previous)
+            XCTAssertEqual(Set(play.animals.map(\.id)).count, 16)
+            for index in 0..<16 {
+                XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.complete)
+                let current = play.current.id
+                XCTAssertNotEqual(current, previous)
+                play.advance(from: "unknown"); XCTAssertEqual(play.index, index)
+                play.advance(from: current); XCTAssertEqual(play.index, index + 1)
+                play.advance(from: current); XCTAssertEqual(play.index, index + 1)
+                previous = current
+            }
+            XCTAssertTrue(play.complete)
+            play.advance(from: previous); XCTAssertEqual(play.index, 16)
+            // Backing out halfway uses the most recently displayed animal as the exclusion.
+            let reopened = AnimalMovementPlay(previousAnimal: play.animals[7].id)
+            XCTAssertNotEqual(reopened.current.id, play.animals[7].id)
+        }
+        for animal in AnimalMove.bank {
+            let image = try XCTUnwrap(UIImage(named: animal.asset)?.cgImage, animal.asset)
+            var pixels = [UInt8](repeating: 0, count: 32 * 32 * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: 32, height: 32,
+                    bitsPerComponent: 8, bytesPerRow: 128, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: 32, height: 32))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, animal.asset)
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 100, animal.asset)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, animal.asset) }
+        }
+    }
+
+    @MainActor
+    func testAnimalMovementRuthNarration() {
+        for text in [AnimalMove.invitation] + AnimalMove.bank.map(\.prompt) {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+
+    @MainActor
+    func testWeatherWindowRuthNarration() {
+        for page in WindowCondition.all.flatMap(\.pages) {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: page.narration)?.voice, "Ruth", page.narration)
+        }
+    }
+
+    @MainActor
+    func testWeatherWindowNavigationAndDiscoveries() {
+        XCTAssertEqual(WindowCondition.all.map(\.id), ["sunshine", "rain", "wind", "night", "snow", "fall"])
+        var play = WeatherWindowPlay()
+        XCTAssertEqual(play.total, 30)
+        for condition in WindowCondition.all {
+            XCTAssertEqual(condition.pages.count, 5)
+            XCTAssertEqual(Set(condition.pages.map(\.id)).count, 5)
+            XCTAssertEqual(condition.pages.first?.id, "overview")
+            XCTAssertNotNil(UIImage(systemName: condition.symbol))
+            play.choose(condition.id)
+            XCTAssertEqual(play.current.id, "overview")
+            play.move(-1)
+            XCTAssertEqual(play.pageIndex, 4)
+            play.move(1)
+            XCTAssertEqual(play.pageIndex, 0)
+            for page in condition.pages {
+                XCTAssertEqual(play.current.id, page.id)
+                XCTAssertFalse(page.title.isEmpty)
+                play.move(1)
+            }
+            play.move(1); play.choose(condition.id)
+            XCTAssertEqual(play.pageIndex, 0)
+        }
+        XCTAssertEqual(play.visited.count, 30)
+        play.choose("unknown"); play.move(2)
+        XCTAssertEqual(play.condition.id, "fall")
+        XCTAssertEqual(play.pageIndex, 0)
+        XCTAssertEqual(WeatherWindowPlay().visited.count, 1)
+        for name in ["tree.fill", "house.fill", "drop.fill", "bird.fill", "umbrella.fill", "flag.fill", "sparkles", "snowflake", "leaf.fill"] {
+            XCTAssertNotNil(UIImage(systemName: name), name)
+        }
+        for asset in ["SpaceClean/Moon", "FamilyClean/cat"] { XCTAssertNotNil(UIImage(named: asset)) }
+    }
+
+    @MainActor
     func testOceanCleanupRotationPuzzlesPersistenceAndRuth() throws {
         XCTAssertEqual(OceanBuddy.bank.count, 13)
         var previous: [String] = []
