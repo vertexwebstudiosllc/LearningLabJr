@@ -6,6 +6,66 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testFunnyFaceCopyIdentifySequenceAndRuth() throws {
+        XCTAssertEqual(StudioEmotion.allCases.count, 6)
+        XCTAssertEqual(StudioEmotion.mad.name, "Mad")
+        XCTAssertEqual(Set(StudioEmotion.allCases.map(\.clue)).count, 6)
+        var previousFirst = "happy"
+        var previousLast = "sad"
+        var orders = Set<String>()
+        for _ in 0..<200 {
+            var play = StudioPlay(previousFirst: previousFirst, previousLast: previousLast)
+            XCTAssertNotEqual(play.current.emotion.rawValue, previousFirst)
+            XCTAssertNotEqual(play.current.emotion.rawValue, previousLast)
+            previousFirst = play.current.emotion.rawValue
+            orders.insert(play.rounds.map { $0.emotion.rawValue }.joined())
+            var seen = Set<StudioEmotion>()
+            for index in 0..<6 {
+                let round = play.current
+                let target = round.emotion
+                XCTAssertTrue(seen.insert(target).inserted)
+                XCTAssertEqual(play.phase, .copy)
+                XCTAssertEqual(play.prompt, target.copyPrompt)
+                XCTAssertEqual(Set(round.choices).count, 3)
+                XCTAssertTrue(round.choices.contains(target))
+                play.choose(target, for: target); XCTAssertEqual(play.phase, .copy)
+                play.advance(from: target); XCTAssertEqual(play.index, index)
+                let wrong = try XCTUnwrap(round.choices.first { $0 != target })
+                play.copied(wrong); XCTAssertEqual(play.phase, .copy)
+                play.copied(target); XCTAssertEqual(play.phase, .identify)
+                XCTAssertEqual(play.prompt, StudioEmotion.question(round.choices))
+                play.choose(target, for: wrong); XCTAssertEqual(play.phase, .identify)
+                let absent = try XCTUnwrap(StudioEmotion.allCases.first { !round.choices.contains($0) })
+                play.choose(absent, for: target); XCTAssertFalse(play.needsHelp)
+                play.choose(wrong, for: target); XCTAssertTrue(play.needsHelp)
+                XCTAssertEqual(play.prompt, target.retry); XCTAssertEqual(play.index, index)
+                play.choose(target, for: target); XCTAssertEqual(play.phase, .found)
+                XCTAssertEqual(play.prompt, target.success); XCTAssertFalse(play.needsHelp)
+                play.choose(wrong, for: target); XCTAssertEqual(play.phase, .found)
+                play.advance(from: wrong); XCTAssertEqual(play.index, index)
+                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
+                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
+                previousLast = target.rawValue
+            }
+            XCTAssertTrue(play.complete)
+            play.copied(play.current.emotion); XCTAssertTrue(play.complete)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: play.prompt)?.voice, "Ruth")
+        }
+        XCTAssertGreaterThan(orders.count, 100)
+        for line in StudioEmotion.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: line)?.voice, "Ruth", line)
+            XCTAssertFalse(line.lowercased().contains("cross"))
+        }
+        var drawings = Set<Data>()
+        for emotion in StudioEmotion.allCases {
+            let renderer = ImageRenderer(content: StudioFace(emotion: emotion, size: 220))
+            let image = try XCTUnwrap(renderer.uiImage)
+            drawings.insert(try XCTUnwrap(image.pngData()))
+        }
+        XCTAssertEqual(drawings.count, 6, "Each feeling needs a distinct face")
+    }
+
+    @MainActor
     func testCozyProjectsSequenceGuardsVarietyAndRuth() throws {
         XCTAssertEqual(CozyProject.bank.count, 10)
         XCTAssertEqual(Set(CozyProject.bank.map(\.id)).count, 10)

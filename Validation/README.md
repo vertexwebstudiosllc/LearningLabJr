@@ -104,3 +104,5 @@ Day & Night checks eighteen distinct activities (nine daytime and nine nighttime
 Nature Detective checks twenty-four unique animal/insect targets across 200 full sessions, changed opening targets, stable shuffled answers, recent-distractor exclusion, all clue levels, wrong/stale/duplicate actions, early success, transparent image pixels, and complete Ruth coverage. Its UI test solves all 24 mysteries, checks every clue and wrong answers, and verifies replay and reentry.
 
 Cozy Nest: `testCozyProjectsSequenceGuardsVarietyAndRuth` checks 100 complete ten-project sessions and exact Ruth coverage. `testCozyNestTenProjectsAndReplay` builds every project and checks hints, completion, replay, and reentry.
+
+Funny Face Studio: `testFunnyFaceCopyIdentifySequenceAndRuth` validates six distinct renders, 200 sessions, interaction guards, and Ruth coverage. `testFunnyFaceCopyIdentifyAllSixAndReplay` covers copying, identification, answer speakers, gentle retries, completion, replay/reentry, and the shared Mad label.

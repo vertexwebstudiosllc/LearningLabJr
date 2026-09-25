@@ -2,7 +2,7 @@ import SwiftUI
 
 struct BigFeelingsMenu: View {
     static let activities: [LearningActivity] = [
-        .init(id: "feelings.faces", title: "Funny Face Studio", skill: "Explore facial expressions", interaction: "Make and name three face puppets", ageBand: "2–4 with a grown-up", caregiverTip: "Copy a face together. Faces give clues, but we ask how someone feels."),
+        .init(id: "feelings.faces", title: "Funny Face Studio", skill: "Explore facial expressions", interaction: "Copy six expressive faces and find their feeling words", ageBand: "2–4 with a grown-up", caregiverTip: "Copy a face together. Faces give clues, but we ask how someone feels."),
         .init(id: "feelings.breathe", title: "Flower Breaths", skill: "Practice a calming routine", interaction: "Grow and settle a flower at your own pace", ageBand: "2–4 with a grown-up", caregiverTip: "Model a comfortable breath. Your child can watch or join; no breath holding."),
         .init(id: "feelings.teddy", title: "Teddy's Helping Hands", skill: "Offer care and respect choices", interaction: "Choose ways to help Teddy in three little stories", ageBand: "2–4 with a grown-up", caregiverTip: "Offer a hug rather than assuming someone wants one."),
         .init(id: "feelings.turns", title: "Roll It Together", skill: "Practice taking turns", interaction: "Pass a ball back and forth with a grown-up", ageBand: "2–4 with a grown-up", caregiverTip: "Say my turn and your turn. Try rolling a real ball afterward."),

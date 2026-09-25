@@ -8986,6 +8986,54 @@
       "category": "nature"
     },
     {
+      "text": "Can you copy our puppet's face? Try a big smile with open eyes and relaxed eyebrows. You can try with a grown-up, or watch together.",
+      "file": "llj-5ae45085c0a244d6d462a5cf.mp3",
+      "spokenText": "Can you copy our puppet's face? Try a big smile with open eyes and relaxed eyebrows. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Can you copy our puppet's face? Try a downturned mouth with eyebrows raised in the middle. You can try with a grown-up, or watch together.",
+      "file": "llj-49518d4cede1659183555202.mp3",
+      "spokenText": "Can you copy our puppet's face? Try a downturned mouth with eyebrows raised in the middle. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Can you copy our puppet's face? Try eyebrows pointing down in the middle and a small frown. You can try with a grown-up, or watch together.",
+      "file": "llj-1ff13ea662e97a941925f770.mp3",
+      "spokenText": "Can you copy our puppet's face? Try eyebrows pointing down in the middle and a small frown. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Can you copy our puppet's face? Try eyebrows raised in the middle and a small, tight mouth. You can try with a grown-up, or watch together.",
+      "file": "llj-fb2cd9ad9b1fe45728aeb5f0.mp3",
+      "spokenText": "Can you copy our puppet's face? Try eyebrows raised in the middle and a small, tight mouth. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Can you copy our puppet's face? Try gently closed eyes, relaxed eyebrows, and a little smile. You can try with a grown-up, or watch together.",
+      "file": "llj-492345a7c92f32c9c8040ad9.mp3",
+      "spokenText": "Can you copy our puppet's face? Try gently closed eyes, relaxed eyebrows, and a little smile. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Can you copy our puppet's face? Try wide eyes, high eyebrows, and a round, open mouth. You can try with a grown-up, or watch together.",
+      "file": "llj-555a6f854a0ab269b882b826.mp3",
+      "spokenText": "Can you copy our puppet's face? Try wide eyes, high eyebrows, and a round, open mouth. You can try with a grown-up, or watch together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
       "file": "llj-7460196eb61d777521939390.mp3",
       "spokenText": "Can you find the Brontosaurus? Follow the footprints to that dinosaur.",
@@ -16130,6 +16178,54 @@
       "category": "nature"
     },
     {
+      "text": "Let's look at our pretend face again. Try a big smile with open eyes and relaxed eyebrows. Try another feeling word.",
+      "file": "llj-5089e04d1418f2a50c04dd63.mp3",
+      "spokenText": "Let's look at our pretend face again. Try a big smile with open eyes and relaxed eyebrows. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's look at our pretend face again. Try a downturned mouth with eyebrows raised in the middle. Try another feeling word.",
+      "file": "llj-aa888853af3207430d9f1fdb.mp3",
+      "spokenText": "Let's look at our pretend face again. Try a downturned mouth with eyebrows raised in the middle. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's look at our pretend face again. Try eyebrows pointing down in the middle and a small frown. Try another feeling word.",
+      "file": "llj-ba8486115f5601ceb46d87b8.mp3",
+      "spokenText": "Let's look at our pretend face again. Try eyebrows pointing down in the middle and a small frown. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's look at our pretend face again. Try eyebrows raised in the middle and a small, tight mouth. Try another feeling word.",
+      "file": "llj-f3e3cf36466e6a5f3a76222b.mp3",
+      "spokenText": "Let's look at our pretend face again. Try eyebrows raised in the middle and a small, tight mouth. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's look at our pretend face again. Try gently closed eyes, relaxed eyebrows, and a little smile. Try another feeling word.",
+      "file": "llj-2ee4d599c8f54f6e956d8146.mp3",
+      "spokenText": "Let's look at our pretend face again. Try gently closed eyes, relaxed eyebrows, and a little smile. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's look at our pretend face again. Try wide eyes, high eyebrows, and a round, open mouth. Try another feeling word.",
+      "file": "llj-9256872f39a8ef4bdf45c99c.mp3",
+      "spokenText": "Let's look at our pretend face again. Try wide eyes, high eyebrows, and a round, open mouth. Try another feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let's look at the edges. Find the circle.",
       "file": "llj-f12fc42de20252e222ad0308.mp3",
       "spokenText": "Let's look at the edges. Find the circle.",
@@ -21264,6 +21360,54 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Our puppet is pretending to feel calm. You found its feeling word!",
+      "file": "llj-2399c0c745f5b01c7be16338.mp3",
+      "spokenText": "Our puppet is pretending to feel calm. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our puppet is pretending to feel happy. You found its feeling word!",
+      "file": "llj-4623bf171d852ada958dceb3.mp3",
+      "spokenText": "Our puppet is pretending to feel happy. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our puppet is pretending to feel mad. You found its feeling word!",
+      "file": "llj-d7c8f325d168f76e2cb35743.mp3",
+      "spokenText": "Our puppet is pretending to feel mad. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our puppet is pretending to feel sad. You found its feeling word!",
+      "file": "llj-006055ea7068b2fc49609bc5.mp3",
+      "spokenText": "Our puppet is pretending to feel sad. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our puppet is pretending to feel surprised. You found its feeling word!",
+      "file": "llj-b960fe9bc6c315996177a4f7.mp3",
+      "spokenText": "Our puppet is pretending to feel surprised. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our puppet is pretending to feel worried. You found its feeling word!",
+      "file": "llj-dbcae6ed5dd62e2d79ce6ec3.mp3",
+      "spokenText": "Our puppet is pretending to feel worried. You found its feeling word!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Out in center field stood Vincent Velociraptor. Vincent was quick. Vincent was clever. Vincent could run, run, run! He chased fly balls with speedy feet. “Baseball is fun,” Vincent called. “Come try with us, Trey!”",
@@ -27866,6 +28010,54 @@
       "category": "shapes"
     },
     {
+      "text": "This feeling word is calm.",
+      "file": "llj-aa1ee2544781492d8d59d6b4.mp3",
+      "spokenText": "This feeling word is calm.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This feeling word is happy.",
+      "file": "llj-4a4b8c7ccea1d12c062524de.mp3",
+      "spokenText": "This feeling word is happy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This feeling word is mad.",
+      "file": "llj-cd201f920f0dfe041ab21285.mp3",
+      "spokenText": "This feeling word is mad.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This feeling word is sad.",
+      "file": "llj-4b9b8f74ba8e2d7dfca18dd3.mp3",
+      "spokenText": "This feeling word is sad.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This feeling word is surprised.",
+      "file": "llj-c4f85b5cd1361b670658f202.mp3",
+      "spokenText": "This feeling word is surprised.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This feeling word is worried.",
+      "file": "llj-3dbb5bd60dd2a15421a46046.mp3",
+      "spokenText": "This feeling word is worried.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "This is A. Find the letter that looks just like it.",
       "file": "llj-f0a093d7a67c0b014c98750c.mp3",
       "spokenText": "This is A. Find the letter that looks just like it.",
@@ -32608,6 +32800,294 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Happy, Mad. Tap the matching face and feeling word.",
+      "file": "llj-11f7e5fb8224065113be7950.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Happy, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Happy, Sad. Tap the matching face and feeling word.",
+      "file": "llj-9ac29fceebf850d7324378f6.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Happy, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Happy, Worried. Tap the matching face and feeling word.",
+      "file": "llj-b3a9b64bd3924d594d98b0f8.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Happy, Worried. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Mad, Happy. Tap the matching face and feeling word.",
+      "file": "llj-4b2eb22b45607f91fde266a8.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Mad, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Mad, Sad. Tap the matching face and feeling word.",
+      "file": "llj-061c1d7233c9d263694aebab.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Mad, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Sad, Happy. Tap the matching face and feeling word.",
+      "file": "llj-256f80425be7d5f3ec93ebb7.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Sad, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Sad, Mad. Tap the matching face and feeling word.",
+      "file": "llj-9c661905e0bfdeb3cc55d938.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Sad, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Calm, Worried, Happy. Tap the matching face and feeling word.",
+      "file": "llj-3d84b4bbec7cd1fbcaee7e11.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Calm, Worried, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Calm, Mad. Tap the matching face and feeling word.",
+      "file": "llj-5a7688378037a0eace8cb9b6.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Calm, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Calm, Sad. Tap the matching face and feeling word.",
+      "file": "llj-49d46d805def579543c9bb7b.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Calm, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Calm, Worried. Tap the matching face and feeling word.",
+      "file": "llj-73fc61e61eac751925e859c0.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Calm, Worried. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Mad, Calm. Tap the matching face and feeling word.",
+      "file": "llj-51b504352c1b38aaaaf201a3.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Mad, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Mad, Sad. Tap the matching face and feeling word.",
+      "file": "llj-db3c6413c9a66bea65c781a6.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Mad, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Sad, Calm. Tap the matching face and feeling word.",
+      "file": "llj-53baf551b3034a6e1b7b7faf.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Sad, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Sad, Mad. Tap the matching face and feeling word.",
+      "file": "llj-7b277adc3b154ad45f53a5fc.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Sad, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Happy, Worried, Calm. Tap the matching face and feeling word.",
+      "file": "llj-b7499d7372640a8026a0d3d5.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Happy, Worried, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Calm, Happy. Tap the matching face and feeling word.",
+      "file": "llj-97682ed5e9fb5ede13598ebd.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Calm, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Calm, Sad. Tap the matching face and feeling word.",
+      "file": "llj-bf215fb4e3d2eac99b7fcaf4.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Calm, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Happy, Calm. Tap the matching face and feeling word.",
+      "file": "llj-d35e6e35bb07a574f495ea05.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Happy, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Happy, Sad. Tap the matching face and feeling word.",
+      "file": "llj-abe639ed1d6410a728cb76c2.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Happy, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Sad, Calm. Tap the matching face and feeling word.",
+      "file": "llj-72d5d18900c49f740c814d2a.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Sad, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Mad, Sad, Happy. Tap the matching face and feeling word.",
+      "file": "llj-18ec30d7b79444714be91dc4.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Mad, Sad, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Calm, Happy. Tap the matching face and feeling word.",
+      "file": "llj-73c71e48124c724019401faa.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Calm, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Calm, Mad. Tap the matching face and feeling word.",
+      "file": "llj-a1ebe87eb9904d853096b925.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Calm, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Happy, Calm. Tap the matching face and feeling word.",
+      "file": "llj-9bd2313fdb9062f93b6b74ce.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Happy, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Happy, Mad. Tap the matching face and feeling word.",
+      "file": "llj-1c55fc36fc3ee0de6e6a35ec.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Happy, Mad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Mad, Calm. Tap the matching face and feeling word.",
+      "file": "llj-4703642df1c930e0ac596530.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Mad, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Mad, Happy. Tap the matching face and feeling word.",
+      "file": "llj-4221c7f8dbbd495f060c4585.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Mad, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Surprised, Worried. Tap the matching face and feeling word.",
+      "file": "llj-9bc033248b53ae5b7af9034a.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Surprised, Worried. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Sad, Worried, Surprised. Tap the matching face and feeling word.",
+      "file": "llj-59fad20ceac66bda97b29c68.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Sad, Worried, Surprised. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Surprised, Sad, Worried. Tap the matching face and feeling word.",
+      "file": "llj-67ed108244fc91c3c7855d20.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Surprised, Sad, Worried. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Surprised, Worried, Sad. Tap the matching face and feeling word.",
+      "file": "llj-f2d5508cdf0e9f14ed745db9.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Surprised, Worried, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Worried, Calm, Happy. Tap the matching face and feeling word.",
+      "file": "llj-aa7161a0aab4c27958cdeea8.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Worried, Calm, Happy. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Worried, Happy, Calm. Tap the matching face and feeling word.",
+      "file": "llj-3a1f40d0c587e26440a9042d.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Worried, Happy, Calm. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Worried, Sad, Surprised. Tap the matching face and feeling word.",
+      "file": "llj-e36222dcf7241aa9f39443cd.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Worried, Sad, Surprised. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which feeling is our puppet pretending? Worried, Surprised, Sad. Tap the matching face and feeling word.",
+      "file": "llj-22a138c7c5145ab216ee8193.mp3",
+      "spokenText": "Which feeling is our puppet pretending? Worried, Surprised, Sad. Tap the matching face and feeling word.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Which flower would you like to grow? Pick your favorite!",

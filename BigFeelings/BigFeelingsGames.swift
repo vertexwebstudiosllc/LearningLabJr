@@ -11,96 +11,11 @@ private struct BFNote: View {
 }
 
 private enum BFFeeling: Int, CaseIterable, Identifiable {
-    case happy, sad, cross, worried, calm, unsure
+    case happy, sad, mad, worried, calm, unsure
     var id: Int { rawValue }
-    var name: String { ["Happy", "Sad", "Cross", "Worried", "Calm", "Not sure"][rawValue] }
+    var name: String { ["Happy", "Sad", "Mad", "Worried", "Calm", "Not sure"][rawValue] }
     var symbol: String { ["sun.max.fill", "cloud.rain.fill", "cloud.bolt.fill", "cloud.fill", "cloud.sun.fill", "questionmark.bubble.fill"][rawValue] }
     var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
-}
-
-private struct BFFace: View {
-    var eyes = 0
-    var brows = 0
-    var mouth = 0
-    var size: CGFloat = 180
-    private var description: String {
-        let eyeWords = eyes == 0 ? "open eyes" : "closed eyes"
-        let browWords = ["level eyebrows", "eyebrows tilted up in the middle", "eyebrows tilted down in the middle"][brows]
-        let mouthWords = ["an upward-curved mouth", "a downward-curved mouth", "an open round mouth"][mouth]
-        return "\(eyeWords), \(browWords), and \(mouthWords)"
-    }
-    var body: some View {
-        ZStack {
-            Circle().fill(Color(red: 1, green: 0.81, blue: 0.48).gradient)
-            HStack(spacing: size * 0.22) {
-                ForEach(0..<2, id: \.self) { side in
-                    VStack(spacing: size * 0.07) {
-                        Capsule().fill(.brown).frame(width: size * 0.15, height: 5)
-                            .rotationEffect(.degrees(brows == 0 ? 0 : Double(side == 0 ? 1 : -1) * (brows == 1 ? -20 : 20)))
-                        if eyes == 0 { Ellipse().fill(.brown).frame(width: size * 0.075, height: size * 0.1) }
-                        else { Capsule().fill(.brown).frame(width: size * 0.1, height: 5).frame(height: size * 0.1) }
-                    }
-                }
-            }.offset(y: -size * 0.16)
-            if mouth == 2 {
-                Ellipse().stroke(.brown, lineWidth: 5).frame(width: size * 0.15, height: size * 0.21).offset(y: size * 0.2)
-            } else {
-                Path { path in
-                    path.move(to: CGPoint(x: size * 0.3, y: size * 0.65))
-                    path.addQuadCurve(to: CGPoint(x: size * 0.7, y: size * 0.65), control: CGPoint(x: size * 0.5, y: size * (mouth == 0 ? 0.88 : 0.47)))
-                }.stroke(.brown, style: StrokeStyle(lineWidth: 5, lineCap: .round))
-            }
-        }.frame(width: size, height: size)
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Your face puppet")
-            .accessibilityValue(description)
-    }
-}
-
-struct FunnyFaceStudioGame: View {
-    let onReplay: () -> Void
-    @State private var eyes = 0
-    @State private var brows = 0
-    @State private var mouth = 0
-    @State private var naming = false
-    @State private var portraits: [BFFeeling] = []
-    @State private var note = "Make a face puppet. Then give your puppet a feeling word."
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "Funny Face Studio", prompt: portraits.count == 3 ? "You made and named three face puppets!" : naming ? "How might your puppet feel? Any choice is welcome." : "Tap the face parts to change your puppet. Can you copy its expression?", accent: .pink, completion: portraits.count == 3, onReplay: onReplay) {
-            BFFace(eyes: eyes, brows: brows, mouth: mouth)
-            if naming {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 118))], spacing: 12) {
-                    ForEach(BFFeeling.allCases) { feeling in
-                        ToddlerActionButton(title: feeling.name, systemImage: feeling.symbol, color: feeling.color) {
-                            guard naming, portraits.count < 3 else { return }
-                            portraits.append(feeling)
-                            note = "You chose \(feeling.name.lowercased()). People can show feelings in different ways."
-                            naming = false
-                            narrator.speak(note)
-                        }
-                    }
-                }
-            } else {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
-                    ToddlerActionButton(title: "Eyes", systemImage: "eye", color: .purple) { eyes = (eyes + 1) % 2; narrator.speak(eyes == 0 ? "Open eyes." : "Closed eyes.") }
-                        .accessibilityValue(eyes == 0 ? "Open" : "Closed")
-                    ToddlerActionButton(title: "Brows", color: .purple) { brows = (brows + 1) % 3; narrator.speak(["Level eyebrows.", "Eyebrows tilt up in the middle.", "Eyebrows tilt down in the middle."][brows]) }
-                        .accessibilityValue(["Level", "Tilted up in the middle", "Tilted down in the middle"][brows])
-                    ToddlerActionButton(title: "Mouth", color: .purple) { mouth = (mouth + 1) % 3; narrator.speak(["Mouth curves upward.", "Mouth curves downward.", "Open, round mouth."][mouth]) }
-                        .accessibilityValue(["Curved upward", "Curved downward", "Open and round"][mouth])
-                }
-                ToddlerActionButton(title: "Name my puppet's feeling", systemImage: "bubble.left.fill", color: .pink) { naming = true }
-            }
-            HStack {
-                ForEach(Array(portraits.enumerated()), id: \.offset) { _, feeling in
-                    Label(feeling.name, systemImage: feeling.symbol).font(.caption.bold()).foregroundStyle(feeling.color)
-                }
-            }.frame(minHeight: 32)
-            Text("\(portraits.count) of 3 puppets").font(.headline)
-            BFNote(text: note)
-        }
-    }
 }
 
 struct FlowerBreathsGame: View {

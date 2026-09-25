@@ -9,6 +9,62 @@ final class ActivitySmokeTests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
     @MainActor
+    func testFunnyFaceCopyIdentifyAllSixAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Funny Face Studio"]
+        try tap(card)
+        func current() throws -> String {
+            let face = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'studio.target.'")).firstMatch
+            XCTAssertTrue(face.waitForExistence(timeout: 5))
+            return String(face.identifier.dropFirst("studio.target.".count))
+        }
+        var seen = Set<String>()
+        let first = try current()
+        var last = ""
+        for round in 1...6 {
+            let target = try current(); last = target
+            XCTAssertTrue(seen.insert(target).inserted)
+            XCTAssertEqual(app.staticTexts["studio.progress"].label, "Face \(round) of 6")
+            XCTAssertFalse(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'studio.choice.'")).firstMatch.exists)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Studio \(target)"; shot.lifetime = .keepAlways; add(shot)
+            try tap(app.buttons[round.isMultiple(of: 2) ? "studio.watched" : "studio.copied"])
+            let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'studio.choice.'"))
+            XCTAssertEqual(choices.count, 3)
+            XCTAssertFalse(app.buttons["Cross"].exists)
+            if target == "mad" {
+                let answers = XCTAttachment(screenshot: app.screenshot()); answers.name = "Studio Mad choices"; answers.lifetime = .keepAlways; add(answers)
+            }
+            for choice in choices.allElementsBoundByIndex {
+                let id = String(choice.identifier.dropFirst("studio.choice.".count))
+                try tap(app.buttons["studio.hear.\(id)"])
+            }
+            let wrong = try XCTUnwrap(choices.allElementsBoundByIndex.first { $0.identifier != "studio.choice.\(target)" })
+            try tap(wrong)
+            XCTAssertTrue(app.staticTexts["studio.retry"].exists)
+            XCTAssertFalse(app.buttons["studio.next"].exists)
+            try tap(app.buttons["studio.choice.\(target)"])
+            XCTAssertEqual(app.staticTexts["studio.found"].label, target.capitalized)
+            try tap(app.buttons["studio.next"])
+        }
+        XCTAssertTrue(seen.contains("mad"))
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        let replay = try current(); XCTAssertNotEqual(replay, first); XCTAssertNotEqual(replay, last)
+        XCTAssertTrue(app.buttons["studio.copied"].exists)
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertNotEqual(try current(), replay)
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.My Feeling Weather"])
+        XCTAssertTrue(app.buttons["Mad"].exists); XCTAssertFalse(app.buttons["Cross"].exists)
+    }
+
+    @MainActor
     func testCozyNestTenProjectsAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {
