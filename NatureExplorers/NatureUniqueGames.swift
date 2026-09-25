@@ -1,33 +1,5 @@
 import SwiftUI
 
-struct OceanHelpersGame: View {
-    @State private var collected: Set<Int> = []
-    @StateObject private var narrator = GameNarrator()
-    private let pieces: [(String, String?, String, Bool)] = [
-        ("Sea turtle", "turtle", "leaf.fill", false), ("Plastic bottle", nil, "waterbottle.fill", true),
-        ("Paper bag", nil, "bag.fill", true), ("Dolphin", "dolphin", "leaf.fill", false),
-        ("Crab", "crab", "leaf.fill", false), ("Empty can", nil, "cylinder.fill", true)
-    ]
-    var body: some View {
-        ToddlerGameScaffold(title: "Ocean Helpers", prompt: collected.count == 3 ? "The ocean is clear. The animals can stay in their home!" : "Tap the litter to put it in the bin. Leave the sea animals swimming.", accent: .blue, completion: collected.count == 3, onReplay: { collected = [] }) {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 14) {
-                ForEach(pieces.indices, id: \.self) { index in
-                    if collected.contains(index) {
-                        Image(systemName: "water.waves").font(.largeTitle).foregroundStyle(.blue.opacity(0.35))
-                            .frame(maxWidth: .infinity, minHeight: 148).accessibilityLabel("Clear water")
-                    } else {
-                        NaturePictureButton(title: pieces[index].0, asset: pieces[index].1, symbol: pieces[index].2) {
-                            if pieces[index].3 { collected.insert(index) }
-                            else { narrator.speak("The \(pieces[index].0.lowercased()) belongs in the ocean. Look for litter.") }
-                        }
-                    }
-                }
-            }
-            Label("\(collected.count) pieces in the bin", systemImage: "trash.fill").font(.headline).foregroundStyle(.blue)
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct WeatherWindowGame: View {
     @State private var weather = 0
     @State private var observation = ""

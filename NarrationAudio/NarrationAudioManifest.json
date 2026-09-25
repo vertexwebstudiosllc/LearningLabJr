@@ -8994,6 +8994,14 @@
       "category": "nature"
     },
     {
+      "text": "Choose an ocean friend. Who would you like to help today?",
+      "file": "llj-d9ae1390df40d9fa87157893.mp3",
+      "spokenText": "Choose an ocean friend. Who would you like to help today?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Choose the thing in your sentence.",
       "file": "llj-39336479eea4a3e6815d9a7e.mp3",
       "spokenText": "Choose the thing in your sentence.",
@@ -9442,6 +9450,14 @@
       "category": "feelings"
     },
     {
+      "text": "Crab! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-2df4f981286e2cce6ed8c4d4.mp3",
+      "spokenText": "Crab! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "D is for dog.",
       "file": "llj-a99fe653361c5b56ed0cc478.mp3",
       "spokenText": "D is for dog.",
@@ -9597,6 +9613,14 @@
       "text": "Dog! Woof, woof! Some dogs help farmers look after sheep.",
       "file": "llj-5efb3c864f111b5888fda621.mp3",
       "spokenText": "Dog! Woof, woof! Some dogs help farmers look after sheep.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Dolphin! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-c0fabb670ed2d38a73675e19.mp3",
+      "spokenText": "Dolphin! Let's help our ocean friend clean ten places. Ready to begin?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -11474,6 +11498,14 @@
       "category": "counting"
     },
     {
+      "text": "Find the trash and tap to put it in the bin. Leave the ocean animals in their home.",
+      "file": "llj-d033b88860c51ec187d7fb02.mp3",
+      "spokenText": "Find the trash and tap to put it in the bin. Leave the ocean animals in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Find the turtles. Touch each turtle once. Let's count together.",
       "file": "llj-3f3f03fe98b830f8db72aaf3.mp3",
       "spokenText": "Find the turtles. Touch each turtle once. Let's count together.",
@@ -11661,6 +11693,54 @@
       "text": "First choose a grown-up animal.",
       "file": "llj-14f6b22469caa1a05723d5fe.mp3",
       "spokenText": "First choose a grown-up animal.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each discarded cup that matches the picture. Then we will collect the other trash.",
+      "file": "llj-12cf92dcac85bafe3d624ade.mp3",
+      "spokenText": "First, find each discarded cup that matches the picture. Then we will collect the other trash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each empty can that matches the picture. Then we will collect the other trash.",
+      "file": "llj-dc546329e492a3eca7942e2e.mp3",
+      "spokenText": "First, find each empty can that matches the picture. Then we will collect the other trash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each empty carton that matches the picture. Then we will collect the other trash.",
+      "file": "llj-43d68f8a250121ec85b06b11.mp3",
+      "spokenText": "First, find each empty carton that matches the picture. Then we will collect the other trash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each plastic bag that matches the picture. Then we will collect the other trash.",
+      "file": "llj-f096be56b880cf24946dd90b.mp3",
+      "spokenText": "First, find each plastic bag that matches the picture. Then we will collect the other trash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each plastic bottle that matches the picture. Then we will collect the other trash.",
+      "file": "llj-4c7039eec59ed177c3869e8f.mp3",
+      "spokenText": "First, find each plastic bottle that matches the picture. Then we will collect the other trash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "First, find each snack wrapper that matches the picture. Then we will collect the other trash.",
+      "file": "llj-81a8dcf25a66e2a57ba0dcae.mp3",
+      "spokenText": "First, find each snack wrapper that matches the picture. Then we will collect the other trash.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -12533,6 +12613,14 @@
       "text": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
       "file": "llj-e089122f05c337bb915ada3d.mp3",
       "spokenText": "Great exploring! Mars is a planet, and rovers are robot explorers. Give our pretend rover a happy beep!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Great sorting! Now collect the rest of the trash. Leave the animals swimming.",
+      "file": "llj-ca0bb77abf93d1b9cbe3ee4e.mp3",
+      "spokenText": "Great sorting! Now collect the rest of the trash. Leave the animals swimming.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -13474,6 +13562,14 @@
       "category": "literacy"
     },
     {
+      "text": "Jellyfish! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-90f4c470648df328674fe71b.mp3",
+      "spokenText": "Jellyfish! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Jupiter has a huge storm called the Great Red Spot. Can you find the spot on our planet picture?",
       "file": "llj-d39a172b1993eea1030fcf5d.mp3",
       "spokenText": "Jupiter has a huge storm called the Great Red Spot. Can you find the spot on our planet picture?",
@@ -14314,6 +14410,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's collect matching pairs of trash. Tap one piece, then tap another just like it.",
+      "file": "llj-c83bbb040d1c1c89ecc2c113.mp3",
+      "spokenText": "Let's collect matching pairs of trash. Tap one piece, then tap another just like it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let's count each row. Which has more oranges?",
       "file": "llj-ece9c0ab1ae996e749778d41.mp3",
       "spokenText": "Let's count each row. Which has more oranges?",
@@ -14424,6 +14528,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Let's find the trash that matches our picture first.",
+      "file": "llj-dbbbeb7d11cd87d8e20fe85b.mp3",
+      "spokenText": "Let's find the trash that matches our picture first.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's grow inside! Choose a pot with holes underneath so extra water can drain away.",
@@ -17402,6 +17514,14 @@
       "category": "literacy"
     },
     {
+      "text": "Lobster! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-cfd930a8c120b0cb255e56ee.mp3",
+      "spokenText": "Lobster! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Long ago, space rocks bumped into the Moon and made many craters. Make a little circle with your finger.",
       "file": "llj-4e8209cdc99eb6c2a57c74cc.mp3",
       "spokenText": "Long ago, space rocks bumped into the Moon and made many craters. Make a little circle with your finger.",
@@ -18544,6 +18664,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Octopus! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-3f2dafb3893929588dac9219.mp3",
+      "spokenText": "Octopus! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "On the ice stood Milo Mammoth. Big feet. Warm fur. Kind eyes. Milo pushed the puck with a gentle tap. “Come on, Trey,” he called. “Hockey starts with one brave glide.”",
@@ -23650,6 +23778,22 @@
       "category": "literacy"
     },
     {
+      "text": "Seahorse! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-dd3172565a814f38225154fb.mp3",
+      "spokenText": "Seahorse! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Seal! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-99306dc1ea2f56bb3451a5bf.mp3",
+      "spokenText": "Seal! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Set the pot by a sunny window. Light helps our plant grow.",
       "file": "llj-fc23c062383abb361c51ae8a.mp3",
       "spokenText": "Set the pot by a sunny window. Light helps our plant grow.",
@@ -23664,6 +23808,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Shark! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-8a10e35ca5b7de8d8e3dbe59.mp3",
+      "spokenText": "Shark! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Sheep! Baa, baa! A sheep has a woolly coat.",
@@ -23810,12 +23962,28 @@
       "category": "shapes"
     },
     {
+      "text": "Squid! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-4457b36be93e7668e8973b12.mp3",
+      "spokenText": "Squid! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Star continues the pattern. Choo choo!",
       "file": "llj-ba626348f2420ffe4312c9d6.mp3",
       "spokenText": "Star continues the pattern. Choo choo!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Starfish! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-372cc2e2ff456551c79db101.mp3",
+      "spokenText": "Starfish! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Start at the bottom. Tap the next footprint on the same colored trail.",
@@ -23837,6 +24005,14 @@
       "text": "Stegosaurus",
       "file": "llj-e7b15cd4483bb961be300270.mp3",
       "spokenText": "Stegosaurus",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Stingray! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-faddd7049dd27a8f3a5be6c9.mp3",
+      "spokenText": "Stingray! Let's help our ocean friend clean ten places. Ready to begin?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -23869,6 +24045,14 @@
       "text": "Sunshine. Tap the window to explore.",
       "file": "llj-fb3780fa55bbeafc79ac7410.mp3",
       "spokenText": "Sunshine. Tap the window to explore.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Swordfish! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-32eb8258acea9245768cc96d.mp3",
+      "spokenText": "Swordfish! Let's help our ocean friend clean ten places. Ready to begin?",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -24248,6 +24432,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "That is an ocean animal. Let it stay in its home. Look for trash instead.",
+      "file": "llj-b2638530a2212e0a2ebfd6aa.mp3",
+      "spokenText": "That is an ocean animal. Let it stay in its home. Look for trash instead.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "That is the apple. Look for the bunny.",
@@ -24848,6 +25040,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The last place is clean! Let's celebrate with our ocean friend.",
+      "file": "llj-462296df4a20d77230269c36.mp3",
+      "spokenText": "The last place is clean! Let's celebrate with our ocean friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "The mountain peak has a triangle shape.",
@@ -25986,6 +26186,14 @@
       "category": "nature"
     },
     {
+      "text": "This place is clean! The animals can stay. Let's help in the next place.",
+      "file": "llj-2ba7a19ef2f3fa90463b2ee1.mp3",
+      "spokenText": "This place is clean! The animals can stay. Let's help in the next place.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "This plate has enough. Find a plate that needs more.",
       "file": "llj-9bfc485a52604ced8188f5cc.mp3",
       "spokenText": "This plate has enough. Find a plate that needs more.",
@@ -26093,6 +26301,14 @@
       "text": "Those fluffy white shapes remind us of clouds. Earth has air around it. Take a gentle breath with me.",
       "file": "llj-8b8235534f5f71bc43a29332.mp3",
       "spokenText": "Those fluffy white shapes remind us of clouds. Earth has air around it. Take a gentle breath with me.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Those pieces are different. Look for another piece like the one with the bright ring.",
+      "file": "llj-58f9951fc7e437e9b25bdce5.mp3",
+      "spokenText": "Those pieces are different. Look for another piece like the one with the bright ring.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -29562,6 +29778,14 @@
       "category": "nature"
     },
     {
+      "text": "Whale! Let's help our ocean friend clean ten places. Ready to begin?",
+      "file": "llj-03307849b124cbc4fb0623b5.mp3",
+      "spokenText": "Whale! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "What a colorful bubble adventure! You found colors and shapes together!",
       "file": "llj-eaeb6cb747726e33927909b4.mp3",
       "spokenText": "What a colorful bubble adventure! You found colors and shapes together!",
@@ -32842,12 +33066,36 @@
       "category": "shapes"
     },
     {
+      "text": "You found a discarded cup. Find another one just like it to collect the pair.",
+      "file": "llj-06957fb8302634a429e43350.mp3",
+      "spokenText": "You found a discarded cup. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found a green leaf!",
       "file": "llj-f57cc45f1edceb102c7d9609.mp3",
       "spokenText": "You found a green leaf!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You found a plastic bag. Find another one just like it to collect the pair.",
+      "file": "llj-623032ca89cf8b5b14323d98.mp3",
+      "spokenText": "You found a plastic bag. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found a plastic bottle. Find another one just like it to collect the pair.",
+      "file": "llj-a64a89be159a8af46680916e.mp3",
+      "spokenText": "You found a plastic bottle. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You found a purple moon!",
@@ -32864,6 +33112,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You found a snack wrapper. Find another one just like it to collect the pair.",
+      "file": "llj-af9e8f944d6260ff1a196bb0.mp3",
+      "spokenText": "You found a snack wrapper. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You found a yellow sun!",
@@ -33090,6 +33346,22 @@
       "category": "shapes"
     },
     {
+      "text": "You found an empty can. Find another one just like it to collect the pair.",
+      "file": "llj-a4f1da9fbe05d2c6c89f9599.mp3",
+      "spokenText": "You found an empty can. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You found an empty carton. Find another one just like it to collect the pair.",
+      "file": "llj-65a355586f71659a230a4c3d.mp3",
+      "spokenText": "You found an empty carton. Find another one just like it to collect the pair.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "You found an orange carrot!",
       "file": "llj-e2fd8290a213405cbb0f126d.mp3",
       "spokenText": "You found an orange carrot!",
@@ -33272,6 +33544,110 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You helped the crab clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-7ca757fdd4774c427ae37efd.mp3",
+      "spokenText": "You helped the crab clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the dolphin clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-8d1fc7e31d32b72a048de2de.mp3",
+      "spokenText": "You helped the dolphin clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the jellyfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-fb8009c9ccac60b8379817f9.mp3",
+      "spokenText": "You helped the jellyfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the lobster clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-d1cff35d4d4661bd3479604e.mp3",
+      "spokenText": "You helped the lobster clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the octopus clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-5c50d459afbd7809bf814af0.mp3",
+      "spokenText": "You helped the octopus clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the seahorse clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-0c9ec50443c77e7b2bd0eb42.mp3",
+      "spokenText": "You helped the seahorse clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the seal clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-b06e1d8c5b97ee62123bf13b.mp3",
+      "spokenText": "You helped the seal clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the shark clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-2ba223f8875a45b7838e4231.mp3",
+      "spokenText": "You helped the shark clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the squid clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-0f4008b36c8b99b0843354bd.mp3",
+      "spokenText": "You helped the squid clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the starfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-471f84f3125b8085138b293e.mp3",
+      "spokenText": "You helped the starfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the stingray clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-d2758fe1a71c5090e6187bfc.mp3",
+      "spokenText": "You helped the stingray clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the swordfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-85d167c2b6b79368a82ddd16.mp3",
+      "spokenText": "You helped the swordfish clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You helped the whale clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "file": "llj-887960935fbc673bcbe35878.mp3",
+      "spokenText": "You helped the whale clean all ten places! Trash belongs in a bin. Ocean animals belong in their home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "You helped two friends tell a story!",

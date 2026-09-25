@@ -104,6 +104,68 @@ final class ActivitySmokeTests: XCTestCase {
     @MainActor func testShapesRoutes() async throws { try await checkCategory("Shapes & Colors") }
     @MainActor func testCountingRoutes() async throws { try await checkCategory("123s & Counting") }
     @MainActor
+    func testOceanCleanupTenRoundsAndNewBuddies() async throws {
+        let app = try await launch()
+        let category = app.buttons["category.Nature Explorers"]
+        try reveal(category, in: app); category.tap()
+        let card = app.buttons["activity-card.Ocean Helpers"]
+        try reveal(card, in: app); card.tap()
+        func ids(_ prefix: String) -> [String] {
+            app.buttons.allElementsBoundByIndex.map(\.identifier).filter { $0.hasPrefix(prefix) }
+        }
+        let choices = ids("ocean.buddy.")
+        XCTAssertEqual(choices.count, 6)
+        let buddy = app.buttons[choices[0]]; try reveal(buddy, in: app); buddy.tap()
+        let hero = String(choices[0].dropFirst("ocean.buddy.".count))
+        let start = app.buttons["ocean.begin"]; try reveal(start, in: app); start.tap()
+        for round in 1...10 {
+            XCTAssertEqual(app.staticTexts["ocean.round"].label, "Round \(round) of 10")
+            XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "ocean.hero.\(hero)").firstMatch.exists)
+            let animalID = try XCTUnwrap(ids("ocean.piece.animal.").first)
+            let animal = app.buttons[animalID]; try reveal(animal, in: app); animal.tap()
+            XCTAssertTrue(app.staticTexts["That is an ocean animal. Let it stay in its home. Look for trash instead."].exists)
+            XCTAssertTrue(animal.exists)
+            let next = app.buttons["ocean.next"]
+            XCTAssertFalse(next.exists)
+            let trash = ids("ocean.piece.trash.")
+            let target = app.descendants(matching: .any).allElementsBoundByIndex.map(\.identifier).first { $0.hasPrefix("ocean.target.") }
+            var ordered = trash
+            if let target {
+                let kind = String(target.dropFirst("ocean.target.".count))
+                let wrongID = try XCTUnwrap(trash.first { !$0.hasPrefix("ocean.piece.trash.\(kind).") })
+                let wrong = app.buttons[wrongID]; try reveal(wrong, in: app); wrong.tap()
+                XCTAssertTrue(wrong.exists)
+                ordered = trash.sorted { ($0.hasPrefix("ocean.piece.trash.\(kind).") ? 0 : 1) < ($1.hasPrefix("ocean.piece.trash.\(kind).") ? 0 : 1) }
+            } else if (7...9).contains(round) {
+                ordered = trash.sorted()
+                let first = app.buttons[ordered[0]]; try reveal(first, in: app); first.tap()
+                let kind = ordered[0].split(separator: ".")[3]
+                let wrongID = try XCTUnwrap(trash.first { $0.split(separator: ".")[3] != kind })
+                let wrong = app.buttons[wrongID]; try reveal(wrong, in: app); wrong.tap()
+                XCTAssertTrue(first.exists); XCTAssertTrue(wrong.exists)
+                try reveal(first, in: app); first.tap() // Deselect and solve in pairs.
+            }
+            for id in ordered { let piece = app.buttons[id]; try reveal(piece, in: app); piece.tap() }
+            XCTAssertTrue(next.waitForExistence(timeout: 5))
+            XCTAssertEqual(ids("ocean.piece.trash.").count, 0)
+            if [1, 4, 7, 10].contains(round) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Ocean cleanup round \(round)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try reveal(next, in: app)
+            if next.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(next, in: app); next.tap()
+        }
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "ocean.complete").firstMatch.waitForExistence(timeout: 5))
+        let replay = app.buttons["ocean.replay"]; try reveal(replay, in: app); replay.tap()
+        let second = ids("ocean.buddy.")
+        XCTAssertEqual(second.count, 6); XCTAssertTrue(Set(choices).isDisjoint(with: second))
+        app.navigationBars.buttons.firstMatch.tap()
+        try reveal(card, in: app); card.tap()
+        let third = ids("ocean.buddy.")
+        XCTAssertEqual(third.count, 6); XCTAssertTrue(Set(second).isDisjoint(with: third))
+    }
+
+    @MainActor
     func testLittleGardenIndoorAndOutdoorBloom() async throws {
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]

@@ -6,6 +6,108 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testOceanCleanupRotationPuzzlesPersistenceAndRuth() throws {
+        XCTAssertEqual(OceanBuddy.bank.count, 13)
+        var previous: [String] = []
+        var layouts: Set<String> = []
+        for _ in 0..<100 {
+            var play = OceanCleanupPlay(previousChoices: previous)
+            XCTAssertEqual(play.choices.count, 6)
+            XCTAssertEqual(Set(play.choices.map(\.id)).count, 6)
+            XCTAssertTrue(Set(previous).isDisjoint(with: play.choices.map(\.id)))
+            previous = play.choices.map(\.id)
+            play.begin(); play.next(); XCTAssertFalse(play.started)
+            XCTAssertFalse(play.pick(-1))
+            let hero = play.choices[0]
+            play.choose(hero); play.choose(play.choices[1]); XCTAssertEqual(play.hero, hero)
+            XCTAssertEqual(play.rounds.count, 10)
+            XCTAssertEqual(Set(play.rounds.map(\.name)).count, 10)
+            layouts.insert(play.rounds.map { $0.pieces.map { $0.name }.joined(separator: ",") }.joined(separator: ";"))
+            play.begin()
+            var previousAnimals: Set<String> = []
+            var previousTarget: String?
+            var total = 0
+            for index in 0..<10 {
+                let round = try XCTUnwrap(play.current)
+                XCTAssertEqual(play.index, index)
+                XCTAssertEqual(round.pieces.count, index < 3 ? 6 : 9)
+                let animals = round.pieces.filter { $0.animal != nil }
+                let animalIDs = Set(animals.compactMap { $0.animal?.id })
+                XCTAssertFalse(animalIDs.contains(hero.id))
+                XCTAssertTrue(previousAnimals.isDisjoint(with: animalIDs))
+                previousAnimals = animalIDs
+                play.next(); XCTAssertEqual(play.index, index)
+                for animal in animals { XCTAssertFalse(play.pick(animal.id)) }
+                XCTAssertTrue(play.collected.isEmpty)
+                XCTAssertEqual(play.prompt, OceanCleanupPlay.animalHint)
+                let trash = round.pieces.filter { $0.litter != nil }
+                if let target = round.target {
+                    XCTAssertNotEqual(target.id, previousTarget); previousTarget = target.id
+                    let other = try XCTUnwrap(trash.first { $0.litter != target })
+                    XCTAssertFalse(play.pick(other.id)); XCTAssertTrue(play.collected.isEmpty)
+                    for piece in trash where piece.litter == target { XCTAssertTrue(play.pick(piece.id)) }
+                    XCTAssertFalse(play.targetRemaining)
+                }
+                if round.kind == .pairs {
+                    let groups = Dictionary(grouping: trash, by: { $0.litter!.id })
+                    XCTAssertTrue(groups.values.allSatisfy { $0.count == 2 })
+                    let first = trash[0]
+                    XCTAssertFalse(play.pick(first.id)); XCTAssertEqual(play.selected, first.id)
+                    XCTAssertFalse(play.pick(first.id)); XCTAssertNil(play.selected)
+                    XCTAssertFalse(play.pick(first.id))
+                    let wrong = try XCTUnwrap(trash.first { $0.litter != first.litter })
+                    XCTAssertFalse(play.pick(wrong.id)); XCTAssertEqual(play.selected, first.id)
+                    XCTAssertTrue(play.collected.isEmpty)
+                    _ = play.pick(first.id) // Deselect before collecting each pair.
+                    for group in groups.values {
+                        XCTAssertFalse(play.pick(group[0].id))
+                        XCTAssertTrue(play.pick(group[1].id))
+                    }
+                } else {
+                    for piece in trash where !play.collected.contains(piece.id) { XCTAssertTrue(play.pick(piece.id)) }
+                }
+                XCTAssertTrue(play.solved)
+                XCTAssertEqual(play.collected, round.trashIDs)
+                total += trash.count
+                XCTAssertEqual(play.totalCollected, total)
+                XCTAssertFalse(play.pick(trash[0].id)); XCTAssertFalse(play.pick(-1))
+                play.next(); XCTAssertTrue(play.collected.isEmpty); XCTAssertNil(play.selected)
+            }
+            XCTAssertTrue(play.complete); XCTAssertNil(play.current)
+            play.next(); XCTAssertEqual(play.index, 10)
+        }
+        XCTAssertEqual(layouts.count, 100)
+        let suite = "OceanCleanupTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let session = OceanCleanupSession(defaults: defaults)
+        let first = Set(session.play.choices.map(\.id))
+        session.replay()
+        let second = Set(session.play.choices.map(\.id))
+        XCTAssertTrue(first.isDisjoint(with: second))
+        let reopened = OceanCleanupSession(defaults: defaults)
+        XCTAssertTrue(second.isDisjoint(with: reopened.play.choices.map(\.id)))
+        for text in OceanCleanupPlay.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+        }
+        for buddy in OceanBuddy.bank {
+            let image = try XCTUnwrap(UIImage(named: buddy.asset)?.cgImage, buddy.asset)
+            var pixels = [UInt8](repeating: 0, count: 32 * 32 * 4)
+            try pixels.withUnsafeMutableBytes { bytes in
+                let context = try XCTUnwrap(CGContext(data: bytes.baseAddress, width: 32, height: 32,
+                    bitsPerComponent: 8, bytesPerRow: 128, space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+                context.draw(image, in: CGRect(x: 0, y: 0, width: 32, height: 32))
+            }
+            let alpha = stride(from: 3, to: pixels.count, by: 4).map { pixels[$0] }
+            XCTAssertGreaterThan(alpha.filter { $0 < 10 }.count, 100, buddy.asset)
+            XCTAssertGreaterThan(alpha.filter { $0 > 240 }.count, 50, buddy.asset)
+            for corner in [0, 31, 992, 1023] { XCTAssertLessThan(alpha[corner], 10, buddy.asset) }
+        }
+    }
+
+    @MainActor
     func testLittleGardenChoicesGrowthBothPathsAndRuth() throws {
         XCTAssertEqual(GardenFlower.all.count, 4)
         XCTAssertEqual(Set(GardenFlower.all.map(\.id)).count, 4)
