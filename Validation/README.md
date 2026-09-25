@@ -112,3 +112,5 @@ Flower Breaths: `testFlowerBreathsEightGentleActivitiesAndRuth` checks all eight
 Teddy's Helping Hands: `testTeddyRescueDressCustomizeScenesAndRuth` covers 100 twelve-scene sessions, all equipment slots, input guards, character persistence, Ruth coverage, and artwork renders. `testTeddyRescueTwelveScenesCustomizationAndReplay` completes the entire rescue sequence, changes Teddy while dressed, and checks replay/reentry defaults.
 
 Roll It Together: `testTogetherSportsAllFriendsTurnsKindWordsAndRuth` covers all sports/friends, sharing phases, stale callbacks and Ruth coverage. UI tests `testTogetherSportsFullMatchFriendsReplayAndReentry` and `testTogetherSportsOtherCourtsPassBack` exercise six-turn completion, kind choices, all courts, navigation and replay.
+
+Wiggle, Slow, Stop: `testWiggleRandomCueTimingPauseAndNarration` and `testWiggleMusicTempoSilenceDuckingAndOwnership` validate automatic timing and real audio behavior. `testWiggleAutomaticCuesMusicPauseBackgroundAndReplay` checks all 18 cues, pause/background, music controls, completion and replay.

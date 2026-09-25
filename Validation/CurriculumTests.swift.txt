@@ -7,6 +7,104 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testWiggleRandomCueTimingPauseAndNarration() throws {
+        var last = ""
+        var orders = Set<String>()
+        var durations: [WiggleCue: Set<Int>] = [:]
+        for _ in 0..<200 {
+            var play = WiggleMovementPlay(previousFirst: last)
+            XCTAssertEqual(play.beats.count, 18)
+            XCTAssertEqual(play.phase, .ready)
+            XCTAssertNotEqual(play.current.movement.id, last)
+            last = play.current.movement.id
+            orders.insert(play.beats.map { $0.movement.id + String($0.seconds) }.joined())
+            XCTAssertEqual(Set(play.beats.map { $0.movement.id }).count, 6)
+            let idle = play.token
+            play.elapsed(idle); play.resume(); play.pause(); XCTAssertEqual(play.index, 0)
+            play.start(); play.start(); XCTAssertEqual(play.phase, .playing)
+            for index in 0..<18 {
+                let beat = play.current
+                XCTAssertEqual(beat.cue, WiggleCue.allCases[index % 3])
+                XCTAssertTrue(beat.cue.seconds.contains(beat.seconds))
+                durations[beat.cue, default: []].insert(beat.seconds)
+                XCTAssertEqual(play.prompt, beat.prompt)
+                XCTAssertEqual(play.group, index / 3 + 1)
+                let stale = play.token
+                play.pause(); XCTAssertEqual(play.phase, .paused)
+                play.elapsed(stale); XCTAssertEqual(play.index, index)
+                play.resume(); XCTAssertEqual(play.phase, .playing)
+                XCTAssertNotEqual(play.token, stale)
+                play.elapsed(stale); play.elapsed(UUID()); XCTAssertEqual(play.index, index)
+                let current = play.token
+                play.elapsed(current); play.elapsed(current); XCTAssertEqual(play.index, index + 1)
+            }
+            XCTAssertEqual(play.phase, .complete)
+            play.start(); play.resume(); play.pause(); play.elapsed(play.token)
+            XCTAssertEqual(play.phase, .complete); XCTAssertEqual(play.index, 18)
+        }
+        XCTAssertGreaterThan(orders.count, 190)
+        for cue in WiggleCue.allCases { XCTAssertEqual(durations[cue], Set(cue.seconds)) }
+        for text in WiggleMovementPlay.narration {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth", text); XCTAssertEqual(clip.engine, "generative", text)
+        }
+        for movement in WiggleMovement.bank {
+            for cue in WiggleCue.allCases {
+                let url = try XCTUnwrap(NarrationAudioCatalog.shared.url(for: movement.prompt(cue)))
+                let audio = try AVAudioPlayer(contentsOf: url)
+                XCTAssertLessThan(audio.duration + 0.5, Double(cue.seconds.lowerBound), movement.prompt(cue))
+            }
+        }
+        for cue in WiggleCue.allCases {
+            let stage = ImageRenderer(content: WiggleMovementStage(cue: cue, moving: false, reduceMotion: true).frame(width: 330).background(.white))
+            let shot = XCTAttachment(image: try XCTUnwrap(stage.uiImage)); shot.name = "Movement cue \(cue.rawValue)"; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+
+    @MainActor
+    func testWiggleMusicTempoSilenceDuckingAndOwnership() async throws {
+        let manager = BackgroundMusicManager.shared
+        let first = UUID(), second = UUID()
+        defer {
+            manager.endMovementGame(owner: first); manager.endMovementGame(owner: second)
+            manager.setNarrating(false); manager.setEnabled(false); manager.setForeground(true)
+        }
+        manager.setForeground(true); manager.setEnabled(true); manager.setNarrating(false)
+        XCTAssertTrue(manager.isPlayingAmbientMusic)
+        manager.beginMovementGame(owner: first)
+        XCTAssertFalse(manager.isPlayingAmbientMusic); XCTAssertFalse(manager.isPlayingMovementMusic)
+        manager.setMovementGame(owner: first, cue: .wiggle, enabled: true)
+        XCTAssertTrue(manager.isPlayingMovementMusic); XCTAssertEqual(manager.movementPlaybackRate, 1)
+        manager.setMovementGame(owner: first, cue: .slow, enabled: true)
+        XCTAssertTrue(manager.isPlayingMovementMusic)
+        XCTAssertEqual(try XCTUnwrap(manager.movementPlaybackRate), 0.65, accuracy: 0.001)
+        manager.setNarrating(true)
+        try await Task.sleep(for: .milliseconds(300))
+        XCTAssertLessThanOrEqual(try XCTUnwrap(manager.playbackVolume), 0.04)
+        manager.setNarrating(false)
+        try await Task.sleep(for: .milliseconds(300))
+        XCTAssertEqual(try XCTUnwrap(manager.playbackVolume), 0.22, accuracy: 0.005)
+        manager.setMovementGame(owner: first, cue: .stop, enabled: true)
+        XCTAssertFalse(manager.isPlayingMovementMusic); XCTAssertFalse(manager.isPlayingAmbientMusic)
+        manager.setMovementGame(owner: first, cue: .wiggle, enabled: false)
+        XCTAssertFalse(manager.isPlayingMovementMusic)
+        manager.setMovementGame(owner: first, cue: .wiggle, enabled: true)
+        manager.setForeground(false); XCTAssertFalse(manager.isPlayingMovementMusic)
+        manager.setMovementGame(owner: first, cue: nil, enabled: true)
+        manager.setForeground(true); XCTAssertFalse(manager.isPlayingMovementMusic)
+        manager.endMovementGame(owner: first); XCTAssertTrue(manager.isPlayingAmbientMusic)
+        manager.setEnabled(false); manager.beginMovementGame(owner: second)
+        manager.setMovementGame(owner: second, cue: .wiggle, enabled: true)
+        XCTAssertTrue(manager.isPlayingMovementMusic)
+        manager.endMovementGame(owner: first)
+        manager.setMovementGame(owner: first, cue: .stop, enabled: true)
+        XCTAssertTrue(manager.isPlayingMovementMusic)
+        manager.endMovementGame(owner: second); XCTAssertFalse(manager.isPlayingAmbientMusic)
+        XCTAssertNil(manager.movementPlaybackRate)
+    }
+
+
+    @MainActor
     func testTogetherSportsAllFriendsTurnsKindWordsAndRuth() throws {
         XCTAssertEqual(TogetherSport.allCases.count, 6)
         XCTAssertEqual(TogetherFriend.bank.count, 8)

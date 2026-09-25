@@ -18,26 +18,6 @@ private enum BFFeeling: Int, CaseIterable, Identifiable {
     var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
 }
 
-struct WiggleSlowStopGame: View {
-    let onReplay: () -> Void
-    @State private var step = 0
-    private let prompts = ["Green: wiggle your fingers!", "Yellow: move your hands slowly.", "Red: rest your hands for a moment.", "Green: gently wiggle your toes!", "Yellow: make one slow stretch.", "Red: settle into a comfortable pause."]
-    private let labels = ["Wiggle", "Slow", "Stop"]
-    private let symbols = ["figure.flexibility", "tortoise.fill", "hand.raised.fill"]
-    private let colors: [Color] = [.green, .orange, .red]
-    private var cue: Int { min(step, 5) % 3 }
-    var body: some View {
-        ToddlerGameScaffold(title: "Wiggle, Slow, Stop", prompt: step == 6 ? "You practiced wiggling, slowing, and pausing together!" : prompts[min(step, 5)], accent: colors[cue], completion: step == 6, onReplay: onReplay) {
-            Image(systemName: symbols[cue]).font(.system(size: 95)).foregroundStyle(.white)
-                .frame(width: 190, height: 190).background(colors[cue], in: Circle())
-                .accessibilityLabel(labels[cue])
-            Text(labels[cue]).font(.system(size: 40, weight: .bold, design: .rounded))
-            ToddlerActionButton(title: step == 5 ? "We played together" : "Ready for the next move", systemImage: "arrow.right", color: colors[cue]) { if step < 6 { step += 1 } }
-            BFNote(text: "Follow your child's pace. Seated movements work, too. Your grown-up can model every move.")
-        }
-    }
-}
-
 struct FeelingWeatherGame: View {
     let onReplay: () -> Void
     @State private var feeling: BFFeeling?

@@ -9,6 +9,56 @@ final class ActivitySmokeTests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
 
+
+    @MainActor
+    func testWiggleAutomaticCuesMusicPauseBackgroundAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Wiggle, Slow, Stop"]
+        try tap(card)
+        XCTAssertEqual(app.buttons["wiggle.music"].value as? String, "On")
+        try tap(app.buttons["wiggle.start"])
+        XCTAssertTrue(app.staticTexts["wiggle.cue.0"].exists)
+        try tap(app.buttons["wiggle.pause"])
+        XCTAssertTrue(app.staticTexts["wiggle.paused"].exists)
+        XCTAssertFalse(app.staticTexts["wiggle.cue.1"].waitForExistence(timeout: 2))
+        try tap(app.buttons["wiggle.resume"])
+        XCTAssertTrue(app.staticTexts["wiggle.cue.0"].exists)
+        XCUIDevice.shared.press(.home)
+        app.activate()
+        XCTAssertTrue(app.buttons["wiggle.resume"].waitForExistence(timeout: 5))
+        try tap(app.buttons["wiggle.music"])
+        XCTAssertEqual(app.buttons["wiggle.music"].value as? String, "Off")
+        try tap(app.buttons["wiggle.resume"])
+        for index in 0..<18 {
+            let cue = app.staticTexts["wiggle.cue.\(index)"]
+            XCTAssertTrue(cue.waitForExistence(timeout: 15), "Missing automatic cue \(index)")
+            XCTAssertEqual(cue.label, ["Wiggle", "Slow", "Stop"][index % 3])
+            XCTAssertEqual(app.staticTexts["wiggle.progress"].label, "Movement \(index / 3 + 1) of 6")
+            if index < 3 {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Automatic movement \(index)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            if index == 3 {
+                try tap(app.buttons["wiggle.music"])
+                XCTAssertEqual(app.buttons["wiggle.music"].value as? String, "On")
+            }
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 10))
+        try tap(app.buttons["Play again"])
+        XCTAssertTrue(app.buttons["wiggle.start"].exists)
+        XCTAssertFalse(app.buttons["wiggle.pause"].exists)
+        try tap(app.buttons["wiggle.start"])
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(card)
+        XCTAssertTrue(app.buttons["wiggle.start"].exists)
+        XCTAssertFalse(app.staticTexts["wiggle.cue.1"].exists)
+    }
+
     @MainActor
     func testTogetherSportsFullMatchFriendsReplayAndReentry() async throws {
         let app = try await launch()
