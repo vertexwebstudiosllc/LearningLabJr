@@ -1,0 +1,707 @@
+[
+  {
+    "text": "Choose a path for Teddy. We can practice little steps together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is a step for another moment. Listen to what comes next in Teddy's plan.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Try the glowing spot. We can take one little step at a time.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A pause is okay. You can choose a different path or try this one another time.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bedtime",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy get ready for a cozy bedtime.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is ready to rest. You practiced a bedtime path!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bathroom time",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Practice a pretend bathroom visit with grown-up help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You practiced asking for help and a gentle bathroom routine.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A rainy day",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy get ready for a rainy walk.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is ready for the rain with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A snowy day",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy dress for a snowy outing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is dressed for a snowy outing with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A beach day",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy get ready for a beach day with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is ready for a beach day, with shade and a grown-up nearby.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Good morning",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy start a brand-new day.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is ready for a new day. Good morning!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A little picnic",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy get ready for a picnic and tidy up afterward.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You planned a picnic and cared for the shared space.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Coming home",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy settle in after an outing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is home, clean, and ready for a cozy pause.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wash and dry hands",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find washing hands.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help Teddy wet, soap, rub, rinse, and dry.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy practiced washing and drying hands.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Brush teeth",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find brushing teeth.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap three sparkles to pretend to brush with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We practiced pretend brushing. A grown-up helps with real brushing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Cozy pajamas",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find cozy pajamas.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the pajamas onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Cozy pajamas are on.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Share a story",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the storybook.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the book to turn three pages together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A little story shared together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Settle into bed",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the bed.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the moon to help Teddy settle into bed.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Good night, Teddy. Time for a cozy rest.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask a grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find grown-up help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the grown-up to ask for bathroom help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A trusted grown-up is here to help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Try the potty",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the potty.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the potty for a pretend try. Watching counts, too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy practiced a potty visit. There is no rush.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wipe with help",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find toilet paper.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the paper to ask a grown-up for wiping help.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A grown-up helps Teddy get clean.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Clothes on",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find Teddy's clothes.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the clothes onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy is dressed and comfortable.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Flush the toilet",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the flush button.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the button to pretend to flush.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Whoosh! Teddy practiced flushing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Raincoat",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the raincoat.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the raincoat onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A raincoat helps keep Teddy dry.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Rain boots",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the rain boots.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the rain boots onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Rain boots are ready for puddles.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Umbrella",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the umbrella.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the umbrella over Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "An umbrella helps keep the rain off.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Go with a grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find walking together.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the glowing footprints to go with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy stays with a grown-up on the way.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Warm coat",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the warm coat.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the warm coat onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A warm coat is ready for the cold.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hat and mittens",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find a warm hat and mittens.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the warm hat and mittens onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy has cozy hands and a warm head.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Snow boots",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the snow boots.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the snow boots onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Warm boots are ready for the snow.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Sun protection",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find sun protection.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the three suns. Pretend a grown-up is helping with sunscreen.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A grown-up helps Teddy get ready for sunshine.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Sun hat",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the sun hat.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the sun hat onto Teddy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A sun hat gives Teddy some shade.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pack a beach bag",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the beach bag.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the water, towel, and toy into the beach bag.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The beach bag has water, a towel, and a toy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Rest in the shade",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find a shady spot.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the beach umbrella to choose a shady place with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A shady spot is ready. Stay with your grown-up at the beach.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Breakfast together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find breakfast.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap the bowl to sit for breakfast with a grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Teddy enjoys breakfast at the table.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Brush hair gently",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the hairbrush.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tap three sparkles to pretend to brush gently.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A grown-up can help with tangles. Teddy can ask for a pause.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pack a picnic",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find the picnic basket.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the water, snack, and blanket into the basket.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Water, a snack, and a blanket are packed.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Clean up together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find tidying up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the three wrappers into the bin.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We leave our picnic spot tidy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shoes off",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find taking shoes off.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the shoes to their storage spot.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shoes have a place by the door.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hang up a coat",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find hanging up the coat.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the coat to its hook.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The coat is ready for another day.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Put toys away",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "What comes next in Teddy's plan? Find putting toys away.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drag the three toys into their box.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The toys are away. Our space is ready for a cozy pause.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

@@ -7,6 +7,81 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testCozyRoutinePathsOrderingActionsPauseAndRuth() throws {
+        XCTAssertEqual(CozyRoutine.bank.count, 8); XCTAssertEqual(CozyRoutine.bank.reduce(0) { $0 + $1.steps.count }, 35)
+        XCTAssertEqual(Set(CozyRoutineStep.bank.map(\.id)).count, 28)
+        var layouts = Set<String>()
+        for _ in 0..<30 {
+            var play = CozyRoutinePlay()
+            play.choosePath("invalid"); play.start(); play.next(); play.finish(); XCTAssertEqual(play.phase, .paths)
+            for path in CozyRoutine.bank {
+                XCTAssertEqual(Set(path.steps).count, path.steps.count)
+                play.choosePath(path.id); XCTAssertEqual(play.phase, .introduction)
+                XCTAssertEqual(play.prompt, path.introduction)
+                play.start(); XCTAssertEqual(play.phase, .choosing)
+                for (index, id) in path.steps.enumerated() {
+                    XCTAssertEqual(play.current.id, id); XCTAssertEqual(play.index, index)
+                    XCTAssertEqual(play.actions, 0); XCTAssertTrue(play.used.isEmpty)
+                    XCTAssertEqual(play.choices.count, 3); XCTAssertEqual(Set(play.choices).count, 3)
+                    XCTAssertEqual(Set(play.choices.map { CozyRoutineStep.named($0).symbol }).count, 3)
+                    layouts.insert(play.choices.joined())
+                    play.next(); XCTAssertEqual(play.index, index)
+                    for wrong in play.choices where wrong != id { XCTAssertFalse(play.chooseStep(wrong)) }
+                    XCTAssertTrue(play.chooseStep(id)); XCTAssertFalse(play.chooseStep(id))
+                    XCTAssertEqual(play.phase, .acting)
+                    let step = play.current
+                    let order = [.pack, .scrub].contains(step.kind) ? Array((0..<step.goal).reversed()) : Array(0..<step.goal)
+                    for value in order {
+                        let before = play.actions, token = play.token
+                        XCTAssertFalse(play.act(value, token: "stale")); XCTAssertFalse(play.act(-1, token: token))
+                        if ![.pack, .scrub].contains(step.kind) { XCTAssertFalse(play.act(step.goal, token: token)) }
+                        for used in play.used { XCTAssertFalse(play.act(used, token: token)) }
+                        XCTAssertTrue(play.act(value, token: token)); XCTAssertEqual(play.actions, before + 1)
+                        XCTAssertFalse(play.act(value, token: token)); XCTAssertEqual(play.actions, before + 1)
+                    }
+                    XCTAssertEqual(play.phase, .feedback); XCTAssertEqual(play.prompt, step.response)
+                    play.next(); play.next()
+                    XCTAssertEqual(play.phase, index == path.steps.count - 1 ? .finished : .choosing)
+                }
+                XCTAssertTrue(play.completed.contains(path.id)); XCTAssertEqual(play.prompt, path.outcome)
+                play.paths(); XCTAssertEqual(play.phase, .paths); XCTAssertNil(play.routine)
+            }
+            XCTAssertEqual(play.completed.count, 8)
+            play.choosePath("bathroom"); play.start(); play.chooseStep("tell"); play.pause()
+            XCTAssertEqual(play.phase, .paused); play.paths(); XCTAssertEqual(play.completed.count, 8)
+        }
+        XCTAssertGreaterThan(layouts.count, 100)
+        for mode in 0..<4 {
+            var play = CozyRoutinePlay(); play.choosePath("bathroom")
+            if mode > 0 { play.start() }
+            if mode > 1 { play.chooseStep("tell") }
+            if mode > 2 { play.act(0, token: play.token) }
+            play.pause(); XCTAssertEqual(play.phase, .paused); XCTAssertTrue(play.completed.isEmpty)
+            play.finish(); XCTAssertEqual(play.phase, .complete); XCTAssertTrue(play.completed.isEmpty)
+            play.paths(); play.start(); play.next(); XCTAssertEqual(play.phase, .complete)
+        }
+        for step in CozyRoutineStep.bank {
+            let renderer = ImageRenderer(content: CozyRoutineItemArt(step: step).padding(15).background(Color.cyan.opacity(0.1)))
+            let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Routine item \(step.id)"; shot.lifetime = .keepAlways; add(shot)
+            XCTAssertNotNil(UIImage(systemName: step.symbol), step.symbol)
+            for symbol in step.items { XCTAssertNotNil(UIImage(systemName: symbol), symbol) }
+        }
+        for path in CozyRoutine.bank {
+            for finished in [false, true] {
+                let step = CozyRoutineStep.named(finished ? path.steps.last! : path.steps[0])
+                let renderer = ImageRenderer(content: CozyRoutineScene(path: path, step: step, accomplished: finished, completedSteps: finished ? path.steps : []).frame(width: 350).background(.white))
+                let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Routine \(path.id) \(finished ? "finished" : "start")"; shot.lifetime = .keepAlways; add(shot)
+            }
+        }
+        for text in Set(CozyRoutine.narration) {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth"); XCTAssertEqual(clip.engine, "generative")
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text))
+        }
+    }
+
+
+    @MainActor
     func testFriendshipBridgeAllActivitiesTurnGuardsReplayAndRuth() throws {
         XCTAssertEqual(BridgeAdventure.bank.count, 12)
         XCTAssertEqual(Set(BridgeAdventure.bank.map(\.id)).count, 12)

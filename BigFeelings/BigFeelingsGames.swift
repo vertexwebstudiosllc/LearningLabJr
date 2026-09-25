@@ -10,48 +10,6 @@ private struct BFNote: View {
     }
 }
 
-struct CozyEveningPathGame: View {
-    let onReplay: () -> Void
-    @State private var placed = 0
-    @State private var note = "Teddy's plan is wash, pajamas, book, then rest. Your family's plan may be different."
-    @StateObject private var narrator = GameNarrator()
-    private let names = ["Wash", "Pajamas", "Book", "Rest"]
-    private let symbols = ["hands.sparkles.fill", "tshirt.fill", "book.fill", "moon.stars.fill"]
-    var body: some View {
-        ToddlerGameScaffold(title: "Cozy Evening Path", prompt: placed == 4 ? "Teddy knows what comes next. Time to rest." : "Help Teddy follow the evening plan. Next comes \(names[placed].lowercased()).", accent: .indigo, completion: placed == 4, onReplay: onReplay) {
-            HStack(spacing: 10) {
-                ForEach(0..<4, id: \.self) { index in
-                    VStack {
-                        Image(systemName: index < placed ? symbols[index] : "circle.dashed").font(.system(size: 28))
-                        Text("\(index + 1)").font(.caption.bold())
-                    }.foregroundStyle(.indigo).frame(maxWidth: .infinity, minHeight: 80)
-                        .background(.indigo.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
-                        .accessibilityLabel(index < placed ? "Step \(index + 1), \(names[index])" : "Empty step \(index + 1)")
-                }
-            }
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 118))], spacing: 14) {
-                ForEach([2, 0, 3, 1], id: \.self) { index in
-                    Button {
-                        guard placed < 4 else { return }
-                        if index == placed {
-                            placed += 1
-                            note = ["Splash, splash. Pretend to wash your hands.", "Cozy pajamas. Pretend to pull on a sleeve.", "Share a story. Pretend to turn a page.", "Teddy settles down. Say a gentle good night."][index]
-                        } else { note = "For Teddy's plan, \(names[placed].lowercased()) comes next." }
-                        narrator.speak(note)
-                    } label: {
-                        VStack(spacing: 12) {
-                            Image(systemName: symbols[index]).font(.system(size: 43))
-                            Text(names[index]).font(.headline)
-                        }.foregroundStyle(.indigo).frame(maxWidth: .infinity, minHeight: 120)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 23)).opacity(index < placed ? 0.35 : 1)
-                    }.buttonStyle(.plain).disabled(index < placed)
-                }
-            }
-            BFNote(text: note)
-        }
-    }
-}
-
 struct SeeYouSoonGame: View {
     let onReplay: () -> Void
     @State private var step = 0

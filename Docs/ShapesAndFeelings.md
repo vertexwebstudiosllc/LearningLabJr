@@ -37,7 +37,7 @@ Colors are accompanied by words and characteristic symbols where possible. Shape
 | My Solution Toolbox | Open a picture toolbox and choose one or two helpful items for everyday problems | Eighteen shuffled problems, with a solved scene after each |
 | Body Clue Buddies | Identify body parts by tapping a diverse picture buddy | Eighteen clues with a new buddy each time |
 | Friendship Bridge | Choose friendly words, then share six kinds of interactive play with a buddy | Twelve shuffled playdates connect a bridge |
-| Cozy Evening Path | Sequence Teddy's pictured evening routine | Four routine steps |
+| Cozy Evening Path | Choose and act out steps in eight everyday routines | Four to six steps per chosen path |
 | See You Soon | Select goodbye and comfort choices, then reveal a pretend reunion | One complete pretend goodbye story |
 
 Feeling choices are never graded. `Not sure` is offered for the check-in, and emotion names are not inferred from a face or bodily sensation. Touch and hugs are offered with consent. Watching a grown-up or pretending is accepted. Breathing has no breath holds, countdown, microphone monitoring, or requirement to become calm. The goodbye activity explicitly keeps the real caregiver present. Check-ins live only in view state and are not logged or persisted.
@@ -67,3 +67,7 @@ Eighteen distinct clues teach nine body parts, with two clues per part and no co
 ### Friendship Bridge
 
 Choose one of eight diverse illustrated buddies, then explore twelve shuffled playdates. Each starts with two valid friendly-word choices and a narrated response. Activities include waving or smiling, sharing building blocks, passing a ball or toy car, matching silly faces or pretend animals, alternating bubble or star turns, and dragging toys or hearts into a shared space. Dragging has a tap-to-pick-up and tap-to-place alternative. Turn checks, single-use bubble checks, and per-action drag tokens prevent accidental double counting or stale drops. Each completed activity adds one bridge piece. Greeting choices change the greeting picture; giving a friend space keeps that friend watching. Replay returns to buddy selection, with a different first playdate. Prompts, choices, replies, activity instructions, retries, and outcomes use bundled generative Ruth recordings.
+
+### Cozy Evening Path: everyday routines
+
+Eight selectable paths cover bedtime, bathroom time, rain, snow, the beach, mornings, picnics, and coming home. The paths contain 35 total steps built from 28 reusable activities. Each step asks for a picture choice, then a small action: dressing or packing with drag-and-drop (plus a tap alternative), washing in order, tapping sparkles, turning story pages, following footprints, or helping with a pretend action. Clothing persists across completed dressing steps. Incorrect choices invite a retry without losing progress; choices shuffle and avoid duplicate symbols. Completed path badges last for the play session. Children can pause and switch paths without receiving completion credit for unfinished routines. Bathroom play uses a clothed cartoon-style teddy, gentle pretend wording, and grown-up help. Family routines can differ. All spoken titles, clues, instructions, feedback, and outcomes have bundled generative Ruth narration.

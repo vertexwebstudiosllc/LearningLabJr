@@ -4,6 +4,110 @@ import StoreKitTest
 final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
+    func testCozyBathroomPictureActionsAndFinish() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        try tap(app.buttons["activity-card.Cozy Evening Path"])
+        try tap(app.buttons["routine.path.bathroom"]); try tap(app.buttons["routine.start"])
+        for step in ["tell", "potty", "wipe", "clothes", "flush", "wash"] {
+            try tap(app.buttons["routine.choice.\(step)"])
+            if step == "clothes" {
+                try tap(app.buttons["routine.item.0"]); try tap(app.buttons["routine.drop"])
+            } else {
+                if step == "wipe" {
+                    try reveal(app.buttons["routine.action.0"], in: app)
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Bathroom paper-roll action"; shot.lifetime = .keepAlways; add(shot)
+                }
+                for action in 0..<(step == "wash" ? 5 : 1) { try tap(app.buttons["routine.action.\(action)"]) }
+            }
+            XCTAssertTrue(app.buttons["routine.next"].waitForExistence(timeout: 5)); try tap(app.buttons["routine.next"])
+        }
+        try tap(app.buttons["routine.finish"])
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+    }
+
+
+    @MainActor
+    func testCozyRoutinesEightPathsDragWashingPauseAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        let paths: [String: [String]] = [
+            "bedtime": ["wash", "teeth", "pajamas", "book", "bed"],
+            "bathroom": ["tell", "potty", "wipe", "clothes", "flush", "wash"],
+            "rain": ["raincoat", "boots", "umbrella", "walk"],
+            "snow": ["warmcoat", "hat", "snowboots", "walk"],
+            "beach": ["suncream", "sunhat", "beachbag", "shade"],
+            "morning": ["clothes", "breakfast", "teeth", "hair"],
+            "picnic": ["wash", "picnicbag", "walk", "cleanup"],
+            "home": ["shoesoff", "coatoff", "wash", "toys"]
+        ]
+        let kinds = ["wash": "wash", "teeth": "scrub", "pajamas": "dress", "book": "pages", "bed": "tap", "tell": "tap", "potty": "tap", "wipe": "tap", "clothes": "dress", "flush": "tap", "raincoat": "dress", "boots": "dress", "umbrella": "dress", "walk": "walk", "warmcoat": "dress", "hat": "dress", "snowboots": "dress", "suncream": "scrub", "sunhat": "dress", "beachbag": "pack", "shade": "tap", "breakfast": "tap", "hair": "scrub", "picnicbag": "pack", "cleanup": "pack", "shoesoff": "dress", "coatoff": "dress", "toys": "pack"]
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Cozy Evening Path"]
+        try tap(card)
+        try tap(app.buttons["routine.path.bathroom"]); try tap(app.buttons["routine.start"])
+        try tap(app.buttons["routine.pause"]); try tap(app.buttons["routine.paths"])
+        XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
+        var completed = 0, dragged = false
+        for path in ["bedtime", "bathroom", "rain", "snow", "beach", "morning", "picnic", "home"] {
+            try tap(app.buttons["routine.path.\(path)"]); try tap(app.buttons["routine.start"])
+            let steps = paths[path]!
+            for (index, step) in steps.enumerated() {
+                XCTAssertEqual(app.staticTexts["routine.progress"].label, "Step \(index + 1) of \(steps.count)")
+                if index == 0 {
+                    let wrong = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'routine.choice.'")).allElementsBoundByIndex.first { $0.identifier != "routine.choice.\(step)" }!
+                    try tap(wrong); XCTAssertTrue(app.staticTexts["routine.feedback"].exists)
+                }
+                try tap(app.buttons["routine.choice.\(step)"])
+                let kind = kinds[step]!
+                let goal = kind == "wash" ? 5 : ["scrub", "pages", "walk", "pack"].contains(kind) ? 3 : 1
+                let order = ["pack", "scrub"].contains(kind) ? Array((0..<goal).reversed()) : Array(0..<goal)
+                for value in order {
+                    if ["dress", "pack"].contains(kind) {
+                        let item = app.buttons["routine.item.\(value)"], drop = app.buttons["routine.drop"]
+                        if !dragged {
+                            try reveal(drop, in: app); try reveal(item, in: app)
+                            item.press(forDuration: 0.6, thenDragTo: drop); dragged = true
+                        } else { try tap(item); try tap(drop) }
+                    } else {
+                        if kind == "wash" && value == 0 {
+                            try tap(app.buttons["routine.action.4"])
+                            XCTAssertEqual(app.staticTexts["routine.actions"].label, "0 of 5 actions")
+                        }
+                        try tap(app.buttons["routine.action.\(value)"])
+                    }
+                }
+                XCTAssertTrue(app.buttons["routine.next"].waitForExistence(timeout: 5))
+                if index == steps.count - 1 {
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Cozy path \(path) last step"; shot.lifetime = .keepAlways; add(shot)
+                }
+                try tap(app.buttons["routine.next"])
+            }
+            completed += 1
+            try tap(app.buttons["routine.paths"])
+            XCTAssertEqual(app.staticTexts["routine.collection"].label, "\(completed) of 8 paths explored")
+        }
+        XCTAssertTrue(dragged)
+        try tap(app.buttons["routine.path.bathroom"]); try tap(app.buttons["routine.pause"])
+        try tap(app.buttons["routine.finish"])
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
+    }
+
+
+    @MainActor
     func testFriendshipBridgeTwelvePlaydatesDragTurnsSillyGamesAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

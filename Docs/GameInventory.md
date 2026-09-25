@@ -89,5 +89,5 @@ The six menus contain 72 distinct activity destinations. The four original books
 8. My Solution Toolbox
 9. Body Clue Buddies — eighteen picture-based body-part clues
 10. Friendship Bridge — twelve cooperative playdates and six play styles
-11. Cozy Evening Path
+11. Cozy Evening Path — eight interactive everyday routines
 12. See You Soon

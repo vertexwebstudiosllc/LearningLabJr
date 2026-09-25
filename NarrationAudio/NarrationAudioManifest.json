@@ -7098,6 +7098,14 @@
       "category": "stories"
     },
     {
+      "text": "A beach day",
+      "file": "llj-86f759f57f91a4b09dff22a1.mp3",
+      "spokenText": "A beach day",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A book? Let’s listen again. When it rains, I stay dry under an…",
       "file": "llj-25071cd50abcc30b3c0eaec9.mp3",
       "spokenText": "A book? Let’s listen again. When it rains, I stay dry under an…",
@@ -7426,6 +7434,30 @@
       "category": "nature"
     },
     {
+      "text": "A grown-up can help with tangles. Teddy can ask for a pause.",
+      "file": "llj-7e5d87ac2f9cb8257141f81a.mp3",
+      "spokenText": "A grown-up can help with tangles. Teddy can ask for a pause.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A grown-up helps Teddy get clean.",
+      "file": "llj-a4fcf4ea0f3cff25aa40c556.mp3",
+      "spokenText": "A grown-up helps Teddy get clean.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A grown-up helps Teddy get ready for sunshine.",
+      "file": "llj-7aef155b8285a080a8c9c29b.mp3",
+      "spokenText": "A grown-up helps Teddy get ready for sunshine.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A grown-up helps brush gently. We can ask for a pause.",
       "file": "llj-abec9d9e124c309ead5bc01c.mp3",
       "spokenText": "A grown-up helps brush gently. We can ask for a pause.",
@@ -7530,12 +7562,28 @@
       "category": "nature"
     },
     {
+      "text": "A little picnic",
+      "file": "llj-a4f3fe3f167999bee2595ad2.mp3",
+      "spokenText": "A little picnic",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A little plant has grown! Keep giving it the care it needs.",
       "file": "llj-b56996c277748836636cb6c0.mp3",
       "spokenText": "A little plant has grown! Keep giving it the care it needs.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A little story shared together.",
+      "file": "llj-bcc585ce3ebe8c5fc597c1ff.mp3",
+      "spokenText": "A little story shared together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "A little water helps our plant grow.",
@@ -7565,6 +7613,14 @@
       "text": "A paper patch and glue help mend our picture.",
       "file": "llj-fec04beb90a9819cf7bfddb9.mp3",
       "spokenText": "A paper patch and glue help mend our picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A pause is okay. You can choose a different path or try this one another time.",
+      "file": "llj-18fbf443bfb3f6e51bbaf68a.mp3",
+      "spokenText": "A pause is okay. You can choose a different path or try this one another time.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -7634,6 +7690,22 @@
       "category": "nature"
     },
     {
+      "text": "A raincoat helps keep Teddy dry.",
+      "file": "llj-f3088fedc17e14df0776410c.mp3",
+      "spokenText": "A raincoat helps keep Teddy dry.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A rainy day",
+      "file": "llj-2612217012707d14a8a2c633.mp3",
+      "spokenText": "A rainy day",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A round orange pumpkin is outside our window. Pumpkins grow on vines.",
       "file": "llj-91c7af5e04c7ee6df78f93e0.mp3",
       "spokenText": "A round orange pumpkin is outside our window. Pumpkins grow on vines.",
@@ -7664,6 +7736,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A shady spot is ready. Stay with your grown-up at the beach.",
+      "file": "llj-72b716208e19e9a511c498e2.mp3",
+      "spokenText": "A shady spot is ready. Stay with your grown-up at the beach.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "A sheep walks through the grass! Take tiny steps in place, or walk two fingers across your lap.",
@@ -7714,6 +7794,14 @@
       "category": "nature"
     },
     {
+      "text": "A snowy day",
+      "file": "llj-2f058b10021d36c2d034a1bc.mp3",
+      "spokenText": "A snowy day",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A soft washcloth can help us get clean. We can wash our face at other times, too!",
       "file": "llj-564a43a4ee6313b83809156d.mp3",
       "spokenText": "A soft washcloth can help us get clean. We can wash our face at other times, too!",
@@ -7762,6 +7850,14 @@
       "category": "stories"
     },
     {
+      "text": "A sun hat gives Teddy some shade.",
+      "file": "llj-c0631418a4495cdde4ce45b2.mp3",
+      "spokenText": "A sun hat gives Teddy some shade.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A towel helps Bunny dry off.",
       "file": "llj-1a8dbdaed59c3200c18c91f0.mp3",
       "spokenText": "A towel helps Bunny dry off.",
@@ -7794,6 +7890,14 @@
       "category": "feelings"
     },
     {
+      "text": "A trusted grown-up is here to help.",
+      "file": "llj-83573c6f6abf79c9db0a4f0e.mp3",
+      "spokenText": "A trusted grown-up is here to help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A trusted grown-up stays with Teddy. Say, 'We are here together.'",
       "file": "llj-87d3cf476533834e2f3feb76.mp3",
       "spokenText": "A trusted grown-up stays with Teddy. Say, 'We are here together.'",
@@ -7821,6 +7925,14 @@
       "text": "A turn for each of you. That is sharing!",
       "file": "llj-5fe3161f55969e9ff9e1b4c9.mp3",
       "spokenText": "A turn for each of you. That is sharing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A warm coat is ready for the cold.",
+      "file": "llj-3d27b70ad478d5555b7de5d7.mp3",
+      "spokenText": "A warm coat is ready for the cold.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -8194,12 +8306,28 @@
       "category": "feelings"
     },
     {
+      "text": "An umbrella helps keep the rain off.",
+      "file": "llj-80fc87a552de104428ca51e1.mp3",
+      "spokenText": "An umbrella helps keep the rain off.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "An umbrella helps keep the rain off. Look at the drops around it!",
       "file": "llj-aa23233628dafaa0543a67ed.mp3",
       "spokenText": "An umbrella helps keep the rain off. Look at the drops around it!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Ask a grown-up",
+      "file": "llj-6b01988d35d7fcba249b4af4.mp3",
+      "spokenText": "Ask a grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Ask for a hug",
@@ -8530,6 +8658,14 @@
       "category": "feelings"
     },
     {
+      "text": "Bathroom time",
+      "file": "llj-4a67ded93dd05c8ad052faa3.mp3",
+      "spokenText": "Bathroom time",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
       "file": "llj-c3aad5406636f31c4eb63c2b.mp3",
       "spokenText": "Beau Bread jumped and caught the pea. Cooper shouted, “Victory!” Quinn said, “Owen, that was you. Your brave word helped the pea get through.” The little pea smiled up with glee. “Thank you, Owen Oniony!”",
@@ -8544,6 +8680,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Bedtime",
+      "file": "llj-0b29bdf48fbcd77367e54fc3.mp3",
+      "spokenText": "Bedtime",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Beep! Our pretend rover sends a message to Earth. We found a rocky, reddish world!",
@@ -8802,6 +8946,14 @@
       "category": "feelings"
     },
     {
+      "text": "Breakfast together",
+      "file": "llj-2846b807466b3ab7373b84d3.mp3",
+      "spokenText": "Breakfast together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Bring my comfort toy",
       "file": "llj-2f243bcdf4ee5f30ffdcaaf5.mp3",
       "spokenText": "Bring my comfort toy",
@@ -8848,6 +9000,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Brush hair gently",
+      "file": "llj-0096bd66b46fc5f0e685edba.mp3",
+      "spokenText": "Brush hair gently",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Brush teeth",
+      "file": "llj-1dd17b24b76865710dedc27b.mp3",
+      "spokenText": "Brush teeth",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Build a shape nest. Start with the largest, then medium, then small.",
@@ -9906,6 +10074,14 @@
       "category": "shapes"
     },
     {
+      "text": "Choose a path for Teddy. We can practice little steps together!",
+      "file": "llj-f301df8f166c44d15b3678cc.mp3",
+      "spokenText": "Choose a path for Teddy. We can practice little steps together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Choose a space adventure. Tap a picture, and we'll explore together!",
       "file": "llj-d4a2b3be1ae859a155da991b.mp3",
       "spokenText": "Choose a space adventure. Tap a picture, and we'll explore together!",
@@ -10194,6 +10370,14 @@
       "category": "nature"
     },
     {
+      "text": "Clean up together",
+      "file": "llj-3e0b84d8a55647a6136beb03.mp3",
+      "spokenText": "Clean up together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Click! The lamp lights our story.",
       "file": "llj-e92353dc4f00e323e61a8994.mp3",
       "spokenText": "Click! The lamp lights our story.",
@@ -10205,6 +10389,14 @@
       "text": "Closed eyes.",
       "file": "llj-bbb68e72b0fb24b96139cf43.mp3",
       "spokenText": "Closed eyes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Clothes on",
+      "file": "llj-f367f060a1a418b87556bdbd.mp3",
+      "spokenText": "Clothes on",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -10224,6 +10416,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Coming home",
+      "file": "llj-b5691a74c788ee92a61f2d3a.mp3",
+      "spokenText": "Coming home",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Cooper blinked his cheesy eyes. Then Cooper smiled a warm surprise. “Owen, Owen, listen here. You are my friend. Come sit right near.” He scooted close and gave a grin. “I like you outside, and within.”",
@@ -10405,6 +10605,22 @@
       "text": "Cozy blanket",
       "file": "llj-4d524393efad0dce4e70d2af.mp3",
       "spokenText": "Cozy blanket",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Cozy pajamas",
+      "file": "llj-d60920c3e7ffda44b4c9ec8a.mp3",
+      "spokenText": "Cozy pajamas",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Cozy pajamas are on.",
+      "file": "llj-116110b5935fe04ff299e3f1.mp3",
+      "spokenText": "Cozy pajamas are on.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -10746,6 +10962,22 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the clothes onto Teddy.",
+      "file": "llj-5c25fabce7c26f94575749f0.mp3",
+      "spokenText": "Drag the clothes onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the coat to its hook.",
+      "file": "llj-eee045c33b37bb06afd96c4a.mp3",
+      "spokenText": "Drag the coat to its hook.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Drag the diamond to its matching opening.",
       "file": "llj-3b3cb8f3dc397fe6c87a1cb8.mp3",
       "spokenText": "Drag the diamond to its matching opening.",
@@ -10858,6 +11090,14 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the pajamas onto Teddy.",
+      "file": "llj-9149bbb0261fe237c2f7991e.mp3",
+      "spokenText": "Drag the pajamas onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Drag the pentagon to its matching opening.",
       "file": "llj-ad9a45593f870a8726e2dbd2.mp3",
       "spokenText": "Drag the pentagon to its matching opening.",
@@ -10904,6 +11144,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Drag the rain boots onto Teddy.",
+      "file": "llj-64334fcdd2fc06abd8c02dae.mp3",
+      "spokenText": "Drag the rain boots onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the raincoat onto Teddy.",
+      "file": "llj-bb9ff579954ae4c31a9a8257.mp3",
+      "spokenText": "Drag the raincoat onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Drag the rectangle to its matching opening.",
@@ -10954,6 +11210,22 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the shoes to their storage spot.",
+      "file": "llj-50705e97aea2c1964bcb4fb4.mp3",
+      "spokenText": "Drag the shoes to their storage spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the snow boots onto Teddy.",
+      "file": "llj-dbe6a0585adca928626f3172.mp3",
+      "spokenText": "Drag the snow boots onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Drag the square to its matching opening.",
       "file": "llj-65e0cf2fea6dfafd68679beb.mp3",
       "spokenText": "Drag the square to its matching opening.",
@@ -10970,12 +11242,76 @@
       "category": "shapes"
     },
     {
+      "text": "Drag the sun hat onto Teddy.",
+      "file": "llj-19e91d6db67aa27093868fd5.mp3",
+      "spokenText": "Drag the sun hat onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the three toys into their box.",
+      "file": "llj-953664c0404abe41b377d139.mp3",
+      "spokenText": "Drag the three toys into their box.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the three wrappers into the bin.",
+      "file": "llj-e250d73f4b0f4ce22f2b0651.mp3",
+      "spokenText": "Drag the three wrappers into the bin.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Drag the triangle to its matching opening.",
       "file": "llj-101aea33138c1235d01ce186.mp3",
       "spokenText": "Drag the triangle to its matching opening.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Drag the umbrella over Teddy.",
+      "file": "llj-08283d42dbbd57913b65b1d3.mp3",
+      "spokenText": "Drag the umbrella over Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the warm coat onto Teddy.",
+      "file": "llj-184e511c34dc126f31bba7e6.mp3",
+      "spokenText": "Drag the warm coat onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the warm hat and mittens onto Teddy.",
+      "file": "llj-c82a96632a8fda805c83a8c0.mp3",
+      "spokenText": "Drag the warm hat and mittens onto Teddy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the water, snack, and blanket into the basket.",
+      "file": "llj-b4e3d8331dc3b670ea9ecf29.mp3",
+      "spokenText": "Drag the water, snack, and blanket into the basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drag the water, towel, and toy into the beach bag.",
+      "file": "llj-a420ea17ef2ebd65318de451.mp3",
+      "spokenText": "Drag the water, towel, and toy into the beach bag.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Drag the white circle to its outline.",
@@ -12922,6 +13258,14 @@
       "category": "nature"
     },
     {
+      "text": "Flush the toilet",
+      "file": "llj-95ade9aee55a8af202e47852.mp3",
+      "spokenText": "Flush the toilet",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Foal! A foal is a baby horse.",
       "file": "llj-34bedbaddc8891070aec2b41.mp3",
       "spokenText": "Foal! A foal is a baby horse.",
@@ -13850,6 +14194,14 @@
       "category": "feelings"
     },
     {
+      "text": "Go with a grown-up",
+      "file": "llj-3b7e6440122af50cdff1a41d.mp3",
+      "spokenText": "Go with a grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Goat! Goats are curious animals that like to climb.",
       "file": "llj-6a7772bdde1868e5ac3839ab.mp3",
       "spokenText": "Goat! Goats are curious animals that like to climb.",
@@ -13869,6 +14221,22 @@
       "text": "Good exploring! Listen to the clue and try another body part.",
       "file": "llj-3c4b16b0aa967e7cd00791aa.mp3",
       "spokenText": "Good exploring! Listen to the clue and try another body part.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Good morning",
+      "file": "llj-810036a5f0240c24c999eb25.mp3",
+      "spokenText": "Good morning",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Good night, Teddy. Time for a cozy rest.",
+      "file": "llj-58a6ba0442242d4bfe3ad45b.mp3",
+      "spokenText": "Good night, Teddy. Time for a cozy rest.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -14122,6 +14490,22 @@
       "category": "feelings"
     },
     {
+      "text": "Hang up a coat",
+      "file": "llj-d879da9e7c830a2cc7b4b779.mp3",
+      "spokenText": "Hang up a coat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hat and mittens",
+      "file": "llj-8ed69839ba505953dfec42bf.mp3",
+      "spokenText": "Hat and mittens",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Have a bath. Read a book. Go to bed.",
       "file": "llj-3dfcfeeee9c0b965d98dd814.mp3",
       "spokenText": "Have a bath. Read a book. Go to bed.",
@@ -14194,6 +14578,14 @@
       "category": "nature"
     },
     {
+      "text": "Help Teddy dress for a snowy outing.",
+      "file": "llj-df69af355fd1b6145a122d8d.mp3",
+      "spokenText": "Help Teddy dress for a snowy outing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Help Teddy follow the evening plan. Next comes book.",
       "file": "llj-4870f99078c70c94fa477728.mp3",
       "spokenText": "Help Teddy follow the evening plan. Next comes book.",
@@ -14221,6 +14613,62 @@
       "text": "Help Teddy follow the evening plan. Next comes wash.",
       "file": "llj-ace41a7ff59db6bb34e7edfd.mp3",
       "spokenText": "Help Teddy follow the evening plan. Next comes wash.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy get ready for a beach day with a grown-up.",
+      "file": "llj-d9cd5308179a0bd34523d925.mp3",
+      "spokenText": "Help Teddy get ready for a beach day with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy get ready for a cozy bedtime.",
+      "file": "llj-e188db9b5502c42a9694db95.mp3",
+      "spokenText": "Help Teddy get ready for a cozy bedtime.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy get ready for a picnic and tidy up afterward.",
+      "file": "llj-606ea8ccde78ffdefd7600d0.mp3",
+      "spokenText": "Help Teddy get ready for a picnic and tidy up afterward.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy get ready for a rainy walk.",
+      "file": "llj-7956081e9b671bd614b28313.mp3",
+      "spokenText": "Help Teddy get ready for a rainy walk.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy settle in after an outing.",
+      "file": "llj-31ec739568f0e01f4b8023f7.mp3",
+      "spokenText": "Help Teddy settle in after an outing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy start a brand-new day.",
+      "file": "llj-895b242a87a8e09d63e0a5f2.mp3",
+      "spokenText": "Help Teddy start a brand-new day.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help Teddy wet, soap, rub, rinse, and dry.",
+      "file": "llj-860258665cde4323198ad4db.mp3",
+      "spokenText": "Help Teddy wet, soap, rub, rinse, and dry.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -23650,6 +24098,22 @@
       "category": "literacy"
     },
     {
+      "text": "Pack a beach bag",
+      "file": "llj-e7de17f7cbe3ded16dd35ee9.mp3",
+      "spokenText": "Pack a beach bag",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pack a picnic",
+      "file": "llj-749aed1a3425ee7736e2fd25.mp3",
+      "spokenText": "Pack a picnic",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Pack an imaginary picnic! Our pretend rocket will peek at Earth from space, then bring us home.",
       "file": "llj-a51b631a15e2457658538161.mp3",
       "spokenText": "Pack an imaginary picnic! Our pretend rocket will peek at Earth from space, then bring us home.",
@@ -26602,6 +27066,14 @@
       "category": "feelings"
     },
     {
+      "text": "Practice a pretend bathroom visit with grown-up help.",
+      "file": "llj-78b236709f6c9bd81c7b730d.mp3",
+      "spokenText": "Practice a pretend bathroom visit with grown-up help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Pretend to smell a flower. Take an easy breath in, or just watch your grown-up.",
       "file": "llj-962b44caa32b2b34de25e9f9.mp3",
       "spokenText": "Pretend to smell a flower. Take an easy breath in, or just watch your grown-up.",
@@ -26930,6 +27402,14 @@
       "category": "shapes"
     },
     {
+      "text": "Put toys away",
+      "file": "llj-d38421727df24bb08936a50e.mp3",
+      "spokenText": "Put toys away",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Putting books away helps everyone find them next time. Our pretend garden grows!",
       "file": "llj-b3b1bb389deda2a35f87ebda.mp3",
       "spokenText": "Putting books away helps everyone find them next time. Our pretend garden grows!",
@@ -27122,6 +27602,14 @@
       "category": "feelings"
     },
     {
+      "text": "Rain boots are ready for puddles.",
+      "file": "llj-1e1ddff57fe99561ad429be1.mp3",
+      "spokenText": "Rain boots are ready for puddles.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Rain boots help keep feet dry when we step outside.",
       "file": "llj-843cb7cfec2a3a8bb1b9e9ac.mp3",
       "spokenText": "Rain boots help keep feet dry when we step outside.",
@@ -27160,6 +27648,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Raincoat",
+      "file": "llj-40c1fea0b1310ec4e9b441e2.mp3",
+      "spokenText": "Raincoat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Raindrops rest on the leaves. Plants need water to grow.",
@@ -27317,6 +27813,14 @@
       "text": "Red: settle into a comfortable pause.",
       "file": "llj-269434e1710d71cbdf3913e5.mp3",
       "spokenText": "Red: settle into a comfortable pause.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Rest in the shade",
+      "file": "llj-7e5a586f5c43c57319e3e89e.mp3",
+      "spokenText": "Rest in the shade",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -28578,6 +29082,14 @@
       "category": "nature"
     },
     {
+      "text": "Settle into bed",
+      "file": "llj-b18ef5f6dd64151cf11515b9.mp3",
+      "spokenText": "Settle into bed",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Settle three pretend eggs gently inside.",
       "file": "llj-d5104a39edf813ee6055e71d.mp3",
       "spokenText": "Settle three pretend eggs gently inside.",
@@ -28597,6 +29109,14 @@
       "text": "Shall we sit together? We can invite someone to join us, and let them choose.",
       "file": "llj-752849a2ea7f6a18806c43ac.mp3",
       "spokenText": "Shall we sit together? We can invite someone to join us, and let them choose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Share a story",
+      "file": "llj-75455980f021a87588da122f.mp3",
+      "spokenText": "Share a story",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -28640,6 +29160,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Shoes have a place by the door.",
+      "file": "llj-956a20af8286b863b2a66884.mp3",
+      "spokenText": "Shoes have a place by the door.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Shoes off",
+      "file": "llj-7fbfb7ab83700ab4ec2a8a95.mp3",
+      "spokenText": "Shoes off",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Shoes on! We can explore outside together during the day.",
@@ -28829,6 +29365,14 @@
       "text": "Snatching interrupts your friend's painting. Try asking for the next turn.",
       "file": "llj-9c83bd805b4d978e3e3a5b94.mp3",
       "spokenText": "Snatching interrupts your friend's painting. Try asking for the next turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Snow boots",
+      "file": "llj-67774095b47b5e922e11d962.mp3",
+      "spokenText": "Snow boots",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29210,6 +29754,22 @@
       "category": "feelings"
     },
     {
+      "text": "Sun hat",
+      "file": "llj-c182328dcc750cc9b95baff3.mp3",
+      "spokenText": "Sun hat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Sun protection",
+      "file": "llj-e6f7ed8b208038975c175ad2.mp3",
+      "spokenText": "Sun protection",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Sunflower! Would you like to grow it inside in a pot, or outside in a garden?",
       "file": "llj-a8a343826de7c22f97afe97f.mp3",
       "spokenText": "Sunflower! Would you like to grow it inside in a pot, or outside in a garden?",
@@ -29450,6 +30010,38 @@
       "category": "nature"
     },
     {
+      "text": "Tap the beach umbrella to choose a shady place with a grown-up.",
+      "file": "llj-0e2d5681d9c10bef103208ed.mp3",
+      "spokenText": "Tap the beach umbrella to choose a shady place with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the book to turn three pages together.",
+      "file": "llj-2d9778f449bbccae9fd2d1f2.mp3",
+      "spokenText": "Tap the book to turn three pages together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the bowl to sit for breakfast with a grown-up.",
+      "file": "llj-4c933041c2f9081ecaf03924.mp3",
+      "spokenText": "Tap the bowl to sit for breakfast with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the button to pretend to flush.",
+      "file": "llj-ff4eba65e5b726d76ab71d1d.mp3",
+      "spokenText": "Tap the button to pretend to flush.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap the car to send it along your shared road. Your friend's turn!",
       "file": "llj-a9f6ce51fa32e8f9abacfe4e.mp3",
       "spokenText": "Tap the car to send it along your shared road. Your friend's turn!",
@@ -29482,6 +30074,22 @@
       "category": "literacy"
     },
     {
+      "text": "Tap the glowing footprints to go with a grown-up.",
+      "file": "llj-a6f5893fcbb035e24cbe8560.mp3",
+      "spokenText": "Tap the glowing footprints to go with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the grown-up to ask for bathroom help.",
+      "file": "llj-8684c8e0b63a2298a112bc5c.mp3",
+      "spokenText": "Tap the grown-up to ask for bathroom help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap the litter to put it in the bin. Leave the sea animals swimming.",
       "file": "llj-69dcdef06ebc88e4e9de6ad2.mp3",
       "spokenText": "Tap the litter to put it in the bin. Leave the sea animals swimming.",
@@ -29490,9 +30098,57 @@
       "category": "nature"
     },
     {
+      "text": "Tap the moon to help Teddy settle into bed.",
+      "file": "llj-bda0d44ee07b127795515247.mp3",
+      "spokenText": "Tap the moon to help Teddy settle into bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the paper to ask a grown-up for wiping help.",
+      "file": "llj-7ae5479eee9c6915dc76dbc5.mp3",
+      "spokenText": "Tap the paper to ask a grown-up for wiping help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the potty for a pretend try. Watching counts, too.",
+      "file": "llj-93094df88a562c83cce4b284.mp3",
+      "spokenText": "Tap the potty for a pretend try. Watching counts, too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Tap the tennis ball to your friend. Then we will wait for a turn back.",
       "file": "llj-7f49c1f3f7dfcb9ae984c609.mp3",
       "spokenText": "Tap the tennis ball to your friend. Then we will wait for a turn back.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap the three suns. Pretend a grown-up is helping with sunscreen.",
+      "file": "llj-d09d8a7197650f2cd83812ba.mp3",
+      "spokenText": "Tap the three suns. Pretend a grown-up is helping with sunscreen.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap three sparkles to pretend to brush gently.",
+      "file": "llj-3e978a11444db4ab7d83f06a.mp3",
+      "spokenText": "Tap three sparkles to pretend to brush gently.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tap three sparkles to pretend to brush with a grown-up.",
+      "file": "llj-2db649be7053f5e25840603b.mp3",
+      "spokenText": "Tap three sparkles to pretend to brush with a grown-up.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29546,6 +30202,14 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy enjoys breakfast at the table.",
+      "file": "llj-642b2cc911628ad01b80dd82.mp3",
+      "spokenText": "Teddy enjoys breakfast at the table.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Teddy fixed the wheel on our toy bicycle. Both wheels are in place!",
       "file": "llj-32e0530d76f4112e227cc6b1.mp3",
       "spokenText": "Teddy fixed the wheel on our toy bicycle. Both wheels are in place!",
@@ -29565,6 +30229,22 @@
       "text": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
       "file": "llj-98f7b0f2c949a959802ad972.mp3",
       "spokenText": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy has cozy hands and a warm head.",
+      "file": "llj-f16075eba79f66c5a4a34963.mp3",
+      "spokenText": "Teddy has cozy hands and a warm head.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is dressed and comfortable.",
+      "file": "llj-cf0f429856ba9da4be8258ef.mp3",
+      "spokenText": "Teddy is dressed and comfortable.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29666,6 +30346,54 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy is dressed for a snowy outing with a grown-up.",
+      "file": "llj-34516892b9eddfd904065b91.mp3",
+      "spokenText": "Teddy is dressed for a snowy outing with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is home, clean, and ready for a cozy pause.",
+      "file": "llj-60ba5a76d2e53cb5eeef2d0e.mp3",
+      "spokenText": "Teddy is home, clean, and ready for a cozy pause.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is ready for a beach day, with shade and a grown-up nearby.",
+      "file": "llj-9a5efd74eb5200b91efc01fd.mp3",
+      "spokenText": "Teddy is ready for a beach day, with shade and a grown-up nearby.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is ready for a new day. Good morning!",
+      "file": "llj-eddd088073e5cd3fb298925f.mp3",
+      "spokenText": "Teddy is ready for a new day. Good morning!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is ready for the rain with a grown-up.",
+      "file": "llj-9f985ffed6f4436923281cf4.mp3",
+      "spokenText": "Teddy is ready for the rain with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy is ready to rest. You practiced a bedtime path!",
+      "file": "llj-9fef20cb037b8926151f1ef1.mp3",
+      "spokenText": "Teddy is ready to rest. You practiced a bedtime path!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Teddy is sleepy. Find a cozy blanket for a rest.",
       "file": "llj-2e4bc247d8e1fa6e3c057f9e.mp3",
       "spokenText": "Teddy is sleepy. Find a cozy blanket for a rest.",
@@ -29709,6 +30437,22 @@
       "text": "Teddy placed the missing boards. Our pretend bridge connects both sides again!",
       "file": "llj-8acc45c43b3f4f931e81e8c4.mp3",
       "spokenText": "Teddy placed the missing boards. Our pretend bridge connects both sides again!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy practiced a potty visit. There is no rush.",
+      "file": "llj-66d20b6ec8a7883a15c100f0.mp3",
+      "spokenText": "Teddy practiced a potty visit. There is no rush.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy practiced washing and drying hands.",
+      "file": "llj-8e82d20b07ad968a629f9d9d.mp3",
+      "spokenText": "Teddy practiced washing and drying hands.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29765,6 +30509,14 @@
       "text": "Teddy snuggles under a blanket for a cozy rest.",
       "file": "llj-51eaae3d9d34a3a14eecf847.mp3",
       "spokenText": "Teddy snuggles under a blanket for a cozy rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy stays with a grown-up on the way.",
+      "file": "llj-3235a5931b5fff7a287e32f6.mp3",
+      "spokenText": "Teddy stays with a grown-up on the way.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -30005,6 +30757,14 @@
       "text": "That is a knee. Knee pads help protect knees.",
       "file": "llj-4172dccfcb1232d408ebf4b3.mp3",
       "spokenText": "That is a knee. Knee pads help protect knees.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is a step for another moment. Listen to what comes next in Teddy's plan.",
+      "file": "llj-eca3d7d4d111d8c96d6af39d.mp3",
+      "spokenText": "That is a step for another moment. Listen to what comes next in Teddy's plan.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -30658,6 +31418,14 @@
       "category": "shapes"
     },
     {
+      "text": "The beach bag has water, a towel, and a toy.",
+      "file": "llj-877acae750bc10197e5827e8.mp3",
+      "spokenText": "The beach bag has water, a towel, and a toy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "The book cover has a rectangle shape.",
       "file": "llj-250d48d225f3738fadc4b0f5.mp3",
       "spokenText": "The book cover has a rectangle shape.",
@@ -30784,6 +31552,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The coat is ready for another day.",
+      "file": "llj-c1582395b0bd4e88a8572891.mp3",
+      "spokenText": "The coat is ready for another day.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "The cow lives in the farm. Let’s find it.",
@@ -31373,6 +32149,14 @@
       "text": "The toy car has a loose wheel. Find a grown-up and a toy repair kit.",
       "file": "llj-cbb1af7194ae89630473e562.mp3",
       "spokenText": "The toy car has a loose wheel. Find a grown-up and a toy repair kit.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "The toys are away. Our space is ready for a cozy pause.",
+      "file": "llj-86a80e35708cc27012412a1d.mp3",
+      "spokenText": "The toys are away. Our space is ready for a cozy pause.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -33274,6 +34058,22 @@
       "category": "feelings"
     },
     {
+      "text": "Try the glowing spot. We can take one little step at a time.",
+      "file": "llj-2ef8c32bd71b06bcc4fce838.mp3",
+      "spokenText": "Try the glowing spot. We can take one little step at a time.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Try the potty",
+      "file": "llj-97b416e597dcc0d53797dadd.mp3",
+      "spokenText": "Try the potty",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Try the spot with 1 petal.",
       "file": "llj-37b29747f629efba4bdc8281.mp3",
       "spokenText": "Try the spot with 1 petal.",
@@ -33978,6 +34778,14 @@
       "category": "feelings"
     },
     {
+      "text": "Warm boots are ready for the snow.",
+      "file": "llj-502be102768edbfcfb27463d.mp3",
+      "spokenText": "Warm boots are ready for the snow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Warm coat",
       "file": "llj-4d8ff66576a87c62e15e5ab5.mp3",
       "spokenText": "Warm coat",
@@ -33989,6 +34797,14 @@
       "text": "Warm hat",
       "file": "llj-78494f06947b27660b30e905.mp3",
       "spokenText": "Warm hat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Wash and dry hands",
+      "file": "llj-47784b299a5d7cc3ce8b8af3.mp3",
+      "spokenText": "Wash and dry hands",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -34053,6 +34869,14 @@
       "text": "Water spilled on the table. Find a soft cloth to wipe it up.",
       "file": "llj-0c93da125b96d9d5398fa9e1.mp3",
       "spokenText": "Water spilled on the table. Find a soft cloth to wipe it up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Water, a snack, and a blanket are packed.",
+      "file": "llj-a369da58724aff740d1527f5.mp3",
+      "spokenText": "Water, a snack, and a blanket are packed.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -36602,6 +37426,22 @@
       "category": "nature"
     },
     {
+      "text": "We leave our picnic spot tidy.",
+      "file": "llj-9ad4e2d447aa31ac02af0a45.mp3",
+      "spokenText": "We leave our picnic spot tidy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "We practiced pretend brushing. A grown-up helps with real brushing.",
+      "file": "llj-073cec622d11f4f8a0cf6a4a.mp3",
+      "spokenText": "We practiced pretend brushing. A grown-up helps with real brushing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "We practiced wetting, washing, rinsing, and drying our hands before a meal!",
       "file": "llj-0e505cc472754403ecd40cd0.mp3",
       "spokenText": "We practiced wetting, washing, rinsing, and drying our hands before a meal!",
@@ -36688,6 +37528,230 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find Teddy's clothes.",
+      "file": "llj-19e05c0d274aeadc76a7f3ea.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find Teddy's clothes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find a shady spot.",
+      "file": "llj-baf2f485ebf07b9d7e65e7fb.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find a shady spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find a warm hat and mittens.",
+      "file": "llj-a005b2b431ee5615ad45789f.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find a warm hat and mittens.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find breakfast.",
+      "file": "llj-4448ec7bb7097d369c2f9f8c.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find breakfast.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find brushing teeth.",
+      "file": "llj-80ed5152fdcc6aef5c6bd357.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find brushing teeth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find cozy pajamas.",
+      "file": "llj-e3580c5076d43a044e15bdf0.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find cozy pajamas.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find grown-up help.",
+      "file": "llj-b81923e3ab709578e5b5411f.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find grown-up help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find hanging up the coat.",
+      "file": "llj-d46e2232218ce56c13a3173f.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find hanging up the coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find putting toys away.",
+      "file": "llj-90d7188ab6b6db0c340de157.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find putting toys away.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find sun protection.",
+      "file": "llj-e1d7e4c91839ce3656684c90.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find sun protection.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find taking shoes off.",
+      "file": "llj-36b915f73dc71b63319aee28.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find taking shoes off.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the beach bag.",
+      "file": "llj-dafbef95622370390fbbcbd0.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the beach bag.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the bed.",
+      "file": "llj-244b4d8be66f4f1a72798fdc.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the flush button.",
+      "file": "llj-8ac40668169c7d4003441d32.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the flush button.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the hairbrush.",
+      "file": "llj-ea085594500df150d412f0bf.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the hairbrush.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the picnic basket.",
+      "file": "llj-0552c4cec48754e76d6ccabe.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the picnic basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the potty.",
+      "file": "llj-d71519b1d6ff53299307d46c.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the potty.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the rain boots.",
+      "file": "llj-a2128561e262efb1b98e9586.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the rain boots.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the raincoat.",
+      "file": "llj-3a087369000c2c14cac12d5d.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the raincoat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the snow boots.",
+      "file": "llj-07c3e527c9f9c5c67eae981a.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the snow boots.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the storybook.",
+      "file": "llj-53522cc2f46d6a23435e8340.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the storybook.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the sun hat.",
+      "file": "llj-89539666a83aa3af3c5aa3da.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the sun hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the umbrella.",
+      "file": "llj-0265f7bbaac3b34ff9b9fedd.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the umbrella.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find the warm coat.",
+      "file": "llj-4ea2d7b5e9e027be31e08b2e.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find the warm coat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find tidying up.",
+      "file": "llj-9bd110c9312c113618f32b51.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find tidying up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find toilet paper.",
+      "file": "llj-1bf372ff3197c901c22a67cd.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find toilet paper.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find walking together.",
+      "file": "llj-586084abd9e6520fd6b4632c.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find walking together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What comes next in Teddy's plan? Find washing hands.",
+      "file": "llj-f5be20b18bff5690edb0430c.mp3",
+      "spokenText": "What comes next in Teddy's plan? Find washing hands.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "What could Bunny use instead?",
@@ -37698,6 +38762,14 @@
       "category": "nature"
     },
     {
+      "text": "Whoosh! Teddy practiced flushing.",
+      "file": "llj-c771215b834697e48364af90.mp3",
+      "spokenText": "Whoosh! Teddy practiced flushing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Wiggle! Dance your fingers!",
       "file": "llj-408104277584f62b24cc15f3.mp3",
       "spokenText": "Wiggle! Dance your fingers!",
@@ -37776,6 +38848,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Wipe with help",
+      "file": "llj-2e9bd7155be3399a662bbf66.mp3",
+      "spokenText": "Wipe with help",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Wipe, wipe! The table is dry again.",
@@ -42202,12 +43282,28 @@
       "category": "nature"
     },
     {
+      "text": "You planned a picnic and cared for the shared space.",
+      "file": "llj-a814d710f6dd2da69243b899.mp3",
+      "spokenText": "You planned a picnic and cared for the shared space.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You played the whole pattern! What a wonderful drummer!",
       "file": "llj-0594c54433cb9674203fe0ff.mp3",
       "spokenText": "You played the whole pattern! What a wonderful drummer!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You practiced asking for help and a gentle bathroom routine.",
+      "file": "llj-ea4fd5cde06b0d40c7a06de6.mp3",
+      "spokenText": "You practiced asking for help and a gentle bathroom routine.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You practiced wiggling, slowing, and pausing together!",
