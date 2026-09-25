@@ -7,6 +7,66 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testBodyCluesDiversePeopleQuestionsTouchTargetsHintsAndRuth() throws {
+        XCTAssertEqual(BodyClue.bank.count, 18); XCTAssertEqual(BodyBuddy.bank.count, 18)
+        XCTAssertEqual(Set(BodyClue.bank.map(\.id)).count, 18)
+        XCTAssertEqual(Set(BodyBuddy.bank.map(\.id)).count, 18)
+        XCTAssertEqual(BodyBuddy.bank.filter { $0.identity == .girl }.count, 9)
+        XCTAssertEqual(BodyBuddy.bank.filter { $0.identity == .boy }.count, 9)
+        XCTAssertEqual(Set(BodyBuddy.bank.map(\.skin)).count, 6)
+        for skin in Set(BodyBuddy.bank.map(\.skin)) {
+            XCTAssertEqual(Set(BodyBuddy.bank.filter { $0.skin == skin }.map { $0.identity.rawValue }).count, 2)
+        }
+        var previousBuddy = "", previousClue = "", orders = Set<String>()
+        for _ in 0..<100 {
+            var play = BodyCluePlay(previousBuddy: previousBuddy, previousClue: previousClue)
+            XCTAssertNotEqual(play.current.buddy.id, previousBuddy); XCTAssertNotEqual(play.current.clue.id, previousClue)
+            previousBuddy = play.current.buddy.id; previousClue = play.current.clue.id
+            XCTAssertEqual(Set(play.rounds.map { $0.clue.id }).count, 18)
+            XCTAssertEqual(Set(play.rounds.map { $0.buddy.id }).count, 18)
+            orders.insert(play.rounds.map { $0.clue.id + $0.buddy.id }.joined())
+            for index in 0..<18 {
+                let clue = play.current.clue
+                if index > 0 { XCTAssertNotEqual(clue.part, play.rounds[index - 1].clue.part) }
+                XCTAssertFalse(play.solved); XCTAssertFalse(play.hintShown); XCTAssertEqual(play.attempts, 0)
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.choose(clue.part, clue: "stale")); XCTAssertEqual(play.attempts, 0)
+                let wrong = BuddyPart.allCases.first { $0 != clue.part }!
+                XCTAssertFalse(play.choose(wrong, clue: clue.id)); XCTAssertFalse(play.hintShown)
+                XCTAssertFalse(play.choose(wrong, clue: clue.id)); XCTAssertTrue(play.hintShown)
+                play.showHint(); XCTAssertTrue(play.hintShown)
+                XCTAssertTrue(play.choose(clue.part, clue: clue.id)); XCTAssertTrue(play.solved)
+                XCTAssertEqual(play.prompt, clue.response)
+                XCTAssertFalse(play.choose(clue.part, clue: clue.id)); XCTAssertEqual(play.attempts, 2)
+                play.next()
+            }
+            XCTAssertTrue(play.complete); play.next(); XCTAssertEqual(play.index, 18)
+            XCTAssertFalse(play.choose(play.current.clue.part, clue: play.current.clue.id))
+        }
+        XCTAssertEqual(orders.count, 100)
+        XCTAssertEqual(Set(BuddyBodySpot.all.map(\.part)), Set(BuddyPart.allCases))
+        for width in [280.0, 320.0, 350.0, 390.0] {
+            let rects = BuddyBodySpot.all.map { $0.rect(scale: width / 340) }
+            for i in rects.indices {
+                XCTAssertGreaterThanOrEqual(rects[i].width, 44); XCTAssertGreaterThanOrEqual(rects[i].height, 44)
+                for j in rects.indices where j > i {
+                    XCTAssertFalse(rects[i].intersects(rects[j]), "\(width): \(BuddyBodySpot.all[i].id) overlaps \(BuddyBodySpot.all[j].id)")
+                }
+            }
+        }
+        for buddy in BodyBuddy.bank {
+            let renderer = ImageRenderer(content: BodyBuddyPicture(buddy: buddy, highlight: nil, solved: false, onTap: { _ in }).frame(width: 340).background(.white))
+            let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Body buddy \(buddy.name)"; shot.lifetime = .keepAlways; add(shot)
+        }
+        for text in BodyClue.narration {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth"); XCTAssertEqual(clip.engine, "generative")
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text))
+        }
+    }
+
+
+    @MainActor
     func testSolutionToolboxAllProblemsSelectionsShuffleAndRuth() throws {
         XCTAssertEqual(SolutionProblem.bank.count, 18)
         XCTAssertEqual(Set(SolutionProblem.bank.map(\.id)).count, 18)

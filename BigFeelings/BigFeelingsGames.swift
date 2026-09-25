@@ -10,46 +10,6 @@ private struct BFNote: View {
     }
 }
 
-struct BodyClueBuddiesGame: View {
-    let onReplay: () -> Void
-    @State private var explored: Set<Int> = []
-    @State private var selected: Int?
-    @State private var note = "Tap a body clue, then notice it in your own body with your grown-up."
-    @StateObject private var narrator = GameNarrator()
-    private let names = ["Hands", "Heartbeat", "Tummy", "Feet"]
-    private let symbols = ["hand.raised.fill", "heart.fill", "circle.dotted", "shoeprints.fill"]
-    private let clues = ["Open your hands, then softly close them. Do they feel warm, cool, or something else?", "Rest your own hand on your chest if you like. Can you notice your heartbeat? It is okay if you cannot.", "Notice your tummy. Does it feel hungry, full, fluttery, or something else? Only you can tell us.", "Notice your feet touching the floor or a cushion. Wiggle your toes, then let them rest."]
-    var body: some View {
-        ToddlerGameScaffold(title: "Body Clue Buddies", prompt: explored.count == 4 ? "You noticed clues from your hands, heartbeat, tummy, and feet!" : selected.map { clues[$0] } ?? "Our bodies can give us clues. Choose a place to notice.", accent: .orange, completion: explored.count == 4, onReplay: onReplay) {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 118))], spacing: 14) {
-                ForEach(0..<4, id: \.self) { index in
-                    Button {
-                        selected = index
-                        note = clues[index]
-                    } label: {
-                        VStack(spacing: 10) {
-                            Image(systemName: symbols[index]).font(.system(size: 48))
-                            Text(names[index]).font(.headline)
-                            if explored.contains(index) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green) }
-                        }.foregroundStyle(.orange).frame(maxWidth: .infinity, minHeight: 133)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 24))
-                            .overlay(RoundedRectangle(cornerRadius: 24).stroke(selected == index ? Color.orange : .clear, lineWidth: 3))
-                    }.buttonStyle(.plain)
-                }
-            }
-            if let selected {
-                ToddlerActionButton(title: "We noticed together", systemImage: "checkmark", color: .orange) {
-                    explored.insert(selected)
-                    self.selected = nil
-                    note = "Thank you for noticing. A body clue can mean different things."
-                    narrator.speak(note)
-                }
-            }
-            BFNote(text: note)
-        }
-    }
-}
-
 struct FriendshipBridgeGame: View {
     let onReplay: () -> Void
     @State private var step = 0

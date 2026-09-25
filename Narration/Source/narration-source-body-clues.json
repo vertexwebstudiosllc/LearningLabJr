@@ -1,0 +1,327 @@
+[
+  {
+    "text": "Where would a hat go? Tap that part of our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the head! A hat goes on the head.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Where would a bicycle helmet go? Tap that part.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the head. A helmet helps protect the head.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts of the face can help us see a picture?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the eyes! Eyes can help us see.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts of the face blink? Find them on our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Those are the eyes. Blink, blink!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts at the sides of the head can help us hear?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the ears! Ears can help us hear sounds.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts of the head do earmuffs cover?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Those are the ears. Earmuffs help keep ears warm.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which part of the face can help us smell a flower?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the nose! A nose can help us smell.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the part between the eyes and the mouth.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the nose, in the middle of the face.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Where does a bite of a snack go? Tap that part of the face.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the mouth! Food goes into the mouth.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which part of the face makes a smile?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the mouth. Our friend has a smile!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts can wave hello? Tap one on our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found a hand! Hands can wave hello.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts do mittens keep warm? Tap one.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is a hand. Mittens help keep hands warm.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which part below the chest might rumble when we feel hungry?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found the tummy! Sometimes a tummy makes a rumble.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find the tummy in the middle of our friend, above the legs.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is the tummy, above the legs.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Find a bendy part in the middle of a leg.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found a knee! Knees help legs bend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Where would knee pads go? Tap one spot on our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is a knee. Knee pads help protect knees.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts wear socks? Tap one on our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You found a foot! Socks go on feet.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Which parts have toes? Find one at the bottom of our friend.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "That is a foot. Toes are part of a foot!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the head. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the eyes. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the ears. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the nose. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the mouth. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the hands. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the tummy. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the knees. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's find the feet. Look for the glowing outline.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Maya.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Leo.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Amina.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Kai.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Zoe.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Noah.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Mei.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Sam.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Priya.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Eli.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Luna.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Omar.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Ada.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Ben.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Nia.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Luis.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Hana.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Meet Theo.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Good exploring! Listen to the clue and try another body part.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

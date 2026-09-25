@@ -4,6 +4,60 @@ import StoreKitTest
 final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
+    func testBodyCluesAllPeopleDirectTapsHintsCompletionAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        let answers = ["hat": "head", "helmet": "head", "look": "eyes", "blink": "eyes", "listen": "ears", "earmuffs": "ears", "smell": "nose", "sniff": "nose", "bite": "mouth", "smile": "mouth", "wave": "hands", "mittens": "hands", "rumble": "tummy", "middle": "tummy", "bend": "knees", "kneepads": "knees", "socks": "feet", "toes": "feet"]
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Body Clue Buddies"]
+        try tap(card)
+        var seenPeople = Set<String>(), seenQuestions = Set<String>()
+        for index in 0..<18 {
+            let picture = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'body.picture.'")).firstMatch
+            XCTAssertTrue(picture.waitForExistence(timeout: 5))
+            let clue = String(picture.identifier.dropFirst("body.picture.".count))
+            let buddy = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'body.buddy.'")).firstMatch
+            XCTAssertTrue(seenPeople.insert(buddy.identifier).inserted)
+            XCTAssertTrue(seenQuestions.insert(clue).inserted)
+            XCTAssertEqual(app.staticTexts["body.progress"].label, "Clue \(index + 1) of 18")
+            let part = try XCTUnwrap(answers[clue])
+            if index == 0 {
+                try tap(buddy)
+                let wrong = part == "head" ? "tummy" : "head"
+                try tap(app.buttons["body.part.\(wrong).0"])
+                XCTAssertFalse(app.buttons["body.next"].exists)
+                try tap(app.buttons["body.part.\(wrong).0"])
+                XCTAssertTrue(app.staticTexts["body.feedback"].exists)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Body clue hint"; shot.lifetime = .keepAlways; add(shot)
+            }
+            if index == 1 { try tap(app.buttons["body.hint"]) }
+            // Alternate sides to verify both members of paired body parts accept answers.
+            let side = ["eyes", "ears", "hands", "knees", "feet"].contains(part) && index.isMultiple(of: 2) ? 1 : 0
+            try tap(app.buttons["body.part.\(part).\(side)"])
+            XCTAssertTrue(app.buttons["body.next"].waitForExistence(timeout: 5))
+            XCTAssertEqual(app.staticTexts["body.answer"].label, part.capitalized)
+            if index < 3 {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Body clue answer \(index)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["body.next"])
+        }
+        XCTAssertEqual(seenPeople.count, 18); XCTAssertEqual(seenQuestions.count, 18)
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        XCTAssertEqual(app.staticTexts["body.progress"].label, "Clue 1 of 18")
+        let buddy = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'body.buddy.'")).firstMatch
+        let prior = buddy.identifier
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertNotEqual(buddy.identifier, prior)
+        XCTAssertFalse(app.buttons["body.next"].exists)
+    }
+
+
+    @MainActor
     func testSolutionToolboxEighteenProblemsPopupAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

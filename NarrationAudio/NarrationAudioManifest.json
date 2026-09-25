@@ -11586,6 +11586,14 @@
       "category": "nature"
     },
     {
+      "text": "Find a bendy part in the middle of a leg.",
+      "file": "llj-896311e3d8e10c0e0f5fa8f5.mp3",
+      "spokenText": "Find a bendy part in the middle of a leg.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Find a toy nearby and offer to put it away together.",
       "file": "llj-55df3cd7577df26925e17dac.mp3",
       "spokenText": "Find a toy nearby and offer to put it away together.",
@@ -12218,6 +12226,14 @@
       "category": "shapes"
     },
     {
+      "text": "Find the part between the eyes and the mouth.",
+      "file": "llj-a3d38a6f89ba8f53f3a17ac8.mp3",
+      "spokenText": "Find the part between the eyes and the mouth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Find the penguins. Touch each penguin once. Let's count together.",
       "file": "llj-327839425c614de15677269f.mp3",
       "spokenText": "Find the penguins. Touch each penguin once. Let's count together.",
@@ -12496,6 +12512,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Find the tummy in the middle of our friend, above the legs.",
+      "file": "llj-6345c08fa2f6b8dc35e2c571.mp3",
+      "spokenText": "Find the tummy in the middle of our friend, above the legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Find the turtles. Touch each turtle once. Let's count together.",
@@ -13664,6 +13688,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Good exploring! Listen to the clue and try another body part.",
+      "file": "llj-3c4b16b0aa967e7cd00791aa.mp3",
+      "spokenText": "Good exploring! Listen to the clue and try another body part.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Goodbye! I enjoyed our picnic.",
@@ -16746,12 +16778,84 @@
       "category": "counting"
     },
     {
+      "text": "Let's find the ears. Look for the glowing outline.",
+      "file": "llj-de4cf49516ecde7020ec600b.mp3",
+      "spokenText": "Let's find the ears. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the eyes. Look for the glowing outline.",
+      "file": "llj-efe4bc2a4c0fd8f45518b5a6.mp3",
+      "spokenText": "Let's find the eyes. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the feet. Look for the glowing outline.",
+      "file": "llj-4b8ab5377fa84513942ab1d4.mp3",
+      "spokenText": "Let's find the feet. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the hands. Look for the glowing outline.",
+      "file": "llj-6def4b5951c2a78c6f771732.mp3",
+      "spokenText": "Let's find the hands. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the head. Look for the glowing outline.",
+      "file": "llj-f6e14b756824d4abfcf68f3e.mp3",
+      "spokenText": "Let's find the head. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the knees. Look for the glowing outline.",
+      "file": "llj-c822cf7b7ace973e11edf9b9.mp3",
+      "spokenText": "Let's find the knees. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the mouth. Look for the glowing outline.",
+      "file": "llj-7ab71bb736872cc38d61ca89.mp3",
+      "spokenText": "Let's find the mouth. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's find the nose. Look for the glowing outline.",
+      "file": "llj-eaeb998d972bc0b4398a8a65.mp3",
+      "spokenText": "Let's find the nose. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let's find the trash that matches our picture first.",
       "file": "llj-dbbbeb7d11cd87d8e20fe85b.mp3",
       "spokenText": "Let's find the trash that matches our picture first.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Let's find the tummy. Look for the glowing outline.",
+      "file": "llj-1e7ca58010e279d24bcc8ede.mp3",
+      "spokenText": "Let's find the tummy. Look for the glowing outline.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's grow inside! Choose a pot with holes underneath so extra water can drain away.",
@@ -21568,6 +21672,150 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Meet Ada.",
+      "file": "llj-52d8de0a0023922763797bf8.mp3",
+      "spokenText": "Meet Ada.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Amina.",
+      "file": "llj-db6c413755ddcd8e154e7514.mp3",
+      "spokenText": "Meet Amina.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Ben.",
+      "file": "llj-072f5c5415cefef40f9477b6.mp3",
+      "spokenText": "Meet Ben.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Eli.",
+      "file": "llj-e34f98e43cd6d8b58068d4f3.mp3",
+      "spokenText": "Meet Eli.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Hana.",
+      "file": "llj-cd40baf5113d5dae8fa43f8f.mp3",
+      "spokenText": "Meet Hana.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Kai.",
+      "file": "llj-fe4ff1f0d62e0486f7a6b150.mp3",
+      "spokenText": "Meet Kai.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Leo.",
+      "file": "llj-e60d0d2c59005255d38453bd.mp3",
+      "spokenText": "Meet Leo.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Luis.",
+      "file": "llj-2600799628cca00e6110235a.mp3",
+      "spokenText": "Meet Luis.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Luna.",
+      "file": "llj-32624114f9bec8376090a1a2.mp3",
+      "spokenText": "Meet Luna.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Maya.",
+      "file": "llj-b88eff0afc9d97cb5fbe51eb.mp3",
+      "spokenText": "Meet Maya.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Mei.",
+      "file": "llj-3321639707e86a46b5f02cad.mp3",
+      "spokenText": "Meet Mei.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Nia.",
+      "file": "llj-82cf6d9bb8caf52475f5e25e.mp3",
+      "spokenText": "Meet Nia.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Noah.",
+      "file": "llj-e3dc90b15d2f6912abd95f9a.mp3",
+      "spokenText": "Meet Noah.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Omar.",
+      "file": "llj-97b9ee7f3364c6299044a33c.mp3",
+      "spokenText": "Meet Omar.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Priya.",
+      "file": "llj-6d429e8f0475e2937ba5bf03.mp3",
+      "spokenText": "Meet Priya.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Sam.",
+      "file": "llj-dd845612e6ffb0eac06a7fa1.mp3",
+      "spokenText": "Meet Sam.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Theo.",
+      "file": "llj-790ca086e46b8303985a6a9f.mp3",
+      "spokenText": "Meet Theo.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Meet Zoe.",
+      "file": "llj-fbf82790f754d611bb170212.mp3",
+      "spokenText": "Meet Zoe.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Mei says, thank you for playing with me!",
@@ -29354,6 +29602,30 @@
       "category": "literacy"
     },
     {
+      "text": "That is a foot. Toes are part of a foot!",
+      "file": "llj-87e827f10115c0ef070a0aa9.mp3",
+      "spokenText": "That is a foot. Toes are part of a foot!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is a hand. Mittens help keep hands warm.",
+      "file": "llj-8aca2516b309ede513c6665c.mp3",
+      "spokenText": "That is a hand. Mittens help keep hands warm.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is a knee. Knee pads help protect knees.",
+      "file": "llj-4172dccfcb1232d408ebf4b3.mp3",
+      "spokenText": "That is a knee. Knee pads help protect knees.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "That is an ocean animal. Let it stay in its home. Look for trash instead.",
       "file": "llj-b2638530a2212e0a2ebfd6aa.mp3",
       "spokenText": "That is an ocean animal. Let it stay in its home. Look for trash instead.",
@@ -29770,12 +30042,44 @@
       "category": "stories"
     },
     {
+      "text": "That is the head. A helmet helps protect the head.",
+      "file": "llj-5a99a7e25abe033cf12aa46b.mp3",
+      "spokenText": "That is the head. A helmet helps protect the head.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is the mouth. Our friend has a smile!",
+      "file": "llj-af31e06b2476f823469c6a43.mp3",
+      "spokenText": "That is the mouth. Our friend has a smile!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "That is the nose, in the middle of the face.",
+      "file": "llj-9f81662f6ebb78fc1df5e69f.mp3",
+      "spokenText": "That is the nose, in the middle of the face.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "That is the toothbrush! We brush in the morning and before bed, with help from a grown-up.",
       "file": "llj-37cbddaca30fbb17faf3b48e.mp3",
       "spokenText": "That is the toothbrush! We brush in the morning and before bed, with help from a grown-up.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "That is the tummy, above the legs.",
+      "file": "llj-b2f40bd1e9358415dd367d1b.mp3",
+      "spokenText": "That is the tummy, above the legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "That is useful for another job. Listen to our problem and try another tool.",
@@ -32088,6 +32392,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Those are the ears. Earmuffs help keep ears warm.",
+      "file": "llj-c2a2cb248afeb28397e71d02.mp3",
+      "spokenText": "Those are the ears. Earmuffs help keep ears warm.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Those are the eyes. Blink, blink!",
+      "file": "llj-20eb0554240ccf262c4b96ce.mp3",
+      "spokenText": "Those are the eyes. Blink, blink!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Those fluffy white shapes remind us of clouds. Earth has air around it. Take a gentle breath with me.",
@@ -36218,6 +36538,14 @@
       "category": "nature"
     },
     {
+      "text": "Where does a bite of a snack go? Tap that part of the face.",
+      "file": "llj-857730f91d31f5a4e37d9459.mp3",
+      "spokenText": "Where does a bite of a snack go? Tap that part of the face.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Where does the cow live?",
       "file": "llj-8d73d495424f3b47a3ca0cea.mp3",
       "spokenText": "Where does the cow live?",
@@ -36248,6 +36576,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Where would a bicycle helmet go? Tap that part.",
+      "file": "llj-122c16475eda6ec37e2da1ca.mp3",
+      "spokenText": "Where would a bicycle helmet go? Tap that part.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Where would a hat go? Tap that part of our friend.",
+      "file": "llj-96e7e32d74892902e7d7540b.mp3",
+      "spokenText": "Where would a hat go? Tap that part of our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Where would knee pads go? Tap one spot on our friend.",
+      "file": "llj-ca466a08b4f5e5e44b8d6576.mp3",
+      "spokenText": "Where would knee pads go? Tap one spot on our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Which feeling is our puppet pretending? Calm, Happy, Mad. Tap the matching face and feeling word.",
@@ -36752,6 +37104,94 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Which part below the chest might rumble when we feel hungry?",
+      "file": "llj-a84624fd0887787c45fb853b.mp3",
+      "spokenText": "Which part below the chest might rumble when we feel hungry?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which part of the face can help us smell a flower?",
+      "file": "llj-cf8376618d6b1d600a38afc8.mp3",
+      "spokenText": "Which part of the face can help us smell a flower?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which part of the face makes a smile?",
+      "file": "llj-a825dc668ae666ed4c183310.mp3",
+      "spokenText": "Which part of the face makes a smile?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts at the sides of the head can help us hear?",
+      "file": "llj-60224fb4633a74bbd808678d.mp3",
+      "spokenText": "Which parts at the sides of the head can help us hear?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts can wave hello? Tap one on our friend.",
+      "file": "llj-dc159fdccd1b21b59e1b0ad3.mp3",
+      "spokenText": "Which parts can wave hello? Tap one on our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts do mittens keep warm? Tap one.",
+      "file": "llj-0ebd5899a3b63b0492ffce62.mp3",
+      "spokenText": "Which parts do mittens keep warm? Tap one.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts have toes? Find one at the bottom of our friend.",
+      "file": "llj-de0a5bed2818efb1e32b74a4.mp3",
+      "spokenText": "Which parts have toes? Find one at the bottom of our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts of the face blink? Find them on our friend.",
+      "file": "llj-55a79e88e870e0ee21e24864.mp3",
+      "spokenText": "Which parts of the face blink? Find them on our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts of the face can help us see a picture?",
+      "file": "llj-f4e3167698c3ddcb723573b9.mp3",
+      "spokenText": "Which parts of the face can help us see a picture?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts of the head do earmuffs cover?",
+      "file": "llj-b2d47f1c622b1b4b28da36ef.mp3",
+      "spokenText": "Which parts of the head do earmuffs cover?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Which parts wear socks? Tap one on our friend.",
+      "file": "llj-d039d071a7fe8be1ff25e3ca.mp3",
+      "spokenText": "Which parts wear socks? Tap one on our friend.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Which pile has less treasure? Tap the pile with fewer coins.",
@@ -39682,6 +40122,14 @@
       "category": "nature"
     },
     {
+      "text": "You found a foot! Socks go on feet.",
+      "file": "llj-379f5c977cadc4737aae8098.mp3",
+      "spokenText": "You found a foot! Socks go on feet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You found a green leaf!",
       "file": "llj-f57cc45f1edceb102c7d9609.mp3",
       "spokenText": "You found a green leaf!",
@@ -39693,6 +40141,22 @@
       "text": "You found a grown-up and a repair kit. The grown-up fixes the toy. Ready to roll!",
       "file": "llj-b9fe750dda93a68877cafd9b.mp3",
       "spokenText": "You found a grown-up and a repair kit. The grown-up fixes the toy. Ready to roll!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You found a hand! Hands can wave hello.",
+      "file": "llj-13f4add3af85edba6ea5f070.mp3",
+      "spokenText": "You found a hand! Hands can wave hello.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You found a knee! Knees help legs bend.",
+      "file": "llj-2a689490dff4d150299d1cf4.mp3",
+      "spokenText": "You found a knee! Knees help legs bend.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -40154,12 +40618,36 @@
       "category": "nature"
     },
     {
+      "text": "You found the ears! Ears can help us hear sounds.",
+      "file": "llj-00a519b637e59ba5b86bd33d.mp3",
+      "spokenText": "You found the ears! Ears can help us hear sounds.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You found the eyes! Eyes can help us see.",
+      "file": "llj-3e4d25f52c39d3203f43d8f2.mp3",
+      "spokenText": "You found the eyes! Eyes can help us see.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You found the goat! Great noticing, nature detective!",
       "file": "llj-99798fd0d6c89b50b889e6d4.mp3",
       "spokenText": "You found the goat! Great noticing, nature detective!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "You found the head! A hat goes on the head.",
+      "file": "llj-809845d8ae5bf02e6c6c8d38.mp3",
+      "spokenText": "You found the head! A hat goes on the head.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You found the horse! Great noticing, nature detective!",
@@ -40192,6 +40680,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "You found the mouth! Food goes into the mouth.",
+      "file": "llj-bf61067778dc3b176ead6b8c.mp3",
+      "spokenText": "You found the mouth! Food goes into the mouth.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You found the nose! A nose can help us smell.",
+      "file": "llj-8c3090912ad5472d18b349e0.mp3",
+      "spokenText": "You found the nose! A nose can help us smell.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You found the octopus!",
@@ -40272,6 +40776,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "You found the tummy! Sometimes a tummy makes a rumble.",
+      "file": "llj-3b402281345f6f847cd14ba6.mp3",
+      "spokenText": "You found the tummy! Sometimes a tummy makes a rumble.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You found the turkey! Great noticing, nature detective!",

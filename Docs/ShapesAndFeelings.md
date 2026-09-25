@@ -35,7 +35,7 @@ Colors are accompanied by words and characteristic symbols where possible. Shape
 | My Feeling Weather | Choose a feeling, its size, and a support | One check-in |
 | Kindness Garden | Choose, act out, and plant flowers for caring actions | Three different caring actions |
 | My Solution Toolbox | Open a picture toolbox and choose one or two helpful items for everyday problems | Eighteen shuffled problems, with a solved scene after each |
-| Body Clue Buddies | Explore body sensations in any order with a grown-up | Four body areas noticed |
+| Body Clue Buddies | Identify body parts by tapping a diverse picture buddy | Eighteen clues with a new buddy each time |
 | Friendship Bridge | Role-play asking, waiting or choosing, and shared planning | Three bridge conversations |
 | Cozy Evening Path | Sequence Teddy's pictured evening routine | Four routine steps |
 | See You Soon | Select goodbye and comfort choices, then reveal a pretend reunion | One complete pretend goodbye story |
@@ -59,3 +59,7 @@ A category-level review corrected ambiguous road navigation by highlighting and 
 ### My Solution Toolbox
 
 Eighteen unique everyday problems run once each in a shuffled session. The first problem changes on re-entry, and four picture choices shuffle for each problem. Children open a sheet, hear the problem or individual item names, and select one or two helpful tools in either order. Closing the sheet preserves their selections. Unsuitable tools invite another try; selected tools cannot count twice. Solving closes the toolbox and reveals the outcome before the child advances. Real repairs explicitly involve a grown-up. All prompts, feedback, outcomes, and item labels have bundled generative Ruth recordings.
+
+### Body Clue Buddies
+
+Eighteen distinct clues teach nine body parts, with two clues per part and no consecutive repeated part. Eighteen named buddies include nine boys and nine girls, six skin tones represented across both genders, and varied hair and clothing. Each buddy appears once per session. Questions and people shuffle independently; re-entry changes the first buddy and clue. Both sides of paired body parts accept taps. Tap targets remain at least 44 points with no overlaps from 280–390 point layouts. Two unsuccessful taps offer an outline hint; a hint is also available on demand. Correct answers highlight the part and explain the clue before moving on. All clue, answer, retry, hint, and introduction lines use bundled generative Ruth narration.
