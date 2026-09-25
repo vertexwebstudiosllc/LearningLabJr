@@ -18,41 +18,6 @@ private enum BFFeeling: Int, CaseIterable, Identifiable {
     var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
 }
 
-struct FlowerBreathsGame: View {
-    let onReplay: () -> Void
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var opening = false
-    @State private var breaths = 0
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "Flower Breaths", prompt: breaths == 3 ? "Three gentle flower breaths, together at your own pace." : opening ? "Let the air out gently, like a soft breeze. Tap when you are ready." : "Pretend to smell a flower. Take an easy breath in, or just watch your grown-up.", accent: .teal, completion: breaths == 3, onReplay: onReplay) {
-            ZStack {
-                ForEach(0..<8, id: \.self) { index in
-                    Ellipse().fill(Color.pink.opacity(0.65))
-                        .frame(width: opening ? 68 : 44, height: opening ? 110 : 74)
-                        .offset(y: opening ? -52 : -27)
-                        .rotationEffect(.degrees(Double(index) * 45))
-                }
-                Circle().fill(.yellow).frame(width: 72, height: 72)
-                Image(systemName: "face.smiling").font(.system(size: 47)).foregroundStyle(.brown)
-            }.frame(height: 250).accessibilityLabel(opening ? "Flower opening" : "Flower resting")
-            ToddlerActionButton(title: opening ? "Soft breeze out" : "Smell the flower", systemImage: opening ? "wind" : "camera.macro", color: .teal) {
-                guard breaths < 3 else { return }
-                withAnimation(reduceMotion ? nil : .easeInOut(duration: 1.1)) {
-                    if opening { breaths += 1 }
-                    opening.toggle()
-                }
-            }
-            HStack(spacing: 18) {
-                ForEach(0..<3, id: \.self) { index in
-                    Image(systemName: "camera.macro").font(.system(size: 35)).foregroundStyle(index < breaths ? .pink : .gray.opacity(0.3))
-                }
-            }.accessibilityLabel("\(breaths) of 3 flower breaths")
-            BFNote(text: "Go at your own pace. Breathe comfortably; there is no need to hold a breath. Watching together counts, too.")
-        }
-    }
-}
-
 struct TeddyHelpingHandsGame: View {
     let onReplay: () -> Void
     @State private var scene = 0

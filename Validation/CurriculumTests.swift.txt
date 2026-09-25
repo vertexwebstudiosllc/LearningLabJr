@@ -6,6 +6,64 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testFlowerBreathsEightGentleActivitiesAndRuth() throws {
+        XCTAssertEqual(GentleLevel.bank.count, 8)
+        XCTAssertEqual(Set(GentleLevel.bank.map(\.kind)).count, 8)
+        XCTAssertEqual(GentleLevel.bank.first?.kind, .flower)
+        for watched in [false, true] {
+            var play = GentlePlay()
+            for index in 0..<8 {
+                let level = play.current
+                XCTAssertEqual(play.index, index)
+                XCTAssertEqual(play.prompt, level.prompts[0])
+                play.advance(level.id); XCTAssertEqual(play.index, index)
+                play.watch("stale"); XCTAssertFalse(play.finishedLevel)
+                XCTAssertFalse(play.dropBlanket(["wrong"], in: level.id, at: 0))
+                if watched {
+                    play.watch(level.id); XCTAssertTrue(play.finishedLevel)
+                    XCTAssertEqual(play.prompt, level.success)
+                } else if level.kind == .kindwords {
+                    play.act(0, in: level.id, at: 0); XCTAssertFalse(play.finishedLevel)
+                    play.chooseWord("invalid"); XCTAssertFalse(play.finishedLevel)
+                    play.chooseWord("help"); XCTAssertTrue(play.finishedLevel)
+                    XCTAssertEqual(play.prompt, GentleWords.bank[0].narration)
+                    play.chooseWord("space"); XCTAssertEqual(play.word?.id, "help")
+                } else if level.kind == .teddy {
+                    XCTAssertFalse(play.dropBlanket(["gentle.teddy.blanket"], in: "stale", at: 0))
+                    XCTAssertFalse(play.dropBlanket(["gentle.teddy.blanket", "wrong"], in: level.id, at: 0))
+                    XCTAssertTrue(play.dropBlanket(["gentle.teddy.blanket"], in: level.id, at: 0))
+                    XCTAssertFalse(play.dropBlanket(["gentle.teddy.blanket"], in: level.id, at: 0))
+                } else {
+                    for step in level.prompts.indices {
+                        XCTAssertEqual(play.prompt, level.prompts[step])
+                        play.act(99, in: level.id, at: step); XCTAssertEqual(play.step, step)
+                        play.act(step, in: "stale", at: step); XCTAssertEqual(play.step, step)
+                        play.act(step, in: level.id, at: step + 1); XCTAssertEqual(play.step, step)
+                        let target = [.flowers, .pond].contains(level.kind) ? [2, 0, 1][step] : step
+                        play.act(target, in: level.id, at: step); XCTAssertEqual(play.step, step + 1)
+                        play.act(target, in: level.id, at: step); XCTAssertEqual(play.step, step + 1)
+                    }
+                    XCTAssertTrue(play.finishedLevel)
+                }
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: play.prompt)?.voice, "Ruth")
+                play.advance("stale"); XCTAssertEqual(play.index, index)
+                play.advance(level.id); XCTAssertEqual(play.index, index + 1)
+                play.advance(level.id); XCTAssertEqual(play.index, index + 1)
+                XCTAssertTrue(play.touched.isEmpty); XCTAssertFalse(play.watched); XCTAssertNil(play.word)
+            }
+            XCTAssertTrue(play.complete)
+            play.watch(play.current.id); play.act(0, in: play.current.id, at: 0)
+            XCTAssertEqual(play.index, 8); XCTAssertEqual(play.step, 0)
+        }
+        for choice in GentleWords.bank {
+            var play = GentlePlay()
+            for _ in 0..<7 { let id = play.current.id; play.watch(id); play.advance(id) }
+            play.chooseWord(choice.id); XCTAssertEqual(play.prompt, choice.narration)
+        }
+        for text in GentleLevel.narration { XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text) }
+    }
+
+    @MainActor
     func testFunnyFaceCopyIdentifySequenceAndRuth() throws {
         XCTAssertEqual(StudioEmotion.allCases.count, 6)
         XCTAssertEqual(StudioEmotion.mad.name, "Mad")

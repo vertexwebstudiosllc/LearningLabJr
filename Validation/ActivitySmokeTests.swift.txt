@@ -9,6 +9,58 @@ final class ActivitySmokeTests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
     @MainActor
+    func testFlowerBreathsAllActivitiesDragWatchAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Flower Breaths"]
+        try tap(card)
+        let levels = ["flower", "feather", "flowers", "teddy", "turtle", "pond", "listening", "kindwords"]
+        for (index, id) in levels.enumerated() {
+            XCTAssertTrue(app.staticTexts["gentle.level.\(id)"].waitForExistence(timeout: 5))
+            XCTAssertEqual(app.staticTexts["gentle.progress"].label, "Activity \(index + 1) of 8")
+            XCTAssertFalse(app.buttons["gentle.next"].exists)
+            switch id {
+            case "flower": for _ in 0..<6 { try tap(app.buttons["gentle.act"]) }
+            case "feather", "turtle":
+                XCTAssertFalse(app.buttons["gentle.spot.2"].isEnabled)
+                for spot in 0..<3 { try tap(app.buttons["gentle.spot.\(spot)"]) }
+            case "flowers", "pond":
+                for spot in [2, 0, 1] { try tap(app.buttons["gentle.spot.\(spot)"]) }
+            case "teddy":
+                let blanket = app.descendants(matching: .any).matching(identifier: "gentle.blanket").firstMatch
+                let target = app.descendants(matching: .any).matching(identifier: "gentle.teddy").firstMatch
+                try reveal(blanket, in: app)
+                if blanket.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+                try reveal(blanket, in: app)
+                blanket.press(forDuration: 0.8, thenDragTo: target)
+            case "listening": for _ in 0..<2 { try tap(app.buttons["gentle.act"]) }
+            default: try tap(app.buttons["gentle.word.space"])
+            }
+            XCTAssertTrue(app.buttons["gentle.next"].waitForExistence(timeout: 5))
+            if ["flower", "feather", "flowers", "teddy", "pond"].contains(id) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Gentle \(id)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["gentle.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        for id in levels {
+            XCTAssertTrue(app.staticTexts["gentle.level.\(id)"].exists)
+            try tap(app.buttons["gentle.watch"])
+            try tap(app.buttons["gentle.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].exists)
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertTrue(app.staticTexts["gentle.level.flower"].exists)
+        XCTAssertTrue(app.buttons["gentle.act"].exists)
+    }
+
+    @MainActor
     func testFunnyFaceCopyIdentifyAllSixAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

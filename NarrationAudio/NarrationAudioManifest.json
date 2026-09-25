@@ -7210,6 +7210,14 @@
       "category": "literacy"
     },
     {
+      "text": "A flower and a little breeze are one way to practice a gentle moment together.",
+      "file": "llj-8091710156a300829b9fdd7a.mp3",
+      "spokenText": "A flower and a little breeze are one way to practice a gentle moment together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A flower for caring together.",
       "file": "llj-2bbe4bade6653334b55e12d3.mp3",
       "spokenText": "A flower for caring together.",
@@ -12210,6 +12218,14 @@
       "category": "counting"
     },
     {
+      "text": "Follow the feather to the last glowing cloud. Let your hand come to a gentle rest.",
+      "file": "llj-483aaa4e2e6bf79d1609f138.mp3",
+      "spokenText": "Follow the feather to the last glowing cloud. Let your hand come to a gentle rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Follow the glowing dot around the arch. Slide a finger or tap each dot.",
       "file": "llj-3ae135563b73535121ab8935.mp3",
       "spokenText": "Follow the glowing dot around the arch. Slide a finger or tap each dot.",
@@ -12816,6 +12832,22 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Gentle hands can help us care for toys and people. Ask before touching another person.",
+      "file": "llj-6dd66095a976fe53adf039f1.mp3",
+      "spokenText": "Gentle hands can help us care for toys and people. Ask before touching another person.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Gentle words can show care. Pick something our puppet could say. All three choices are kind.",
+      "file": "llj-949896be2a73d36ab3b81e53.mp3",
+      "spokenText": "Gentle words can show care. Pick something our puppet could say. All three choices are kind.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Gently press your palms together, then let go. Try it once with your grown-up.",
@@ -14018,6 +14050,14 @@
       "category": "stories"
     },
     {
+      "text": "Here is another flower. Try an easy breath in, or watch together. Go at your own pace.",
+      "file": "llj-3276d1956f9dcc8c3570a09d.mp3",
+      "spokenText": "Here is another flower. Try an easy breath in, or watch together. Go at your own pace.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Here is some bread for you. Yum!",
       "file": "llj-9f7c8a3a041f8c7a992db24c.mp3",
       "spokenText": "Here is some bread for you. Yum!",
@@ -14762,6 +14802,14 @@
       "category": "nature"
     },
     {
+      "text": "Kind words are one way to care for someone. We can ask what they need.",
+      "file": "llj-ad835b353273cbfe151c7fc6.mp3",
+      "spokenText": "Kind words are one way to care for someone. We can ask what they need.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Kitten! A kitten is a baby cat.",
       "file": "llj-a254296d5cfa2b629a5ca144.mp3",
       "spokenText": "Kitten! A kitten is a baby cat.",
@@ -14906,9 +14954,25 @@
       "category": "nature"
     },
     {
+      "text": "Let that breath out easily. Let your shoulders rest. Tap when you are ready.",
+      "file": "llj-6228b749c8083e632b562208.mp3",
+      "spokenText": "Let that breath out easily. Let your shoulders rest. Tap when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let the air out gently, like a soft breeze. Tap when you are ready.",
       "file": "llj-92c877617752f9d8d7c0f521.mp3",
       "spokenText": "Let the air out gently, like a soft breeze. Tap when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let the air out gently. Your flower can rest with you. Tap whenever you are ready.",
+      "file": "llj-ae6fe784a068b0dc6aa9a66b.mp3",
+      "spokenText": "Let the air out gently. Your flower can rest with you. Tap whenever you are ready.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -14952,6 +15016,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Let your breath out comfortably, like a little breeze. There is no need to hold your breath. Tap when you are ready.",
+      "file": "llj-a909a10d109672aa88e276fb.mp3",
+      "spokenText": "Let your breath out comfortably, like a little breeze. There is no need to hold your breath. Tap when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
@@ -16658,6 +16730,14 @@
       "category": "shapes"
     },
     {
+      "text": "Let's move like a slow turtle. Walk two fingers to the first glowing stepping stone, then tap it.",
+      "file": "llj-b8c4a413a639c73553e202eb.mp3",
+      "spokenText": "Let's move like a slow turtle. Walk two fingers to the first glowing stepping stone, then tap it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let's move like animals with a grown-up! Make a little space together. You can try every move while sitting down.",
       "file": "llj-643729bfeb6e0c871277a20b.mp3",
       "spokenText": "Let's move like animals with a grown-up! Make a little space together. You can try every move while sitting down.",
@@ -16786,6 +16866,14 @@
       "category": "literacy"
     },
     {
+      "text": "Let's practice gentle hands. Tap any flower bud softly to help it open. You do not need to press hard.",
+      "file": "llj-dc6d2826002d1ca1525a9f84.mp3",
+      "spokenText": "Let's practice gentle hands. Tap any flower bud softly to help it open. You do not need to press hard.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Let's pretend Teddy is saying goodbye for a little while. Choose a goodbye Teddy likes.",
       "file": "llj-1dfa0dfb052df7bb6fb2e567.mp3",
       "spokenText": "Let's pretend Teddy is saying goodbye for a little while. Choose a goodbye Teddy likes.",
@@ -16816,6 +16904,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's smell our pretend flower. Take an easy, comfortable breath in, or watch your grown-up. Tap when you are ready.",
+      "file": "llj-8151487545af681427427ad8.mp3",
+      "spokenText": "Let's smell our pretend flower. Take an easy, comfortable breath in, or watch your grown-up. Tap when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's start the hops again.",
@@ -17624,6 +17720,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Let's visit a pretend pond. Tap any lily pad gently and watch a circle appear in the water.",
+      "file": "llj-2b2bcf0bfc2b2ab377238307.mp3",
+      "spokenText": "Let's visit a pretend pond. Tap any lily pad gently and watch a circle appear in the water.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Let's watch that pattern again, from the beginning.",
@@ -19610,6 +19714,14 @@
       "category": "counting"
     },
     {
+      "text": "Look at that flower opening. Choose another bud and try a light touch.",
+      "file": "llj-3a5d6f2ba17e58cdd6f211fa.mp3",
+      "spokenText": "Look at that flower opening. Choose another bud and try a light touch.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Look at the ball. We are looking for a square shape.",
       "file": "llj-0119069927fd95bf5d5fd7ef.mp3",
       "spokenText": "Look at the ball. We are looking for a square shape.",
@@ -19624,6 +19736,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Look at the circle in the water. Choose another lily pad for a gentle tap.",
+      "file": "llj-0d4022de87465a5fb6afc1bf.mp3",
+      "spokenText": "Look at the circle in the water. Choose another lily pad for a gentle tap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Look at the clock face. We are looking for a square shape.",
@@ -20690,6 +20810,14 @@
       "category": "feelings"
     },
     {
+      "text": "Noticing colors and shapes can be a gentle way to spend a moment together.",
+      "file": "llj-004cd34f1301bc14fb6f4c01.mp3",
+      "spokenText": "Noticing colors and shapes can be a gentle way to spend a moment together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: “Hi, friends.” And every friend came close to hear. Owen’s voice was welcome here.",
       "file": "llj-980c3aa7c3bf9cfbe065a1db.mp3",
       "spokenText": "Now Owen still was sometimes shy. But when he wanted, he would try. He did not need to shout or roar. One little word could open doors. He stood up tall, his smile bright, and said to all his friends that night: “Hi, friends.” And every friend came close to hear. Owen’s voice was welcome here.",
@@ -20898,6 +21026,14 @@
       "category": "counting"
     },
     {
+      "text": "One bud is waiting. Give it a gentle tap, then let your hands rest.",
+      "file": "llj-32fff851d335a9d2a5586812.mp3",
+      "spokenText": "One bud is waiting. Give it a gentle tap, then let your hands rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "One dot for each passenger. All aboard!",
       "file": "llj-08e6e39f7da0dac8e34a60b3.mp3",
       "spokenText": "One dot for each passenger. All aboard!",
@@ -20930,6 +21066,14 @@
       "category": "counting"
     },
     {
+      "text": "One lily pad is waiting. Tap it, then take a moment to look at the quiet pond.",
+      "file": "llj-b1cb246620fe12b51d06b7e2.mp3",
+      "spokenText": "One lily pad is waiting. Tap it, then take a moment to look at the quiet pond.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "One lime for this friend.",
       "file": "llj-6533f9eac35c6346f955ac1c.mp3",
       "spokenText": "One lime for this friend.",
@@ -20944,6 +21088,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "One more pretend flower. Take a comfortable breath in, or just watch your grown-up.",
+      "file": "llj-bd8702fdade6362788ec0dd3.mp3",
+      "spokenText": "One more pretend flower. Take a comfortable breath in, or just watch your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "One more small step. Move to the last glowing stone, tap it, and let your fingers rest.",
+      "file": "llj-1f9199d269d9575934b7e2fc.mp3",
+      "spokenText": "One more small step. Move to the last glowing stone, tap it, and let your fingers rest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "One orange for this friend.",
@@ -21194,6 +21354,14 @@
       "category": "nature"
     },
     {
+      "text": "Our feather is floating. Move your finger toward the next glowing cloud at your own pace.",
+      "file": "llj-cb672e3f062e4780279a9fa8.mp3",
+      "spokenText": "Our feather is floating. Move your finger toward the next glowing cloud at your own pace.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Our indoor garden is ready. Let's choose a pot for our flower.",
       "file": "llj-545e054c05624f76524f80ab.mp3",
       "spokenText": "Our indoor garden is ready. Let's choose a pot for our flower.",
@@ -21256,6 +21424,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Our pretend Teddy wants a cozy blanket. Move the blanket onto Teddy, or tap tuck Teddy in. Imagine placing it gently.",
+      "file": "llj-2f71e392fc502df47b59e73e.mp3",
+      "spokenText": "Our pretend Teddy wants a cozy blanket. Move the blanket onto Teddy, or tap tuck Teddy in. Imagine placing it gently.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
@@ -26218,6 +26394,14 @@
       "category": "nature"
     },
     {
+      "text": "Shall we sit together? We can invite someone to join us, and let them choose.",
+      "file": "llj-752849a2ea7f6a18806c43ac.mp3",
+      "spokenText": "Shall we sit together? We can invite someone to join us, and let them choose.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Share a story. Pretend to turn a page.",
       "file": "llj-3d2abf814046d1219eb20287.mp3",
       "spokenText": "Share a story. Pretend to turn a page.",
@@ -26258,12 +26442,28 @@
       "category": "nature"
     },
     {
+      "text": "Sit comfortably with your grown-up. If you like, notice a quiet sound around you. You can also look at our leaves.",
+      "file": "llj-c092114b73985b48b468cef9.mp3",
+      "spokenText": "Sit comfortably with your grown-up. If you like, notice a quiet sound around you. You can also look at our leaves.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Sixty different pattern trains! Choo choo!",
       "file": "llj-13e1d1d46f8ac2e5a47006c5.mp3",
       "spokenText": "Sixty different pattern trains! Choo choo!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Slow finger movements are another gentle thing we can try together.",
+      "file": "llj-af1cfa5f53822ab5ad3351ff.mp3",
+      "spokenText": "Slow finger movements are another gentle thing we can try together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Small drum",
@@ -26602,6 +26802,14 @@
       "category": "literacy"
     },
     {
+      "text": "Take a little pause if you like. Walk your fingers to the next glowing stone and tap.",
+      "file": "llj-028e12ad155af398fb5a27b3.mp3",
+      "spokenText": "Take a little pause if you like. Walk your fingers to the next glowing stone and tap.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Take out a flower, then count again.",
       "file": "llj-b7de8b9799faa20d4d5864d5.mp3",
       "spokenText": "Take out a flower, then count again.",
@@ -26693,6 +26901,14 @@
       "text": "Teddy chooses a quiet corner. Pretend to walk there together.",
       "file": "llj-fc4a67574728d7c016105122.mp3",
       "spokenText": "Teddy chooses a quiet corner. Pretend to walk there together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
+      "file": "llj-98f7b0f2c949a959802ad972.mp3",
+      "spokenText": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29906,6 +30122,14 @@
       "category": "stories"
     },
     {
+      "text": "Watch our pretend feather. Move a finger slowly toward the first glowing cloud, then tap it.",
+      "file": "llj-9a63643cbcc9e8eea037eea0.mp3",
+      "spokenText": "Watch our pretend feather. Move a finger slowly toward the first glowing cloud, then tap it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Watch our three drums! Then tap the same drums in the same order.",
       "file": "llj-2874b2bd7f9093be3e186c4c.mp3",
       "spokenText": "Watch our three drums! Then tap the same drums in the same order.",
@@ -30000,6 +30224,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shared"
+    },
+    {
+      "text": "We explored moving slowly and choosing when to pause.",
+      "file": "llj-f18850a335596bb3c0171a0c.mp3",
+      "spokenText": "We explored moving slowly and choosing when to pause.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "We followed the road all the way home.",
@@ -32410,6 +32642,14 @@
       "category": "nature"
     },
     {
+      "text": "We took a moment to notice what was around us. Everyone may notice different things.",
+      "file": "llj-c616ca043551bb654e941f92.mp3",
+      "spokenText": "We took a moment to notice what was around us. Everyone may notice different things.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "We took a quiet pause together. Calm moments can help us get ready to rest.",
       "file": "llj-13d1c26f759c77bf5c91e9b9.mp3",
       "spokenText": "We took a quiet pause together. Calm moments can help us get ready to rest.",
@@ -32480,6 +32720,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "What did you notice? You can tell your grown-up, point to something, or just enjoy a quiet moment. Tap when you are ready.",
+      "file": "llj-ea58170139904e03bec2660f.mp3",
+      "spokenText": "What did you notice? You can tell your grown-up, point to something, or just enjoy a quiet moment. Tap when you are ready.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "What happens first?",
@@ -33624,6 +33872,22 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Would you like help? We can offer, then listen to the answer.",
+      "file": "llj-6b88b91e9d2bc1c923b1bfa5.mp3",
+      "spokenText": "Would you like help? We can offer, then listen to the answer.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Would you like some space? We can give someone room when they ask.",
+      "file": "llj-8f66101341fe73213b9ab60f.mp3",
+      "spokenText": "Would you like some space? We can give someone room when they ask.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "X is for x-ray hand.",
