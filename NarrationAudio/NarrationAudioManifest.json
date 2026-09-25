@@ -41376,6 +41376,982 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A friend asks to join your pretend picnic. There is room. Which choice helps?",
+      "file": "llj-0f2c10c3a1ef19c3e349da31.mp3",
+      "spokenText": "A friend asks to join your pretend picnic. There is room. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A friend is having a turn on the slide. Which choice helps?",
+      "file": "llj-ea39a623f203971826e14e60.mp3",
+      "spokenText": "A friend is having a turn on the slide. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A gentle pass shares the fun with your friend. Our pretend garden grows!",
+      "file": "llj-e510ff50496d7417ef7610a7.mp3",
+      "spokenText": "A gentle pass shares the fun with your friend. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A grown-up says you may gently pet the cat. Which choice helps?",
+      "file": "llj-a3845b10e8e65740f699f0d7.mp3",
+      "spokenText": "A grown-up says you may gently pet the cat. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "A wave respects your friend's choice. Hugs are always a choice. Our pretend garden grows!",
+      "file": "llj-b04eab95b5ae3f44ce19d84a.mp3",
+      "spokenText": "A wave respects your friend's choice. Hugs are always a choice. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask for a turn",
+      "file": "llj-ec77f069e5043e5a27bfb598.mp3",
+      "spokenText": "Ask for a turn",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask if I can help",
+      "file": "llj-5e3de0d36c6c7765edffdec8.mp3",
+      "spokenText": "Ask if I can help",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask if they are okay",
+      "file": "llj-c6f65f7d9255164b5d0c68fb.mp3",
+      "spokenText": "Ask if they are okay",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask to use it next",
+      "file": "llj-c388a6a6ba889147e2b067c5.mp3",
+      "spokenText": "Ask to use it next",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Asking for a turn lets both friends have time to play. Our pretend garden grows!",
+      "file": "llj-0b707506eda771478b108807.mp3",
+      "spokenText": "Asking for a turn lets both friends have time to play. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Asking gives your friend a choice about building together. Our pretend garden grows!",
+      "file": "llj-efcfde6c1da55c9b52c30341.mp3",
+      "spokenText": "Asking gives your friend a choice about building together. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Asking to use it next respects your friend's turn. Our pretend garden grows!",
+      "file": "llj-ae31fb10b022ef95bc9be894.mp3",
+      "spokenText": "Asking to use it next respects your friend's turn. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bump them again",
+      "file": "llj-12100fcd7a8c4ca9525fae3a.mp3",
+      "spokenText": "Bump them again",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bumping again could hurt. Pause and check how your friend feels.",
+      "file": "llj-e9b681361abe7a2166705439.mp3",
+      "spokenText": "Bumping again could hurt. Pause and check how your friend feels.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Checking on your friend shows you care. A grown-up can help if needed. Our pretend garden grows!",
+      "file": "llj-4c765f18c6e3a0e3dd67e46e.mp3",
+      "spokenText": "Checking on your friend shows you care. A grown-up can help if needed. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Drop it on the grass",
+      "file": "llj-0cd55acda4fab54a40588417.mp3",
+      "spokenText": "Drop it on the grass",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Dropping the wrapper leaves litter behind. Try using the bin.",
+      "file": "llj-0e7daa71271752fa224447f3.mp3",
+      "spokenText": "Dropping the wrapper leaves litter behind. Try using the bin.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Gentle hands help care for the cat. Listen to your grown-up and give the cat space if it moves away. Our pretend garden grows!",
+      "file": "llj-d76e8f6ad78458d32d05594b.mp3",
+      "spokenText": "Gentle hands help care for the cat. Listen to your grown-up and give the cat space if it moves away. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Give them some space",
+      "file": "llj-3726f92424f86a79c2c68b15.mp3",
+      "spokenText": "Give them some space",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Giving space listens to what your friend needs. Our pretend garden grows!",
+      "file": "llj-df6395ae6e76e21a29658759.mp3",
+      "spokenText": "Giving space listens to what your friend needs. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Grab the shovel",
+      "file": "llj-df117dedfc2293e4b9a71ff8.mp3",
+      "spokenText": "Grab the shovel",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Grabbing takes the shovel from your friend. Try asking for a turn.",
+      "file": "llj-f6a94a5bc710639970539df3.mp3",
+      "spokenText": "Grabbing takes the shovel from your friend. Try asking for a turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help put blocks away",
+      "file": "llj-728f0cc0fa54f37fbafa5912.mp3",
+      "spokenText": "Help put blocks away",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Help water the flowers",
+      "file": "llj-ad7630cf21dc719f178db31b.mp3",
+      "spokenText": "Help water the flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Helping tidy makes a clear space for everyone. Our pretend garden grows!",
+      "file": "llj-b81fbac1c075221536c371e9.mp3",
+      "spokenText": "Helping tidy makes a clear space for everyone. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Helping water the flowers gives them a drink. Our pretend garden grows!",
+      "file": "llj-8a3655a9efd6ed4785b24ffb.mp3",
+      "spokenText": "Helping water the flowers gives them a drink. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hide all the crayons",
+      "file": "llj-5edecc420b2901e84c622b33.mp3",
+      "spokenText": "Hide all the crayons",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hide the shared truck",
+      "file": "llj-6adbdd770b5041f7fbb0a73e.mp3",
+      "spokenText": "Hide the shared truck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hiding all the crayons keeps your friend from drawing. Try offering one.",
+      "file": "llj-abff1dc6e9996b7d1aa0905c.mp3",
+      "spokenText": "Hiding all the crayons keeps your friend from drawing. Try offering one.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hiding the shared truck keeps your friend from their turn. Try passing it over.",
+      "file": "llj-5f2501c91d2f2c6cdc1669d4.mp3",
+      "spokenText": "Hiding the shared truck keeps your friend from their turn. Try passing it over.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hug them anyway",
+      "file": "llj-18a9c914a9b4f63bb3e7c361.mp3",
+      "spokenText": "Hug them anyway",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hugging after someone says no ignores their choice. Try a friendly wave instead.",
+      "file": "llj-32f9d8ea07c5c4cd4915a06d.mp3",
+      "spokenText": "Hugging after someone says no ignores their choice. Try a friendly wave instead.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Keep every turn",
+      "file": "llj-bc2ce4c238184e3053e7c894.mp3",
+      "spokenText": "Keep every turn",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Keeping every turn leaves your friend waiting. Try sharing a turn.",
+      "file": "llj-a41393dfcbab71a1dc809ca0.mp3",
+      "spokenText": "Keeping every turn leaves your friend waiting. Try sharing a turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Kick blocks around",
+      "file": "llj-585ee4847a2884a34c79c37c.mp3",
+      "spokenText": "Kick blocks around",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Kick them farther away",
+      "file": "llj-d2c1bff6920c0d434ee3fc1d.mp3",
+      "spokenText": "Kick them farther away",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Kicking the blocks spreads them around. Try placing them in the basket.",
+      "file": "llj-41c5eedb05e0e1af1f204824.mp3",
+      "spokenText": "Kicking the blocks spreads them around. Try placing them in the basket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Kicking the crayons away makes more work. Try offering to help pick them up.",
+      "file": "llj-b83c08012bf44cd293f1fc22.mp3",
+      "spokenText": "Kicking the crayons away makes more work. Try offering to help pick them up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Knock their tower down",
+      "file": "llj-2667cdd47d95463be030d8a2.mp3",
+      "spokenText": "Knock their tower down",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Knocking the tower down ruins your friend's work. Ask before joining their game.",
+      "file": "llj-f2067293f9bca595959fa298.mp3",
+      "spokenText": "Knocking the tower down ruins your friend's work. Ask before joining their game.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Laugh and shut them out",
+      "file": "llj-6d1ac04fea82fe722af4cb81.mp3",
+      "spokenText": "Laugh and shut them out",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Laughing at your friend can hurt their feelings. Try welcoming them kindly.",
+      "file": "llj-0cb3f0ddeb8d824fe518ef5e.mp3",
+      "spokenText": "Laughing at your friend can hurt their feelings. Try welcoming them kindly.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Let's try the other choice. We can practice kindness.",
+      "file": "llj-f9ad6d1e175538f6b6ed2a90.mp3",
+      "spokenText": "Let's try the other choice. We can practice kindness.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Listen for my turn to talk",
+      "file": "llj-fa010a5cc323f88ece74c914.mp3",
+      "spokenText": "Listen for my turn to talk",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Listening gives your friend a turn to share their story. Our pretend garden grows!",
+      "file": "llj-a1435981066eded30455c54a.mp3",
+      "spokenText": "Listening gives your friend a turn to share their story. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Make a cozy spot",
+      "file": "llj-14df32cfdd704bf40314a0a3.mp3",
+      "spokenText": "Make a cozy spot",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Make a place for them",
+      "file": "llj-3ed26e8cf4e10132f265b454.mp3",
+      "spokenText": "Make a place for them",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Making a cozy spot is a caring way to play with your teddy. Our pretend garden grows!",
+      "file": "llj-0f8d6e47b8ddb5374a30a2e6.mp3",
+      "spokenText": "Making a cozy spot is a caring way to play with your teddy. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Making a place welcomes your friend into the picnic. Our pretend garden grows!",
+      "file": "llj-05bd7c0137bb17a9fb1b3143.mp3",
+      "spokenText": "Making a place welcomes your friend into the picnic. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offer a crayon",
+      "file": "llj-1c227876dcb2d70cf54329a3.mp3",
+      "spokenText": "Offer a crayon",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offer a friendly wave",
+      "file": "llj-c5f9dbee33d62a14fc05614d.mp3",
+      "spokenText": "Offer a friendly wave",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offer a puzzle piece",
+      "file": "llj-76fac0be43ad740ddacb56dd.mp3",
+      "spokenText": "Offer a puzzle piece",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offer the next turn",
+      "file": "llj-0fc1210a7d787534285a09a1.mp3",
+      "spokenText": "Offer the next turn",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offer to help pick them up",
+      "file": "llj-f60c374f172ed4b2750cd7a2.mp3",
+      "spokenText": "Offer to help pick them up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offering a crayon helps your friend join the drawing. Our pretend garden grows!",
+      "file": "llj-d4aff9c676362166b8608710.mp3",
+      "spokenText": "Offering a crayon helps your friend join the drawing. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offering a piece helps you build the puzzle together. Our pretend garden grows!",
+      "file": "llj-d51c732ea039e4ad6bb8c207.mp3",
+      "spokenText": "Offering a piece helps you build the puzzle together. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offering help makes picking up easier for your friend. Our pretend garden grows!",
+      "file": "llj-f25bbe60a5b4e844cd5de968.mp3",
+      "spokenText": "Offering help makes picking up easier for your friend. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Offering the next turn lets your friend enjoy the truck too. Our pretend garden grows!",
+      "file": "llj-cd68f5c943d75ed3a2618f63.mp3",
+      "spokenText": "Offering the next turn lets your friend enjoy the truck too. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pass the ball gently",
+      "file": "llj-e17ca50c8b39be88aed2fa28.mp3",
+      "spokenText": "Pass the ball gently",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Playtime is finished and blocks cover the floor. Which choice helps?",
+      "file": "llj-69c16f669c5bfe402d2774ab.mp3",
+      "spokenText": "Playtime is finished and blocks cover the floor. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Poke the snail",
+      "file": "llj-e402d09b591ebff3c7e5de36.mp3",
+      "spokenText": "Poke the snail",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Poking can hurt a tiny animal. Try watching without touching.",
+      "file": "llj-fee3523cc344e6e95bdae083.mp3",
+      "spokenText": "Poking can hurt a tiny animal. Try watching without touching.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pull out the flowers",
+      "file": "llj-fa7c06803b42a13a48edfc0a.mp3",
+      "spokenText": "Pull out the flowers",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pull the cat's tail",
+      "file": "llj-b6c238b8b52c10fa2e073f3c.mp3",
+      "spokenText": "Pull the cat's tail",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pulling a tail hurts the cat. Keep gentle hands and listen to your grown-up.",
+      "file": "llj-cd7bd6a96d921a3b8df39a7e.mp3",
+      "spokenText": "Pulling a tail hurts the cat. Keep gentle hands and listen to your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pulling out the flowers damages them. Try helping your grown-up water them.",
+      "file": "llj-e24c1a6d503a8dd60316f69d.mp3",
+      "spokenText": "Pulling out the flowers damages them. Try helping your grown-up water them.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Push past my friend",
+      "file": "llj-6305bb6b1f4268624bbedfd1.mp3",
+      "spokenText": "Push past my friend",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Pushing can hurt someone. Give your friend space and wait for your turn.",
+      "file": "llj-2430f117b1a1c7d861ce5391.mp3",
+      "spokenText": "Pushing can hurt someone. Give your friend space and wait for your turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Put books on the shelf",
+      "file": "llj-df066965b2a7b58f0e06934e.mp3",
+      "spokenText": "Put books on the shelf",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Put my wrapper in the bin",
+      "file": "llj-ac5e31da43f1d377680ac9ee.mp3",
+      "spokenText": "Put my wrapper in the bin",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Putting books away helps everyone find them next time. Our pretend garden grows!",
+      "file": "llj-b3b1bb389deda2a35f87ebda.mp3",
+      "spokenText": "Putting books away helps everyone find them next time. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Putting your wrapper in the bin helps keep the picnic place clean. Our pretend garden grows!",
+      "file": "llj-578f76d35c762d074e8f1bed.mp3",
+      "spokenText": "Putting your wrapper in the bin helps keep the picnic place clean. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Say or sign thank you",
+      "file": "llj-fcf0e5a518797b12bd11a9c9.mp3",
+      "spokenText": "Say or sign thank you",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Say thanks for showing me",
+      "file": "llj-3f6dbc4fdc21ee332201e0af.mp3",
+      "spokenText": "Say thanks for showing me",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Saying or signing thank you shows you noticed their help. Our pretend garden grows!",
+      "file": "llj-0c4cbc98d18754394a663f5f.mp3",
+      "spokenText": "Saying or signing thank you shows you noticed their help. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Scatter the pieces",
+      "file": "llj-054f21cbeff889947dfd4328.mp3",
+      "spokenText": "Scatter the pieces",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Scattering the pieces makes the puzzle harder for your friend. Try offering a piece.",
+      "file": "llj-969ba35949426c932b49c57f.mp3",
+      "spokenText": "Scattering the pieces makes the puzzle harder for your friend. Try offering a piece.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Scribble on their drawing",
+      "file": "llj-4b7e5c12ae98e6050c94cc10.mp3",
+      "spokenText": "Scribble on their drawing",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Scribbling on someone else's drawing can upset them. Ask before adding marks.",
+      "file": "llj-79b37528fa14f95d5363bd48.mp3",
+      "spokenText": "Scribbling on someone else's drawing can upset them. Ask before adding marks.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Shout beside their ear",
+      "file": "llj-e280843747ccf58aee667ddc.mp3",
+      "spokenText": "Shout beside their ear",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Shout over their words",
+      "file": "llj-c1427ce25dc8d129d94281d8.mp3",
+      "spokenText": "Shout over their words",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Shouting beside their ear can feel uncomfortable. Try giving them quiet space.",
+      "file": "llj-d6ecf3e516d8ba5263946d66.mp3",
+      "spokenText": "Shouting beside their ear can feel uncomfortable. Try giving them quiet space.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Shouting over your friend makes it hard to hear them. Try listening for your turn.",
+      "file": "llj-e9ee6c9965aea2a3edb7e669.mp3",
+      "spokenText": "Shouting over your friend makes it hard to hear them. Try listening for your turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Snatch the paintbrush",
+      "file": "llj-a2cf12f5130bce0a2b1f5a9d.mp3",
+      "spokenText": "Snatch the paintbrush",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Snatching interrupts your friend's painting. Try asking for the next turn.",
+      "file": "llj-9c83bd805b4d978e3e3a5b94.mp3",
+      "spokenText": "Snatching interrupts your friend's painting. Try asking for the next turn.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Some water spilled beside the table. Which choice helps?",
+      "file": "llj-35a2e821f7f83bad8db3a6ff.mp3",
+      "spokenText": "Some water spilled beside the table. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Splash it farther",
+      "file": "llj-21683180b7e060599ebeac4a.mp3",
+      "spokenText": "Splash it farther",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Splashing spreads the water. Let your grown-up know about the spill.",
+      "file": "llj-649e9871dbea28089cc25816.mp3",
+      "spokenText": "Splashing spreads the water. Let your grown-up know about the spill.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tear a book page",
+      "file": "llj-1c68ffba61a597804bb91b39.mp3",
+      "spokenText": "Tear a book page",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tearing a page damages the book. Try handling the pages gently.",
+      "file": "llj-79df9697c2aebc35affc78ee.mp3",
+      "spokenText": "Tearing a page damages the book. Try handling the pages gently.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tell my grown-up",
+      "file": "llj-d89c6cb02d0163147b2ea957.mp3",
+      "spokenText": "Tell my grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Telling your grown-up helps them make the floor safe and dry. Our pretend garden grows!",
+      "file": "llj-777b9b77352d7f6613044dfa.mp3",
+      "spokenText": "Telling your grown-up helps them make the floor safe and dry. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Thanking your friend welcomes what they wanted to share. Our pretend garden grows!",
+      "file": "llj-05d2dc870a74f3496c3b82ba.mp3",
+      "spokenText": "Thanking your friend welcomes what they wanted to share. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "The picture books are on the floor after story time. Which choice helps?",
+      "file": "llj-ed75a63a5e537e6d0918404f.mp3",
+      "spokenText": "The picture books are on the floor after story time. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "This is our pretend kindness garden. Caring choices help flowers grow. Unhelpful choices make flowers fade. We can always try a caring choice. Let's explore together!",
+      "file": "llj-1aa1b53d746e67d5a6caa6d4.mp3",
+      "spokenText": "This is our pretend kindness garden. Caring choices help flowers grow. Unhelpful choices make flowers fade. We can always try a caring choice. Let's explore together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Throw teddy across the room",
+      "file": "llj-206dadfa4140a5ab72d5e98a.mp3",
+      "spokenText": "Throw teddy across the room",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Throw the shoe at them",
+      "file": "llj-f356d888eedc2003050e30da.mp3",
+      "spokenText": "Throw the shoe at them",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Throwing a shoe can hurt someone. Try thanking them for helping.",
+      "file": "llj-0dc61018097930b3bc7e6bef.mp3",
+      "spokenText": "Throwing a shoe can hurt someone. Try thanking them for helping.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Throwing teddy across the room could hit someone. Try making a cozy resting spot.",
+      "file": "llj-20b8bd2675c1713ee3835870.mp3",
+      "spokenText": "Throwing teddy across the room could hit someone. Try making a cozy resting spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Use gentle hands",
+      "file": "llj-05f0a9c08690601cacdf597c.mp3",
+      "spokenText": "Use gentle hands",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Wait for my turn",
+      "file": "llj-3d069b55e339548bab39c2f3.mp3",
+      "spokenText": "Wait for my turn",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Waiting gives your friend space to finish their turn. Our pretend garden grows!",
+      "file": "llj-15d7771e8b43ccb0fbf343da.mp3",
+      "spokenText": "Waiting gives your friend space to finish their turn. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Watch and give it space",
+      "file": "llj-cb8a800bf7014c36bed83682.mp3",
+      "spokenText": "Watch and give it space",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Watching gently gives the little snail space to move. Our pretend garden grows!",
+      "file": "llj-8414288d6fc5b75dcb704bf3.mp3",
+      "spokenText": "Watching gently gives the little snail space to move. Our pretend garden grows!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You accidentally bump your friend's arm. Which choice helps?",
+      "file": "llj-1e1874fb4a473300dd98ccb9.mp3",
+      "spokenText": "You accidentally bump your friend's arm. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You and a friend are making a puzzle. Which choice helps?",
+      "file": "llj-60facf0d98ca03f9ce6e423b.mp3",
+      "spokenText": "You and a friend are making a puzzle. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You and a friend both want the playground shovel. Which choice helps?",
+      "file": "llj-0ad423015ac819502b34c4e7.mp3",
+      "spokenText": "You and a friend both want the playground shovel. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You finished your turn with a shared toy truck. Your friend is waiting. Which choice helps?",
+      "file": "llj-c7ae02ce1aa7b092debe1398.mp3",
+      "spokenText": "You finished your turn with a shared toy truck. Your friend is waiting. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You see a tiny snail beside the garden path. Which choice helps?",
+      "file": "llj-54b804c7fd0ceb44cb91e303.mp3",
+      "spokenText": "You see a tiny snail beside the garden path. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend asks for a little quiet space. Which choice helps?",
+      "file": "llj-46fa309e5656a1ce539120f0.mp3",
+      "spokenText": "Your friend asks for a little quiet space. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend drops some crayons on the floor. Which choice helps?",
+      "file": "llj-fa723162f2ffc6e5cda7f972.mp3",
+      "spokenText": "Your friend drops some crayons on the floor. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend is carefully building a block tower. Which choice helps?",
+      "file": "llj-686b1eb6c4b773b093628789.mp3",
+      "spokenText": "Your friend is carefully building a block tower. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend is ready to play catch with you. Which choice helps?",
+      "file": "llj-8eaea1b638ab37851e3b3847.mp3",
+      "spokenText": "Your friend is ready to play catch with you. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend is telling you about their toy. Which choice helps?",
+      "file": "llj-fdfa56f5a0435124aa0281c0.mp3",
+      "spokenText": "Your friend is telling you about their toy. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend is using a paintbrush you would like to borrow. Which choice helps?",
+      "file": "llj-f4add9f991b297f98c0825a9.mp3",
+      "spokenText": "Your friend is using a paintbrush you would like to borrow. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend says they do not want a hug. Which choice helps?",
+      "file": "llj-a723eb33039838aabcd97138.mp3",
+      "spokenText": "Your friend says they do not want a hug. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend shows you a drawing they made. Which choice helps?",
+      "file": "llj-9fb7da79bc65a0625f16f839.mp3",
+      "spokenText": "Your friend shows you a drawing they made. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your friend wants a crayon from the shared box. Which choice helps?",
+      "file": "llj-b2d55f925c7fafd09a273988.mp3",
+      "spokenText": "Your friend wants a crayon from the shared box. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your grown-up helps you find your missing shoe. Which choice helps?",
+      "file": "llj-545addc112ec86a63191458e.mp3",
+      "spokenText": "Your grown-up helps you find your missing shoe. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your grown-up says the flowers need water. Which choice helps?",
+      "file": "llj-887557622d47b3f81919e0b1.mp3",
+      "spokenText": "Your grown-up says the flowers need water. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your snack wrapper is left on the picnic blanket. Which choice helps?",
+      "file": "llj-06184e6e0cd579c38246396f.mp3",
+      "spokenText": "Your snack wrapper is left on the picnic blanket. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Your teddy is ready for a pretend nap. Which choice helps?",
+      "file": "llj-922d5cccc554e764ed99ca63.mp3",
+      "spokenText": "Your teddy is ready for a pretend nap. Which choice helps?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     }
   ]
 }

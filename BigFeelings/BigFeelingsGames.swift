@@ -10,45 +10,6 @@ private struct BFNote: View {
     }
 }
 
-struct KindnessGardenGame: View {
-    let onReplay: () -> Void
-    @State private var planted: [Int] = []
-    @State private var selected: Int?
-    @StateObject private var narrator = GameNarrator()
-    private let actions = ["Give a friendly wave", "Say or sign thank you", "Offer to help tidy"]
-    private let prompts = ["Wave to your grown-up, or show how a puppet could wave.", "Think of someone who helped. Try saying or signing thank you.", "Find a toy nearby and offer to put it away together."]
-    private let symbols = ["hand.wave.fill", "heart.fill", "basket.fill"]
-    var body: some View {
-        ToddlerGameScaffold(title: "Kindness Garden", prompt: planted.count == 3 ? "Three kindness flowers for caring together!" : selected.map { prompts[$0] } ?? "Choose a caring action. Try it together, then plant a flower.", accent: .green, completion: planted.count == 3, onReplay: onReplay) {
-            HStack(alignment: .bottom, spacing: 20) {
-                ForEach(0..<3, id: \.self) { index in
-                    VStack(spacing: 0) {
-                        Image(systemName: index < planted.count ? "camera.macro" : "leaf.fill")
-                            .font(.system(size: index < planted.count ? 56 : 32))
-                            .foregroundStyle(index < planted.count ? [Color.pink, .orange, .purple][index] : .green.opacity(0.4))
-                        RoundedRectangle(cornerRadius: 3).fill(.green).frame(width: 7, height: index < planted.count ? 62 : 20)
-                        Ellipse().fill(.brown.opacity(0.5)).frame(width: 65, height: 18)
-                    }.frame(maxWidth: .infinity)
-                }
-            }.frame(height: 180).accessibilityLabel("\(planted.count) of 3 kindness flowers")
-            if let selected {
-                ToddlerActionButton(title: "Plant our kindness flower", systemImage: "leaf.fill", color: .green) {
-                    guard planted.count < 3, !planted.contains(selected) else { return }
-                    planted.append(selected)
-                    self.selected = nil
-                    narrator.speak("A flower for caring together.")
-                }
-            } else {
-                ForEach(0..<3, id: \.self) { index in
-                    ToddlerActionButton(title: actions[index], systemImage: symbols[index], color: .green) { selected = index }
-                        .disabled(planted.contains(index))
-                }
-            }
-            BFNote(text: "Pretending counts, too. Kindness can be a wave, a word, or help; it never requires a hug.")
-        }
-    }
-}
-
 struct CozyToolboxGame: View {
     let onReplay: () -> Void
     @State private var tool: Int?

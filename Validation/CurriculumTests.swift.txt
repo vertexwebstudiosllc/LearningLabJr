@@ -7,6 +7,86 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testKindnessGardenScenariosGrowthFadeRepairAndRuth() throws {
+        XCTAssertEqual(KindGardenStory.bank.count, 24)
+        XCTAssertEqual(Set(KindGardenStory.bank.map(\.id)).count, 24)
+        var previous = "", seen = Set<String>(), orders = Set<String>(), positions = Set<Bool>()
+        for mode in 0..<3 {
+            for _ in 0..<100 {
+                var play = KindGardenPlay(previousFirst: previous)
+                XCTAssertEqual(play.flowers, 3); XCTAssertEqual(play.phase, .welcome)
+                XCTAssertEqual(play.rounds.count, 12); XCTAssertNotEqual(play.current.story.id, previous)
+                XCTAssertEqual(Set(play.rounds.map { $0.story.id }).count, 12)
+                previous = play.current.story.id
+                orders.insert(play.rounds.map { $0.story.id }.joined())
+                play.next(previous); play.tryAgain(); XCTAssertEqual(play.phase, .welcome)
+                play.start(); play.start(); XCTAssertEqual(play.phase, .choosing)
+                for index in 0..<12 {
+                    let round = play.current, id = round.story.id
+                    seen.insert(id); positions.insert(round.choices[0].isCaring)
+                    XCTAssertEqual(round.choices.count, 2)
+                    XCTAssertEqual(round.choices.filter(\.isCaring).count, 1)
+                    XCTAssertEqual(play.prompt, round.story.question)
+                    let good = try XCTUnwrap(round.choices.first(where: \.isCaring))
+                    let bad = try XCTUnwrap(round.choices.first { !$0.isCaring })
+                    let before = play.flowers
+                    play.choose("invalid", story: id); play.choose(good.id, story: "stale")
+                    play.next(id); XCTAssertEqual(play.phase, .choosing); XCTAssertEqual(play.flowers, before)
+                    if mode != 0 {
+                        play.choose(bad.id, story: id)
+                        XCTAssertEqual(play.flowers, max(0, before - 1)); XCTAssertEqual(play.prompt, bad.response)
+                        XCTAssertEqual(play.feedbackTitle, before == 0 ? "The garden is resting" : "A flower faded")
+                        play.choose(bad.id, story: id); play.choose(good.id, story: id)
+                        XCTAssertEqual(play.flowers, max(0, before - 1))
+                        if mode == 2 {
+                            play.tryAgain(); play.tryAgain(); XCTAssertEqual(play.phase, .choosing)
+                            XCTAssertEqual(play.prompt, KindGardenPlay.retry)
+                            play.choose(bad.id, story: id); XCTAssertEqual(play.phase, .choosing)
+                            play.choose(good.id, story: id); XCTAssertEqual(play.flowers, before)
+                            XCTAssertEqual(play.feedbackTitle, "The garden grew!")
+                        }
+                    } else {
+                        play.choose(good.id, story: id); XCTAssertEqual(play.flowers, before + 1)
+                        play.tryAgain(); play.choose(good.id, story: id); XCTAssertEqual(play.phase, .feedback)
+                        XCTAssertEqual(play.flowers, before + 1)
+                    }
+                    play.next("stale"); XCTAssertEqual(play.index, index)
+                    play.next(id); play.next(id); XCTAssertEqual(play.index, index + 1)
+                    XCTAssertTrue((0...15).contains(play.flowers))
+                }
+                XCTAssertEqual(play.phase, .complete)
+                XCTAssertEqual(play.flowers, mode == 0 ? 15 : mode == 1 ? 0 : 3)
+                play.start(); play.tryAgain(); play.next(play.current.story.id)
+                XCTAssertEqual(play.index, 12); XCTAssertEqual(play.phase, .complete)
+            }
+        }
+        XCTAssertEqual(seen.count, 24); XCTAssertGreaterThan(orders.count, 290)
+        XCTAssertEqual(positions, [true, false])
+        for story in KindGardenStory.bank {
+            XCTAssertNotNil(UIImage(systemName: story.symbol), story.symbol)
+            for choice in story.choices { XCTAssertNotNil(UIImage(systemName: choice.symbol), choice.symbol) }
+        }
+        for text in Set(KindGardenPlay.narration) {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth", text); XCTAssertEqual(clip.engine, "generative", text)
+        }
+        var images = Set<Data>()
+        for count in [0, 2, 3, 4, 15] {
+            let plot = ImageRenderer(content: KindGardenPlot(flowers: count).frame(width: 340))
+            let image = try XCTUnwrap(plot.uiImage)
+            images.insert(try XCTUnwrap(image.pngData()))
+            let shot = XCTAttachment(image: image); shot.name = "Kindness garden \(count) flowers"; shot.lifetime = .keepAlways; add(shot)
+        }
+        XCTAssertEqual(images.count, 5)
+        for id in ["hug", "snail", "shovel"] {
+            let scene = try XCTUnwrap(KindGardenStory.bank.first { $0.id == id })
+            let render = ImageRenderer(content: KindGardenScene(story: scene).frame(width: 340))
+            let shot = XCTAttachment(image: try XCTUnwrap(render.uiImage)); shot.name = "Kindness scene \(id)"; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+
+
+    @MainActor
     func testFeelingWeatherTailoredChoicesMadAndRuth() throws {
         XCTAssertEqual(FeelingWeatherMood.allCases.count, 6)
         XCTAssertEqual(FeelingWeatherMood.mad.name, "Mad")

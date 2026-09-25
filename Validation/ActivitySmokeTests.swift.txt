@@ -11,6 +11,60 @@ final class ActivitySmokeTests: XCTestCase {
 
 
 
+
+    @MainActor
+    func testKindnessGardenTwelveStoriesFadeRegrowAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Kindness Garden"]
+        try tap(card)
+        XCTAssertEqual(app.staticTexts["kindness.flowers"].label, "3 garden flowers")
+        try tap(app.buttons["kindness.start"])
+        var seen = Set<String>(), first = ""
+        var flowers = 3
+        for index in 0..<12 {
+            let story = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'kindness.story.'")).firstMatch
+            XCTAssertTrue(story.waitForExistence(timeout: 5))
+            let id = String(story.identifier.dropFirst("kindness.story.".count))
+            if index == 0 { first = id }
+            XCTAssertTrue(seen.insert(id).inserted)
+            XCTAssertEqual(app.staticTexts["kindness.progress"].label, "Story \(index + 1) of 12")
+            XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'kindness.choice.'")).count, 2)
+            try tap(app.buttons["kindness.hear.\(id).care"])
+            try tap(app.buttons["kindness.choice.\(id).\(index < 4 ? "unkind" : "care")"])
+            flowers = index < 4 ? max(0, flowers - 1) : flowers + 1
+            XCTAssertEqual(app.staticTexts["kindness.flowers"].label, flowers == 1 ? "1 garden flower" : "\(flowers) garden flowers")
+            let garden = app.descendants(matching: .any).matching(identifier: "kindness.garden").firstMatch
+            XCTAssertTrue(garden.isHittable, "Garden change should scroll into view")
+            XCTAssertLessThan(garden.frame.maxY, app.windows.firstMatch.frame.maxY)
+            if index == 2 || index == 4 {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Kindness \(flowers) flowers feedback"; shot.lifetime = .keepAlways; add(shot)
+            }
+            if index == 3 {
+                try tap(app.buttons["kindness.retry"])
+                XCTAssertFalse(app.buttons["kindness.choice.\(id).unkind"].isEnabled)
+                try tap(app.buttons["kindness.choice.\(id).care"])
+                flowers += 1
+                XCTAssertEqual(app.staticTexts["kindness.flowers"].label, flowers == 1 ? "1 garden flower" : "\(flowers) garden flowers")
+            }
+            try tap(app.buttons["kindness.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["kindness.flowers"].label, "9 garden flowers")
+        try tap(app.buttons["Play again"])
+        XCTAssertEqual(app.staticTexts["kindness.flowers"].label, "3 garden flowers")
+        try tap(app.buttons["kindness.start"])
+        XCTAssertFalse(app.descendants(matching: .any).matching(identifier: "kindness.story.\(first)").firstMatch.exists)
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertTrue(app.buttons["kindness.start"].exists)
+        XCTAssertEqual(app.staticTexts["kindness.flowers"].label, "3 garden flowers")
+    }
+
     @MainActor
     func testFeelingWeatherAllEmotionsTailoredChoicesAndReplay() async throws {
         let app = try await launch()

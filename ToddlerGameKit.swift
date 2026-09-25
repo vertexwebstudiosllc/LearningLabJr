@@ -139,6 +139,7 @@ struct ToddlerGameScaffold<Content: View>: View {
     var accent: Color = .teal
     var completion: Bool = false
     var onReplay: (() -> Void)? = nil
+    var scrollToTopOnPromptChange = false
     @ViewBuilder let content: () -> Content
     @Environment(\.dismiss) private var dismiss
     @Environment(\.learningActivity) private var activity
@@ -228,6 +229,9 @@ struct ToddlerGameScaffold<Content: View>: View {
             .navigationBarTitleDisplayMode(.inline)
             .task(id: "\(completion):\(prompt)") {
                 narrator.speak(completion ? "We did it together! You can play again or choose all done." : prompt)
+            }
+            .onChange(of: prompt) { _, _ in
+                if scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }
             }
             .onChange(of: completion) { _, finished in
                 if finished { scroll.scrollTo("activity-top", anchor: .top) }

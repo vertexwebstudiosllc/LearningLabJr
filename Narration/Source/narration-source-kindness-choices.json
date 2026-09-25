@@ -1,0 +1,617 @@
+[
+  {
+    "text": "This is our pretend kindness garden. Caring choices help flowers grow. Unhelpful choices make flowers fade. We can always try a caring choice. Let's explore together!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Let's try the other choice. We can practice kindness.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You and a friend both want the playground shovel. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask for a turn",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Asking for a turn lets both friends have time to play. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Grab the shovel",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Grabbing takes the shovel from your friend. Try asking for a turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend wants a crayon from the shared box. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer a crayon",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offering a crayon helps your friend join the drawing. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hide all the crayons",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hiding all the crayons keeps your friend from drawing. Try offering one.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A friend is having a turn on the slide. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Wait for my turn",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Waiting gives your friend space to finish their turn. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Push past my friend",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pushing can hurt someone. Give your friend space and wait for your turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is ready to play catch with you. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pass the ball gently",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A gentle pass shares the fun with your friend. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Keep every turn",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Keeping every turn leaves your friend waiting. Try sharing a turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You and a friend are making a puzzle. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer a puzzle piece",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offering a piece helps you build the puzzle together. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Scatter the pieces",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Scattering the pieces makes the puzzle harder for your friend. Try offering a piece.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Playtime is finished and blocks cover the floor. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help put blocks away",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Helping tidy makes a clear space for everyone. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Kick blocks around",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Kicking the blocks spreads them around. Try placing them in the basket.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Some water spilled beside the table. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tell my grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Telling your grown-up helps them make the floor safe and dry. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Splash it farther",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Splashing spreads the water. Let your grown-up know about the spill.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "The picture books are on the floor after story time. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Put books on the shelf",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Putting books away helps everyone find them next time. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tear a book page",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tearing a page damages the book. Try handling the pages gently.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend shows you a drawing they made. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say thanks for showing me",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Thanking your friend welcomes what they wanted to share. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Scribble on their drawing",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Scribbling on someone else's drawing can upset them. Ask before adding marks.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is carefully building a block tower. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask if I can help",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Asking gives your friend a choice about building together. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Knock their tower down",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Knocking the tower down ruins your friend's work. Ask before joining their game.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A friend asks to join your pretend picnic. There is room. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Make a place for them",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Making a place welcomes your friend into the picnic. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Laugh and shut them out",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Laughing at your friend can hurt their feelings. Try welcoming them kindly.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your grown-up helps you find your missing shoe. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Say or sign thank you",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Saying or signing thank you shows you noticed their help. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Throw the shoe at them",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Throwing a shoe can hurt someone. Try thanking them for helping.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend says they do not want a hug. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer a friendly wave",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A wave respects your friend's choice. Hugs are always a choice. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hug them anyway",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hugging after someone says no ignores their choice. Try a friendly wave instead.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend asks for a little quiet space. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Give them some space",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Giving space listens to what your friend needs. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shout beside their ear",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shouting beside their ear can feel uncomfortable. Try giving them quiet space.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You finished your turn with a shared toy truck. Your friend is waiting. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer the next turn",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offering the next turn lets your friend enjoy the truck too. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hide the shared truck",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hiding the shared truck keeps your friend from their turn. Try passing it over.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You accidentally bump your friend's arm. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask if they are okay",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Checking on your friend shows you care. A grown-up can help if needed. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bump them again",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bumping again could hurt. Pause and check how your friend feels.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "A grown-up says you may gently pet the cat. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Use gentle hands",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Gentle hands help care for the cat. Listen to your grown-up and give the cat space if it moves away. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pull the cat's tail",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pulling a tail hurts the cat. Keep gentle hands and listen to your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your grown-up says the flowers need water. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Help water the flowers",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Helping water the flowers gives them a drink. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pull out the flowers",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Pulling out the flowers damages them. Try helping your grown-up water them.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your snack wrapper is left on the picnic blanket. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Put my wrapper in the bin",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Putting your wrapper in the bin helps keep the picnic place clean. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Drop it on the grass",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Dropping the wrapper leaves litter behind. Try using the bin.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You see a tiny snail beside the garden path. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Watch and give it space",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Watching gently gives the little snail space to move. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Poke the snail",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Poking can hurt a tiny animal. Try watching without touching.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend drops some crayons on the floor. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offer to help pick them up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Offering help makes picking up easier for your friend. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Kick them farther away",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Kicking the crayons away makes more work. Try offering to help pick them up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is telling you about their toy. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listen for my turn to talk",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listening gives your friend a turn to share their story. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shout over their words",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Shouting over your friend makes it hard to hear them. Try listening for your turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your teddy is ready for a pretend nap. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Make a cozy spot",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Making a cozy spot is a caring way to play with your teddy. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Throw teddy across the room",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Throwing teddy across the room could hit someone. Try making a cozy resting spot.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Your friend is using a paintbrush you would like to borrow. Which choice helps?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask to use it next",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Asking to use it next respects your friend's turn. Our pretend garden grows!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Snatch the paintbrush",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Snatching interrupts your friend's painting. Try asking for the next turn.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

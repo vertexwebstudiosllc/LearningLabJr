@@ -116,3 +116,5 @@ Roll It Together: `testTogetherSportsAllFriendsTurnsKindWordsAndRuth` covers all
 Wiggle, Slow, Stop: `testWiggleRandomCueTimingPauseAndNarration` and `testWiggleMusicTempoSilenceDuckingAndOwnership` validate automatic timing and real audio behavior. `testWiggleAutomaticCuesMusicPauseBackgroundAndReplay` checks all 18 cues, pause/background, music controls, completion and replay.
 
 My Feeling Weather: `testFeelingWeatherTailoredChoicesMadAndRuth` checks all feelings, sizes, supports, guarded state transitions and Ruth coverage. `testFeelingWeatherAllEmotionsTailoredChoicesAndReplay` checks each tailored menu, Mad, spoken labels, review, completion, replay and reset.
+
+Kindness Garden: `testKindnessGardenScenariosGrowthFadeRepairAndRuth` verifies story variety, caring/unhelpful effects, zero/full gardens, retries and Ruth coverage. `testKindnessGardenTwelveStoriesFadeRegrowAndReplay` verifies twelve stories, visible garden changes, retry, completion and fresh play.
