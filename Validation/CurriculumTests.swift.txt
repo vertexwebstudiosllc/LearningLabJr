@@ -5,6 +5,80 @@ import AVFoundation
 @testable import LearningLabJr
 
 final class CurriculumTests: XCTestCase {
+
+    @MainActor
+    func testTogetherSportsAllFriendsTurnsKindWordsAndRuth() throws {
+        XCTAssertEqual(TogetherSport.allCases.count, 6)
+        XCTAssertEqual(TogetherFriend.bank.count, 8)
+        XCTAssertEqual(Set(TogetherFriend.bank.map(\.skin)).count, 8)
+        XCTAssertTrue(TogetherFriend.bank.contains { $0.wheelchair })
+        XCTAssertTrue(TogetherFriend.bank.contains { $0.hearingAid })
+        XCTAssertTrue(TogetherFriend.bank.contains { $0.style == .headscarf })
+        var orders = Set<String>()
+        for sport in TogetherSport.allCases {
+            for friend in TogetherFriend.bank {
+                for alternate in [false, true] {
+                    var play = TogetherSportsPlay()
+                    orders.insert(play.friends.map(\.id).joined())
+                    XCTAssertEqual(play.phase, .sport); XCTAssertNil(play.friend); XCTAssertNil(play.sport)
+                    play.pass(); play.invite(); play.chooseFriend(friend.id); XCTAssertEqual(play.phase, .sport)
+                    play.choose(sport); play.changeSport(); XCTAssertEqual(play.phase, .sport)
+                    play.choose(sport); play.chooseFriend("invalid"); XCTAssertEqual(play.phase, .friend)
+                    play.chooseFriend(friend.id); play.changeFriend(); XCTAssertNil(play.friend)
+                    play.chooseFriend(friend.id); play.invite(); XCTAssertEqual(play.prompt, friend.ready)
+                    play.continuePlaying(); XCTAssertEqual(play.phase, .yourTurn)
+                    for rally in 0..<6 {
+                        XCTAssertEqual(play.completed, rally)
+                        XCTAssertEqual(play.sport, sport); XCTAssertEqual(play.friend?.id, friend.id)
+                        play.choose(.soccer); play.chooseFriend("maya"); play.changeSport(); play.changeFriend()
+                        XCTAssertEqual(play.sport, sport); XCTAssertEqual(play.friend?.id, friend.id)
+                        play.finishMotion(session: play.id, rally: rally, phase: .inbound); XCTAssertEqual(play.completed, rally)
+                        play.pass(); play.pass(); XCTAssertEqual(play.phase, .outbound)
+                        for phase in [TogetherSportsPlay.Phase.outbound, .friendTurn, .inbound] {
+                            play.finishMotion(session: UUID(), rally: rally, phase: phase); XCTAssertEqual(play.phase, phase)
+                            play.finishMotion(session: play.id, rally: rally + 1, phase: phase); XCTAssertEqual(play.phase, phase)
+                            play.pass(); play.continuePlaying(); play.say("thanks"); XCTAssertEqual(play.phase, phase)
+                            play.finishMotion(session: play.id, rally: rally, phase: phase)
+                            let result = play.phase
+                            play.finishMotion(session: play.id, rally: rally, phase: phase); XCTAssertEqual(play.phase, result)
+                        }
+                        XCTAssertEqual(play.phase, .shared); XCTAssertEqual(play.completed, rally + 1)
+                        play.continuePlaying()
+                        if (rally + 1).isMultiple(of: 2) {
+                            XCTAssertEqual(play.phase, .kindWords); XCTAssertEqual(play.kindChoices.count, 2)
+                            play.say("invalid"); XCTAssertEqual(play.phase, .kindWords)
+                            let choice = play.kindChoices[alternate ? 1 : 0]
+                            play.say(choice.id); XCTAssertEqual(play.prompt, choice.response)
+                            play.continuePlaying()
+                        }
+                    }
+                    XCTAssertEqual(play.phase, .thanks); XCTAssertEqual(play.prompt, friend.thanks)
+                    play.continuePlaying(); XCTAssertEqual(play.phase, .complete)
+                    play.pass(); play.invite(); play.continuePlaying(); XCTAssertEqual(play.completed, 6)
+                    XCTAssertEqual(play.phase, .complete)
+                }
+            }
+        }
+        XCTAssertGreaterThan(orders.count, 80)
+        for text in TogetherSportsPlay.narration {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth", text)
+            XCTAssertEqual(clip.engine, "generative", text)
+        }
+        let friends = ImageRenderer(content: VStack(spacing: 12) {
+            ForEach(0..<2) { row in HStack(spacing: 8) {
+                ForEach(Array(TogetherFriend.bank[(row * 4)..<(row * 4 + 4)])) { friend in
+                    VStack { TogetherFriendArt(friend: friend, waving: true).frame(width: 110, height: 165); Text(friend.name) }
+                }
+            } }
+        }.padding().background(.white))
+        let friendShot = XCTAttachment(image: try XCTUnwrap(friends.uiImage)); friendShot.name = "Sports eight friends"; friendShot.lifetime = .keepAlways; add(friendShot)
+        for (i, sport) in TogetherSport.allCases.enumerated() {
+            let court = ImageRenderer(content: TogetherSportsCourt(sport: sport, friend: TogetherFriend.bank[i], progress: i.isMultiple(of: 2) ? 0 : 1, waiting: true, shared: false).frame(width: 350, height: 235))
+            let shot = XCTAttachment(image: try XCTUnwrap(court.uiImage)); shot.name = "Sports court \(sport.id)"; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+
     @MainActor
     func testTeddyRescueDressCustomizeScenesAndRuth() throws {
         XCTAssertEqual(TeddyRescue.bank.count, 12)

@@ -8,6 +8,83 @@ final class ActivitySmokeTests: XCTestCase {
 
     override func setUpWithError() throws { continueAfterFailure = false }
 
+
+    @MainActor
+    func testTogetherSportsFullMatchFriendsReplayAndReentry() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.Roll It Together"]
+        try tap(card)
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'sports.choose.'")).count, 6)
+        try tap(app.buttons["sports.choose.tennis"])
+        try tap(app.buttons["sports.changeSport"])
+        try tap(app.buttons["sports.choose.soccer"])
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'sports.friend.'")).count, 8)
+        try tap(app.buttons["sports.friend.maya"])
+        try tap(app.buttons["sports.changeFriend"])
+        try tap(app.buttons["sports.friend.kai"])
+        let invitation = XCTAttachment(screenshot: app.screenshot()); invitation.name = "Sports invitation Kai"; invitation.lifetime = .keepAlways; add(invitation)
+        try tap(app.buttons["sports.invite"])
+        try tap(app.buttons["sports.continue"])
+        for rally in 1...6 {
+            XCTAssertEqual(app.staticTexts["sports.match"].label, "Soccer with Kai")
+            try tap(app.buttons["sports.pass"])
+            XCTAssertFalse(app.buttons["sports.pass"].exists)
+            XCTAssertTrue(app.staticTexts["sports.waiting"].exists)
+            XCTAssertTrue(app.buttons["sports.next"].waitForExistence(timeout: 12))
+            XCTAssertEqual(app.staticTexts["sports.progress"].label, "\(rally) of 6 shared turns")
+            if rally == 1 {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Sports shared soccer"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["sports.next"])
+            if rally.isMultiple(of: 2) {
+                let id = rally == 2 ? "ready" : rally == 4 ? "gentle" : "thanks"
+                try tap(app.buttons["sports.kind.\(id)"])
+                try tap(app.buttons["sports.continue"])
+            }
+        }
+        XCTAssertTrue(app.buttons["sports.finish"].exists)
+        try tap(app.buttons["sports.finish"])
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        XCTAssertTrue(app.buttons["sports.choose.soccer"].exists)
+        try tap(app.buttons["sports.choose.basketball"])
+        try tap(app.buttons["sports.friend.zoe"])
+        try tap(app.buttons["sports.invite"]); try tap(app.buttons["sports.continue"])
+        try tap(app.buttons["sports.pass"])
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(card)
+        XCTAssertTrue(app.buttons["sports.choose.soccer"].exists)
+        XCTAssertFalse(app.buttons["sports.next"].exists)
+    }
+
+    @MainActor
+    func testTogetherSportsOtherCourtsPassBack() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        for (sport, friend) in [("basketball", "maya"), ("catchBall", "amina"), ("tennis", "leo"), ("bowling", "mei"), ("hockey", "zoe")] {
+            try tap(app.buttons["activity-card.Roll It Together"])
+            try tap(app.buttons["sports.choose.\(sport)"])
+            try tap(app.buttons["sports.friend.\(friend)"])
+            try tap(app.buttons["sports.invite"]); try tap(app.buttons["sports.continue"])
+            try tap(app.buttons["sports.pass"])
+            XCTAssertTrue(app.buttons["sports.next"].waitForExistence(timeout: 12))
+            XCTAssertEqual(app.staticTexts["sports.progress"].label, "1 of 6 shared turns")
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Sports shared \(sport)"; shot.lifetime = .keepAlways; add(shot)
+            app.navigationBars.buttons.firstMatch.tap()
+        }
+    }
+
     @MainActor
     func testTeddyRescueTwelveScenesCustomizationAndReplay() async throws {
         let app = try await launch()

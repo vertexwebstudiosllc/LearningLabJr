@@ -110,3 +110,5 @@ Funny Face Studio: `testFunnyFaceCopyIdentifySequenceAndRuth` validates six dist
 Flower Breaths: `testFlowerBreathsEightGentleActivitiesAndRuth` checks all eight activities, both play/watch paths, input guards, drop validation, kind-word choices, and Ruth coverage. `testFlowerBreathsAllActivitiesDragWatchAndReplay` covers the full playthrough, blanket drag, all watching options, replay, and reentry.
 
 Teddy's Helping Hands: `testTeddyRescueDressCustomizeScenesAndRuth` covers 100 twelve-scene sessions, all equipment slots, input guards, character persistence, Ruth coverage, and artwork renders. `testTeddyRescueTwelveScenesCustomizationAndReplay` completes the entire rescue sequence, changes Teddy while dressed, and checks replay/reentry defaults.
+
+Roll It Together: `testTogetherSportsAllFriendsTurnsKindWordsAndRuth` covers all sports/friends, sharing phases, stale callbacks and Ruth coverage. UI tests `testTogetherSportsFullMatchFriendsReplayAndReentry` and `testTogetherSportsOtherCourtsPassBack` exercise six-turn completion, kind choices, all courts, navigation and replay.

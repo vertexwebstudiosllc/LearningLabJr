@@ -18,39 +18,6 @@ private enum BFFeeling: Int, CaseIterable, Identifiable {
     var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
 }
 
-struct RollItTogetherGame: View {
-    let onReplay: () -> Void
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var passes = 0
-    private var childTurn: Bool { passes.isMultiple(of: 2) }
-    var body: some View {
-        ToddlerGameScaffold(title: "Roll It Together", prompt: passes == 6 ? "You and your grown-up rolled the ball back and forth three times!" : childTurn ? "Your turn! Tap to roll the ball to your grown-up." : "Grown-up's turn! Roll the ball back to your child.", accent: .orange, completion: passes == 6, onReplay: onReplay) {
-            GeometryReader { geometry in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 30).fill(.orange.opacity(0.1))
-                    Path { path in
-                        path.move(to: CGPoint(x: 65, y: 100))
-                        path.addLine(to: CGPoint(x: geometry.size.width - 65, y: 100))
-                    }.stroke(.orange.opacity(0.3), style: StrokeStyle(lineWidth: 5, dash: [8, 8]))
-                    Image(systemName: "basketball.fill").font(.system(size: 76)).foregroundStyle(.orange)
-                        .position(x: childTurn ? 65 : geometry.size.width - 65, y: 100)
-                    HStack {
-                        Label("You", systemImage: "person.fill")
-                        Spacer()
-                        Label("Grown-up", systemImage: "person.fill")
-                    }.font(.headline).padding(20).offset(y: 74)
-                }
-            }.frame(height: 220).accessibilityLabel("Ball with \(childTurn ? "you" : "your grown-up")")
-            ToddlerActionButton(title: childTurn ? "My turn: roll!" : "Grown-up: roll back!", systemImage: childTurn ? "arrow.right" : "arrow.left", color: .orange) {
-                guard passes < 6 else { return }
-                withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.65)) { passes += 1 }
-            }
-            Text("\(passes / 2) of 3 back-and-forth rolls").font(.headline)
-            BFNote(text: "Pass the screen gently or sit side by side. Say 'my turn' and 'your turn' together.")
-        }
-    }
-}
-
 struct WiggleSlowStopGame: View {
     let onReplay: () -> Void
     @State private var step = 0
