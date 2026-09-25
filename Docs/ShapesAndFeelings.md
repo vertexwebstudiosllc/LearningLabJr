@@ -38,7 +38,7 @@ Colors are accompanied by words and characteristic symbols where possible. Shape
 | Body Clue Buddies | Identify body parts by tapping a diverse picture buddy | Eighteen clues with a new buddy each time |
 | Friendship Bridge | Choose friendly words, then share six kinds of interactive play with a buddy | Twelve shuffled playdates connect a bridge |
 | Cozy Evening Path | Choose and act out steps in eight everyday routines | Four to six steps per chosen path |
-| See You Soon | Select goodbye and comfort choices, then reveal a pretend reunion | One complete pretend goodbye story |
+| See You Soon | Drag a diverse buddy to a goodbye spot, choose fitting words, then play the ending | Eight selectable stories: bedtime, school, daycare, dinner, park, visiting, poo, and pee; school reunions and bathroom flushing/handwashing |
 
 Feeling choices are never graded. `Not sure` is offered for the check-in, and emotion names are not inferred from a face or bodily sensation. Touch and hugs are offered with consent. Watching a grown-up or pretending is accepted. Breathing has no breath holds, countdown, microphone monitoring, or requirement to become calm. The goodbye activity explicitly keeps the real caregiver present. Check-ins live only in view state and are not logged or persisted.
 

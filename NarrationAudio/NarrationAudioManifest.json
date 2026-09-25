@@ -7930,6 +7930,14 @@
       "category": "feelings"
     },
     {
+      "text": "A visit ends",
+      "file": "llj-25206cb756166c372dfff441.mp3",
+      "spokenText": "A visit ends",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "A warm coat is ready for the cold.",
       "file": "llj-3d27b70ad478d5555b7de5d7.mp3",
       "spokenText": "A warm coat is ready for the cold.",
@@ -8216,6 +8224,30 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "All done! Time to flush!",
+      "file": "llj-2ff648bb0b8e1c0358c37794.mp3",
+      "spokenText": "All done! Time to flush!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "All done! Time to flush! Tap the flush button and watch the water swirl.",
+      "file": "llj-2551cb54ee0161a0567d10ba.mp3",
+      "spokenText": "All done! Time to flush! Tap the flush button and watch the water swirl.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "All done! We practiced flushing and washing hands with grown-up help.",
+      "file": "llj-fddc85ee203035fb7083267e.mp3",
+      "spokenText": "All done! We practiced flushing and washing hands with grown-up help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "All six rainbow windows are open!",
@@ -9522,6 +9554,134 @@
       "category": "stories"
     },
     {
+      "text": "Bye! See you another time!",
+      "file": "llj-845056d14cc8801578f61a23.mp3",
+      "spokenText": "Bye! See you another time!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! See you another time! Tap the hand for a goodbye wave. A wave is enough.",
+      "file": "llj-cac241453c2e7247e20d7ad4.mp3",
+      "spokenText": "Bye! See you another time! Tap the hand for a goodbye wave. A wave is enough.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! See you at pick-up time!",
+      "file": "llj-3d3a36d1cb17d269c88dd109.mp3",
+      "spokenText": "Bye! See you at pick-up time!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! See you at pick-up time! Tap the toys for pretend playtime with the teacher.",
+      "file": "llj-0c1da579dac60ba85e1aa72b.mp3",
+      "spokenText": "Bye! See you at pick-up time! Tap the toys for pretend playtime with the teacher.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! See you later!",
+      "file": "llj-b3fb16c01809cd36c2937e63.mp3",
+      "spokenText": "Bye! See you later!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! See you later! Tap the toys for pretend playtime with the caregiver.",
+      "file": "llj-da123dc220e68d6aadc3a4f9.mp3",
+      "spokenText": "Bye! See you later! Tap the toys for pretend playtime with the caregiver.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! That was fun!",
+      "file": "llj-75384773b0916b0993040a4b.mp3",
+      "spokenText": "Bye! That was fun!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye! That was fun! Tap the waving hand to wave goodbye together.",
+      "file": "llj-174719b0abd8836e229b64fb.mp3",
+      "spokenText": "Bye! That was fun! Tap the waving hand to wave goodbye together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye, friends! Dinner time!",
+      "file": "llj-3623fa939199a062e9edff6d.mp3",
+      "spokenText": "Bye, friends! Dinner time!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye, friends! Dinner time! Tap the doorway to go inside with a grown-up.",
+      "file": "llj-dc1fa23dbee1b1ededd8a9dd.mp3",
+      "spokenText": "Bye, friends! Dinner time! Tap the doorway to go inside with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, pee",
+      "file": "llj-d3d767afa443826e2442958c.mp3",
+      "spokenText": "Bye-bye, pee",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, pee!",
+      "file": "llj-06a9fe17ba94be76c083c8ac.mp3",
+      "spokenText": "Bye-bye, pee!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, pee! Tap the flush button and watch the water swirl.",
+      "file": "llj-e40b4e4a125ffbdb8053bc49.mp3",
+      "spokenText": "Bye-bye, pee! Tap the flush button and watch the water swirl.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, poo",
+      "file": "llj-24717df5cd17224cca894d72.mp3",
+      "spokenText": "Bye-bye, poo",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, poo!",
+      "file": "llj-36050cc798a2d098f1c7b05f.mp3",
+      "spokenText": "Bye-bye, poo!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bye-bye, poo! Tap the flush button and watch the water swirl.",
+      "file": "llj-9d5142f685f2c2cfe2d1e690.mp3",
+      "spokenText": "Bye-bye, poo! Tap the flush button and watch the water swirl.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "C is for cat.",
       "file": "llj-13c4882d79c0c7f0fc5f67c0.mp3",
       "spokenText": "C is for cat.",
@@ -10077,6 +10237,14 @@
       "text": "Choose a path for Teddy. We can practice little steps together!",
       "file": "llj-f301df8f166c44d15b3678cc.mp3",
       "spokenText": "Choose a path for Teddy. We can practice little steps together!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Choose a pretend goodbye story. Your real grown-up stays with you while we play.",
+      "file": "llj-aae15cfcf18f947da48b32e1.mp3",
+      "spokenText": "Choose a pretend goodbye story. Your real grown-up stays with you while we play.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -10730,6 +10898,14 @@
       "category": "nature"
     },
     {
+      "text": "Daycare goodbye",
+      "file": "llj-6840ae93332c226066b309d9.mp3",
+      "spokenText": "Daycare goodbye",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Daytime sky.",
       "file": "llj-f7864a2eeea338109511ea59.mp3",
       "spokenText": "Daytime sky.",
@@ -10744,6 +10920,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Dinner is ready. Move our buddy toward home, with a grown-up.",
+      "file": "llj-b8f96ffb9a348d65c056413e.mp3",
+      "spokenText": "Dinner is ready. Move our buddy toward home, with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Do a happy dance",
@@ -14234,6 +14418,30 @@
       "category": "feelings"
     },
     {
+      "text": "Good morning!",
+      "file": "llj-1025eee1c54b031366b0d517.mp3",
+      "spokenText": "Good morning!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Good night!",
+      "file": "llj-100deef2485eead4f816c1ec.mp3",
+      "spokenText": "Good night!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Good night! Tap the lamp to dim the light.",
+      "file": "llj-caf7b71b78067d768a89a8cf.mp3",
+      "spokenText": "Good night! Tap the lamp to dim the light.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Good night, Teddy. Time for a cozy rest.",
       "file": "llj-58a6ba0442242d4bfe3ad45b.mp3",
       "spokenText": "Good night, Teddy. Time for a cozy rest.",
@@ -14256,6 +14464,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Goodnight time",
+      "file": "llj-ef99ea7c6bef79bc6da5fd86.mp3",
+      "spokenText": "Goodnight time",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Goodnight! Rest helps our bodies get ready for another day.",
@@ -14512,6 +14728,46 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "Have a good day!",
+      "file": "llj-70465fbff9d66eda46cfea2f.mp3",
+      "spokenText": "Have a good day!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Have a good day! Tap the toys for pretend playtime with the teacher.",
+      "file": "llj-7d4de1c485e40c5cb5f3b13c.mp3",
+      "spokenText": "Have a good day! Tap the toys for pretend playtime with the teacher.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Have fun at school!",
+      "file": "llj-29e2eee89706b098037f8bc4.mp3",
+      "spokenText": "Have fun at school!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hello again! In our story, pick-up time came and the grown-up returned.",
+      "file": "llj-3d6887ced8325df7b7e83231.mp3",
+      "spokenText": "Hello again! In our story, pick-up time came and the grown-up returned.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hello again! Our buddy and grown-up are together at pretend pick-up time.",
+      "file": "llj-0e8d40ced72f3488bac23c30.mp3",
+      "spokenText": "Hello again! Our buddy and grown-up are together at pretend pick-up time.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Hello again! Teddy and a friend practiced a goodbye and a reunion.",
@@ -15946,6 +16202,14 @@
       "category": "nature"
     },
     {
+      "text": "It is bedtime. Move our buddy to the cozy bed.",
+      "file": "llj-88d02d146a402e24eaa93bf7.mp3",
+      "spokenText": "It is bedtime. Move our buddy to the cozy bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "It is breakfast time! Find the apple we can eat with our morning meal.",
       "file": "llj-f99c2374cabcd7a45331ef38.mp3",
       "spokenText": "It is breakfast time! Find the apple we can eat with our morning meal.",
@@ -15994,6 +16258,14 @@
       "category": "feelings"
     },
     {
+      "text": "It is pretend pick-up time. Tap the door to say hello again.",
+      "file": "llj-03a3736e1eab02e8eb11de91.mp3",
+      "spokenText": "It is pretend pick-up time. Tap the door to say hello again.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "It is raining on our walk. Find an umbrella and rain boots.",
       "file": "llj-50e6982d49c0e0a47470988a.mp3",
       "spokenText": "It is raining on our walk. Find an umbrella and rain boots.",
@@ -16008,6 +16280,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "It is time for school. What can we say to our grown-up?",
+      "file": "llj-c41cc2bb370ef9f51bbdf7e6.mp3",
+      "spokenText": "It is time for school. What can we say to our grown-up?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "It is time to leave our friends for dinner. What can we say?",
+      "file": "llj-5a2c07d77ff3e8ad3937f9e2.mp3",
+      "spokenText": "It is time to leave our friends for dinner. What can we say?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "It is too dark to see our story. Find a lamp to light the page.",
@@ -16488,6 +16776,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Leaving the park",
+      "file": "llj-d099e7eb16867530c5b8f404.mp3",
+      "spokenText": "Leaving the park",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Leo says, thank you for playing with me!",
@@ -22650,6 +22946,22 @@
       "category": "feelings"
     },
     {
+      "text": "Move our buddy to the playroom door. A trusted caregiver will stay.",
+      "file": "llj-7fbc43767945d65115f457ba.mp3",
+      "spokenText": "Move our buddy to the playroom door. A trusted caregiver will stay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Move our buddy to the school door. A trusted teacher is waiting.",
+      "file": "llj-b9fd255c3ed6bfbf8e16fe31.mp3",
+      "spokenText": "Move our buddy to the school door. A trusted teacher is waiting.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Moving air can turn a pinwheel. Round and round it goes!",
       "file": "llj-6ba5477ab8cfafeaf42d7ff4.mp3",
       "spokenText": "Moving air can turn a pinwheel. Round and round it goes!",
@@ -22973,6 +23285,14 @@
       "text": "Now it is Zoe's turn. Let's watch and wait.",
       "file": "llj-a95b2d6517d08df07fa79ac8.mp3",
       "spokenText": "Now it is Zoe's turn. Let's watch and wait.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Now wash and dry hands with a grown-up. Tap the sink to pretend together.",
+      "file": "llj-0f2d3c73239b32f3114cfc13.mp3",
+      "spokenText": "Now wash and dry hands with a grown-up. Tap the sink to pretend together.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -23554,6 +23874,46 @@
       "category": "feelings"
     },
     {
+      "text": "Our buddy is done on the potty. Move them to the handwashing spot.",
+      "file": "llj-2db058e7e15a224b4f941263.mp3",
+      "spokenText": "Our buddy is done on the potty. Move them to the handwashing spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our buddy is ready for daycare. Which goodbye fits?",
+      "file": "llj-1c0c645facccc875d0d571e4.mp3",
+      "spokenText": "Our buddy is ready for daycare. Which goodbye fits?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our buddy is ready to rest. Which words fit bedtime?",
+      "file": "llj-a2a0060c598b6a1fac5749e7.mp3",
+      "spokenText": "Our buddy is ready to rest. Which words fit bedtime?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our buddy is tucked in. You practiced a gentle goodnight.",
+      "file": "llj-91a335f06646fd393d29514d.mp3",
+      "spokenText": "Our buddy is tucked in. You practiced a gentle goodnight.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our buddy went in for dinner. We can thank friends when playtime ends.",
+      "file": "llj-2dfdb3d48c93da773a0fa6c7.mp3",
+      "spokenText": "Our buddy went in for dinner. We can thank friends when playtime ends.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Our carrots fit in the basket. Time to carry them inside.",
       "file": "llj-6e93e20412deaeca14990016.mp3",
       "spokenText": "Our carrots fit in the basket. Time to carry them inside.",
@@ -23893,6 +24253,22 @@
       "text": "Our tummy feels hungry. Find a snack to eat with a grown-up.",
       "file": "llj-1bf11e24525f47c64aa8e9fc.mp3",
       "spokenText": "Our tummy feels hungry. Find a snack to eat with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our visit is ending. Choose a kind goodbye.",
+      "file": "llj-cc3beb1a16f611f986487a03.mp3",
+      "spokenText": "Our visit is ending. Choose a kind goodbye.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Our visit is ending. Move our buddy to the front door with a grown-up.",
+      "file": "llj-03258cccf6de34e8b1112582.mp3",
+      "spokenText": "Our visit is ending. Move our buddy to the front door with a grown-up.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -26037,6 +26413,22 @@
       "text": "Paper",
       "file": "llj-41b2909f45a02d8247484919.mp3",
       "spokenText": "Paper",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Park playtime is ending. Move our buddy to the gate with a grown-up.",
+      "file": "llj-2f63e5616b749f49ddd768c4.mp3",
+      "spokenText": "Park playtime is ending. Move our buddy to the gate with a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Park playtime is ending. Try goodbye words for our friends.",
+      "file": "llj-985754e653d6a5ceb5d2457c.mp3",
+      "spokenText": "Park playtime is ending. Try goodbye words for our friends.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -29034,6 +29426,14 @@
       "category": "feelings"
     },
     {
+      "text": "School drop-off",
+      "file": "llj-7ad8fad27c432bca6b93a5d8.mp3",
+      "spokenText": "School drop-off",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Scribble on their drawing",
       "file": "llj-4b7e5c12ae98e6050c94cc10.mp3",
       "spokenText": "Scribble on their drawing",
@@ -29064,6 +29464,38 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "See you another day!",
+      "file": "llj-2bd0f762bffbd1fb1b7c4433.mp3",
+      "spokenText": "See you another day!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "See you another day! Tap the waving hand to wave goodbye together.",
+      "file": "llj-2507ff87f11f892efaaaac06.mp3",
+      "spokenText": "See you another day! Tap the waving hand to wave goodbye together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "See you at pick-up time!",
+      "file": "llj-83948ba28f112135a0cd97bb.mp3",
+      "spokenText": "See you at pick-up time!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "See you at pick-up time! Tap the toys for pretend playtime with the caregiver.",
+      "file": "llj-0447bd86ff6553efd31b0f96.mp3",
+      "spokenText": "See you at pick-up time! Tap the toys for pretend playtime with the caregiver.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Send three gentle greetings from your side. Your friend can watch.",
@@ -29808,6 +30240,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Sweet dreams!",
+      "file": "llj-451294221a01c264b431bb4c.mp3",
+      "spokenText": "Sweet dreams!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Sweet dreams! Tap the lamp to dim the light.",
+      "file": "llj-15897e8f229c48216e9b47c7.mp3",
+      "spokenText": "Sweet dreams! Tap the lamp to dim the light.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "Swordfish! Let's help our ocean friend clean ten places. Ready to begin?",
@@ -30610,6 +31058,22 @@
       "category": "feelings"
     },
     {
+      "text": "Thank you for having us!",
+      "file": "llj-aa57d25e9775154d1bfc4381.mp3",
+      "spokenText": "Thank you for having us!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Thank you for having us! Tap the hand for a goodbye wave. A wave is enough.",
+      "file": "llj-252e0d02670ff433829aee33.mp3",
+      "spokenText": "Thank you for having us! Tap the hand for a goodbye wave. A wave is enough.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "Thank you for noticing. A body clue can mean different things.",
       "file": "llj-93ccfa65491502af818605e4.mp3",
       "spokenText": "Thank you for noticing. A body clue can mean different things.",
@@ -30653,6 +31117,14 @@
       "text": "Thanks for playing!",
       "file": "llj-7d8a42450bb8ad869e364784.mp3",
       "spokenText": "Thanks for playing!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Thanks for playing! Tap the doorway to go inside with a grown-up.",
+      "file": "llj-05261eefc5de427e141a4817.mp3",
+      "spokenText": "Thanks for playing! Tap the doorway to go inside with a grown-up.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -32330,6 +32802,14 @@
       "category": "nature"
     },
     {
+      "text": "These are bedtime words. Try a goodnight message.",
+      "file": "llj-6925fc89f1b2df2ec257ce8f.mp3",
+      "spokenText": "These are bedtime words. Try a goodnight message.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "These are the overalls.",
       "file": "llj-c5cbabd1271c0524d99625fe.mp3",
       "spokenText": "These are the overalls.",
@@ -32752,6 +33232,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "This is a potty goodbye. Try words for being all done.",
+      "file": "llj-ff1c507d9c3f0fe049b6e2d7.mp3",
+      "spokenText": "This is a potty goodbye. Try words for being all done.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "This is a tractor. Let's look for the car.",
@@ -33701,6 +34189,22 @@
       "text": "Throwing teddy across the room could hit someone. Try making a cozy resting spot.",
       "file": "llj-20b8bd2675c1713ee3835870.mp3",
       "spokenText": "Throwing teddy across the room could hit someone. Try making a cozy resting spot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Time to flush!",
+      "file": "llj-c36e5a598a864d6f4985107a.mp3",
+      "spokenText": "Time to flush!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Time to go home",
+      "file": "llj-4f256c77ef6d7a27e6401d79.mp3",
+      "spokenText": "Time to go home",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -34906,6 +35410,14 @@
       "category": "feelings"
     },
     {
+      "text": "We are finished with the potty. Which goodbye fits?",
+      "file": "llj-68a685e0f132c56dff2382fd.mp3",
+      "spokenText": "We are finished with the potty. Which goodbye fits?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "We are getting ready for bed. Find the soft washcloth to help wash our face.",
       "file": "llj-b9529a32d08c614cc373e389.mp3",
       "spokenText": "We are getting ready for bed. Find the soft washcloth to help wash our face.",
@@ -34930,6 +35442,14 @@
       "category": "nature"
     },
     {
+      "text": "We are leaving our friends for dinner. Try a friendly goodbye.",
+      "file": "llj-8b382610ca9e338299a0391a.mp3",
+      "spokenText": "We are leaving our friends for dinner. Try a friendly goodbye.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "We are on Earth. Put on a spacesuit for our pretend trip.",
       "file": "llj-931f1964a35529ded3d26062.mp3",
       "spokenText": "We are on Earth. Put on a spacesuit for our pretend trip.",
@@ -34944,6 +35464,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "We are saying goodbye for a school day. Try words for drop-off.",
+      "file": "llj-9908e886ceb99cd8232bbe18.mp3",
+      "spokenText": "We are saying goodbye for a school day. Try words for drop-off.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "We are starting daycare. Choose words for a daytime goodbye.",
+      "file": "llj-77e9b591cf3a7d1ff88b93e0.mp3",
+      "spokenText": "We are starting daycare. Choose words for a daytime goodbye.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "We are taking a little pause. Tap resume when you are ready to move again.",
@@ -34973,6 +35509,14 @@
       "text": "We can share!",
       "file": "llj-76f03b49b693a2043df0fc1e.mp3",
       "spokenText": "We can share!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "We can take a break. Choose another story whenever you are ready.",
+      "file": "llj-7b69d9aca2e09936b4399d89.mp3",
+      "spokenText": "We can take a break. Choose another story whenever you are ready.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
@@ -37760,6 +38304,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
+    },
+    {
+      "text": "What could we say after a visit with someone we care about?",
+      "file": "llj-cf3ed23825b9a51ae518dacb.mp3",
+      "spokenText": "What could we say after a visit with someone we care about?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "What could we say as we leave the park?",
+      "file": "llj-4429f5e317b70211a9cbae1e.mp3",
+      "spokenText": "What could we say as we leave the park?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "What did you notice? You can tell your grown-up, point to something, or just enjoy a quiet moment. Tap when you are ready.",
@@ -43306,6 +43866,14 @@
       "category": "feelings"
     },
     {
+      "text": "You practiced leaving the park with a friendly wave and a grown-up.",
+      "file": "llj-9238190bc85c0bbaf0933ec7.mp3",
+      "spokenText": "You practiced leaving the park with a friendly wave and a grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
       "text": "You practiced wiggling, slowing, and pausing together!",
       "file": "llj-60add7fd3f49a02e3eb7de9c.mp3",
       "spokenText": "You practiced wiggling, slowing, and pausing together!",
@@ -43400,6 +43968,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "You thanked someone and said goodbye. Hugs are always a choice.",
+      "file": "llj-73106fdbc94799ab578bce75.mp3",
+      "spokenText": "You thanked someone and said goodbye. Hugs are always a choice.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     },
     {
       "text": "You thanked your friend. What a friendly way to finish!",

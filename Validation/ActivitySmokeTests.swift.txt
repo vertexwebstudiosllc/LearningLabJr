@@ -4,6 +4,49 @@ import StoreKitTest
 final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
+    func testGoodbyeEightStoriesDragChoicesEndingsAndPause() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        try tap(app.buttons["activity-card.See You Soon"])
+        for (index, story) in ["bedtime", "school", "daycare", "dinner", "park", "visit", "poo", "pee"].enumerated() {
+            try tap(app.buttons["goodbye.story.\(story)"])
+            XCTAssertFalse(app.buttons["goodbye.words.0"].exists)
+            if index == 0 {
+                try reveal(app.buttons["goodbye.drop"], in: app)
+                app.buttons["goodbye.drag"].press(forDuration: 0.6, thenDragTo: app.buttons["goodbye.drop"])
+            } else {
+                try tap(app.buttons["goodbye.drag"]); try tap(app.buttons["goodbye.drop"])
+            }
+            try tap(app.buttons["goodbye.hear.2"])
+            try tap(app.buttons["goodbye.words.2"])
+            XCTAssertTrue(app.staticTexts["goodbye.feedback"].exists)
+            XCTAssertFalse(app.buttons["goodbye.action.0"].exists)
+            try tap(app.buttons["goodbye.words.\(index % 2)"])
+            try tap(app.buttons["goodbye.action.0"])
+            if ["school", "daycare", "poo", "pee"].contains(story) {
+                XCTAssertFalse(app.buttons["goodbye.stories"].exists)
+                try tap(app.buttons["goodbye.action.1"])
+            }
+            try reveal(app.buttons["goodbye.stories"], in: app)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Goodbye \(story) ending"; shot.lifetime = .keepAlways; add(shot)
+            try tap(app.buttons["goodbye.stories"])
+            XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "\(index + 1) of 8 stories explored")
+        }
+        try tap(app.buttons["goodbye.story.school"]); try tap(app.buttons["goodbye.pause"])
+        try tap(app.buttons["goodbye.finish"])
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        try reveal(app.staticTexts["goodbye.progress"], in: app)
+        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "0 of 8 stories explored")
+    }
+
+
+    @MainActor
     func testCozyBathroomPictureActionsAndFinish() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

@@ -7,6 +7,48 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testGoodbyeStoriesMovementChoicesActionsPauseAndRuth() {
+        XCTAssertEqual(Set(GoodbyeStory.bank.map(\.id)).count, 8)
+        for text in GoodbyeStory.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.engine, "generative", text)
+        }
+        for run in 0..<50 {
+            var play = GoodbyePlay()
+            var buddies = Set<String>()
+            for story in GoodbyeStory.bank {
+                XCTAssertNotNil(UIImage(systemName: story.symbol))
+                XCTAssertEqual(story.choices.filter(\.fits).count, 2)
+                play.chooseStory(story.id)
+                XCTAssertTrue(buddies.insert(play.buddy!.id).inserted)
+                XCTAssertFalse(play.say(0)); XCTAssertFalse(play.move("stale"))
+                XCTAssertTrue(play.move(play.dragToken)); XCTAssertFalse(play.move(play.dragToken))
+                XCTAssertFalse(play.say(2)); XCTAssertEqual(play.phase, .words)
+                XCTAssertTrue(play.say(run % 2))
+                XCTAssertFalse(play.act(0, session: UUID()))
+                for step in 0..<story.goal {
+                    XCTAssertFalse(play.act(step + 1, session: play.session))
+                    XCTAssertTrue(play.act(step, session: play.session))
+                    XCTAssertFalse(play.act(step, session: play.session))
+                    XCTAssertEqual(play.phase, step == story.goal - 1 ? .ending : .action)
+                }
+                XCTAssertTrue(play.completed.contains(story.id)); play.stories()
+            }
+            XCTAssertEqual(play.completed.count, 8)
+        }
+        for stage in 0...2 {
+            var play = GoodbyePlay(); play.chooseStory("school")
+            if stage > 0 { play.move(play.dragToken) }
+            if stage > 1 { play.say(0) }
+            play.pause(); XCTAssertEqual(play.phase, .paused); XCTAssertTrue(play.completed.isEmpty)
+            play.stories(); XCTAssertEqual(play.phase, .stories)
+            play.chooseStory("pee"); play.pause(); play.finish(); XCTAssertEqual(play.phase, .complete)
+            XCTAssertTrue(play.completed.isEmpty)
+        }
+    }
+
+
+    @MainActor
     func testCozyRoutinePathsOrderingActionsPauseAndRuth() throws {
         XCTAssertEqual(CozyRoutine.bank.count, 8); XCTAssertEqual(CozyRoutine.bank.reduce(0) { $0 + $1.steps.count }, 35)
         XCTAssertEqual(Set(CozyRoutineStep.bank.map(\.id)).count, 28)
