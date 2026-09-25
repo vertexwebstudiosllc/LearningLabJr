@@ -86,7 +86,7 @@ The six menus contain 72 distinct activity destinations. The four original books
 5. Wiggle, Slow, Stop
 6. My Feeling Weather
 7. Kindness Garden
-8. My Cozy Toolbox
+8. My Solution Toolbox
 9. Body Clue Buddies
 10. Friendship Bridge
 11. Cozy Evening Path

@@ -7,6 +7,56 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testSolutionToolboxAllProblemsSelectionsShuffleAndRuth() throws {
+        XCTAssertEqual(SolutionProblem.bank.count, 18)
+        XCTAssertEqual(Set(SolutionProblem.bank.map(\.id)).count, 18)
+        var previous = "", orders = Set<String>()
+        for _ in 0..<100 {
+            var play = SolutionPlay(previousFirst: previous)
+            XCTAssertNotEqual(play.current.id, previous)
+            previous = play.current.id
+            XCTAssertEqual(Set(play.rounds.map(\.id)).count, 18)
+            orders.insert(play.rounds.map(\.id).joined())
+            for index in 0..<18 {
+                let problem = play.current
+                XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.solved); XCTAssertTrue(play.selected.isEmpty)
+                XCTAssertEqual(play.choices.count, 4)
+                XCTAssertEqual(Set(play.choices).count, 4)
+                XCTAssertTrue(Set(problem.required).isDisjoint(with: problem.extras))
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.choose(problem.required[0], problem: "stale"))
+                for id in problem.extras { XCTAssertFalse(play.choose(id, problem: problem.id)) }
+                for id in problem.required {
+                    XCTAssertTrue(play.choose(id, problem: problem.id))
+                    XCTAssertFalse(play.choose(id, problem: problem.id))
+                }
+                XCTAssertTrue(play.solved)
+                play.next()
+            }
+            XCTAssertTrue(play.complete); play.next(); XCTAssertEqual(play.index, 18)
+            XCTAssertFalse(play.choose(play.current.required[0], problem: play.current.id))
+        }
+        XCTAssertEqual(orders.count, 100)
+        for tool in SolutionTool.bank { XCTAssertNotNil(UIImage(systemName: tool.symbol), tool.symbol) }
+        for problem in SolutionProblem.bank {
+            XCTAssertNotNil(UIImage(systemName: problem.before), problem.before)
+            XCTAssertNotNil(UIImage(systemName: problem.after), problem.after)
+            for id in problem.required + problem.extras { XCTAssertTrue(SolutionTool.bank.contains { $0.id == id }) }
+            for solved in [false, true] {
+                let renderer = ImageRenderer(content: SolutionProblemScene(problem: problem, solved: solved).frame(width: 350).padding().background(.white))
+                let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Solution \(problem.id) \(solved ? "solved" : "problem")"; shot.lifetime = .keepAlways; add(shot)
+            }
+        }
+        for text in SolutionProblem.narration {
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth"); XCTAssertEqual(clip.engine, "generative")
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text))
+        }
+    }
+
+
+    @MainActor
     func testKindnessGardenScenariosGrowthFadeRepairAndRuth() throws {
         XCTAssertEqual(KindGardenStory.bank.count, 24)
         XCTAssertEqual(Set(KindGardenStory.bank.map(\.id)).count, 24)

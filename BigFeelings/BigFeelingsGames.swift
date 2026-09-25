@@ -10,39 +10,6 @@ private struct BFNote: View {
     }
 }
 
-struct CozyToolboxGame: View {
-    let onReplay: () -> Void
-    @State private var tool: Int?
-    @State private var tried: Set<Int> = []
-    @StateObject private var narrator = GameNarrator()
-    private let names = ["Gentle hand press", "Listen together", "Cozy stretch"]
-    private let symbols = ["hands.clap.fill", "ear.fill", "figure.flexibility"]
-    private let instructions = ["Gently press your palms together, then let go. Try it once with your grown-up.", "Pause together. Listen for a sound nearby. Point or tell your grown-up what you hear.", "Reach your hands up as comfortably as you like, then let them rest. A tiny stretch is welcome."]
-    var body: some View {
-        ToddlerGameScaffold(title: "My Cozy Toolbox", prompt: tried.count == 3 ? "You explored three tools for a cozy pause!" : tool.map { instructions[$0] } ?? "Choose a tool to try together. Notice what feels comfortable for you.", accent: .indigo, completion: tried.count == 3, onReplay: onReplay) {
-            Image(systemName: tool.map { symbols[$0] } ?? "shippingbox.fill").font(.system(size: 100)).foregroundStyle(.indigo).frame(height: 145)
-            if let tool {
-                ToddlerActionButton(title: "We explored this tool", systemImage: "checkmark", color: .indigo) {
-                    tried.insert(tool)
-                    self.tool = nil
-                    narrator.speak("You explored one way to pause together.")
-                }
-                ToddlerActionButton(title: "Watch my grown-up try", systemImage: "person.fill", color: .purple) {
-                    tried.insert(tool)
-                    self.tool = nil
-                }
-            } else {
-                ForEach(0..<3, id: \.self) { index in
-                    ToddlerActionButton(title: names[index] + (tried.contains(index) ? " · explored" : ""), systemImage: symbols[index], color: .indigo) { tool = index }
-                        .disabled(tried.contains(index))
-                }
-            }
-            Text("\(tried.count) of 3 tools explored").font(.headline)
-            BFNote(text: "A tool does not have to change a feeling. Your grown-up can help you decide what feels good.")
-        }
-    }
-}
-
 struct BodyClueBuddiesGame: View {
     let onReplay: () -> Void
     @State private var explored: Set<Int> = []

@@ -34,7 +34,7 @@ Colors are accompanied by words and characteristic symbols where possible. Shape
 | Wiggle, Slow, Stop | Follow seated or standing movement cards together | Six movement cues |
 | My Feeling Weather | Choose a feeling, its size, and a support | One check-in |
 | Kindness Garden | Choose, act out, and plant flowers for caring actions | Three different caring actions |
-| My Cozy Toolbox | Explore hand press, listening, and comfortable stretching | Three tools explored or modeled |
+| My Solution Toolbox | Open a picture toolbox and choose one or two helpful items for everyday problems | Eighteen shuffled problems, with a solved scene after each |
 | Body Clue Buddies | Explore body sensations in any order with a grown-up | Four body areas noticed |
 | Friendship Bridge | Role-play asking, waiting or choosing, and shared planning | Three bridge conversations |
 | Cozy Evening Path | Sequence Teddy's pictured evening routine | Four routine steps |
@@ -55,3 +55,7 @@ Before release, conduct caregiver-and-child usability sessions across the stated
 ## Follow-up interaction audit
 
 A category-level review corrected ambiguous road navigation by highlighting and naming the next square, exposed face-puppet features and their control values to VoiceOver, and made third-paint selection replace the oldest selection instead of silently doing nothing. Shape Trails now uses the same exact path for its guide and progress; the square has equal sides, the circle stays round, and tracing gestures take priority within the tracing board. Completion prompts describe the finished activity instead of requesting another action. Completion counters, set-based discoveries, and replay identities were reviewed for overflow and reset behavior; syntax parsing passed after these corrections. Physical-device gesture and assistive-technology validation remains part of release testing.
+
+### My Solution Toolbox
+
+Eighteen unique everyday problems run once each in a shuffled session. The first problem changes on re-entry, and four picture choices shuffle for each problem. Children open a sheet, hear the problem or individual item names, and select one or two helpful tools in either order. Closing the sheet preserves their selections. Unsuitable tools invite another try; selected tools cannot count twice. Solving closes the toolbox and reveals the outcome before the child advances. Real repairs explicitly involve a grown-up. All prompts, feedback, outcomes, and item labels have bundled generative Ruth recordings.

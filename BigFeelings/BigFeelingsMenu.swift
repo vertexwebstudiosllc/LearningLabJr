@@ -9,13 +9,13 @@ struct BigFeelingsMenu: View {
         .init(id: "feelings.pause", title: "Wiggle, Slow, Stop", skill: "Explore movement and pauses", interaction: "Move to music and follow automatic Wiggle, Slow, and Stop cues", ageBand: "2–4 with a grown-up", caregiverTip: "Play with your grown-up in a clear space. Listen for Wiggle, Slow, and Stop. Seated movements count, and you can pause whenever you like."),
         .init(id: "feelings.weather", title: "My Feeling Weather", skill: "Communicate feelings and needs", interaction: "Choose a feeling, its size, and a support that fits how you feel", ageBand: "2–4 with a grown-up", caregiverTip: "Accept every answer, including not sure. Feelings do not need to change."),
         .init(id: "feelings.kindness", title: "Kindness Garden", skill: "Practice caring actions", interaction: "Explore mixed-up caring choices and watch a pretend garden grow or fade", ageBand: "2–4 with a grown-up", caregiverTip: "Talk about what each choice does. We can try again. Choices can help or hurt; children are never labeled good or bad. Respect no and personal space."),
-        .init(id: "feelings.tools", title: "My Cozy Toolbox", skill: "Choose a regulation strategy", interaction: "Try three self-paced calming tools together", ageBand: "2–4 with a grown-up", caregiverTip: "These are play ideas, not treatment. Stop a tool if it is uncomfortable."),
+        .init(id: "feelings.tools", title: "My Solution Toolbox", skill: "Practice solving everyday problems", interaction: "Open a toolbox and choose helpful items for eighteen everyday problems", ageBand: "2–4 with a grown-up", caregiverTip: "Explore solutions together. Ask a trusted grown-up for real repairs. Many problems have more than one solution."),
         .init(id: "feelings.body", title: "Body Clue Buddies", skill: "Notice body sensations", interaction: "Explore hands, heartbeat, tummy, and feet", ageBand: "2–4 with a grown-up", caregiverTip: "Let your child describe their own body. A body clue can mean many things."),
         .init(id: "feelings.bridge", title: "Friendship Bridge", skill: "Use words and solve social problems", interaction: "Build a bridge through three pretend conversations", ageBand: "3–4 with a grown-up", caregiverTip: "Model asking, listening, and accepting no. There can be many kind solutions."),
         .init(id: "feelings.routine", title: "Cozy Evening Path", skill: "Anticipate familiar routines", interaction: "Put four bedtime pictures in a gentle sequence", ageBand: "2–4 with a grown-up", caregiverTip: "Explain that families have different routines. Talk about your own."),
         .init(id: "feelings.goodbye", title: "See You Soon", skill: "Rehearse a reassuring goodbye", interaction: "Choose a goodbye, a comfort plan, and a pretend reunion", ageBand: "2–4 with a grown-up", caregiverTip: "Use a familiar caregiver and a predictable return. Never disappear without saying goodbye.")
     ]
-    private let symbols = ["face.smiling.fill", "camera.macro", "heart.fill", "basketball.fill", "figure.cooldown", "cloud.sun.fill", "leaf.fill", "shippingbox.fill", "hand.raised.fill", "person.2.fill", "moon.stars.fill", "hand.wave.fill"]
+    private let symbols = ["face.smiling.fill", "camera.macro", "heart.fill", "basketball.fill", "figure.cooldown", "cloud.sun.fill", "leaf.fill", "toolbox.fill", "hand.raised.fill", "person.2.fill", "moon.stars.fill", "hand.wave.fill"]
     var body: some View {
         ActivityMenu(title: "Big Feelings", subtitle: "12 playful ways to connect and care", accent: .pink) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
@@ -43,7 +43,7 @@ private struct BFActivityDestination: View {
         case 4: WiggleSlowStopGame(onReplay: replay)
         case 5: FeelingWeatherGame(onReplay: replay)
         case 6: KindnessGardenGame(onReplay: replay)
-        case 7: CozyToolboxGame(onReplay: replay)
+        case 7: SolutionToolboxGame(onReplay: replay)
         case 8: BodyClueBuddiesGame(onReplay: replay)
         case 9: FriendshipBridgeGame(onReplay: replay)
         case 10: CozyEveningPathGame(onReplay: replay)
