@@ -102,3 +102,5 @@ Move Like an Animal checks sixteen distinct animals across 200 shuffled sessions
 Day & Night checks eighteen distinct activities (nine daytime and nine nighttime), three progressive interaction stages, 200 full sessions, stable shuffled choices, no repeated opening activity, wrong/duplicate/stale input guards, ordered routines, artwork, and all 79 Ruth lines. Its UI test completes every activity with six real drag-and-drop interactions, tap placement, incorrect/out-of-order choices, replay, and reentry.
 
 Nature Detective checks twenty-four unique animal/insect targets across 200 full sessions, changed opening targets, stable shuffled answers, recent-distractor exclusion, all clue levels, wrong/stale/duplicate actions, early success, transparent image pixels, and complete Ruth coverage. Its UI test solves all 24 mysteries, checks every clue and wrong answers, and verifies replay and reentry.
+
+Cozy Nest: `testCozyProjectsSequenceGuardsVarietyAndRuth` checks 100 complete ten-project sessions and exact Ruth coverage. `testCozyNestTenProjectsAndReplay` builds every project and checks hints, completion, replay, and reentry.

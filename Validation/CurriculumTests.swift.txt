@@ -6,6 +6,54 @@ import AVFoundation
 
 final class CurriculumTests: XCTestCase {
     @MainActor
+    func testCozyProjectsSequenceGuardsVarietyAndRuth() throws {
+        XCTAssertEqual(CozyProject.bank.count, 10)
+        XCTAssertEqual(Set(CozyProject.bank.map(\.id)).count, 10)
+        var previous = ""
+        var orders = Set<String>()
+        for _ in 0..<100 {
+            var play = CozyPlay(previousSecond: previous)
+            XCTAssertEqual(play.current.id, "nest")
+            XCTAssertNotEqual(play.projects[1].id, previous)
+            previous = play.projects[1].id
+            orders.insert(play.projects.map(\.id).joined())
+            XCTAssertEqual(Set(play.projects.map(\.id)).count, 10)
+            for round in 0..<10 {
+                let project = play.current
+                XCTAssertEqual(project.pieces.count, 4)
+                play.advance(from: project.id); XCTAssertEqual(play.index, round)
+                for step in 0..<4 {
+                    XCTAssertEqual(play.prompt, project.pieces[step].instruction)
+                    play.choose(99, project: project.id, step: step); XCTAssertEqual(play.placed, step)
+                    play.choose(step, project: "stale", step: step); XCTAssertEqual(play.placed, step)
+                    if step < 3 {
+                        play.choose(step + 1, project: project.id, step: step)
+                        XCTAssertTrue(play.needsHelp); XCTAssertEqual(play.placed, step)
+                        XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: play.prompt)?.voice, "Ruth")
+                    }
+                    play.choose(step, project: project.id, step: step)
+                    XCTAssertEqual(play.placed, step + 1); XCTAssertFalse(play.needsHelp)
+                    play.choose(step, project: project.id, step: step); XCTAssertEqual(play.placed, step + 1)
+                }
+                XCTAssertTrue(play.built); XCTAssertEqual(play.prompt, project.success)
+                play.advance(from: "stale"); XCTAssertEqual(play.index, round)
+                play.advance(from: project.id); XCTAssertEqual(play.index, round + 1)
+                play.advance(from: project.id); XCTAssertEqual(play.index, round + 1)
+            }
+            XCTAssertTrue(play.complete)
+            play.choose(0, project: play.current.id, step: 0); XCTAssertEqual(play.placed, 0)
+        }
+        XCTAssertGreaterThan(orders.count, 90)
+        for text in CozyProject.narration { XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text) }
+        for project in CozyProject.bank {
+            for piece in project.pieces {
+                XCTAssertFalse(CozyGlyph(kind: piece.kind).path(in: CGRect(x: 0, y: 0, width: 100, height: 100)).isEmpty)
+                XCTAssertGreaterThan(piece.width, 0); XCTAssertGreaterThan(piece.height, 0)
+            }
+        }
+    }
+
+    @MainActor
     func testNatureDetectiveVarietyCluesGuardsArtworkAndRuth() throws {
         XCTAssertEqual(DetectiveAnimal.bank.count, 24)
         XCTAssertEqual(Set(DetectiveAnimal.bank.map(\.id)).count, 24)

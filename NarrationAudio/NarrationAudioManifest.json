@@ -7146,6 +7146,14 @@
       "category": "nature"
     },
     {
+      "text": "A colorful soft ball for a playful cat!",
+      "file": "llj-d32e8d84cb34ff7e9e2d6f8a.mp3",
+      "spokenText": "A colorful soft ball for a playful cat!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "A cozy nest for three eggs! Watch real nests from far away.",
       "file": "llj-5c6973b51bdc803447abcc27.mp3",
       "spokenText": "A cozy nest for three eggs! Watch real nests from far away.",
@@ -7301,6 +7309,14 @@
       "text": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
       "file": "llj-d297e0d334d59b3343fcfdca.mp3",
       "spokenText": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "A hull, a mast, and a sail! Our toy boat is ready for pretend adventures!",
+      "file": "llj-33c508b59b28a337ffa6d93d.mp3",
+      "spokenText": "A hull, a mast, and a sail! Our toy boat is ready for pretend adventures!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -7626,6 +7642,62 @@
       "category": "shapes"
     },
     {
+      "text": "Add a bench on each side.",
+      "file": "llj-62d2d4a53af325da9931a7d8.mp3",
+      "spokenText": "Add a bench on each side.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a bone-shaped welcome sign.",
+      "file": "llj-da31cc33e1775bf0f23e9e92.mp3",
+      "spokenText": "Add a bone-shaped welcome sign.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a bright round patch.",
+      "file": "llj-6cf26666c2f15f01212d6ab1.mp3",
+      "spokenText": "Add a bright round patch.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a bright sail beside the mast.",
+      "file": "llj-9bbe27853dbdc2bf8d8a6d45.mp3",
+      "spokenText": "Add a bright sail beside the mast.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a little flag at the top.",
+      "file": "llj-df8b13d3a5c3d4f66d8ee5df.mp3",
+      "spokenText": "Add a little flag at the top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a little pillow.",
+      "file": "llj-d8270d197ea7632ce7d1876d.mp3",
+      "spokenText": "Add a little pillow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add a roof above the walls.",
+      "file": "llj-f4190fb860cb9d059c2f4b27.mp3",
+      "spokenText": "Add a roof above the walls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Add a round window for the astronaut.",
       "file": "llj-8fb12cf292c91e55cc61c9ba.mp3",
       "spokenText": "Add a round window for the astronaut.",
@@ -7658,12 +7730,76 @@
       "category": "counting"
     },
     {
+      "text": "Add colorful fabric stripes to the ball.",
+      "file": "llj-3890e046b27362367acb0ef6.mp3",
+      "spokenText": "Add colorful fabric stripes to the ball.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add shelves inside the frame.",
+      "file": "llj-74ee52b7dd14997df0dfe7ba.mp3",
+      "spokenText": "Add shelves inside the frame.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add soft grass to line our pretend nest.",
+      "file": "llj-9ac179b1e593ef8dba577a69.mp3",
+      "spokenText": "Add soft grass to line our pretend nest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add the bright flowers to the stems.",
+      "file": "llj-53d4a3693538e7708dea6a62.mp3",
+      "spokenText": "Add the bright flowers to the stems.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add the opening at the far end.",
+      "file": "llj-5d8bd32b53e5916cf4799510.mp3",
+      "spokenText": "Add the opening at the far end.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add the opening at the near end.",
+      "file": "llj-1bae6022a8338e2a286c3e0c.mp3",
+      "spokenText": "Add the opening at the near end.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Add the rail posts above the deck.",
+      "file": "llj-cec92b6402f826f848fd596f.mp3",
+      "spokenText": "Add the rail posts above the deck.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Add the rocket body.",
       "file": "llj-91c0546dc154dd958474b3a1.mp3",
       "spokenText": "Add the rocket body.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Add three green stems.",
+      "file": "llj-084de2b3730167668f572397.mp3",
+      "spokenText": "Add three green stems.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Add triangle branches above the trunk.",
@@ -9762,6 +9898,14 @@
       "category": "nature"
     },
     {
+      "text": "Decorate the patch with a star.",
+      "file": "llj-ef5267dc6dbaa635c0899f3d.mp3",
+      "spokenText": "Decorate the patch with a star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Does your feeling seem little, medium, or big? Every size is okay.",
       "file": "llj-f447c87ef8bc874ce67d6a82.mp3",
       "spokenText": "Does your feeling seem little, medium, or big? Every size is okay.",
@@ -10826,9 +10970,25 @@
       "category": "stories"
     },
     {
+      "text": "Fill the box with soil.",
+      "file": "llj-44638027b226f84111fc06c9.mp3",
+      "spokenText": "Fill the box with soil.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Fill the pot with potting mix. Leave a little space at the top.",
       "file": "llj-19c2a7deaa69fd65d30c5a56.mp3",
       "spokenText": "Fill the pot with potting mix. Leave a little space at the top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Fill the shelves with little hollow tubes.",
+      "file": "llj-b80b48379bb21b9bd400408f.mp3",
+      "spokenText": "Fill the shelves with little hollow tubes.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -14682,6 +14842,22 @@
       "category": "shapes"
     },
     {
+      "text": "Lay a cozy blanket over the cushion.",
+      "file": "llj-a9ac758c13f0ab2a10889416.mp3",
+      "spokenText": "Lay a cozy blanket over the cushion.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Lay the deck across the supports.",
+      "file": "llj-d2f70a724c2ed2572bd8f879.mp3",
+      "spokenText": "Lay the deck across the supports.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Let the air out gently, like a soft breeze. Tap when you are ready.",
       "file": "llj-92c877617752f9d8d7c0f521.mp3",
       "spokenText": "Let the air out gently, like a soft breeze. Tap when you are ready.",
@@ -14733,6 +14909,78 @@
       "text": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
       "file": "llj-53c5d0248713047896422b3d.mp3",
       "spokenText": "Let's be nature detectives! Listen to the clues and choose an animal or insect. Tap another clue whenever you need a little help.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a bird nest! Gather the twigs to make the bottom of our pretend nest.",
+      "file": "llj-55ee49f44628845a7d30048c.mp3",
+      "spokenText": "Let's build a bird nest! Gather the twigs to make the bottom of our pretend nest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a bug hotel! Start with the frame of our pretend bug hotel.",
+      "file": "llj-7e60fcdb469dee78950971f9.mp3",
+      "spokenText": "Let's build a bug hotel! Start with the frame of our pretend bug hotel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a cat toy! Choose the soft ball for our pretend cat toy.",
+      "file": "llj-9990e640cfa3e9643f242374.mp3",
+      "spokenText": "Let's build a cat toy! Choose the soft ball for our pretend cat toy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a doghouse! Start with the walls of our pretend doghouse.",
+      "file": "llj-15c1da9ce1bb6a420e8b616f.mp3",
+      "spokenText": "Let's build a doghouse! Start with the walls of our pretend doghouse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a flower box! Choose a box for our pretend flowers.",
+      "file": "llj-dde8fb2155b074f1226861d2.mp3",
+      "spokenText": "Let's build a flower box! Choose a box for our pretend flowers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a little bridge! Set two supports under our pretend bridge.",
+      "file": "llj-7dea96b5fb9fcab17c05f033.mp3",
+      "spokenText": "Let's build a little bridge! Set two supports under our pretend bridge.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a pet bed! Choose the wide base for our pet bed.",
+      "file": "llj-4e281eed6b77d4ec805696b5.mp3",
+      "spokenText": "Let's build a pet bed! Choose the wide base for our pet bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a picnic table! Set the legs of our pretend picnic table.",
+      "file": "llj-88690f33fc0084b06818968d.mp3",
+      "spokenText": "Let's build a picnic table! Set the legs of our pretend picnic table.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's build a rabbit tunnel! Start with a long pretend tunnel.",
+      "file": "llj-12c89e9d1dd62355ab1b5df2.mp3",
+      "spokenText": "Let's build a rabbit tunnel! Start with a long pretend tunnel.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -14800,6 +15048,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Let's build a toy boat! Choose the hull, the bottom of our toy boat.",
+      "file": "llj-b22a07bfcc5491f95234f44f.mp3",
+      "spokenText": "Let's build a toy boat! Choose the hull, the bottom of our toy boat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's build apple. Copy the letters from left to right. Your grown-up can help.",
@@ -15896,6 +16152,334 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture.",
+      "file": "llj-82d7e070792974eebc8b17f8.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a bench on each side.",
+      "file": "llj-5a6763835027f69d1a6031c4.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a bench on each side.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a bone-shaped welcome sign.",
+      "file": "llj-63c2a24ccce2ad3db9804eed.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a bone-shaped welcome sign.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a bright round patch.",
+      "file": "llj-49b20c2011c6a58ce1bcb2c9.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a bright round patch.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a bright sail beside the mast.",
+      "file": "llj-dc2f09b03ba2fcc8cd688a4c.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a bright sail beside the mast.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a little flag at the top.",
+      "file": "llj-4ad329495fcbf76b795aff39.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a little flag at the top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a little pillow.",
+      "file": "llj-32db2ec641925a00b68a3b46.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a little pillow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add a roof above the walls.",
+      "file": "llj-20bdb9f9ea0c97271e4c594b.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add a roof above the walls.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add colorful fabric stripes to the ball.",
+      "file": "llj-3b590f89111a37aa45e36ee8.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add colorful fabric stripes to the ball.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add shelves inside the frame.",
+      "file": "llj-47bf6116de0045f4a8e57841.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add shelves inside the frame.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add soft grass to line our pretend nest.",
+      "file": "llj-0d31fdc7e093a1518313098e.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add soft grass to line our pretend nest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add the bright flowers to the stems.",
+      "file": "llj-27d9c6e871647d426e380980.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add the bright flowers to the stems.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add the opening at the far end.",
+      "file": "llj-bb9160a59d608af2e6409df8.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add the opening at the far end.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add the opening at the near end.",
+      "file": "llj-8fca2dc4b4ccf2029cf14cae.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add the opening at the near end.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add the rail posts above the deck.",
+      "file": "llj-54a0aebe0a7f7d08ed3f6dc9.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add the rail posts above the deck.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Add three green stems.",
+      "file": "llj-928c4fdea0b6b601762e4b02.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Add three green stems.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Decorate the patch with a star.",
+      "file": "llj-3c831a5ef9222388eec8cbe7.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Decorate the patch with a star.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Fill the box with soil.",
+      "file": "llj-8c9423bc7f911b5ccd62eb91.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Fill the box with soil.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Fill the shelves with little hollow tubes.",
+      "file": "llj-c4775dda8487b816a94e4472.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Fill the shelves with little hollow tubes.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Lay a cozy blanket over the cushion.",
+      "file": "llj-00f8364c25b3a4fa0627f402.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Lay a cozy blanket over the cushion.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Lay the deck across the supports.",
+      "file": "llj-8d3c063a5e3f3fe55a4ab06d.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Lay the deck across the supports.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a bird nest! Gather the twigs to make the bottom of our pretend nest.",
+      "file": "llj-fdac944cd3635e8cd693034b.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a bird nest! Gather the twigs to make the bottom of our pretend nest.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a bug hotel! Start with the frame of our pretend bug hotel.",
+      "file": "llj-fd957ce1a9c5667cc9b6ba94.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a bug hotel! Start with the frame of our pretend bug hotel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a cat toy! Choose the soft ball for our pretend cat toy.",
+      "file": "llj-f938de3f1b648bd285c2d828.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a cat toy! Choose the soft ball for our pretend cat toy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a doghouse! Start with the walls of our pretend doghouse.",
+      "file": "llj-bd41b8a762191bdb6c3da6fa.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a doghouse! Start with the walls of our pretend doghouse.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a flower box! Choose a box for our pretend flowers.",
+      "file": "llj-387a8e9790c4df9652612650.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a flower box! Choose a box for our pretend flowers.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a little bridge! Set two supports under our pretend bridge.",
+      "file": "llj-d6070ff043eb27ed87382af7.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a little bridge! Set two supports under our pretend bridge.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a pet bed! Choose the wide base for our pet bed.",
+      "file": "llj-7b9775c3eea61d449e61ee92.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a pet bed! Choose the wide base for our pet bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a picnic table! Set the legs of our pretend picnic table.",
+      "file": "llj-65ef365925e8300fc23697df.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a picnic table! Set the legs of our pretend picnic table.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a rabbit tunnel! Start with a long pretend tunnel.",
+      "file": "llj-3c6f609dfac8fa1622f49080.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a rabbit tunnel! Start with a long pretend tunnel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Let's build a toy boat! Choose the hull, the bottom of our toy boat.",
+      "file": "llj-6d88a19216d5b0612011da54.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Let's build a toy boat! Choose the hull, the bottom of our toy boat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Make a doorway for our dog to walk through.",
+      "file": "llj-230c0b09ea0568ed57755883.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Make a doorway for our dog to walk through.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Put a sheltering roof on top.",
+      "file": "llj-a5c75bc7a7241871e042a6da.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Put a sheltering roof on top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Put a soft cushion inside the bed.",
+      "file": "llj-79279b93c8486406f4f4cd64.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Put a soft cushion inside the bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Put a soft mat below the tunnel.",
+      "file": "llj-ab8b000191a03a07e260c81e.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Put a soft mat below the tunnel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Put the handrail across the posts.",
+      "file": "llj-256fbcc6217699b4eb5ab57e.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Put the handrail across the posts.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Put the wide tabletop on the legs.",
+      "file": "llj-30637eea3e4c3bfb7b1787d5.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Put the wide tabletop on the legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Settle three pretend eggs gently inside.",
+      "file": "llj-6a623708ee11bc12171302f8.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Settle three pretend eggs gently inside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Spread a colorful tablecloth on top.",
+      "file": "llj-adaa62d333e6584cef92260c.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Spread a colorful tablecloth on top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Stand the mast in the middle.",
+      "file": "llj-89540395893a14aca1ab59c4.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Stand the mast in the middle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Let's look together. Listen for the next piece, then tap its picture. Weave the sides to hold our nest together.",
+      "file": "llj-f834713441ae53455094e43f.mp3",
+      "spokenText": "Let's look together. Listen for the next piece, then tap its picture. Weave the sides to hold our nest together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Let's make a pretend space postcard for a friend. Our picture will show Saturn and its lovely rings!",
@@ -19626,6 +20210,14 @@
       "category": "literacy"
     },
     {
+      "text": "Make a doorway for our dog to walk through.",
+      "file": "llj-10abd7e02fb3ea9157cfbad4.mp3",
+      "spokenText": "Make a doorway for our dog to walk through.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Make one more hop, then count again.",
       "file": "llj-a4e78b6e93c0a0f9a8b76a2b.mp3",
       "spokenText": "Make one more hop, then count again.",
@@ -20498,9 +21090,25 @@
       "category": "feelings"
     },
     {
+      "text": "Our cozy nest is ready! Watch real nests from far away and leave them undisturbed.",
+      "file": "llj-0b0b24e6d0b4acfe13496c56.mp3",
+      "spokenText": "Our cozy nest is ready! Watch real nests from far away and leave them undisturbed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Our indoor garden is ready. Let's choose a pot for our flower.",
       "file": "llj-545e054c05624f76524f80ab.mp3",
       "spokenText": "Our indoor garden is ready. Let's choose a pot for our flower.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our little bridge connects one side to the other!",
+      "file": "llj-754fd57cddfa196548e87c8e.mp3",
+      "spokenText": "Our little bridge connects one side to the other!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -20530,6 +21138,22 @@
       "category": "nature"
     },
     {
+      "text": "Our pet bed has a soft place to rest!",
+      "file": "llj-ca5543613e5886cc99153b9f.mp3",
+      "spokenText": "Our pet bed has a soft place to rest!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our picnic table is ready for a pretend picnic!",
+      "file": "llj-1872d98a9c030b0e0b0b274c.mp3",
+      "spokenText": "Our picnic table is ready for a pretend picnic!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Our planet travels around the Sun. Imagine moving a little Earth around a big star. Around we go!",
       "file": "llj-baad1d0fcc5fab1a325ef9e5.mp3",
       "spokenText": "Our planet travels around the Sun. Imagine moving a little Earth around a big star. Around we go!",
@@ -20541,6 +21165,14 @@
       "text": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
       "file": "llj-a854f18686e45745288716f8.mp3",
       "spokenText": "Our pretend bed is ready. Your grown-up helps you make your own sleeping space cozy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Our pretend bug hotel has little spaces to hide!",
+      "file": "llj-5c3755696d16dc1656615100.mp3",
+      "spokenText": "Our pretend bug hotel has little spaces to hide!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -23778,6 +24410,30 @@
       "category": "shapes"
     },
     {
+      "text": "Put a sheltering roof on top.",
+      "file": "llj-4f563f90d8dd02ec0f2fc7bc.mp3",
+      "spokenText": "Put a sheltering roof on top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Put a soft cushion inside the bed.",
+      "file": "llj-d9fffe1ccd38c458802ad58b.mp3",
+      "spokenText": "Put a soft cushion inside the bed.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Put a soft mat below the tunnel.",
+      "file": "llj-fe2a0f81d47473b3a44c7f7a.mp3",
+      "spokenText": "Put a soft mat below the tunnel.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Put a triangle on top.",
       "file": "llj-b461dd90dc6011622c06120a.mp3",
       "spokenText": "Put a triangle on top.",
@@ -23834,6 +24490,14 @@
       "category": "shapes"
     },
     {
+      "text": "Put the handrail across the posts.",
+      "file": "llj-0ea18a7dda2aafc33ebaf10b.mp3",
+      "spokenText": "Put the handrail across the posts.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Put the orange shirt in the orange basket.",
       "file": "llj-bf04fcc07e11e2e6006aeaed.mp3",
       "spokenText": "Put the orange shirt in the orange basket.",
@@ -23888,6 +24552,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "Put the wide tabletop on the legs.",
+      "file": "llj-e4c1c8ebcc0e597270304092.mp3",
+      "spokenText": "Put the wide tabletop on the legs.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Put the yellow shirt in the yellow basket.",
@@ -25394,6 +26066,14 @@
       "category": "nature"
     },
     {
+      "text": "Settle three pretend eggs gently inside.",
+      "file": "llj-d5104a39edf813ee6055e71d.mp3",
+      "spokenText": "Settle three pretend eggs gently inside.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Share a story. Pretend to turn a page.",
       "file": "llj-3d2abf814046d1219eb20287.mp3",
       "spokenText": "Share a story. Pretend to turn a page.",
@@ -25570,6 +26250,14 @@
       "category": "stories"
     },
     {
+      "text": "Spread a colorful tablecloth on top.",
+      "file": "llj-30906ac14354dc54451de3ac.mp3",
+      "spokenText": "Spread a colorful tablecloth on top.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Square continues the pattern. Choo choo!",
       "file": "llj-86dfb792881e10966c8f6ce2.mp3",
       "spokenText": "Square continues the pattern. Choo choo!",
@@ -25581,6 +26269,14 @@
       "text": "Squid! Let's help our ocean friend clean ten places. Ready to begin?",
       "file": "llj-4457b36be93e7668e8973b12.mp3",
       "spokenText": "Squid! Let's help our ocean friend clean ten places. Ready to begin?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "Stand the mast in the middle.",
+      "file": "llj-3fe0952e462ac38ddb0fad1e.mp3",
+      "spokenText": "Stand the mast in the middle.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
@@ -28002,6 +28698,14 @@
       "category": "nature"
     },
     {
+      "text": "Three colorful flowers brighten our flower box!",
+      "file": "llj-28056881ed736146efc23b59.mp3",
+      "spokenText": "Three colorful flowers brighten our flower box!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Three families together!",
       "file": "llj-9096aac231ddfcc5ad6d6697.mp3",
       "spokenText": "Three families together!",
@@ -28704,6 +29408,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Two open ends make a tunnel our rabbit can explore!",
+      "file": "llj-ad989f9c9d346ed69247a59c.mp3",
+      "spokenText": "Two open ends make a tunnel our rabbit can explore!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
     },
     {
       "text": "Two oranges for this friend.",
@@ -31522,6 +32234,14 @@
       "category": "nature"
     },
     {
+      "text": "Weave the sides to hold our nest together.",
+      "file": "llj-55e1f51f241a21d54b3be4e3.mp3",
+      "spokenText": "Weave the sides to hold our nest together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
       "text": "Welcome home to Earth! The Moon is our nearest neighbor in space.",
       "file": "llj-10a326962df51733d8665e08.mp3",
       "spokenText": "Welcome home to Earth! The Moon is our nearest neighbor in space.",
@@ -32869,6 +33589,14 @@
       "text": "You brought eighteen animal families together! What a caring animal helper!",
       "file": "llj-dfc9f5c46806a40caa6983f2.mp3",
       "spokenText": "You brought eighteen animal families together! What a caring animal helper!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "nature"
+    },
+    {
+      "text": "You built a doghouse with walls, a roof, and a doorway!",
+      "file": "llj-b76329e8da24ba37e4442cb4.mp3",
+      "spokenText": "You built a doghouse with walls, a roof, and a doorway!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
