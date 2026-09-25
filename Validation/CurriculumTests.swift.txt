@@ -7,6 +7,53 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testFeelingWeatherTailoredChoicesMadAndRuth() throws {
+        XCTAssertEqual(FeelingWeatherMood.allCases.count, 6)
+        XCTAssertEqual(FeelingWeatherMood.mad.name, "Mad")
+        var tailored = Set<String>()
+        for mood in FeelingWeatherMood.allCases {
+            XCTAssertEqual(mood.supports.count, 5)
+            XCTAssertEqual(Set(mood.supports.map(\.id)).count, 5)
+            XCTAssertEqual(mood.supports.last?.id, "other")
+            XCTAssertNotNil(UIImage(systemName: mood.symbol))
+            for choice in mood.supports {
+                XCTAssertNotNil(UIImage(systemName: choice.symbol), choice.symbol)
+                if choice.id != "other" { XCTAssertTrue(tailored.insert(choice.title).inserted) }
+                for size in FeelingWeatherSize.allCases {
+                    var play = FeelingWeatherPlay()
+                    XCTAssertEqual(play.phase, .feeling)
+                    play.finish(); play.chooseSize(size); play.chooseSupport(choice.id, for: mood)
+                    XCTAssertEqual(play.phase, .feeling)
+                    play.choose(mood); XCTAssertEqual(play.phase, .size); XCTAssertEqual(play.prompt, mood.sizePrompt)
+                    let other = try XCTUnwrap(FeelingWeatherMood.allCases.first { $0 != mood })
+                    play.choose(other); XCTAssertEqual(play.feeling, mood)
+                    play.chooseSupport(choice.id, for: mood); XCTAssertNil(play.support)
+                    play.chooseSize(size); XCTAssertEqual(play.phase, .support)
+                    XCTAssertEqual(play.prompt, mood.supportPrompt)
+                    play.chooseSupport("invalid", for: mood); XCTAssertNil(play.support)
+                    play.chooseSupport(other.supports[0].id, for: other); XCTAssertNil(play.support)
+                    play.chooseSupport(choice.id, for: other); XCTAssertNil(play.support)
+                    play.chooseSupport(choice.id, for: mood)
+                    XCTAssertEqual(play.phase, .review); XCTAssertEqual(play.support?.id, choice.id)
+                    XCTAssertEqual(play.prompt, choice.response); XCTAssertFalse(play.finished)
+                    play.chooseSupport("other", for: mood); XCTAssertEqual(play.support?.id, choice.id)
+                    play.finish(); play.finish(); XCTAssertTrue(play.finished)
+                    XCTAssertEqual(play.phase, .complete); XCTAssertEqual(play.feeling, mood); XCTAssertEqual(play.size, size)
+                    play.reset(); XCTAssertEqual(play.phase, .feeling)
+                    XCTAssertNil(play.feeling); XCTAssertNil(play.size); XCTAssertNil(play.support); XCTAssertFalse(play.finished)
+                }
+            }
+        }
+        XCTAssertEqual(tailored.count, 24)
+        for text in Set(FeelingWeatherPlay.narration) {
+            XCTAssertFalse(text.lowercased().contains("cross"), text)
+            let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
+            XCTAssertEqual(clip.voice, "Ruth", text); XCTAssertEqual(clip.engine, "generative", text)
+        }
+    }
+
+
+    @MainActor
     func testWiggleRandomCueTimingPauseAndNarration() throws {
         var last = ""
         var orders = Set<String>()

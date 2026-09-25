@@ -40880,6 +40880,502 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Ask for a hug",
+      "file": "llj-57a2a202c6801215cb4e1d5b.mp3",
+      "spokenText": "Ask for a hug",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Ask what happens next",
+      "file": "llj-c17ecbb9aadd2b7f2752350b.mp3",
+      "spokenText": "Ask what happens next",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Bring my comfort toy",
+      "file": "llj-2f243bcdf4ee5f30ffdcaaf5.mp3",
+      "spokenText": "Bring my comfort toy",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Choose a feeling later",
+      "file": "llj-9f2058f88f77eb0f0dcbbcc8.mp3",
+      "spokenText": "Choose a feeling later",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Cuddle my soft toy",
+      "file": "llj-6b61091a2fea7e0575820a0f.mp3",
+      "spokenText": "Cuddle my soft toy",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Do a happy dance",
+      "file": "llj-f4a7a61f4bba989b39c2c047.mp3",
+      "spokenText": "Do a happy dance",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Draw a happy picture",
+      "file": "llj-5481dcd0d10dd8f7675f7b4c.mp3",
+      "spokenText": "Draw a happy picture",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Enjoy a quiet moment",
+      "file": "llj-d608fef60da09670df20b4ab.mp3",
+      "spokenText": "Enjoy a quiet moment",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Hold my grown-up's hand",
+      "file": "llj-568f4b29d0902a50a30e259b.mp3",
+      "spokenText": "Hold my grown-up's hand",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Invite someone to play",
+      "file": "llj-3d6f2ac911f7f1c05647a7e9.mp3",
+      "spokenText": "Invite someone to play",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "It is okay not to know yet. What would you like right now?",
+      "file": "llj-522f95c555274e2f414680f3.mp3",
+      "spokenText": "It is okay not to know yet. What would you like right now?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Keep playing quietly",
+      "file": "llj-623ef39d207d47d84f667c38.mp3",
+      "spokenText": "Keep playing quietly",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Listen to a gentle song",
+      "file": "llj-1c1449edc346b3859ccdc8d4.mp3",
+      "spokenText": "Listen to a gentle song",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Look at a picture book",
+      "file": "llj-1d1c768bcd68b045c940a8b7.mp3",
+      "spokenText": "Look at a picture book",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Name feelings together",
+      "file": "llj-f787d8cfb82f9224e48b25f5.mp3",
+      "spokenText": "Name feelings together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Point to how I feel",
+      "file": "llj-c87bd34ba92dc776930ea83b.mp3",
+      "spokenText": "Point to how I feel",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Read a cozy story",
+      "file": "llj-273e9093e68bcb6aa9e9262e.mp3",
+      "spokenText": "Read a cozy story",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Share my good news",
+      "file": "llj-65c08681fd0f32296606ff43.mp3",
+      "spokenText": "Share my good news",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Sit and think together",
+      "file": "llj-710ae0b82f544b192d88e27f.mp3",
+      "spokenText": "Sit and think together",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Sit with my grown-up",
+      "file": "llj-a8c8b005a52d18c64ebd7f54.mp3",
+      "spokenText": "Sit with my grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Something else",
+      "file": "llj-8b4002c3e17e35dceb68065a.mp3",
+      "spokenText": "Something else",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Squeeze a soft toy",
+      "file": "llj-2bdbbdae995ba5af9d893507.mp3",
+      "spokenText": "Squeeze a soft toy",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Stay near my grown-up",
+      "file": "llj-8435bb2942e256f5d9b369f4.mp3",
+      "spokenText": "Stay near my grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Take a quiet pause",
+      "file": "llj-9e814261ad2bc4f5221885a9.mp3",
+      "spokenText": "Take a quiet pause",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Tell a grown-up",
+      "file": "llj-94bff7449d1fa782239eec92.mp3",
+      "spokenText": "Tell a grown-up",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "Try a gentle stretch",
+      "file": "llj-d86fc3ce47599b281ab3c161.mp3",
+      "spokenText": "Try a gentle stretch",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Calm. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-651090a1f58ef4b7529c3248.mp3",
+      "spokenText": "You chose Calm. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Calm. What would you like right now? Every choice is okay.",
+      "file": "llj-e1a037b9b8fdf474079b4a22.mp3",
+      "spokenText": "You chose Calm. What would you like right now? Every choice is okay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Happy. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-2f2e41ec3ff8803310b84499.mp3",
+      "spokenText": "You chose Happy. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Happy. What would you like right now? Every choice is okay.",
+      "file": "llj-7d1dfddb6737d9ad08a0ec46.mp3",
+      "spokenText": "You chose Happy. What would you like right now? Every choice is okay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Mad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-27ccf50433dc5e47d1e2afaf.mp3",
+      "spokenText": "You chose Mad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Mad. What would you like right now? Every choice is okay.",
+      "file": "llj-d8202d5945d5a35f8b04e870.mp3",
+      "spokenText": "You chose Mad. What would you like right now? Every choice is okay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Not sure. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-acb3c8af444a7c236215bfe9.mp3",
+      "spokenText": "You chose Not sure. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Sad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-4f2d60f89eb82367007adfd4.mp3",
+      "spokenText": "You chose Sad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Sad. What would you like right now? Every choice is okay.",
+      "file": "llj-9e9a72f4be649999533d387e.mp3",
+      "spokenText": "You chose Sad. What would you like right now? Every choice is okay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Worried. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "file": "llj-5f7109810aa4a1b5df037970.mp3",
+      "spokenText": "You chose Worried. Does this feeling seem little, medium, or big? Not sure is okay too.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You chose Worried. What would you like right now? Every choice is okay.",
+      "file": "llj-07b4e3de86ec4b0defe80fe3.mp3",
+      "spokenText": "You chose Worried. What would you like right now? Every choice is okay.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a cozy story. Choose a book to read with your grown-up.",
+      "file": "llj-cb686d7b7d4f498bb6ff5ca0.mp3",
+      "spokenText": "You would like a cozy story. Choose a book to read with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a gentle song. Ask your grown-up to sing or play one with you.",
+      "file": "llj-4124394e396485215b7d521e.mp3",
+      "spokenText": "You would like a gentle song. Ask your grown-up to sing or play one with you.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a gentle stretch. Try a comfortable little stretch with your grown-up.",
+      "file": "llj-f7512a47cce8d03e2f870840.mp3",
+      "spokenText": "You would like a gentle stretch. Try a comfortable little stretch with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a happy dance. Invite your grown-up to dance with you!",
+      "file": "llj-d75cace9b0bedc13cfc2708f.mp3",
+      "spokenText": "You would like a happy dance. Invite your grown-up to dance with you!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a quiet moment. You and your grown-up can settle somewhere comfortable.",
+      "file": "llj-e810d118e57751353c2d372b.mp3",
+      "spokenText": "You would like a quiet moment. You and your grown-up can settle somewhere comfortable.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like a quiet pause. Let your grown-up know you would like a little space.",
+      "file": "llj-0fc6b2bbad90c2f29d3395f9.mp3",
+      "spokenText": "You would like a quiet pause. Let your grown-up know you would like a little space.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like something else. Tell or show your grown-up what you need. Your choice matters.",
+      "file": "llj-cea22d7e3985bb301c95ed92.mp3",
+      "spokenText": "You would like something else. Tell or show your grown-up what you need. Your choice matters.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to ask for a hug. Hugs are a choice for both people.",
+      "file": "llj-1ea0a62ec2feb69c234452c6.mp3",
+      "spokenText": "You would like to ask for a hug. Hugs are a choice for both people.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to bring your comfort toy. Ask your grown-up to help you find it.",
+      "file": "llj-247245839242d9728365cf42.mp3",
+      "spokenText": "You would like to bring your comfort toy. Ask your grown-up to help you find it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to choose later. It is okay not to know how you feel yet.",
+      "file": "llj-c5a988258ca7ad5530042989.mp3",
+      "spokenText": "You would like to choose later. It is okay not to know how you feel yet.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to cuddle your soft toy. Your grown-up can help you find it.",
+      "file": "llj-4f71a4bce8dfbb9664d304a5.mp3",
+      "spokenText": "You would like to cuddle your soft toy. Your grown-up can help you find it.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to draw a happy picture. Ask your grown-up for some paper and crayons!",
+      "file": "llj-59baaec39ceb4834bfbf1794.mp3",
+      "spokenText": "You would like to draw a happy picture. Ask your grown-up for some paper and crayons!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to gently squeeze a soft toy. Ask your grown-up to find one with you.",
+      "file": "llj-f6e4af062dfc3a7233265170.mp3",
+      "spokenText": "You would like to gently squeeze a soft toy. Ask your grown-up to find one with you.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to hold your grown-up's hand. You can ask them.",
+      "file": "llj-6a41dea2bd0b666222c72b4a.mp3",
+      "spokenText": "You would like to hold your grown-up's hand. You can ask them.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to keep playing quietly. Choose something you enjoy.",
+      "file": "llj-73c72cc10643a6e1d98314e6.mp3",
+      "spokenText": "You would like to keep playing quietly. Choose something you enjoy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to know what happens next. Ask your grown-up to tell or show you.",
+      "file": "llj-68cbc76034dc330f801bf9df.mp3",
+      "spokenText": "You would like to know what happens next. Ask your grown-up to tell or show you.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to look at a picture book. You can enjoy it with your grown-up.",
+      "file": "llj-ac110ba3a0565ba87580b43f.mp3",
+      "spokenText": "You would like to look at a picture book. You can enjoy it with your grown-up.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to name feelings together. Your grown-up can help you find words.",
+      "file": "llj-a874d54a76b9e6c7dd0ae7cc.mp3",
+      "spokenText": "You would like to name feelings together. Your grown-up can help you find words.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to play together. Ask someone if they would like to join you!",
+      "file": "llj-020cb2d8b122edf98b0af0fc.mp3",
+      "spokenText": "You would like to play together. Ask someone if they would like to join you!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to point to how you feel. You can point to a face or a feeling picture.",
+      "file": "llj-49409b6dd53de763958f17df.mp3",
+      "spokenText": "You would like to point to how you feel. You can point to a face or a feeling picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to share your good news. Tell or show your grown-up!",
+      "file": "llj-bd0d456f168e0b7c252d0d7c.mp3",
+      "spokenText": "You would like to share your good news. Tell or show your grown-up!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to sit and think together. There is no hurry to choose a feeling.",
+      "file": "llj-b48c6c187ed7563d05147d9f.mp3",
+      "spokenText": "You would like to sit and think together. There is no hurry to choose a feeling.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to stay near your grown-up. Tell or show them you want to be close.",
+      "file": "llj-4d5e9c7f9b49f625ff893ab5.mp3",
+      "spokenText": "You would like to stay near your grown-up. Tell or show them you want to be close.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like to tell a grown-up what happened. You can use words, signs, or pointing.",
+      "file": "llj-25f4b8320d0e27558905905c.mp3",
+      "spokenText": "You would like to tell a grown-up what happened. You can use words, signs, or pointing.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
+    },
+    {
+      "text": "You would like your grown-up to sit with you. You can ask them to stay close.",
+      "file": "llj-2c320eb9e2bc549f7fa23e8b.mp3",
+      "spokenText": "You would like your grown-up to sit with you. You can ask them to stay close.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "feelings"
     }
   ]
 }

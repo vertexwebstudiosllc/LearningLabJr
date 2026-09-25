@@ -10,56 +10,6 @@ private struct BFNote: View {
     }
 }
 
-private enum BFFeeling: Int, CaseIterable, Identifiable {
-    case happy, sad, mad, worried, calm, unsure
-    var id: Int { rawValue }
-    var name: String { ["Happy", "Sad", "Mad", "Worried", "Calm", "Not sure"][rawValue] }
-    var symbol: String { ["sun.max.fill", "cloud.rain.fill", "cloud.bolt.fill", "cloud.fill", "cloud.sun.fill", "questionmark.bubble.fill"][rawValue] }
-    var color: Color { [.orange, .blue, .red, .purple, .teal, .indigo][rawValue] }
-}
-
-struct FeelingWeatherGame: View {
-    let onReplay: () -> Void
-    @State private var feeling: BFFeeling?
-    @State private var size: String?
-    @State private var support: String?
-    @StateObject private var narrator = GameNarrator()
-    private var prompt: String {
-        if feeling == nil { return "What is your feeling weather? You can choose any feeling, or not sure." }
-        if size == nil { return "Does your feeling seem little, medium, or big? Every size is okay." }
-        if support == nil { return "What would you like right now? Let your grown-up know." }
-        return "Thank you for sharing. All feelings are welcome."
-    }
-    var body: some View {
-        ToddlerGameScaffold(title: "My Feeling Weather", prompt: prompt, accent: .purple, completion: support != nil, onReplay: onReplay) {
-            Image(systemName: feeling?.symbol ?? "cloud.sun.fill").font(.system(size: 100))
-                .foregroundStyle(feeling?.color ?? .purple).frame(height: 140)
-                .accessibilityLabel(feeling?.name ?? "Feeling weather")
-            if feeling == nil {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 118))], spacing: 12) {
-                    ForEach(BFFeeling.allCases) { choice in
-                        ToddlerActionButton(title: choice.name, systemImage: choice.symbol, color: choice.color) { feeling = choice }
-                    }
-                }
-            } else if size == nil {
-                ForEach(["Little", "Medium", "Big", "Not sure"], id: \.self) { choice in
-                    ToddlerActionButton(title: choice, systemImage: "circle.fill", color: feeling?.color ?? .purple) { size = choice }
-                }
-            } else if support == nil {
-                ForEach(["Sit together", "Ask for a hug", "Some quiet space", "Keep playing"], id: \.self) { choice in
-                    ToddlerActionButton(title: choice, systemImage: "heart.fill", color: .purple) {
-                        support = choice
-                        narrator.speak("You chose \(choice.lowercased()). Tell your grown-up.")
-                    }
-                }
-            } else {
-                BFNote(text: "My feeling: \(feeling?.name ?? "Not sure")\nIts size: \(size ?? "Not sure")\nI would like: \(support ?? "")")
-            }
-            BFNote(text: "Grown-up: accept your child's choice. This moment is not saved or scored.")
-        }
-    }
-}
-
 struct KindnessGardenGame: View {
     let onReplay: () -> Void
     @State private var planted: [Int] = []

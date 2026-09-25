@@ -1,0 +1,322 @@
+[
+  {
+    "text": "What is your feeling weather? You can choose any feeling, or not sure.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "We did it together! You can play again or choose all done.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Something else",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like something else. Tell or show your grown-up what you need. Your choice matters.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Happy. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Happy. What would you like right now? Every choice is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Share my good news",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to share your good news. Tell or show your grown-up!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Do a happy dance",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a happy dance. Invite your grown-up to dance with you!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Invite someone to play",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to play together. Ask someone if they would like to join you!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Draw a happy picture",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to draw a happy picture. Ask your grown-up for some paper and crayons!",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Sad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Sad. What would you like right now? Every choice is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Sit with my grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like your grown-up to sit with you. You can ask them to stay close.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Cuddle my soft toy",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to cuddle your soft toy. Your grown-up can help you find it.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask for a hug",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to ask for a hug. Hugs are a choice for both people.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Read a cozy story",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a cozy story. Choose a book to read with your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Mad. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Mad. What would you like right now? Every choice is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Squeeze a soft toy",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to gently squeeze a soft toy. Ask your grown-up to find one with you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Take a quiet pause",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a quiet pause. Let your grown-up know you would like a little space.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Tell a grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to tell a grown-up what happened. You can use words, signs, or pointing.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Try a gentle stretch",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a gentle stretch. Try a comfortable little stretch with your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Worried. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Worried. What would you like right now? Every choice is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Hold my grown-up's hand",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to hold your grown-up's hand. You can ask them.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Ask what happens next",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to know what happens next. Ask your grown-up to tell or show you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Stay near my grown-up",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to stay near your grown-up. Tell or show them you want to be close.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Bring my comfort toy",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to bring your comfort toy. Ask your grown-up to help you find it.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Calm. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Calm. What would you like right now? Every choice is okay.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Keep playing quietly",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to keep playing quietly. Choose something you enjoy.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Listen to a gentle song",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a gentle song. Ask your grown-up to sing or play one with you.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Look at a picture book",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to look at a picture book. You can enjoy it with your grown-up.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Enjoy a quiet moment",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like a quiet moment. You and your grown-up can settle somewhere comfortable.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You chose Not sure. Does this feeling seem little, medium, or big? Not sure is okay too.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "It is okay not to know yet. What would you like right now?",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Name feelings together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to name feelings together. Your grown-up can help you find words.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Point to how I feel",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to point to how you feel. You can point to a face or a feeling picture.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Sit and think together",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to sit and think together. There is no hurry to choose a feeling.",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "Choose a feeling later",
+    "category": "feelings",
+    "delivery": "gentle"
+  },
+  {
+    "text": "You would like to choose later. It is okay not to know how you feel yet.",
+    "category": "feelings",
+    "delivery": "gentle"
+  }
+]

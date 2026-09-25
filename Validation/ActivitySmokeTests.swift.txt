@@ -10,6 +10,55 @@ final class ActivitySmokeTests: XCTestCase {
 
 
 
+
+    @MainActor
+    func testFeelingWeatherAllEmotionsTailoredChoicesAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ button: XCUIElement) throws {
+            try reveal(button, in: app)
+            if button.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(button, in: app); button.tap()
+        }
+        try tap(app.buttons["category.Big Feelings"])
+        let card = app.buttons["activity-card.My Feeling Weather"]
+        try tap(card)
+        XCTAssertTrue(app.buttons["weather.mood.mad"].exists)
+        XCTAssertFalse(app.buttons["Cross"].exists)
+        let moods = [("happy", "Happy", "news"), ("sad", "Sad", "hug"), ("mad", "Mad", "pause"), ("worried", "Worried", "next"), ("calm", "Calm", "song"), ("unsure", "Not sure", "later")]
+        var prior = Set<String>()
+        for (id, name, selected) in moods {
+            try tap(app.buttons["weather.mood.\(id)"])
+            XCTAssertEqual(app.staticTexts["weather.feeling"].label, name)
+            try tap(app.buttons["weather.size.big"])
+            let options = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'weather.support.'"))
+            XCTAssertEqual(options.count, 5)
+            let ids = Set(options.allElementsBoundByIndex.map(\.identifier))
+            let tailored = ids.subtracting(["weather.support.other"])
+            XCTAssertEqual(tailored.count, 4)
+            XCTAssertTrue(tailored.allSatisfy { $0.hasPrefix("weather.support.\(id).") })
+            XCTAssertTrue(tailored.isDisjoint(with: prior)); prior = tailored
+            try tap(app.buttons["weather.hear.\(id).\(selected)"])
+            if ["happy", "mad", "worried"].contains(id) {
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Feeling choices \(id)"; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["weather.support.\(id).\(selected)"])
+            XCTAssertTrue(app.buttons["weather.finish"].exists)
+            XCTAssertFalse(app.staticTexts["We did it together!"].exists)
+            XCTAssertTrue(app.staticTexts["My feeling: \(name)"].exists)
+            try tap(app.buttons["weather.finish"])
+            XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+            try tap(app.buttons["Play again"])
+        }
+        try tap(app.buttons["weather.mood.mad"]); try tap(app.buttons["weather.size.unsure"])
+        try tap(app.buttons["weather.support.other"])
+        try tap(app.buttons["weather.reset"])
+        XCTAssertTrue(app.buttons["weather.mood.happy"].exists)
+        try tap(app.buttons["weather.mood.calm"])
+        app.navigationBars.buttons.firstMatch.tap(); try tap(card)
+        XCTAssertTrue(app.buttons["weather.mood.happy"].exists)
+        XCTAssertFalse(app.buttons["weather.size.big"].exists)
+    }
+
     @MainActor
     func testWiggleAutomaticCuesMusicPauseBackgroundAndReplay() async throws {
         let app = try await launch()

@@ -114,3 +114,5 @@ Teddy's Helping Hands: `testTeddyRescueDressCustomizeScenesAndRuth` covers 100 t
 Roll It Together: `testTogetherSportsAllFriendsTurnsKindWordsAndRuth` covers all sports/friends, sharing phases, stale callbacks and Ruth coverage. UI tests `testTogetherSportsFullMatchFriendsReplayAndReentry` and `testTogetherSportsOtherCourtsPassBack` exercise six-turn completion, kind choices, all courts, navigation and replay.
 
 Wiggle, Slow, Stop: `testWiggleRandomCueTimingPauseAndNarration` and `testWiggleMusicTempoSilenceDuckingAndOwnership` validate automatic timing and real audio behavior. `testWiggleAutomaticCuesMusicPauseBackgroundAndReplay` checks all 18 cues, pause/background, music controls, completion and replay.
+
+My Feeling Weather: `testFeelingWeatherTailoredChoicesMadAndRuth` checks all feelings, sizes, supports, guarded state transitions and Ruth coverage. `testFeelingWeatherAllEmotionsTailoredChoicesAndReplay` checks each tailored menu, Mad, spoken labels, review, completion, replay and reset.
