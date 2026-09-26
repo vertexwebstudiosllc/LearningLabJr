@@ -27,60 +27,6 @@ private struct StoryPictureChoice: View {
     }
 }
 
-struct StorySequenceGame: View {
-    private let routines = [
-        [StoryPiece("wash", "Wash hands", symbol: "hands.sparkles.fill"), StoryPiece("eat", "Eat lunch", symbol: "fork.knife"), StoryPiece("clean", "Clear the table", symbol: "sparkles")],
-        [StoryPiece("shirt", "Put on a shirt", symbol: "tshirt.fill"), StoryPiece("shoes", "Put on shoes", symbol: "shoe.2.fill"), StoryPiece("walk", "Go for a walk", symbol: "figure.walk")],
-        [StoryPiece("bath", "Have a bath", symbol: "bathtub.fill"), StoryPiece("book", "Read a book", symbol: "book.fill"), StoryPiece("bed", "Go to bed", symbol: "bed.double.fill")]
-    ]
-    @State private var round = 0
-    @State private var placed = 0
-    @State private var choiceOrder = [2, 0, 1]
-    @StateObject private var narrator = GameNarrator()
-    private var complete: Bool { round == 3 }
-    private var prompt: String {
-        if complete { return "You told three little stories in order!" }
-        if placed == 3 { return routines[round].map(\.title).joined(separator: ". ") + "." }
-        return ["What happens first?", "What happens next?", "What happens last?"][placed]
-    }
-    var body: some View {
-        ToddlerGameScaffold(title: "First, Next, Last", prompt: prompt, accent: .purple, completion: complete, onReplay: { round = 0; placed = 0; choiceOrder.shuffle() }) {
-            if !complete {
-                Text("Our \(["lunchtime", "going outside", "bedtime"][round]) story").font(.title3.bold())
-                VStack(spacing: 10) {
-                    ForEach(0..<3) { index in
-                        HStack(spacing: 16) {
-                            Text(["First", "Next", "Last"][index]).font(.headline).frame(width: 54)
-                            if index < placed {
-                                ToddlerArt(symbol: routines[round][index].symbol, size: 45)
-                                Text(routines[round][index].title).font(.headline)
-                                Spacer()
-                                Image(systemName: "checkmark.circle.fill").foregroundStyle(.purple)
-                            } else { Text("…").font(.largeTitle); Spacer() }
-                        }.padding(12).frame(minHeight: 72).background(Color.purple.opacity(0.08), in: RoundedRectangle(cornerRadius: 18))
-                    }
-                }
-                if placed == 3 {
-                    ToddlerActionButton(title: round == 2 ? "Finish our stories" : "Another little story", systemImage: "arrow.right", color: .purple) {
-                        guard placed == 3, !complete else { return }
-                        round += 1; placed = 0; choiceOrder.shuffle()
-                    }
-                } else {
-                    ForEach(choiceOrder, id: \.self) { index in
-                        if index >= placed {
-                            StoryPictureChoice(piece: routines[round][index]) {
-                                guard round < routines.count, placed < 3 else { return }
-                                if index == placed { placed += 1 }
-                                else { narrator.speak("In our story, we \(routines[round][placed].title.lowercased()) \(placed == 0 ? "first" : "next").") }
-                            }
-                        }
-                    }
-                }
-            }
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct PuppetFriendsGame: View {
     @State private var turn = 0
     @State private var performed = false

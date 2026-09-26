@@ -4,6 +4,64 @@ import StoreKitTest
 final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
+    func testImaginationBranchesBookCharacterAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ element: XCUIElement) throws {
+            try reveal(element, in: app)
+            if element.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(element, in: app); element.tap()
+        }
+        func choices() -> [XCUIElement] {
+            app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("imagine.choice.") }
+        }
+        try tap(app.buttons["category.Story Time"])
+        try tap(app.buttons["activity-card.First, Next, Last"])
+        let originalBuddy = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("imagine.buddy.") }).identifier
+        try tap(app.buttons["imagine.character"])
+        XCTAssertFalse(app.staticTexts[originalBuddy].exists)
+        var previousRoot = ""
+        for turn in 0..<4 {
+            let first = choices(); XCTAssertEqual(first.count, 3)
+            XCTAssertFalse(first.contains { $0.identifier == previousRoot })
+            var picked: [String] = []
+            for stage in 0..<3 {
+                let options = choices(); XCTAssertEqual(options.count, 3)
+                let option = options[(turn + stage) % 3]
+                let id = String(option.identifier.dropFirst("imagine.choice.".count))
+                if stage == 0 { previousRoot = option.identifier }
+                else { XCTAssertTrue(id.hasPrefix(picked[0].components(separatedBy: ".")[0] + ".")) }
+                try tap(app.buttons["imagine.hear.\(id)"])
+                if turn == 0 {
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Imagination choice step \(stage)"; shot.lifetime = .keepAlways; add(shot)
+                }
+                try tap(option); picked.append(id)
+            }
+            XCTAssertTrue(choices().isEmpty)
+            for page in 0..<3 { XCTAssertTrue(app.buttons["imagine.page.\(page)"].exists) }
+            try tap(app.buttons["imagine.page.2"])
+            XCTAssertEqual(app.staticTexts["imagine.reading"].label, "Last · Page 3 of 3")
+            try tap(app.buttons["imagine.close"])
+            try tap(app.buttons["imagine.read"])
+            XCTAssertEqual(app.staticTexts["imagine.reading"].label, "First · Page 1 of 3")
+            XCTAssertFalse(app.buttons["imagine.previous"].isEnabled)
+            try tap(app.buttons["imagine.next"])
+            XCTAssertEqual(app.staticTexts["imagine.reading"].label, "Next · Page 2 of 3")
+            try tap(app.buttons["imagine.previous"]); try tap(app.buttons["imagine.next"])
+            try tap(app.buttons["imagine.next"])
+            XCTAssertEqual(app.staticTexts["imagine.reading"].label, "Last · Page 3 of 3")
+            if turn < 3 { try tap(app.buttons["imagine.another"]) }
+        }
+        try tap(app.buttons["imagine.finish"])
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"]); XCTAssertEqual(choices().count, 3)
+        XCTAssertTrue(app.buttons["imagine.character"].exists)
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.First, Next, Last"])
+        XCTAssertEqual(choices().count, 3); XCTAssertFalse(app.buttons["imagine.read"].exists)
+    }
+
+
+    @MainActor
     func testPictureHuntSixChoicesSixteenScenesAndReplay() async throws {
         let app = try await launch()
         func tap(_ element: XCUIElement) throws {

@@ -31,7 +31,7 @@ The legacy `PeekabooBarnyard.swift` SpriteKit source remains in the repository t
 | --- | --- | --- | --- |
 | `stories.library` | Read Together | Listen and turn illustrated pages | Any of four 15-page books; replay/done on the last page |
 | `stories.pictureHunt` | Picture Hunt | Locate named objects in a picnic arrangement | Find Bunny, the apple, and the cup |
-| `stories.storyOrder` | First, Next, Last | Place pictures into a routine sequence | Complete lunchtime, going-out, and bedtime stories |
+| `stories.storyOrder` | First, Next, Last | Create a pretend story with three branching picture choices per step | Six adventures, 54 possible paths, eight diverse characters, and a narrated three-page storybook |
 | `stories.puppets` | Puppet Friends | Give two puppet characters alternating speaking turns | Six turns including greeting, shared play, and goodbye |
 | `stories.finishSentence` | Finish My Sentence | Complete a spoken sentence with a meaningful picture | Finish three everyday sentences |
 | `stories.soundStory` | A Noisy Little Story | Tap sound events in narrated scenes and imitate them | Explore two events on each of three story pages |

@@ -7,6 +7,81 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testImaginationAllFiftyFourPathsNarrationAndReplay() throws {
+        XCTAssertEqual(ImaginationStories.actions.count, 48)
+        XCTAssertEqual(Set(ImaginationStories.actions.map(\.id)).count, 48)
+        var paths = Set<[String]>()
+        for root in ImaginationStories.roots {
+            let first = ImaginationStories.action(root)
+            XCTAssertEqual(first.children.count, 3)
+            for middleID in first.children {
+                let middle = ImaginationStories.action(middleID)
+                XCTAssertEqual(Set(middle.children).count, 3)
+                for lastID in middle.children {
+                    var play = ImaginationPlay(rootOrder: [root] + ImaginationStories.roots.filter { $0 != root })
+                    XCTAssertEqual(play.choices.count, 3)
+                    XCTAssertFalse(play.choose(lastID, generation: play.generation)); XCTAssertEqual(play.stage, 0)
+                    play.finish(); play.read(); XCTAssertEqual(play.phase, .choosing)
+                    let old = play.generation
+                    XCTAssertTrue(play.choose(root, generation: old))
+                    XCTAssertFalse(play.choose(middleID, generation: old))
+                    XCTAssertEqual(Set(play.choices), Set(first.children)); XCTAssertEqual(play.prompt, first.sentence)
+                    XCTAssertTrue(play.choose(middleID, generation: play.generation))
+                    XCTAssertEqual(Set(play.choices), Set(middle.children)); XCTAssertEqual(play.prompt, middle.sentence)
+                    XCTAssertTrue(play.choose(lastID, generation: play.generation))
+                    XCTAssertEqual(play.phase, .story); XCTAssertTrue(play.choices.isEmpty)
+                    XCTAssertFalse(play.choose(lastID, generation: play.generation))
+                    XCTAssertTrue(paths.insert(play.selected).inserted)
+                    XCTAssertTrue(play.story.allSatisfy { $0.theme == first.theme })
+                    XCTAssertTrue(play.story.last!.children.isEmpty)
+                    play.read(4); XCTAssertEqual(play.phase, .story)
+                    play.read(); XCTAssertEqual(play.page, 0); XCTAssertEqual(play.prompt, first.sentence)
+                    play.previousPage(); XCTAssertEqual(play.page, 0)
+                    play.nextPage(); XCTAssertEqual(play.page, 1); XCTAssertEqual(play.prompt, middle.sentence)
+                    play.nextPage(); play.nextPage(); XCTAssertEqual(play.page, 2)
+                    play.closeBook(); XCTAssertEqual(play.phase, .story)
+                    play.finish(); XCTAssertEqual(play.phase, .complete)
+                    play.read(); XCTAssertEqual(play.phase, .complete)
+                }
+            }
+        }
+        XCTAssertEqual(paths.count, 54)
+        for text in ImaginationStories.narration + TogetherFriend.bank.map(\.introduction) {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.engine, "generative", text)
+        }
+        for (index, root) in ImaginationStories.roots.enumerated() {
+            let action = ImaginationStories.action(root)
+            let renderer = ImageRenderer(content: ImaginationScene(buddy: TogetherFriend.bank[index], action: action).frame(width: 320, height: 205))
+            renderer.scale = 2
+            let picture = try XCTUnwrap(renderer.uiImage)
+            let attachment = XCTAttachment(image: picture); attachment.name = "Imagine " + action.theme; attachment.lifetime = .keepAlways; add(attachment)
+        }
+        let arts = Array(Set(ImaginationStories.actions.map(\.art))).sorted()
+        let gallery = LazyVGrid(columns: Array(repeating: GridItem(.fixed(100)), count: 6)) {
+            ForEach(arts, id: \.self) { art in
+                VStack { ImaginationProp(kind: art).frame(width: 80, height: 80); Text(art).font(.caption) }
+            }
+        }.padding().frame(width: 680).background(.white)
+        let renderer = ImageRenderer(content: gallery); renderer.scale = 2
+        let art = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); art.name = "Imagination story props"; art.lifetime = .keepAlways; add(art)
+        let suite = "imagine.tests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite)); defer { defaults.removePersistentDomain(forName: suite) }
+        let session = ImaginationStorySession(defaults: defaults)
+        var buddies = Set([session.buddy.id])
+        for _ in 0..<7 { session.changeBuddy(); XCTAssertTrue(buddies.insert(session.buddy.id).inserted) }
+        let previousBuddy = session.buddy.id; session.changeBuddy(); XCTAssertNotEqual(previousBuddy, session.buddy.id)
+        let root = session.play.choices[0]
+        XCTAssertTrue(session.choose(root, generation: session.play.generation))
+        let buddy = session.buddy.id; session.changeBuddy(); XCTAssertEqual(buddy, session.buddy.id)
+        session.replay(); XCTAssertFalse(session.play.choices.contains(root)); XCTAssertNotEqual(buddy, session.buddy.id)
+        XCTAssertEqual(session.play.stage, 0)
+        let reopened = ImaginationStorySession(defaults: defaults)
+        XCTAssertFalse(reopened.play.choices.contains(root)); XCTAssertNotEqual(reopened.buddy.id, session.buddy.id)
+    }
+
+
+    @MainActor
     func testPictureHuntStoriesChoicesNoRepeatsAndRuth() throws {
         XCTAssertEqual(HuntStory.bank.count, 16)
         XCTAssertEqual(Set(HuntStory.bank.map(\.id)).count, 16)
