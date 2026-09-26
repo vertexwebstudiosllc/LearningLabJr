@@ -1,0 +1,54 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class NoisyStoryTests: XCTestCase {
+    @MainActor
+    func testAllStoriesRequireBothSoundsAndReturnToChooser() throws {
+        let suite = "NoisyTests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let play = NoisyStorySession(defaults: defaults)
+        XCTAssertEqual(play.choices.count, 12)
+        var seen = Set<String>()
+        for _ in 0..<12 {
+            let story = try XCTUnwrap(play.choices.first)
+            XCTAssertTrue(seen.insert(story.id).inserted)
+            play.choose(story.id)
+            play.choose("invalid"); XCTAssertEqual(play.story?.id, story.id)
+            for page in story.pages.indices {
+                XCTAssertEqual(play.page, page); XCTAssertFalse(play.ready)
+                play.next(); XCTAssertEqual(play.page, page)
+                XCTAssertNil(play.hear("invalid"))
+                let sounds = story.pages[page].sounds
+                XCTAssertEqual(Set(sounds).count, 2)
+                XCTAssertNotNil(play.hear(sounds[0])); XCTAssertNotNil(play.hear(sounds[0]))
+                XCTAssertEqual(play.heard.count, 1); XCTAssertFalse(play.ready)
+                XCTAssertNotNil(play.hear(sounds[1])); XCTAssertTrue(play.ready)
+                play.next()
+            }
+            XCTAssertNil(play.story); XCTAssertTrue(play.heard.isEmpty)
+            XCTAssertFalse(play.choices.contains { $0.id == story.id })
+            let reopen = NoisyStorySession(defaults: defaults)
+            XCTAssertFalse(reopen.choices.contains { $0.id == story.id })
+        }
+        XCTAssertEqual(play.finishedCount, 12); XCTAssertEqual(play.choices.count, 11)
+        let id = try XCTUnwrap(play.choices.first?.id)
+        play.choose(id); _ = play.hear(play.current!.sounds[0]); play.returnToChoices()
+        XCTAssertNil(play.story); play.choose(id); XCTAssertEqual(play.page, 0); XCTAssertTrue(play.heard.isEmpty)
+    }
+    @MainActor
+    func testNoisyRuthCoverageAndArt() throws {
+        for text in NoisyAdventure.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+        let arts = Array(Set(NoisySound.all.map(\.art) + NoisyAdventure.all.map(\.art))).sorted()
+        let content = LazyVGrid(columns: Array(repeating: GridItem(.fixed(95)), count: 4)) {
+            ForEach(arts, id: \.self) { art in
+                VStack { NoisyPicture(art: art).frame(width: 85, height: 100); Text(art).font(.caption) }.frame(height: 125)
+            }
+        }.padding().background(Color(red: 0.83, green: 0.74, blue: 0.95))
+        let renderer = ImageRenderer(content: content); renderer.scale = 2
+        let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Noisy story clean art"; shot.lifetime = .keepAlways; add(shot)
+    }
+}

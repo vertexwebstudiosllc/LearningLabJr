@@ -67,39 +67,6 @@ struct PuppetFriendsGame: View {
     }
 }
 
-struct NoisyStoryGame: View {
-    private let scenes: [(String, [StoryPiece], [String])] = [
-        ("Duck wakes up at the farm. Who does Duck hear?", [StoryPiece("duck", "Duck", asset: "duck"), StoryPiece("cow", "Cow", asset: "cow")], ["Quack, quack! Good morning, says Duck.", "Moo, moo! Good morning, says Cow."]),
-        ("Duck walks to the pond. Rain starts to fall.", [StoryPiece("rain", "Raindrops", symbol: "cloud.rain.fill"), StoryPiece("water", "Puddle", symbol: "water.waves")], ["Pitter patter, pitter patter. Rain taps on the leaves.", "Splish, splash! Duck steps in a puddle."]),
-        ("The rain stops. Duck takes a ride home.", [StoryPiece("tractor", "Tractor", asset: "tractor"), StoryPiece("duck", "Duck", asset: "duck")], ["Chug, chug, chug! The tractor takes Duck home.", "Quack, quack! What a noisy day, says Duck."])
-    ]
-    @State private var page = 0
-    @State private var heard: Set<String> = []
-    @State private var caption = ""
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "A Noisy Little Story", prompt: page == 3 ? "Quack, moo, splash, and chug! You brought our story to life." : scenes[page].0 + " Tap both story pictures.", accent: .purple, completion: page == 3, onReplay: { page = 0; heard = []; caption = "" }) {
-            if page < 3 {
-                ForEach(scenes[page].1.indices, id: \.self) { index in
-                    StoryPictureChoice(piece: scenes[page].1[index], selected: heard.contains(scenes[page].1[index].id)) {
-                        guard page < scenes.count else { return }
-                        heard.insert(scenes[page].1[index].id)
-                        caption = scenes[page].2[index]
-                        narrator.speak(caption)
-                    }
-                }
-                Text(caption).font(.headline).multilineTextAlignment(.center)
-                if heard.count == 2 {
-                    ToddlerActionButton(title: page == 2 ? "The end" : "Turn the page", systemImage: "book.fill", color: .purple) {
-                        guard heard.count == 2, page < scenes.count else { return }
-                        page += 1; heard = []; caption = ""
-                    }
-                }
-            }
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct StoryBagGame: View {
     private let bags = [[StoryPiece("rabbit", "Bunny", asset: "rabbit"), StoryPiece("ball", "a ball", asset: "basketball"), StoryPiece("moon", "the Moon", asset: "Space/Moon")], [StoryPiece("duck", "Duck", asset: "duck"), StoryPiece("apple", "an apple", asset: "Apple"), StoryPiece("car", "a car", asset: "carBlue")]]
     @State private var bag = 0

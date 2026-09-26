@@ -7098,12 +7098,36 @@
       "category": "stories"
     },
     {
+      "text": "A band begins to play.",
+      "file": "llj-d1a3956d9395c624b3183f53.mp3",
+      "spokenText": "A band begins to play.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "A beach day",
       "file": "llj-86f759f57f91a4b09dff22a1.mp3",
       "spokenText": "A beach day",
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A bell ends the happy song.",
+      "file": "llj-fb407a1ac20a8bd4bdc0eb4e.mp3",
+      "spokenText": "A bell ends the happy song.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "A boat comes to the harbor.",
+      "file": "llj-30e09a966bf5f053c8207846.mp3",
+      "spokenText": "A boat comes to the harbor.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A book? Let’s listen again. When it rains, I stay dry under an…",
@@ -8994,9 +9018,25 @@
       "category": "stories"
     },
     {
+      "text": "Boom, boom!",
+      "file": "llj-605e447f722d37ed0f980724.mp3",
+      "spokenText": "Boom, boom!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Boots",
       "file": "llj-a812a5a5ec5ec29bce952f0d.mp3",
       "spokenText": "Boots",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Boots splash all the way home.",
+      "file": "llj-2b1b39c60179d70c1f500af9.mp3",
+      "spokenText": "Boots splash all the way home.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -9192,6 +9232,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Bubbles float past the band.",
+      "file": "llj-73dda952126a0f21997218f5.mp3",
+      "spokenText": "Bubbles float past the band.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Bucket",
@@ -10402,6 +10450,14 @@
       "category": "nature"
     },
     {
+      "text": "Choo, choo!",
+      "file": "llj-7f8ce530ef3b6f90f12dd937.mp3",
+      "spokenText": "Choo, choo!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Choose a buddy for a friendship adventure. We can say hello, share, and play together!",
       "file": "llj-378679ae8a8152b8aafae331.mp3",
       "spokenText": "Choose a buddy for a friendship adventure. We can say hello, share, and play together!",
@@ -10424,6 +10480,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Choose a noisy story. Tap both pictures on each page.",
+      "file": "llj-ddc6b0fc075885b9ca7c5a18.mp3",
+      "spokenText": "Choose a noisy story. Tap both pictures on each page.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Choose a paint, then tap the flower petals. Every garden can be different.",
@@ -10706,6 +10770,14 @@
       "category": "shapes"
     },
     {
+      "text": "Clap, clap!",
+      "file": "llj-5e0bbd08048d51d32d1b66d3.mp3",
+      "spokenText": "Clap, clap!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Claw over the ball.",
       "file": "llj-2bb7dad8dd03ac042c06f3bd.mp3",
       "spokenText": "Claw over the ball.",
@@ -10752,6 +10824,22 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Clink, clink!",
+      "file": "llj-289ab26d8854f52ef4eb1bc6.mp3",
+      "spokenText": "Clink, clink!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Clip, clop!",
+      "file": "llj-10a6aab41267219ee2cff44a.mp3",
+      "spokenText": "Clip, clop!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Clock",
@@ -10978,6 +11066,14 @@
       "category": "stories"
     },
     {
+      "text": "Cow greets the arriving train.",
+      "file": "llj-bd1a77c155b4778f1274e9a8.mp3",
+      "spokenText": "Cow greets the arriving train.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Cow! Moo, moo! Cows munch on grass.",
       "file": "llj-9c041251bc74092f8d869e1b.mp3",
       "spokenText": "Cow! Moo, moo! Cows munch on grass.",
@@ -11056,6 +11152,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Crunch, crunch!",
+      "file": "llj-f5b39fd07658606d142dd638.mp3",
+      "spokenText": "Crunch, crunch!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Cuddle my soft toy",
@@ -11162,6 +11266,14 @@
       "category": "nature"
     },
     {
+      "text": "Ding, ding!",
+      "file": "llj-e763b3dce71514da22be3bed.mp3",
+      "spokenText": "Ding, ding!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Dinner is ready. Move our buddy toward home, with a grown-up.",
       "file": "llj-b8f96ffb9a348d65c056413e.mp3",
       "spokenText": "Dinner is ready. Move our buddy toward home, with a grown-up.",
@@ -11245,6 +11357,14 @@
       "text": "Dog finds an apple.",
       "file": "llj-f9c7a0475add9e390a539f63.mp3",
       "spokenText": "Dog finds an apple.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Dog invites Cat to a parade.",
+      "file": "llj-d87754ff06b3ad22afc84587.mp3",
+      "spokenText": "Dog invites Cat to a parade.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -12090,6 +12210,14 @@
       "category": "stories"
     },
     {
+      "text": "Duck visits Cow.",
+      "file": "llj-bb756e9c8ba3d9f740ef4d1a.mp3",
+      "spokenText": "Duck visits Cow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Duck wakes up at the farm. Who does Duck hear? Tap both story pictures.",
       "file": "llj-6d9db9c3c5ab0d471c9016db.mp3",
       "spokenText": "Duck wakes up at the farm. Who does Duck hear? Tap both story pictures.",
@@ -12109,6 +12237,14 @@
       "text": "Duck watches a fish swim past a floating leaf. Find three things in the picture.",
       "file": "llj-96ab80877a27f56b2c155dc8.mp3",
       "spokenText": "Duck watches a fish swim past a floating leaf. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Duck welcomes the boat home.",
+      "file": "llj-40fe3ef8cf8ba8f21353af84.mp3",
+      "spokenText": "Duck welcomes the boat home.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -17397,6 +17533,14 @@
       "text": "Leaf",
       "file": "llj-1390b5a4beead0fcef60b710.mp3",
       "spokenText": "Leaf",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Leaves rustle at our picnic.",
+      "file": "llj-3acc21eaeca8d3c47e876ba2.mp3",
+      "spokenText": "Leaves rustle at our picnic.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -23474,6 +23618,14 @@
       "category": "feelings"
     },
     {
+      "text": "Meow, meow!",
+      "file": "llj-e22e8b7a9771a6f6760dbfbb.mp3",
+      "spokenText": "Meow, meow!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Meow, meow! That's a cat sound. Find the cat family.",
       "file": "llj-e5ac1bf489be9689d39eb33c.mp3",
       "spokenText": "Meow, meow! That's a cat sound. Find the cat family.",
@@ -25048,6 +25200,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Our snowman gets a cheer.",
+      "file": "llj-ed70bd4fbcb67ccb00ab23b1.mp3",
+      "spokenText": "Our snowman gets a cheer.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Our tummy feels hungry. Find a snack to eat with a grown-up.",
@@ -28218,6 +28378,14 @@
       "category": "shapes"
     },
     {
+      "text": "Pop, pop!",
+      "file": "llj-9f0110c2e2434f0a916c3964.mp3",
+      "spokenText": "Pop, pop!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Pop, pop, pop! You found all three!",
       "file": "llj-9ec701f583122fafa247f7b6.mp3",
       "spokenText": "Pop, pop, pop! You found all three!",
@@ -28834,6 +29002,30 @@
       "category": "feelings"
     },
     {
+      "text": "Rain makes little puddles.",
+      "file": "llj-92f9d4398a87f55d4db98596.mp3",
+      "spokenText": "Rain makes little puddles.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Rain sends the friends home.",
+      "file": "llj-a26b79c1b6fdd0d76b268627.mp3",
+      "spokenText": "Rain sends the friends home.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Rain taps as Cat settles down.",
+      "file": "llj-6b6824160e7b4bbde09784cf.mp3",
+      "spokenText": "Rain taps as Cat settles down.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Rain! Drops of water fall from clouds. Swipe left or right to explore our rainy view.",
       "file": "llj-9cc1dd3aad5053db043395ff.mp3",
       "spokenText": "Rain! Drops of water fall from clouds. Swipe left or right to explore our rainy view.",
@@ -29064,6 +29256,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Rustle, rustle!",
+      "file": "llj-3fd937ea431b638bf248be12.mp3",
+      "spokenText": "Rustle, rustle!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "S is for seal.",
@@ -30274,6 +30474,14 @@
       "category": "feelings"
     },
     {
+      "text": "Scrunch, scrunch!",
+      "file": "llj-06b6e91712380e75cde89ac8.mp3",
+      "spokenText": "Scrunch, scrunch!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Seahorse! Let's help our ocean friend clean ten places. Ready to begin?",
       "file": "llj-dd3172565a814f38225154fb.mp3",
       "spokenText": "Seahorse! Let's help our ocean friend clean ten places. Ready to begin?",
@@ -30858,6 +31066,14 @@
       "category": "feelings"
     },
     {
+      "text": "Splish, splash!",
+      "file": "llj-cc9984c2967f2438570baa40.mp3",
+      "spokenText": "Splish, splash!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Splish, splash! Duck steps in a puddle.",
       "file": "llj-da32e9ecb95d9d6fb9bb38a8.mp3",
       "spokenText": "Splish, splash! Duck steps in a puddle.",
@@ -31048,6 +31264,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Strum, strum!",
+      "file": "llj-7acc48c9d2b046bdf117250d.mp3",
+      "spokenText": "Strum, strum!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Suitcase",
@@ -31530,6 +31754,14 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy eats, then gets sleepy.",
+      "file": "llj-a8120899fde879beb60dcc04.mp3",
+      "spokenText": "Teddy eats, then gets sleepy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Teddy enjoys breakfast at the table.",
       "file": "llj-642b2cc911628ad01b80dd82.mp3",
       "spokenText": "Teddy enjoys breakfast at the table.",
@@ -31754,6 +31986,14 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy launches a toy rocket.",
+      "file": "llj-ce9129ac097de099aaa07ba2.mp3",
+      "spokenText": "Teddy launches a toy rocket.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Teddy made a soft resting spot. The kitten can settle on its blanket!",
       "file": "llj-91a3325181aa0a4a3995fb4a.mp3",
       "spokenText": "Teddy made a soft resting spot. The kitten can settle on its blanket!",
@@ -31768,6 +32008,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Teddy parks it and gets sleepy.",
+      "file": "llj-e63c9d29426220da42f21ac1.mp3",
+      "spokenText": "Teddy parks it and gets sleepy.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Teddy placed the missing boards. Our pretend bridge connects both sides again!",
@@ -31872,6 +32120,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Teddy yawns. Everyone rests.",
+      "file": "llj-2187793ce5ee7f3dc2b00cc8.mp3",
+      "spokenText": "Teddy yawns. Everyone rests.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Teddy's friend is back! Practice a warm hello together.",
@@ -33074,9 +33330,25 @@
       "category": "shapes"
     },
     {
+      "text": "The end! Choose a new noisy story.",
+      "file": "llj-76c09d906528e2881ba390ec.mp3",
+      "spokenText": "The end! Choose a new noisy story.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "The end. Your choices made a special adventure!",
       "file": "llj-a5524deb0f2ab35ab465cc16.mp3",
       "spokenText": "The end. Your choices made a special adventure!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "The friends march past a bell.",
+      "file": "llj-14b3d2fdc9b839cf4e59c236.mp3",
+      "spokenText": "The friends march past a bell.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -33184,6 +33456,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The last bubble pops. Hooray!",
+      "file": "llj-7ed90d6de04d77c246e90984.mp3",
+      "spokenText": "The last bubble pops. Hooray!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "The last place is clean! Let's celebrate with our ocean friend.",
@@ -33624,6 +33904,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "The train leaves the station.",
+      "file": "llj-6ea1c9e0efeddf4f5f051cf3.mp3",
+      "spokenText": "The train leaves the station.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "The train waits by the station clock. A suitcase is ready to go. Find three things in the picture.",
@@ -35402,6 +35690,14 @@
       "category": "stories"
     },
     {
+      "text": "Toot, toot!",
+      "file": "llj-ed7d9ad348fd55aeb9479d8b.mp3",
+      "spokenText": "Toot, toot!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Toss the soft ball to your friend. Then we will wait for a turn back.",
       "file": "llj-632ef0112aa02d4100b01d08.mp3",
       "spokenText": "Toss the soft ball to your friend. Then we will wait for a turn back.",
@@ -36712,6 +37008,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "We finish our snack together.",
+      "file": "llj-d2dc6d822844a0a878e2656c.mp3",
+      "spokenText": "We finish our snack together.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "We followed the road all the way home.",
@@ -39146,6 +39450,14 @@
       "category": "feelings"
     },
     {
+      "text": "We stir soup in a pretend pot.",
+      "file": "llj-6b53962ab0dacf089fe50e17.mp3",
+      "spokenText": "We stir soup in a pretend pot.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "We took a moment to notice what was around us. Everyone may notice different things.",
       "file": "llj-c616ca043551bb654e941f92.mp3",
       "spokenText": "We took a moment to notice what was around us. Everyone may notice different things.",
@@ -39160,6 +39472,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "We walk through crunchy snow.",
+      "file": "llj-6fa6b6c67ca29463cc6029d2.mp3",
+      "spokenText": "We walk through crunchy snow.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "We watched a giant planet and learned about its swirling storm. Our pretend adventure is safely home. Hooray!",
@@ -40466,6 +40786,14 @@
       "category": "nature"
     },
     {
+      "text": "Whoosh!",
+      "file": "llj-6e0902c269cdbe376b67baf9.mp3",
+      "spokenText": "Whoosh!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Whoosh! Teddy practiced flushing.",
       "file": "llj-c771215b834697e48364af90.mp3",
       "spokenText": "Whoosh! Teddy practiced flushing.",
@@ -40584,6 +40912,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Woof, woof!",
+      "file": "llj-971a71a4ed5b1161d6c7bfe6.mp3",
+      "spokenText": "Woof, woof!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Woof, woof! That's a dog sound. Find the dog family.",
@@ -40896,6 +41232,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Yawn! Good night.",
+      "file": "llj-0203ad1e64b54146f0034e63.mp3",
+      "spokenText": "Yawn! Good night.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Yellow Truck",

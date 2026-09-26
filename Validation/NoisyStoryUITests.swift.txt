@@ -1,0 +1,53 @@
+import XCTest
+import StoreKitTest
+
+final class NoisyStoryUITests: XCTestCase {
+    @MainActor
+    func testTwelveStoriesAndNewChoices() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) throws {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() }
+                else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        try tap(app.buttons["category.Story Time"]); try tap(app.buttons["activity-card.A Noisy Little Story"])
+        var seen = Set<String>(); var last = ""
+        for round in 0..<12 {
+            XCTAssertTrue(app.staticTexts["noisy.chooser"].waitForExistence(timeout: 5))
+            let choice = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("noisy.choose.") })
+            let id = choice.identifier; XCTAssertTrue(seen.insert(id).inserted); last = id
+            try tap(app.buttons[id])
+            for page in 0..<2 {
+                XCTAssertTrue(app.staticTexts["noisy.page.\(page)"].waitForExistence(timeout: 5))
+                let sounds = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("noisy.sound.") }.map(\.identifier)
+                XCTAssertEqual(sounds.count, 2); XCTAssertFalse(app.buttons["noisy.next"].exists)
+                try tap(app.buttons[sounds[0]]); XCTAssertFalse(app.buttons["noisy.next"].exists)
+                try tap(app.buttons[sounds[1]])
+                XCTAssertTrue(app.buttons["noisy.next"].waitForExistence(timeout: 5))
+                if round < 3 && page == 1 {
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Noisy story \(round)"; shot.lifetime = .keepAlways; add(shot)
+                }
+                try tap(app.buttons["noisy.next"])
+            }
+            XCTAssertTrue(app.staticTexts["noisy.chooser"].waitForExistence(timeout: 5))
+            XCTAssertFalse(app.buttons[id].exists)
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.A Noisy Little Story"])
+        XCTAssertTrue(app.staticTexts["noisy.chooser"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons[last].exists)
+    }
+}
