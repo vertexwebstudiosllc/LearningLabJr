@@ -1,0 +1,62 @@
+import XCTest
+import StoreKitTest
+
+final class SentenceChainUITests: XCTestCase {
+    @MainActor func testBuildReplayContinueAndFreshVisit() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) throws {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        try tap(app.buttons["category.Story Time"]); try tap(app.buttons["activity-card.Make a Sentence"])
+        let subjects = ["bunny", "dog", "cat"]
+        let actions = ["finds", "carries", "looks"]
+        let objects = ["apple", "ball", "book"]
+        for index in 0..<3 {
+            try tap(app.buttons["chain.choice." + subjects[index]])
+            try tap(app.buttons["chain.choice." + actions[index]])
+            try tap(app.buttons["chain.choice." + objects[index]])
+            if index == 0 {
+                try tap(app.buttons["chain.undo"])
+                XCTAssertTrue(app.buttons["chain.choice.apple"].exists)
+                try tap(app.buttons["chain.choice.apple"])
+            }
+            try tap(app.buttons["chain.add"])
+            XCTAssertTrue(app.staticTexts["chain.count"].label.contains("\(index + 1)"))
+            if index < 2 { try tap(app.buttons["chain.more"]) }
+        }
+        try tap(app.buttons["chain.more"])
+        try tap(app.buttons["chain.choice.bunny"])
+        try tap(app.buttons["chain.read"])
+        XCTAssertTrue(app.buttons["chain.stop"].waitForExistence(timeout: 5))
+        try tap(app.buttons["chain.stop"])
+        XCTAssertTrue(app.staticTexts["chain.step.1"].exists)
+        try tap(app.buttons["chain.read"])
+        let second = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label CONTAINS 'sentence 2'"), object: app.buttons["chain.stop"])
+        XCTAssertEqual(XCTWaiter.wait(for: [second], timeout: 15), .completed)
+        let finished = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.buttons["chain.stop"])
+        XCTAssertEqual(XCTWaiter.wait(for: [finished], timeout: 30), .completed)
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Story chain playback"; shot.lifetime = .keepAlways; add(shot)
+        try tap(app.buttons["chain.choice.finds"])
+        try tap(app.buttons["chain.choice.book"])
+        try tap(app.buttons["chain.add"])
+        XCTAssertTrue(app.staticTexts["chain.count"].label.contains("4"))
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.Make a Sentence"])
+        XCTAssertTrue(app.staticTexts["chain.count"].label.contains("0"))
+        XCTAssertFalse(app.buttons["chain.read"].exists)
+    }
+}

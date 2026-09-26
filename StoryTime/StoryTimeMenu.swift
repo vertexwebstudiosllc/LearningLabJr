@@ -35,7 +35,7 @@ enum StoryActivity: String, CaseIterable, Identifiable {
         case .bunny: details = ("Where Is Bunny?", "Words for position", "Place Bunny in, on, and beside a box", "Practice the same words with a real toy and box.")
         case .conversation: details = ("Picnic Chat", "Conversation turns", "Choose what to say and hear a friendly reply", "Pause before choosing; invite your child to answer in any way.")
         case .storyChoices: details = ("Choose Our Adventure", "Predict & create", "Make decisions that change a short story’s path and ending", "Ask what might happen next. Both choices make a valid story.")
-        case .sentenceBuilder: details = ("Make a Sentence", "Combine words", "Choose a character, action, and object, then hear your sentence", "Act out the sentence and try changing one word together.")
+        case .sentenceBuilder: details = ("Make a Sentence", "Build an ongoing story", "Add sentences and hear your whole story with Ruth", "Ask what happens next. Keep a character or invite someone new.")
         }
         return LearningActivity(id: id, title: details.0, skill: details.1, interaction: details.2,
                                 ageBand: self == .library || self == .storyOrder || self == .sentenceBuilder ? "3–4 with a grown-up" : "2–4 with a grown-up", caregiverTip: details.3)

@@ -1,0 +1,58 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class SentenceChainTests: XCTestCase {
+    @MainActor func testLongStoryDraftEditingAndInputGuards() {
+        let play = SentenceChainSession()
+        XCTAssertTrue(play.lines.isEmpty)
+        play.addSentence(); XCTAssertTrue(play.pages.isEmpty)
+        play.undoWord(); XCTAssertTrue(play.draft.isEmpty)
+        for sentence in 0..<60 {
+            XCTAssertTrue(play.building)
+            for step in 0..<3 {
+                let token = play.generation
+                let word = play.choices[(sentence + step) % 3]
+                play.choose("invalid", generation: token); XCTAssertEqual(play.draft.count, step)
+                play.choose(word.id, generation: token)
+                play.choose(word.id, generation: token); XCTAssertEqual(play.draft.count, step + 1)
+            }
+            XCTAssertTrue(play.ready)
+            let oldToken = play.generation
+            play.undoWord(); XCTAssertEqual(play.draft.count, 2)
+            play.choose("book", generation: oldToken); XCTAssertEqual(play.draft.count, 2)
+            play.choose("book", generation: play.generation)
+            let expected = play.draftSentence
+            play.addSentence(); XCTAssertEqual(play.pages.count, sentence + 1)
+            XCTAssertEqual(play.lines.last, expected); XCTAssertFalse(play.building)
+            play.addSentence(); XCTAssertEqual(play.pages.count, sentence + 1)
+            play.keepAdding(); play.keepAdding(); XCTAssertTrue(play.building)
+            XCTAssertEqual(play.pages.count, sentence + 1)
+        }
+        XCTAssertEqual(Set(play.pages.map(\.id)).count, 60)
+        XCTAssertEqual(play.lines.count, 60)
+        let fresh = SentenceChainSession(); XCTAssertTrue(fresh.pages.isEmpty)
+    }
+    @MainActor func testEverySentenceHasBundledRuthAudio() throws {
+        for who in SentenceChainSession.groups[0] {
+            for action in SentenceChainSession.groups[1] {
+                for object in SentenceChainSession.groups[2] {
+                    let sentence = SentenceStoryPage(words: [who, action, object]).sentence
+                    XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: sentence)?.voice, "Ruth", sentence)
+                    XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: sentence), sentence)
+                }
+            }
+        }
+        for text in SentenceChainSession.questions {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text), text)
+        }
+    }
+    @MainActor func testSentenceArtwork() throws {
+        for index in 0..<3 {
+            let words = SentenceChainSession.groups.map { $0[index] }
+            let renderer = ImageRenderer(content: SentenceChainPicture(words: words).frame(width: 360, height: 175)); renderer.scale = 2
+            let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Sentence art \(index)"; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+}
