@@ -1,0 +1,61 @@
+import XCTest
+import StoreKitTest
+
+final class StoryBagUITests: XCTestCase {
+    @MainActor
+    func testBagChoicesAutomaticRuthReadbackReplayAndNewScenes() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) throws {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        try tap(app.buttons["category.Story Time"]); try tap(app.buttons["activity-card.The Story Bag"])
+        var scenes = Set<String>()
+        for round in 0..<3 {
+            let setting = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("bag.setting.") }).identifier
+            XCTAssertTrue(scenes.insert(setting).inserted)
+            for stage in 0..<3 {
+                XCTAssertTrue(app.buttons["bag.open"].waitForExistence(timeout: 5)); try tap(app.buttons["bag.open"])
+                let ids = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("bag.choice.") }.map(\.identifier)
+                XCTAssertEqual(ids.count, 2)
+                if round == 0 {
+                    let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Story bag choices \(stage)"; shot.lifetime = .keepAlways; add(shot)
+                }
+                try tap(app.buttons[ids[stage % 2]])
+            }
+            if round == 0 {
+                for index in 0..<4 { XCTAssertTrue(app.staticTexts["bag.reading.\(index)"].waitForExistence(timeout: 15)) }
+                XCTAssertTrue(app.staticTexts["bag.ready"].waitForExistence(timeout: 15))
+                try tap(app.buttons["bag.read"])
+                XCTAssertTrue(app.staticTexts["bag.reading.0"].waitForExistence(timeout: 5))
+                try tap(app.buttons["Hear the directions again"])
+                XCTAssertTrue(app.staticTexts["bag.ready"].waitForExistence(timeout: 5))
+            } else {
+                XCTAssertTrue(app.staticTexts["bag.reading.0"].waitForExistence(timeout: 5))
+                try tap(app.buttons["bag.read"])
+                XCTAssertTrue(app.staticTexts["bag.ready"].waitForExistence(timeout: 5))
+            }
+            if round < 2 {
+                try tap(app.buttons["bag.next"])
+                let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.staticTexts[setting])
+                XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 5), .completed)
+            }
+        }
+        app.navigationBars.buttons.firstMatch.tap(); try tap(app.buttons["activity-card.The Story Bag"])
+        let setting = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("bag.setting.") }).identifier
+        XCTAssertFalse(scenes.contains(setting)); XCTAssertTrue(app.buttons["bag.open"].exists)
+    }
+}

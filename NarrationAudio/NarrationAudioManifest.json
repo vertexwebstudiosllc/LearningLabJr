@@ -8594,6 +8594,22 @@
       "category": "stories"
     },
     {
+      "text": "At last, everyone danced in wobbly jelly boots!",
+      "file": "llj-929912fa4dc49ccc79f71ce9.mp3",
+      "spokenText": "At last, everyone danced in wobbly jelly boots!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "At last, everyone flew home on a giant spoon!",
+      "file": "llj-a03aad5e32a0ff795252b698.mp3",
+      "spokenText": "At last, everyone flew home on a giant spoon!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. “What if I miss?” he whispered.",
       "file": "llj-75b3588454fa90c6483b3677.mp3",
       "spokenText": "At last, it was game day. Dino Field was full. Pterodactyls flapped. Stegosaurus waved a flag. Little raptors stomped and cheered. Trey held his bat close. His tummy felt wiggly. “What if I miss?” he whispered.",
@@ -24642,6 +24658,14 @@
       "category": "feelings"
     },
     {
+      "text": "Open each bag. Pick a surprise for your silly story!",
+      "file": "llj-473a8ebcc8d1e5816f3afe6c.mp3",
+      "spokenText": "Open each bag. Pick a surprise for your silly story!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Open eyes.",
       "file": "llj-7cec1942b2f4d439af4bdc10.mp3",
       "spokenText": "Open eyes.",
@@ -24904,6 +24928,38 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Our friend was a bunny in a crown.",
+      "file": "llj-db35e3b86bea62ae19f8b85f.mp3",
+      "spokenText": "Our friend was a bunny in a crown.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our friend was a cat with a silly hat.",
+      "file": "llj-22c36f45c4a9805c92763485.mp3",
+      "spokenText": "Our friend was a cat with a silly hat.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our friend was a teddy with a curly mustache.",
+      "file": "llj-ef7ee719eccfebccfde052a5.mp3",
+      "spokenText": "Our friend was a teddy with a curly mustache.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our friend was a tiny dancing dragon.",
+      "file": "llj-b6f94db1b1266936c6db968e.mp3",
+      "spokenText": "Our friend was a tiny dancing dragon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Our hair is tangled. Find a hairbrush and a grown-up to help gently.",
@@ -25205,6 +25261,102 @@
       "text": "Our snowman gets a cheer.",
       "file": "llj-ed70bd4fbcb67ccb00ab23b1.mp3",
       "spokenText": "Our snowman gets a cheer.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins at a balloon party.",
+      "file": "llj-aca245590175f01cd1570de4.mp3",
+      "spokenText": "Our story begins at a balloon party.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins at a funny farm.",
+      "file": "llj-557895bc2d8551597b61c7b1.mp3",
+      "spokenText": "Our story begins at a funny farm.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins at a pretend star station.",
+      "file": "llj-c2fd7cf1a00611c0b16b028f.mp3",
+      "spokenText": "Our story begins at a pretend star station.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins at a snowy palace.",
+      "file": "llj-60b206399faa453f7961ec03.mp3",
+      "spokenText": "Our story begins at a snowy palace.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins at a wobbly castle.",
+      "file": "llj-7102e1a7c51e2183a8b97470.mp3",
+      "spokenText": "Our story begins at a wobbly castle.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins in a giant garden.",
+      "file": "llj-562e37294e478316ceb98f1a.mp3",
+      "spokenText": "Our story begins in a giant garden.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins in a teeny kitchen.",
+      "file": "llj-ef82523f55d126e966071e07.mp3",
+      "spokenText": "Our story begins in a teeny kitchen.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins in the whispering woods.",
+      "file": "llj-46ef1811d5be294479025491.mp3",
+      "spokenText": "Our story begins in the whispering woods.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins on Jellybean Island.",
+      "file": "llj-90f66cd1e5abc04f4a647d76.mp3",
+      "spokenText": "Our story begins on Jellybean Island.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins on a pretend cheese moon.",
+      "file": "llj-e092f8a2cd31a71892829cd0.mp3",
+      "spokenText": "Our story begins on a pretend cheese moon.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins on a sandcastle beach.",
+      "file": "llj-fb24c62f716be0a54713a37d.mp3",
+      "spokenText": "Our story begins on a sandcastle beach.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Our story begins under the pretend sea.",
+      "file": "llj-c326acc99c347a416415775f.mp3",
+      "spokenText": "Our story begins under the pretend sea.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -43421,6 +43573,14 @@
       "text": "You explored every sentence in this collection. Wonderful listening!",
       "file": "llj-87d279b72f85e88ab4c13a2a.mp3",
       "spokenText": "You explored every sentence in this collection. Wonderful listening!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "You explored every storybook setting. What wonderful stories!",
+      "file": "llj-1a2c1f4c5f3f9b0c40e4b8dc.mp3",
+      "spokenText": "You explored every storybook setting. What wonderful stories!",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"

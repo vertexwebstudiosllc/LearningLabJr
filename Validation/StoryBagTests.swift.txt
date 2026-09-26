@@ -1,0 +1,63 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class StoryBagTests: XCTestCase {
+    @MainActor
+    func testThreeBagsPersistenceGuardsAndExhaustion() throws {
+        let suite = "StoryBagTests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        var seen = Set<String>()
+        for _ in 0..<12 {
+            let play = StoryBagSession(defaults: defaults)
+            let setting = try XCTUnwrap(play.setting)
+            XCTAssertTrue(seen.insert(setting.id).inserted)
+            play.nextStory(); XCTAssertEqual(play.setting?.id, setting.id)
+            for stage in 0..<3 {
+                let token = play.generation
+                play.choose("bunny", generation: token); XCTAssertEqual(play.selected.count, stage)
+                play.open(); let ids = play.choices.map(\.id)
+                play.open(); XCTAssertEqual(play.choices.map(\.id), ids)
+                XCTAssertEqual(Set(ids).count, 2)
+                XCTAssertTrue(ids.allSatisfy { id in BagSurprise.pool(stage).contains { $0.id == id } })
+                play.choose("invalid", generation: token); XCTAssertEqual(play.selected.count, stage)
+                play.choose(ids[0], generation: token)
+                XCTAssertEqual(play.selected.count, stage + 1); XCTAssertFalse(play.isOpen)
+                play.choose(ids[0], generation: token)
+                XCTAssertEqual(play.selected.count, stage + 1)
+            }
+            XCTAssertTrue(play.ready); XCTAssertEqual(play.lines.count, 4)
+            XCTAssertEqual(play.lines, [setting.opening] + play.selected.map(\.sentence))
+        }
+        let done = StoryBagSession(defaults: defaults)
+        XCTAssertNil(done.setting); done.open(); XCTAssertTrue(done.choices.isEmpty)
+    }
+    @MainActor
+    func testStoryBagRuthCombinationsAndPlaylist() throws {
+        XCTAssertEqual(BagSetting.all.count, 12)
+        var combinations = Set<[String]>()
+        for setting in BagSetting.all { for a in BagSurprise.pool(0) { for b in BagSurprise.pool(1) { for c in BagSurprise.pool(2) {
+            combinations.insert([setting.id, a.id, b.id, c.id])
+            var playlist = NarrationPlaylist(lines: [setting.opening, a.sentence, b.sentence, c.sentence])
+            for line in [setting.opening, a.sentence, b.sentence, c.sentence] {
+                XCTAssertEqual(playlist.current, line); playlist.advance()
+            }
+            XCTAssertNil(playlist.current); playlist.advance(); XCTAssertNil(playlist.current)
+        } } } }
+        XCTAssertEqual(combinations.count, 768)
+        for line in BagSurprise.narration + ImaginationStories.questions {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: line)?.voice, "Ruth", line)
+        }
+        var empty = NarrationPlaylist(lines: []); empty.advance(); XCTAssertNil(empty.current)
+    }
+    @MainActor
+    func testStoryBagIllustrations() throws {
+        for (index, setting) in BagSetting.all.enumerated() {
+            let selected = [BagSurprise.pool(0)[index % 4], BagSurprise.pool(1)[index % 4], BagSurprise.pool(2)[index % 4]]
+            let renderer = ImageRenderer(content: BagBookScene(setting: setting, selected: selected, highlighted: nil).frame(width: 360, height: 240))
+            renderer.scale = 2
+            let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Bag scene " + setting.id; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+}

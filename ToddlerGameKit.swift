@@ -53,6 +53,19 @@ final class GameNarrator: ObservableObject {
         ActivitySpeech.shared.speak(text, owner: owner)
     }
 
+    /// Plays a finished story as one interruptible sequence, using actual clip completion.
+    func speakSequence(_ lines: [String], onLine: @escaping (Int) -> Void, onFinish: @escaping () -> Void) {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-validateNarrationCoverage") {
+            for line in lines { assert(NarrationAudioCatalog.shared.url(for: line) != nil, "Missing recorded narration: \(line)") }
+        }
+        #endif
+        guard Self.promptsEnabled(), !UIAccessibility.isVoiceOverRunning,
+              UIApplication.shared.applicationState == .active,
+              !SessionTimerManager.shared.isLocked else { onFinish(); return }
+        ActivitySpeech.shared.speakSequence(lines, owner: owner, onLine: onLine, onFinish: onFinish)
+    }
+
     func stop() {
         ActivitySpeech.shared.stop(owner: owner)
     }
@@ -60,6 +73,13 @@ final class GameNarrator: ObservableObject {
     static func stopAll() {
         ActivitySpeech.shared.stopAll()
     }
+}
+
+struct NarrationPlaylist {
+    let lines: [String]
+    private(set) var index = 0
+    var current: String? { lines.indices.contains(index) ? lines[index] : nil }
+    mutating func advance() { if index < lines.count { index += 1 } }
 }
 
 @MainActor
@@ -70,66 +90,80 @@ private final class ActivitySpeech: NSObject, AVSpeechSynthesizerDelegate {
     private var owner: UUID?
     private var currentUtterance: ObjectIdentifier?
     private var currentRecording: UUID?
+    private var playlist: NarrationPlaylist?
+    private var onLine: ((Int) -> Void)?
+    private var onFinish: (() -> Void)?
 
     private override init() {
         super.init()
         synthesizer.delegate = self
     }
-
     func speak(_ text: String, owner: UUID) {
+        stopAll(); self.owner = owner; play(text)
+    }
+    func speakSequence(_ lines: [String], owner: UUID, onLine: @escaping (Int) -> Void, onFinish: @escaping () -> Void) {
         stopAll()
+        guard !lines.isEmpty else { onFinish(); return }
+        self.owner = owner; playlist = NarrationPlaylist(lines: lines)
+        self.onLine = onLine; self.onFinish = onFinish
+        playNext()
+    }
+    private func playNext() {
+        guard GameNarrator.promptsEnabled(), !UIAccessibility.isVoiceOverRunning,
+              UIApplication.shared.applicationState == .active, !SessionTimerManager.shared.isLocked,
+              let playlist, let line = playlist.current else { stopAll(); return }
+        onLine?(playlist.index)
+        play(line)
+    }
+    private func play(_ text: String) {
         if NarrationVoice.prefersRecordedNarration,
            let url = NarrationAudioCatalog.shared.url(for: text) {
-            let token = UUID()
-            self.owner = owner
-            currentRecording = token
+            let token = UUID(); currentRecording = token
             BackgroundMusicManager.shared.setNarrating(true)
             if recording.play(url: url, onFinish: { [weak self] in
                 guard let self, self.currentRecording == token else { return }
-                self.currentRecording = nil
-                self.owner = nil
-                BackgroundMusicManager.shared.setNarrating(false)
+                self.currentRecording = nil; self.completeClip()
             }) { return }
-            // A missing or damaged recording should never leave a game silent.
-            stopAll()
+            currentRecording = nil
         }
         let utterance = AVSpeechUtterance(string: text)
-        guard NarrationVoice.configure(utterance) else { return }
-        self.owner = owner
+        guard NarrationVoice.configure(utterance) else { stopAll(); return }
         currentUtterance = ObjectIdentifier(utterance)
         BackgroundMusicManager.shared.setNarrating(true)
         synthesizer.speak(utterance)
     }
-
     func stop(owner: UUID) {
         guard self.owner == owner else { return }
         stopAll()
     }
-
     func stopAll() {
-        currentRecording = nil
-        recording.stop()
-        currentUtterance = nil
-        synthesizer.stopSpeaking(at: .immediate)
-        owner = nil
-        BackgroundMusicManager.shared.setNarrating(false)
+        let finish = onFinish
+        onFinish = nil; onLine = nil; playlist = nil
+        currentRecording = nil; recording.stop()
+        currentUtterance = nil; synthesizer.stopSpeaking(at: .immediate)
+        owner = nil; BackgroundMusicManager.shared.setNarrating(false)
+        finish?()
     }
-
+    private func completeClip() {
+        if playlist != nil {
+            playlist?.advance()
+            if playlist?.current != nil { playNext(); return }
+        }
+        stopAll()
+    }
     nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         let token = ObjectIdentifier(utterance)
-        Task { @MainActor in self.finish(token) }
+        Task { @MainActor in
+            guard self.currentUtterance == token else { return }
+            self.currentUtterance = nil; self.completeClip()
+        }
     }
-
     nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         let token = ObjectIdentifier(utterance)
-        Task { @MainActor in self.finish(token) }
-    }
-
-    private func finish(_ token: ObjectIdentifier) {
-        guard currentUtterance == token else { return }
-        currentUtterance = nil
-        owner = nil
-        BackgroundMusicManager.shared.setNarrating(false)
+        Task { @MainActor in
+            guard self.currentUtterance == token else { return }
+            self.stopAll()
+        }
     }
 }
 

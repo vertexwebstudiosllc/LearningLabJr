@@ -67,35 +67,6 @@ struct PuppetFriendsGame: View {
     }
 }
 
-struct StoryBagGame: View {
-    private let bags = [[StoryPiece("rabbit", "Bunny", asset: "rabbit"), StoryPiece("ball", "a ball", asset: "basketball"), StoryPiece("moon", "the Moon", asset: "Space/Moon")], [StoryPiece("duck", "Duck", asset: "duck"), StoryPiece("apple", "an apple", asset: "Apple"), StoryPiece("car", "a car", asset: "carBlue")]]
-    @State private var bag = 0
-    @State private var revealed = 0
-    @State private var complete = false
-    var body: some View {
-        ToddlerGameScaffold(title: "The Story Bag", prompt: complete ? "A story only you could tell!" : revealed == 0 ? "Open the bag to meet your story character." : revealed == 1 ? "Who is \(bags[bag][0].title)? Open the bag for a story prop." : revealed == 2 ? "What will happen with \(bags[bag][1].title)? Open the last surprise." : "Tell a tiny story using your three surprises. Point, talk, or make sounds together.", accent: .purple, completion: complete, onReplay: { bag = (bag + 1) % bags.count; revealed = 0; complete = false }) {
-            ForEach(0..<revealed, id: \.self) { index in
-                HStack(spacing: 20) {
-                    ToddlerArt(asset: bags[bag][index].asset, size: 70)
-                    Text(bags[bag][index].title).font(.title3.bold())
-                    Spacer()
-                }.padding(14).background(Color.purple.opacity(0.07), in: RoundedRectangle(cornerRadius: 22))
-            }
-            if revealed < 3 {
-                Button { revealed = min(revealed + 1, 3) } label: {
-                    VStack(spacing: 12) {
-                        Image(systemName: "bag.fill").font(.system(size: 110))
-                        Text("Open a surprise").font(.title3.bold())
-                    }.frame(maxWidth: .infinity, minHeight: 200).foregroundStyle(.purple)
-                }.buttonStyle(.plain).accessibilityLabel("Open story surprise \(revealed + 1)")
-            } else {
-                Text("Once upon a time, \(bags[bag][0].title) found \(bags[bag][1].title)…").font(.title3).multilineTextAlignment(.center)
-                ToddlerActionButton(title: "We told our story", systemImage: "text.bubble.fill", color: .purple) { complete = true }
-            }
-        }
-    }
-}
-
 struct SillyStoryGame: View {
     private let scenes: [(String, StoryPiece, StoryPiece, StoryPiece, String)] = [
         ("Bunny is trying to eat lunch with a shoe! Tap the silly shoe.", StoryPiece("shoe", "Shoe", symbol: "shoe.fill"), StoryPiece("fork", "Fork", symbol: "fork.knife"), StoryPiece("ball", "Ball", asset: "basketball"), "A fork helps Bunny eat lunch."),
