@@ -122,3 +122,59 @@ final class CategoryAccessUITests: XCTestCase {
         return app
     }
 }
+
+@MainActor
+final class BookAccessUITests: XCTestCase {
+    func testFirstBookFreeOtherBooksLockedAndPremiumUnlocksThem() async throws {
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions() }
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<6 {
+                if element.exists && element.isHittable { element.tap(); return }
+                app.swipeUp()
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.Story Time"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.Story Time"])
+        tap(app.buttons["activity.stories.library"])
+        let free = app.buttons["activity.books.owen-onion"]
+        XCTAssertTrue(free.waitForExistence(timeout: 5))
+        XCTAssertFalse(free.label.contains("Premium, grown-up required"))
+        tap(free)
+        XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+        app.navigationBars.buttons.firstMatch.tap()
+        let paidIDs = ["books.dino-basketball", "books.dino-hockey", "books.dino-baseball"]
+        for id in paidIDs {
+            let book = app.buttons["activity.\(id)"]
+            XCTAssertTrue(book.label.contains("Premium, grown-up required"))
+            tap(book)
+            XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
+            XCTAssertFalse(app.buttons["premium.subscribe"].exists)
+            app.buttons["Back to play"].tap()
+        }
+        let transaction = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        for id in paidIDs {
+            let book = app.buttons["activity.\(id)"]
+            let unlocked = XCTNSPredicateExpectation(predicate: NSPredicate(format: "NOT label CONTAINS %@", "Premium, grown-up required"), object: book)
+            XCTAssertEqual(XCTWaiter.wait(for: [unlocked], timeout: 10), .completed)
+            tap(book)
+            XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+            if id == paidIDs.last {
+                try store.refundTransaction(identifier: UInt(transaction.id))
+                XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 10))
+                app.buttons["Back to play"].tap()
+            } else {
+                app.navigationBars.buttons.firstMatch.tap()
+            }
+        }
+        XCTAssertTrue(free.waitForExistence(timeout: 5))
+        XCTAssertFalse(free.label.contains("Premium, grown-up required"))
+        tap(free)
+        XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+    }
+}

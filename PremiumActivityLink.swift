@@ -7,11 +7,13 @@ enum GameAccessPolicy {
         "nature.habitats", "stories.library", "feelings.faces"
     ]
 
+    static let freeBookIDs: Set<String> = ["books.owen-onion"]
+
     static func canPlay(_ activityID: String, hasPremium: Bool) -> Bool {
-        hasPremium || freeActivityIDs.contains(activityID)
+        hasPremium || freeActivityIDs.contains(activityID) || freeBookIDs.contains(activityID)
     }
 
-    static let premiumDescription = "Play the first activity in each section for free. Subscribe to unlock the other 66 activities across all six learning areas."
+    static let premiumDescription = "Try a free activity in each section, including the first Read Together book. Subscribe to unlock the other 66 activities and three more books."
 }
 
 struct PremiumActivityLink<Destination: View, Label: View>: View {
@@ -71,7 +73,7 @@ private struct PremiumActivityDestination<Destination: View>: View {
             }
         }
         .onChange(of: store.hasPremium) { _, active in
-            if !active && !GameAccessPolicy.freeActivityIDs.contains(activityID) {
+            if !active && !GameAccessPolicy.canPlay(activityID, hasPremium: false) {
                 GameNarrator.stopAll()
                 ItemSoundManager.shared.stop()
             }

@@ -97,6 +97,20 @@ final class ReleaseSubscriptionTests: XCTestCase {
         XCTAssertFalse(GameAccessPolicy.canPlay("future.activity", hasPremium: false))
     }
 
+    func testOnlyFirstReadTogetherBookIsFree() {
+        let books = StoryBook.readTogetherBooks
+        XCTAssertEqual(books.count, 4)
+        XCTAssertEqual(books.first?.accessActivity.id, "books.owen-onion")
+        XCTAssertEqual(Set(books.map { $0.accessActivity.id }).count, 4)
+        XCTAssertEqual(GameAccessPolicy.freeBookIDs, ["books.owen-onion"])
+        for (index, book) in books.enumerated() {
+            XCTAssertEqual(GameAccessPolicy.canPlay(book.accessActivity.id, hasPremium: false), index == 0)
+            XCTAssertTrue(GameAccessPolicy.canPlay(book.accessActivity.id, hasPremium: true))
+        }
+        XCTAssertFalse(GameAccessPolicy.canPlay("books.future", hasPremium: false))
+        XCTAssertTrue(GameAccessPolicy.canPlay("stories.library", hasPremium: false))
+    }
+
     func testPrivacyManifestAndPublicLinks() throws {
         let url = try XCTUnwrap(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
         let manifest = try XCTUnwrap(PropertyListSerialization.propertyList(from: Data(contentsOf: url), format: nil) as? [String: Any])

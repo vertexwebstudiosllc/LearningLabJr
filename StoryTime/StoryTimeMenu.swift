@@ -90,12 +90,12 @@ struct StoryActivityDestination: View {
 }
 
 private struct StoryLibraryView: View {
-    private let books: [StoryBook] = [.owenOnion, .dinoBasketball, .dinoHockey, .dinoBaseball]
+    private let books = StoryBook.readTogetherBooks
     private let covers = ["OwenOnionPage1", "DinoBasketballPage1", "DinoHockeyPage1", "DinoBaseballPage1"]
     var body: some View {
-        ActivityMenu(title: "Read Together", subtitle: "Four longer stories for ages 3–4 with a grown-up. Read a little or a lot.", accent: .purple, activityCount: 4) {
+        ActivityMenu(title: "Read Together", subtitle: "Read Owen Onion for free. Premium unlocks three more stories. Ages 3–4 with a grown-up.", accent: .purple, activityCount: 4) {
             ForEach(books.indices, id: \.self) { index in
-                NavigationLink {
+                PremiumActivityLink(activity: books[index].accessActivity) {
                     StoryBookGame(book: books[index])
                 } label: {
                     ActivityCard(title: books[index].title, subtitle: "Listen, look, and talk together", symbol: "book.fill", asset: covers[index], accent: .purple)

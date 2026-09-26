@@ -52,7 +52,7 @@ struct ParentsCornerMenu: View {
 
             Section("Premium") {
                 Text(GameAccessPolicy.premiumDescription).font(.footnote)
-                Label(store.hasPremium ? "Premium is active" : "First activity in each section is free",
+                Label(store.hasPremium ? "Premium is active" : "Free samples in every section",
                       systemImage: store.hasPremium ? "checkmark.seal.fill" : "lock.fill")
                 if store.hasPremium {
                     Button("Manage subscription") { openSubscriptions() }
