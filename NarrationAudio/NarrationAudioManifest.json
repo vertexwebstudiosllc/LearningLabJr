@@ -7114,6 +7114,14 @@
       "category": "stories"
     },
     {
+      "text": "A bright shape that twinkles in the night sky is a…",
+      "file": "llj-ac93a52c25f9f3d3d6070d1c.mp3",
+      "spokenText": "A bright shape that twinkles in the night sky is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "A butterfly is visiting a flower. Watch its wings flutter.",
       "file": "llj-e436f88523bc331c2c6fd011.mp3",
       "spokenText": "A butterfly is visiting a flower. Watch its wings flutter.",
@@ -7200,6 +7208,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A colorful bloom in the garden is a…",
+      "file": "llj-7d10f9ff83c223c9c93baec3.mp3",
+      "spokenText": "A colorful bloom in the garden is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A colorful soft ball for a playful cat!",
@@ -7458,6 +7474,14 @@
       "category": "nature"
     },
     {
+      "text": "A green part growing on a branch is a…",
+      "file": "llj-5177208129c10230e90ca1da.mp3",
+      "spokenText": "A green part growing on a branch is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "A grown-up can help with tangles. Teddy can ask for a pause.",
       "file": "llj-7e5d87ac2f9cb8257141f81a.mp3",
       "spokenText": "A grown-up can help with tangles. Teddy can ask for a pause.",
@@ -7680,6 +7704,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A plant with a tall trunk is a…",
+      "file": "llj-0cf6e8bbfce2808fff0faf92.mp3",
+      "spokenText": "A plant with a tall trunk is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A pretend little seed is waiting on Earth. What helps it grow? Let's follow the story of sunlight together.",
@@ -8368,6 +8400,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "An animal with fins that swims is a…",
+      "file": "llj-761f1fb89eee9554b2e2ad20.mp3",
+      "spokenText": "An animal with fins that swims is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "An octopus moves its arms! Wiggle your fingers and slowly wave your arms through our pretend ocean.",
@@ -14090,6 +14130,30 @@
       "category": "feelings"
     },
     {
+      "text": "For a crunchy fruit snack, I choose an…",
+      "file": "llj-5828c45568f28b564d764642.mp3",
+      "spokenText": "For a crunchy fruit snack, I choose an…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "For a crunchy orange vegetable, I choose a…",
+      "file": "llj-8330997df1db9fe018a87719.mp3",
+      "spokenText": "For a crunchy orange vegetable, I choose a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "For a soft cuddle, I hug my…",
+      "file": "llj-732557a9f3874927fdb4f51a.mp3",
+      "spokenText": "For a soft cuddle, I hug my…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Found A. Keep looking for another.",
       "file": "llj-3bf613d991534dc1dd204483.mp3",
       "spokenText": "Found A. Keep looking for another.",
@@ -16136,6 +16200,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "I can pour my cereal into a…",
+      "file": "llj-6d22a7c5849f3cd70eeb7b62.mp3",
+      "spokenText": "I can pour my cereal into a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "I have feathers.",
@@ -20336,6 +20408,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Let’s listen again. Which picture finishes the sentence?",
+      "file": "llj-c833fd3953249dc5780f260d.mp3",
+      "spokenText": "Let’s listen again. Which picture finishes the sentence?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Let’s listen to the clues again. I have feathers. I cluck and lay eggs.",
@@ -32698,6 +32778,46 @@
       "category": "nature"
     },
     {
+      "text": "The animal that says meow is a…",
+      "file": "llj-0a4340d70aec22e157b1b5ec.mp3",
+      "spokenText": "The animal that says meow is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "The animal that says moo is a…",
+      "file": "llj-a55a078afd210c83fd31964b.mp3",
+      "spokenText": "The animal that says moo is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "The animal that says quack is a…",
+      "file": "llj-b93c4ec76436761903506ba3.mp3",
+      "spokenText": "The animal that says quack is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "The animal that says woof is a…",
+      "file": "llj-12ebecc7e6b96a0c1c6204ba.mp3",
+      "spokenText": "The animal that says woof is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "The animal with long ears that hops is a…",
+      "file": "llj-429ae51fe5f92fd0acda38b4.mp3",
+      "spokenText": "The animal with long ears that hops is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "The ball has a circle shape.",
       "file": "llj-66922bc86813ffac63747361.mp3",
       "spokenText": "The ball has a circle shape.",
@@ -33050,6 +33170,14 @@
       "category": "shapes"
     },
     {
+      "text": "The insect with colorful wings is a…",
+      "file": "llj-33d24443dbcb8e9c2ab057a1.mp3",
+      "spokenText": "The insect with colorful wings is a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "The kite has a diamond shape.",
       "file": "llj-9452be8dd067b284b45e5dae.mp3",
       "spokenText": "The kite has a diamond shape.",
@@ -33224,6 +33352,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "The planet where we live is…",
+      "file": "llj-89d14331d45075084a1c125d.mp3",
+      "spokenText": "The planet where we live is…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "The puck slid to Trey. He remembered his practice. Stick down. Eyes up. Swing back. Slap! WHOOSH! Goal one! The crowd cheered. Trey blinked. “I did it!”",
@@ -35056,6 +35192,150 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "To carry sand at the beach, I fill a…",
+      "file": "llj-0d5babb745c68368db28c60b.mp3",
+      "spokenText": "To carry sand at the beach, I fill a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To eat my soup, I use a…",
+      "file": "llj-d77785a264517238395b5b6e.mp3",
+      "spokenText": "To eat my soup, I use a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To fly into space, astronauts ride in a…",
+      "file": "llj-bb50bd2858d7f8242e790b5e.mp3",
+      "spokenText": "To fly into space, astronauts ride in a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To fly something on a windy day, I hold the string of a…",
+      "file": "llj-a3259ef5f95712be38bf0205.mp3",
+      "spokenText": "To fly something on a windy day, I hold the string of a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To help a thirsty plant, I use a…",
+      "file": "llj-f2fcaf99b27af78817dbbe41.mp3",
+      "spokenText": "To help a thirsty plant, I use a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To keep my feet dry in puddles, I wear…",
+      "file": "llj-5f50621f1a8026e837dca6e1.mp3",
+      "spokenText": "To keep my feet dry in puddles, I wear…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To keep my hand warm, I put on a…",
+      "file": "llj-eff69d489a204417e64d9fe3.mp3",
+      "spokenText": "To keep my hand warm, I put on a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To make a chilly snow friend, we build a…",
+      "file": "llj-b5004814a7531ad03f440eea.mp3",
+      "spokenText": "To make a chilly snow friend, we build a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To make a ding sound, I ring a…",
+      "file": "llj-72d6c4987c9f8194307e4432.mp3",
+      "spokenText": "To make a ding sound, I ring a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To make a tapping beat, I play a…",
+      "file": "llj-3180513e95ed04fa1db0b928.mp3",
+      "spokenText": "To make a tapping beat, I play a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To pack clothes for a trip, I use a…",
+      "file": "llj-74ff3c66c8dea4386b1a00af.mp3",
+      "spokenText": "To pack clothes for a trip, I use a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To read a story, I open a…",
+      "file": "llj-8d07ad7c35c729d8c1098dd3.mp3",
+      "spokenText": "To read a story, I open a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To roll something to a friend, I use a…",
+      "file": "llj-3e0f61a27815828901df9ccf.mp3",
+      "spokenText": "To roll something to a friend, I use a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To see in a dark room, I turn on a…",
+      "file": "llj-fe4bc1b517820c26b5663e82.mp3",
+      "spokenText": "To see in a dark room, I turn on a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To see what time it is, I look at a…",
+      "file": "llj-c48a3cf253fbe64e571857ea.mp3",
+      "spokenText": "To see what time it is, I look at a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To strum some music, I play a…",
+      "file": "llj-6cf996c39440f32dff955cfc.mp3",
+      "spokenText": "To strum some music, I play a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To travel along the tracks, I ride in a…",
+      "file": "llj-dcde7212518c7034d9631e12.mp3",
+      "spokenText": "To travel along the tracks, I ride in a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "To travel on the water, I ride in a…",
+      "file": "llj-7a1c8d4296bd172109ac04f0.mp3",
+      "spokenText": "To travel on the water, I ride in a…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Today our pretend rocket stays far from the Sun. We will learn about it through pictures. Ready to meet our special star?",
@@ -42792,6 +43072,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You explored every sentence in this collection. Wonderful listening!",
+      "file": "llj-87d279b72f85e88ab4c13a2a.mp3",
+      "spokenText": "You explored every sentence in this collection. Wonderful listening!",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "You explored one way to pause together.",

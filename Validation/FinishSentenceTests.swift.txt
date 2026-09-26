@@ -1,0 +1,58 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class FinishSentenceTests: XCTestCase {
+    @MainActor
+    func testUniqueSentencesAcrossReentryAndExhaustion() throws {
+        let suite = "SentenceTests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        XCTAssertEqual(SentenceChallenge.all.count, 36)
+        XCTAssertEqual(Set(SentenceChallenge.all.map(\.prompt)).count, 36)
+        var seen = Set<String>()
+        for _ in 0..<12 {
+            let play = SentenceSession(defaults: defaults)
+            for _ in 0..<3 {
+                let current = try XCTUnwrap(play.current)
+                XCTAssertTrue(seen.insert(current.id).inserted)
+                XCTAssertEqual(Set(play.choices).count, 3)
+                XCTAssertTrue(play.choices.contains(current.answer))
+                play.next(); XCTAssertEqual(play.current?.id, current.id)
+                XCTAssertFalse(play.select("invalid"))
+                XCTAssertFalse(play.select(try XCTUnwrap(play.choices.first { $0 != current.answer })))
+                XCTAssertFalse(play.solved)
+                XCTAssertTrue(play.select(current.answer))
+                XCTAssertFalse(play.select(current.answer))
+                // Leave the third question on screen to exercise persistence without Next.
+                if seen.count % 3 != 0 { play.next() }
+            }
+        }
+        let finished = SentenceSession(defaults: defaults)
+        XCTAssertNil(finished.current); XCTAssertTrue(finished.choices.isEmpty)
+        XCTAssertEqual(finished.shown, 36)
+        XCTAssertFalse(finished.select("cup")); finished.next(); XCTAssertNil(finished.current)
+        XCTAssertEqual(Set(defaults.stringArray(forKey: SentenceSession.historyKey) ?? []).count, 36)
+    }
+    @MainActor
+    func testSentencePicturesAndNarration() throws {
+        for text in SentenceChallenge.all.flatMap({ [$0.prompt, HuntItem.named($0.answer).name] }) + [SentenceChallenge.finished, SentenceChallenge.retry] {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+        }
+    }
+    @MainActor
+    func testSentenceArtGallery() throws {
+        let ids = Array(Set(SentenceChallenge.all.flatMap(\.choices))).sorted()
+        let content = LazyVGrid(columns: Array(repeating: GridItem(.fixed(85)), count: 5)) {
+            ForEach(ids, id: \.self) { id in
+                VStack {
+                    SentencePicture(id: id).frame(width: 65, height: 65)
+                    Text(id).font(.caption)
+                }.frame(height: 92)
+            }
+        }.padding().background(Color(red: 0.84, green: 0.73, blue: 0.95))
+        let renderer = ImageRenderer(content: content); renderer.scale = 2
+        let attachment = XCTAttachment(image: try XCTUnwrap(renderer.uiImage))
+        attachment.name = "Sentence artwork on purple"; attachment.lifetime = .keepAlways; add(attachment)
+    }
+}

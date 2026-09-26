@@ -1,0 +1,44 @@
+import XCTest
+import StoreKitTest
+
+final class FinishSentenceUITests: XCTestCase {
+    @MainActor
+    func testSentenceChoicesFeedbackAndReentry() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<15 {
+                if element.exists && element.isHittable { element.tap(); return }
+                app.swipeUp()
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.Story Time"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.Story Time"]); tap(app.buttons["activity-card.Finish My Sentence"])
+        let answers = ["cup", "umbrella", "book", "spoon", "boots", "mitten", "watering", "cow", "cat", "dog", "duck", "bunny", "fish", "butterfly", "tree", "flower", "leaf", "carrot", "apple", "bowl", "bell", "drum", "guitar", "bucket", "boat", "train", "rocket", "earth", "star", "lamp", "clock", "suitcase", "teddy", "kite", "ball", "snowman"]
+        var seen = Set<String>()
+        for round in 0..<8 {
+            let prompt = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("sentence.prompt.") })
+            let promptID = prompt.identifier
+            XCTAssertTrue(seen.insert(promptID).inserted)
+            let index = try XCTUnwrap(Int(promptID.suffix(2))) - 1
+            let choices = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("sentence.choice.") }
+            XCTAssertEqual(choices.count, 3)
+            let wrong = try XCTUnwrap(choices.first { $0.identifier != "sentence.choice." + answers[index] })
+            tap(app.buttons[wrong.identifier]); XCTAssertFalse(app.buttons["sentence.next"].exists)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Sentence round \(round)"; shot.lifetime = .keepAlways; add(shot)
+            tap(app.buttons["sentence.choice." + answers[index]])
+            XCTAssertTrue(app.buttons["sentence.next"].exists)
+            if round == 3 {
+                app.navigationBars.buttons.firstMatch.tap()
+                tap(app.buttons["activity-card.Finish My Sentence"])
+            } else { tap(app.buttons["sentence.next"]) }
+            let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.staticTexts[promptID])
+            XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 5), .completed)
+        }
+    }
+}

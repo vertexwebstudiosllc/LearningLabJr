@@ -67,38 +67,6 @@ struct PuppetFriendsGame: View {
     }
 }
 
-struct FinishSentenceGame: View {
-    private let sentences = [
-        ("When I am thirsty, I drink from a…", "cup", "When I am thirsty, I drink from a cup.", [StoryPiece("shoe", "Shoe", symbol: "shoe.fill"), StoryPiece("cup", "Cup", symbol: "cup.and.saucer.fill"), StoryPiece("ball", "Ball", asset: "basketball")]),
-        ("When it rains, I stay dry under an…", "umbrella", "When it rains, I stay dry under an umbrella.", [StoryPiece("umbrella", "Umbrella", symbol: "umbrella.fill"), StoryPiece("apple", "Apple", asset: "Apple"), StoryPiece("book", "Book", symbol: "book.fill")]),
-        ("At bedtime, I get cozy in my…", "bed", "At bedtime, I get cozy in my bed.", [StoryPiece("car", "Car", asset: "carBlue"), StoryPiece("ball", "Ball", asset: "basketball"), StoryPiece("bed", "Bed", symbol: "bed.double.fill")])
-    ]
-    @State private var round = 0
-    @State private var answered = false
-    @StateObject private var narrator = GameNarrator()
-    var body: some View {
-        ToddlerGameScaffold(title: "Finish My Sentence", prompt: round == 3 ? "You helped finish three sentences!" : answered ? sentences[round].2 : sentences[round].0, accent: .purple, completion: round == 3, onReplay: { round = 0; answered = false }) {
-            if round < 3 {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 128))], spacing: 14) {
-                    ForEach(sentences[round].3) { piece in
-                        StoryPictureChoice(piece: piece, selected: answered && piece.id == sentences[round].1) {
-                            guard round < sentences.count, !answered else { return }
-                            if piece.id == sentences[round].1 { answered = true }
-                            else { narrator.speak("A \(piece.title.lowercased())? Let’s listen again. \(sentences[round].0)") }
-                        }.disabled(answered)
-                    }
-                }
-                if answered {
-                    ToddlerActionButton(title: round == 2 ? "All sentences finished" : "Another sentence", systemImage: "arrow.right", color: .purple) {
-                        guard answered, round < sentences.count else { return }
-                        round += 1; answered = false
-                    }
-                }
-            }
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct NoisyStoryGame: View {
     private let scenes: [(String, [StoryPiece], [String])] = [
         ("Duck wakes up at the farm. Who does Duck hear?", [StoryPiece("duck", "Duck", asset: "duck"), StoryPiece("cow", "Cow", asset: "cow")], ["Quack, quack! Good morning, says Duck.", "Moo, moo! Good morning, says Cow."]),
