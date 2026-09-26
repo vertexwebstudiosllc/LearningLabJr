@@ -51,7 +51,8 @@ struct ParentsCornerMenu: View {
             }
 
             Section("Premium") {
-                Label(store.hasPremium ? "Premium is active" : "Some phonics activities need Premium",
+                Text(GameAccessPolicy.premiumDescription).font(.footnote)
+                Label(store.hasPremium ? "Premium is active" : "First activity in each section is free",
                       systemImage: store.hasPremium ? "checkmark.seal.fill" : "lock.fill")
                 if store.hasPremium {
                     Button("Manage subscription") { openSubscriptions() }

@@ -6,7 +6,7 @@ struct NatureExplorersMenu: View {
     var body: some View {
         ActivityMenu(title: "Nature Explorers", subtitle: "12 little adventures in our wonderful world", accent: .teal) {
             ForEach(NatureActivity.allCases) { activity in
-                NavigationLink {
+                PremiumActivityLink(activity: activity.metadata) {
                     NatureGameDestination(activity: activity)
                         .learningActivity(activity.metadata)
                 } label: {

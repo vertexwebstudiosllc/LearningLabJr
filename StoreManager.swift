@@ -186,7 +186,7 @@ struct PremiumPaywallView: View {
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
 
-            Text("Unlock six additional phonics and word-play activities. The other activities stay available without a subscription.")
+            Text(GameAccessPolicy.premiumDescription)
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

@@ -941,7 +941,7 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    private func launch(premium: Bool = false) async throws -> XCUIApplication {
+    private func launch(premium: Bool = true) async throws -> XCUIApplication {
         let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
         store.resetToDefaultState()
         store.clearTransactions()
@@ -983,7 +983,7 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     private func checkCategory(_ name: String) async throws {
-        let app = try await launch(premium: name == "ABCs & Phonics")
+        let app = try await launch(premium: true)
         let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "ActivityInventory", withExtension: "json"))
         let inventory = try JSONDecoder().decode([Category].self, from: Data(contentsOf: url))
         let category = try XCTUnwrap(inventory.first { $0.title == name })

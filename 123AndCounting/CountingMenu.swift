@@ -21,7 +21,7 @@ struct CountingMenu: View {
     var body: some View {
         ActivityMenu(title: "123s & Counting", subtitle: "12 little adventures with counting and quantities", accent: .indigo) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
-                NavigationLink {
+                PremiumActivityLink(activity: activity) {
                     destination(index).learningActivity(activity)
                 } label: {
                     ActivityCard(title: activity.title, subtitle: "\(activity.ageBand) · \(activity.skill)", symbol: Self.symbols[index], accent: .indigo)

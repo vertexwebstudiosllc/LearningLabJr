@@ -32,37 +32,12 @@ private struct LiteracyMenuLink: View {
     let index: Int
     let activity: LearningActivity
     let symbol: String
-    @ObservedObject private var store = StoreManager.shared
-    @State private var showPremiumGate = false
-    // Preserve the six original premium destinations and entitlement behavior.
-    private var locked: Bool { (1...6).contains(index) && !store.hasPremium }
-
     var body: some View {
-        Group {
-            if locked {
-                Button { showPremiumGate = true } label: { card }
-            } else {
-                NavigationLink { destination.learningActivity(activity) } label: { card }
-            }
+        PremiumActivityLink(activity: activity) {
+            destination.learningActivity(activity)
+        } label: {
+            ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbol, accent: .orange)
         }
-        .buttonStyle(.plain)
-        .sheet(isPresented: $showPremiumGate) { PremiumParentGateView() }
-    }
-
-    private var card: some View {
-        ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbol, accent: .orange)
-            .overlay(alignment: .topTrailing) {
-                if locked {
-                    Image(systemName: "lock.fill")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(.orange)
-                        .frame(width: 32, height: 32)
-                        .background(Color.orange.opacity(0.12), in: Circle())
-                        .padding(14)
-                        .accessibilityHidden(true)
-                }
-            }
-            .accessibilityLabel("\(activity.title). \(activity.ageBand). \(locked ? "Premium, grown-up required" : activity.skill)")
     }
 
     @ViewBuilder private var destination: some View {

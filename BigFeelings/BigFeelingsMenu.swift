@@ -19,7 +19,7 @@ struct BigFeelingsMenu: View {
     var body: some View {
         ActivityMenu(title: "Big Feelings", subtitle: "12 playful ways to connect and care", accent: .pink) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
-                NavigationLink {
+                PremiumActivityLink(activity: activity) {
                     BFActivityDestination(index: index).learningActivity(activity)
                 } label: {
                     ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbols[index], accent: .pink)

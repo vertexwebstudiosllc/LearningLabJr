@@ -19,7 +19,7 @@ struct ShapesAndColorsMenu: View {
     var body: some View {
         ActivityMenu(title: "Shapes & Colors", subtitle: "12 ways to sort, build, paint, and discover", accent: .blue) {
             ForEach(Array(Self.activities.enumerated()), id: \.element.id) { index, activity in
-                NavigationLink {
+                PremiumActivityLink(activity: activity) {
                     SCActivityDestination(index: index).learningActivity(activity)
                 } label: {
                     ActivityCard(title: activity.title, subtitle: activity.skill, symbol: symbols[index], accent: .blue)

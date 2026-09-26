@@ -7,6 +7,7 @@ final class FinishSentenceUITests: XCTestCase {
         continueAfterFailure = false
         let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
         store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
         let app = XCUIApplication()
         app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-validateNarrationCoverage"]
         app.launch()

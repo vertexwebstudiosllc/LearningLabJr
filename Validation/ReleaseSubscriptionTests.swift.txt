@@ -77,6 +77,26 @@ final class ReleaseSubscriptionTests: XCTestCase {
         try await assertPremium(true)
     }
 
+    func testExactlyFirstActivityInEverySectionIsFree() throws {
+        let sections = [ABCsAndPhonicsMenu.activities, ShapesAndColorsMenu.activities,
+                        CountingMenu.activities, NatureExplorersMenu.activities,
+                        StoryTimeMenu.activities, BigFeelingsMenu.activities]
+        var free: [String] = []
+        var paid: [String] = []
+        for section in sections {
+            XCTAssertEqual(section.count, 12)
+            for (index, activity) in section.enumerated() {
+                XCTAssertEqual(GameAccessPolicy.canPlay(activity.id, hasPremium: false), index == 0, activity.title)
+                XCTAssertTrue(GameAccessPolicy.canPlay(activity.id, hasPremium: true), activity.title)
+                if index == 0 { free.append(activity.id) } else { paid.append(activity.id) }
+            }
+        }
+        XCTAssertEqual(Set(free), GameAccessPolicy.freeActivityIDs)
+        XCTAssertEqual(free.count, 6)
+        XCTAssertEqual(paid.count, 66)
+        XCTAssertFalse(GameAccessPolicy.canPlay("future.activity", hasPremium: false))
+    }
+
     func testPrivacyManifestAndPublicLinks() throws {
         let url = try XCTUnwrap(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
         let manifest = try XCTUnwrap(PropertyListSerialization.propertyList(from: Data(contentsOf: url), format: nil) as? [String: Any])

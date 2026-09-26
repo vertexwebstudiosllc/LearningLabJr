@@ -6,7 +6,7 @@ struct StoryTimeMenu: View {
     var body: some View {
         ActivityMenu(title: "Story & Language", subtitle: "12 ways to listen, talk, imagine, and read together", accent: .purple) {
             ForEach(StoryActivity.allCases) { activity in
-                NavigationLink {
+                PremiumActivityLink(activity: activity.metadata) {
                     StoryActivityDestination(activity: activity)
                         .learningActivity(activity.metadata)
                 } label: {

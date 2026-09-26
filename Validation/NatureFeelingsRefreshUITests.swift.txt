@@ -1,8 +1,13 @@
 import XCTest
+import StoreKitTest
 
 final class NatureFeelingsRefreshUITests: XCTestCase {
-    @MainActor func testMissionsAndArtwork() throws {
+    @MainActor func testMissionsAndArtwork() async throws {
         continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        defer { store.clearTransactions() }
         let app = XCUIApplication()
         app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
         app.launch()
