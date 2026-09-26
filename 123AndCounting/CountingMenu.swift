@@ -77,9 +77,9 @@ private struct CountingStage<Content: View>: View {
 }
 
 private struct CountingPicture: View {
-    let asset: String
+    let word: String
     var size: CGFloat = 48
-    var body: some View { ToddlerArt(asset: asset, size: size).accessibilityHidden(true) }
+    var body: some View { LiteracyVocabularyArt(word: word).frame(width: size, height: size).accessibilityHidden(true) }
 }
 
 private struct QuantityDots: View {
@@ -142,7 +142,7 @@ private struct PicnicShareGame: View {
             Text(count == 1 ? play.lesson.food.id : play.lesson.food.plural).font(.subheadline)
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 3), spacing: 4) {
                 ForEach(0..<count, id: \.self) { _ in
-                    CountingPicture(asset: play.lesson.food.asset, size: 34)
+                    CountingPicture(word: play.lesson.food.id, size: 34)
                         .accessibilityIdentifier("counting.share.\(id).item")
                 }
             }
@@ -246,7 +246,7 @@ private struct MoreGroupsGame: View {
                 let food = play.lesson.comparisonFood(for: amount)
                 Button { play.choose(amount) } label: {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 5), spacing: 6) {
-                        ForEach(0..<amount, id: \.self) { _ in CountingPicture(asset: food.asset, size: 40) }
+                        ForEach(0..<amount, id: \.self) { _ in CountingPicture(word: food.id, size: 40) }
                     }.padding(12).frame(maxWidth: .infinity, minHeight: 112).background(.white, in: RoundedRectangle(cornerRadius: 20))
                 }.buttonStyle(.plain).accessibilityLabel("Group with \(amount) \(amount == 1 ? food.id : food.plural)").accessibilityIdentifier("counting.ext.choice.\(amount)").accessibilityValue(food.id)
             }
@@ -260,7 +260,7 @@ private struct TicketTrainGame: View {
         CountingStage(play: play) {
             Image(systemName: "tram.fill").font(.system(size: 42)).foregroundStyle(.indigo)
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 8) {
-                ForEach(0..<play.target, id: \.self) { _ in CountingPicture(asset: play.lesson.animal.id, size: 40) }
+                ForEach(0..<play.target, id: \.self) { _ in CountingPicture(word: play.lesson.animal.id, size: 40) }
             }.accessibilityElement(children: .ignore).accessibilityLabel("\(play.target) \(play.lesson.animal.plural) riding the train").accessibilityIdentifier("counting.ext.passengers")
             ForEach(play.lesson.choices, id: \.self) { value in
                 Button { play.choose(value) } label: {

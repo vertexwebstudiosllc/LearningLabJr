@@ -1,0 +1,34 @@
+import XCTest
+
+final class CountingCleanArtUITests: XCTestCase {
+    @MainActor func testAllSixUpdatedGames() throws {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.123s & Counting"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.123s & Counting"])
+        for title in ["Number Picnic", "Touch & Count", "Picnic Share", "Which Has More?", "Ticket Train"] {
+            tap(app.buttons["activity-card." + title])
+            XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = title; shot.lifetime = .keepAlways; add(shot)
+            app.navigationBars.buttons.firstMatch.tap()
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["category.Nature Explorers"])
+        tap(app.buttons["activity-card.Habitat Helpers"])
+        XCTAssertTrue(app.staticTexts["habitats.progress"].waitForExistence(timeout: 5))
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Habitat Helpers"; shot.lifetime = .keepAlways; add(shot)
+    }
+}

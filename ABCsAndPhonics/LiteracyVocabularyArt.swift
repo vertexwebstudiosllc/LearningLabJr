@@ -14,7 +14,7 @@ struct LiteracyVocabularyArt: View {
         "whale": "OceanClean/whale", "lobster": "OceanClean/lobster", "jellyfish": "OceanClean/jellyfish",
         "sun": "SpaceClean/Sun", "moon": "SpaceClean/Moon", "earth": "SpaceClean/Earth"
     ]
-    static let foods: Set<String> = ["apple", "egg", "kiwi", "lemon", "milk", "noodles", "orange", "yogurt", "zucchini", "watermelon", "pear", "bread", "carrot", "cheese"]
+    static let foods: Set<String> = ["strawberry", "apple", "egg", "kiwi", "lemon", "milk", "noodles", "orange", "yogurt", "zucchini", "watermelon", "pear", "bread", "carrot", "cheese"]
     // Platform illustrations are true transparent glyphs, not rectangular image files.
     static let illustrations = [
         "donkey": "🫏", "penguin": "🐧", "octopus": "🐙", "banana": "🍌",
@@ -29,7 +29,7 @@ struct LiteracyVocabularyArt: View {
     static func supports(_ word: String) -> Bool {
         let key = word.lowercased() == "teddy bear" ? "teddy" : word.lowercased()
         return cleanAssets[key] != nil || foods.contains(key) || illustrations[key] != nil || transparentVehicles[key] != nil
-            || ["jam", "soup", "clam", "grape", "toast", "pasta", "plum", "lime", "eel", "orca", "walrus", "fish", "basketball", "volleyball", "turtle"].contains(key)
+            || ["blueberry", "raspberry", "jam", "soup", "clam", "grape", "toast", "pasta", "plum", "lime", "eel", "orca", "walrus", "fish", "basketball", "volleyball", "turtle"].contains(key)
             || HuntItem.bank.contains { $0.id == key }
     }
     var body: some View {
@@ -46,6 +46,24 @@ struct LiteracyVocabularyArt: View {
         else if let glyph = Self.illustrations[key] { Text(glyph).font(.system(size: 76)).minimumScaleFactor(0.5) }
         else {
             switch key {
+            case "blueberry", "raspberry":
+                ZStack {
+                    if key == "blueberry" {
+                        Circle().fill(.indigo).frame(width: 77, height: 77)
+                        Image(systemName: "star.fill").font(.system(size: 23)).foregroundStyle(.blue).offset(y: -22)
+                        Ellipse().fill(.white.opacity(0.3)).frame(width: 16, height: 25).rotationEffect(.degrees(30)).offset(x: -20, y: -9)
+                    } else {
+                        ForEach(0..<4) { row in
+                            ForEach(0..<(4-row), id: \.self) { column in
+                                Circle().fill(Color(red: 0.85, green: 0.09, blue: 0.3))
+                                    .frame(width: 24, height: 24)
+                                    .overlay(Circle().stroke(.pink.opacity(0.65), lineWidth: 2))
+                                    .position(x: CGFloat(17 + row * 11 + column * 22), y: CGFloat(28 + row * 18))
+                            }
+                        }
+                        Image(systemName: "leaf.fill").font(.system(size: 27)).foregroundStyle(.green).offset(y: -38)
+                    }
+                }
             case "jam":
                 ZStack {
                     RoundedRectangle(cornerRadius: 12).fill(.pink).frame(width: 62, height: 64).offset(y: 12)

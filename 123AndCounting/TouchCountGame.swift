@@ -82,7 +82,7 @@ struct TouchCountGame: View {
             Text("Level \(min(session.index + 1, session.rounds.count)) of \(session.rounds.count)")
                 .font(.system(.headline, design: .rounded)).accessibilityIdentifier("counting.touch.level")
             HStack(spacing: 12) {
-                ToddlerArt(asset: session.current.animal.id, size: 44).accessibilityHidden(true)
+                LiteracyVocabularyArt(word: session.current.animal.id).frame(width: 44, height: 44).accessibilityHidden(true)
                 Text("Find \(session.current.animal.plural)").font(.headline)
                     .accessibilityLabel(session.current.animal.id).accessibilityIdentifier("counting.touch.target")
                 Spacer()
@@ -103,7 +103,8 @@ struct TouchCountGame: View {
                         }
                     } label: {
                         VStack(spacing: 4) {
-                            ToddlerArt(asset: session.current.animals[id].id, size: session.current.columns == 3 ? 52 : 36)
+                            LiteracyVocabularyArt(word: session.current.animals[id].id)
+                                .frame(width: session.current.columns == 3 ? 52 : 36, height: session.current.columns == 3 ? 52 : 36)
                             if let number = session.counted[id] {
                                 Label("\(number)", systemImage: "checkmark.circle.fill")
                                     .font(.system(.caption, design: .rounded, weight: .bold))

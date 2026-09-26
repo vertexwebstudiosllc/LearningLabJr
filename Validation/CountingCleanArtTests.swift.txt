@@ -1,0 +1,37 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class CountingCleanArtTests: XCTestCase {
+    @MainActor func testEveryCountingAndHabitatPictureRenders() throws {
+        let words = NumberPicnicFood.bank.map(\.id) + TouchCountAnimal.bank.map(\.id)
+        for word in words { XCTAssertTrue(LiteracyVocabularyArt.supports(word), word) }
+        for animal in HabitatAnimal.bank {
+            if let asset = animal.asset {
+                XCTAssertNotNil(UIImage(named: asset), asset)
+                XCTAssertTrue(asset.contains("Clean"), "Opaque legacy asset: \(asset)")
+            } else { XCTAssertFalse(animal.emoji.isEmpty, animal.id) }
+        }
+        let counting = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 4)) {
+            ForEach(words, id: \.self) { word in
+                VStack { LiteracyVocabularyArt(word: word).frame(width: 65, height: 65); Text(word).font(.caption) }
+            }
+        }.padding().background(Color(red: 0.83, green: 0.94, blue: 0.88))
+        try capture(counting, "All counting food and animal pictures")
+        let habitats = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 4)) {
+            ForEach(HabitatAnimal.bank) { animal in
+                VStack {
+                    if let asset = animal.asset { Image(asset).resizable().scaledToFit().frame(width: 64, height: 64) }
+                    else { Text(animal.emoji).font(.system(size: 52)).frame(height: 64) }
+                    Text(animal.name).font(.caption)
+                }
+            }
+        }.padding().background(Color(red: 0.83, green: 0.94, blue: 0.88))
+        try capture(habitats, "All habitat animals")
+    }
+    @MainActor private func capture<V: View>(_ view: V, _ name: String) throws {
+        let renderer = ImageRenderer(content: view); renderer.scale = 2
+        let attachment = XCTAttachment(image: try XCTUnwrap(renderer.uiImage))
+        attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
+    }
+}

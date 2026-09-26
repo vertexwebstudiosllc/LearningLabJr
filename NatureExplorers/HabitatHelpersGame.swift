@@ -26,14 +26,14 @@ struct HabitatAnimal: Identifiable {
         "Let's try the \(habitat.rawValue) for the \(id)."
     }
     static let bank: [Self] = [
-        .init(id: "dolphin", habitat: .ocean, asset: "dolphin", emoji: "🐬"),
-        .init(id: "octopus", habitat: .ocean, asset: "octopus", emoji: "🐙"),
-        .init(id: "shark", habitat: .ocean, asset: "shark", emoji: "🦈"),
-        .init(id: "seahorse", habitat: .ocean, asset: "seahorse", emoji: ""),
-        .init(id: "cow", habitat: .farm, asset: "cow", emoji: "🐄"),
-        .init(id: "sheep", habitat: .farm, asset: "sheep", emoji: "🐑"),
-        .init(id: "horse", habitat: .farm, asset: "horse", emoji: "🐎"),
-        .init(id: "pig", habitat: .farm, asset: "pig", emoji: "🐖"),
+        .init(id: "dolphin", habitat: .ocean, asset: "dolphinClean", emoji: "🐬"),
+        .init(id: "octopus", habitat: .ocean, asset: nil, emoji: "🐙"),
+        .init(id: "shark", habitat: .ocean, asset: "OceanClean/shark", emoji: "🦈"),
+        .init(id: "seahorse", habitat: .ocean, asset: "OceanClean/seahorse", emoji: ""),
+        .init(id: "cow", habitat: .farm, asset: "FamilyClean/cow", emoji: "🐄"),
+        .init(id: "sheep", habitat: .farm, asset: "FamilyClean/sheep", emoji: "🐑"),
+        .init(id: "horse", habitat: .farm, asset: "FamilyClean/horse", emoji: "🐎"),
+        .init(id: "pig", habitat: .farm, asset: "BarnClean/pig", emoji: "🐖"),
         .init(id: "bee", habitat: .garden, asset: nil, emoji: "🐝"),
         .init(id: "butterfly", habitat: .garden, asset: nil, emoji: "🦋"),
         .init(id: "ladybug", habitat: .garden, asset: nil, emoji: "🐞"),
@@ -47,8 +47,8 @@ struct HabitatAnimal: Identifiable {
         .init(id: "tiger", habitat: .rainforest, asset: nil, emoji: "🐅"),
         .init(id: "sloth", habitat: .rainforest, asset: nil, emoji: "🦥"),
         .init(id: "frog", habitat: .pond, asset: nil, emoji: "🐸"),
-        .init(id: "duck", habitat: .pond, asset: "duck", emoji: "🦆"),
-        .init(id: "goose", habitat: .pond, asset: "goose", emoji: "🪿"),
+        .init(id: "duck", habitat: .pond, asset: "BarnClean/duck", emoji: "🦆"),
+        .init(id: "goose", habitat: .pond, asset: nil, emoji: "🪿"),
         .init(id: "turtle", habitat: .pond, asset: nil, emoji: "🐢")
     ]
 }

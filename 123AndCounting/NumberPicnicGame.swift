@@ -76,7 +76,8 @@ struct NumberPicnicGame: View {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 5), spacing: 14) {
                 ForEach(0..<session.current.count, id: \.self) { index in
                     GeometryReader { geometry in
-                        ToddlerArt(asset: session.current.food.asset, size: min(60, geometry.size.width))
+                        LiteracyVocabularyArt(word: session.current.food.id)
+                            .frame(width: min(60, geometry.size.width), height: min(60, geometry.size.width))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }.aspectRatio(1, contentMode: .fit)
                         .accessibilityElement(children: .ignore)
