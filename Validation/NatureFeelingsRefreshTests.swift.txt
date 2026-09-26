@@ -1,0 +1,75 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class NatureFeelingsRefreshTests: XCTestCase {
+    @MainActor func testDiscoveryCoverageProgressAndNarration() throws {
+        XCTAssertEqual(Set(SpaceDiscovery.bank.keys), Set(SpaceStory.bank.map(\.id)))
+        for story in SpaceStory.bank {
+            let lesson = try XCTUnwrap(SpaceDiscovery.bank[story.id])
+            XCTAssertEqual(lesson.steps.count, 3)
+            XCTAssertEqual(Set(lesson.steps.map(\.id)).count, 3)
+            XCTAssertNotEqual(lesson.answer, lesson.alternative)
+            for answer in [lesson.answer, lesson.alternative] { XCTAssertNotNil(UIImage(named: "SpaceClean/" + answer)) }
+            for step in lesson.steps { XCTAssertNotNil(UIImage(systemName: step.symbol), step.symbol) }
+            var progress = SpaceDiscoveryProgress()
+            XCTAssertFalse(progress.answer(lesson.answer, in: lesson), "Explore before answering")
+            XCTAssertFalse(progress.explore("invalid", in: lesson))
+            XCTAssertFalse(progress.explore(lesson.steps[2].id, in: lesson))
+            for step in lesson.steps {
+                XCTAssertEqual(progress.nextStep(in: lesson)?.id, step.id)
+                XCTAssertTrue(progress.explore(step.id, in: lesson))
+                XCTAssertFalse(progress.explore(step.id, in: lesson))
+            }
+            XCTAssertNil(progress.nextStep(in: lesson))
+            XCTAssertFalse(progress.answer(lesson.alternative, in: lesson))
+            XCTAssertFalse(progress.answered)
+            XCTAssertTrue(progress.answer(lesson.answer, in: lesson))
+            XCTAssertTrue(progress.answered)
+            for page in story.pages {
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: page.text)?.voice, "Ruth")
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: page.text))
+            }
+            let gallery = VStack {
+                Text(lesson.title).font(.headline)
+                SpaceDiscoveryDiagram(storyID: story.id, visited: []).frame(width: 330, height: 200)
+                SpaceDiscoveryDiagram(storyID: story.id, visited: Set(lesson.steps.map(\.id))).frame(width: 330, height: 200)
+                Text(lesson.takeaway).frame(width: 320)
+            }.padding().background(.white)
+            try capture(gallery, "Discovery " + story.id)
+        }
+    }
+    @MainActor func testDinosaurAlphaAndArt() throws {
+        for dinosaur in TrailDinosaur.bank {
+            let image = try XCTUnwrap(UIImage(named: dinosaur.asset)?.cgImage)
+            let width = image.width, height = image.height
+            var pixels = [UInt8](repeating: 0, count: width * height * 4)
+            let context = try XCTUnwrap(CGContext(data: &pixels, width: width, height: height, bitsPerComponent: 8, bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+            let clear = stride(from: 3, to: pixels.count, by: 4).filter { pixels[$0] == 0 }.count
+            XCTAssertGreaterThan(Double(clear) / Double(width * height), 0.2, dinosaur.id)
+            XCTAssertEqual(pixels[3], 0, dinosaur.id)
+            XCTAssertEqual(pixels[pixels.count - 1], 0, dinosaur.id)
+        }
+        let gallery = LazyVGrid(columns: [GridItem(.fixed(160)), GridItem(.fixed(160))]) {
+            ForEach(TrailDinosaur.bank) { dinosaur in
+                VStack { Image(dinosaur.asset).resizable().scaledToFit().frame(width: 150, height: 150); Text(dinosaur.name).font(.caption) }
+            }
+        }.padding().background(Color(red: 0.83, green: 0.94, blue: 0.88))
+        try capture(gallery, "Six clean dinosaurs")
+    }
+    @MainActor func testTeddyBowAndToolboxGallery() throws {
+        try capture(HStack {
+            RescueTeddy(fur: .brown, identity: .girl, items: []).frame(width: 180, height: 250)
+            RescueTeddy(fur: .brown, identity: .girl, items: TeddyRescue.bank[0].items).frame(width: 180, height: 250)
+        }.padding().background(.white), "Centered teddy bows")
+        try capture(VStack {
+            ActivityCard(title: "My Solution Toolbox", subtitle: "Practice solving everyday problems", symbol: "toolbox.fill", accent: .pink).frame(width: 190)
+            SolutionToolboxIcon().foregroundStyle(.indigo).frame(width: 90, height: 74)
+        }.padding().background(.white), "Toolbox menu and game icons")
+    }
+    @MainActor private func capture<V: View>(_ view: V, _ name: String) throws {
+        let renderer = ImageRenderer(content: view); renderer.scale = 2
+        let attachment = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
+    }
+}

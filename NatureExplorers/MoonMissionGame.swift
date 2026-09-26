@@ -66,6 +66,8 @@ struct MoonMissionGame: View {
     @AppStorage("nature.spaceMission.deck") private var savedDeck = Data()
     @State private var play = SpaceMissionSession(choices: [])
     @State private var started = false
+    @State private var discovery = SpaceDiscoveryProgress()
+    @StateObject private var narrator = GameNarrator()
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -77,22 +79,29 @@ struct MoonMissionGame: View {
                         .font(.subheadline).foregroundStyle(.secondary)
                         .accessibilityIdentifier("space.page")
                 }
-                Button { if !play.finished { play.next() } } label: {
-                    SpaceMissionScene(art: page.art)
+                if let lesson = SpaceDiscovery.bank[story.id], play.pageIndex == 3 || play.pageIndex == 4 {
+                    SpaceDiscoveryView(storyID: story.id, lesson: lesson, progress: $discovery, review: play.pageIndex == 4) {
+                        narrator.speak(story.pages[3].text)
+                    }.id("discovery-\(story.id)-\(play.pageIndex)")
+                } else {
+                    Button { advance() } label: { SpaceMissionScene(art: page.art) }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(play.finished ? "Mission complete" : page.action)
+                        .accessibilityIdentifier("space.scene")
+                        .disabled(play.finished)
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(play.finished ? "Mission complete" : page.action)
-                .accessibilityIdentifier("space.scene")
-                .disabled(play.finished)
                 if play.finished {
+                    if let lesson = SpaceDiscovery.bank[story.id] {
+                        Text("Our discovery: " + lesson.takeaway).font(.headline).multilineTextAlignment(.center)
+                    }
                     Label("Mission complete!", systemImage: "star.circle.fill")
                         .font(.system(.title2, design: .rounded, weight: .bold)).foregroundStyle(.indigo)
                     ToddlerActionButton(title: "Choose another mission", systemImage: "sparkles", color: .indigo, action: newChoices)
                         .accessibilityIdentifier("space.chooseAgain")
                     Button("All done") { dismiss() }.frame(minHeight: 48)
                 } else {
-                    ToddlerActionButton(title: page.action, systemImage: "arrow.right", color: .indigo) { play.next() }
-                        .accessibilityIdentifier("space.next")
+                    ToddlerActionButton(title: page.action, systemImage: "arrow.right", color: .indigo) { advance() }
+                        .accessibilityIdentifier("space.next").disabled(!canContinue)
                 }
                 HStack {
                     if play.pageIndex > 0 {
@@ -131,7 +140,20 @@ struct MoonMissionGame: View {
         .id("\(play.selected?.id ?? "choices"):\(play.pageIndex)")
         .onAppear { if !started { newChoices(); started = true } }
     }
+    private var canContinue: Bool {
+        guard let story = play.selected, let lesson = SpaceDiscovery.bank[story.id] else { return true }
+        if play.pageIndex == 3 { return discovery.nextStep(in: lesson) == nil }
+        if play.pageIndex == 4 { return discovery.answered }
+        return true
+    }
+    private func advance() {
+        guard canContinue, !play.finished else { return }
+        narrator.stop(); play.next()
+    }
     private func newChoices() {
+        narrator.stop()
+        discovery = SpaceDiscoveryProgress()
+
         var deck = (try? JSONDecoder().decode(SpaceMissionDeck.self, from: savedDeck)) ?? SpaceMissionDeck()
         play = SpaceMissionSession(choices: deck.offer())
         savedDeck = (try? JSONEncoder().encode(deck)) ?? Data()

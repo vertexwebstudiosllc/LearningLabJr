@@ -1,0 +1,72 @@
+import XCTest
+
+final class NatureFeelingsRefreshUITests: XCTestCase {
+    @MainActor func testMissionsAndArtwork() throws {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        func shot(_ name: String) {
+            let image = XCTAttachment(screenshot: app.screenshot()); image.name = name; image.lifetime = .keepAlways; add(image)
+        }
+        XCTAssertTrue(app.buttons["category.Nature Explorers"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.Nature Explorers"])
+        tap(app.buttons["activity-card.Dinosaur Trail"])
+        XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
+        shot("Clean Dinosaur Trail")
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["activity-card.Moon Mission"])
+        for _ in 0..<4 {
+            let choice = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'space.mission.'")).firstMatch
+            XCTAssertTrue(choice.waitForExistence(timeout: 5))
+            let id = choice.identifier.replacingOccurrences(of: "space.mission.", with: "")
+            tap(choice)
+            for _ in 0..<3 { tap(app.buttons["space.next"]) }
+            XCTAssertFalse(app.buttons["space.next"].isEnabled)
+            let waiting = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'space.discovery.' AND value == 'Waiting'")).firstMatch
+            tap(waiting)
+            XCTAssertEqual(app.staticTexts["space.discovery.progress"].label, "0 of 3 discoveries")
+            for _ in 0..<3 {
+                tap(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'space.discovery.' AND value == 'Next discovery'")).firstMatch)
+            }
+            XCTAssertTrue(app.buttons["space.next"].isEnabled)
+            shot("Discovery " + id)
+            tap(app.buttons["space.next"])
+            XCTAssertFalse(app.buttons["space.next"].isEnabled)
+            let correct: String
+            if id == "moon-shine" || id.hasPrefix("sun-") { correct = "Sun" }
+            else { correct = String(id.split(separator: "-")[0]).capitalized }
+            let wrong = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'space.answer.' AND identifier != %@", "space.answer." + correct)).firstMatch
+            tap(wrong); XCTAssertFalse(app.buttons["space.next"].isEnabled)
+            tap(app.buttons["space.answer." + correct]); XCTAssertTrue(app.buttons["space.next"].isEnabled)
+            tap(app.buttons["space.previous"])
+            XCTAssertEqual(app.staticTexts["space.discovery.progress"].label, "3 of 3 discoveries")
+            tap(app.buttons["space.next"]); tap(app.buttons["space.next"])
+            XCTAssertTrue(app.buttons["space.chooseAgain"].waitForExistence(timeout: 5))
+            tap(app.buttons["space.chooseAgain"])
+        }
+        app.navigationBars.buttons.firstMatch.tap(); app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["category.Big Feelings"])
+        tap(app.buttons["activity-card.Teddy's Helping Hands"])
+        tap(app.buttons["rescue.identity.girl"])
+        shot("Girl teddy centered bow")
+        app.navigationBars.buttons.firstMatch.tap()
+        let toolbox = app.buttons["activity-card.My Solution Toolbox"]
+        for _ in 0..<6 { if toolbox.isHittable { break }; app.swipeUp() }
+        shot("Toolbox menu tile")
+        tap(toolbox)
+        XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
+        shot("Toolbox game icon")
+    }
+}

@@ -162,13 +162,13 @@ struct RescueTeddy: View {
                 Ellipse().fill(.brown.opacity(0.9)).frame(width: 20, height: 14).position(x: 100, y: 103)
                 Path { p in p.move(to: CGPoint(x: 87, y: 119)); p.addQuadCurve(to: CGPoint(x: 113, y: 119), control: CGPoint(x: 100, y: 132)) }
                     .stroke(.brown, style: StrokeStyle(lineWidth: 3, lineCap: .round))
-                if identity == .girl {
-                    HStack(spacing: -2) { Ellipse().fill(.teal).rotationEffect(.degrees(25)); Circle().fill(.cyan).frame(width: 9); Ellipse().fill(.teal).rotationEffect(.degrees(-25)) }
-                        .frame(width: 40, height: 21).position(x: 146, y: 42)
-                }
                 if let hat = items.first(where: { $0.slot == .hat }) {
                     RescueItemArt(item: hat).frame(width: hat.role == "books" ? 80 : 132, height: hat.role == "books" ? 30 : 54)
                         .position(x: 100, y: hat.role == "books" ? 87 : 35)
+                }
+                if identity == .girl {
+                    HStack(spacing: -2) { Ellipse().fill(.teal).rotationEffect(.degrees(25)); Circle().fill(.cyan).frame(width: 9); Ellipse().fill(.teal).rotationEffect(.degrees(-25)) }
+                        .frame(width: 40, height: 21).position(x: 100, y: 42)
                 }
                 if let tool = items.first(where: { $0.slot == .tool }) {
                     RescueItemArt(item: tool).frame(width: 54, height: 72).rotationEffect(.degrees(-12)).position(x: 166, y: 185)

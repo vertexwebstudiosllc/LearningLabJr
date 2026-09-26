@@ -23,7 +23,7 @@ struct SolutionToolboxGame: View {
             } else {
                 Button { feedback = ""; toolboxOpen = true } label: {
                     VStack(spacing: 10) {
-                        Image(systemName: "toolbox.fill").font(.system(size: 74)).symbolRenderingMode(.palette).foregroundStyle(.yellow, .indigo)
+                        SolutionToolboxIcon().foregroundStyle(.indigo).frame(width: 90, height: 74)
                         Text("Open the toolbox").font(.title2.bold())
                         Text("Find \(play.current.required.count) helpful \(play.current.required.count == 1 ? "tool" : "tools")").font(.headline)
                     }.frame(maxWidth: .infinity).padding(18).background(.indigo.opacity(0.12), in: RoundedRectangle(cornerRadius: 26))

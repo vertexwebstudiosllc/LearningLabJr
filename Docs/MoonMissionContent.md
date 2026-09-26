@@ -28,3 +28,11 @@ Prompt used separately for Rocket, Earth, Mars, Jupiter, Saturn and Sun (substit
 > Use case: background-extraction. Asset type: toddler educational app sprite. Edit target: provided {name} illustration. Remove only the baked-in white/light-gray checkerboard backdrop, replacing it with actual fully transparent alpha, including any holes between Saturn's rings and planet. Preserve the complete subject, face, colors, silhouette, and soft 3D illustration style. No backdrop, no drop shadow, no border, no added text. Entire subject uncut and centered with a small transparent margin. Output transparent PNG for app use.
 
 Ruth reads all 72 pages and the choice prompt using the existing Polly story delivery. The authored text lives in `NatureExplorers/SpaceStoryContent.swift`; exact narration entries are in `Narration/Source/narration-source-space-stories.json`.
+
+## Interactive discovery update
+
+Every story now adds a three-step hands-on discovery on page four, followed by a two-picture understanding check on page five. These twelve activities cover impact craters, reflected sunlight, oceans/land/clouds, day and night, rover observations, Mars's two moons, Jupiter's cloud bands, the Great Red Spot, ring materials, a science postcard, sunlight reaching Earth, and plant needs. A simplified diagram changes as each discovery is made. The next-page button stays locked until that activity is complete; a wrong choice gives another chance. Previous-page navigation retains discoveries and a new mission resets them. The final page includes a short takeaway.
+
+Ruth's existing story recordings remain the spoken explanations, including the repeat-directions control and explanation after a discovery or answer. New concise activity instructions, labels, and questions are visible text and accessible to VoiceOver. There is no new system-voice fallback or paid narration generation. Teaching diagrams are schematic and not to scale; the day/night diagram follows a marked place into Earth's shaded side, and the ring close-up represents separate ice and rock pieces.
+
+The existing NASA science references above were checked again for this update. New activities ask children to apply those facts rather than simply advance the story.

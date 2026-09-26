@@ -3,6 +3,7 @@ import SwiftUI
 struct TrailDinosaur: Identifiable, Equatable {
     let id: String
     let name: String
+    var asset: String { "DinosaurClean/" + id }
     static let bank: [Self] = [
         .init(id: "Triceratops", name: "Triceratops"),
         .init(id: "Stegosaurus", name: "Stegosaurus"),
@@ -177,7 +178,7 @@ private struct DinosaurTrailLane: View {
             .accessibilityHidden(true)
             Button(action: onDinosaur) {
                 VStack(spacing: 0) {
-                    ToddlerArt(asset: round.dinosaurs[trail].id, size: 68)
+                    ToddlerArt(asset: round.dinosaurs[trail].asset, size: 68)
                     Text(round.dinosaurs[trail].name)
                         .font(.system(.caption, design: .rounded, weight: .bold))
                         .multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)

@@ -331,6 +331,8 @@ struct ToddlerArt: View {
                 NatureMenuIcon(activity: activity).padding(size * 0.16)
             } else if symbol.hasPrefix("stories."), let activity = StoryActivity(rawValue: String(symbol.dropFirst(8))) {
                 StoryMenuIcon(activity: activity).padding(size * 0.16)
+            } else if symbol == "toolbox.fill" {
+                SolutionToolboxIcon().padding(size * 0.12)
             } else if symbol == "frog.fill" {
                 FrogMenuSymbol().padding(size * 0.16)
             } else {
