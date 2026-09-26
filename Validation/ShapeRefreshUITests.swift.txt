@@ -1,0 +1,78 @@
+import XCTest
+
+final class ShapeRefreshUITests: XCTestCase {
+    @MainActor func testShapesPaintAndRainbowLevels() throws {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        func shot(_ title: String) {
+            let attachment = XCTAttachment(screenshot: app.screenshot()); attachment.name = title; attachment.lifetime = .keepAlways; add(attachment)
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.ABCs & Phonics"])
+        tap(app.buttons["activity-card.Syllable Hop"])
+        XCTAssertTrue(app.descendants(matching: .any)["sound-hop.target"].waitForExistence(timeout: 5))
+        shot("Clean Syllable Hop")
+        app.navigationBars.buttons.firstMatch.tap(); app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["category.Shapes & Colors"])
+        tap(app.buttons["activity-card.Shape Post"])
+        let stamp = app.descendants(matching: .any).matching(identifier: "shapes.post.stamp").firstMatch
+        XCTAssertTrue(stamp.waitForExistence(timeout: 5))
+        shot("Visible shape openings")
+        for _ in 0..<10 {
+            let shape = try XCTUnwrap(stamp.value as? String)
+            let hole = app.descendants(matching: .any).matching(identifier: "shapes.post.opening." + shape).firstMatch
+            stamp.press(forDuration: 0.1, thenDragTo: hole)
+            XCTAssertTrue(app.buttons["shapes.post.next"].waitForExistence(timeout: 4))
+            tap(app.buttons["shapes.post.next"])
+        }
+        XCTAssertTrue(app.buttons["All done"].waitForExistence(timeout: 5))
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["activity-card.Little Color Lab"])
+        tap(app.buttons["shapes.lab.paint.blue"])
+        XCTAssertEqual(app.staticTexts["shapes.lab.result"].label, "Blue")
+        shot("One selected paint")
+        tap(app.buttons["shapes.lab.paint.yellow"])
+        XCTAssertEqual(app.staticTexts["shapes.lab.result"].label, "Blue + Yellow")
+        shot("Two selected paints")
+        tap(app.buttons["shapes.lab.stir"])
+        XCTAssertEqual(app.staticTexts["shapes.lab.result"].label, "Green")
+        shot("Mixed green paint")
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["activity-card.Rainbow Windows"])
+        let colors = ["red", "yellow", "blue", "orange", "green", "purple"]
+        for level in 1...12 {
+            XCTAssertEqual(app.staticTexts["rainbow.level"].label, "Level \(level) of 12")
+            if level <= 2 {
+                for color in colors { tap(app.buttons["rainbow.window." + color]) }
+            } else {
+                for _ in 0..<6 {
+                    let clue = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Find the '")).firstMatch.label
+                    let target = try XCTUnwrap(colors.first { clue.contains("the " + $0 + " ") }, clue)
+                    if let wrong = colors.first(where: { $0 != target && (app.buttons["rainbow.window." + $0].value as? String) == "Closed" }) {
+                        tap(app.buttons["rainbow.window." + wrong])
+                        XCTAssertTrue(app.buttons["rainbow.window." + target].isEnabled)
+                    }
+                    tap(app.buttons["rainbow.window." + target])
+                }
+            }
+            if level == 1 || level == 3 { shot("Rainbow level \(level)") }
+            tap(app.buttons["rainbow.next"])
+        }
+        XCTAssertTrue(app.buttons["All done"].waitForExistence(timeout: 5))
+        tap(app.buttons["Play again"])
+        XCTAssertEqual(app.staticTexts["rainbow.level"].label, "Level 1 of 12")
+    }
+}

@@ -1,13 +1,5 @@
 import SwiftUI
 
-private enum SCPaint: Int, CaseIterable, Identifiable {
-    case red, yellow, blue, orange, green, purple
-    var id: Int { rawValue }
-    var name: String { ["Red", "Yellow", "Blue", "Orange", "Green", "Purple"][rawValue] }
-    var color: Color { [.red, .yellow, .blue, .orange, .green, .purple][rawValue] }
-    var symbol: String { ["heart.fill", "sun.max.fill", "drop.fill", "carrot.fill", "leaf.fill", "moon.fill"][rawValue] }
-}
-
 struct SCNote: View {
     let text: String
     var body: some View {
@@ -89,8 +81,10 @@ struct ShapePostGame: View {
         let frame = ShapePostRound.holeFrame(index: index, width: width)
         let filled = solved && shape == round.target
         return VStack(spacing: 8) {
-            Image(systemName: shape.symbol + (filled ? ".fill" : ""))
-                .resizable().scaledToFit().frame(width: 62, height: 62)
+            PostShapeSilhouette(kind: shape)
+                .fill(filled ? Color.green : Color(red: 0.16, green: 0.23, blue: 0.32))
+                .overlay(PostShapeSilhouette(kind: shape).stroke(.black.opacity(0.3), lineWidth: 2))
+                .frame(width: 62, height: 62)
             Text(shape.name).font(.system(.caption, design: .rounded, weight: .bold))
         }
         .foregroundStyle(filled ? Color.green : Color.primary)
@@ -105,8 +99,8 @@ struct ShapePostGame: View {
     }
 
     private func stamp(width: CGFloat) -> some View {
-        Image(systemName: solved || finished ? "checkmark.circle.fill" : round.target.symbol + ".fill")
-            .resizable().scaledToFit().foregroundStyle(solved ? Color.green : Color.blue)
+        PostShapeSilhouette(kind: round.target)
+            .fill(solved ? Color.green : Color.blue)
             .frame(width: 86, height: 86).padding(10)
             .contentShape(Rectangle())
             .highPriorityGesture(stampDrag(width: width), including: solved || finished ? .none : .all)
@@ -305,35 +299,5 @@ struct ColorLaundryGame: View {
         let matched = basket.map { laundry.sort(into: $0) } ?? false
         note = matched ? target.success : target.retry
         narrator.speak(note)
-    }
-}
-
-struct RainbowWindowsGame: View {
-    let onReplay: () -> Void
-    @State private var opened: Set<SCPaint> = []
-    @State private var note = "Choose a color to explore."
-    @StateObject private var narrator = GameNarrator()
-    private let objects = ["a red heart", "a yellow sun", "a blue raindrop", "an orange carrot", "a green leaf", "a purple moon"]
-    var body: some View {
-        ToddlerGameScaffold(title: "Rainbow Windows", prompt: opened.count == 6 ? "All six rainbow windows are open!" : "Tap a colored window. What is hiding behind it?", accent: .orange, completion: opened.count == 6, onReplay: onReplay) {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))], spacing: 14) {
-                ForEach(SCPaint.allCases) { paint in
-                    Button {
-                        opened.insert(paint)
-                        note = "You found \(objects[paint.rawValue])!"
-                        narrator.speak(note)
-                    } label: {
-                        VStack(spacing: 12) {
-                            Image(systemName: opened.contains(paint) ? paint.symbol : "door.left.hand.closed").font(.system(size: 50))
-                            Text(paint.name).font(.system(.headline, design: .rounded))
-                        }.foregroundStyle(paint == .yellow ? Color.black : .white)
-                            .frame(maxWidth: .infinity, minHeight: 150)
-                            .background(paint.color.gradient, in: RoundedRectangle(cornerRadius: 26))
-                    }.buttonStyle(.plain)
-                        .accessibilityLabel(opened.contains(paint) ? objects[paint.rawValue] : "Open the \(paint.name.lowercased()) window")
-                }
-            }
-            SCNote(text: note)
-        }
     }
 }

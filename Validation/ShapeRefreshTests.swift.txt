@@ -1,0 +1,95 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class ShapeRefreshTests: XCTestCase {
+    @MainActor func testCleanHopArtAndRuthCoverage() throws {
+        for word in HopWord.bank {
+            XCTAssertTrue(LiteracyVocabularyArt.supports(word.word), word.word)
+            for line in [word.prompt, word.success, word.retry] {
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: line)?.voice, "Ruth", line)
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: line), line)
+            }
+        }
+        for asset in LiteracyVocabularyArt.cleanAssets.values { XCTAssertNotNil(UIImage(named: asset), asset) }
+        for word in RainbowWindowRound.objects {
+            XCTAssertTrue(LiteracyVocabularyArt.supports(word))
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: word.capitalized)?.voice, "Ruth", word)
+        }
+        for shape in PostShape.allCases {
+            for color in WindowPaint.allCases {
+                let line = "Find the \(color.rawValue) \(shape.rawValue)."
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: line)?.voice, "Ruth", line)
+            }
+        }
+    }
+    func testRainbowProgressionAndWrongChoices() throws {
+        for _ in 0..<20 {
+            var game = RainbowWindowSession()
+            XCTAssertEqual(game.rounds.count, 12)
+            XCTAssertEqual(Set(game.rounds.compactMap(\.shape)).count, 10)
+            var prior: Set<String> = []
+            for round in game.rounds {
+                XCTAssertEqual(Set(round.colors).count, 6)
+                XCTAssertEqual(Set(round.surprises).count, 6)
+                XCTAssertTrue(prior.isDisjoint(with: round.surprises))
+                prior = Set(round.surprises)
+                let index = game.index
+                game.next(); XCTAssertEqual(game.index, index)
+                while let target = game.target {
+                    if round.shape != nil, let wrong = WindowPaint.allCases.first(where: { $0 != target && !game.opened.contains($0) }) {
+                        XCTAssertFalse(game.open(wrong))
+                    }
+                    XCTAssertTrue(game.open(target))
+                    XCTAssertFalse(game.open(target))
+                }
+                XCTAssertTrue(game.complete)
+                game.next()
+            }
+            XCTAssertTrue(game.finished)
+            XCTAssertFalse(game.open(.red))
+        }
+    }
+    func testPaintSelectionsAndMixing() {
+        var lab = ColorLabSession()
+        lab.select("blue"); XCTAssertEqual(lab.selected, ["blue"])
+        lab.select("yellow"); XCTAssertEqual(lab.selected, ["blue", "yellow"])
+        lab.select("red"); XCTAssertEqual(lab.selected, ["yellow", "red"])
+        lab.select("yellow"); XCTAssertEqual(lab.selected, ["red"])
+        lab.select("blue"); XCTAssertEqual(lab.mix()?.output, "purple")
+        XCTAssertTrue(lab.selected.isEmpty); XCTAssertEqual(lab.result?.id, "purple")
+        lab.select("yellow"); XCTAssertNil(lab.result); XCTAssertEqual(lab.selected, ["yellow"])
+    }
+    @MainActor func testArtAndSilhouetteGallery() throws {
+        for shape in PostShape.allCases {
+            let path = PostShapeSilhouette(kind: shape).path(in: CGRect(x: 0, y: 0, width: 100, height: 100))
+            XCTAssertFalse(path.isEmpty)
+            XCTAssertGreaterThan(path.boundingRect.width, 60)
+            XCTAssertGreaterThan(path.boundingRect.height, 50)
+        }
+        let shapes = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 5)) {
+            ForEach(PostShape.allCases) { shape in VStack {
+                PostShapeSilhouette(kind: shape).fill(.black).frame(width: 65, height: 65)
+                Text(shape.name).font(.caption)
+            } }
+        }.padding().background(.white)
+        try capture(shapes, "All ten shape silhouettes")
+        let words = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 5)) {
+            ForEach(HopWord.bank, id: \.word) { word in VStack {
+                LiteracyVocabularyArt(word: word.word).frame(width: 75, height: 75)
+                Text(word.word).font(.caption)
+            } }
+        }.padding().background(.mint.opacity(0.25))
+        try capture(words, "Clean syllable pictures")
+        try capture(VStack {
+            ColorMixingPreview(selected: ["blue"], result: nil).frame(width: 220, height: 150)
+            ColorMixingPreview(selected: ["blue", "yellow"], result: nil).frame(width: 220, height: 150)
+            ColorMixingPreview(selected: [], result: .named("green")).frame(width: 220, height: 150)
+        }.padding().background(.white), "Visible paint selections")
+    }
+    @MainActor private func capture<V: View>(_ view: V, _ name: String) throws {
+        let renderer = ImageRenderer(content: view); renderer.scale = 2
+        let attachment = XCTAttachment(image: try XCTUnwrap(renderer.uiImage))
+        attachment.name = name; attachment.lifetime = .keepAlways; add(attachment)
+    }
+}

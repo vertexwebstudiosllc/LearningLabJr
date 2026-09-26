@@ -5,6 +5,7 @@ struct LiteracyVocabularyArt: View {
     let word: String
     private var key: String { word.lowercased() == "teddy bear" ? "teddy" : word.lowercased() }
     static let cleanAssets = [
+        "chicken": "FamilyClean/chicken", "dolphin": "dolphinClean",
         "cat": "FamilyClean/cat", "dog": "FamilyClean/dog", "cow": "FamilyClean/cow",
         "hen": "FamilyClean/chicken", "chick": "FamilyClean/chick", "lamb": "FamilyClean/lamb",
         "sheep": "FamilyClean/sheep", "horse": "FamilyClean/horse", "goat": "BarnClean/goat",
@@ -16,6 +17,8 @@ struct LiteracyVocabularyArt: View {
     static let foods: Set<String> = ["apple", "egg", "kiwi", "lemon", "milk", "noodles", "orange", "yogurt", "zucchini", "watermelon", "pear", "bread", "carrot", "cheese"]
     // Platform illustrations are true transparent glyphs, not rectangular image files.
     static let illustrations = [
+        "donkey": "🫏", "penguin": "🐧", "octopus": "🐙", "banana": "🍌",
+        "potato": "🥔", "pineapple": "🍍", "cucumber": "🥒",
         "alpaca": "🦙", "llama": "🦙", "broccoli": "🥦", "hamburger": "🍔",
         "krill": "🦐", "pizza": "🍕", "rooster": "🐓", "tomato": "🍅",
         "volcano": "🌋", "mouse": "🐁", "corn": "🌽", "rice": "🍚", "peas": "🫛",

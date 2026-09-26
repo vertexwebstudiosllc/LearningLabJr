@@ -174,6 +174,7 @@ struct ToddlerGameScaffold<Content: View>: View {
     var completion: Bool = false
     var onReplay: (() -> Void)? = nil
     var scrollToTopOnPromptChange = false
+    var autoNarratePrompt = true
     @ViewBuilder let content: () -> Content
     @Environment(\.dismiss) private var dismiss
     @Environment(\.learningActivity) private var activity
@@ -262,7 +263,7 @@ struct ToddlerGameScaffold<Content: View>: View {
             .navigationTitle("Let's play")
             .navigationBarTitleDisplayMode(.inline)
             .task(id: "\(completion):\(prompt)") {
-                narrator.speak(completion ? "We did it together! You can play again or choose all done." : prompt)
+                if autoNarratePrompt { narrator.speak(completion ? "We did it together! You can play again or choose all done." : prompt) }
             }
             .onChange(of: prompt) { _, _ in
                 if scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }

@@ -162,14 +162,10 @@ struct ColorLabGame: View {
                 .font(.system(.headline, design: .rounded))
                 .accessibilityIdentifier("shapes.lab.level")
             VStack(spacing: 8) {
-                ZStack {
-                    Circle().fill(lab.result?.color ?? Color.white)
-                        .overlay(Circle().stroke(Color.gray.opacity(0.4), lineWidth: 2))
-                    Image(systemName: "paintbrush.pointed.fill").font(.system(size: 48))
-                        .foregroundStyle(lab.result?.ink ?? Color.black)
-                }.frame(width: 120, height: 120).accessibilityHidden(true)
-                Text(lab.result?.name ?? "Mixing bowl").font(.headline)
-                    .accessibilityIdentifier("shapes.lab.result")
+                ColorMixingPreview(selected: lab.selected, result: lab.result)
+                    .frame(width: 220, height: 150)
+                Text(lab.result?.name ?? (lab.selected.isEmpty ? "Mixing bowl" : lab.selected.map { LabPaint.named($0).name }.joined(separator: " + ")))
+                    .font(.headline).accessibilityIdentifier("shapes.lab.result")
             }
             Text(lab.suggestion).font(.subheadline).multilineTextAlignment(.center)
             HStack(spacing: 10) {
@@ -228,5 +224,28 @@ struct ColorLabGame: View {
             .accessibilityLabel("\(paint.name) paint")
             .accessibilityAddTraits(lab.selected.contains(paint.id) ? .isSelected : [])
             .accessibilityIdentifier("shapes.lab.paint.\(paint.id)")
+    }
+}
+
+/// The same paint selections shown on the buttons remain visible until stirring.
+struct ColorMixingPreview: View {
+    let selected: [String]
+    let result: LabPaint?
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<2) { side in
+                let paint = result ?? (selected.indices.contains(side) ? LabPaint.named(selected[side]) : nil)
+                Rectangle().fill(paint?.color ?? .white)
+                    .overlay {
+                        Text(paint?.name ?? "Choose a color")
+                            .font(.system(.subheadline, design: .rounded, weight: .bold))
+                            .foregroundStyle(paint?.ink ?? .black).multilineTextAlignment(.center).padding(8)
+                    }
+                    .accessibilityIdentifier("shapes.lab.half.\(side)")
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 28))
+        .overlay(RoundedRectangle(cornerRadius: 28).stroke(.gray.opacity(0.6), lineWidth: 2))
+        .overlay { if result == nil { Rectangle().fill(.gray.opacity(0.5)).frame(width: 2) } }
     }
 }

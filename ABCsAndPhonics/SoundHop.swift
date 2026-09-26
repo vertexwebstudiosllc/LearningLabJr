@@ -61,7 +61,7 @@ struct WordBeatHopGame: View {
                 ToddlerGameScaffold(title: "Syllable Hop", prompt: current.prompt, accent: .orange) {
                     VStack(spacing: 18) {
                         VStack(spacing: 8) {
-                            ToddlerArt(asset: current.asset, size: 96)
+                            LiteracyVocabularyArt(word: current.word).frame(width: 110, height: 110)
                             Text(current.word).font(.title.bold())
                         }
                         .accessibilityElement(children: .ignore)
