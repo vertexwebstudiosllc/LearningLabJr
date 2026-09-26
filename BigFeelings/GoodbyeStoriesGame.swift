@@ -4,6 +4,7 @@ struct SeeYouSoonGame: View {
     let onReplay: () -> Void
     @State private var play = GoodbyePlay()
     @State private var stories = GoodbyeStory.bank.shuffled()
+    @State private var dragging = false
     @State private var pickedUp = false
     @State private var feedback = ""
     @StateObject private var narrator = GameNarrator()
@@ -34,7 +35,7 @@ struct SeeYouSoonGame: View {
                 GoodbyeStoryScene(story: story, buddy: buddy, moved: play.moved, actions: play.actions,
                                   finished: play.completed.contains(story.id) && play.phase == .ending,
                                   canMove: play.phase == .moving, pickedUp: pickedUp, token: play.dragToken,
-                                  pickUp: { pickedUp = true }, move: move)
+                                  pickUp: { pickedUp = true }, move: move, dragging: $dragging)
                 switch play.phase {
                 case .moving:
                     Text("Drag the person to the glowing spot, or tap the person and then tap the spot.")
@@ -81,7 +82,7 @@ struct SeeYouSoonGame: View {
             }
             Text("Pretend together. Your real grown-up stays nearby. Talk about who will care for you and when you will meet again. Feelings and pauses are welcome.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-        }.onDisappear { narrator.stop() }
+        }.scrollDisabled(dragging).onDisappear { narrator.stop(); dragging = false }
     }
     private func move(_ token: String) -> Bool {
         let accepted = play.move(token)
@@ -111,6 +112,7 @@ struct GoodbyeStoryScene: View {
     let token: String
     let pickUp: () -> Void
     let move: (String) -> Bool
+    @Binding var dragging: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var body: some View {
         GeometryReader { g in
@@ -196,9 +198,10 @@ struct GoodbyeStoryScene: View {
                             .overlay(RoundedRectangle(cornerRadius: 19).stroke(pickedUp ? Color.orange : .clear, lineWidth: 3))
                     }.buttonStyle(.plain).position(x: g.size.width * 0.24, y: story.kind == .bathroom ? 126 : 168)
                         .disabled(!canMove)
-                        .draggable(token) {
-                            TogetherFriendArt(friend: buddy).frame(width: 100, height: 150)
-                        }.accessibilityLabel("Move \(buddy.name)").accessibilityIdentifier("goodbye.drag")
+                        .modifier(ImmediatePictureDrag(dragging: $dragging,
+                            target: CGRect(x: g.frame(in: .global).minX + g.size.width * 0.74 - targetWidth / 2,
+                                           y: g.frame(in: .global).minY + 71, width: targetWidth, height: 192),
+                            tap: pickUp, drop: { if canMove { _ = move(token) } })).accessibilityLabel("Move \(buddy.name)").accessibilityIdentifier("goodbye.drag")
                 }
             }
         }.frame(height: 285).accessibilityElement(children: .contain)

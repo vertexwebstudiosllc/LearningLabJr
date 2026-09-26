@@ -4,6 +4,8 @@ struct CozyEveningPathGame: View {
     let onReplay: () -> Void
     @State private var play = CozyRoutinePlay()
     @State private var pathOrder = CozyRoutine.bank.shuffled()
+    @State private var dragging = false
+    @State private var dropFrame = CGRect.zero
     @State private var selectedItem: Int?
     @State private var feedback = ""
     @StateObject private var narrator = GameNarrator()
@@ -96,7 +98,8 @@ struct CozyEveningPathGame: View {
             }
             Text("These are Teddy's pretend plans. Your family's order may be different. A grown-up can help, and a pause is always okay.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-        }.onDisappear { narrator.stop() }
+        }.scrollDisabled(dragging)
+            .onDisappear { narrator.stop(); dragging = false }
     }
     private func act(_ value: Int, token: String) {
         if play.act(value, token: token) { feedback = ""; selectedItem = nil }
@@ -115,10 +118,8 @@ struct CozyEveningPathGame: View {
                             .background(.white, in: RoundedRectangle(cornerRadius: 18))
                             .overlay(RoundedRectangle(cornerRadius: 18).stroke(selectedItem == index ? Color.orange : .clear, lineWidth: 3))
                     }.buttonStyle(.plain).disabled(play.used.contains(index)).opacity(play.used.contains(index) ? 0.2 : 1)
-                        .draggable(play.token + ":" + String(index)) {
-                            if play.current.kind == .dress { CozyRoutineItemArt(step: play.current) }
-                            else { Image(systemName: play.current.items[index]).font(.system(size: 48)).foregroundStyle(.indigo) }
-                        }.accessibilityLabel(play.current.kind == .dress ? play.current.title : "Packing item \(index + 1)")
+                        .modifier(ImmediatePictureDrag(dragging: $dragging, target: dropFrame,
+                            tap: { selectedItem = index }, drop: { act(index, token: play.token) })).accessibilityLabel(play.current.kind == .dress ? play.current.title : "Packing item \(index + 1)")
                         .accessibilityIdentifier("routine.item.\(index)")
                 }
             }
@@ -137,6 +138,7 @@ struct CozyEveningPathGame: View {
                 }.frame(maxWidth: .infinity, minHeight: 150).padding(16).background(.teal.opacity(0.09), in: RoundedRectangle(cornerRadius: 24))
                     .overlay(RoundedRectangle(cornerRadius: 24).stroke(.orange, lineWidth: 3))
             }.buttonStyle(.plain).accessibilityIdentifier("routine.drop")
+                .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { dropFrame = $0 }
                 .dropDestination(for: String.self) { values, _ in
                     guard values.count == 1, play.phase == .acting else { return false }
                     let parts = values[0].split(separator: ":")

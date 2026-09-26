@@ -1,0 +1,55 @@
+import XCTest
+
+final class BodyDragPolishUITests: XCTestCase {
+    @MainActor func testBodyTargetsAndImmediateDrags() throws {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        func shot(_ name: String) {
+            let image = XCTAttachment(screenshot: app.screenshot()); image.name = name; image.lifetime = .keepAlways; add(image)
+        }
+        XCTAssertTrue(app.buttons["category.Big Feelings"].waitForExistence(timeout: 15))
+        tap(app.buttons["category.Big Feelings"])
+        tap(app.buttons["activity-card.Body Clue Buddies"])
+        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'body.part.'")).count, 14)
+        shot("Visible body outlines")
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["activity-card.Cozy Evening Path"])
+        tap(app.buttons["routine.path.rain"])
+        tap(app.buttons["routine.start"])
+        tap(app.buttons["routine.choice.raincoat"])
+        let item = app.buttons["routine.item.0"]
+        let drop = app.buttons["routine.drop"]
+        while !drop.isHittable || drop.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.swipeUp() }
+        let before = drop.frame
+        item.press(forDuration: 0.01, thenDragTo: app.navigationBars.firstMatch)
+        XCTAssertEqual(drop.frame.minY, before.minY, accuracy: 4)
+        XCTAssertTrue(item.exists)
+        item.press(forDuration: 0.01, thenDragTo: drop)
+        XCTAssertTrue(app.buttons["routine.next"].waitForExistence(timeout: 4))
+        shot("Cozy drag completed")
+        app.navigationBars.buttons.firstMatch.tap()
+        tap(app.buttons["activity-card.See You Soon"])
+        tap(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'goodbye.story.'")).firstMatch)
+        let buddy = app.buttons["goodbye.drag"]
+        let destination = app.buttons["goodbye.drop"]
+        let position = destination.frame
+        buddy.press(forDuration: 0.01, thenDragTo: app.navigationBars.firstMatch)
+        XCTAssertEqual(destination.frame.minY, position.minY, accuracy: 4)
+        buddy.press(forDuration: 0.01, thenDragTo: destination)
+        XCTAssertTrue(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'goodbye.words.'")).firstMatch.waitForExistence(timeout: 4))
+        shot("Goodbye drag completed")
+    }
+}

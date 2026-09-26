@@ -42,10 +42,10 @@ struct BodyBuddyPicture: View {
                 ForEach(BuddyBodySpot.all) { spot in
                     let rect = spot.rect(scale: scale)
                     Button { onTap(spot.part) } label: {
-                        RoundedRectangle(cornerRadius: 24)
+                        RoundedRectangle(cornerRadius: 10)
                             .fill(highlight == spot.part ? (solved ? Color.green : .orange).opacity(0.18) : .clear)
-                            .overlay(RoundedRectangle(cornerRadius: 24)
-                                .stroke(highlight == spot.part ? (solved ? Color.green : .orange) : .clear, lineWidth: 4))
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(highlight == spot.part ? (solved ? Color.green : .orange) : Color.indigo.opacity(0.8), lineWidth: 3))
                             .contentShape(Rectangle())
                     }.buttonStyle(.plain)
                         .frame(width: rect.width, height: rect.height)
@@ -121,6 +121,7 @@ struct BodyBuddyDrawing: View {
         }.frame(width: 340, height: 480)
     }
     @ViewBuilder private var hairArt: some View {
+        crown
         switch buddy.style {
         case .curls:
             ForEach(0..<9) { index in
@@ -141,10 +142,23 @@ struct BodyBuddyDrawing: View {
         default: fringe
         }
     }
+    // A solid crown joins the fringe to the scalp for every hairstyle.
+    private var crown: some View {
+        Path { p in
+            p.move(to: CGPoint(x: 82, y: 72))
+            p.addCurve(to: CGPoint(x: 258, y: 72), control1: CGPoint(x: 68, y: -22), control2: CGPoint(x: 271, y: -22))
+            p.addQuadCurve(to: CGPoint(x: 234, y: 44), control: CGPoint(x: 250, y: 48))
+            p.addQuadCurve(to: CGPoint(x: 105, y: 45), control: CGPoint(x: 169, y: 28))
+            p.addQuadCurve(to: CGPoint(x: 82, y: 72), control: CGPoint(x: 93, y: 58))
+            p.closeSubpath()
+        }.fill(hair)
+    }
     private var fringe: some View {
         Path { p in
-            p.move(to: CGPoint(x: 86, y: 68)); p.addQuadCurve(to: CGPoint(x: 254, y: 61), control: CGPoint(x: 82, y: -42))
-            p.addLine(to: CGPoint(x: 244, y: 38)); p.addQuadCurve(to: CGPoint(x: 112, y: 43), control: CGPoint(x: 182, y: 18)); p.closeSubpath()
+            p.move(to: CGPoint(x: 91, y: 48))
+            p.addQuadCurve(to: CGPoint(x: 240, y: 35), control: CGPoint(x: 169, y: 5))
+            p.addQuadCurve(to: CGPoint(x: 109, y: 53), control: CGPoint(x: 173, y: 59))
+            p.closeSubpath()
         }.fill(hair)
     }
 }

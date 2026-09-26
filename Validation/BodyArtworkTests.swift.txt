@@ -1,0 +1,20 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+final class BodyArtworkTests: XCTestCase {
+    @MainActor func testAllBuddyStyles() throws {
+        for group in 0..<3 {
+            let gallery = LazyVGrid(columns: Array(repeating: GridItem(.fixed(240)), count: 3)) {
+                ForEach(Array(BodyBuddy.bank[(group * 6)..<(group * 6 + 6)])) { buddy in
+                    VStack {
+                        Text(buddy.name).font(.title)
+                        BodyBuddyPicture(buddy: buddy, highlight: nil, solved: false, onTap: { _ in }).frame(width: 240, height: 339)
+                    }
+                }
+            }.padding().background(.white)
+            let renderer = ImageRenderer(content: gallery); renderer.scale = 1
+            let image = try XCTUnwrap(renderer.uiImage)
+            let attachment = XCTAttachment(image: image); attachment.name = "Buddy gallery \(group)"; attachment.lifetime = .keepAlways; add(attachment)
+        }
+    }
+}
