@@ -97,7 +97,7 @@ struct PicnicWordsGame: View {
                             ForEach(current.choices) { food in
                                 Button { pack(food, in: current) } label: {
                                     VStack(spacing: 4) {
-                                        ToddlerArt(asset: food.asset, size: 58)
+                                        LiteracyFoodArt(food: food.word).frame(width: 58, height: 58)
                                         Text(food.word.capitalized).font(.footnote.bold())
                                             .multilineTextAlignment(.center).lineLimit(2).frame(height: 32)
                                     }.frame(maxWidth: .infinity).padding(8)

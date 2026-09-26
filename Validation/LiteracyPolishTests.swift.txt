@@ -1,0 +1,63 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class LiteracyPolishTests: XCTestCase {
+    @MainActor func testAllGuidesAndCoverage() throws {
+        XCTAssertEqual(Set(LetterFormation.strokes.keys), Set(LetterDrawAlphabet.letters))
+        for letter in LetterDrawAlphabet.letters {
+            let strokes = try XCTUnwrap(LetterFormation.strokes[letter])
+            XCTAssertFalse(strokes.isEmpty)
+            for stroke in strokes {
+                XCTAssertFalse(stroke.hint.isEmpty)
+                XCTAssertTrue(stroke.points.allSatisfy { (0...1).contains($0.x) && (0...1).contains($0.y) }, letter)
+                let size = CGSize(width: 300, height: 250)
+                XCTAssertTrue(stroke.covered(by: stroke.fitted(in: size), in: size), letter)
+                XCTAssertFalse(stroke.covered(by: [CGPoint(x: 0, y: 0)], in: size))
+                XCTAssertFalse(stroke.covered(by: [CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 1)], in: size))
+            }
+        }
+    }
+    func testBasketTargetsHaveForgivingEdges() {
+        for width: CGFloat in [280, 350, 600] {
+            for index in 0..<2 {
+                let frame = SoundBasketDropLayout.frame(index: index, width: width)
+                XCTAssertEqual(SoundBasketDropLayout.target(at: CGPoint(x: frame.midX, y: frame.midY), width: width), index)
+                XCTAssertEqual(SoundBasketDropLayout.target(at: CGPoint(x: frame.midX, y: frame.minY - 8), width: width), index)
+            }
+            XCTAssertNil(SoundBasketDropLayout.target(at: CGPoint(x: width / 2, y: 50), width: width))
+        }
+    }
+    @MainActor func testCleanArtAndLetters() throws {
+        for asset in SoundBasketPicture.cleanAssets.values { XCTAssertNotNil(UIImage(named: asset), asset) }
+        for start in stride(from: 0, to: 26, by: 6) {
+            let letters = Array(LetterDrawAlphabet.letters[start..<min(start+6, 26)])
+            let gallery = HStack {
+                ForEach(letters, id: \.self) { letter in
+                    VStack {
+                        ZStack {
+                            ForEach(LetterFormation.strokes[letter]!.indices, id: \.self) { index in
+                                LetterTraceStroke.path(LetterFormation.strokes[letter]![index].fitted(in: CGSize(width: 100, height: 130)))
+                                    .stroke(.white, style: StrokeStyle(lineWidth: 7, lineCap: .round, lineJoin: .round))
+                            }
+                        }.frame(width: 100, height: 130)
+                        Text(letter).foregroundStyle(.white)
+                    }
+                }
+            }.padding().background(.teal)
+            try capture(gallery, name: "Letters \(start)")
+        }
+        let foods = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 4)) {
+            ForEach(PicnicFood.bank) { food in VStack { LiteracyFoodArt(food: food.word).frame(width: 78, height: 78); Text(food.word).font(.caption) } }
+        }.padding().background(.mint.opacity(0.3))
+        try capture(foods, name: "Picnic clean foods")
+        let sounds = LazyVGrid(columns: Array(repeating: GridItem(.fixed(90)), count: 6)) {
+            ForEach(SoundBasketItem.alphabet) { item in VStack { SoundBasketPicture(item: item).frame(width: 78, height: 78); Text(item.word).font(.caption) } }
+        }.padding().background(.mint.opacity(0.3))
+        try capture(sounds, name: "Sound Basket clean objects")
+    }
+    @MainActor private func capture<V: View>(_ view: V, name: String) throws {
+        let renderer = ImageRenderer(content: view); renderer.scale = 2
+        let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = name; shot.lifetime = .keepAlways; add(shot)
+    }
+}

@@ -63,6 +63,8 @@ struct LiteracySoundBasketsGame: View {
     @AppStorage("soundBaskets.lastShownLetter") private var lastShown = ""
     @State private var rounds: [SoundBasketRound] = []
     @State private var highlighted: String?
+    @State private var dragOffset = CGSize.zero
+    @GestureState private var dragging = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -70,40 +72,46 @@ struct LiteracySoundBasketsGame: View {
                 let round = rounds[play.round]
                 LiteracyStage(title: "Sound Baskets", prompt: round.item.prompt, play: play,
                               onReplay: restart, progressLabel: "Letter", nextLabel: "Next letter") {
-                    VStack(spacing: 20) {
-                        VStack(spacing: 8) {
-                            SoundBasketPicture(item: round.item)
-                                .frame(width: 130, height: 130)
-                            Text(round.item.word.capitalized).font(.title2.bold())
-                        }
-                        .padding(16)
-                        .background(.white, in: RoundedRectangle(cornerRadius: 24))
-                        .overlay(RoundedRectangle(cornerRadius: 24).stroke(.orange.opacity(0.4), lineWidth: 2))
-                        .contentShape(Rectangle())
-                        .draggable(round.dragID)
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityLabel("Picture of \(round.item.word)")
-                        .accessibilityIdentifier("sound-baskets.picture")
-                        .accessibilityHint("Drag to a letter basket, or use an accessibility action to place the picture")
-                        .accessibilityAction(named: Text("Place in \(round.choices[0]) basket")) {
-                            _ = drop([round.dragID], into: round.choices[0], round: round)
-                        }
-                        .accessibilityAction(named: Text("Place in \(round.choices[1]) basket")) {
-                            _ = drop([round.dragID], into: round.choices[1], round: round)
-                        }
-                        HStack(spacing: 20) {
-                            ForEach(round.choices, id: \.self) { letter in
-                                basket(letter, round: round)
+                    GeometryReader { geometry in
+                        let width = geometry.size.width
+                        ZStack(alignment: .topLeading) {
+                            ForEach(Array(round.choices.enumerated()), id: \.element) { index, letter in
+                                let frame = SoundBasketDropLayout.frame(index: index, width: width)
+                                basket(letter, round: round).frame(width: frame.width, height: frame.height)
+                                    .position(x: frame.midX, y: frame.midY)
                             }
-                        }
-                    }
-                    .id(round.dragID)
-                }
+                            Text(round.item.word.capitalized).font(.title2.bold())
+                                .frame(width: width).position(x: width / 2, y: 147)
+                            SoundBasketPicture(item: round.item).frame(width: 120, height: 120)
+                                .padding(8).contentShape(Rectangle())
+                                .highPriorityGesture(DragGesture(minimumDistance: 0, coordinateSpace: .named("sound-basket-board"))
+                                    .updating($dragging) { _, active, _ in active = true }
+                                    .onChanged { value in
+                                        guard !play.solved else { return }
+                                        dragOffset = value.translation
+                                        highlighted = SoundBasketDropLayout.target(at: value.location, width: width).map { round.choices[$0] }
+                                    }.onEnded { value in
+                                        dragOffset = .zero; highlighted = nil
+                                        if let index = SoundBasketDropLayout.target(at: value.location, width: width) {
+                                            _ = drop([round.dragID], into: round.choices[index], round: round)
+                                        }
+                                    })
+                                .offset(dragOffset).position(x: width / 2, y: 68)
+                                .accessibilityElement(children: .ignore)
+                                .accessibilityLabel("Picture of \(round.item.word)")
+                                .accessibilityIdentifier("sound-baskets.picture")
+                                .accessibilityHint("Drag straight to a basket. Or use the Place in basket accessibility actions.")
+                                .accessibilityAction(named: Text("Place in \(round.choices[0]) basket")) { _ = drop([round.dragID], into: round.choices[0], round: round) }
+                                .accessibilityAction(named: Text("Place in \(round.choices[1]) basket")) { _ = drop([round.dragID], into: round.choices[1], round: round) }
+                        }.coordinateSpace(name: "sound-basket-board")
+                    }.frame(height: 345).id(round.dragID)
+                }.scrollDisabled(dragging)
             }
         }
+        .onChange(of: dragging) { _, active in if !active { dragOffset = .zero; highlighted = nil } }
         .onAppear(perform: restart)
         .onChange(of: play.round) { _, index in
-            highlighted = nil
+            highlighted = nil; dragOffset = .zero
             if rounds.indices.contains(index) { lastShown = rounds[index].item.letter }
         }
     }
@@ -159,12 +167,41 @@ struct LiteracySoundBasketsGame: View {
     }
 }
 
-/// Vector pictures fill the four gaps in the existing illustrated asset library.
+enum SoundBasketDropLayout {
+    static func frame(index: Int, width: CGFloat) -> CGRect {
+        let basketWidth = (width - 16) / 2
+        return CGRect(x: CGFloat(index) * (basketWidth + 16), y: 175, width: basketWidth, height: 165)
+    }
+    static func target(at point: CGPoint, width: CGFloat) -> Int? {
+        (0..<2).filter { frame(index: $0, width: width).insetBy(dx: -8, dy: -12).contains(point) }
+            .min { abs(frame(index: $0, width: width).midX - point.x) < abs(frame(index: $1, width: width).midX - point.x) }
+    }
+}
+
+/// Clean cutouts and native pictures keep every object free of baked-in backgrounds.
 struct SoundBasketPicture: View {
     let item: SoundBasketItem
+    static let cleanAssets = ["C": "FamilyClean/cat", "D": "FamilyClean/dog", "G": "BarnClean/goat", "H": "FamilyClean/horse", "J": "OceanClean/jellyfish", "M": "SpaceClean/Moon", "P": "BarnClean/pig", "R": "BarnClean/rabbit", "S": "SpaceClean/Sun", "W": "OceanClean/whale"]
+    static let foodLetters: Set<String> = ["A", "E", "K", "L", "N", "O", "Y", "Z"]
     var body: some View {
-        if let asset = item.asset {
-            ToddlerArt(asset: asset, size: 130)
+        GeometryReader { geometry in
+            content.frame(width: 130, height: 130)
+                .scaleEffect(min(geometry.size.width, geometry.size.height) / 130)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+        }.accessibilityElement(children: .ignore)
+    }
+    @ViewBuilder private var content: some View {
+        if let asset = Self.cleanAssets[item.letter] {
+            Image(asset).resizable().scaledToFit()
+        } else if Self.foodLetters.contains(item.letter) {
+            LiteracyFoodArt(food: item.word)
+        } else if item.letter == "B" || item.letter == "V" {
+            Image(systemName: item.letter == "B" ? "basketball.fill" : "volleyball.fill")
+                .resizable().scaledToFit().foregroundStyle(item.letter == "B" ? .orange : .blue)
+        } else if item.letter == "F" {
+            HuntItemArt(item: HuntItem.named("fish"))
+        } else if item.letter == "T" {
+            Image(systemName: "tortoise.fill").resizable().scaledToFit().foregroundStyle(.green)
         } else {
             switch item.letter {
             case "I":

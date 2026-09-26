@@ -1,0 +1,60 @@
+import XCTest
+import StoreKitTest
+
+final class LiteracyPolishUITests: XCTestCase {
+    @MainActor func testQuickBasketDragsPicnicAndLetterGuidance() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) throws {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        try tap(app.buttons["category.ABCs & Phonics"])
+        try tap(app.buttons["activity-card.Sound Baskets"])
+        let picture = app.descendants(matching: .any).matching(identifier: "sound-baskets.picture").firstMatch
+        for _ in 0..<4 {
+            XCTAssertTrue(picture.waitForExistence(timeout: 5))
+            let word = picture.label.replacingOccurrences(of: "Picture of ", with: "")
+            let letter = String(word.prefix(1)).uppercased()
+            let baskets = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "sound-baskets.basket.")).allElementsBoundByIndex.map(\.identifier)
+            XCTAssertEqual(baskets.count, 2)
+            let wrongID = try XCTUnwrap(baskets.first { $0 != "sound-baskets.basket." + letter }, "Picture: \(word), baskets: \(baskets)")
+            let wrong = app.buttons[wrongID]
+            try tap(wrong)
+            let baseline = wrong.frame.midY
+            picture.press(forDuration: 0.01, thenDragTo: wrong)
+            XCTAssertFalse(app.buttons["Next letter"].exists)
+            XCTAssertEqual(wrong.frame.midY, baseline, accuracy: 4, "Dragging must not scroll the page")
+            let correct = app.buttons["sound-baskets.basket." + letter]
+            picture.press(forDuration: 0.01, thenDragTo: correct)
+            XCTAssertTrue(app.buttons["Next letter"].waitForExistence(timeout: 5))
+            try tap(app.buttons["Next letter"])
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.Picnic Words"])
+        let targets = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("picnic.basket.") }.map { String($0.identifier.dropFirst("picnic.basket.".count)) }
+        XCTAssertEqual(targets.count, 3)
+        for food in targets { try tap(app.buttons["picnic.food." + food]) }
+        XCTAssertTrue(app.buttons["Next picnic"].waitForExistence(timeout: 5))
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.Letter Draw"])
+        XCTAssertTrue(app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Start at the orange dot'")).firstMatch.waitForExistence(timeout: 5))
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Letter guidance"; shot.lifetime = .keepAlways; add(shot)
+        try tap(app.buttons["Clear my drawing"])
+        try tap(app.buttons["We drew it in the air"])
+        XCTAssertTrue(app.buttons["Next letter"].waitForExistence(timeout: 5))
+    }
+}
