@@ -7122,9 +7122,25 @@
       "category": "nature"
     },
     {
+      "text": "A butterfly visits a flower beside the watering can. Find three things in the picture.",
+      "file": "llj-71bdc81d51445f3ac3b527e9.mp3",
+      "spokenText": "A butterfly visits a flower beside the watering can. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "A car? Let’s listen again. At bedtime, I get cozy in my…",
       "file": "llj-442eac18a26b25fe7b2a968c.mp3",
       "spokenText": "A car? Let’s listen again. At bedtime, I get cozy in my…",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "A carrot, a bowl, and a spoon are ready for soup time. Find three things in the picture.",
+      "file": "llj-2551756a19f8dd4b6fe58d45.mp3",
+      "spokenText": "A carrot, a bowl, and a spoon are ready for soup time. Find three things in the picture.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -7208,6 +7224,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A crab finds a bucket on the sand. A sailboat floats nearby. Find three things in the picture.",
+      "file": "llj-99f163ece48dfce88b6f6691.mp3",
+      "spokenText": "A crab finds a bucket on the sand. A sailboat floats nearby. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A dog wags its tail! Pretend your hand is a tail. Wag it gently from side to side.",
@@ -7474,6 +7498,14 @@
       "category": "feelings"
     },
     {
+      "text": "A hammer and a wrench wait beside the toolbox. Let’s build! Find three things in the picture.",
+      "file": "llj-4e2b52e8a75bf67c9397dba0.mp3",
+      "spokenText": "A hammer and a wrench wait beside the toolbox. Let’s build! Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
       "file": "llj-d297e0d334d59b3343fcfdca.mp3",
       "spokenText": "A horse trots! Pat your knees one at a time. Clip, clop, clip, clop!",
@@ -7528,6 +7560,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "A kite flies above the park. A ball rests beside a tree. Find three things in the picture.",
+      "file": "llj-ea5404340b9b7402a1b84739.mp3",
+      "spokenText": "A kite flies above the park. A ball rests beside a tree. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A kitten needs a cozy resting spot. An animal shelter helper can offer a blanket. Let's dress Teddy as an animal shelter helper. Choose the blanket.",
@@ -7704,6 +7744,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "A rocket flies past Earth. A bright star shines far away. Find three things in the picture.",
+      "file": "llj-c8dfeb9d24d64ac2fd0a480b.mp3",
+      "spokenText": "A rocket flies past Earth. A bright star shines far away. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "A round orange pumpkin is outside our window. Pumpkins grow on vines.",
@@ -8354,6 +8402,14 @@
       "category": "nature"
     },
     {
+      "text": "Apple",
+      "file": "llj-1ec926b0b80b9147a87aaa44.mp3",
+      "spokenText": "Apple",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Ask a grown-up",
       "file": "llj-6b01988d35d7fcba249b4af4.mp3",
       "spokenText": "Ask a grown-up",
@@ -8626,6 +8682,22 @@
       "category": "nature"
     },
     {
+      "text": "Ball",
+      "file": "llj-6842b2a2d7e1a6dc8f7872fb.mp3",
+      "spokenText": "Ball",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Balloon",
+      "file": "llj-88b4b077a4ce131215dea568.mp3",
+      "spokenText": "Balloon",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
       "file": "llj-a61fbc8a0b64c8223c759320.mp3",
       "spokenText": "Barry bent his long neck low. “Basketball is for every dino,” he said. “Some dunk. Some pass. Some run fast.” Rex grinned. “And some learn to shoot from far away.”",
@@ -8744,6 +8816,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Bell",
+      "file": "llj-4de294649753c9bd35f8e2f2.mp3",
+      "spokenText": "Bell",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Beside Milo zipped Sasha Smilodon. Sasha was quick. Sasha was clever. Sasha swished her tail and skated in loops. “Zoom, zoom, zip!” she cheered. “Hockey is fast and fun!”",
@@ -8866,6 +8946,22 @@
       "category": "shapes"
     },
     {
+      "text": "Book",
+      "file": "llj-50768119bed9a318fb51cf82.mp3",
+      "spokenText": "Book",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Boots",
+      "file": "llj-a812a5a5ec5ec29bce952f0d.mp3",
+      "spokenText": "Boots",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Both friends got sparkles. A fair turn can feel good!",
       "file": "llj-413cabc369f15a377e5acb5f.mp3",
       "spokenText": "Both friends got sparkles. A fair turn can feel good!",
@@ -8962,6 +9058,14 @@
       "category": "feelings"
     },
     {
+      "text": "Bowl",
+      "file": "llj-f413634bfa00bd38f094160e.mp3",
+      "spokenText": "Bowl",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Bowling! Who would you like to play with? Every friend can play every game.",
       "file": "llj-40e98a11203a44736a1a53fc.mp3",
       "spokenText": "Bowling! Who would you like to play with? Every friend can play every game.",
@@ -9048,6 +9152,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Bucket",
+      "file": "llj-1bcf82f47b4c1fd8f6d61b02.mp3",
+      "spokenText": "Bucket",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Build a shape nest. Start with the largest, then medium, then small.",
@@ -9210,6 +9322,14 @@
       "category": "feelings"
     },
     {
+      "text": "Bunny",
+      "file": "llj-e9df1bf61abe70c32b09becb.mp3",
+      "spokenText": "Bunny",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Bunny and Cat want to do something together. What happens next?",
       "file": "llj-33403d7f333d016f1ed659cd.mp3",
       "spokenText": "Bunny and Cat want to do something together. What happens next?",
@@ -9237,6 +9357,14 @@
       "text": "Bunny asks, Would you like an apple or some bread?",
       "file": "llj-e44b7de30c17ea2627840f10.mp3",
       "spokenText": "Bunny asks, Would you like an apple or some bread?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Bunny brought an apple and a cup to the picnic. Find three things in the picture.",
+      "file": "llj-27653574f84334f03add2156.mp3",
+      "spokenText": "Bunny brought an apple and a cup to the picnic. Find three things in the picture.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -9549,6 +9677,14 @@
       "text": "Bunny went to the pond. Bunny met Duck. They shared a picnic. Then Bunny went home with a happy memory.",
       "file": "llj-6d91f0c8efc00e1ce8795469.mp3",
       "spokenText": "Bunny went to the pond. Bunny met Duck. They shared a picnic. Then Bunny went home with a happy memory.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Butterfly",
+      "file": "llj-4ee51610ef9935c118874e67.mp3",
+      "spokenText": "Butterfly",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -10074,6 +10210,22 @@
       "category": "nature"
     },
     {
+      "text": "Carrot",
+      "file": "llj-3c8baa40bb32bbf847617f1e.mp3",
+      "spokenText": "Carrot",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Cat",
+      "file": "llj-3555e31f52d8e9eabfcfd7ae.mp3",
+      "spokenText": "Cat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Cat carries a ball.",
       "file": "llj-f9b8775b90823bb66f2f4786.mp3",
       "spokenText": "Cat carries a ball.",
@@ -10093,6 +10245,14 @@
       "text": "Cat carries an apple.",
       "file": "llj-e28c31db458075ec1c6226f3.mp3",
       "spokenText": "Cat carries an apple.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Cat curls up beside a book while a little lamp glows. Find three things in the picture.",
+      "file": "llj-b0e0b41b7c61a96c3dfe1ead.mp3",
+      "spokenText": "Cat curls up beside a book while a little lamp glows. Find three things in the picture.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -10554,6 +10714,14 @@
       "category": "feelings"
     },
     {
+      "text": "Clock",
+      "file": "llj-d797778d3ae85df10a8990ab.mp3",
+      "spokenText": "Clock",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Closed eyes.",
       "file": "llj-bbb68e72b0fb24b96139cf43.mp3",
       "spokenText": "Closed eyes.",
@@ -10568,6 +10736,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Cloud",
+      "file": "llj-bf513c1d2c77c81928b89168.mp3",
+      "spokenText": "Cloud",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Cluck, cluck! That's a chicken sound. Find the chicken family.",
@@ -10754,6 +10930,14 @@
       "category": "nature"
     },
     {
+      "text": "Cow",
+      "file": "llj-4eaebfe97ca89eef78d38b33.mp3",
+      "spokenText": "Cow",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Cow! Moo, moo! Cows munch on grass.",
       "file": "llj-9c041251bc74092f8d869e1b.mp3",
       "spokenText": "Cow! Moo, moo! Cows munch on grass.",
@@ -10802,6 +10986,14 @@
       "category": "feelings"
     },
     {
+      "text": "Crab",
+      "file": "llj-7d4da6b45d1bc3e52d7a9c5b.mp3",
+      "spokenText": "Crab",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Crab! Let's help our ocean friend clean ten places. Ready to begin?",
       "file": "llj-2df4f981286e2cce6ed8c4d4.mp3",
       "spokenText": "Crab! Let's help our ocean friend clean ten places. Ready to begin?",
@@ -10832,6 +11024,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Cup",
+      "file": "llj-e353c856fece97a5eae29548.mp3",
+      "spokenText": "Cup",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "D is for dog.",
@@ -10946,6 +11146,14 @@
       "category": "feelings"
     },
     {
+      "text": "Dog",
+      "file": "llj-3b98429f5d7c98dcee20e4f5.mp3",
+      "spokenText": "Dog",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Dog carries a ball.",
       "file": "llj-55a476cdc3ebcd3eba49a0c8.mp3",
       "spokenText": "Dog carries a ball.",
@@ -10981,6 +11189,14 @@
       "text": "Dog finds a book.",
       "file": "llj-7d855f7a2d2bcf0d30aa4a0d.mp3",
       "spokenText": "Dog finds a book.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Dog finds a wrapped gift and a bright balloon at the party. Find three things in the picture.",
+      "file": "llj-a7363fca154e19cd4b834afc.mp3",
+      "spokenText": "Dog finds a wrapped gift and a bright balloon at the party. Find three things in the picture.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -11818,6 +12034,22 @@
       "category": "feelings"
     },
     {
+      "text": "Drum",
+      "file": "llj-ee4fe559b2791cba21901e1b.mp3",
+      "spokenText": "Drum",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Duck",
+      "file": "llj-481cfd72268261707821995f.mp3",
+      "spokenText": "Duck",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Duck wakes up at the farm. Who does Duck hear? Tap both story pictures.",
       "file": "llj-6d9db9c3c5ab0d471c9016db.mp3",
       "spokenText": "Duck wakes up at the farm. Who does Duck hear? Tap both story pictures.",
@@ -11829,6 +12061,14 @@
       "text": "Duck walks to the pond. Rain starts to fall. Tap both story pictures.",
       "file": "llj-55dfe1836d05442a150f11d9.mp3",
       "spokenText": "Duck walks to the pond. Rain starts to fall. Tap both story pictures.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Duck watches a fish swim past a floating leaf. Find three things in the picture.",
+      "file": "llj-96ab80877a27f56b2c155dc8.mp3",
+      "spokenText": "Duck watches a fish swim past a floating leaf. Find three things in the picture.",
       "voice": "Ruth",
       "engine": "generative",
       "category": "stories"
@@ -11976,6 +12216,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "counting"
+    },
+    {
+      "text": "Earth",
+      "file": "llj-bc03b4245a5fa58227782cb4.mp3",
+      "spokenText": "Earth",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Earth has land, too. People, plants, and many animals live on land. Pretend to wave to a tiny tree below.",
@@ -13442,6 +13690,22 @@
       "category": "nature"
     },
     {
+      "text": "Fish",
+      "file": "llj-0696dd2dcf315491c4974af7.mp3",
+      "spokenText": "Fish",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Flower",
+      "file": "llj-7fc32b7af28cbe6e9757e1c2.mp3",
+      "spokenText": "Flower",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Flush the toilet",
       "file": "llj-95ade9aee55a8af202e47852.mp3",
       "spokenText": "Flush the toilet",
@@ -14122,6 +14386,14 @@
       "category": "feelings"
     },
     {
+      "text": "Gift",
+      "file": "llj-f3a656ca402727607c1835db.mp3",
+      "spokenText": "Gift",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Girl Teddy is ready to help!",
       "file": "llj-ce8b453e1d6abeb448605c58.mp3",
       "spokenText": "Girl Teddy is ready to help!",
@@ -14618,6 +14890,14 @@
       "category": "feelings"
     },
     {
+      "text": "Guitar",
+      "file": "llj-97d641d6ef67c800e3775f16.mp3",
+      "spokenText": "Guitar",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "H is for hamburger.",
       "file": "llj-a5b0c2ddb9cce0a29185d690.mp3",
       "spokenText": "H is for hamburger.",
@@ -14704,6 +14984,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Hammer",
+      "file": "llj-adc041b05b267c1d43c3f7db.mp3",
+      "spokenText": "Hammer",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Hang up a coat",
@@ -15032,6 +15320,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Hen",
+      "file": "llj-cd8a57718b4aa7b6d273e1f1.mp3",
+      "spokenText": "Hen",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Here comes the ball. Your turn!",
@@ -16594,6 +16890,14 @@
       "category": "feelings"
     },
     {
+      "text": "Kite",
+      "file": "llj-54464de5710902f56983b4f7.mp3",
+      "spokenText": "Kite",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Kitten! A kitten is a baby cat.",
       "file": "llj-a254296d5cfa2b629a5ca144.mp3",
       "spokenText": "Kitten! A kitten is a baby cat.",
@@ -16776,6 +17080,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Leaf",
+      "file": "llj-1390b5a4beead0fcef60b710.mp3",
+      "spokenText": "Leaf",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Leaving the park",
@@ -22890,6 +23202,14 @@
       "category": "nature"
     },
     {
+      "text": "Mitten",
+      "file": "llj-135fa6cb225b336e25b839fd.mp3",
+      "spokenText": "Mitten",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Moo, moo! Good morning, says Cow.",
       "file": "llj-0a576afb7009dec8e5e93215.mp3",
       "spokenText": "Moo, moo! Good morning, says Cow.",
@@ -22912,6 +23232,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Moon",
+      "file": "llj-69da8f941cf27a5955e24770.mp3",
+      "spokenText": "Moon",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "More days pass. Our garden flower opens its petals. It is in full bloom! You helped it grow.",
@@ -28010,6 +28338,14 @@
       "category": "nature"
     },
     {
+      "text": "Rain falls from a cloud. An umbrella and boots keep us dry. Find three things in the picture.",
+      "file": "llj-d98276bd9c4e8e99988823c2.mp3",
+      "spokenText": "Rain falls from a cloud. An umbrella and boots keep us dry. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Rain falls from clouds. Pat your knees like raindrops.",
       "file": "llj-6bab74fe8047a56e8ea6c111.mp3",
       "spokenText": "Rain falls from clouds. Pat your knees like raindrops.",
@@ -28226,6 +28562,14 @@
       "category": "feelings"
     },
     {
+      "text": "Rocket",
+      "file": "llj-7d0487ea47814bf4ef6b8339.mp3",
+      "spokenText": "Rocket",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Roll the bowling ball to your friend. Then we will wait for a turn back.",
       "file": "llj-88d873bff8a21102f96d5a35.mp3",
       "spokenText": "Roll the bowling ball to your friend. Then we will wait for a turn back.",
@@ -28384,6 +28728,14 @@
       "voice": "Ruth",
       "engine": "neural",
       "category": "literacy"
+    },
+    {
+      "text": "Sailboat",
+      "file": "llj-001399ceb635efcb98b48fcd.mp3",
+      "spokenText": "Sailboat",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Sam says, thank you for playing with me!",
@@ -29458,6 +29810,22 @@
       "category": "nature"
     },
     {
+      "text": "Seal",
+      "file": "llj-0cb1ba7c10c185f4dfccc971.mp3",
+      "spokenText": "Seal",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
+      "text": "Seal meets a snowman. A red mitten rests in the snow. Find three things in the picture.",
+      "file": "llj-fe23380c7f32f8d1a80f705f.mp3",
+      "spokenText": "Seal meets a snowman. A red mitten rests in the snow. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Seal! Let's help our ocean friend clean ten places. Ready to begin?",
       "file": "llj-99306dc1ea2f56bb3451a5bf.mp3",
       "spokenText": "Seal! Let's help our ocean friend clean ten places. Ready to begin?",
@@ -29850,6 +30218,14 @@
       "category": "stories"
     },
     {
+      "text": "Snowman",
+      "file": "llj-2ed4dd5da6a1e3954d1eb464.mp3",
+      "spokenText": "Snowman",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard… but practice could be fun.",
       "file": "llj-ead5461867f09f162ba58c9c.mp3",
       "spokenText": "So Trey practiced. He hit soft tosses. He hit little grounders. He hit one ball into a mud puddle. SPLAT! Vincent laughed. Annie laughed. Trey laughed too. Practice was hard… but practice could be fun.",
@@ -30018,6 +30394,14 @@
       "category": "stories"
     },
     {
+      "text": "Spoon",
+      "file": "llj-ed72f4673e3cfa658ef4607d.mp3",
+      "spokenText": "Spoon",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Spread a colorful tablecloth on top.",
       "file": "llj-30906ac14354dc54451de3ac.mp3",
       "spokenText": "Spread a colorful tablecloth on top.",
@@ -30056,6 +30440,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "Star",
+      "file": "llj-ece87b3873bb829ffdd91f24.mp3",
+      "spokenText": "Star",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Star continues the pattern. Choo choo!",
@@ -30184,6 +30576,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Suitcase",
+      "file": "llj-c7923cc626a32c77e6cdb269.mp3",
+      "spokenText": "Suitcase",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Sun hat",
@@ -30626,6 +31026,14 @@
       "category": "feelings"
     },
     {
+      "text": "Teddy bear",
+      "file": "llj-a85859f614ccf644e68dc312.mp3",
+      "spokenText": "Teddy bear",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Teddy brought Bunny a basket of carrots for a pretend picnic!",
       "file": "llj-508d2dcb2dec8b0a3cca0d54.mp3",
       "spokenText": "Teddy brought Bunny a basket of carrots for a pretend picnic!",
@@ -30672,6 +31080,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "feelings"
+    },
+    {
+      "text": "Teddy has a bedtime book. The moon peeks through the window. Find three things in the picture.",
+      "file": "llj-910c4f0e18a52cba167ce25f.mp3",
+      "spokenText": "Teddy has a bedtime book. The moon peeks through the window. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Teddy has a cozy place to rest. We can offer care with gentle hands.",
@@ -31730,6 +32146,14 @@
       "category": "stories"
     },
     {
+      "text": "That one is not in this picture. Look at the story and try again.",
+      "file": "llj-d51d9e8d8f4c5d8f5edc658f.mp3",
+      "spokenText": "That one is not in this picture. Look at the story and try again.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "That spot has a vehicle. Find the open spot for our frog.",
       "file": "llj-25edb5306601e3e327ddd929.mp3",
       "spokenText": "That spot has a vehicle. Find the open spot for our frog.",
@@ -32042,6 +32466,14 @@
       "category": "nature"
     },
     {
+      "text": "The cow watches a tractor while the hen pecks nearby. Find three things in the picture.",
+      "file": "llj-c1e4bba5c985e71b6365c05f.mp3",
+      "spokenText": "The cow watches a tractor while the hen pecks nearby. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "The crab belongs in the ocean. Look for litter.",
       "file": "llj-c12f2e01abfbdbe57ea1e567.mp3",
       "spokenText": "The crab belongs in the ocean. Look for litter.",
@@ -32112,6 +32544,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "The drum, guitar, and bell are ready for a cheerful concert. Find three things in the picture.",
+      "file": "llj-194e24933e160eaa8381705c.mp3",
+      "spokenText": "The drum, guitar, and bell are ready for a cheerful concert. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "The egg has a oval shape.",
@@ -32656,6 +33096,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "nature"
+    },
+    {
+      "text": "The train waits by the station clock. A suitcase is ready to go. Find three things in the picture.",
+      "file": "llj-f833f5d7c2b644e9d0ddbe67.mp3",
+      "spokenText": "The train waits by the station clock. A suitcase is ready to go. Find three things in the picture.",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "The tree blocks some sunlight. Look at its shadow on the ground.",
@@ -34274,6 +34722,14 @@
       "category": "nature"
     },
     {
+      "text": "Toolbox",
+      "file": "llj-59e8523df3432a15ca8a7890.mp3",
+      "spokenText": "Toolbox",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Toss the soft ball to your friend. Then we will wait for a turn back.",
       "file": "llj-632ef0112aa02d4100b01d08.mp3",
       "spokenText": "Toss the soft ball to your friend. Then we will wait for a turn back.",
@@ -34426,12 +34882,28 @@
       "category": "nature"
     },
     {
+      "text": "Train",
+      "file": "llj-2b5757251d9eff4d93ef342d.mp3",
+      "spokenText": "Train",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "Trash Truck",
       "file": "llj-74036d839070e8997890269e.mp3",
       "spokenText": "Trash Truck",
       "voice": "Ruth",
       "engine": "generative",
       "category": "literacy"
+    },
+    {
+      "text": "Tree",
+      "file": "llj-cf7c9140b467e267f0d16173.mp3",
+      "spokenText": "Tree",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "Trey Triceratops loved to run. He loved to stomp. He loved to play. But most of all, Trey wanted to learn basketball one day.",
@@ -39682,6 +40154,14 @@
       "category": "feelings"
     },
     {
+      "text": "Wrench",
+      "file": "llj-048c91e7aab9ac230fa928bb.mp3",
+      "spokenText": "Wrench",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "X is for x-ray hand.",
       "file": "llj-434e2cf0c908694f3e54bf58.mp3",
       "spokenText": "X is for x-ray hand.",
@@ -42554,6 +43034,14 @@
       "category": "shapes"
     },
     {
+      "text": "You found all three things! Ready for another story?",
+      "file": "llj-75e17c0e141b35dbfc6464d5.mp3",
+      "spokenText": "You found all three things! Ready for another story?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
+    },
+    {
       "text": "You found an empty can. Find another one just like it to collect the pair.",
       "file": "llj-a4f1da9fbe05d2c6c89f9599.mp3",
       "spokenText": "You found an empty can. Find another one just like it to collect the pair.",
@@ -42600,6 +43088,14 @@
       "voice": "Ruth",
       "engine": "generative",
       "category": "shapes"
+    },
+    {
+      "text": "You found something from our story! What else can you see?",
+      "file": "llj-76bf718ca3c63628e9711cd9.mp3",
+      "spokenText": "You found something from our story! What else can you see?",
+      "voice": "Ruth",
+      "engine": "generative",
+      "category": "stories"
     },
     {
       "text": "You found the Brontosaurus! What a great explorer!",

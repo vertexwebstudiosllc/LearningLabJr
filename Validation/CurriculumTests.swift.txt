@@ -7,6 +7,54 @@ import AVFoundation
 final class CurriculumTests: XCTestCase {
 
     @MainActor
+    func testPictureHuntStoriesChoicesNoRepeatsAndRuth() throws {
+        XCTAssertEqual(HuntStory.bank.count, 16)
+        XCTAssertEqual(Set(HuntStory.bank.map(\.id)).count, 16)
+        for item in HuntItem.bank {
+            if let asset = item.asset { XCTAssertNotNil(UIImage(named: asset), asset) }
+            else if !item.symbol.isEmpty { XCTAssertNotNil(UIImage(systemName: item.symbol), item.symbol) }
+        }
+        for text in HuntStory.narration {
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
+            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.engine, "generative", text)
+        }
+        for story in HuntStory.bank {
+            XCTAssertEqual(story.targets.count, 3); XCTAssertEqual(story.decoys.count, 3)
+            XCTAssertEqual(Set(story.targets + story.decoys).count, 6)
+            for id in story.targets + story.decoys { XCTAssertTrue(HuntItem.bank.contains { $0.id == id }) }
+            let renderer = ImageRenderer(content: HuntStoryPicture(story: story).frame(width: 320, height: 210))
+            renderer.scale = 2
+            let picture = try XCTUnwrap(renderer.uiImage)
+            let attachment = XCTAttachment(image: picture); attachment.name = "Hunt scene " + story.id; attachment.lifetime = .keepAlways; add(attachment)
+        }
+        for _ in 0..<60 {
+            var play = PictureHuntPlay(avoiding: ["farm", "picnic", "bedtime"])
+            XCTAssertFalse(["farm", "picnic", "bedtime"].contains(play.current.id))
+            var seen = Set<String>()
+            for index in 0..<16 {
+                XCTAssertEqual(play.index, index); XCTAssertTrue(seen.insert(play.current.id).inserted)
+                XCTAssertEqual(Set(play.choices), Set(play.current.targets + play.current.decoys))
+                play.next(); XCTAssertEqual(play.index, index)
+                XCTAssertFalse(play.select("invalid"))
+                for id in play.current.decoys { XCTAssertFalse(play.select(id)); XCTAssertTrue(play.found.isEmpty) }
+                for id in play.current.targets.shuffled() { XCTAssertTrue(play.select(id)); XCTAssertFalse(play.select(id)) }
+                XCTAssertTrue(play.solved); play.next()
+            }
+            XCTAssertTrue(play.complete); play.next(); XCTAssertEqual(play.index, 15)
+        }
+        let suite = "hunt.tests." + UUID().uuidString
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite)); defer { defaults.removePersistentDomain(forName: suite) }
+        let first = PictureHuntSession(defaults: defaults)
+        let id = first.play.current.id
+        let second = PictureHuntSession(defaults: defaults)
+        XCTAssertNotEqual(id, second.play.current.id)
+        let previous = second.play.current.id; second.replay()
+        XCTAssertNotEqual(previous, second.play.current.id); XCTAssertFalse(second.play.solved)
+        XCTAssertEqual(second.play.index, 0)
+    }
+
+
+    @MainActor
     func testGoodbyeStoriesMovementChoicesActionsPauseAndRuth() {
         XCTAssertEqual(Set(GoodbyeStory.bank.map(\.id)).count, 8)
         for text in GoodbyeStory.narration {

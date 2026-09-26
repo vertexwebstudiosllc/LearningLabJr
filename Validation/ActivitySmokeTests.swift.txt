@@ -4,6 +4,72 @@ import StoreKitTest
 final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
+    func testPictureHuntSixChoicesSixteenScenesAndReplay() async throws {
+        let app = try await launch()
+        func tap(_ element: XCUIElement) throws {
+            try reveal(element, in: app)
+            if element.frame.maxY > app.windows.firstMatch.frame.maxY - 40 { app.scrollViews.firstMatch.swipeUp() }
+            try reveal(element, in: app); element.tap()
+        }
+        try tap(app.buttons["category.Story Time"])
+        try tap(app.buttons["activity-card.Picture Hunt"])
+        let targets: [String: [String]] = [
+            "picnic": ["bunny", "apple", "cup"],
+            "farm": ["cow", "tractor", "hen"],
+            "bedtime": ["teddy", "book", "moon"],
+            "beach": ["crab", "bucket", "boat"],
+            "space": ["rocket", "earth", "star"],
+            "garden": ["butterfly", "flower", "watering"],
+            "rain": ["umbrella", "boots", "cloud"],
+            "music": ["drum", "guitar", "bell"],
+            "kitchen": ["carrot", "bowl", "spoon"],
+            "snow": ["seal", "snowman", "mitten"],
+            "library": ["cat", "book", "lamp"],
+            "ocean": ["duck", "fish", "leaf"],
+            "birthday": ["dog", "gift", "balloon"],
+            "park": ["kite", "ball", "tree"],
+            "workshop": ["hammer", "wrench", "toolbox"],
+            "station": ["train", "suitcase", "clock"]
+        ]
+        var seen = Set<String>()
+        var lastScene = ""
+        for round in 0..<16 {
+            let scene = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("hunt.scene.") })
+            let id = String(scene.identifier.dropFirst("hunt.scene.".count))
+            XCTAssertTrue(seen.insert(id).inserted); lastScene = id
+            let answers = try XCTUnwrap(targets[id])
+            let choices = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("hunt.choice.") }
+            XCTAssertEqual(choices.count, 6)
+            XCTAssertEqual(app.staticTexts["hunt.progress"].label, "Story \(round + 1) of 16 · 0 of 3 found")
+            let wrong = try XCTUnwrap(choices.first { !answers.contains(String($0.identifier.dropFirst("hunt.choice.".count))) })
+            try tap(wrong)
+            XCTAssertFalse(app.buttons["hunt.next"].exists)
+            XCTAssertEqual(app.staticTexts["hunt.progress"].label, "Story \(round + 1) of 16 · 0 of 3 found")
+            for (count, answer) in answers.reversed().enumerated() {
+                try tap(app.buttons["hunt.hear.\(answer)"])
+                try tap(app.buttons["hunt.choice.\(answer)"])
+                XCTAssertEqual(app.staticTexts["hunt.progress"].label, "Story \(round + 1) of 16 · \(count + 1) of 3 found")
+                XCTAssertFalse(app.buttons["hunt.choice.\(answer)"].isEnabled)
+            }
+            if round < 3 {
+                try reveal(scene, in: app)
+                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Picture Hunt " + id; shot.lifetime = .keepAlways; add(shot)
+            }
+            try tap(app.buttons["hunt.next"])
+        }
+        XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
+        try tap(app.buttons["Play again"])
+        XCTAssertFalse(app.staticTexts["hunt.scene.\(lastScene)"].exists)
+        XCTAssertEqual(app.staticTexts["hunt.progress"].label, "Story 1 of 16 · 0 of 3 found")
+        let restart = try XCTUnwrap(app.staticTexts.allElementsBoundByIndex.first { $0.identifier.hasPrefix("hunt.scene.") }).identifier
+        app.navigationBars.buttons.firstMatch.tap()
+        try tap(app.buttons["activity-card.Picture Hunt"])
+        XCTAssertFalse(app.staticTexts[restart].exists)
+        XCTAssertEqual(app.staticTexts["hunt.progress"].label, "Story 1 of 16 · 0 of 3 found")
+    }
+
+
+    @MainActor
     func testGoodbyeEightStoriesDragChoicesEndingsAndPause() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {

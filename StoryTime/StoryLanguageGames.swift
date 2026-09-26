@@ -27,27 +27,6 @@ private struct StoryPictureChoice: View {
     }
 }
 
-struct StoryPictureHunt: View {
-    private let pieces = [StoryPiece("apple", "Apple", asset: "Apple"), StoryPiece("ball", "Ball", asset: "basketball"), StoryPiece("rabbit", "Bunny", asset: "rabbit"), StoryPiece("cup", "Cup", symbol: "cup.and.saucer.fill"), StoryPiece("bread", "Bread", asset: "Bread"), StoryPiece("flower", "Flower", symbol: "camera.macro")]
-    private let targets = [2, 0, 3]
-    @State private var found: Set<Int> = []
-    @StateObject private var narrator = GameNarrator()
-    private var complete: Bool { found.count >= targets.count }
-    var body: some View {
-        ToddlerGameScaffold(title: "Picture Hunt", prompt: complete ? "You found Bunny, the apple, and the cup!" : "Bunny is having a picnic. Can you find the \(pieces[targets[found.count]].title.lowercased())?", accent: .purple, completion: complete, onReplay: { found = [] }) {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                ForEach(pieces.indices, id: \.self) { index in
-                    StoryPictureChoice(piece: pieces[index], selected: found.contains(index)) {
-                        guard !complete else { return }
-                        if index == targets[found.count] { found.insert(index) }
-                        else { narrator.speak("That is the \(pieces[index].title.lowercased()). Look for the \(pieces[targets[found.count]].title.lowercased()).") }
-                    }
-                }
-            }.padding(12).background(Color.green.opacity(0.10), in: RoundedRectangle(cornerRadius: 28))
-        }.onDisappear { narrator.stop() }
-    }
-}
-
 struct StorySequenceGame: View {
     private let routines = [
         [StoryPiece("wash", "Wash hands", symbol: "hands.sparkles.fill"), StoryPiece("eat", "Eat lunch", symbol: "fork.knife"), StoryPiece("clean", "Clear the table", symbol: "sparkles")],

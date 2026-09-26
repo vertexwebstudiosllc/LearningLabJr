@@ -1,0 +1,332 @@
+[
+  {
+    "text": "Bunny brought an apple and a cup to the picnic. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "The cow watches a tractor while the hen pecks nearby. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Teddy has a bedtime book. The moon peeks through the window. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A crab finds a bucket on the sand. A sailboat floats nearby. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A rocket flies past Earth. A bright star shines far away. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A butterfly visits a flower beside the watering can. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Rain falls from a cloud. An umbrella and boots keep us dry. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "The drum, guitar, and bell are ready for a cheerful concert. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A carrot, a bowl, and a spoon are ready for soup time. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Seal meets a snowman. A red mitten rests in the snow. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Cat curls up beside a book while a little lamp glows. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Duck watches a fish swim past a floating leaf. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Dog finds a wrapped gift and a bright balloon at the party. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A kite flies above the park. A ball rests beside a tree. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "A hammer and a wrench wait beside the toolbox. Let’s build! Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "The train waits by the station clock. A suitcase is ready to go. Find three things in the picture.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bunny",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Apple",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Cup",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Cow",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Tractor",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Hen",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Teddy bear",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Book",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Moon",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Crab",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bucket",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Sailboat",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Rocket",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Earth",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Star",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Butterfly",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Flower",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Watering can",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Umbrella",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Boots",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Cloud",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Drum",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Guitar",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bell",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Carrot",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Bowl",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Spoon",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Seal",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Snowman",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Mitten",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Cat",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Lamp",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Duck",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Fish",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Leaf",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Dog",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Gift",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Balloon",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Kite",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Ball",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Tree",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Hammer",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Wrench",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Toolbox",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Train",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Suitcase",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "Clock",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You found something from our story! What else can you see?",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "That one is not in this picture. Look at the story and try again.",
+    "category": "stories",
+    "delivery": "story"
+  },
+  {
+    "text": "You found all three things! Ready for another story?",
+    "category": "stories",
+    "delivery": "story"
+  }
+]

@@ -25,7 +25,7 @@ enum StoryActivity: String, CaseIterable, Identifiable {
         let details: (String, String, String, String)
         switch self {
         case .library: details = ("Read Together", "Shared reading", "Listen to and turn the pages of four illustrated books", "For a younger toddler, describe a few pictures instead of reading every word. Stop whenever your child is ready.")
-        case .pictureHunt: details = ("Picture Hunt", "Listening & vocabulary", "Find named objects within a picnic scene", "Let your child point, speak, or use their home language.")
+        case .pictureHunt: details = ("Picture Hunt", "Listening & vocabulary", "Find three pictured objects among six choices across sixteen story scenes", "Look at the scene together and name what you notice. Find the three pictured items in any order.")
         case .storyOrder: details = ("First, Next, Last", "Everyday sequences", "Arrange a three-picture routine in order", "Talk about the steps in a familiar real-life routine.")
         case .puppets: details = ("Puppet Friends", "Pretend dialogue", "Give two puppets turns to greet, speak, and say goodbye", "Use different voices and leave a pause for your child’s reply.")
         case .finishSentence: details = ("Finish My Sentence", "Understand spoken sentences", "Complete an everyday spoken sentence with a picture", "Expand your child’s words: ‘Ball’ can become ‘A bouncy ball!’")
