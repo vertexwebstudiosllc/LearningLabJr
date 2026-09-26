@@ -24,7 +24,10 @@ struct ContentView: View {
             BackgroundMusicManager.shared.setEnabled(isEnabled)
         }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .active { timer.refresh() }
+            if phase == .active {
+                timer.refresh()
+                Task { await StoreManager.shared.updateCustomerProductStatus() }
+            }
             updateAudio(active: phase == .active && !timer.isLocked)
         }
         .onChange(of: timer.isLocked) { _, locked in

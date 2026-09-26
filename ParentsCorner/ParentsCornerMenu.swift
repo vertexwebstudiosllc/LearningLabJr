@@ -65,6 +65,12 @@ struct ParentsCornerMenu: View {
                 }
             }
 
+            Section("Support & privacy") {
+                Link("Contact Learning Lab Jr.", destination: AppLinks.support)
+                Link("Privacy Policy", destination: AppLinks.privacy)
+                Link("Terms of Use", destination: AppLinks.terms)
+            }
+
             Section("Our approach") {
                 Label("No third-party ads or account required for play", systemImage: "hand.raised.fill")
                 Label("Built-in activities work offline", systemImage: "wifi.slash")

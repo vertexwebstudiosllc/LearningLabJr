@@ -10,7 +10,9 @@ project.mkdir(parents=True, exist_ok=True)
 text = (root.parent / 'LearningLabJr.xcodeproj/project.pbxproj').read_text()
 text = text.replace('path = LearningLabJr;', f'path = "{root}";')
 for folder, fixture in [('LearningLabJrTests', 'CurriculumTests.swift.txt'),
-                        ('LearningLabJrUITests', 'ActivitySmokeTests.swift.txt')]:
+                        ('LearningLabJrTests', 'ReleaseSubscriptionTests.swift.txt'),
+                        ('LearningLabJrUITests', 'ActivitySmokeTests.swift.txt'),
+                        ('LearningLabJrUITests', 'ReleasePaywallUITests.swift.txt')]:
     destination = work / folder
     destination.mkdir(exist_ok=True)
     (destination / fixture.removesuffix('.txt')).write_text((root / 'Validation' / fixture).read_text())
@@ -35,4 +37,5 @@ for title, folder, filename in [
     categories.append({'title': title, 'games': names})
 (work / 'LearningLabJrUITests' / 'ActivityInventory.json').write_text(json.dumps(categories))
 (work / 'LearningLabJrUITests' / 'LearningLabJr.storekit').write_text((root / 'LearningLabJr.storekit').read_text())
+(work / 'LearningLabJrTests' / 'LearningLabJr.storekit').write_text((root / 'LearningLabJr.storekit').read_text())
 print(project)

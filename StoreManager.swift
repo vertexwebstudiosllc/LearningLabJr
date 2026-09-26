@@ -3,12 +3,18 @@ import Combine
 import StoreKit
 import SwiftUI
 
+enum AppLinks {
+    static let privacy = URL(string: "https://vertexwebstudios.com/learning-lab-jr-privacy.html")!
+    static let terms = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    static let support = URL(string: "https://vertexwebstudios.com/learning-lab-jr.html#contact")!
+}
+
 @MainActor
 final class StoreManager: ObservableObject {
     static let shared = StoreManager()
 
-    @Published var products: [Product] = []
-    @Published var hasPremium: Bool = false
+    @Published private(set) var products: [Product] = []
+    @Published private(set) var hasPremium: Bool = false
     @Published private(set) var isPurchasing = false
     @Published private(set) var isLoadingProducts = false
     @Published private(set) var statusMessage: String?
@@ -17,6 +23,7 @@ final class StoreManager: ObservableObject {
         "com.learninglabjr.premium.monthly"
     ]
 
+    private var entitlementRefresh = 0
     private var updateListenerTask: Task<Void, Error>?
 
     private init() {
@@ -38,14 +45,14 @@ final class StoreManager: ObservableObject {
         defer { isLoadingProducts = false }
         do {
             products = try await Product.products(for: productIDs)
-            statusMessage = nil
+            statusMessage = products.isEmpty ? "Premium is not available in the App Store right now. Please try again later." : nil
         } catch {
             statusMessage = "We couldn't reach the App Store. Please try again when connected."
         }
     }
 
     func purchase(_ product: Product) async {
-        guard !isPurchasing else { return }
+        guard !isPurchasing, productIDs.contains(product.id), product.type == .autoRenewable else { return }
         isPurchasing = true
         statusMessage = nil
         defer { isPurchasing = false }
@@ -88,6 +95,8 @@ final class StoreManager: ObservableObject {
     }
 
     func updateCustomerProductStatus() async {
+        entitlementRefresh += 1
+        let refresh = entitlementRefresh
         var premiumActive = false
 
         for await result in Transaction.currentEntitlements {
@@ -106,6 +115,7 @@ final class StoreManager: ObservableObject {
             }
         }
 
+        guard refresh == entitlementRefresh else { return }
         hasPremium = premiumActive
         if premiumActive { statusMessage = nil }
     }
@@ -163,6 +173,7 @@ struct PremiumParentGateView: View {
 struct PremiumPaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var storeManager = StoreManager.shared
+    @State private var introductoryOfferText: String?
 
     var body: some View {
         ScrollView {
@@ -181,6 +192,14 @@ struct PremiumPaywallView: View {
                 .multilineTextAlignment(.center)
 
             if let product = storeManager.products.first {
+                Text(product.displayName)
+                    .font(.headline)
+                if let introductoryOfferText {
+                    Text(introductoryOfferText)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .accessibilityIdentifier("premium.offer")
+                }
                 Button {
                     Task {
                         await storeManager.purchase(product)
@@ -195,6 +214,8 @@ struct PremiumPaywallView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 }
                 .disabled(storeManager.isPurchasing)
+                .accessibilityIdentifier("premium.subscribe")
+                .task(id: product.id) { await updateIntroductoryOffer(for: product) }
             } else {
                 Text(storeManager.isLoadingProducts ? "Loading subscription…" : "Subscription unavailable")
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
@@ -214,7 +235,7 @@ struct PremiumPaywallView: View {
             }
             if storeManager.isPurchasing { ProgressView("Connecting to the App Store") }
 
-            Text("Subscriptions renew automatically until canceled in your App Store account settings.")
+            Text("Payment is charged to your Apple Account at confirmation, or after an eligible free trial. Subscriptions renew automatically unless canceled at least 24 hours before the current period ends. Manage or cancel in your App Store account settings.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
 
             Button("Restore Purchases") {
@@ -225,6 +246,13 @@ struct PremiumPaywallView: View {
             .font(.system(size: 16, weight: .semibold, design: .rounded))
 
             .disabled(storeManager.isPurchasing)
+
+            HStack(spacing: 24) {
+                Link("Privacy Policy", destination: AppLinks.privacy)
+                Link("Terms of Use", destination: AppLinks.terms)
+            }
+            .font(.footnote)
+            .frame(minHeight: 44)
 
             Button("Not Now") {
                 dismiss()
@@ -244,6 +272,37 @@ struct PremiumPaywallView: View {
                 dismiss()
             }
         }
+    }
+
+    private func updateIntroductoryOffer(for product: Product) async {
+        introductoryOfferText = nil
+        guard let subscription = product.subscription,
+              let offer = subscription.introductoryOffer,
+              await subscription.isEligibleForIntroOffer else { return }
+        let duration = periodDescription(offer.period, count: offer.periodCount)
+        let renewal = "Then \(product.displayPrice) per \(billingPeriod(product)), renewing automatically."
+        switch offer.paymentMode {
+        case .freeTrial:
+            introductoryOfferText = "\(duration) free for eligible new subscribers. \(renewal)"
+        case .payUpFront:
+            introductoryOfferText = "\(offer.displayPrice) for \(duration) for eligible new subscribers. \(renewal)"
+        case .payAsYouGo:
+            introductoryOfferText = "\(offer.displayPrice) per \(periodDescription(offer.period)) for \(duration) for eligible new subscribers. \(renewal)"
+        default: break
+        }
+    }
+
+    private func periodDescription(_ period: Product.SubscriptionPeriod, count: Int = 1) -> String {
+        let value = period.value * count
+        let unit: String
+        switch period.unit {
+        case .day: unit = "day"
+        case .week: unit = "week"
+        case .month: unit = "month"
+        case .year: unit = "year"
+        @unknown default: unit = "period"
+        }
+        return "\(value) \(unit)\(value == 1 ? "" : "s")"
     }
 
     private func billingPeriod(_ product: Product) -> String {

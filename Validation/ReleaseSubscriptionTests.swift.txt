@@ -1,0 +1,90 @@
+import XCTest
+import StoreKit
+import StoreKitTest
+@testable import LearningLabJr
+
+@MainActor
+final class ReleaseSubscriptionTests: XCTestCase {
+    private let productID = "com.learninglabjr.premium.monthly"
+
+    private func prepare() async throws -> SKTestSession {
+        let session = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        session.resetToDefaultState()
+        session.clearTransactions()
+        session.disableDialogs = true
+        session.timeRate = .realTime
+        await StoreManager.shared.updateCustomerProductStatus()
+        XCTAssertFalse(StoreManager.shared.hasPremium)
+        return session
+    }
+
+    private func assertPremium(_ expected: Bool) async throws {
+        for _ in 0..<30 {
+            await StoreManager.shared.updateCustomerProductStatus()
+            if StoreManager.shared.hasPremium == expected { return }
+            try await Task.sleep(for: .milliseconds(100))
+        }
+        XCTAssertEqual(StoreManager.shared.hasPremium, expected)
+    }
+
+    func testPurchaseRestoreAndExpiration() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions() }
+        let products = try await Product.products(for: [productID])
+        let product = try XCTUnwrap(products.first)
+        XCTAssertEqual(product.type, .autoRenewable)
+        XCTAssertEqual(product.subscription?.subscriptionPeriod.unit, .month)
+        await StoreManager.shared.purchase(product)
+        try await assertPremium(true)
+        XCTAssertFalse(StoreManager.shared.isPurchasing)
+        await StoreManager.shared.restorePurchases()
+        try await assertPremium(true)
+        try session.expireSubscription(productIdentifier: productID)
+        try await assertPremium(false)
+    }
+
+    func testRefundRemovesAccess() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions() }
+        let transaction = try await session.buyProduct(identifier: productID)
+        try await assertPremium(true)
+        try session.refundTransaction(identifier: UInt(transaction.id))
+        try await assertPremium(false)
+    }
+
+    func testCancelRenewalRetainsPaidAccessUntilExpiration() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions() }
+        let transaction = try await session.buyProduct(identifier: productID)
+        try session.disableAutoRenewForTransaction(identifier: UInt(transaction.id))
+        try await assertPremium(true)
+        try session.expireSubscription(productIdentifier: productID)
+        try await assertPremium(false)
+    }
+
+    func testAskToBuyWaitsForApproval() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions(); session.resetToDefaultState() }
+        session.askToBuyEnabled = true
+        let products = try await Product.products(for: [productID])
+        let product = try XCTUnwrap(products.first)
+        await StoreManager.shared.purchase(product)
+        XCTAssertFalse(StoreManager.shared.hasPremium)
+        XCTAssertFalse(StoreManager.shared.isPurchasing)
+        XCTAssertTrue(StoreManager.shared.statusMessage?.contains("approval") == true)
+        let pending = try XCTUnwrap(session.allTransactions().first)
+        try session.approveAskToBuyTransaction(identifier: pending.identifier)
+        try await assertPremium(true)
+    }
+
+    func testPrivacyManifestAndPublicLinks() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "PrivacyInfo", withExtension: "xcprivacy"))
+        let manifest = try XCTUnwrap(PropertyListSerialization.propertyList(from: Data(contentsOf: url), format: nil) as? [String: Any])
+        XCTAssertEqual(manifest["NSPrivacyTracking"] as? Bool, false)
+        let APIs = try XCTUnwrap(manifest["NSPrivacyAccessedAPITypes"] as? [[String: Any]])
+        XCTAssertTrue(APIs.contains { ($0["NSPrivacyAccessedAPITypeReasons"] as? [String]) == ["CA92.1"] })
+        XCTAssertEqual(AppLinks.privacy.absoluteString, "https://vertexwebstudios.com/learning-lab-jr-privacy.html")
+        XCTAssertEqual(AppLinks.support.fragment, "contact")
+        XCTAssertEqual(AppLinks.terms.host, "www.apple.com")
+    }
+}
