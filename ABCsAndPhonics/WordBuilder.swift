@@ -78,7 +78,7 @@ struct GuidedWordBuilderGame: View {
                 ToddlerGameScaffold(title: "Word Builder", prompt: current.prompt, accent: .orange) {
                     VStack(spacing: 18) {
                         VStack(spacing: 8) {
-                            ToddlerArt(asset: current.asset, size: 96)
+                            LiteracyVocabularyArt(word: current.word).frame(width: 96, height: 96)
                             Text(current.word).font(.title.bold())
                         }
                         .accessibilityElement(children: .ignore)

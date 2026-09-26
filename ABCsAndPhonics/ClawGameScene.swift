@@ -5,6 +5,7 @@
 //  Created by Matthew Teitelman on 8/2/25.
 //
 import SpriteKit
+import SwiftUI
 
 struct ClawImageOption {
     let image: String
@@ -178,7 +179,30 @@ class ClawGameScene: SKScene {
     private var originalClawPosition: CGPoint!
     private var isDropping = false
 
-    private let imageOptions = ClawImageOptionsLoader.loadOptions()
+    private var imageOptions = ClawImageOptionsLoader.loadOptions()
+    private var textureCache: [String: SKTexture] = [:]
+    private(set) var category: WordClawCategory = .sports
+
+    func setCategory(_ category: WordClawCategory) {
+        guard children.isEmpty else { return }
+        self.category = category; imageOptions = category.options
+    }
+
+    private func texture(for option: ClawImageOption) -> SKTexture? {
+        if let cached = textureCache[option.image] { return cached }
+        let texture: SKTexture
+        if option.image.hasPrefix("vocabulary:") {
+            let renderer = ImageRenderer(content: LiteracyVocabularyArt(word: option.name).frame(width: 160, height: 160))
+            renderer.scale = 2
+            guard let image = renderer.uiImage else { return nil }
+            texture = SKTexture(image: image)
+        } else {
+            guard let image = UIImage(named: option.image) else { return nil }
+            texture = SKTexture(image: image)
+        }
+        textureCache[option.image] = texture
+        return texture
+    }
     private var itemSide: CGFloat = 0
     private var lastPickedName: String?
     private var grabbedItem: SKSpriteNode?
@@ -225,10 +249,10 @@ class ClawGameScene: SKScene {
         let byCount      = availW / CGFloat(visibleItemCount)
         let maxH         = size.height * 0.22
         let maxClawWidth = claw.size.width * 1.08
-        itemSide         = min(byCount * 1.42, maxH, maxClawWidth)
+        itemSide         = min(byCount * 0.90, maxH, maxClawWidth)
         dropDistance     = max(0, originalClawPosition.y - itemSide * 1.25 - size.height * bottomInsetRatio)
 
-        // Spawn bottom-row sports items
+        // Spawn the selected category’s objects
         let initialOptions = Array(playableOptions.shuffled().prefix(visibleItemCount))
         let left = margin + itemSide / 2
         let spacing = visibleItemCount > 1 ? (size.width - 2 * left) / CGFloat(visibleItemCount - 1) : 0
@@ -381,12 +405,12 @@ class ClawGameScene: SKScene {
     }
 
     private var playableOptions: [ClawImageOption] {
-        let optionsWithTextures = imageOptions.filter { SKTexture(imageNamed: $0.image).size() != .zero }
-        return optionsWithTextures.isEmpty ? imageOptions : optionsWithTextures
+        imageOptions.filter { texture(for: $0) != nil }
     }
 
     private func addBottomItem(_ option: ClawImageOption, at position: CGPoint) {
-        let node = SKSpriteNode(imageNamed: option.image)
+        guard let texture = texture(for: option) else { return }
+        let node = SKSpriteNode(texture: texture)
         node.name = option.name
         node.userData = NSMutableDictionary(dictionary: ["image": option.image])
         node.size = fittedSize(for: node.texture?.size() ?? .zero, maxWidth: itemSide, maxHeight: itemSide)

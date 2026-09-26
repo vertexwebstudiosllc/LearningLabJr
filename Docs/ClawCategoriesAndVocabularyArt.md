@@ -1,0 +1,9 @@
+# Word Claw categories and clean literacy art
+
+Word Claw now offers Sports, Animals, Nature & space, and Everyday things. Each category supplies at least seven objects and starts with five visible choices. Switching categories stops the prior narration and scene, clears the old selection, and creates a new machine round with the chosen objects. The original background, claw motion, object replacement behavior, and accessibility pickup action remain. Object spacing keeps the new full-width illustrations from overlapping. Every selectable object name has an existing bundled Ruth recording.
+
+Word Builder, Beginning Sounds, ABC Adventure, and Rhyme Garden now render their vocabulary with explicit background-free artwork choices. ABC Adventure shares Beginning Sounds' renderer, including the extended Word Builder vocabulary. The resolver uses existing clean animal/space cutouts, native drawings, transparent platform illustrations, and verified transparent vehicle/sports assets. There is no fallback to the old opaque food or animal sprites. Existing word banks and narration keys are preserved.
+
+Illustrations include food contents where necessary to distinguish the word (for example, a filled jam jar and a bowl of soup). Intentional object surfaces, such as quilt fabric and X-ray panels, remain part of those pictures.
+
+Validation: 107 native tests passed, including vocabulary coverage, asset resolution, claw scene contents, and bundled Ruth clip coverage. A simulator walkthrough passed for all four claw categories and the four updated literacy games with recorded narration enabled. After final illustration and spacing adjustments, four focused native/art tests and the complete simulator walkthrough passed again. The rendered vocabulary gallery and final claw layout were visually reviewed.

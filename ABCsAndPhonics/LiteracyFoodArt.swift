@@ -110,7 +110,10 @@ struct LiteracyFoodArt: View {
                         p.addCurve(to: CGPoint(x: 82, y: CGFloat(30+i*7)), control1: CGPoint(x: 36, y: CGFloat(5+i*7)), control2: CGPoint(x: 64, y: CGFloat(55+i*7)))
                     }.stroke(.yellow, style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 }
-                wedge.fill(.teal).frame(height: 60).offset(y: 24)
+                Path { p in
+                    p.move(to: CGPoint(x: 10, y: 55)); p.addLine(to: CGPoint(x: 90, y: 55))
+                    p.addQuadCurve(to: CGPoint(x: 10, y: 55), control: CGPoint(x: 50, y: 128)); p.closeSubpath()
+                }.fill(.teal)
             }
         case "zucchini":
             Capsule().fill(Color(red: 0.18, green: 0.46, blue: 0.17)).frame(width: 35, height: 86)

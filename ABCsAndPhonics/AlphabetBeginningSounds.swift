@@ -135,8 +135,8 @@ struct BeginningSoundsArt: View {
     let letter: String
 
     var body: some View {
-        if let asset {
-            ToddlerArt(asset: asset, size: 96)
+        if asset != nil {
+            LiteracyVocabularyArt(word: word).frame(width: 96, height: 96)
         } else {
             switch word {
             case "ice cube":

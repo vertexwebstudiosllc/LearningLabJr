@@ -82,7 +82,7 @@ struct RhymeGardenGame: View {
                 ToddlerGameScaffold(title: "Rhyme Garden", prompt: current.prompt, accent: .orange) {
                     VStack(spacing: 20) {
                         VStack(spacing: 8) {
-                            ToddlerArt(asset: current.pair.asset, size: 96)
+                            LiteracyVocabularyArt(word: current.pair.word).frame(width: 96, height: 96)
                             Text(current.pair.word).font(.title.bold())
                         }
                         .accessibilityElement(children: .ignore)

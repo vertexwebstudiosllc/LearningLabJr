@@ -1,0 +1,51 @@
+import XCTest
+import StoreKitTest
+
+final class LiteracyVocabularyUITests: XCTestCase {
+    @MainActor func testClawCategoriesAndLiteracyPictures() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "YES", "-parents.backgroundMusicEnabled", "NO", "-parents.useRecordedNarration", "YES", "-validateNarrationCoverage"]
+        app.launch()
+        func tap(_ element: XCUIElement) throws {
+            for _ in 0..<15 {
+                let frame = element.exists ? element.frame : .null
+                if frame.intersects(app.windows.firstMatch.frame) && element.isHittable {
+                    if frame.maxY > app.windows.firstMatch.frame.maxY - 35 { app.swipeUp() }
+                    element.tap(); return
+                }
+                if !frame.isNull && frame.midY < app.windows.firstMatch.frame.midY { app.swipeDown() } else { app.swipeUp() }
+            }
+            XCTFail("Missing control: \(element)")
+        }
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        try tap(app.buttons["category.ABCs & Phonics"])
+        try tap(app.buttons["activity-card.Word Claw"])
+        let groups = [
+            ("animals", ["Cat", "Dog", "Cow", "Duck", "Hen", "Crab", "Seal", "Fish"]),
+            ("nature", ["Flower", "Tree", "Leaf", "Butterfly", "Moon", "Star", "Earth", "Rocket"]),
+            ("things", ["Book", "Cup", "Bowl", "Spoon", "Teddy bear", "Bell", "Clock", "Lamp"]),
+            ("sports", ["Basketball", "Baseball", "Football", "Hockey Puck", "Tennis Ball", "Golf Ball", "Volleyball"])
+        ]
+        for (category, names) in groups {
+            try tap(app.buttons["claw.category." + category])
+            XCTAssertFalse(app.staticTexts["original-arcade.item-name"].exists)
+            let canvas = app.descendants(matching: .any).matching(identifier: "original-arcade.canvas").firstMatch
+            try tap(canvas)
+            let name = app.staticTexts["original-arcade.item-name"]
+            XCTAssertTrue(name.waitForExistence(timeout: 5))
+            XCTAssertTrue(names.contains(name.label), "Unexpected \(name.label) in \(category)")
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Claw \(category)"; shot.lifetime = .keepAlways; add(shot)
+        }
+        app.navigationBars.buttons.firstMatch.tap()
+        for title in ["Word Builder", "Beginning Sounds", "ABC Adventure", "Rhyme Garden"] {
+            try tap(app.buttons["activity-card." + title])
+            XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Clean " + title; shot.lifetime = .keepAlways; add(shot)
+            app.navigationBars.buttons.firstMatch.tap()
+        }
+    }
+}

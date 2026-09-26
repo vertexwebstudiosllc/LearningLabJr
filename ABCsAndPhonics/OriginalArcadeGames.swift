@@ -17,7 +17,8 @@ enum OriginalArcadeGame {
 @MainActor
 private final class OriginalArcadeSession: ObservableObject {
     let kind: OriginalArcadeGame
-    let scene: SKScene
+    @Published private(set) var scene: SKScene
+    @Published private(set) var category: WordClawCategory = .sports
     @Published var name = ""
     @Published var status: String
     private let narrator = GameNarrator()
@@ -46,6 +47,21 @@ private final class OriginalArcadeSession: ObservableObject {
         narrator.speak(text)
     }
 
+    func changeCategory(_ category: WordClawCategory) {
+        guard kind == .claw, category != self.category else { return }
+        narrator.stop()
+        if let old = scene as? ClawGameScene { old.onName = nil; old.onStatus = nil }
+        scene.isPaused = true
+        scene.removeAllActions()
+        self.category = category; name = ""
+        status = "Tap an item for the claw to pick it up."
+        let replacement = ClawGameScene(size: CGSize(width: 720, height: 720))
+        replacement.setCategory(category); replacement.scaleMode = .aspectFit
+        replacement.onName = { [weak self] in self?.announce($0) }
+        replacement.onStatus = { [weak self] in self?.status = $0 }
+        scene = replacement
+    }
+
     func activate() {
         (scene as? VehiclePeekabooScene)?.activate()
         (scene as? ClawGameScene)?.pick()
@@ -66,7 +82,23 @@ struct OriginalArcadeGameView: View {
     var body: some View {
         ToddlerGameScaffold(title: session.kind.title, prompt: session.kind.prompt, accent: .orange) {
             VStack(spacing: 12) {
+                if session.kind == .claw {
+                    Text("Choose what the claw can collect").font(.headline)
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
+                        ForEach(WordClawCategory.allCases) { category in
+                            Button { session.changeCategory(category) } label: {
+                                Label(category.title, systemImage: category.symbol)
+                                    .font(.headline).frame(maxWidth: .infinity, minHeight: 54)
+                                    .background(session.category == category ? Color.orange.opacity(0.3) : .white, in: RoundedRectangle(cornerRadius: 16))
+                            }.buttonStyle(.plain)
+                                .accessibilityAddTraits(session.category == category ? .isSelected : [])
+                                .accessibilityIdentifier("claw.category.\(category.rawValue)")
+                        }
+                    }
+                    Text(session.category.title).accessibilityIdentifier("claw.current-category")
+                }
                 SpriteView(scene: session.scene, isPaused: scenePhase != .active || timer.isLocked)
+                    .id(session.category)
                     .aspectRatio(session.kind.aspectRatio, contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .accessibilityElement(children: .ignore)

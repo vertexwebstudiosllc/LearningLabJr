@@ -1,0 +1,50 @@
+import XCTest
+import SwiftUI
+import SpriteKit
+@testable import LearningLabJr
+
+final class LiteracyVocabularyTests: XCTestCase {
+    @MainActor func testAllRequestedVocabularyHasCleanArt() {
+        let words = WordBuilderWord.bank.map { $0.word.lowercased() } + GardenRhyme.bank.map(\.word)
+            + AlphabetWindow.vocabulary.filter { $0.asset != nil }.map(\.word)
+        for word in Set(words) { XCTAssertTrue(LiteracyVocabularyArt.supports(word), word) }
+        for asset in Array(LiteracyVocabularyArt.cleanAssets.values) + Array(LiteracyVocabularyArt.transparentVehicles.values) {
+            XCTAssertNotNil(UIImage(named: asset), asset)
+        }
+    }
+    @MainActor func testClawCategoriesAndRuth() throws {
+        for category in WordClawCategory.allCases {
+            XCTAssertGreaterThanOrEqual(category.options.count, 7)
+            XCTAssertEqual(Set(category.options.map(\.image)).count, category.options.count)
+            for item in category.options {
+                XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: item.name)?.voice, "Ruth", item.name)
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: item.name), item.name)
+                if item.image.hasPrefix("vocabulary:") { XCTAssertTrue(LiteracyVocabularyArt.supports(item.name), item.name) }
+            }
+            let scene = ClawGameScene(size: CGSize(width: 720, height: 720))
+            scene.setCategory(category)
+            let view = SKView(frame: CGRect(x: 0, y: 0, width: 360, height: 360))
+            scene.didMove(to: view)
+            XCTAssertEqual(scene.category, category)
+            let items = scene.children.compactMap { $0 as? SKSpriteNode }.filter { $0.userData?["image"] != nil }
+            XCTAssertEqual(items.count, 5)
+            XCTAssertTrue(items.allSatisfy { item in category.options.contains { $0.name == item.name } })
+            scene.setCategory(category == .sports ? .animals : .sports)
+            XCTAssertEqual(scene.category, category, "Changing a live scene requires a fresh scene")
+        }
+    }
+    @MainActor func testVocabularyArtGallery() throws {
+        let words = Set(WordBuilderWord.bank.map { $0.word.lowercased() } + GardenRhyme.bank.map(\.word)
+                        + AlphabetWindow.vocabulary.filter { $0.asset != nil }.map(\.word)).sorted()
+        for start in stride(from: 0, to: words.count, by: 20) {
+            let batch = Array(words[start..<min(start+20, words.count)])
+            let gallery = LazyVGrid(columns: Array(repeating: GridItem(.fixed(98)), count: 5)) {
+                ForEach(batch, id: \.self) { word in
+                    VStack { LiteracyVocabularyArt(word: word).frame(width: 82, height: 82); Text(word).font(.caption) }
+                }
+            }.padding().background(Color(red: 0.88, green: 0.94, blue: 0.91))
+            let renderer = ImageRenderer(content: gallery); renderer.scale = 2
+            let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Clean vocabulary \(start)"; shot.lifetime = .keepAlways; add(shot)
+        }
+    }
+}
