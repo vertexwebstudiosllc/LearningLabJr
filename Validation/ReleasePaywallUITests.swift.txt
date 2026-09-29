@@ -4,13 +4,14 @@ import StoreKitTest
 @MainActor
 final class ReleasePaywallUITests: XCTestCase {
     func testParentGatePaywallDisclosureAndPurchase() async throws {
+        continueAfterFailure = false
         let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
         store.resetToDefaultState()
         store.clearTransactions()
         store.disableDialogs = true
         defer { store.clearTransactions() }
         let app = XCUIApplication()
-        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.familyPlaySession.v1", ""]
         app.launch()
         let category = app.buttons["category.ABCs & Phonics"]
         XCTAssertTrue(category.waitForExistence(timeout: 15))
@@ -26,9 +27,23 @@ final class ReleasePaywallUITests: XCTestCase {
         app.textFields["Your answer"].typeText(String(numbers.reduce(0, +)))
         app.buttons["Continue"].tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: 15))
-        XCTAssertTrue(app.staticTexts["Learning Lab Jr. Premium Monthly"].exists)
-        XCTAssertTrue(app.staticTexts["premium.offer"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.staticTexts["premium.offer"].label.contains("free"))
+        XCTAssertTrue(app.buttons["premium.plan.annual"].exists)
+        XCTAssertTrue(app.buttons["premium.subscribe"].label.contains("29.99"))
+        XCTAssertFalse(app.staticTexts["premium.offer"].exists)
+        XCTAssertTrue(app.buttons["premium.plan.annual"].label.contains("SAVE 37%"))
+        for _ in 0..<3 {
+            if app.buttons["premium.plan.monthly"].isHittable { break }
+            app.swipeUp()
+        }
+        app.buttons["premium.plan.monthly"].tap()
+        XCTAssertTrue(app.buttons["premium.subscribe"].label.contains("3.99"))
+        XCTAssertTrue(app.staticTexts["premium.renewal"].label.contains("month"))
+        app.buttons["premium.plan.annual"].tap()
+        XCTAssertTrue(app.buttons["premium.subscribe"].label.contains("29.99"))
+        let plans = XCTAttachment(screenshot: app.screenshot())
+        plans.name = "Premium Monthly and Annual Plans"
+        plans.lifetime = .keepAlways
+        add(plans)
         for _ in 0..<4 {
             if app.buttons["Terms of Use"].isHittable { break }
             app.swipeUp()
@@ -110,7 +125,7 @@ final class CategoryAccessUITests: XCTestCase {
 
     private func launch(_ section: String) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.familyPlaySession.v1", ""]
         app.launch()
         let category = app.buttons["category.\(section)"]
         XCTAssertTrue(category.waitForExistence(timeout: 15))
@@ -130,7 +145,7 @@ final class BookAccessUITests: XCTestCase {
         store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
         defer { store.clearTransactions() }
         let app = XCUIApplication()
-        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.familyPlaySession.v1", ""]
         app.launch()
         func tap(_ element: XCUIElement) {
             for _ in 0..<6 {

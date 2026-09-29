@@ -27,6 +27,51 @@ final class ReleaseSubscriptionTests: XCTestCase {
         XCTAssertEqual(StoreManager.shared.hasPremium, expected)
     }
 
+    func testBothPlansHaveCorrectPricesPeriodsAndSameGroup() async throws {
+        _ = try await prepare()
+        await StoreManager.shared.loadProducts()
+        let products = StoreManager.shared.products
+        XCTAssertEqual(Set(products.map(\.id)), PremiumPlan.productIDs)
+        let monthly = try XCTUnwrap(products.first { $0.id == PremiumPlan.monthlyID })
+        let annual = try XCTUnwrap(products.first { $0.id == PremiumPlan.annualID })
+        XCTAssertEqual(monthly.price, Decimal(string: "3.99"))
+        XCTAssertEqual(annual.price, Decimal(string: "29.99"))
+        XCTAssertEqual(annual.subscription?.subscriptionPeriod.unit, .year)
+        XCTAssertEqual(annual.subscription?.subscriptionPeriod.value, 1)
+        XCTAssertEqual(monthly.subscription?.subscriptionGroupID, annual.subscription?.subscriptionGroupID)
+        XCTAssertNil(monthly.subscription?.introductoryOffer)
+        XCTAssertNil(annual.subscription?.introductoryOffer)
+    }
+
+    func testAnnualPurchaseRestoreAndExpiration() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions() }
+        let products = try await Product.products(for: [PremiumPlan.annualID])
+        let annual = try XCTUnwrap(products.first)
+        await StoreManager.shared.purchase(annual)
+        try await assertPremium(true)
+        await StoreManager.shared.restorePurchases()
+        try await assertPremium(true)
+        try session.expireSubscription(productIdentifier: PremiumPlan.annualID)
+        try await assertPremium(false)
+    }
+
+    func testAnnualRefundRemovesAccess() async throws {
+        let session = try await prepare()
+        defer { session.clearTransactions() }
+        let transaction = try await session.buyProduct(identifier: PremiumPlan.annualID)
+        try await assertPremium(true)
+        try session.refundTransaction(identifier: UInt(transaction.id))
+        try await assertPremium(false)
+    }
+
+    func testSavingsNeverOverstatesDiscount() {
+        XCTAssertEqual(PremiumPlan.savingsPercent(monthly: Decimal(string: "3.99")!, annual: Decimal(string: "29.99")!), 37)
+        XCTAssertNil(PremiumPlan.savingsPercent(monthly: 0, annual: 30))
+        XCTAssertNil(PremiumPlan.savingsPercent(monthly: 3, annual: 40))
+        XCTAssertNil(PremiumPlan.savingsPercent(monthly: 3, annual: 36))
+    }
+
     func testPurchaseRestoreAndExpiration() async throws {
         let session = try await prepare()
         defer { session.clearTransactions() }

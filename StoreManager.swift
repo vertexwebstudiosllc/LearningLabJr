@@ -19,9 +19,7 @@ final class StoreManager: ObservableObject {
     @Published private(set) var isLoadingProducts = false
     @Published private(set) var statusMessage: String?
 
-    private let productIDs: Set<String> = [
-        "com.learninglabjr.premium.monthly"
-    ]
+    private let productIDs = PremiumPlan.productIDs
 
     private var entitlementRefresh = 0
     private var updateListenerTask: Task<Void, Error>?
@@ -44,7 +42,9 @@ final class StoreManager: ObservableObject {
         isLoadingProducts = true
         defer { isLoadingProducts = false }
         do {
-            products = try await Product.products(for: productIDs)
+            products = try await Product.products(for: productIDs).sorted {
+                PremiumPlan.sortOrder($0.id) < PremiumPlan.sortOrder($1.id)
+            }
             statusMessage = products.isEmpty ? "Premium is not available in the App Store right now. Please try again later." : nil
         } catch {
             statusMessage = "We couldn't reach the App Store. Please try again when connected."
@@ -109,7 +109,7 @@ final class StoreManager: ObservableObject {
 
                 // StoreKit includes subscriptions in billing grace period here.
                 // A past transaction expiration date must not revoke that access.
-                if transaction.revocationDate == nil { premiumActive = true }
+                if transaction.revocationDate == nil && !transaction.isUpgraded { premiumActive = true }
             } catch {
                 print("Unverified transaction")
             }
@@ -170,108 +170,217 @@ struct PremiumParentGateView: View {
     }
 }
 
+enum PremiumPlan {
+    static let monthlyID = "com.learninglabjr.premium.monthly"
+    static let annualID = "com.learninglabjr.premium.annual"
+    static let productIDs: Set<String> = [monthlyID, annualID]
+
+    static func sortOrder(_ id: String) -> Int { id == annualID ? 0 : 1 }
+
+    static func savingsPercent(monthly: Decimal, annual: Decimal) -> Int? {
+        guard monthly > 0, annual > 0, annual < monthly * 12 else { return nil }
+        var percentage = (monthly * 12 - annual) * 100 / (monthly * 12)
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &percentage, 0, .down)
+        return NSDecimalNumber(decimal: rounded).intValue
+    }
+}
+
 struct PremiumPaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var storeManager = StoreManager.shared
+    @State private var selectedProductID = PremiumPlan.annualID
     @State private var introductoryOfferText: String?
+
+    private let ink = Color(red: 0.08, green: 0.24, blue: 0.28)
+    private let teal = Color(red: 0.04, green: 0.40, blue: 0.43)
+    private let cream = Color(red: 0.98, green: 0.97, blue: 0.93)
+
+    private var selectedProduct: Product? {
+        storeManager.products.first { $0.id == selectedProductID } ?? storeManager.products.first
+    }
+
+    private var annualSavings: Int? {
+        guard let monthly = storeManager.products.first(where: { $0.id == PremiumPlan.monthlyID }),
+              let annual = storeManager.products.first(where: { $0.id == PremiumPlan.annualID }),
+              monthly.priceFormatStyle.currencyCode == annual.priceFormatStyle.currencyCode,
+              monthly.subscription?.subscriptionPeriod.unit == .month,
+              annual.subscription?.subscriptionPeriod.unit == .year else { return nil }
+        return PremiumPlan.savingsPercent(monthly: monthly.price, annual: annual.price)
+    }
 
     var body: some View {
         ScrollView {
-        VStack(spacing: 20) {
-            Image(systemName: "sparkles")
-                .font(.system(size: 52, weight: .bold))
-                .foregroundColor(Color(red: 0.96, green: 0.62, blue: 0.18))
-
-            Text("Unlock Premium Games")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
-                .multilineTextAlignment(.center)
-
-            Text(GameAccessPolicy.premiumDescription)
-                .font(.system(size: 17, weight: .semibold, design: .rounded))
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-
-            if let product = storeManager.products.first {
-                Text(product.displayName)
-                    .font(.headline)
-                if let introductoryOfferText {
-                    Text(introductoryOfferText)
-                        .font(.subheadline)
+            VStack(spacing: 22) {
+                VStack(spacing: 12) {
+                    Image(systemName: "sparkles.rectangle.stack.fill")
+                        .font(.system(size: 38, weight: .medium))
+                        .foregroundStyle(teal)
+                        .frame(width: 76, height: 76)
+                        .background(.white, in: RoundedRectangle(cornerRadius: 24))
+                        .accessibilityHidden(true)
+                    Text("A little play.\nA world of discovery.")
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
-                        .accessibilityIdentifier("premium.offer")
+                        .foregroundStyle(ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("Learning Lab Jr Premium")
+                        .font(.headline).foregroundStyle(teal)
+                    Text("More ways to learn, imagine, and grow together.")
+                        .font(.subheadline).foregroundStyle(ink.opacity(0.8))
+                        .multilineTextAlignment(.center)
                 }
-                Button {
-                    Task {
-                        await storeManager.purchase(product)
-                    }
-                } label: {
-                    Text("Subscribe · \(product.displayPrice) / \(billingPeriod(product))")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(Color(red: 0.10, green: 0.58, blue: 0.78))
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                }
-                .disabled(storeManager.isPurchasing)
-                .accessibilityIdentifier("premium.subscribe")
-                .task(id: product.id) { await updateIntroductoryOffer(for: product) }
-            } else {
-                Text(storeManager.isLoadingProducts ? "Loading subscription…" : "Subscription unavailable")
-                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                    .foregroundColor(.secondary)
 
-                Button("Try Again") {
-                    Task {
-                        await storeManager.loadProducts()
+                VStack(alignment: .leading, spacing: 12) {
+                    benefit("square.grid.2x2.fill", "Every game and Read Together book")
+                    benefit("wifi.slash", "Play offline, wherever you go")
+                    benefit("sparkles", "New content added each month")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(18)
+                .background(.white.opacity(0.8), in: RoundedRectangle(cornerRadius: 20))
+
+                VStack(spacing: 12) {
+                    Text("Choose your plan")
+                        .font(.system(.title3, design: .rounded, weight: .bold))
+                        .foregroundStyle(ink)
+                    Text("Same Premium access. Two ways to pay.")
+                        .font(.subheadline).foregroundStyle(ink.opacity(0.75))
+                    ForEach(storeManager.products, id: \.id) { product in
+                        planCard(product)
+                    }
+                    if storeManager.products.isEmpty {
+                        Text(storeManager.isLoadingProducts ? "Loading plans…" : "Plans are temporarily unavailable.")
+                            .foregroundStyle(ink)
+                        Button("Try Again") { Task { await storeManager.loadProducts() } }
+                            .disabled(storeManager.isLoadingProducts)
                     }
                 }
-                .font(.system(size: 17, weight: .bold, design: .rounded))
-            }
 
-            if let message = storeManager.statusMessage {
-                Text(message).font(.footnote).foregroundStyle(.secondary)
+                if let product = selectedProduct {
+                    VStack(spacing: 10) {
+                        if let introductoryOfferText {
+                            Text(introductoryOfferText)
+                                .font(.footnote).foregroundStyle(ink)
+                                .multilineTextAlignment(.center)
+                                .accessibilityIdentifier("premium.offer")
+                        }
+                        Button {
+                            Task { await storeManager.purchase(product) }
+                        } label: {
+                            Text("Subscribe · \(product.displayPrice) / \(billingPeriod(product))")
+                                .font(.system(.headline, design: .rounded, weight: .bold))
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity, minHeight: 28)
+                                .padding(.vertical, 14).padding(.horizontal, 12)
+                                .foregroundStyle(.white)
+                                .background(teal, in: RoundedRectangle(cornerRadius: 16))
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(storeManager.isPurchasing)
+                        .opacity(storeManager.isPurchasing ? 0.65 : 1)
+                        .accessibilityIdentifier("premium.subscribe")
+                        Text("Renews at \(product.displayPrice) per \(billingPeriod(product)). Cancel anytime in your App Store settings.")
+                            .font(.footnote).foregroundStyle(ink.opacity(0.8))
+                            .multilineTextAlignment(.center)
+                            .accessibilityIdentifier("premium.renewal")
+                    }
+                    .task(id: product.id) { await updateIntroductoryOffer(for: product) }
+                }
+
+                if storeManager.isPurchasing { ProgressView("Connecting to the App Store").tint(teal) }
+                if let message = storeManager.statusMessage {
+                    Text(message).font(.footnote).foregroundStyle(ink)
+                        .multilineTextAlignment(.center)
+                }
+                Button("Restore Purchases") { Task { await storeManager.restorePurchases() } }
+                    .font(.subheadline.weight(.semibold))
+                    .disabled(storeManager.isPurchasing)
+                Text("Payment is charged to your Apple Account at confirmation. Subscriptions renew automatically unless canceled at least 24 hours before the current period ends. Yearly plans are billed in one annual payment. Manage or cancel in your App Store account settings.")
+                    .font(.caption).foregroundStyle(ink.opacity(0.75))
+                    .multilineTextAlignment(.center)
+                HStack(spacing: 24) {
+                    Link("Privacy Policy", destination: AppLinks.privacy)
+                    Link("Terms of Use", destination: AppLinks.terms)
+                }
+                .font(.footnote).frame(minHeight: 44)
+                Button("Not Now") { dismiss() }
+                    .font(.subheadline.weight(.semibold))
+                    .disabled(storeManager.isPurchasing)
+                Text("Your free games and first Read Together book are always here.")
+                    .font(.caption).foregroundStyle(ink.opacity(0.75))
                     .multilineTextAlignment(.center)
             }
-            if storeManager.isPurchasing { ProgressView("Connecting to the App Store") }
-
-            Text("Payment is charged to your Apple Account at confirmation, or after an eligible free trial. Subscriptions renew automatically unless canceled at least 24 hours before the current period ends. Manage or cancel in your App Store account settings.")
-                .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-
-            Button("Restore Purchases") {
-                Task {
-                    await storeManager.restorePurchases()
-                }
-            }
-            .font(.system(size: 16, weight: .semibold, design: .rounded))
-
-            .disabled(storeManager.isPurchasing)
-
-            HStack(spacing: 24) {
-                Link("Privacy Policy", destination: AppLinks.privacy)
-                Link("Terms of Use", destination: AppLinks.terms)
-            }
-            .font(.footnote)
-            .frame(minHeight: 44)
-
-            Button("Not Now") {
-                dismiss()
-            }
-            .font(.system(size: 16, weight: .semibold, design: .rounded))
+            .padding(24)
+            .frame(maxWidth: 560)
+            .frame(maxWidth: .infinity)
         }
-        .padding(28)
-        .frame(maxWidth: 560)
-        .frame(maxWidth: .infinity)
-        }
+        .background(cream.ignoresSafeArea())
+        .tint(teal)
         .task {
             await storeManager.loadProducts()
             await storeManager.updateCustomerProductStatus()
         }
         .onChange(of: storeManager.hasPremium) { _, hasPremium in
-            if hasPremium {
-                dismiss()
-            }
+            if hasPremium { dismiss() }
         }
+    }
+
+    private func benefit(_ symbol: String, _ text: String) -> some View {
+        Label {
+            Text(text).font(.system(.subheadline, design: .rounded, weight: .semibold))
+                .foregroundStyle(ink)
+        } icon: {
+            Image(systemName: symbol).foregroundStyle(teal).frame(width: 24)
+        }
+    }
+
+    private func planCard(_ product: Product) -> some View {
+        let annual = product.id == PremiumPlan.annualID
+        let selected = product.id == selectedProduct?.id
+        return Button {
+            introductoryOfferText = nil
+            selectedProductID = product.id
+        } label: {
+            HStack(alignment: .center, spacing: 12) {
+                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                    .font(.title2).foregroundStyle(selected ? teal : ink.opacity(0.4))
+                VStack(alignment: .leading, spacing: 7) {
+                    HStack {
+                        Text(annual ? "Yearly" : "Monthly")
+                            .font(.system(.headline, design: .rounded, weight: .bold))
+                        Spacer(minLength: 4)
+                        if annual, let savings = annualSavings, savings > 0 {
+                            Text("SAVE \(savings)%")
+                                .font(.caption.weight(.bold)).foregroundStyle(teal)
+                                .padding(.horizontal, 9).padding(.vertical, 5)
+                                .background(teal.opacity(0.10), in: Capsule())
+                                .accessibilityIdentifier("premium.savings")
+                        }
+                    }
+                    Text("\(product.displayPrice) / \(billingPeriod(product))")
+                        .font(.system(.title2, design: .rounded, weight: .bold))
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(annual ? "Billed yearly · about \((product.price / 12).formatted(product.priceFormatStyle))/month" : "Billed monthly · no annual commitment")
+                        .font(.footnote).foregroundStyle(ink.opacity(0.8))
+                        .fixedSize(horizontal: false, vertical: true)
+                    if annual, annualSavings != nil {
+                        Text("Savings compared with 12 monthly payments.")
+                            .font(.caption).foregroundStyle(ink.opacity(0.7))
+                    }
+                }
+            }
+            .foregroundStyle(ink)
+            .padding(18)
+            .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
+            .background(selected ? Color.white : Color.white.opacity(0.55), in: RoundedRectangle(cornerRadius: 18))
+            .overlay(RoundedRectangle(cornerRadius: 18).stroke(selected ? teal : ink.opacity(0.15), lineWidth: selected ? 2.5 : 1))
+        }
+        .buttonStyle(.plain)
+        .disabled(storeManager.isPurchasing)
+        .accessibilityIdentifier(annual ? "premium.plan.annual" : "premium.plan.monthly")
+        .accessibilityAddTraits(selected ? .isSelected : [])
+        .accessibilityValue(selected ? "Selected" : "Not selected")
     }
 
     private func updateIntroductoryOffer(for product: Product) async {
@@ -279,6 +388,7 @@ struct PremiumPaywallView: View {
         guard let subscription = product.subscription,
               let offer = subscription.introductoryOffer,
               await subscription.isEligibleForIntroOffer else { return }
+        guard !Task.isCancelled, selectedProduct?.id == product.id else { return }
         let duration = periodDescription(offer.period, count: offer.periodCount)
         let renewal = "Then \(product.displayPrice) per \(billingPeriod(product)), renewing automatically."
         switch offer.paymentMode {
