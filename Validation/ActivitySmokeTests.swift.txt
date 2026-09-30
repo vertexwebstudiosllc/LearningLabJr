@@ -842,7 +842,7 @@ final class ActivitySmokeTests: XCTestCase {
     }
 
     @MainActor
-    func testFunnyFaceCopyIdentifyAllSixAndReplay() async throws {
+    func testFunnyFaceMatchAllSixAccessoriesAndReplay() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {
             try reveal(button, in: app)
@@ -850,7 +850,7 @@ final class ActivitySmokeTests: XCTestCase {
             try reveal(button, in: app); button.tap()
         }
         try tap(app.buttons["category.Big Feelings"])
-        let card = app.buttons["activity-card.Funny Face Studio"]
+        let card = app.buttons["activity.feelings.faces"]
         try tap(card)
         func current() throws -> String {
             let face = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'studio.target.'")).firstMatch
@@ -864,36 +864,46 @@ final class ActivitySmokeTests: XCTestCase {
             let target = try current(); last = target
             XCTAssertTrue(seen.insert(target).inserted)
             XCTAssertEqual(app.staticTexts["studio.progress"].label, "Face \(round) of 6")
-            XCTAssertFalse(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'studio.choice.'")).firstMatch.exists)
-            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Studio \(target)"; shot.lifetime = .keepAlways; add(shot)
-            try tap(app.buttons[round.isMultiple(of: 2) ? "studio.watched" : "studio.copied"])
-            let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'studio.choice.'"))
-            XCTAssertEqual(choices.count, 3)
-            XCTAssertFalse(app.buttons["Cross"].exists)
-            if target == "mad" {
-                let answers = XCTAttachment(screenshot: app.screenshot()); answers.name = "Studio Mad choices"; answers.lifetime = .keepAlways; add(answers)
-            }
-            for choice in choices.allElementsBoundByIndex {
-                let id = String(choice.identifier.dropFirst("studio.choice.".count))
-                try tap(app.buttons["studio.hear.\(id)"])
-            }
-            let wrong = try XCTUnwrap(choices.allElementsBoundByIndex.first { $0.identifier != "studio.choice.\(target)" })
-            try tap(wrong)
-            XCTAssertTrue(app.staticTexts["studio.retry"].exists)
+            XCTAssertTrue(app.staticTexts["Match this"].exists)
+            XCTAssertTrue(app.staticTexts["Your face"].exists)
             XCTAssertFalse(app.buttons["studio.next"].exists)
-            try tap(app.buttons["studio.choice.\(target)"])
-            XCTAssertEqual(app.staticTexts["studio.found"].label, target.capitalized)
+            XCTAssertEqual(app.buttons["studio.feature.glasses"].exists, round >= 3)
+            XCTAssertEqual(app.buttons["studio.feature.hat"].exists, round >= 5)
+            let features = ["eyebrows", "eyes", "mouth"] + (round >= 3 ? ["glasses"] : []) + (round >= 5 ? ["hat"] : [])
+            for feature in features {
+                XCTAssertFalse((app.buttons["studio.feature.\(feature)"].value as? String ?? "").contains("Matches example"))
+            }
+            if round == 1 {
+                let brows = app.buttons["studio.feature.eyebrows"]
+                let originalStyle = brows.value as? String
+                let face = app.descendants(matching: .any).matching(identifier: "studio.editable").firstMatch
+                try reveal(face, in: app)
+                face.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.33)).tap()
+                XCTAssertNotEqual(brows.value as? String, originalStyle, "Tapping the face itself changes the eyebrows")
+            }
+            for feature in features {
+                let button = app.buttons["studio.feature.\(feature)"]
+                for _ in 0..<6 {
+                    if !button.exists || (button.value as? String ?? "").contains("Matches example") { break }
+                    try tap(button)
+                }
+                if button.exists { XCTAssertTrue((button.value as? String ?? "").contains("Matches example")) }
+            }
+            XCTAssertTrue(app.staticTexts["studio.found"].waitForExistence(timeout: 5))
+            XCTAssertTrue(app.buttons["studio.next"].exists)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Studio matched \(target) round \(round)"; shot.lifetime = .keepAlways; add(shot)
             try tap(app.buttons["studio.next"])
         }
-        XCTAssertTrue(seen.contains("mad"))
+        XCTAssertEqual(seen.count, 6)
         XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
         try tap(app.buttons["Play again"])
         let replay = try current(); XCTAssertNotEqual(replay, first); XCTAssertNotEqual(replay, last)
-        XCTAssertTrue(app.buttons["studio.copied"].exists)
+        XCTAssertTrue(app.buttons["studio.feature.eyes"].exists)
+        XCTAssertFalse(app.buttons["studio.feature.glasses"].exists)
         app.navigationBars.buttons.firstMatch.tap(); try tap(card)
         XCTAssertNotEqual(try current(), replay)
         app.navigationBars.buttons.firstMatch.tap()
-        try tap(app.buttons["activity-card.My Feeling Weather"])
+        try tap(app.buttons["activity.feelings.weather"])
         XCTAssertTrue(app.buttons["Mad"].exists); XCTAssertFalse(app.buttons["Cross"].exists)
     }
 
@@ -1609,10 +1619,12 @@ final class ActivitySmokeTests: XCTestCase {
 
     @MainActor
     func testHabitatGroups() async throws {
+        XCUIDevice.shared.orientation = .portrait
+        defer { XCUIDevice.shared.orientation = .portrait }
         let app = try await launch()
         let category = app.buttons["category.Nature Explorers"]
         try reveal(category, in: app); category.tap()
-        let card = app.buttons["activity-card.Habitat Helpers"]
+        let card = app.buttons["activity.nature.habitats"]
         try reveal(card, in: app); card.tap()
         let homes = ["dolphin": "ocean", "octopus": "ocean", "shark": "ocean", "seahorse": "ocean",
                      "cow": "farm", "sheep": "farm", "horse": "farm", "pig": "farm",
@@ -1622,29 +1634,41 @@ final class ActivitySmokeTests: XCTestCase {
                      "frog": "pond", "duck": "pond", "goose": "pond", "turtle": "pond"]
         let progress = app.staticTexts["habitats.progress"]
         XCTAssertTrue(progress.waitForExistence(timeout: 5))
-        let first = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        let animals = app.images.matching(NSPredicate(format: "identifier BEGINSWITH %@", "habitats.animal."))
+        XCTAssertEqual(animals.count, 1)
+        let first = animals.firstMatch.identifier
         var seen: Set<String> = []
         for round in 0..<6 {
             XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · 0 of 4 at home")
-            let animals = app.buttons.allElementsBoundByIndex.filter { $0.identifier.hasPrefix("habitats.animal.") }.map(\.identifier)
-            XCTAssertEqual(animals.count, 4)
-            if round == 0 {
-                let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Habitat Helpers four-animal set"; shot.lifetime = .keepAlways; add(shot)
-            }
-            for (count, identifier) in animals.reversed().enumerated() {
-                let animal = app.buttons[identifier]
+            for count in 0..<4 {
+                if round == 0 && count == 1 { XCUIDevice.shared.orientation = .landscapeLeft }
+                if round == 0 && count == 2 { XCUIDevice.shared.orientation = .portrait }
+                XCTAssertEqual(animals.count, 1)
+                XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "habitats.home.")).count, 2)
+                let identifier = animals.firstMatch.identifier
+                let animal = app.images[identifier]
+                XCTAssertEqual(animal.value as? String, "Animal \(count + 1) of 4")
                 let id = String(identifier.dropFirst("habitats.animal.".count))
                 XCTAssertTrue(seen.insert(id).inserted)
-                try reveal(animal, in: app); animal.tap()
+                if round == 0 && count < 2 {
+                    try reveal(animal, in: app)
+                    let shot = XCTAttachment(screenshot: app.screenshot())
+                    shot.name = "Habitat Helpers one animal \(count == 0 ? "portrait" : "landscape")"
+                    shot.lifetime = .keepAlways; add(shot)
+                }
                 let home = try XCTUnwrap(homes[id])
                 let wrong = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.home.") && $0.identifier != "habitats.home." + home })
                 try reveal(wrong, in: app); wrong.tap()
                 XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · \(count) of 4 at home")
+                XCTAssertEqual(animals.firstMatch.identifier, identifier)
+                XCTAssertTrue(app.staticTexts["habitats.feedback"].exists)
                 let correct = app.buttons["habitats.home." + home]
                 try reveal(correct, in: app); correct.tap()
                 XCTAssertEqual(progress.label, "Set \(round + 1) of 6 · \(count + 1) of 4 at home")
-                XCTAssertFalse(animal.isEnabled)
+                XCTAssertFalse(animal.exists)
+                XCTAssertFalse(app.staticTexts["habitats.feedback"].exists)
             }
+            XCTAssertEqual(animals.count, 0)
             let next = app.buttons["habitats.next"]
             try reveal(next, in: app); next.tap()
         }
@@ -1652,12 +1676,14 @@ final class ActivitySmokeTests: XCTestCase {
         let replay = app.buttons["Play again"]
         XCTAssertTrue(replay.waitForExistence(timeout: 5)); try reveal(replay, in: app); replay.tap()
         XCTAssertEqual(progress.label, "Set 1 of 6 · 0 of 4 at home")
-        let second = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        XCTAssertEqual(animals.count, 1)
+        let second = animals.firstMatch.identifier
         XCTAssertNotEqual(first, second)
         app.navigationBars.buttons.firstMatch.tap()
         try reveal(card, in: app); card.tap()
         XCTAssertTrue(progress.waitForExistence(timeout: 5))
-        let third = try XCTUnwrap(app.buttons.allElementsBoundByIndex.first { $0.identifier.hasPrefix("habitats.animal.") && $0.value as? String == "Selected" }).identifier
+        XCTAssertEqual(animals.count, 1)
+        let third = animals.firstMatch.identifier
         XCTAssertNotEqual(second, third)
     }
 
@@ -3407,18 +3433,18 @@ final class ActivitySmokeTests: XCTestCase {
         let category = app.buttons["category.Shapes & Colors"]
         try reveal(category, in: app)
         category.tap()
-        let card = app.buttons["activity-card.Shape Post"]
+        let card = app.buttons["activity.shapes.post"]
         XCTAssertTrue(card.waitForExistence(timeout: 5))
         try reveal(card, in: app)
         card.tap()
         XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
         var seen: Set<String> = []
         for index in 0..<10 {
-            let stamp = app.images["shapes.post.stamp"]
+            let stamp = app.descendants(matching: .any).matching(identifier: "shapes.post.stamp").firstMatch
             try reveal(stamp, in: app)
             let shape = try XCTUnwrap(stamp.value as? String)
             XCTAssertTrue(seen.insert(shape).inserted)
-            let opening = app.otherElements["shapes.post.opening.\(shape)"]
+            let opening = app.descendants(matching: .any).matching(identifier: "shapes.post.opening.\(shape)").firstMatch
             try reveal(opening, in: app)
             XCTAssertGreaterThanOrEqual(opening.frame.height, 64)
             XCTAssertTrue(stamp.isHittable)
@@ -3429,7 +3455,7 @@ final class ActivitySmokeTests: XCTestCase {
                 add(screenshot)
                 opening.tap()
                 XCTAssertFalse(app.buttons["shapes.post.next"].exists, "Tapping must not post a stamp")
-                let wrong = app.otherElements.matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.post.opening.' AND identifier != %@", opening.identifier)).firstMatch
+                let wrong = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'shapes.post.opening.' AND identifier != %@", opening.identifier)).firstMatch
                 stamp.press(forDuration: 0.1, thenDragTo: wrong)
                 XCTAssertFalse(app.buttons["shapes.post.next"].exists)
                 stamp.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).press(forDuration: 0.1, thenDragTo: stamp.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5)))
@@ -3439,7 +3465,18 @@ final class ActivitySmokeTests: XCTestCase {
             let next = app.buttons["shapes.post.next"]
             XCTAssertTrue(next.waitForExistence(timeout: 3))
             try reveal(next, in: app)
+            if next.frame.maxY > app.windows.firstMatch.frame.maxY - 40 {
+                app.scrollViews.firstMatch.swipeUp()
+                try reveal(next, in: app)
+            }
             next.tap()
+            let progress = XCTNSPredicateExpectation(
+                predicate: NSPredicate(format: "label == %@", "\(index + 1) of 10 shapes posted"),
+                object: app.staticTexts["shapes.post.progress"]
+            )
+            // The count also changes on the drop; Next disappearing confirms the new round is ready.
+            let advanced = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: next)
+            XCTAssertEqual(XCTWaiter.wait(for: [progress, advanced], timeout: 5), .completed)
         }
         XCTAssertEqual(seen.count, 10)
         let replay = app.buttons["Play again"]

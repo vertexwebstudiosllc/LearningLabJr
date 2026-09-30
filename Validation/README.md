@@ -105,7 +105,7 @@ Nature Detective checks twenty-four unique animal/insect targets across 200 full
 
 Cozy Nest: `testCozyProjectsSequenceGuardsVarietyAndRuth` checks 100 complete ten-project sessions and exact Ruth coverage. `testCozyNestTenProjectsAndReplay` builds every project and checks hints, completion, replay, and reentry.
 
-Funny Face Studio: `testFunnyFaceCopyIdentifySequenceAndRuth` validates six distinct renders, 200 sessions, interaction guards, and Ruth coverage. `testFunnyFaceCopyIdentifyAllSixAndReplay` covers copying, identification, answer speakers, gentle retries, completion, replay/reentry, and the shared Mad label.
+Funny Face Studio: `testFunnyFaceFeatureMatchingProgressionAndGuards` validates 200 complete sessions, independently editable feature styles, progressive glasses/hat rounds, distinct renders, stale/duplicate/locked action guards, completion, and replay exclusions. `testFunnyFaceMatchAllSixAccessoriesAndReplay` matches all six faces with the accessible feature controls, checks progressive accessories, and verifies completion/replay/reentry. New matching instructions use the shared device-voice fallback until their catalog entries receive bundled recordings.
 
 Flower Breaths: `testFlowerBreathsEightGentleActivitiesAndRuth` checks all eight activities, both play/watch paths, input guards, drop validation, kind-word choices, and Ruth coverage. `testFlowerBreathsAllActivitiesDragWatchAndReplay` covers the full playthrough, blanket drag, all watching options, replay, and reentry.
 

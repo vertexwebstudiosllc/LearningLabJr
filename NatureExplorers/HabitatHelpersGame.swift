@@ -62,14 +62,13 @@ struct HabitatSession {
     let rounds: [HabitatRound]
     private(set) var index = 0
     private(set) var matched: Set<String> = []
-    private(set) var selected: String?
     var current: HabitatRound { rounds[min(index, rounds.count - 1)] }
-    var animal: HabitatAnimal? { current.animals.first { $0.id == selected } }
-    var solved: Bool { matched.count == 4 }
+    var animal: HabitatAnimal? { complete ? nil : current.animals.first { !matched.contains($0.id) } }
+    var solved: Bool { matched.count == current.animals.count }
     var complete: Bool { index == rounds.count }
     static let groupPrompt = "Four animals found their homes! Let's meet some new friends."
     static let completion = "You helped every animal find a home!"
-    var prompt: String { complete ? Self.completion : solved ? Self.groupPrompt : animal?.prompt ?? "Choose an animal. Then choose its home." }
+    var prompt: String { complete ? Self.completion : animal?.prompt ?? Self.groupPrompt }
 
     init(previousFirst: String? = nil) {
         // Avoid misleading choices: ducks also visit farms, and tree-dwelling
@@ -104,26 +103,24 @@ struct HabitatSession {
         result.shuffle()
         if result[0].animals[0].id == previousFirst { result[0].animals.swapAt(0, 1) }
         rounds = result
-        selected = result[0].animals[0].id
     }
-    mutating func select(_ id: String) {
-        guard !complete, !matched.contains(id), current.animals.contains(where: { $0.id == id }) else { return }
-        selected = id
-    }
-    @discardableResult mutating func place(in home: AnimalHabitat) -> Bool {
-        guard !complete, !solved, let animal, current.homes.contains(home), animal.habitat == home else { return false }
+    @discardableResult mutating func place(_ animalID: String, in home: AnimalHabitat) -> Bool {
+        // Bind answers to the animal shown when the button was rendered. A stale
+        // tap must never place the next animal, even when it shares the same home.
+        guard !complete, !solved, let animal, animal.id == animalID,
+              current.homes.contains(home), animal.habitat == home else { return false }
         matched.insert(animal.id)
-        selected = current.animals.first { !matched.contains($0.id) }?.id
         return true
     }
     mutating func next() {
         guard !complete, solved else { return }
         index += 1
-        if !complete { matched = []; selected = current.animals[0].id }
+        if !complete { matched = [] }
     }
 }
 
 struct HabitatHelpersGame: View {
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @AppStorage("nature.habitats.previousFirst") private var previousFirst = ""
     @State private var play = HabitatSession()
     @State private var started = false
@@ -136,61 +133,87 @@ struct HabitatHelpersGame: View {
                 Text("Set \(play.index + 1) of \(play.rounds.count) · \(play.matched.count) of 4 at home")
                     .font(.subheadline).foregroundStyle(.secondary)
                     .accessibilityIdentifier("habitats.progress")
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(play.current.animals) { animal in
-                        Button {
-                            play.select(animal.id); feedback = ""
-                        } label: {
-                            VStack(spacing: 3) {
-                                if let asset = animal.asset {
-                                    ToddlerArt(asset: asset, size: 64)
-                                } else {
-                                    Text(animal.emoji).font(.system(size: 52)).frame(height: 64)
-                                }
-                                Text(animal.name).font(.system(.headline, design: .rounded))
-                                if play.matched.contains(animal.id) {
-                                    Label("At home", systemImage: "checkmark.circle.fill").font(.caption)
-                                }
-                            }
-                            .frame(maxWidth: .infinity, minHeight: 106)
-                            .background(play.selected == animal.id ? Color.teal.opacity(0.15) : .white, in: RoundedRectangle(cornerRadius: 20))
-                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(play.selected == animal.id ? .teal : .teal.opacity(0.2), lineWidth: play.selected == animal.id ? 4 : 2))
+                if let animal = play.animal {
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: 16) {
+                            animalCard(animal).frame(minWidth: 160)
+                            homeChoices(for: animal).frame(minWidth: 236)
                         }
-                        .buttonStyle(.plain)
-                        .disabled(play.matched.contains(animal.id))
-                        .accessibilityLabel("\(animal.name)\(play.matched.contains(animal.id) ? ", at home" : "")")
-                        .accessibilityValue(play.selected == animal.id ? "Selected" : "")
-                        .accessibilityIdentifier("habitats.animal.\(animal.id)")
-                    }
-                }
-                HStack(spacing: 12) {
-                    ForEach(play.current.homes, id: \.self) { home in
-                        Button {
-                            let hint = play.animal?.hint
-                            if play.place(in: home) { feedback = "" }
-                            else if let hint { feedback = hint; narrator.speak(hint) }
-                        } label: {
-                            VStack(spacing: 4) {
-                                Text(home.picture).font(.system(size: 44))
-                                Text(home.title).font(.system(.headline, design: .rounded))
-                            }
-                            .frame(maxWidth: .infinity, minHeight: 94)
-                            .background(.teal.opacity(0.12), in: RoundedRectangle(cornerRadius: 22))
+                        VStack(spacing: 16) {
+                            animalCard(animal)
+                            homeChoices(for: animal)
                         }
-                        .buttonStyle(.plain).disabled(play.solved)
-                        .accessibilityLabel(home.title)
-                        .accessibilityIdentifier("habitats.home.\(home.rawValue)")
                     }
+                    .id(animal.id)
                 }
-                if !feedback.isEmpty { Text(feedback).font(.headline).multilineTextAlignment(.center) }
+                if !feedback.isEmpty {
+                    Text(feedback).font(.headline).multilineTextAlignment(.center)
+                        .accessibilityIdentifier("habitats.feedback")
+                }
                 if play.solved {
-                    ToddlerActionButton(title: play.index == play.rounds.count - 1 ? "Finish exploring" : "More animals", systemImage: "arrow.right") { play.next() }
+                    Label("Four happy animals at home!", systemImage: "checkmark.circle.fill")
+                        .font(.system(.title2, design: .rounded, weight: .bold))
+                        .foregroundStyle(.teal)
+                        .multilineTextAlignment(.center)
+                    ToddlerActionButton(title: play.index == play.rounds.count - 1 ? "Finish exploring" : "More animals", systemImage: "arrow.right") {
+                        narrator.stop(); feedback = ""; play.next()
+                    }
                         .accessibilityIdentifier("habitats.next")
                 }
             }
         }
         .onAppear { if !started { restart(); started = true } }
         .onDisappear { narrator.stop() }
+    }
+
+    private func animalCard(_ animal: HabitatAnimal) -> some View {
+        VStack(spacing: 8) {
+            Text("Animal \(play.matched.count + 1) of \(play.current.animals.count)")
+                .font(.system(.subheadline, design: .rounded, weight: .semibold))
+                .foregroundStyle(.secondary)
+            if let asset = animal.asset {
+                ToddlerArt(asset: asset, size: verticalSizeClass == .compact ? 92 : 128)
+            } else {
+                Text(animal.emoji)
+                    .font(.system(size: verticalSizeClass == .compact ? 76 : 104))
+                    .frame(height: verticalSizeClass == .compact ? 92 : 128)
+            }
+            Text(animal.name).font(.system(.title2, design: .rounded, weight: .bold))
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity)
+        .background(.white, in: RoundedRectangle(cornerRadius: 24))
+        .overlay(RoundedRectangle(cornerRadius: 24).stroke(.teal.opacity(0.35), lineWidth: 3))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(animal.name)
+        .accessibilityValue("Animal \(play.matched.count + 1) of \(play.current.animals.count)")
+        .accessibilityAddTraits(.isImage)
+        .accessibilityIdentifier("habitats.animal.\(animal.id)")
+    }
+
+    private func homeChoices(for animal: HabitatAnimal) -> some View {
+        HStack(spacing: 12) {
+            ForEach(play.current.homes, id: \.self) { home in
+                Button {
+                    guard play.animal?.id == animal.id else { return }
+                    if play.place(animal.id, in: home) { narrator.stop(); feedback = "" }
+                    else { feedback = animal.hint; narrator.speak(animal.hint) }
+                } label: {
+                    VStack(spacing: 6) {
+                        Text(home.picture).font(.system(size: 48))
+                        Text(home.title).font(.system(.headline, design: .rounded))
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(10)
+                    .frame(maxWidth: .infinity, minHeight: 112)
+                    .background(.teal.opacity(0.12), in: RoundedRectangle(cornerRadius: 22))
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(home.title)
+                .accessibilityHint("Choose this home for the \(animal.id)")
+                .accessibilityIdentifier("habitats.home.\(home.rawValue)")
+            }
+        }
     }
     private func restart() {
         narrator.stop()

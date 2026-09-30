@@ -2,7 +2,7 @@ import SwiftUI
 
 struct BigFeelingsMenu: View {
     static let activities: [LearningActivity] = [
-        .init(id: "feelings.faces", title: "Funny Face Studio", skill: "Explore facial expressions", interaction: "Copy six expressive faces and find their feeling words", ageBand: "2–4 with a grown-up", caregiverTip: "Copy a face together. Faces give clues, but we ask how someone feels."),
+        .init(id: "feelings.faces", title: "Funny Face Studio", skill: "Match playful facial features", interaction: "Match six example faces by changing eyebrows, eyes, mouths, glasses, and hats", ageBand: "2–4 with a grown-up", caregiverTip: "Look at one part at a time and try a face together. Faces give clues, but we ask how someone feels."),
         .init(id: "feelings.breathe", title: "Flower Breaths", skill: "Practice a calming routine", interaction: "Explore eight gentle activities at your own pace", ageBand: "2–4 with a grown-up", caregiverTip: "Try together without rushing. Breathe comfortably; no breath holding. Watching counts, and every feeling is welcome."),
         .init(id: "feelings.teddy", title: "Teddy's Helping Hands", skill: "Offer care and respect choices", interaction: "Build and dress Teddy for twelve helping adventures", ageBand: "2–4 with a grown-up", caregiverTip: "Ask what help is wanted. These are pretend adventures; ask a trusted grown-up for help with real problems."),
         .init(id: "feelings.turns", title: "Roll It Together", skill: "Practice taking turns", interaction: "Choose a sport and a friend, then share six back-and-forth turns", ageBand: "2–4 with a grown-up", caregiverTip: "Ask someone to play, wait for their turn, and share kind words. Try gentle passes with a soft ball together; seated play works too."),

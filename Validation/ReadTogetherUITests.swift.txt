@@ -1,0 +1,76 @@
+import XCTest
+
+final class ReadTogetherUITests: XCTestCase {
+    @MainActor func testPictureTextButtonsAndSwipesInBothOrientations() throws {
+        continueAfterFailure = false
+        XCUIDevice.shared.orientation = .portrait
+        defer { XCUIDevice.shared.orientation = .portrait }
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launch()
+        let category = app.buttons["category.Story Time"]
+        XCTAssertTrue(category.waitForExistence(timeout: 15))
+        tapVisible(category, in: app)
+        tapVisible(app.buttons["activity.stories.library"], in: app)
+        tapVisible(app.buttons["activity.books.owen-onion"], in: app)
+        let progress = app.staticTexts["book.pageProgress"]
+        XCTAssertTrue(progress.waitForExistence(timeout: 5))
+
+        for orientation in [UIDeviceOrientation.portrait, .landscapeLeft] {
+            XCUIDevice.shared.orientation = orientation
+            assertPage(1, progress: progress)
+            let image = app.images["book.illustration"]
+            XCTAssertTrue(image.waitForExistence(timeout: 5))
+            image.swipeRight()
+            assertPage(1, progress: progress)
+            XCTAssertFalse(app.buttons["book.previous"].isEnabled)
+            image.swipeLeft()
+            assertPage(2, progress: progress)
+            // Swiping over the words also turns pages, including backwards without dismissing the reader.
+            app.staticTexts["book.pageText"].swipeRight()
+            assertPage(1, progress: progress)
+            app.buttons["book.next"].tap()
+            assertPage(2, progress: progress)
+            app.buttons["book.previous"].tap()
+            assertPage(1, progress: progress)
+
+            for page in 1...15 {
+                assertPage(page, progress: progress)
+                assertFullyVisible(image, in: app)
+                assertFullyVisible(app.staticTexts["book.pageText"], in: app)
+                if page < 15 { app.buttons["book.next"].tap() }
+            }
+            let screenshot = XCTAttachment(screenshot: app.screenshot())
+            screenshot.name = "Read Together complete page — \(orientation == .portrait ? "portrait" : "landscape")"
+            screenshot.lifetime = .keepAlways
+            add(screenshot)
+            image.swipeLeft()
+            assertPage(15, progress: progress)
+            image.swipeRight()
+            assertPage(14, progress: progress)
+            app.buttons["book.next"].tap()
+            app.buttons["book.restart"].tap()
+            assertPage(1, progress: progress)
+        }
+    }
+
+    @MainActor private func assertPage(_ page: Int, progress: XCUIElement) {
+        let predicate = NSPredicate(format: "label BEGINSWITH %@", "Page \(page) of ")
+        expectation(for: predicate, evaluatedWith: progress)
+        waitForExpectations(timeout: 5)
+    }
+
+    @MainActor private func assertFullyVisible(_ element: XCUIElement, in app: XCUIApplication) {
+        XCTAssertTrue(element.exists)
+        XCTAssertTrue(element.isHittable)
+        XCTAssertTrue(app.windows.firstMatch.frame.insetBy(dx: -1, dy: -1).contains(element.frame), "Clipped reader content: \(element)")
+    }
+
+    @MainActor private func tapVisible(_ element: XCUIElement, in app: XCUIApplication) {
+        for _ in 0..<12 {
+            if element.exists && element.isHittable { element.tap(); return }
+            app.swipeUp()
+        }
+        XCTFail("Missing \(element)")
+    }
+}

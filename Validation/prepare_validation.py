@@ -11,8 +11,11 @@ text = (root.parent / 'LearningLabJr.xcodeproj/project.pbxproj').read_text()
 text = text.replace('path = LearningLabJr;', f'path = "{root}";')
 for folder, fixture in [('LearningLabJrTests', 'CurriculumTests.swift.txt'),
                         ('LearningLabJrTests', 'ReleaseSubscriptionTests.swift.txt'),
+                        ('LearningLabJrTests', 'ReadTogetherTests.swift.txt'),
                         ('LearningLabJrUITests', 'ActivitySmokeTests.swift.txt'),
-                        ('LearningLabJrUITests', 'ReleasePaywallUITests.swift.txt')]:
+                        ('LearningLabJrUITests', 'ReleasePaywallUITests.swift.txt'),
+                        ('LearningLabJrUITests', 'ReadTogetherUITests.swift.txt'),
+                        ('LearningLabJrUITests', 'LandscapeLayoutUITests.swift.txt')]:
     destination = work / folder
     destination.mkdir(exist_ok=True)
     (destination / fixture.removesuffix('.txt')).write_text((root / 'Validation' / fixture).read_text())

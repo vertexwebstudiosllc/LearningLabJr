@@ -298,5 +298,25 @@
     "text": "Which feeling is our puppet pretending? Mad, Happy, Calm. Tap the matching face and feeling word.",
     "category": "feelings",
     "delivery": "gentle"
+  },
+  {
+    "text": "Let's match a funny face! Look at the example, then tap your eyebrows, eyes, and mouth to change them.",
+    "category": "feelings",
+    "delivery": "playful"
+  },
+  {
+    "text": "Now try some silly glasses! Tap each part of your face to match the example.",
+    "category": "feelings",
+    "delivery": "playful"
+  },
+  {
+    "text": "Match the example face. Tap your eyebrows, eyes, mouth, glasses, and hat to change them.",
+    "category": "feelings",
+    "delivery": "playful"
+  },
+  {
+    "text": "You matched the funny face! Every part looks just like the example.",
+    "category": "feelings",
+    "delivery": "playful"
   }
 ]

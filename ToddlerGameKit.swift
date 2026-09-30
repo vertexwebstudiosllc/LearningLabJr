@@ -40,9 +40,9 @@ final class GameNarrator: ObservableObject {
         defaults.object(forKey: "parents.voicePromptsEnabled") == nil || defaults.bool(forKey: "parents.voicePromptsEnabled")
     }
 
-    func speak(_ text: String) {
+    func speak(_ text: String, allowUnrecorded: Bool = false) {
         #if DEBUG
-        if ProcessInfo.processInfo.arguments.contains("-validateNarrationCoverage"), !text.isEmpty {
+        if !allowUnrecorded, ProcessInfo.processInfo.arguments.contains("-validateNarrationCoverage"), !text.isEmpty {
             assert(NarrationAudioCatalog.shared.url(for: text) != nil, "Missing recorded narration: \(text)")
         }
         #endif
@@ -175,104 +175,148 @@ struct ToddlerGameScaffold<Content: View>: View {
     var onReplay: (() -> Void)? = nil
     var scrollToTopOnPromptChange = false
     var autoNarratePrompt = true
+    var allowUnrecordedPrompt = false
     @ViewBuilder let content: () -> Content
     @Environment(\.dismiss) private var dismiss
     @Environment(\.learningActivity) private var activity
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @StateObject private var narrator = GameNarrator()
 
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
     var body: some View {
-        ScrollViewReader { scroll in
-            ScrollView {
-                VStack(spacing: 22) {
-                    HStack {
-                        Text(title)
-                            .font(.system(.title, design: .rounded, weight: .bold))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Button { narrator.speak(prompt) } label: {
-                            Image(systemName: "speaker.wave.2.fill")
-                                .font(.title2.bold())
-                                .frame(width: 64, height: 64)
-                                .background(accent.opacity(0.13), in: Circle())
-                        }
-                        .accessibilityLabel("Hear the directions again")
-                    }
-                    .id("activity-top")
+        GeometryReader { geometry in
+            // Use the actual window size so rotation and iPad multitasking both adapt.
+            let landscape = geometry.size.width >= 640 && geometry.size.width > geometry.size.height
+                && !dynamicTypeSize.isAccessibilitySize
+            let margin: CGFloat = landscape ? 16 : 20
+            let availableWidth = min(geometry.size.width - margin * 2, landscape ? 1060 : 740)
+            let directionsWidth = min(260, max(180, availableWidth * 0.27))
+            let layout = landscape
+                ? AnyLayout(HStackLayout(alignment: .top, spacing: 24))
+                : AnyLayout(VStackLayout(spacing: 22))
 
-                    Text(prompt)
-                        .font(.system(.title3, design: .rounded, weight: .semibold))
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .accessibilityAddTraits(.isHeader)
-
-                    if !completion {
-                        content()
-                            .frame(maxWidth: .infinity)
-                    }
-
-                    if completion {
-                        VStack(spacing: 14) {
-                            Label("We did it together!", systemImage: "checkmark.seal.fill")
-                                .font(.system(.title2, design: .rounded, weight: .bold))
-                            Text(activity?.caregiverTip ?? "Try this play idea with a grown-up away from the screen.")
-                                .multilineTextAlignment(.center)
-                            ToddlerActionButton(title: "All done", systemImage: "house.fill", color: accent) { dismiss() }
-                            if let onReplay {
-                                Button {
-                                    narrator.stop()
-                                    onReplay()
+            ScrollViewReader { scroll in
+                ScrollView {
+                    layout {
+                        VStack(spacing: landscape ? 12 : 16) {
+                            directions(compact: landscape)
+                            if landscape, let activity, !completion {
+                                DisclosureGroup {
+                                    Text(activity.caregiverTip)
+                                        .font(.system(.subheadline, design: .rounded))
+                                        .padding(.top, 6)
                                 } label: {
-                                    Text("Play again")
-                                        .font(.system(.headline, design: .rounded))
-                                        .frame(minWidth: 100, minHeight: 64)
-                                        .contentShape(Rectangle())
+                                    Label("Play together", systemImage: "person.2.fill")
+                                        .font(.system(.subheadline, design: .rounded, weight: .bold))
                                 }
-                                .buttonStyle(.plain)
+                                .padding(14)
+                                .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
                             }
                         }
-                        .padding(22)
-                        .frame(maxWidth: .infinity)
-                        .background(accent.opacity(0.1), in: RoundedRectangle(cornerRadius: 26))
-                        .transition(reduceMotion ? .identity : .opacity)
+                        .frame(width: landscape ? directionsWidth : nil)
+                        .id("activity-top")
 
-                        // Keep the child's creation visible below the finish controls.
-                        content()
-                            .frame(maxWidth: .infinity)
-                            .disabled(true)
-                    }
+                        VStack(spacing: landscape ? 16 : 22) {
+                            if completion {
+                                finishControls
+                                    .transition(reduceMotion ? .identity : .opacity)
+                            }
 
-                    if let activity, !completion {
-                        VStack(alignment: .leading, spacing: 6) {
-                            Label("Play together", systemImage: "person.2.fill")
-                                .font(.system(.subheadline, design: .rounded, weight: .bold))
-                            Text(activity.caregiverTip)
-                                .font(.system(.subheadline, design: .rounded))
+                            // Keep the same content identity when rotating or completing a game.
+                            content()
+                                .frame(maxWidth: .infinity)
+                                .disabled(completion)
+
+                            if !landscape, let activity, !completion {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    Label("Play together", systemImage: "person.2.fill")
+                                        .font(.system(.subheadline, design: .rounded, weight: .bold))
+                                    Text(activity.caregiverTip)
+                                        .font(.system(.subheadline, design: .rounded))
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(18)
+                                .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
+                            }
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(18)
-                        .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
+                        .frame(maxWidth: .infinity)
+                        .accessibilityElement(children: .contain)
+                        .accessibilityIdentifier("game.play-area")
                     }
+                    .frame(width: max(0, availableWidth))
+                    .padding(margin)
+                    .frame(maxWidth: .infinity)
                 }
-                .padding(20)
-                .frame(maxWidth: 780)
-                .frame(maxWidth: .infinity)
+                .onChange(of: prompt) { _, _ in
+                    if scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }
+                }
+                .onChange(of: completion) { _, finished in
+                    if finished { scroll.scrollTo("activity-top", anchor: .top) }
+                }
             }
-            .background(Color(red: 0.98, green: 0.97, blue: 0.93).ignoresSafeArea())
-            .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
-            .tint(accent)
-            .navigationTitle("Let's play")
-            .navigationBarTitleDisplayMode(.inline)
-            .task(id: "\(completion):\(prompt)") {
-                if autoNarratePrompt { narrator.speak(completion ? "We did it together! You can play again or choose all done." : prompt) }
-            }
-            .onChange(of: prompt) { _, _ in
-                if scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }
-            }
-            .onChange(of: completion) { _, finished in
-                if finished { scroll.scrollTo("activity-top", anchor: .top) }
-            }
-            .onDisappear { narrator.stop() }
         }
+        .background(Color(red: 0.98, green: 0.97, blue: 0.93).ignoresSafeArea())
+        .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
+        .tint(accent)
+        .navigationTitle("Let's play")
+        .navigationBarTitleDisplayMode(.inline)
+        .task(id: "\(completion):\(prompt)") {
+            if autoNarratePrompt { narrator.speak(completion ? "We did it together! You can play again or choose all done." : prompt, allowUnrecorded: allowUnrecordedPrompt) }
+        }
+        .onDisappear { narrator.stop() }
+    }
+
+    private func directions(compact: Bool) -> some View {
+        VStack(spacing: compact ? 12 : 16) {
+            HStack(spacing: 12) {
+                Text(title)
+                    .font(.system(compact ? .title2 : .title, design: .rounded, weight: .bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Button { narrator.speak(prompt, allowUnrecorded: allowUnrecordedPrompt) } label: {
+                    Image(systemName: "speaker.wave.2.fill")
+                        .font(.title2.bold())
+                        .frame(width: compact ? 48 : 64, height: compact ? 48 : 64)
+                        .background(accent.opacity(0.13), in: Circle())
+                }
+                .accessibilityLabel("Hear the directions again")
+            }
+
+            Text(prompt)
+                .font(.system(compact ? .headline : .title3, design: .rounded, weight: .semibold))
+                .multilineTextAlignment(compact ? .leading : .center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, minHeight: compact ? 0 : 56, alignment: compact ? .leading : .center)
+                .accessibilityAddTraits(.isHeader)
+        }
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("game.directions")
+    }
+
+    private var finishControls: some View {
+        VStack(spacing: 14) {
+            Label("We did it together!", systemImage: "checkmark.seal.fill")
+                .font(.system(.title2, design: .rounded, weight: .bold))
+            Text(activity?.caregiverTip ?? "Try this play idea with a grown-up away from the screen.")
+                .multilineTextAlignment(.center)
+            ToddlerActionButton(title: "All done", systemImage: "house.fill", color: accent) { dismiss() }
+            if let onReplay {
+                Button {
+                    narrator.stop()
+                    onReplay()
+                } label: {
+                    Text("Play again")
+                        .font(.system(.headline, design: .rounded))
+                        .frame(minWidth: 100, minHeight: 64)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(22)
+        .frame(maxWidth: .infinity)
+        .background(accent.opacity(0.1), in: RoundedRectangle(cornerRadius: 26))
     }
 }
 

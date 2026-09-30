@@ -18,55 +18,23 @@ struct StoryBookGame: View {
     private var lastPage: Bool { pageIndex == pages.count - 1 }
 
     var body: some View {
-        VStack(spacing: 12) {
-            HStack(alignment: .center, spacing: 12) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(book.title).font(.system(.title3, design: .rounded, weight: .bold))
-                    Text("Page \(pageIndex + 1) of \(pages.count) • Read together")
-                        .font(.system(.subheadline, design: .rounded))
-                        .foregroundStyle(.secondary)
-                }
-                Spacer(minLength: 0)
-                Button { narrator.speak(pages[pageIndex].text) } label: {
-                    Image(systemName: "speaker.wave.2.fill").font(.title2.bold())
-                        .frame(width: 64, height: 64)
-                        .background(book.accentColor.opacity(0.12), in: Circle())
-                }.accessibilityLabel("Read this page aloud")
-            }.padding(.horizontal, 18).padding(.top, 12)
+        GeometryReader { geometry in
+            let compact = geometry.size.height < 460
+            VStack(spacing: compact ? 8 : 12) {
+                header(compact: compact)
+                StoryPageView(page: pages[pageIndex])
+                    .contentShape(Rectangle())
+                    .gesture(StoryPageSwipeGesture { movePage(by: $0) })
+                    .accessibilityElement(children: .contain)
+                    .accessibilityAction(named: "Next page") { movePage(by: 1) }
+                    .accessibilityAction(named: "Previous page") { movePage(by: -1) }
 
-            ScrollView {
-                VStack(spacing: 16) {
-                    StoryPageView(page: pages[pageIndex])
-                    Text(lastPage ? "The end. Which part would you like to talk about?" : "Pause together: What do you notice in this picture?")
-                        .font(.system(.body, design: .rounded)).multilineTextAlignment(.center)
-                        .padding(16)
-                        .frame(maxWidth: .infinity)
-                        .background(book.accentColor.opacity(0.08), in: RoundedRectangle(cornerRadius: 20))
-                }.padding(.horizontal, 18).padding(.bottom, 18)
-                    .frame(maxWidth: 760).frame(maxWidth: .infinity)
-            }.id(pageIndex)
-
-            HStack(spacing: 12) {
-                Button {
-                    guard pageIndex > 0 else { return }
-                    narrator.stop()
-                    pageIndex -= 1
-                } label: {
-                    Image(systemName: "chevron.left").font(.title2.bold()).frame(width: 64, height: 64)
-                        .background(book.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 20))
-                }.disabled(pageIndex == 0).accessibilityLabel("Previous page")
-
-                if lastPage {
-                    ToddlerActionButton(title: "Read again", systemImage: "arrow.counterclockwise", color: book.accentColor) { narrator.stop(); pageIndex = 0 }
-                    ToddlerActionButton(title: "All done", systemImage: "checkmark", color: book.accentColor) { dismiss() }
-                } else {
-                    ToddlerActionButton(title: "Next page", systemImage: "chevron.right", color: book.accentColor) {
-                        guard pageIndex < pages.count - 1 else { return }
-                        narrator.stop()
-                        pageIndex += 1
-                    }
-                }
-            }.padding(.horizontal, 18).padding(.bottom, 12)
+                pageControls(compact: compact)
+            }
+            .padding(.horizontal, compact ? 12 : 18)
+            .padding(.vertical, compact ? 6 : 10)
+            .frame(maxWidth: 1200)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .foregroundStyle(Color(red: 0.15, green: 0.19, blue: 0.25))
         .tint(book.accentColor)
@@ -75,6 +43,88 @@ struct StoryBookGame: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: pageIndex) { narrator.speak(pages[pageIndex].text) }
         .onDisappear { narrator.stop() }
+    }
+
+    private func header(compact: Bool) -> some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(book.title)
+                    .font(.system(compact ? .subheadline : .headline, design: .rounded, weight: .bold))
+                    .lineLimit(2)
+                Text("Page \(pageIndex + 1) of \(pages.count) • Read together")
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(.secondary)
+                    .accessibilityIdentifier("book.pageProgress")
+            }
+            Spacer(minLength: 0)
+            Button { narrator.speak(pages[pageIndex].text) } label: {
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.title3.bold())
+                    .frame(width: 48, height: 48)
+                    .background(book.accentColor.opacity(0.12), in: Circle())
+            }
+            .accessibilityLabel("Read this page aloud")
+        }
+    }
+
+    private func pageControls(compact: Bool) -> some View {
+        HStack(spacing: 10) {
+            readerButton("Previous page", symbol: "chevron.left", compact: compact, iconOnly: true) {
+                movePage(by: -1)
+            }
+            .disabled(pageIndex == 0)
+            .accessibilityIdentifier("book.previous")
+
+            if lastPage {
+                readerButton("Read again", symbol: "arrow.counterclockwise", compact: compact) {
+                    narrator.stop()
+                    pageIndex = 0
+                }
+                .accessibilityIdentifier("book.restart")
+                readerButton("All done", symbol: "checkmark", compact: compact) { dismiss() }
+            } else {
+                readerButton("Next page", symbol: "chevron.right", compact: compact) { movePage(by: 1) }
+                    .accessibilityIdentifier("book.next")
+            }
+        }
+    }
+
+    private func readerButton(_ title: String, symbol: String, compact: Bool,
+                              iconOnly: Bool = false, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: symbol)
+                if !iconOnly { Text(title).lineLimit(1).minimumScaleFactor(0.8) }
+            }
+            .font(.system(compact ? .subheadline : .body, design: .rounded, weight: .bold))
+            .frame(maxWidth: iconOnly ? 56 : .infinity, minHeight: compact ? 44 : 52)
+            .padding(.horizontal, iconOnly ? 0 : 10)
+            .background(book.accentColor.opacity(0.14), in: RoundedRectangle(cornerRadius: 18))
+            .contentShape(RoundedRectangle(cornerRadius: 18))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title)
+    }
+
+    private func movePage(by offset: Int) {
+        let next = StoryBookNavigation.destination(from: pageIndex, offset: offset, pageCount: pages.count)
+        guard next != pageIndex else { return }
+        narrator.stop()
+        pageIndex = next
+    }
+}
+
+/// Buttons and swipes share the same page boundaries; a swipe never wraps or dismisses the book.
+enum StoryBookNavigation {
+    static func destination(from page: Int, offset: Int, pageCount: Int) -> Int {
+        guard pageCount > 0 else { return 0 }
+        return min(max(page + offset, 0), pageCount - 1)
+    }
+
+    static func swipeOffset(translation: CGSize) -> Int? {
+        guard abs(translation.width) >= 35,
+              abs(translation.width) > abs(translation.height) * 1.3 else { return nil }
+        return translation.width < 0 ? 1 : -1
     }
 }
 
@@ -102,7 +152,7 @@ enum StoryBook {
         }
     }
 
-    fileprivate var pages: [StoryBookPage] {
+    var pages: [StoryBookPage] {
         switch self {
         case .owenOnion: StoryBookPage.owenOnion
         case .dinoBasketball: StoryBookPage.dinoBasketball
@@ -134,13 +184,15 @@ enum StoryBook {
     }
 }
 
-private struct StoryBookPage: Identifiable {
+struct StoryBookPage: Identifiable {
     let number: Int
     let text: String
     let imagePrefix: String
 
     var id: Int { number }
     var imageName: String { "\(imagePrefix)\(number)" }
+    // Let the printed words wrap to the available space. Narration retains the original verse breaks.
+    var readingText: String { text.replacingOccurrences(of: "\n", with: " ") }
 
     init(number: Int, text: String, imagePrefix: String = "OwenOnionPage") {
         self.number = number
@@ -728,23 +780,129 @@ private struct StoryBookPage: Identifiable {
     ]
 }
 
-private struct StoryPageView: View {
+struct StoryPageView: View {
+    @ScaledMetric(relativeTo: .body) private var readingFontSize: CGFloat = 19
     let page: StoryBookPage
+
     var body: some View {
-        VStack(spacing: 20) {
-            Text(page.text)
-                .font(.system(.title3, design: .rounded, weight: .medium))
-                .lineSpacing(5)
-                .multilineTextAlignment(.leading)
-                .fixedSize(horizontal: false, vertical: true)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(20)
-                .background(Color.white, in: RoundedRectangle(cornerRadius: 22))
-            Image(page.imageName)
-                .resizable().scaledToFit()
-                .frame(maxHeight: 500)
-                .clipShape(RoundedRectangle(cornerRadius: 22))
-                .accessibilityLabel("Story illustration for page \(page.number)")
+        GeometryReader { geometry in
+            let fontSize = StoryBookPageLayout.fontSize(for: geometry.size, preferred: readingFontSize)
+            let layout = StoryBookPageLayout(size: geometry.size, text: page.readingText, fontSize: fontSize)
+            let arrangement = layout.sideBySide ? AnyLayout(HStackLayout(spacing: 16)) : AnyLayout(VStackLayout(spacing: 12))
+            arrangement {
+                Image(page.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: layout.imageSize.width, height: layout.imageSize.height)
+                    .accessibilityLabel("Story illustration for page \(page.number)")
+                    .accessibilityIdentifier("book.illustration")
+
+                ViewThatFits(in: .vertical) {
+                    pageText(fontSize: fontSize).fixedSize(horizontal: false, vertical: true)
+                    // Very large accessibility type can scroll independently while the full picture stays visible.
+                    ScrollView {
+                        pageText(fontSize: fontSize).fixedSize(horizontal: false, vertical: true)
+                    }
+                    .scrollBounceBehavior(.basedOnSize)
+                    .id(page.id)
+                }
+                .padding(14)
+                .frame(width: layout.textSize.width, height: layout.textSize.height, alignment: .topLeading)
+                .background(.white, in: RoundedRectangle(cornerRadius: 20))
+            }
+        }
+    }
+
+    private func pageText(fontSize: CGFloat) -> some View {
+        Text(page.readingText)
+            .font(.system(size: fontSize, weight: .medium, design: .rounded))
+            .lineSpacing(3)
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityIdentifier("book.pageText")
+    }
+}
+
+/// Reserve room for the complete picture even when accessibility text needs to scroll.
+struct StoryBookPageLayout {
+    let sideBySide: Bool
+    let imageSize: CGSize
+    let textSize: CGSize
+
+    init(size: CGSize, text: String, fontSize: CGFloat) {
+        sideBySide = size.width >= 620
+        if sideBySide {
+            let imageWidth = (size.width - 16) * 0.5
+            imageSize = CGSize(width: imageWidth, height: size.height)
+            textSize = CGSize(width: size.width - imageWidth - 16, height: size.height)
+        } else {
+            let textHeight = min(Self.textHeight(text, width: size.width - 28, fontSize: fontSize) + 32,
+                                 max(0, (size.height - 12) * 0.58))
+            textSize = CGSize(width: size.width, height: textHeight)
+            imageSize = CGSize(width: size.width, height: max(0, size.height - textHeight - 12))
+        }
+    }
+
+    static func fontSize(for size: CGSize, preferred: CGFloat) -> CGFloat {
+        let compact = size.height < 260 || (size.width < 620 && size.height < 480)
+        return compact ? preferred * 17 / 19 : preferred
+    }
+
+    static func textHeight(_ text: String, width: CGFloat, fontSize: CGFloat) -> CGFloat {
+        let standardFont = UIFont.systemFont(ofSize: fontSize, weight: .medium)
+        let descriptor = standardFont.fontDescriptor.withDesign(.rounded) ?? standardFont.fontDescriptor
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 3
+        return ceil((text as NSString).boundingRect(
+            with: CGSize(width: max(1, width), height: .greatestFiniteMagnitude),
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            attributes: [.font: UIFont(descriptor: descriptor, size: fontSize), .paragraphStyle: paragraph],
+            context: nil
+        ).height)
+    }
+}
+
+/// A horizontal page pan wins over navigation's back gesture, while vertical pans can scroll large text.
+private struct StoryPageSwipeGesture: UIGestureRecognizerRepresentable {
+    let move: (Int) -> Void
+
+    func makeCoordinator(converter: CoordinateSpaceConverter) -> Coordinator { Coordinator() }
+
+    func makeUIGestureRecognizer(context: Context) -> UIPanGestureRecognizer {
+        let pan = UIPanGestureRecognizer()
+        pan.maximumNumberOfTouches = 1
+        pan.delegate = context.coordinator
+        return pan
+    }
+
+    func updateUIGestureRecognizer(_ recognizer: UIPanGestureRecognizer, context: Context) {
+        DispatchQueue.main.async { [weak recognizer] in
+            guard let recognizer else { return }
+            var responder: UIResponder? = recognizer.view
+            while let current = responder {
+                if let controller = current as? UIViewController, let navigation = controller.navigationController {
+                    navigation.interactivePopGestureRecognizer?.require(toFail: recognizer)
+                    navigation.interactiveContentPopGestureRecognizer?.require(toFail: recognizer)
+                    break
+                }
+                responder = current.next
+            }
+        }
+    }
+
+    func handleUIGestureRecognizerAction(_ recognizer: UIPanGestureRecognizer, context: Context) {
+        guard recognizer.state == .ended else { return }
+        let translation = recognizer.translation(in: recognizer.view)
+        if let offset = StoryBookNavigation.swipeOffset(translation: CGSize(width: translation.x, height: translation.y)) {
+            move(offset)
+        }
+    }
+
+    final class Coordinator: NSObject, UIGestureRecognizerDelegate {
+        func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            guard let pan = gestureRecognizer as? UIPanGestureRecognizer else { return false }
+            let velocity = pan.velocity(in: pan.view)
+            return abs(velocity.x) > abs(velocity.y) * 1.3
         }
     }
 }

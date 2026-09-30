@@ -1,0 +1,72 @@
+import XCTest
+import SwiftUI
+@testable import LearningLabJr
+
+final class ReadTogetherTests: XCTestCase {
+    func testPageSwipesIgnoreShortAndVerticalDragsAndStayInsideBook() {
+        XCTAssertNil(StoryBookNavigation.swipeOffset(translation: CGSize(width: 20, height: 0)))
+        XCTAssertNil(StoryBookNavigation.swipeOffset(translation: CGSize(width: 40, height: 80)))
+        XCTAssertNil(StoryBookNavigation.swipeOffset(translation: CGSize(width: 100, height: 100)))
+        XCTAssertEqual(StoryBookNavigation.swipeOffset(translation: CGSize(width: -100, height: 10)), 1)
+        XCTAssertEqual(StoryBookNavigation.swipeOffset(translation: CGSize(width: 100, height: 10)), -1)
+        for count in [1, 15] {
+            XCTAssertEqual(StoryBookNavigation.destination(from: 0, offset: -1, pageCount: count), 0)
+            XCTAssertEqual(StoryBookNavigation.destination(from: count - 1, offset: 1, pageCount: count), count - 1)
+            for page in 0..<(count - 1) {
+                let next = StoryBookNavigation.destination(from: page, offset: 1, pageCount: count)
+                XCTAssertEqual(next, page + 1)
+                XCTAssertEqual(StoryBookNavigation.destination(from: next, offset: -1, pageCount: count), page)
+            }
+        }
+        XCTAssertEqual(StoryBookNavigation.destination(from: 0, offset: 1, pageCount: 0), 0)
+    }
+
+    @MainActor func testAllSixtyPagesFitPhoneAndTabletWithCompleteArtwork() throws {
+        // Content area after safe areas, navigation, heading and the persistent bottom buttons.
+        let sizes: [(String, CGSize)] = [
+            ("Phone portrait", CGSize(width: 366, height: 574)),
+            ("Small phone portrait", CGSize(width: 339, height: 426)),
+            ("Phone landscape", CGSize(width: 724, height: 226)),
+            ("Tablet portrait", CGSize(width: 798, height: 960)),
+            ("Tablet landscape", CGSize(width: 1164, height: 650))
+        ]
+        XCTAssertEqual(StoryBook.readTogetherBooks.reduce(0) { $0 + $1.pages.count }, 60)
+        for book in StoryBook.readTogetherBooks {
+            for page in book.pages {
+                XCTAssertNotNil(UIImage(named: page.imageName), page.imageName)
+                XCTAssertEqual(page.readingText.split(whereSeparator: \.isWhitespace), page.text.split(whereSeparator: \.isWhitespace))
+                XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: page.text), page.imageName)
+                for (name, size) in sizes {
+                    let fontSize = StoryBookPageLayout.fontSize(for: size, preferred: 19)
+                    let layout = StoryBookPageLayout(size: size, text: page.readingText, fontSize: fontSize)
+                    let needed = StoryBookPageLayout.textHeight(page.readingText, width: layout.textSize.width - 28, fontSize: fontSize)
+                    XCTAssertLessThanOrEqual(needed, layout.textSize.height - 28, "Full text fits: \(page.imageName), \(name)")
+                    XCTAssertGreaterThan(layout.imageSize.height, 150, "Visible art: \(page.imageName), \(name)")
+                    XCTAssertGreaterThan(layout.imageSize.width, 150)
+                }
+            }
+            // Capture the longest page of each book in both phone orientations and on a tablet.
+            let longest = try XCTUnwrap(book.pages.max { $0.readingText.count < $1.readingText.count })
+            for (name, size) in sizes where !name.hasPrefix("Small") && name != "Tablet portrait" {
+                let view = StoryPageView(page: longest)
+                    .frame(width: size.width, height: size.height)
+                    .padding(12)
+                    .background(Color(red: 0.99, green: 0.97, blue: 0.92))
+                let renderer = ImageRenderer(content: view)
+                renderer.scale = 1
+                let attachment = XCTAttachment(image: try XCTUnwrap(renderer.uiImage))
+                attachment.name = "\(longest.imageName) — \(name)"
+                attachment.lifetime = .keepAlways
+                add(attachment)
+            }
+        }
+    }
+
+    @MainActor func testAccessibilityTypeKeepsImageVisible() {
+        let size = CGSize(width: 366, height: 574)
+        let longest = StoryBook.dinoBasketball.pages.max { $0.readingText.count < $1.readingText.count }!
+        let layout = StoryBookPageLayout(size: size, text: longest.readingText, fontSize: 44)
+        XCTAssertGreaterThan(layout.imageSize.height, 200)
+        XCTAssertGreaterThan(StoryBookPageLayout.textHeight(longest.readingText, width: layout.textSize.width - 28, fontSize: 44), layout.textSize.height)
+    }
+}

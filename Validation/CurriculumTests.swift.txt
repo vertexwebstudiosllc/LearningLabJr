@@ -859,10 +859,9 @@ final class CurriculumTests: XCTestCase {
     }
 
     @MainActor
-    func testFunnyFaceCopyIdentifySequenceAndRuth() throws {
+    func testFunnyFaceFeatureMatchingProgressionAndGuards() throws {
         XCTAssertEqual(StudioEmotion.allCases.count, 6)
         XCTAssertEqual(StudioEmotion.mad.name, "Mad")
-        XCTAssertEqual(Set(StudioEmotion.allCases.map(\.clue)).count, 6)
         var previousFirst = "happy"
         var previousLast = "sad"
         var orders = Set<String>()
@@ -875,47 +874,80 @@ final class CurriculumTests: XCTestCase {
             var seen = Set<StudioEmotion>()
             for index in 0..<6 {
                 let round = play.current
-                let target = round.emotion
-                XCTAssertTrue(seen.insert(target).inserted)
-                XCTAssertEqual(play.phase, .copy)
-                XCTAssertEqual(play.prompt, target.copyPrompt)
-                XCTAssertEqual(Set(round.choices).count, 3)
-                XCTAssertTrue(round.choices.contains(target))
-                play.choose(target, for: target); XCTAssertEqual(play.phase, .copy)
-                play.advance(from: target); XCTAssertEqual(play.index, index)
-                let wrong = try XCTUnwrap(round.choices.first { $0 != target })
-                play.copied(wrong); XCTAssertEqual(play.phase, .copy)
-                play.copied(target); XCTAssertEqual(play.phase, .identify)
-                XCTAssertEqual(play.prompt, StudioEmotion.question(round.choices))
-                play.choose(target, for: wrong); XCTAssertEqual(play.phase, .identify)
-                let absent = try XCTUnwrap(StudioEmotion.allCases.first { !round.choices.contains($0) })
-                play.choose(absent, for: target); XCTAssertFalse(play.needsHelp)
-                play.choose(wrong, for: target); XCTAssertTrue(play.needsHelp)
-                XCTAssertEqual(play.prompt, target.retry); XCTAssertEqual(play.index, index)
-                play.choose(target, for: target); XCTAssertEqual(play.phase, .found)
-                XCTAssertEqual(play.prompt, target.success); XCTAssertFalse(play.needsHelp)
-                play.choose(wrong, for: target); XCTAssertEqual(play.phase, .found)
-                play.advance(from: wrong); XCTAssertEqual(play.index, index)
-                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
-                play.advance(from: target); XCTAssertEqual(play.index, index + 1)
-                previousLast = target.rawValue
+                let emotion = round.emotion
+                let staleEmotion = try XCTUnwrap(StudioEmotion.allCases.first { $0 != emotion })
+                XCTAssertTrue(seen.insert(emotion).inserted)
+                XCTAssertEqual(play.phase, .matching)
+                XCTAssertEqual(round.features.count, index < 2 ? 3 : index < 4 ? 4 : 5)
+                XCTAssertEqual(Set(round.features).count, round.features.count)
+                XCTAssertEqual(play.face, round.startingFace)
+                XCTAssertTrue(play.matchedFeatures.isEmpty, "Every active part starts different")
+                XCTAssertNotEqual(play.face, round.target)
+                XCTAssertEqual(round.target.glasses > 0, index >= 2)
+                XCTAssertEqual(round.target.hat > 0, index >= 4)
+                let initial = play.face
+                play.advance(from: emotion); XCTAssertEqual(play.index, index)
+                play.change(.eyes, for: staleEmotion, from: initial.eyes)
+                XCTAssertEqual(play.face, initial)
+                play.change(.eyes, for: emotion, from: -1)
+                XCTAssertEqual(play.face, initial)
+                for locked in StudioFeature.allCases where !round.features.contains(locked) {
+                    play.change(locked, for: emotion, from: initial[locked])
+                    XCTAssertEqual(play.face, initial)
+                    XCTAssertEqual(round.target[locked], 0)
+                }
+                for feature in round.features.reversed() {
+                    var taps = 0
+                    while play.face[feature] != round.target[feature] && taps < feature.styles.count {
+                        let before = play.face
+                        play.change(feature, for: emotion, from: before[feature])
+                        XCTAssertEqual(play.face[feature], (before[feature] + 1) % feature.styles.count)
+                        for other in StudioFeature.allCases where other != feature {
+                            XCTAssertEqual(play.face[other], before[other], "Only the tapped part changes")
+                        }
+                        let after = play.face
+                        play.change(feature, for: emotion, from: before[feature])
+                        XCTAssertEqual(play.face, after, "Repeated stale callbacks are ignored")
+                        taps += 1
+                    }
+                    XCTAssertEqual(play.face[feature], round.target[feature])
+                    XCTAssertEqual(play.phase == .found, play.face == round.target)
+                }
+                XCTAssertEqual(play.phase, .found)
+                XCTAssertEqual(play.matchedFeatures.count, round.features.count)
+                play.change(.mouth, for: emotion, from: play.face.mouth)
+                XCTAssertEqual(play.face, round.target, "A completed face stays matched")
+                play.advance(from: staleEmotion); XCTAssertEqual(play.index, index)
+                play.advance(from: emotion); XCTAssertEqual(play.index, index + 1)
+                play.advance(from: emotion); XCTAssertEqual(play.index, index + 1)
+                previousLast = emotion.rawValue
             }
             XCTAssertTrue(play.complete)
-            play.copied(play.current.emotion); XCTAssertTrue(play.complete)
+            let finalFace = play.face
+            play.change(.eyes, for: play.current.emotion, from: play.face.eyes)
+            play.advance(from: play.current.emotion)
+            XCTAssertEqual(play.index, 6); XCTAssertEqual(play.face, finalFace)
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: play.prompt)?.voice, "Ruth")
         }
         XCTAssertGreaterThan(orders.count, 100)
-        for line in StudioEmotion.narration {
-            XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: line)?.voice, "Ruth", line)
-            XCTAssertFalse(line.lowercased().contains("cross"))
-        }
         var drawings = Set<Data>()
         for emotion in StudioEmotion.allCases {
             let renderer = ImageRenderer(content: StudioFace(emotion: emotion, size: 220))
             let image = try XCTUnwrap(renderer.uiImage)
             drawings.insert(try XCTUnwrap(image.pngData()))
         }
-        XCTAssertEqual(drawings.count, 6, "Each feeling needs a distinct face")
+        XCTAssertEqual(drawings.count, 6, "Each expression needs a distinct face")
+        for feature in StudioFeature.allCases {
+            XCTAssertNotNil(UIImage(systemName: feature.symbol))
+            var featureDrawings = Set<Data>()
+            for style in feature.styles.indices {
+                var design = StudioEmotion.happy.face
+                design[feature] = style
+                let image = try XCTUnwrap(ImageRenderer(content: StudioFace(design: design)).uiImage)
+                featureDrawings.insert(try XCTUnwrap(image.pngData()))
+            }
+            XCTAssertEqual(featureDrawings.count, feature.styles.count, "Every \(feature.name) style looks different")
+        }
     }
 
     @MainActor
@@ -1582,14 +1614,14 @@ final class CurriculumTests: XCTestCase {
                 XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth")
             }
         }
-        for text in [HabitatSession.groupPrompt, HabitatSession.completion, "Choose an animal. Then choose its home."] {
+        for text in [HabitatSession.groupPrompt, HabitatSession.completion] {
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
         }
         for _ in 0..<100 {
             var play = HabitatSession(previousFirst: previous)
             XCTAssertEqual(play.rounds.count, 6)
-            XCTAssertNotEqual(play.selected, previous)
-            previous = play.selected
+            XCTAssertNotEqual(play.animal?.id, previous)
+            previous = play.animal?.id
             let all = play.rounds.flatMap(\.animals)
             XCTAssertEqual(all.count, 24)
             XCTAssertEqual(Set(all.map(\.id)).count, 24)
@@ -1607,27 +1639,46 @@ final class CurriculumTests: XCTestCase {
                 for home in play.current.homes {
                     XCTAssertEqual(play.current.animals.filter { $0.habitat == home }.count, 2)
                 }
-                for animal in play.current.animals.reversed() {
-                    play.select(animal.id)
+                for (animalIndex, animal) in play.current.animals.enumerated() {
+                    XCTAssertEqual(play.animal?.id, animal.id)
+                    XCTAssertEqual(play.prompt, animal.prompt)
                     let count = play.matched.count
-                    for wrong in AnimalHabitat.allCases where wrong != animal.habitat {
-                        XCTAssertFalse(play.place(in: wrong))
-                        XCTAssertEqual(play.matched.count, count)
+                    // Later animals cannot be placed before the visible one.
+                    for later in play.current.animals.dropFirst(animalIndex + 1) {
+                        XCTAssertFalse(play.place(later.id, in: later.habitat))
                     }
-                    XCTAssertTrue(play.place(in: animal.habitat))
+                    XCTAssertFalse(play.place("invalid", in: animal.habitat))
+                    for wrong in AnimalHabitat.allCases where wrong != animal.habitat {
+                        XCTAssertFalse(play.place(animal.id, in: wrong))
+                        XCTAssertEqual(play.matched.count, count)
+                        XCTAssertEqual(play.animal?.id, animal.id)
+                    }
+                    XCTAssertTrue(play.place(animal.id, in: animal.habitat))
                     XCTAssertEqual(play.matched.count, count + 1)
-                    let selected = play.selected
-                    play.select(animal.id); XCTAssertEqual(play.selected, selected)
-                    play.select("invalid"); XCTAssertEqual(play.selected, selected)
+                    let nextAnimal = play.animal?.id
+                    XCTAssertFalse(play.place(animal.id, in: animal.habitat))
+                    XCTAssertEqual(play.animal?.id, nextAnimal)
+                    XCTAssertEqual(play.matched.count, count + 1)
+                    if let following = play.animal {
+                        XCTAssertFalse(play.place(animal.id, in: following.habitat))
+                        XCTAssertEqual(play.matched.count, count + 1)
+                    }
+                    if animalIndex < 3 {
+                        XCTAssertEqual(nextAnimal, play.current.animals[animalIndex + 1].id)
+                        play.next(); XCTAssertEqual(play.index, index)
+                    }
                 }
                 XCTAssertTrue(play.solved)
-                XCTAssertFalse(play.place(in: play.current.homes[0]))
+                XCTAssertNil(play.animal)
+                XCTAssertEqual(play.prompt, HabitatSession.groupPrompt)
+                XCTAssertFalse(play.place(play.current.animals[0].id, in: play.current.homes[0]))
                 play.next()
             }
             XCTAssertTrue(play.complete)
             play.next(); XCTAssertEqual(play.index, 6)
-            play.select("cow"); XCTAssertNil(play.selected)
-            XCTAssertFalse(play.place(in: .farm))
+            XCTAssertNil(play.animal)
+            XCTAssertEqual(play.prompt, HabitatSession.completion)
+            XCTAssertFalse(play.place("cow", in: .farm))
         }
         XCTAssertEqual(signatures.count, 100)
     }

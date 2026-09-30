@@ -1,0 +1,61 @@
+import XCTest
+import StoreKitTest
+
+final class LandscapeLayoutUITests: XCTestCase {
+    @MainActor func testSharedLayoutAcrossCategoriesAndRotation() async throws {
+        continueAfterFailure = false
+        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        store.resetToDefaultState()
+        store.clearTransactions()
+        store.disableDialogs = true
+        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        defer { XCUIDevice.shared.orientation = .portrait }
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        let activities = [
+            ("ABCs & Phonics", "Letter Twins", "phonics.letter-match"),
+            ("Shapes & Colors", "Shape Post", "shapes.post"),
+            ("123s & Counting", "Number Picnic", "counting.pile-match"),
+            ("Nature Explorers", "Habitat Helpers", "nature.habitats"),
+            ("Story Time", "Picture Hunt", "stories.pictureHunt"),
+            ("Big Feelings", "Funny Face Studio", "feelings.faces")
+        ]
+        for (category, title, identifier) in activities {
+            XCUIDevice.shared.orientation = .landscapeLeft
+            app.launch()
+            let categoryButton = app.buttons["category." + category]
+            XCTAssertTrue(categoryButton.waitForExistence(timeout: 15))
+            tapVisible(categoryButton, in: app)
+            tapVisible(app.buttons["activity." + identifier], in: app)
+            let directions = app.otherElements["game.directions"]
+            let play = app.otherElements["game.play-area"]
+            XCTAssertTrue(directions.waitForExistence(timeout: 5))
+            XCTAssertTrue(play.waitForExistence(timeout: 5))
+            XCTAssertLessThanOrEqual(directions.frame.maxX, play.frame.minX)
+            XCTAssertEqual(directions.frame.minY, play.frame.minY, accuracy: 3)
+            XCTAssertGreaterThanOrEqual(play.frame.width, 320)
+            XCTAssertLessThanOrEqual(play.frame.maxX, app.windows.firstMatch.frame.maxX)
+            let landscape = XCTAttachment(screenshot: app.screenshot())
+            landscape.name = title + " landscape"; landscape.lifetime = .keepAlways; add(landscape)
+
+            let prompt = directions.staticTexts.allElementsBoundByIndex.map(\.label)
+            XCUIDevice.shared.orientation = .portrait
+            XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
+            XCTAssertEqual(directions.staticTexts.allElementsBoundByIndex.map(\.label), prompt)
+            XCTAssertLessThanOrEqual(directions.frame.maxY, play.frame.minY)
+            XCUIDevice.shared.orientation = .landscapeRight
+            XCTAssertEqual(directions.staticTexts.allElementsBoundByIndex.map(\.label), prompt)
+            XCTAssertLessThanOrEqual(directions.frame.maxX, play.frame.minX)
+            app.terminate()
+        }
+        _ = store
+    }
+
+    @MainActor private func tapVisible(_ element: XCUIElement, in app: XCUIApplication) {
+        for _ in 0..<12 {
+            if element.exists && element.isHittable { element.tap(); return }
+            app.swipeUp()
+        }
+        XCTFail("Missing control: \(element)")
+    }
+}
