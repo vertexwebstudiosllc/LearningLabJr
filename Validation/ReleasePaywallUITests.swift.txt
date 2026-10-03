@@ -1,11 +1,13 @@
 import XCTest
 import StoreKitTest
 
+// Include LearningLabJr.storekit in the UI-test bundle when activating these fixtures.
+
 @MainActor
 final class ReleasePaywallUITests: XCTestCase {
     func testParentGatePaywallDisclosureAndPurchase() async throws {
         continueAfterFailure = false
-        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        let store = try makeStoreSession()
         store.resetToDefaultState()
         store.clearTransactions()
         store.disableDialogs = true
@@ -16,9 +18,11 @@ final class ReleasePaywallUITests: XCTestCase {
         let category = app.buttons["category.ABCs & Phonics"]
         XCTAssertTrue(category.waitForExistence(timeout: 15))
         category.tap()
+        dismissLaunchPrompt(app)
         let letterDraw = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Letter Draw.'")).firstMatch
         XCTAssertTrue(letterDraw.waitForExistence(timeout: 5))
         letterDraw.tap()
+        app.buttons["premium.viewPlans"].tap()
         let question = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Please add '")).firstMatch
         XCTAssertTrue(question.waitForExistence(timeout: 5))
         XCTAssertFalse(app.buttons["premium.subscribe"].exists)
@@ -79,7 +83,7 @@ final class CategoryAccessUITests: XCTestCase {
     ]
 
     func testFreeFirstGameAndLockedSecondGameAcrossAllSections() throws {
-        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        let store = try makeStoreSession()
         store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
         defer { store.clearTransactions() }
         for (section, first, second) in sections {
@@ -94,6 +98,7 @@ final class CategoryAccessUITests: XCTestCase {
             XCTAssertTrue(locked.waitForExistence(timeout: 5))
             XCTAssertTrue(locked.label.contains("Premium, grown-up required"))
             locked.tap()
+            app.buttons["premium.viewPlans"].tap()
             XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
             XCTAssertFalse(app.buttons["premium.subscribe"].exists)
             app.buttons["Back to play"].tap()
@@ -102,7 +107,7 @@ final class CategoryAccessUITests: XCTestCase {
     }
 
     func testPremiumUnlocksEverySectionAndRevocationClosesOpenGame() async throws {
-        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        let store = try makeStoreSession()
         store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
         defer { store.clearTransactions() }
         let transaction = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
@@ -134,6 +139,7 @@ final class CategoryAccessUITests: XCTestCase {
             app.swipeUp()
         }
         category.tap()
+        dismissLaunchPrompt(app)
         return app
     }
 }
@@ -141,7 +147,7 @@ final class CategoryAccessUITests: XCTestCase {
 @MainActor
 final class BookAccessUITests: XCTestCase {
     func testFirstBookFreeOtherBooksLockedAndPremiumUnlocksThem() async throws {
-        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        let store = try makeStoreSession()
         store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
         defer { store.clearTransactions() }
         let app = XCUIApplication()
@@ -156,6 +162,7 @@ final class BookAccessUITests: XCTestCase {
         }
         XCTAssertTrue(app.buttons["category.Story Time"].waitForExistence(timeout: 15))
         tap(app.buttons["category.Story Time"])
+        dismissLaunchPrompt(app)
         tap(app.buttons["activity.stories.library"])
         let free = app.buttons["activity.books.owen-onion"]
         XCTAssertTrue(free.waitForExistence(timeout: 5))
@@ -168,6 +175,7 @@ final class BookAccessUITests: XCTestCase {
             let book = app.buttons["activity.\(id)"]
             XCTAssertTrue(book.label.contains("Premium, grown-up required"))
             tap(book)
+            app.buttons["premium.viewPlans"].tap()
             XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
             XCTAssertFalse(app.buttons["premium.subscribe"].exists)
             app.buttons["Back to play"].tap()
@@ -192,4 +200,112 @@ final class BookAccessUITests: XCTestCase {
         tap(free)
         XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
     }
+}
+
+@MainActor
+private func dismissLaunchPrompt(_ app: XCUIApplication) {
+    let close = app.buttons["premium.close"]
+    if close.waitForExistence(timeout: 3) { close.tap() }
+}
+
+@MainActor
+final class LaunchSubscriptionPromptUITests: XCTestCase {
+    private func launch() -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO", "-parents.familyPlaySession.v1", ""]
+        app.launch()
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        return app
+    }
+
+    func testFirstTapCanCloseAndPlayFreeGamesWhileLockedGamesPromptAgain() throws {
+        continueAfterFailure = false
+        let store = try makeStoreSession()
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions() }
+        for closeID in ["premium.close", "premium.continueFree"] {
+            let app = launch()
+            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            app.buttons["category.ABCs & Phonics"].tap()
+            XCTAssertTrue(app.buttons["premium.viewPlans"].waitForExistence(timeout: 10))
+            XCTAssertFalse(app.buttons["premium.subscribe"].exists)
+            app.buttons[closeID].tap()
+            let free = app.buttons["activity.phonics.letter-match"]
+            XCTAssertTrue(free.waitForExistence(timeout: 5))
+            free.tap()
+            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            app.navigationBars.buttons.firstMatch.tap()
+            for _ in 0..<2 {
+                app.buttons["activity.phonics.letter-draw"].tap()
+                XCTAssertTrue(app.buttons["premium.viewPlans"].waitForExistence(timeout: 5))
+                app.buttons["premium.close"].tap()
+                XCTAssertTrue(free.waitForExistence(timeout: 5))
+            }
+            app.navigationBars.buttons.firstMatch.tap()
+            app.buttons["category.ABCs & Phonics"].tap()
+            XCTAssertTrue(free.waitForExistence(timeout: 5))
+            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            app.terminate()
+        }
+    }
+
+    func testExistingMonthlyAndAnnualSubscribersDoNotSeeFirstTapPrompt() async throws {
+        continueAfterFailure = false
+        let store = try makeStoreSession()
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions() }
+        for id in ["com.learninglabjr.premium.monthly", "com.learninglabjr.premium.annual"] {
+            store.clearTransactions()
+            _ = try await store.buyProduct(identifier: id)
+            let app = launch()
+            app.buttons["category.ABCs & Phonics"].tap()
+            let paid = app.buttons["activity.phonics.letter-draw"]
+            XCTAssertTrue(paid.waitForExistence(timeout: 10))
+            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(paid.label.contains("Premium, grown-up required"))
+            paid.tap()
+            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+            app.terminate()
+        }
+    }
+
+    func testFirstTapOnHomeArtworkAlsoPrompts() throws {
+        continueAfterFailure = false
+        let store = try makeStoreSession()
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions() }
+        XCUIDevice.shared.orientation = .portrait
+        let app = launch()
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.17)).tap()
+        XCTAssertTrue(app.buttons["premium.close"].waitForExistence(timeout: 10))
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "First-tap subscription invitation"
+        shot.lifetime = .keepAlways
+        add(shot)
+        app.buttons["premium.close"].tap()
+        app.buttons["category.ABCs & Phonics"].tap()
+        XCTAssertTrue(app.buttons["activity.phonics.letter-match"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+    }
+
+    func testParentsButtonAlsoPromptsOnFirstTapInLandscape() throws {
+        continueAfterFailure = false
+        let store = try makeStoreSession()
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions(); XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = launch()
+        app.buttons["home.parents"].tap()
+        XCTAssertTrue(app.buttons["premium.close"].waitForExistence(timeout: 10))
+        app.buttons["premium.close"].tap()
+        XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+    }
+}
+
+@MainActor
+private func makeStoreSession() throws -> SKTestSession {
+    let url = try XCTUnwrap(Bundle(for: ReleasePaywallUITests.self).url(forResource: "LearningLabJr", withExtension: "storekit"))
+    return try SKTestSession(contentsOf: url)
 }

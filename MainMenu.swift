@@ -2,6 +2,11 @@ import SwiftUI
 
 struct LearningLabHomeView: View {
     private let categories = HomeCategory.allCategories
+    @ObservedObject private var store = StoreManager.shared
+    @State private var route: HomeRoute?
+    @State private var pendingRoute: HomeRoute?
+    @State private var isWaitingForEntitlements = false
+    @State private var showPremiumPrompt = false
 
     var body: some View {
         ZStack {
@@ -17,6 +22,50 @@ struct LearningLabHomeView: View {
                 }
             }
         }
+        .contentShape(Rectangle())
+        .onTapGesture { open(nil) }
+        .disabled(isWaitingForEntitlements)
+        .navigationDestination(item: $route) { destination in
+            switch destination {
+            case .category(let kind):
+                if let category = categories.first(where: { $0.kind == kind }) {
+                    category.destination
+                }
+            case .parents:
+                ParentAccessView()
+            }
+        }
+        .sheet(isPresented: $showPremiumPrompt, onDismiss: continueNavigation) {
+            PremiumPromptView()
+        }
+        .onChange(of: store.hasLoadedEntitlements) { _, loaded in
+            if loaded && isWaitingForEntitlements { finishInteraction() }
+        }
+    }
+
+    private func open(_ destination: HomeRoute?) {
+        guard route == nil, !showPremiumPrompt, !isWaitingForEntitlements else { return }
+        pendingRoute = destination
+        if store.hasLoadedEntitlements {
+            finishInteraction()
+        } else {
+            // Preserve the first tap until StoreKit has checked existing access.
+            isWaitingForEntitlements = true
+        }
+    }
+
+    private func finishInteraction() {
+        isWaitingForEntitlements = false
+        if store.claimLaunchPrompt() {
+            showPremiumPrompt = true
+        } else {
+            continueNavigation()
+        }
+    }
+
+    private func continueNavigation() {
+        route = pendingRoute
+        pendingRoute = nil
     }
 
     private func landscapeHome(size: CGSize) -> some View {
@@ -52,8 +101,8 @@ struct LearningLabHomeView: View {
                     .shadow(color: .black.opacity(0.16), radius: 6, y: 3)
                     .accessibilityHidden(true)
 
-                NavigationLink {
-                    ParentAccessView()
+                Button {
+                    open(.parents)
                 } label: {
                     Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
@@ -73,8 +122,8 @@ struct LearningLabHomeView: View {
 
             LazyVGrid(columns: columns, spacing: rowGap) {
                 ForEach(categories) { category in
-                    NavigationLink {
-                        category.destination
+                    Button {
+                        open(.category(category.kind))
                     } label: {
                         LandscapeHomeCategoryTile(category: category, height: tileHeight)
                             .frame(height: tileHeight)
@@ -136,8 +185,8 @@ struct LearningLabHomeView: View {
 
                 LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach(categories) { category in
-                        NavigationLink {
-                            category.destination
+                        Button {
+                            open(.category(category.kind))
                         } label: {
                             HomeCategoryTile(category: category, compact: compactHeight)
                                 .aspectRatio(1, contentMode: .fit)
@@ -152,8 +201,8 @@ struct LearningLabHomeView: View {
 
                 HStack {
                     Spacer()
-                    NavigationLink {
-                        ParentAccessView()
+                    Button {
+                        open(.parents)
                     } label: {
                         Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
                             .font(.system(size: 15, weight: .bold, design: .rounded))
@@ -165,6 +214,7 @@ struct LearningLabHomeView: View {
                             .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityIdentifier("home.parents")
                     .accessibilityHint("Opens settings and parent information")
                 }
                 .padding(.horizontal, 24)
@@ -179,8 +229,13 @@ struct LearningLabHomeView: View {
 
 }
 
+private enum HomeRoute: Hashable {
+    case category(HomeCategory.Kind)
+    case parents
+}
+
 private struct HomeCategory: Identifiable {
-    enum Kind { case phonics, shapes, counting, nature, stories, feelings }
+    enum Kind: Hashable { case phonics, shapes, counting, nature, stories, feelings }
 
     let kind: Kind
     let title: String

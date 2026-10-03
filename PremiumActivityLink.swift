@@ -40,7 +40,7 @@ struct PremiumActivityLink<Destination: View, Label: View>: View {
         .buttonStyle(.plain)
         .accessibilityIdentifier("activity.\(activity.id)")
         .accessibilityLabel("\(activity.title). \(activity.ageBand). \(unlocked ? activity.skill : "Premium, grown-up required")")
-        .sheet(isPresented: $showPremiumGate) { PremiumParentGateView() }
+        .sheet(isPresented: $showPremiumGate) { PremiumPromptView() }
     }
 
     private var card: some View {

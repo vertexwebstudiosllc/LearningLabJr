@@ -7,6 +7,24 @@ import StoreKitTest
 final class ReleaseSubscriptionTests: XCTestCase {
     private let productID = "com.learninglabjr.premium.monthly"
 
+    func testLaunchPromptWaitsForEntitlementsAndAppearsOnlyOnce() {
+        var prompt = PremiumLaunchPromptState()
+        XCTAssertFalse(prompt.claim(hasPremium: false, hasLoadedEntitlements: false))
+        XCTAssertFalse(prompt.hasHandledInteraction)
+        XCTAssertTrue(prompt.claim(hasPremium: false, hasLoadedEntitlements: true))
+        XCTAssertFalse(prompt.claim(hasPremium: false, hasLoadedEntitlements: true))
+    }
+
+    func testLaunchPromptSkipsSubscribersAndResetsForNewLaunch() {
+        var prompt = PremiumLaunchPromptState()
+        XCTAssertFalse(prompt.claim(hasPremium: false, hasLoadedEntitlements: false))
+        XCTAssertFalse(prompt.claim(hasPremium: true, hasLoadedEntitlements: true))
+        XCTAssertTrue(prompt.hasHandledInteraction)
+        XCTAssertFalse(prompt.claim(hasPremium: false, hasLoadedEntitlements: true))
+        var nextLaunch = PremiumLaunchPromptState()
+        XCTAssertTrue(nextLaunch.claim(hasPremium: false, hasLoadedEntitlements: true))
+    }
+
     private func prepare() async throws -> SKTestSession {
         let session = try SKTestSession(configurationFileNamed: "LearningLabJr")
         session.resetToDefaultState()

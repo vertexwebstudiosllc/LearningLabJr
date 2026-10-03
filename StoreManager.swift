@@ -15,6 +15,7 @@ final class StoreManager: ObservableObject {
 
     @Published private(set) var products: [Product] = []
     @Published private(set) var hasPremium: Bool = false
+    @Published private(set) var hasLoadedEntitlements = false
     @Published private(set) var isPurchasing = false
     @Published private(set) var isLoadingProducts = false
     @Published private(set) var statusMessage: String?
@@ -22,14 +23,15 @@ final class StoreManager: ObservableObject {
     private let productIDs = PremiumPlan.productIDs
 
     private var entitlementRefresh = 0
+    private var launchPrompt = PremiumLaunchPromptState()
     private var updateListenerTask: Task<Void, Error>?
 
     private init() {
         updateListenerTask = listenForTransactions()
 
         Task {
-            await loadProducts()
             await updateCustomerProductStatus()
+            await loadProducts()
         }
     }
 
@@ -117,7 +119,13 @@ final class StoreManager: ObservableObject {
 
         guard refresh == entitlementRefresh else { return }
         hasPremium = premiumActive
+        hasLoadedEntitlements = true
         if premiumActive { statusMessage = nil }
+    }
+
+    /// Kept in memory so returning home or foregrounding cannot repeat the prompt.
+    func claimLaunchPrompt() -> Bool {
+        launchPrompt.claim(hasPremium: hasPremium, hasLoadedEntitlements: hasLoadedEntitlements)
     }
 
     private func listenForTransactions() -> Task<Void, Error> {
@@ -149,6 +157,82 @@ final class StoreManager: ObservableObject {
 
 enum StoreError: Error {
     case failedVerification
+}
+
+struct PremiumLaunchPromptState {
+    private(set) var hasHandledInteraction = false
+
+    mutating func claim(hasPremium: Bool, hasLoadedEntitlements: Bool) -> Bool {
+        guard hasLoadedEntitlements, !hasHandledInteraction else { return false }
+        hasHandledInteraction = true
+        return !hasPremium
+    }
+}
+
+/// A dismissible invitation; purchase and external links remain behind the parent gate.
+struct PremiumPromptView: View {
+    @Environment(\.dismiss) private var dismiss
+    @ObservedObject private var store = StoreManager.shared
+    @State private var showPlans = false
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if showPlans {
+                    PremiumParentGateView()
+                } else {
+                    ScrollView {
+                        VStack(spacing: 24) {
+                            Image(systemName: "sparkles.rectangle.stack.fill")
+                                .font(.system(size: 56))
+                                .foregroundStyle(.teal)
+                                .accessibilityHidden(true)
+                            Text("More to discover with Premium")
+                                .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                                .multilineTextAlignment(.center)
+                            Text(GameAccessPolicy.premiumDescription)
+                                .font(.title3)
+                                .multilineTextAlignment(.center)
+                            Button { showPlans = true } label: {
+                                Text("See subscription plans")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, minHeight: 54)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .accessibilityIdentifier("premium.viewPlans")
+                            Button("Continue with free games") { dismiss() }
+                                .font(.headline)
+                                .frame(minHeight: 48)
+                                .accessibilityIdentifier("premium.continueFree")
+                        }
+                        .padding(28)
+                        .frame(maxWidth: 560)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .background(Color(red: 0.98, green: 0.97, blue: 0.93))
+                    .foregroundStyle(Color(red: 0.08, green: 0.24, blue: 0.28))
+                    .accessibilityIdentifier("premium.prompt")
+                }
+            }
+            .navigationTitle("Learning Lab Jr Premium")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { dismiss() } label: {
+                        Image(systemName: "xmark")
+                            .frame(minWidth: 44, minHeight: 44)
+                    }
+                    .accessibilityLabel("Close subscription prompt")
+                    .accessibilityIdentifier("premium.close")
+                    .disabled(store.isPurchasing)
+                }
+            }
+        }
+        .tint(.teal)
+        .onChange(of: store.hasPremium) { _, premium in
+            if premium { dismiss() }
+        }
+    }
 }
 
 struct PremiumParentGateView: View {
