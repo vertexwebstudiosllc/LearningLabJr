@@ -7,6 +7,7 @@ struct ImmediatePictureDrag: ViewModifier {
     let tap: () -> Void
     let drop: () -> Void
     @Environment(\.gameContentScale) private var contentScale
+    @Environment(\.gameContentIsInverted) private var isInverted
     @GestureState private var offset = CGSize.zero
     @GestureState private var active = false
 
@@ -17,7 +18,7 @@ struct ImmediatePictureDrag: ViewModifier {
                 .updating($offset) { value, offset, _ in
                     // The gesture and drop target use screen coordinates, while
                     // offset is applied inside the fitted game content.
-                    let scale = max(contentScale, 0.01)
+                    let scale = max(contentScale, 0.01) * (isInverted ? -1 : 1)
                     offset = CGSize(width: value.translation.width / scale,
                                     height: value.translation.height / scale)
                 }

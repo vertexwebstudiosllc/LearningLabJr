@@ -1,0 +1,256 @@
+import XCTest
+import StoreKitTest
+
+final class TestingFeedbackUITests: XCTestCase {
+    private var store: SKTestSession?
+
+    @MainActor override func tearDown() {
+        if let run = testRun, run.failureCount > 0 {
+            let app = XCUIApplication()
+            print("FAILURE HIERARCHY: \(app.debugDescription)")
+            try? XCUIScreen.main.screenshot().pngRepresentation.write(to: URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("feedback-failure.png"))
+        }
+        super.tearDown()
+    }
+
+    @MainActor func testUpsideDownReturnsToFlippedPortraitFromLandscape() async throws {
+        let app = try await launch()
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        try wait { app.windows.firstMatch.frame.width > app.windows.firstMatch.frame.height }
+        try wait { app.otherElements["home.landscape"].exists }
+        XCUIDevice.shared.orientation = .portraitUpsideDown
+        try wait { app.windows.firstMatch.frame.height > app.windows.firstMatch.frame.width }
+        try wait { !app.otherElements["home.landscape"].exists }
+        let first = app.buttons["category.ABCs & Phonics"]
+        let last = app.buttons["category.Big Feelings"]
+        try wait { first.isHittable && last.isHittable && first.frame.midY > last.frame.midY }
+        shot("Upside-down home retains the portrait layout", app)
+        try tap("category.ABCs & Phonics", app)
+        try tap("activity.phonics.letter-match", app)
+        try wait { app.otherElements["game.directions"].exists }
+        let direction = app.otherElements["game.directions"]
+        let play = app.otherElements["game.play-area"]
+        try require(direction.frame.minY > play.frame.minY, "Flipped portrait keeps directions above the game from the child's perspective")
+        XCUIDevice.shared.orientation = .portrait
+        try wait { direction.frame.maxY <= play.frame.minY }
+    }
+
+    @MainActor func testFlushTileAlternatesBathroomStories() async throws {
+        let app = try await launch()
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        try wait { app.windows.firstMatch.frame.width > app.windows.firstMatch.frame.height }
+        try open("goodbye", app)
+        try tap("goodbye.story.flush", app)
+        try require(!app.buttons["goodbye.story.poo"].exists && !app.buttons["goodbye.story.pee"].exists, "Bathroom stories share one tile")
+        var words: [String] = []
+        for visit in 0..<2 {
+            shot("Seated bathroom buddy visit \(visit + 1)", app)
+            try tap("goodbye.drag", app)
+            try tap("goodbye.drop", app)
+            try wait { app.buttons["goodbye.words.0"].exists }
+            words.append(app.buttons["goodbye.words.0"].label)
+            try tap("goodbye.words.0", app)
+            try tap("goodbye.action.0", app)
+            try wait { app.descendants(matching: .any)["goodbye.toilet.flushed"].exists }
+            try tap("goodbye.action.1", app)
+            try tap("goodbye.stories", app)
+            try require(app.staticTexts["goodbye.progress"].label == "1 of 7 stories explored", "Repeated flush visits count as one story")
+            if visit == 0 { try tap("goodbye.story.flush", app) }
+        }
+        try require(words[0] != words[1], "The two bathroom visits alternate pee and poo")
+    }
+
+    @MainActor func testCozyTilesUseMainSceneForDressingAndPacking() async throws {
+        let app = try await launch()
+        defer { XCUIDevice.shared.orientation = .portrait }
+        try open("routine", app)
+        try wait { app.buttons["routine.step.pajamas"].exists }
+        try require(!app.buttons["routine.start"].exists, "Play starts without a Start Path screen")
+        try tap("routine.step.pajamas", app)
+        try dress(app)
+        try require(app.staticTexts["Cozy pajamas are on."].exists, "Success explains the dressing action")
+        try tap("routine.next", app)
+        try tap("routine.paths", app)
+        try tap("routine.path.rain", app)
+        try tap("routine.step.boots", app)
+        XCUIDevice.shared.orientation = .landscapeLeft
+        try wait { app.windows.firstMatch.frame.width > app.windows.firstMatch.frame.height }
+        try dress(app)
+        try tap("routine.next", app)
+        try tap("routine.step.raincoat", app)
+        XCUIDevice.shared.orientation = .portraitUpsideDown
+        try wait { app.windows.firstMatch.frame.height > app.windows.firstMatch.frame.width }
+        try dress(app)
+        XCUIDevice.shared.orientation = .portrait
+        try tap("routine.next", app)
+        try tap("routine.paths", app)
+        try tap("routine.path.beach", app)
+        try tap("routine.step.beachbag", app)
+        try tap("routine.select-item.2", app)
+        let source = app.buttons["routine.item.2"]
+        let target = app.buttons["routine.drop"]
+        try reveal(source, app); try require(target.isHittable, "Bag and item are visible together")
+        source.press(forDuration: 0.05, thenDragTo: target)
+        try wait { !app.buttons["routine.select-item.2"].isEnabled }
+        try require(!app.descendants(matching: .any)["routine.success-popup"].exists, "Packing needs all three items")
+    }
+
+    @MainActor private func dress(_ app: XCUIApplication) throws {
+        let source = app.buttons["routine.item.0"], target = app.buttons["routine.drop"]
+        try reveal(source, app)
+        try require(target.isHittable, "The picture and its dressing target must be visible together")
+        let scene = app.otherElements["routine.scene"]
+        try require(scene.frame.insetBy(dx: -1, dy: -1).contains(source.frame), "The draggable item belongs to the main illustration")
+        let before = scene.frame
+        let start = source.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+        let miss = start.withOffset(CGVector(dx: 0, dy: -55))
+        start.press(forDuration: 0.05, thenDragTo: miss)
+        try require(!app.buttons["routine.next"].exists, "Dropping outside the target does not dress Teddy")
+        try require(abs(scene.frame.minY - before.minY) < 3, "Dragging an item does not scroll the screen")
+        source.press(forDuration: 0.05, thenDragTo: target)
+        try wait { app.buttons["routine.next"].exists }
+        let popup = app.descendants(matching: .any)["routine.success-popup"]
+        try require(popup.exists, "A popup celebrates success over the illustration")
+        shot("Cozy scene dressing success", app)
+    }
+
+    @MainActor func testBodyClueShowsImmediatePictureHintAndSuccessPopup() async throws {
+        let app = try await launch()
+        try open("body", app)
+        let picture = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'body.picture.'")).firstMatch
+        try wait { picture.exists }
+        let answers = ["hat":"head", "helmet":"head", "look":"eyes", "blink":"eyes", "listen":"ears", "earmuffs":"ears", "smell":"nose", "sniff":"nose", "bite":"mouth", "smile":"mouth", "wave":"hands", "mittens":"hands", "rumble":"tummy", "middle":"tummy", "bend":"knees", "kneepads":"knees", "socks":"feet", "toes":"feet"]
+        let clue = String(picture.identifier.dropFirst("body.picture.".count))
+        let answer = try XCTUnwrap(answers[clue])
+        try tap("body.part.\(answer == "head" ? "eyes" : "head").0", app)
+        let hint = app.descendants(matching: .any)["body.hint-picture." + answer]
+        try wait { hint.exists }
+        try reveal(hint, app)
+        shot("Picture hint after first incorrect body-part tap", app)
+        try tap("body.part.\(answer).0", app)
+        let popup = app.descendants(matching: .any)["body.success-popup"]
+        try wait { popup.exists }
+        try reveal(popup, app)
+        try require(app.staticTexts["body.answer"].label == answer.capitalized, "The popup names the correct body part")
+        try require(app.staticTexts["Great job! You chose the right body part!"].exists, "The popup congratulates the child")
+        try require(picture.frame.intersects(popup.frame), "Success appears over the buddy picture")
+        shot("Body clue success over the buddy", app)
+        try tap("body.next", app)
+        try require(!popup.exists && !hint.exists, "The next clue clears feedback")
+    }
+
+    @MainActor func testFriendshipItemDragDoesNotScroll() async throws {
+        let app = try await launch()
+        try open("bridge", app)
+        shot("Friendship character hairstyles", app)
+        try tap("bridge.friend.leo", app)
+        for _ in 0..<12 {
+            let story = app.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH 'bridge.story.'")).firstMatch
+            try wait { story.exists }
+            let id = String(story.identifier.dropFirst("bridge.story.".count))
+            try tap("bridge.words.0", app); try tap("bridge.start", app)
+            if ["tower", "bridge", "tidy", "picture"].contains(id) {
+                let source = app.buttons["bridge.drag"], target = app.buttons["bridge.drop.0"]
+                try reveal(target, app); try reveal(source, app)
+                try require(target.isHittable, "Source and drop spot are visible together")
+                let before = app.staticTexts["bridge.progress"].frame
+                source.press(forDuration: 0.05, thenDragTo: target)
+                try wait { app.staticTexts["bridge.actions"].label.hasPrefix("1 of") }
+                try require(abs(app.staticTexts["bridge.progress"].frame.minY - before.minY) < 3, "Dragging never pans the page")
+                shot("Friendship drag leaves page in place", app)
+                return
+            }
+            if ["hello", "space"].contains(id) {
+                for _ in 0..<3 { try tap("bridge.wave", app) }
+            } else if ["ball", "car"].contains(id) {
+                for _ in 0..<6 { try tap("bridge.pass", app) }
+            } else if ["faces", "animals"].contains(id) {
+                for _ in 0..<4 {
+                    let example = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'bridge.example.'")).firstMatch
+                    let answer = try XCTUnwrap(example.identifier.split(separator: ".").last)
+                    try tap("bridge.copy." + answer, app)
+                }
+            } else {
+                for index in 0..<6 { try tap("bridge.bubble.\(index)", app) }
+            }
+            try tap("bridge.next", app)
+        }
+        XCTFail("No dragging activity reached")
+    }
+
+    @MainActor func testToolboxShowsMatchingPicturesAndIdleCue() async throws {
+        let app = try await launch()
+        try open("tools", app)
+        let targets = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'solution.find.'"))
+        try wait { targets.count > 0 }
+        let ids = Set(targets.allElementsBoundByIndex.map { String($0.identifier.dropFirst("solution.find.".count)) })
+        let box = app.buttons["solution.open"]
+        try reveal(box, app)
+        try wait { (box.value as? String) == "Tap to find the pictured tools" }
+        shot("Toolbox pictures and idle cue", app)
+        box.tap()
+        try wait { app.navigationBars["Choose helpful tools"].exists }
+        for id in ids {
+            try require(app.descendants(matching: .any)["solution.find." + id].exists, "The same reference pictures stay visible in the toolbox")
+            try tap("solution.tool." + id, app)
+        }
+        try wait { app.buttons["solution.next"].exists }
+        try require(!app.navigationBars["Choose helpful tools"].exists, "Finding the pictured tools solves the problem")
+    }
+
+    @MainActor private func launch() async throws -> XCUIApplication {
+        continueAfterFailure = false
+        XCUIDevice.shared.orientation = .portrait
+        let session = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        session.resetToDefaultState(); session.clearTransactions(); session.disableDialogs = true
+        _ = try await session.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        store = session
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launch()
+        try wait { app.buttons["category.ABCs & Phonics"].exists }
+        XCUIDevice.shared.orientation = .portrait
+        try wait { app.windows.firstMatch.frame.height > app.windows.firstMatch.frame.width }
+        return app
+    }
+    @MainActor private func open(_ activity: String, _ app: XCUIApplication) throws {
+        try tap("category.Big Feelings", app)
+        try tap("activity.feelings." + activity, app)
+    }
+    @MainActor private func tap(_ id: String, _ app: XCUIApplication) throws {
+        let button = app.buttons[id]
+        try reveal(button, app)
+        button.tap()
+    }
+    @MainActor private func reveal(_ element: XCUIElement, _ app: XCUIApplication) throws {
+        if element.exists && element.isHittable { return }
+        let activity = app.scrollViews["activity-menu.activities"]
+        let scroll = activity.exists ? activity : app.scrollViews.firstMatch
+        for _ in 0..<12 {
+            if element.exists && element.isHittable { return }
+            guard scroll.exists else { break }
+            let down = element.exists && !element.frame.isEmpty && element.frame.midY < app.windows.firstMatch.frame.midY
+            let start = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.65, dy: down ? 0.25 : 0.8))
+            let end = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.65, dy: down ? 0.8 : 0.25))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+        try require(element.exists && element.isHittable, "Missing reachable element \(element.identifier)")
+    }
+    @MainActor private func wait(_ predicate: @escaping () -> Bool) throws {
+        let expected = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in predicate() }, object: nil)
+        let result = XCTWaiter.wait(for: [expected], timeout: 12)
+        try require(result == .completed, "Expected UI state did not arrive")
+    }
+    private func require(_ condition: Bool, _ message: String) throws {
+        _ = try XCTUnwrap(condition ? true : nil, message)
+    }
+    @MainActor private func shot(_ name: String, _ app: XCUIApplication) {
+        let path = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(name + ".png")
+        try? XCUIScreen.main.screenshot().pngRepresentation.write(to: path)
+        print("REVIEW SCREENSHOT: \(path.path)")
+        let image = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        image.name = name; image.lifetime = .keepAlways; add(image)
+    }
+}

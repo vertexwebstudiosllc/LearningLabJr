@@ -128,7 +128,7 @@ final class ActivitySmokeTests: XCTestCase {
 
 
     @MainActor
-    func testGoodbyeEightStoriesDragChoicesEndingsAndPause() async throws {
+    func testGoodbyeSevenStoriesDragChoicesEndingsAndPause() async throws {
         let app = try await launch()
         func tap(_ button: XCUIElement) throws {
             try reveal(button, in: app)
@@ -137,7 +137,7 @@ final class ActivitySmokeTests: XCTestCase {
         }
         try tap(app.buttons["category.Big Feelings"])
         try tap(app.buttons["activity-card.See You Soon"])
-        for (index, story) in ["bedtime", "school", "daycare", "dinner", "park", "visit", "poo", "pee"].enumerated() {
+        for (index, story) in ["bedtime", "school", "daycare", "dinner", "park", "visit", "flush"].enumerated() {
             try tap(app.buttons["goodbye.story.\(story)"])
             XCTAssertFalse(app.buttons["goodbye.words.0"].exists)
             if index == 0 {
@@ -152,21 +152,21 @@ final class ActivitySmokeTests: XCTestCase {
             XCTAssertFalse(app.buttons["goodbye.action.0"].exists)
             try tap(app.buttons["goodbye.words.\(index % 2)"])
             try tap(app.buttons["goodbye.action.0"])
-            if ["school", "daycare", "poo", "pee"].contains(story) {
+            if ["school", "daycare", "flush"].contains(story) {
                 XCTAssertFalse(app.buttons["goodbye.stories"].exists)
                 try tap(app.buttons["goodbye.action.1"])
             }
             try reveal(app.buttons["goodbye.stories"], in: app)
             let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "Goodbye \(story) ending"; shot.lifetime = .keepAlways; add(shot)
             try tap(app.buttons["goodbye.stories"])
-            XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "\(index + 1) of 8 stories explored")
+            XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "\(index + 1) of 7 stories explored")
         }
         try tap(app.buttons["goodbye.story.school"]); try tap(app.buttons["goodbye.pause"])
         try tap(app.buttons["goodbye.finish"])
         XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
         try tap(app.buttons["Play again"])
         try reveal(app.staticTexts["goodbye.progress"], in: app)
-        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "0 of 8 stories explored")
+        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "0 of 7 stories explored")
     }
 
 
@@ -180,9 +180,9 @@ final class ActivitySmokeTests: XCTestCase {
         }
         try tap(app.buttons["category.Big Feelings"])
         try tap(app.buttons["activity-card.Cozy Evening Path"])
-        try tap(app.buttons["routine.path.bathroom"]); try tap(app.buttons["routine.start"])
+        try tap(app.buttons["routine.paths"]); try tap(app.buttons["routine.path.bathroom"])
         for step in ["tell", "potty", "wipe", "clothes", "flush", "wash"] {
-            try tap(app.buttons["routine.choice.\(step)"])
+            try tap(app.buttons["routine.step.\(step)"])
             if step == "clothes" {
                 try tap(app.buttons["routine.item.0"]); try tap(app.buttons["routine.drop"])
             } else {
@@ -221,25 +221,21 @@ final class ActivitySmokeTests: XCTestCase {
         try tap(app.buttons["category.Big Feelings"])
         let card = app.buttons["activity-card.Cozy Evening Path"]
         try tap(card)
-        try tap(app.buttons["routine.path.bathroom"]); try tap(app.buttons["routine.start"])
+        try tap(app.buttons["routine.paths"]); try tap(app.buttons["routine.path.bathroom"])
         try tap(app.buttons["routine.pause"]); try tap(app.buttons["routine.paths"])
         XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
         var completed = 0, dragged = false
         for path in ["bedtime", "bathroom", "rain", "snow", "beach", "morning", "picnic", "home"] {
-            try tap(app.buttons["routine.path.\(path)"]); try tap(app.buttons["routine.start"])
+            try tap(app.buttons["routine.path.\(path)"])
             let steps = paths[path]!
             for (index, step) in steps.enumerated() {
-                XCTAssertEqual(app.staticTexts["routine.progress"].label, "Step \(index + 1) of \(steps.count)")
-                if index == 0 {
-                    let wrong = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'routine.choice.'")).allElementsBoundByIndex.first { $0.identifier != "routine.choice.\(step)" }!
-                    try tap(wrong); XCTAssertTrue(app.staticTexts["routine.feedback"].exists)
-                }
-                try tap(app.buttons["routine.choice.\(step)"])
+                try tap(app.buttons["routine.step.\(step)"])
                 let kind = kinds[step]!
                 let goal = kind == "wash" ? 5 : ["scrub", "pages", "walk", "pack"].contains(kind) ? 3 : 1
                 let order = ["pack", "scrub"].contains(kind) ? Array((0..<goal).reversed()) : Array(0..<goal)
                 for value in order {
                     if ["dress", "pack"].contains(kind) {
+                        if kind == "pack" { try tap(app.buttons["routine.select-item.\(value)"]) }
                         let item = app.buttons["routine.item.\(value)"], drop = app.buttons["routine.drop"]
                         if !dragged {
                             try reveal(drop, in: app); try reveal(item, in: app)
@@ -248,7 +244,7 @@ final class ActivitySmokeTests: XCTestCase {
                     } else {
                         if kind == "wash" && value == 0 {
                             try tap(app.buttons["routine.action.4"])
-                            XCTAssertEqual(app.staticTexts["routine.actions"].label, "0 of 5 actions")
+                            XCTAssertFalse(app.buttons["routine.next"].exists)
                         }
                         try tap(app.buttons["routine.action.\(value)"])
                     }
@@ -268,9 +264,9 @@ final class ActivitySmokeTests: XCTestCase {
         try tap(app.buttons["routine.finish"])
         XCTAssertTrue(app.staticTexts["We did it together!"].waitForExistence(timeout: 5))
         try tap(app.buttons["Play again"])
-        XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
+        XCTAssertTrue(app.buttons["routine.step.wash"].exists)
         app.navigationBars.buttons.firstMatch.tap(); try tap(card)
-        XCTAssertEqual(app.staticTexts["routine.collection"].label, "0 of 8 paths explored")
+        XCTAssertTrue(app.buttons["routine.step.wash"].exists)
     }
 
 

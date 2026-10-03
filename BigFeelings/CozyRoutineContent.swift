@@ -82,21 +82,21 @@ struct CozyRoutine: Identifiable {
 }
 
 struct CozyRoutinePlay {
-    enum Phase { case paths, introduction, choosing, acting, feedback, finished, paused, complete }
+    enum Phase { case paths, acting, feedback, finished, paused, complete }
     private(set) var phase = Phase.paths
     private(set) var routine: CozyRoutine?
     private(set) var index = 0
     private(set) var actions = 0
     private(set) var used = Set<Int>()
-    private(set) var choices: [String] = []
     private(set) var completed = Set<String>()
-    var current: CozyRoutineStep { .named(routine?.steps[min(index, (routine?.steps.count ?? 1) - 1)] ?? "wash") }
-    var token: String { (routine?.id ?? "") + ":" + String(index) + ":" + String(actions) }
+    private(set) var completedSteps = Set<String>()
+    private var stepActions: [String: Set<Int>] = [:]
+    private var session = UUID()
+    var current: CozyRoutineStep { .named(routine?.steps[index] ?? "wash") }
+    var token: String { session.uuidString + ":" + String(index) + ":" + String(actions) }
     var prompt: String {
         switch phase {
         case .paths: return CozyRoutine.welcome
-        case .introduction: return routine!.introduction
-        case .choosing: return current.question
         case .acting: return current.instruction
         case .feedback: return current.response
         case .finished: return routine!.outcome
@@ -106,24 +106,15 @@ struct CozyRoutinePlay {
     }
     mutating func choosePath(_ id: String) {
         guard phase == .paths, let path = CozyRoutine.bank.first(where: { $0.id == id }) else { return }
-        routine = path; index = 0; actions = 0; used = []; phase = .introduction
+        routine = path; index = 0; actions = 0; used = []; completedSteps = []; stepActions = [:]
+        session = UUID(); phase = .acting
     }
-    private mutating func prepareStep() {
-        actions = 0; used = []
-        var symbols: Set<String> = [current.symbol]
-        var alternatives: [String] = []
-        for candidate in CozyRoutineStep.bank.shuffled() where candidate.kind != current.kind {
-            guard symbols.insert(candidate.symbol).inserted else { continue }
-            alternatives.append(candidate.id)
-            if alternatives.count == 2 { break }
-        }
-        choices = ([current.id] + alternatives).shuffled()
-        phase = .choosing
-    }
-    mutating func start() { guard phase == .introduction else { return }; prepareStep() }
-    @discardableResult mutating func chooseStep(_ id: String) -> Bool {
-        guard phase == .choosing, id == current.id else { return false }
-        phase = .acting; return true
+    /// Picture tiles select an unfinished activity directly, without a sequencing quiz.
+    mutating func selectStep(_ index: Int) {
+        guard phase == .acting, let routine, routine.steps.indices.contains(index),
+              !completedSteps.contains(routine.steps[index]) else { return }
+        self.index = index
+        used = stepActions[current.id] ?? []; actions = used.count
     }
     @discardableResult mutating func act(_ value: Int, token: String) -> Bool {
         guard phase == .acting, token == self.token else { return false }
@@ -131,21 +122,22 @@ struct CozyRoutinePlay {
         if [.pack, .scrub].contains(current.kind) { valid = (0..<current.goal).contains(value) && !used.contains(value) }
         else { valid = value == actions }
         guard valid else { return false }
-        used.insert(value); actions += 1
-        if actions == current.goal { phase = .feedback }
+        used.insert(value); actions += 1; stepActions[current.id] = used
+        if actions == current.goal { completedSteps.insert(current.id); phase = .feedback }
         return true
     }
     mutating func next() {
         guard phase == .feedback, let routine else { return }
-        if index == routine.steps.count - 1 { completed.insert(routine.id); phase = .finished }
-        else { index += 1; prepareStep() }
+        if let next = routine.steps.indices.first(where: { !completedSteps.contains(routine.steps[$0]) }) {
+            phase = .acting; selectStep(next)
+        } else { completed.insert(routine.id); phase = .finished }
     }
     mutating func pause() {
-        guard [.introduction, .choosing, .acting, .feedback].contains(phase) else { return }; phase = .paused
+        guard [.acting, .feedback].contains(phase) else { return }; phase = .paused
     }
     mutating func paths() {
         guard [.finished, .paused].contains(phase) else { return }
-        phase = .paths; routine = nil; index = 0; actions = 0; used = []; choices = []
+        phase = .paths; routine = nil; index = 0; actions = 0; used = []; completedSteps = []; stepActions = [:]
     }
     mutating func finish() { guard phase == .finished || phase == .paused else { return }; phase = .complete }
 }

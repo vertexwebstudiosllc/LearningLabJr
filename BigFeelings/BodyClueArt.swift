@@ -60,6 +60,27 @@ struct BodyBuddyPicture: View {
     }
 }
 
+struct BodyPartHintArt: View {
+    let buddy: BodyBuddy
+    let part: BuddyPart
+    var body: some View {
+        GeometryReader { geometry in
+            let spot = BuddyBodySpot.all.first { $0.part == part }!
+            let scale = min(geometry.size.width / (spot.width + 26), geometry.size.height / (spot.height + 26))
+            BodyBuddyDrawing(buddy: buddy)
+                .scaleEffect(scale, anchor: .topLeading)
+                .offset(x: geometry.size.width / 2 - spot.x * scale,
+                        y: geometry.size.height / 2 - spot.y * scale)
+        }
+        .background(.white, in: RoundedRectangle(cornerRadius: 14))
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .contentShape(.accessibility, Rectangle())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Picture of the \(part.rawValue)")
+        .accessibilityIdentifier("body.hint-picture.\(part.rawValue)")
+    }
+}
+
 struct BodyBuddyDrawing: View {
     let buddy: BodyBuddy
     private var skin: Color { .sportsRGB(buddy.skin) }

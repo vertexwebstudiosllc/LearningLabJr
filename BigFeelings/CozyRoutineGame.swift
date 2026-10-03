@@ -4,198 +4,208 @@ struct CozyEveningPathGame: View {
     let onReplay: () -> Void
     @State private var play = CozyRoutinePlay()
     @State private var pathOrder = CozyRoutine.bank.shuffled()
+    @State private var started = false
     @State private var dragging = false
-    @State private var dropFrame = CGRect.zero
-    @State private var selectedItem: Int?
-    @State private var feedback = ""
+    @State private var selectedItem = 0
     @StateObject private var narrator = GameNarrator()
+
     var body: some View {
         ToddlerGameScaffold(title: "Cozy Evening Path", prompt: play.prompt, accent: .indigo,
-                            completion: play.phase == .complete, onReplay: onReplay,
-                            scrollToTopOnPromptChange: play.phase != .acting) {
+                            completion: play.phase == .complete, onReplay: onReplay) {
             if play.phase == .paths {
-                Text("Bedtime and everyday adventures").font(.title2.bold()).multilineTextAlignment(.center)
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 14) {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                     ForEach(pathOrder) { path in
-                        VStack {
-                            Button { feedback = ""; play.choosePath(path.id) } label: {
-                                VStack(spacing: 12) {
-                                    Image(systemName: path.symbol).font(.system(size: 48)).foregroundStyle(.indigo)
-                                    Text(path.title).font(.headline)
-                                    if play.completed.contains(path.id) { Image(systemName: "checkmark.seal.fill").foregroundStyle(.green) }
-                                }.frame(maxWidth: .infinity, minHeight: 132).padding(10).background(.white, in: RoundedRectangle(cornerRadius: 23))
-                            }.buttonStyle(.plain).accessibilityIdentifier("routine.path.\(path.id)")
-                            Button { narrator.speak(path.title) } label: { Label("Hear", systemImage: "speaker.wave.2.fill").frame(minHeight: 44) }
-                                .accessibilityLabel("Hear \(path.title)")
-                        }
+                        Button { play.choosePath(path.id); selectedItem = 0 } label: {
+                            VStack(spacing: 8) {
+                                Image(systemName: path.symbol).font(.largeTitle)
+                                Text(path.title).font(.headline)
+                                if play.completed.contains(path.id) { Image(systemName: "checkmark.seal.fill").foregroundStyle(.green) }
+                            }.frame(maxWidth: .infinity, minHeight: 110)
+                                .background(.white, in: RoundedRectangle(cornerRadius: 20))
+                        }.buttonStyle(.plain).accessibilityIdentifier("routine.path.\(path.id)")
                     }
                 }
-                Text("\(play.completed.count) of 8 paths explored").font(.headline).accessibilityIdentifier("routine.collection")
+                Text("\(play.completed.count) of \(CozyRoutine.bank.count) paths explored").font(.headline)
+                    .accessibilityIdentifier("routine.collection")
             } else if let path = play.routine {
-                Text(path.title).font(.title2.bold())
-                CozyRoutineScene(path: path, step: play.current, accomplished: play.actions == play.current.goal, completedSteps: Array(path.steps.prefix(play.index)) + (play.actions == play.current.goal ? [play.current.id] : []))
-                if play.phase != .complete {
+                HStack {
+                    Text(path.title).font(.title3.bold())
+                    Spacer()
+                    Text("\(play.completedSteps.count) of \(path.steps.count) steps").font(.subheadline.bold())
+                }.accessibilityIdentifier("routine.progress")
+                CozyInteractiveScene(play: play, dragging: $dragging, selectedItem: selectedItem, act: act)
+                    .overlay {
+                        if play.phase == .feedback {
+                            VStack(spacing: 10) {
+                                Label("Great job!", systemImage: "checkmark.seal.fill").font(.title2.bold()).foregroundStyle(.green)
+                                Text(play.current.response).font(.headline).multilineTextAlignment(.center)
+                                Button(play.completedSteps.count == path.steps.count ? "Finish this path" : "Keep going") {
+                                    narrator.stop(); play.next(); selectedItem = firstUnusedItem
+                                }.font(.headline).frame(minWidth: 130, minHeight: 44)
+                                    .background(.indigo.opacity(0.12), in: Capsule())
+                                    .accessibilityIdentifier("routine.next")
+                            }.padding(18).frame(maxWidth: 310)
+                                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 22))
+                                .padding(12).accessibilityElement(children: .contain).accessibilityIdentifier("routine.success-popup")
+                        }
+                    }
+                if play.phase == .acting || play.phase == .feedback {
+                    Text("Tap a picture to try that step").font(.subheadline.bold())
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 8) {
                         ForEach(Array(path.steps.enumerated()), id: \.offset) { index, id in
-                            VStack(spacing: 5) {
-                                Image(systemName: CozyRoutineStep.named(id).symbol).font(.title3)
-                                Text("\(index + 1)").font(.caption.bold())
-                                if index < play.index || (index == play.index && [.feedback, .finished].contains(play.phase)) {
-                                    Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
-                                }
-                            }.frame(maxWidth: .infinity, minHeight: 60).background(index == play.index ? Color.indigo.opacity(0.16) : .gray.opacity(0.07), in: RoundedRectangle(cornerRadius: 14))
-                                .accessibilityLabel("Step \(index + 1), \(CozyRoutineStep.named(id).title)")
+                            let step = CozyRoutineStep.named(id)
+                            Button {
+                                play.selectStep(index); selectedItem = firstUnusedItem
+                                narrator.speak(play.current.instruction)
+                            } label: {
+                                VStack(spacing: 3) {
+                                    CozyRoutineItemArt(step: step).scaleEffect(0.65).frame(width: 46, height: 42)
+                                    Text(step.title).font(.system(size: 12, weight: .bold, design: .rounded)).multilineTextAlignment(.center)
+                                    if play.completedSteps.contains(id) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green) }
+                                }.frame(maxWidth: .infinity, minHeight: 76).padding(5)
+                                    .background(.white, in: RoundedRectangle(cornerRadius: 14))
+                                    .overlay(RoundedRectangle(cornerRadius: 14).stroke(index == play.index ? Color.orange : .clear, lineWidth: 3))
+                            }.buttonStyle(.plain).disabled(play.phase != .acting || play.completedSteps.contains(id))
+                                .accessibilityLabel(step.title)
+                                .accessibilityValue(play.completedSteps.contains(id) ? "Completed" : index == play.index ? "Selected" : "Choose this step")
+                                .accessibilityIdentifier("routine.step.\(id)")
                         }
                     }
-                }
-                switch play.phase {
-                case .introduction:
-                    ToddlerActionButton(title: "Start this path", systemImage: "play.fill", color: .indigo) { play.start() }
-                        .accessibilityIdentifier("routine.start")
-                case .choosing:
-                    Text("Step \(play.index + 1) of \(path.steps.count)").font(.headline).accessibilityIdentifier("routine.progress")
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(play.choices, id: \.self) { id in
-                            let step = CozyRoutineStep.named(id)
-                            VStack {
-                                Button {
-                                    if play.chooseStep(id) { feedback = ""; selectedItem = nil }
-                                    else { feedback = CozyRoutine.retry; narrator.speak(feedback) }
-                                } label: {
-                                    VStack(spacing: 10) {
-                                        CozyRoutineItemArt(step: step).frame(width: 70, height: 64)
-                                        Text(step.title).font(.headline).multilineTextAlignment(.center)
-                                    }.frame(maxWidth: .infinity, minHeight: 145).padding(7).background(.white, in: RoundedRectangle(cornerRadius: 20))
-                                }.buttonStyle(.plain).accessibilityIdentifier("routine.choice.\(id)")
-                                Button { narrator.speak(step.title) } label: { Image(systemName: "speaker.wave.2.fill").frame(width: 44, height: 44) }
-                                    .accessibilityLabel("Hear \(step.title)")
+                    if play.current.kind == .pack && play.phase == .acting {
+                        HStack(spacing: 10) {
+                            ForEach(0..<3) { index in
+                                Button { selectedItem = index } label: {
+                                    Image(systemName: play.current.items[index]).font(.title2)
+                                        .frame(maxWidth: .infinity, minHeight: 48)
+                                        .background(selectedItem == index ? .orange.opacity(0.18) : .white, in: RoundedRectangle(cornerRadius: 12))
+                                }.buttonStyle(.plain).disabled(play.used.contains(index))
+                                    .accessibilityLabel("Choose packing item \(index + 1)")
+                                    .accessibilityIdentifier("routine.select-item.\(index)")
                             }
                         }
                     }
-                case .acting:
-                    activity
-                    Text("\(play.actions) of \(play.current.goal) actions").font(.headline).accessibilityIdentifier("routine.actions")
-                case .feedback:
-                    Label("One little step done!", systemImage: "checkmark.seal.fill").font(.title2.bold()).foregroundStyle(.green)
-                    ToddlerActionButton(title: play.index == path.steps.count - 1 ? "Finish this path" : "What comes next?", systemImage: "arrow.right", color: .indigo) {
-                        narrator.stop(); selectedItem = nil; feedback = ""; play.next()
-                    }.accessibilityIdentifier("routine.next")
-                case .finished, .paused:
+                    HStack {
+                        Button("Choose another path") { narrator.stop(); play.pause(); play.paths(); selectedItem = 0 }
+                            .frame(maxWidth: .infinity, minHeight: 44).accessibilityIdentifier("routine.paths")
+                        Button("Take a break") { narrator.stop(); play.pause() }
+                            .frame(maxWidth: .infinity, minHeight: 44).accessibilityIdentifier("routine.pause")
+                    }
+                } else if play.phase == .finished || play.phase == .paused {
                     if play.phase == .finished {
                         Label("Path explored!", systemImage: "star.fill").font(.title2.bold()).foregroundStyle(.orange)
                     }
-                    ToddlerActionButton(title: "Choose another path", systemImage: "map.fill", color: .teal) { narrator.stop(); feedback = ""; selectedItem = nil; play.paths() }
+                    ToddlerActionButton(title: "Choose another path", systemImage: "map.fill", color: .teal) { narrator.stop(); play.paths(); selectedItem = 0 }
                         .accessibilityIdentifier("routine.paths")
                     ToddlerActionButton(title: "Finish our play", systemImage: "checkmark", color: .indigo) { narrator.stop(); play.finish() }
                         .accessibilityIdentifier("routine.finish")
-                case .paths, .complete: EmptyView()
-                }
-                if !feedback.isEmpty { Text(feedback).font(.headline).multilineTextAlignment(.center).accessibilityIdentifier("routine.feedback") }
-                if [.introduction, .choosing, .acting, .feedback].contains(play.phase) {
-                    Button("Take a break") { narrator.stop(); feedback = ""; selectedItem = nil; play.pause() }
-                        .frame(minHeight: 48).accessibilityIdentifier("routine.pause")
                 }
             }
-            Text("These are Teddy's pretend plans. Your family's order may be different. A grown-up can help, and a pause is always okay.")
+            Text("Pretend together with a grown-up. Your family's order may be different, and a pause is always okay.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
         }.scrollDisabled(dragging)
+            .onAppear {
+                guard !started else { return }
+                started = true; play.choosePath("bedtime")
+            }
             .onDisappear { narrator.stop(); dragging = false }
     }
+    private var firstUnusedItem: Int { (0..<play.current.goal).first { !play.used.contains($0) } ?? 0 }
     private func act(_ value: Int, token: String) {
-        if play.act(value, token: token) { feedback = ""; selectedItem = nil }
-        else if play.phase == .acting { feedback = CozyRoutine.actionRetry; narrator.speak(feedback) }
+        if play.act(value, token: token) { selectedItem = firstUnusedItem }
+        else if play.phase == .acting { narrator.speak(CozyRoutine.actionRetry) }
     }
-    @ViewBuilder private var activity: some View {
-        switch play.current.kind {
-        case .dress, .pack:
-            HStack(spacing: 12) {
-                ForEach(0..<(play.current.kind == .pack ? 3 : 1), id: \.self) { index in
-                    Button { selectedItem = index } label: {
-                        Group {
-                            if play.current.kind == .dress { CozyRoutineItemArt(step: play.current) }
-                            else { Image(systemName: play.current.items[index]).font(.system(size: 42)).foregroundStyle(.indigo) }
-                        }.frame(maxWidth: .infinity, minHeight: 80)
-                            .background(.white, in: RoundedRectangle(cornerRadius: 18))
-                            .overlay(RoundedRectangle(cornerRadius: 18).stroke(selectedItem == index ? Color.orange : .clear, lineWidth: 3))
-                    }.buttonStyle(.plain).disabled(play.used.contains(index)).opacity(play.used.contains(index) ? 0.2 : 1)
-                        .modifier(ImmediatePictureDrag(dragging: $dragging, target: dropFrame,
-                            tap: { selectedItem = index }, drop: { act(index, token: play.token) })).accessibilityLabel(play.current.kind == .dress ? play.current.title : "Packing item \(index + 1)")
-                        .accessibilityIdentifier("routine.item.\(index)")
+}
+
+private struct CozyInteractiveScene: View {
+    let play: CozyRoutinePlay
+    @Binding var dragging: Bool
+    let selectedItem: Int
+    let act: (Int, String) -> Void
+    @State private var dropFrame = CGRect.zero
+    @State private var pickedUp = false
+    private var step: CozyRoutineStep { play.current }
+    private var puttingAway: Bool { ["shoesoff", "coatoff"].contains(step.id) }
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .topLeading) {
+                if let path = play.routine {
+                    CozyRoutineScene(path: path, step: step, accomplished: play.completedSteps.contains(step.id),
+                                     completedSteps: Array(play.completedSteps), showsItem: false, showsTeddy: step.kind != .pack)
+                        .allowsHitTesting(false).accessibilityHidden(true)
                 }
-            }
-            Text("Drag the picture, or tap it and then tap its spot.").font(.subheadline).multilineTextAlignment(.center)
-            Button { if let selectedItem { act(selectedItem, token: play.token) } } label: {
-                VStack(spacing: 10) {
-                    if play.current.kind == .dress && !["shoesoff", "coatoff"].contains(play.current.id) {
-                        RescueTeddy(fur: .brown, identity: .boy, items: []).frame(width: 88, height: 124)
+                if play.phase == .acting {
+                    if step.kind == .dress || step.kind == .pack {
+                        let targetX = geometry.size.width * (puttingAway ? 0.76 : 0.4)
+                        Button { if pickedUp { act(selectedItem, play.token); pickedUp = false } } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20).fill(.clear)
+                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(.orange, style: StrokeStyle(lineWidth: 3, dash: [7, 5])))
+                                if step.kind == .pack || puttingAway {
+                                    Image(systemName: puttingAway ? (step.id == "coatoff" ? "hanger" : "shippingbox.fill") : step.symbol)
+                                        .font(.system(size: 64)).foregroundStyle(.teal)
+                                }
+                            }.frame(width: min(130, geometry.size.width * 0.36), height: 160).contentShape(Rectangle())
+                        }.buttonStyle(.plain)
+                            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { dropFrame = $0 }
+                            .position(x: targetX, y: 125)
+                            .accessibilityLabel(puttingAway ? "Put it away here" : step.kind == .pack ? "Pack it here" : "Dress Teddy")
+                            .accessibilityIdentifier("routine.drop")
+                        Button { pickedUp = true } label: {
+                            Group {
+                                if step.kind == .pack {
+                                    Image(systemName: step.items[selectedItem]).font(.system(size: 44)).foregroundStyle(.indigo)
+                                } else { CozyRoutineItemArt(step: step) }
+                            }.frame(width: 76, height: 76)
+                                .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 16))
+                                .overlay(RoundedRectangle(cornerRadius: 16).stroke(pickedUp ? Color.orange : .indigo.opacity(0.2), lineWidth: 2))
+                        }.buttonStyle(.plain)
+                            .modifier(ImmediatePictureDrag(dragging: $dragging, target: dropFrame,
+                                tap: { pickedUp = true }, drop: { act(selectedItem, play.token); pickedUp = false }))
+                            .position(x: geometry.size.width * (puttingAway ? 0.4 : 0.78), y: puttingAway && step.id == "shoesoff" ? 175 : 125)
+                            .accessibilityLabel(step.kind == .pack ? "Packing item \(selectedItem + 1)" : step.title)
+                            .accessibilityIdentifier("routine.item.\(selectedItem)")
                     } else {
-                        Image(systemName: play.current.kind == .pack ? play.current.symbol : play.current.id == "coatoff" ? "hanger" : "shippingbox.fill").font(.system(size: 62)).foregroundStyle(.teal)
+                        actions.frame(width: geometry.size.width * 0.4)
+                            .position(x: geometry.size.width * 0.76, y: 135)
                     }
-                    Text(play.current.kind == .dress ? (["shoesoff", "coatoff"].contains(play.current.id) ? "Put it away here" : "Ready, Teddy!") : "Pack it here").font(.headline)
-                    if play.current.kind == .pack {
-                        HStack { ForEach(Array(play.used).sorted(), id: \.self) { i in Image(systemName: play.current.items[i]).foregroundStyle(.teal) } }
-                    }
-                }.frame(maxWidth: .infinity, minHeight: 150).padding(16).background(.teal.opacity(0.09), in: RoundedRectangle(cornerRadius: 24))
-                    .overlay(RoundedRectangle(cornerRadius: 24).stroke(.orange, lineWidth: 3))
-            }.buttonStyle(.plain).accessibilityIdentifier("routine.drop")
-                .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { dropFrame = $0 }
-                .dropDestination(for: String.self) { values, _ in
-                    guard values.count == 1, play.phase == .acting else { return false }
-                    let parts = values[0].split(separator: ":")
-                    guard parts.count == 4, let index = Int(parts[3]), parts.prefix(3).joined(separator: ":") == play.token else { return false }
-                    let before = play.actions; act(index, token: play.token); return play.actions > before
-                }
-        case .wash:
-            let names = ["Wet", "Soap", "Rub", "Rinse", "Dry"]
-            let symbols = ["drop.fill", "bubbles.and.sparkles.fill", "hands.clap.fill", "spigot.fill", "rectangle.fill"]
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 12) {
-                ForEach(0..<5) { index in
-                    actionTile(index, title: names[index], symbol: symbols[index], active: index == play.actions)
                 }
             }
-        case .scrub:
-            Image(systemName: play.current.symbol).font(.system(size: 78)).foregroundStyle(.indigo).frame(height: 100)
-            HStack(spacing: 18) {
-                ForEach(0..<3) { index in actionTile(index, title: "\(index + 1)", symbol: "sparkles", active: !play.used.contains(index)) }
-            }
-        case .pages:
-            Button { act(play.actions, token: play.token) } label: {
-                VStack(spacing: 12) {
-                    ZStack {
-                        Image(systemName: "book.fill").font(.system(size: 130)).foregroundStyle(.purple)
-                        Image(systemName: ["star.fill", "hare.fill", "moon.fill"][min(play.actions, 2)]).font(.system(size: 40)).foregroundStyle(.yellow)
-                    }
-                    Text("Turn a page").font(.title2.bold())
-                }.frame(maxWidth: .infinity).padding(20).background(.purple.opacity(0.1), in: RoundedRectangle(cornerRadius: 24))
-            }.buttonStyle(.plain).accessibilityIdentifier("routine.action.\(play.actions)")
-        case .walk:
-            HStack(alignment: .center, spacing: 14) {
-                ForEach(0..<3) { index in
-                    actionTile(index, title: "\(index + 1)", symbol: "shoeprints.fill", active: index == play.actions)
-                        .offset(y: index == 1 ? -14 : 14)
-                }
-            }.padding(.vertical, 20)
-        case .tap:
-            Button { act(0, token: play.token) } label: {
-                VStack(spacing: 14) {
-                    if play.current.id == "bed" { Image(systemName: "moon.fill").font(.system(size: 44)).foregroundStyle(.indigo) }
-                    else { CozyRoutineItemArt(step: play.current) }
-                    Text(play.current.id == "potty" ? "Pretend or watch together" : "Try this step together").font(.headline)
-                }.frame(maxWidth: .infinity, minHeight: 125).padding(12).background(.white, in: RoundedRectangle(cornerRadius: 20))
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(.orange, lineWidth: 3))
-            }.buttonStyle(.plain).accessibilityIdentifier("routine.action.0")
-        }
+        }.frame(height: 210)
+            .contentShape(.accessibility, Rectangle())
+            .accessibilityElement(children: .contain).accessibilityIdentifier("routine.scene")
+            .onChange(of: play.token) { _, _ in pickedUp = false }
     }
-    private func actionTile(_ index: Int, title: String, symbol: String, active: Bool) -> some View {
-        Button { act(index, token: play.token) } label: {
-            VStack(spacing: 10) {
-                Image(systemName: play.used.contains(index) ? "checkmark.circle.fill" : symbol).font(.system(size: 35))
-                Text(title).font(.headline).multilineTextAlignment(.center)
-            }.foregroundStyle(.indigo).frame(maxWidth: .infinity, minHeight: 92).padding(8)
-                .background(.white, in: RoundedRectangle(cornerRadius: 18))
-                .overlay(RoundedRectangle(cornerRadius: 18).stroke(active ? Color.orange : .clear, lineWidth: 3))
-        }.buttonStyle(.plain).disabled(play.used.contains(index)).opacity(play.used.contains(index) ? 0.4 : 1)
-            .accessibilityIdentifier("routine.action.\(index)")
+    @ViewBuilder private var actions: some View {
+        switch step.kind {
+        case .wash, .scrub, .walk:
+            let names = step.kind == .wash ? ["Wet", "Soap", "Rub", "Rinse", "Dry"] : ["1", "2", "3"]
+            let symbols = step.kind == .wash ? ["drop.fill", "bubbles.and.sparkles.fill", "hands.clap.fill", "spigot.fill", "rectangle.fill"] : Array(repeating: step.kind == .walk ? "shoeprints.fill" : "sparkles", count: 3)
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 6) {
+                ForEach(0..<step.goal, id: \.self) { index in
+                    Button { act(index, play.token) } label: {
+                        VStack(spacing: 3) {
+                            Image(systemName: play.used.contains(index) ? "checkmark.circle.fill" : symbols[index]).font(.title3)
+                            Text(names[index]).font(.caption.bold())
+                        }.frame(maxWidth: .infinity, minHeight: 48).padding(3)
+                            .background(.white, in: RoundedRectangle(cornerRadius: 12))
+                            .overlay(RoundedRectangle(cornerRadius: 12).stroke(index == play.actions || step.kind == .scrub ? Color.orange : .clear, lineWidth: 2))
+                    }.buttonStyle(.plain).disabled(play.used.contains(index))
+                        .accessibilityIdentifier("routine.action.\(index)")
+                }
+            }
+        case .pages, .tap:
+            Button { act(play.actions, play.token) } label: {
+                VStack(spacing: 8) {
+                    CozyRoutineItemArt(step: step)
+                    Text(step.kind == .pages ? "Turn a page" : "Try this step").font(.subheadline.bold()).multilineTextAlignment(.center)
+                    if step.kind == .pages { Text("\(play.actions) of 3 pages").font(.caption.bold()) }
+                }.padding(8).frame(maxWidth: .infinity, minHeight: 100)
+                    .background(.white, in: RoundedRectangle(cornerRadius: 18))
+                    .overlay(RoundedRectangle(cornerRadius: 18).stroke(.orange, lineWidth: 3))
+            }.buttonStyle(.plain).accessibilityIdentifier("routine.action.\(play.actions)")
+        case .dress, .pack: EmptyView()
+        }
     }
 }
 
@@ -204,6 +214,8 @@ struct CozyRoutineScene: View {
     let step: CozyRoutineStep
     let accomplished: Bool
     var completedSteps: [String] = []
+    var showsItem = true
+    var showsTeddy = true
     private var resting: Bool { step.id == "bed" && accomplished }
     private var outdoors: Bool { ["rain", "snow", "beach", "picnic"].contains(path.id) }
     var body: some View {
@@ -220,6 +232,7 @@ struct CozyRoutineScene: View {
                     Spacer()
                     Rectangle().fill(path.id == "snow" ? .white : outdoors ? Color.green.opacity(0.22) : .brown.opacity(0.14)).frame(height: 40)
                 }.clipShape(RoundedRectangle(cornerRadius: 26))
+                if showsTeddy {
                 if resting {
                     RoundedRectangle(cornerRadius: 14).fill(.purple.opacity(0.3)).frame(width: 170, height: 80).position(x: g.size.width * 0.4, y: 154)
                     RoundedRectangle(cornerRadius: 10).fill(.white).frame(width: 46, height: 65).position(x: g.size.width * 0.4 - 55, y: 143)
@@ -250,10 +263,13 @@ struct CozyRoutineScene: View {
                     Image(systemName: "umbrella.fill").font(.system(size: 76)).foregroundStyle(.purple)
                         .position(x: g.size.width * 0.23, y: 70)
                 }
+                }
+                if showsItem {
                 VStack(spacing: 12) {
                     CozyRoutineItemArt(step: step)
                     Image(systemName: accomplished ? "checkmark.seal.fill" : "questionmark.bubble.fill").font(.title).foregroundStyle(accomplished ? .green : .orange)
                 }.position(x: g.size.width * 0.76, y: 140)
+                }
             }
         }.frame(height: 210).accessibilityElement(children: .ignore)
             .accessibilityLabel("Teddy's \(path.title) scene. \(step.title)\(accomplished ? " completed" : " is next")")

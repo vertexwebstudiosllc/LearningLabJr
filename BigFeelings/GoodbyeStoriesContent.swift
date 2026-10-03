@@ -16,7 +16,8 @@ struct GoodbyeStory: Identifiable {
     let movePrompt: String
     let question: String
     let retry: String
-    let choices: [GoodbyeWords]
+    var choices: [GoodbyeWords]
+    var bathroomContents = "poo"
     let actionTitle: String
     let actionPrompt: String
     let outcome: String
@@ -52,17 +53,20 @@ struct GoodbyeStory: Identifiable {
             .init(id: 1, title: "Bye! See you another time!", symbol: "hand.wave.fill", fits: true),
             .init(id: 2, title: "Good morning!", symbol: "sun.max.fill", fits: false),
         ], actionTitle: "Send a little wave", actionPrompt: "Tap the hand for a goodbye wave. A wave is enough.", outcome: "You thanked someone and said goodbye. Hugs are always a choice."),
-        .init(id: "poo", title: "Bye-bye, poo", kind: .bathroom, destination: "Handwashing spot", symbol: "hands.sparkles.fill", movePrompt: "Our buddy is done on the potty. Move them to the handwashing spot.", question: "We are finished with the potty. Which goodbye fits?", retry: "This is a potty goodbye. Try words for being all done.", choices: [
+        .init(id: "flush", title: "Bye-bye Flush", kind: .bathroom, destination: "Handwashing spot", symbol: "hands.sparkles.fill", movePrompt: "Our buddy is done on the potty. Move them to the handwashing spot.", question: "We are finished with the potty. Which goodbye fits?", retry: "This is a potty goodbye. Try words for being all done.", choices: [
             .init(id: 0, title: "Bye-bye, poo!", symbol: "hand.wave.fill", fits: true),
             .init(id: 1, title: "All done! Time to flush!", symbol: "water.waves", fits: true),
             .init(id: 2, title: "Have fun at school!", symbol: "backpack.fill", fits: false),
         ], actionTitle: "Flush the pretend toilet", actionPrompt: "Tap the flush button and watch the water swirl.", outcome: "All done! We practiced flushing and washing hands with grown-up help."),
-        .init(id: "pee", title: "Bye-bye, pee", kind: .bathroom, destination: "Handwashing spot", symbol: "hands.sparkles.fill", movePrompt: "Our buddy is done on the potty. Move them to the handwashing spot.", question: "We are finished with the potty. Which goodbye fits?", retry: "This is a potty goodbye. Try words for being all done.", choices: [
-            .init(id: 0, title: "Bye-bye, pee!", symbol: "drop.fill", fits: true),
-            .init(id: 1, title: "All done! Time to flush!", symbol: "water.waves", fits: true),
-            .init(id: 2, title: "Good night!", symbol: "moon.fill", fits: false),
-        ], actionTitle: "Flush the pretend toilet", actionPrompt: "Tap the flush button and watch the water swirl.", outcome: "All done! We practiced flushing and washing hands with grown-up help."),
+
     ]
+    static func flushStory(pee: Bool) -> GoodbyeStory {
+        var story = bank.first { $0.id == "flush" }!
+        story.bathroomContents = pee ? "pee" : "poo"
+        story.choices[0] = GoodbyeWords(id: 0, title: pee ? "Bye-bye, pee!" : "Bye-bye, poo!",
+                                       symbol: pee ? "drop.fill" : "hand.wave.fill", fits: true)
+        return story
+    }
     static let welcome = "Choose a pretend goodbye story. Your real grown-up stays with you while we play."
     static let pickup = "It is pretend pick-up time. Tap the door to say hello again."
     static let wash = "Now wash and dry hands with a grown-up. Tap the sink to pretend together."
@@ -70,7 +74,7 @@ struct GoodbyeStory: Identifiable {
     static let completion = "We did it together! You can play again or choose all done."
     static var narration: [String] {
         var lines = [welcome, pickup, wash, paused, completion]
-        for story in bank {
+        for story in bank + [flushStory(pee: true)] {
             lines.append(contentsOf: [story.title, story.movePrompt, story.question, story.retry, story.outcome])
             lines.append(contentsOf: story.choices.map(\.title))
             for choice in story.choices where choice.fits {
@@ -93,6 +97,7 @@ struct GoodbyePlay {
     private(set) var completed = Set<String>()
     private var buddies = TogetherFriend.bank.shuffled()
     private var lastBuddy = ""
+    private var nextFlushIsPee = Bool.random()
     private(set) var session = UUID()
     var dragToken: String { session.uuidString }
     var prompt: String {
@@ -109,7 +114,11 @@ struct GoodbyePlay {
         }
     }
     mutating func chooseStory(_ id: String) {
-        guard phase == .stories, let story = GoodbyeStory.bank.first(where: { $0.id == id }) else { return }
+        guard phase == .stories, var story = GoodbyeStory.bank.first(where: { $0.id == id }) else { return }
+        if story.kind == .bathroom {
+            story = GoodbyeStory.flushStory(pee: nextFlushIsPee)
+            nextFlushIsPee.toggle()
+        }
         if buddies.isEmpty {
             buddies = TogetherFriend.bank.shuffled()
             if buddies[0].id == lastBuddy { buddies.swapAt(0, Int.random(in: 1..<buddies.count)) }

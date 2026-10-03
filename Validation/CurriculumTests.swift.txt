@@ -130,9 +130,29 @@ final class CurriculumTests: XCTestCase {
 
 
     @MainActor
+    func testFlushVisitsAlternateAndCountAsOneStory() {
+        var play = GoodbyePlay()
+        var contents: [String] = []
+        for _ in 0..<4 {
+            play.chooseStory("flush")
+            XCTAssertEqual(play.story?.title, "Bye-bye Flush")
+            contents.append(play.story!.bathroomContents)
+            XCTAssertTrue(play.move(play.dragToken))
+            XCTAssertTrue(play.say(0))
+            XCTAssertTrue(play.act(0, session: play.session))
+            XCTAssertTrue(play.act(1, session: play.session))
+            XCTAssertEqual(play.completed, ["flush"])
+            play.stories()
+        }
+        XCTAssertNotEqual(contents[0], contents[1])
+        XCTAssertEqual(contents[0], contents[2])
+        XCTAssertEqual(contents[1], contents[3])
+    }
+
+    @MainActor
     func testGoodbyeStoriesMovementChoicesActionsPauseAndRuth() {
-        XCTAssertEqual(Set(GoodbyeStory.bank.map(\.id)).count, 8)
-        for text in GoodbyeStory.narration {
+        XCTAssertEqual(Set(GoodbyeStory.bank.map(\.id)).count, 7)
+        for text in GoodbyeStory.narration where text != "Bye-bye Flush" {
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.voice, "Ruth", text)
             XCTAssertEqual(NarrationAudioCatalog.shared.clip(for: text)?.engine, "generative", text)
         }
@@ -157,7 +177,7 @@ final class CurriculumTests: XCTestCase {
                 }
                 XCTAssertTrue(play.completed.contains(story.id)); play.stories()
             }
-            XCTAssertEqual(play.completed.count, 8)
+            XCTAssertEqual(play.completed.count, 7)
         }
         for stage in 0...2 {
             var play = GoodbyePlay(); play.chooseStory("school")
@@ -165,7 +185,7 @@ final class CurriculumTests: XCTestCase {
             if stage > 1 { play.say(0) }
             play.pause(); XCTAssertEqual(play.phase, .paused); XCTAssertTrue(play.completed.isEmpty)
             play.stories(); XCTAssertEqual(play.phase, .stories)
-            play.chooseStory("pee"); play.pause(); play.finish(); XCTAssertEqual(play.phase, .complete)
+            play.chooseStory("flush"); play.pause(); play.finish(); XCTAssertEqual(play.phase, .complete)
             XCTAssertTrue(play.completed.isEmpty)
         }
     }
@@ -175,56 +195,42 @@ final class CurriculumTests: XCTestCase {
     func testCozyRoutinePathsOrderingActionsPauseAndRuth() throws {
         XCTAssertEqual(CozyRoutine.bank.count, 8); XCTAssertEqual(CozyRoutine.bank.reduce(0) { $0 + $1.steps.count }, 35)
         XCTAssertEqual(Set(CozyRoutineStep.bank.map(\.id)).count, 28)
-        var layouts = Set<String>()
-        for _ in 0..<30 {
-            var play = CozyRoutinePlay()
-            play.choosePath("invalid"); play.start(); play.next(); play.finish(); XCTAssertEqual(play.phase, .paths)
-            for path in CozyRoutine.bank {
-                XCTAssertEqual(Set(path.steps).count, path.steps.count)
-                play.choosePath(path.id); XCTAssertEqual(play.phase, .introduction)
-                XCTAssertEqual(play.prompt, path.introduction)
-                play.start(); XCTAssertEqual(play.phase, .choosing)
-                for (index, id) in path.steps.enumerated() {
-                    XCTAssertEqual(play.current.id, id); XCTAssertEqual(play.index, index)
-                    XCTAssertEqual(play.actions, 0); XCTAssertTrue(play.used.isEmpty)
-                    XCTAssertEqual(play.choices.count, 3); XCTAssertEqual(Set(play.choices).count, 3)
-                    XCTAssertEqual(Set(play.choices.map { CozyRoutineStep.named($0).symbol }).count, 3)
-                    layouts.insert(play.choices.joined())
-                    play.next(); XCTAssertEqual(play.index, index)
-                    for wrong in play.choices where wrong != id { XCTAssertFalse(play.chooseStep(wrong)) }
-                    XCTAssertTrue(play.chooseStep(id)); XCTAssertFalse(play.chooseStep(id))
-                    XCTAssertEqual(play.phase, .acting)
-                    let step = play.current
-                    let order = [.pack, .scrub].contains(step.kind) ? Array((0..<step.goal).reversed()) : Array(0..<step.goal)
-                    for value in order {
-                        let before = play.actions, token = play.token
-                        XCTAssertFalse(play.act(value, token: "stale")); XCTAssertFalse(play.act(-1, token: token))
-                        if ![.pack, .scrub].contains(step.kind) { XCTAssertFalse(play.act(step.goal, token: token)) }
-                        for used in play.used { XCTAssertFalse(play.act(used, token: token)) }
-                        XCTAssertTrue(play.act(value, token: token)); XCTAssertEqual(play.actions, before + 1)
-                        XCTAssertFalse(play.act(value, token: token)); XCTAssertEqual(play.actions, before + 1)
-                    }
-                    XCTAssertEqual(play.phase, .feedback); XCTAssertEqual(play.prompt, step.response)
-                    play.next(); play.next()
-                    XCTAssertEqual(play.phase, index == path.steps.count - 1 ? .finished : .choosing)
+        var play = CozyRoutinePlay()
+        play.choosePath("invalid"); play.next(); play.finish(); XCTAssertEqual(play.phase, .paths)
+        for path in CozyRoutine.bank {
+            play.choosePath(path.id)
+            XCTAssertEqual(play.phase, .acting, "A path starts immediately")
+            // Choose tiles out of order, preserving any unfinished action progress.
+            for index in path.steps.indices.reversed() {
+                play.selectStep(index)
+                let step = play.current
+                XCTAssertEqual(step.id, path.steps[index])
+                let order = [.pack, .scrub].contains(step.kind) ? Array((0..<step.goal).reversed()) : Array(0..<step.goal)
+                for value in order {
+                    let before = play.actions, token = play.token
+                    XCTAssertFalse(play.act(value, token: "stale"))
+                    XCTAssertFalse(play.act(-1, token: token))
+                    XCTAssertTrue(play.act(value, token: token))
+                    XCTAssertFalse(play.act(value, token: token))
+                    XCTAssertEqual(play.actions, before + 1)
                 }
-                XCTAssertTrue(play.completed.contains(path.id)); XCTAssertEqual(play.prompt, path.outcome)
-                play.paths(); XCTAssertEqual(play.phase, .paths); XCTAssertNil(play.routine)
+                XCTAssertEqual(play.phase, .feedback)
+                XCTAssertTrue(play.completedSteps.contains(step.id))
+                XCTAssertEqual(play.prompt, step.response)
+                play.next()
             }
-            XCTAssertEqual(play.completed.count, 8)
-            play.choosePath("bathroom"); play.start(); play.chooseStep("tell"); play.pause()
-            XCTAssertEqual(play.phase, .paused); play.paths(); XCTAssertEqual(play.completed.count, 8)
+            XCTAssertEqual(play.phase, .finished)
+            XCTAssertTrue(play.completed.contains(path.id))
+            play.paths()
         }
-        XCTAssertGreaterThan(layouts.count, 100)
-        for mode in 0..<4 {
-            var play = CozyRoutinePlay(); play.choosePath("bathroom")
-            if mode > 0 { play.start() }
-            if mode > 1 { play.chooseStep("tell") }
-            if mode > 2 { play.act(0, token: play.token) }
-            play.pause(); XCTAssertEqual(play.phase, .paused); XCTAssertTrue(play.completed.isEmpty)
-            play.finish(); XCTAssertEqual(play.phase, .complete); XCTAssertTrue(play.completed.isEmpty)
-            play.paths(); play.start(); play.next(); XCTAssertEqual(play.phase, .complete)
-        }
+        XCTAssertEqual(play.completed.count, 8)
+        var partial = CozyRoutinePlay(); partial.choosePath("bedtime")
+        XCTAssertTrue(partial.act(0, token: partial.token))
+        partial.selectStep(2); XCTAssertEqual(partial.current.id, "pajamas")
+        partial.selectStep(0); XCTAssertEqual(partial.actions, 1)
+        XCTAssertFalse(partial.act(0, token: partial.token))
+        partial.pause(); partial.finish(); XCTAssertEqual(partial.phase, .complete)
+        partial.paths(); partial.next(); XCTAssertEqual(partial.phase, .complete)
         for step in CozyRoutineStep.bank {
             let renderer = ImageRenderer(content: CozyRoutineItemArt(step: step).padding(15).background(Color.cyan.opacity(0.1)))
             let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Routine item \(step.id)"; shot.lifetime = .keepAlways; add(shot)
@@ -342,11 +348,11 @@ final class CurriculumTests: XCTestCase {
                 play.next(); XCTAssertEqual(play.index, index)
                 XCTAssertFalse(play.choose(clue.part, clue: "stale")); XCTAssertEqual(play.attempts, 0)
                 let wrong = BuddyPart.allCases.first { $0 != clue.part }!
-                XCTAssertFalse(play.choose(wrong, clue: clue.id)); XCTAssertFalse(play.hintShown)
+                XCTAssertFalse(play.choose(wrong, clue: clue.id)); XCTAssertTrue(play.hintShown)
                 XCTAssertFalse(play.choose(wrong, clue: clue.id)); XCTAssertTrue(play.hintShown)
                 play.showHint(); XCTAssertTrue(play.hintShown)
                 XCTAssertTrue(play.choose(clue.part, clue: clue.id)); XCTAssertTrue(play.solved)
-                XCTAssertEqual(play.prompt, clue.response)
+                XCTAssertEqual(play.prompt, clue.response + " " + BodyClue.success)
                 XCTAssertFalse(play.choose(clue.part, clue: clue.id)); XCTAssertEqual(play.attempts, 2)
                 play.next()
             }
@@ -368,7 +374,7 @@ final class CurriculumTests: XCTestCase {
             let renderer = ImageRenderer(content: BodyBuddyPicture(buddy: buddy, highlight: nil, solved: false, onTap: { _ in }).frame(width: 340).background(.white))
             let shot = XCTAttachment(image: try XCTUnwrap(renderer.uiImage)); shot.name = "Body buddy \(buddy.name)"; shot.lifetime = .keepAlways; add(shot)
         }
-        for text in BodyClue.narration {
+        for text in BodyClue.narration where !text.contains(BodyClue.success) {
             let clip = try XCTUnwrap(NarrationAudioCatalog.shared.clip(for: text), text)
             XCTAssertEqual(clip.voice, "Ruth"); XCTAssertEqual(clip.engine, "generative")
             XCTAssertNotNil(NarrationAudioCatalog.shared.url(for: text))

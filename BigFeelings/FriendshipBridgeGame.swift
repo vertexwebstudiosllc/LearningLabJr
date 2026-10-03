@@ -7,6 +7,8 @@ struct FriendshipBridgeGame: View {
     @State private var play = BridgePlay()
     @State private var started = false
     @State private var selectedToken: String?
+    @State private var dragging = false
+    @State private var dropFrames: [Int: CGRect] = [:]
     @State private var feedback = ""
     @StateObject private var narrator = GameNarrator()
     var body: some View {
@@ -60,10 +62,10 @@ struct FriendshipBridgeGame: View {
             }
             Text("Try the words with a grown-up. Friends can say no or choose to watch. Small, seated movements count.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-        }.onAppear {
+        }.scrollDisabled(dragging).onAppear {
             guard !started else { return }
             play = BridgePlay(previousFirst: previousFirst); previousFirst = play.current.id; started = true
-        }.onDisappear { narrator.stop() }
+        }.onDisappear { narrator.stop(); dragging = false }
     }
     private func act(_ value: Int, token: String, target: Int = 0) {
         let accepted: Bool
@@ -157,9 +159,12 @@ struct FriendshipBridgeGame: View {
                     Image(systemName: play.current.symbol).font(.system(size: 58)).foregroundStyle(play.turn == 0 ? .teal : .purple)
                         .frame(width: 94, height: 88).background(.white, in: RoundedRectangle(cornerRadius: 18))
                         .overlay(RoundedRectangle(cornerRadius: 18).stroke(selectedToken == play.token ? Color.orange : .clear, lineWidth: 3))
-                }.buttonStyle(.plain).draggable(play.token) {
-                    Image(systemName: play.current.symbol).font(.system(size: 58)).foregroundStyle(.teal)
-                }.accessibilityLabel("Pick up the \(play.current.kind == .build ? "block" : "picture item")")
+                }.buttonStyle(.plain)
+                    .modifier(ImmediatePictureDrag(dragging: $dragging,
+                        target: dropFrames[play.current.kind == .build ? play.turn : 0] ?? .zero,
+                        tap: { selectedToken = play.token },
+                        drop: { act(play.actions, token: play.token, target: play.current.kind == .build ? play.turn : 0) }))
+                    .accessibilityLabel("Pick up the \(play.current.kind == .build ? "block" : "picture item")")
                     .accessibilityIdentifier("bridge.drag")
                 Text("Drag the picture, or tap it and then tap its spot.").font(.subheadline).multilineTextAlignment(.center)
                 HStack {
@@ -186,6 +191,7 @@ struct FriendshipBridgeGame: View {
                 .background(.teal.opacity(0.09), in: RoundedRectangle(cornerRadius: 20))
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(active ? Color.orange : .gray.opacity(0.2), lineWidth: 3))
         }.buttonStyle(.plain).accessibilityIdentifier("bridge.drop.\(target)")
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { dropFrames[target] = $0 }
             .dropDestination(for: String.self) { values, _ in
                 guard values.count == 1, values[0] == play.token, play.phase == .playing else { return false }
                 let before = play.actions

@@ -7,6 +7,10 @@ struct SolutionToolboxGame: View {
     @State private var started = false
     @State private var toolboxOpen = false
     @State private var feedback = ""
+    @State private var nudge = 0
+    @State private var showNudge = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var narrator = GameNarrator()
     private var prompt: String { play.solved ? play.current.resolution : play.current.question }
     var body: some View {
@@ -21,6 +25,7 @@ struct SolutionToolboxGame: View {
                     narrator.stop(); feedback = ""; play.next()
                 }.accessibilityIdentifier("solution.next")
             } else {
+                requiredTools
                 Button { feedback = ""; toolboxOpen = true } label: {
                     VStack(spacing: 10) {
                         SolutionToolboxIcon().foregroundStyle(.indigo).frame(width: 90, height: 74)
@@ -28,6 +33,11 @@ struct SolutionToolboxGame: View {
                         Text("Find \(play.current.required.count) helpful \(play.current.required.count == 1 ? "tool" : "tools")").font(.headline)
                     }.frame(maxWidth: .infinity).padding(18).background(.indigo.opacity(0.12), in: RoundedRectangle(cornerRadius: 26))
                 }.buttonStyle(.plain).accessibilityIdentifier("solution.open")
+                    .accessibilityValue(showNudge ? "Tap to find the pictured tools" : "")
+                    .overlay(RoundedRectangle(cornerRadius: 26).stroke(showNudge ? .orange : .clear, lineWidth: 3))
+                    .phaseAnimator([0.0, -5, 5, -3, 3, 0], trigger: nudge) { content, angle in
+                        content.rotationEffect(.degrees(reduceMotion ? 0 : angle))
+                    } animation: { _ in .easeInOut(duration: 0.14) }
             }
             Text("Try pretend solutions together. Ask a grown-up to help with real repairs.")
                 .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
@@ -37,6 +47,7 @@ struct SolutionToolboxGame: View {
                 ScrollView {
                     VStack(spacing: 16) {
                         Text(play.current.question).font(.title3.bold()).multilineTextAlignment(.center)
+                        requiredTools
                         Button { narrator.speak(play.current.question) } label: {
                             Label("Hear the problem", systemImage: "speaker.wave.2.fill").padding(10)
                         }
@@ -74,11 +85,43 @@ struct SolutionToolboxGame: View {
                 .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Close") { toolboxOpen = false } } }
                 .onAppear { narrator.speak(play.current.question) }
             }.presentationDetents([.large])
+                .environment(\.gameViewportSize, nil)
+                .environment(\.gameContentScale, 1)
+        }
+        .task(id: "\(play.current.id):\(toolboxOpen):\(play.solved):\(scenePhase)") {
+            showNudge = false
+            guard !toolboxOpen, !play.solved, !play.complete, scenePhase == .active else { return }
+            do { try await Task.sleep(for: .seconds(3)) } catch { return }
+            guard !Task.isCancelled else { return }
+            showNudge = true
+            nudge += 1
         }
         .onAppear {
             guard !started else { return }
             play = SolutionPlay(previousFirst: lastFirst); lastFirst = play.current.id; started = true
         }.onDisappear { narrator.stop() }
+    }
+
+    private var requiredTools: some View {
+        VStack(spacing: 6) {
+            Text("Find these helpful tools").font(.headline)
+            HStack(alignment: .top, spacing: 12) {
+                ForEach(play.current.required, id: \.self) { id in
+                    let tool = SolutionTool.named(id)
+                    VStack(spacing: 4) {
+                        SolutionToolArt(tool: tool).scaleEffect(0.75).frame(width: 68, height: 45)
+                        Text(tool.title).font(.system(.caption, design: .rounded, weight: .bold))
+                            .multilineTextAlignment(.center)
+                        if play.selected.contains(id) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green) }
+                    }.frame(maxWidth: .infinity).padding(8)
+                        .background(.white, in: RoundedRectangle(cornerRadius: 14))
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel(tool.title)
+                        .accessibilityValue(play.selected.contains(id) ? "Found" : "Find in the toolbox")
+                        .accessibilityIdentifier("solution.find.\(id)")
+                }
+            }
+        }.accessibilityElement(children: .contain).accessibilityIdentifier("solution.required-tools")
     }
 }
 

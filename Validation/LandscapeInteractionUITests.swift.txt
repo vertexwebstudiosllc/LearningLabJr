@@ -43,7 +43,7 @@ final class LandscapeInteractionUITests: XCTestCase {
         XCTAssertTrue(stories.waitForExistence(timeout: 5))
         assertInsidePlay(stories, in: app)
         stories.tap()
-        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "1 of 8 stories explored")
+        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "1 of 7 stories explored")
     }
 
     @MainActor func testSentenceHistoryStaysBoundedAndDraftSurvivesRotation() async throws {

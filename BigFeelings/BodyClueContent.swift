@@ -57,10 +57,12 @@ struct BodyClue: Identifiable {
         .init(id: "toes", part: .feet, question: "Which parts have toes? Find one at the bottom of our friend.", response: "That is a foot. Toes are part of a foot!"),
     ]
     static let retry = "Good exploring! Listen to the clue and try another body part."
+    static let success = "Great job! You chose the right body part!"
     static let completion = "We did it together! You can play again or choose all done."
     static var narration: [String] {
         bank.flatMap { [$0.question, $0.response] } + BuddyPart.allCases.map(\.hint)
-        + BodyBuddy.bank.map(\.introduction) + [retry, completion]
+        + BodyBuddy.bank.map(\.introduction) + [retry, completion, success]
+        + bank.map { $0.response + " " + success }
     }
 }
 
@@ -77,7 +79,7 @@ struct BodyCluePlay {
     private(set) var hintShown = false
     var complete: Bool { index == rounds.count }
     var current: BodyClueRound { rounds[min(index, rounds.count - 1)] }
-    var prompt: String { solved ? current.clue.response : current.clue.question }
+    var prompt: String { solved ? current.clue.response + " " + BodyClue.success : current.clue.question }
     init(previousBuddy: String = "", previousClue: String = "") {
         var buddies = BodyBuddy.bank.shuffled()
         if buddies[0].id == previousBuddy { buddies.swapAt(0, Int.random(in: 1..<buddies.count)) }
@@ -93,7 +95,7 @@ struct BodyCluePlay {
         guard !complete, !solved, clue == current.clue.id else { return false }
         if part == current.clue.part { solved = true; return true }
         attempts += 1
-        if attempts >= 2 { hintShown = true }
+        hintShown = true
         return false
     }
     mutating func showHint() {

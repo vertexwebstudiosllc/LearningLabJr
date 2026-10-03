@@ -175,7 +175,15 @@ private struct GameContentScaleKey: EnvironmentKey {
     static let defaultValue: CGFloat = 1
 }
 
+private struct GameContentIsInvertedKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
 extension EnvironmentValues {
+    var gameContentIsInverted: Bool {
+        get { self[GameContentIsInvertedKey.self] }
+        set { self[GameContentIsInvertedKey.self] = newValue }
+    }
     /// The actual space available for play in a landscape window. Nil uses the portrait layout.
     var gameViewportSize: CGSize? {
         get { self[GameViewportSizeKey.self] }

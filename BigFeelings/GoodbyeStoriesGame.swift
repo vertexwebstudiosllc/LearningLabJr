@@ -23,12 +23,12 @@ struct SeeYouSoonGame: View {
                                     if play.completed.contains(story.id) { Image(systemName: "checkmark.seal.fill").foregroundStyle(.green) }
                                 }.frame(maxWidth: .infinity, minHeight: 130).padding(10).background(.white, in: RoundedRectangle(cornerRadius: 23))
                             }.buttonStyle(.plain).accessibilityIdentifier("goodbye.story.\(story.id)")
-                            Button { narrator.speak(story.title) } label: { Label("Hear", systemImage: "speaker.wave.2.fill").frame(minHeight: 44) }
+                            Button { narrator.speak(story.title, allowUnrecorded: true) } label: { Label("Hear", systemImage: "speaker.wave.2.fill").frame(minHeight: 44) }
                                 .accessibilityLabel("Hear \(story.title)")
                         }
                     }
                 }
-                Text("\(play.completed.count) of 8 stories explored").font(.headline).accessibilityIdentifier("goodbye.progress")
+                Text("\(play.completed.count) of \(GoodbyeStory.bank.count) stories explored").font(.headline).accessibilityIdentifier("goodbye.progress")
             } else if let story = play.story, let buddy = play.buddy {
                 Text(story.title).font(.title2.bold())
                 Text("Our buddy: \(buddy.name)").font(.headline).accessibilityIdentifier("goodbye.buddy.\(buddy.id)")
@@ -141,7 +141,7 @@ struct GoodbyeStoryScene: View {
                                 .shadow(color: .indigo.opacity(0.25), radius: 1, x: 1, y: 1)
                             Ellipse().fill(.cyan.opacity(0.45)).frame(width: 50, height: 13).offset(x: 6, y: 4)
                             if actions == 0 {
-                                if story.id == "pee" {
+                                if story.bathroomContents == "pee" {
                                     Image(systemName: "drop.fill").font(.system(size: 23)).foregroundStyle(.yellow).offset(x: 6, y: -3)
                                 } else {
                                     Capsule().fill(.brown).frame(width: 26, height: 13).rotationEffect(.degrees(-12)).offset(x: 6, y: 0)
@@ -152,8 +152,8 @@ struct GoodbyeStoryScene: View {
                                     .animation(reduceMotion ? nil : .easeInOut(duration: 0.7), value: actions)
                             }
                         }
-                        Text(actions == 0 ? (story.id == "pee" ? "Pee" : "Poo") : "Flushed!").font(.caption.bold())
-                    }.position(x: g.size.width * 0.24, y: 193).accessibilityElement(children: .ignore)
+                        Text(actions == 0 ? (story.bathroomContents == "pee" ? "Pee" : "Poo") : "Flushed!").font(.caption.bold())
+                    }.position(x: g.size.width * 0.24, y: moved ? 193 : 157).accessibilityElement(children: .ignore)
                         .accessibilityLabel(actions == 0 ? "Pretend toilet" : "Pretend toilet flushed")
                         .accessibilityIdentifier("goodbye.toilet.\(actions == 0 ? "full" : "flushed")")
                 } else if moved {
@@ -195,7 +195,7 @@ struct GoodbyeStoryScene: View {
                     }
                 if !moved {
                     Button(action: pickUp) {
-                        TogetherFriendArt(friend: buddy).frame(width: 100, height: 150).scaleEffect(0.86).frame(width: 86, height: 129)
+                        TogetherFriendArt(friend: buddy, seated: story.kind == .bathroom).frame(width: 100, height: 150).scaleEffect(0.86).frame(width: 86, height: 129)
                             .padding(7).background(.white.opacity(pickedUp ? 0.95 : 0.25), in: RoundedRectangle(cornerRadius: 19))
                             .overlay(RoundedRectangle(cornerRadius: 19).stroke(pickedUp ? Color.orange : .clear, lineWidth: 3))
                     }.buttonStyle(.plain).position(x: g.size.width * 0.24, y: story.kind == .bathroom ? 126 : 168)

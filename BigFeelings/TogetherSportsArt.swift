@@ -4,6 +4,7 @@ import SwiftUI
 struct TogetherFriendArt: View {
     let friend: TogetherFriend
     var waving = false
+    var seated = false
     private var skin: Color { .sportsRGB(friend.skin) }
     private var hair: Color { .sportsRGB(friend.hair) }
     private var shirt: Color { .sportsRGB(friend.shirt) }
@@ -16,7 +17,7 @@ struct TogetherFriendArt: View {
                 }
                 if friend.style == .bun { Circle().fill(hair).frame(width: 30, height: 30).position(x: 50, y: 15) }
                 // Legs and shoes; seated players have bent legs and a supported seat.
-                if friend.wheelchair {
+                if friend.wheelchair || seated {
                     Path { p in p.move(to: CGPoint(x: 38, y: 102)); p.addLine(to: CGPoint(x: 71, y: 108)); p.addLine(to: CGPoint(x: 74, y: 130)) }
                         .stroke(.indigo, style: StrokeStyle(lineWidth: 13, lineCap: .round, lineJoin: .round))
                     Capsule().fill(.white).frame(width: 23, height: 9).position(x: 78, y: 133)
@@ -33,6 +34,15 @@ struct TogetherFriendArt: View {
                 Circle().fill(skin).frame(width: 12, height: 15).position(x: 23, y: 43)
                 Circle().fill(skin).frame(width: 12, height: 15).position(x: 77, y: 43)
                 Ellipse().fill(skin).frame(width: 55, height: 58).position(x: 50, y: 40)
+                // A continuous cap connects every fringe and curl to the scalp.
+                // Separate tufts alone left skin-colored gaps across the crown.
+                Path { p in
+                    p.move(to: CGPoint(x: 22, y: 38))
+                    p.addCurve(to: CGPoint(x: 78, y: 38), control1: CGPoint(x: 17, y: -5), control2: CGPoint(x: 83, y: -5))
+                    p.addQuadCurve(to: CGPoint(x: 50, y: 26), control: CGPoint(x: 72, y: 24))
+                    p.addQuadCurve(to: CGPoint(x: 22, y: 38), control: CGPoint(x: 29, y: 24))
+                    p.closeSubpath()
+                }.fill(hair)
                 switch friend.style {
                 case .curls:
                     ForEach(0..<7) { i in
@@ -64,7 +74,7 @@ struct TogetherFriendArt: View {
                 if friend.hearingAid {
                     Capsule().stroke(.teal, lineWidth: 4).frame(width: 8, height: 16).position(x: 80, y: 44)
                 }
-                if friend.wheelchair {
+                if friend.wheelchair && !seated {
                     Path { p in p.move(to: CGPoint(x: 24, y: 76)); p.addLine(to: CGPoint(x: 24, y: 109)); p.addLine(to: CGPoint(x: 70, y: 109)); p.addLine(to: CGPoint(x: 81, y: 136)) }
                         .stroke(.teal, style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round))
                     Circle().fill(Color.sportsRGB(0xE2F5F5)).overlay(Circle().stroke(.indigo, lineWidth: 4)).frame(width: 39, height: 39).position(x: 32, y: 121)
