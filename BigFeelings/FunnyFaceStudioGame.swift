@@ -117,7 +117,6 @@ struct StudioFace: View {
 
 struct FunnyFaceStudioGame: View {
     let onReplay: () -> Void
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @AppStorage("feelings.studio.lastFirst") private var lastFirst = ""
     @AppStorage("feelings.studio.lastShown") private var lastShown = ""
     @State private var play = StudioPlay()
@@ -128,36 +127,8 @@ struct FunnyFaceStudioGame: View {
         ToddlerGameScaffold(title: "Funny Face Studio", prompt: play.prompt, accent: .pink,
                             completion: play.complete, onReplay: onReplay,
                             scrollToTopOnPromptChange: false, autoNarratePrompt: false, allowUnrecordedPrompt: true) {
-            if !play.complete {
-                Text("Face \(play.index + 1) of \(play.rounds.count)")
-                    .font(.headline).accessibilityIdentifier("studio.progress")
-                faceBoard
-                HStack(spacing: 6) {
-                    ForEach(play.current.features) { feature in
-                        Image(systemName: play.matchedFeatures.contains(feature) ? "star.fill" : "star")
-                            .foregroundStyle(play.matchedFeatures.contains(feature) ? .orange : .secondary)
-                    }
-                    Text("\(play.matchedFeatures.count) of \(play.current.features.count) matched")
-                }
-                .font(.subheadline.bold())
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("\(play.matchedFeatures.count) of \(play.current.features.count) parts matched")
-                .accessibilityIdentifier("studio.matches")
-                if play.phase == .found {
-                    Label("You matched it!", systemImage: "checkmark.seal.fill")
-                        .font(.title2.bold()).foregroundStyle(.green)
-                        .accessibilityIdentifier("studio.found")
-                    ToddlerActionButton(title: play.index == play.rounds.count - 1 ? "Finish playing" : "Try another face", systemImage: "arrow.right", color: .pink) {
-                        play.advance(from: play.current.emotion)
-                        if !play.complete { lastShown = play.current.emotion.rawValue }
-                    }.accessibilityIdentifier("studio.next")
-                } else {
-                    Text("Tap a face part or a button to change it.")
-                        .font(.subheadline).multilineTextAlignment(.center)
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 94), spacing: 8)], spacing: 8) {
-                        ForEach(play.current.features) { feature in featureButton(feature) }
-                    }
-                }
+            FunnyFacePlayArea(play: $play) {
+                if !play.complete { lastShown = play.current.emotion.rawValue }
             }
         }
         .onAppear {
@@ -173,36 +144,143 @@ struct FunnyFaceStudioGame: View {
         .onDisappear { narrator.stop() }
     }
 
-    private var faceBoard: some View {
-        GeometryReader { geometry in
-            let size = min(260, (geometry.size.width - 32) / 2)
-            HStack(alignment: .top, spacing: 12) {
-                VStack(spacing: 6) {
-                    Text("Match this").font(.headline)
-                    Text("EXAMPLE").font(.caption2.bold()).foregroundStyle(.secondary)
-                    StudioFace(design: play.current.target, size: size)
-                        .accessibilityLabel("Example to match")
-                        .accessibilityIdentifier("studio.target.\(play.current.emotion.rawValue)")
+}
+
+/// Reads the scaffold's bounded viewport from inside its content, keeping play state above rotation changes.
+private struct FunnyFacePlayArea: View {
+    @Binding var play: StudioPlay
+    let onAdvance: () -> Void
+    @Environment(\.gameViewportSize) private var viewport
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private var compact: Bool { viewport != nil }
+    private var compactFaceSize: CGFloat {
+        guard let viewport else { return 0 }
+        // Header, card labels and the full control row each keep their own space.
+        return max(0, min(260, (viewport.width - 20) / 2, viewport.height - 112))
+    }
+
+    var body: some View {
+        if !play.complete {
+            VStack(spacing: compact ? 6 : 18) {
+                let header = compact
+                    ? AnyLayout(HStackLayout(spacing: 8))
+                    : AnyLayout(VStackLayout(spacing: 8))
+                header {
+                    Text("Face \(play.index + 1) of \(play.rounds.count)")
+                        .font(compact ? .subheadline.bold() : .headline)
+                        .accessibilityIdentifier("studio.progress")
+                    if compact { Spacer(minLength: 4) }
+                    matchProgress
                 }
-                .padding(.vertical, 10).frame(maxWidth: .infinity)
-                .background(.white, in: RoundedRectangle(cornerRadius: 20))
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.purple.opacity(0.3), lineWidth: 2))
-                VStack(spacing: 6) {
-                    Text("Your face").font(.headline)
+                .frame(height: compact ? 22 : nil)
+                faceBoard
+                if play.phase == .found {
+                    let success = compact
+                        ? AnyLayout(HStackLayout(spacing: 8))
+                        : AnyLayout(VStackLayout(spacing: 14))
+                    success {
+                        Label("You matched it!", systemImage: "checkmark.seal.fill")
+                            .font(compact ? .subheadline.bold() : .title2.bold())
+                            .foregroundStyle(.green)
+                            .accessibilityIdentifier("studio.found")
+                        nextButton
+                    }
+                } else {
+                    if !compact {
+                        Text("Tap a face part or a button to change it.")
+                            .font(.subheadline).multilineTextAlignment(.center)
+                    }
+                    if compact {
+                        HStack(spacing: 6) {
+                            ForEach(play.current.features) { feature in featureButton(feature) }
+                        }
+                    } else {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 94), spacing: 8)], spacing: 8) {
+                            ForEach(play.current.features) { feature in featureButton(feature) }
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
+    }
+
+    private var matchProgress: some View {
+        HStack(spacing: 6) {
+            if !compact {
+                ForEach(play.current.features) { feature in
+                    Image(systemName: play.matchedFeatures.contains(feature) ? "star.fill" : "star")
+                        .foregroundStyle(play.matchedFeatures.contains(feature) ? .orange : .secondary)
+                }
+            }
+            Text("\(play.matchedFeatures.count) of \(play.current.features.count) matched")
+        }
+        .font(compact ? .caption.bold() : .subheadline.bold())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(play.matchedFeatures.count) of \(play.current.features.count) parts matched")
+        .accessibilityIdentifier("studio.matches")
+    }
+
+    private var nextButton: some View {
+        let title = play.index == play.rounds.count - 1 ? "Finish playing" : "Try another face"
+        return Button {
+            play.advance(from: play.current.emotion)
+            onAdvance()
+        } label: {
+            Label(title, systemImage: "arrow.right")
+                .font(compact ? .subheadline.bold() : .title3.bold())
+                .frame(maxWidth: .infinity, minHeight: compact ? 44 : 64)
+                .padding(.horizontal, 10)
+                .background(.pink.opacity(0.14), in: RoundedRectangle(cornerRadius: 16))
+                .contentShape(RoundedRectangle(cornerRadius: 16))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("studio.next")
+    }
+
+    @ViewBuilder private var faceBoard: some View {
+        if compact {
+            faces(size: compactFaceSize)
+                .frame(height: compactFaceSize + 34)
+        } else {
+            GeometryReader { geometry in
+                faces(size: min(260, (geometry.size.width - 32) / 2))
+            }
+            .aspectRatio(1.42, contentMode: .fit)
+            .frame(maxHeight: 340)
+        }
+    }
+
+    private func faces(size: CGFloat) -> some View {
+        HStack(alignment: .top, spacing: compact ? 8 : 12) {
+            VStack(spacing: compact ? 2 : 6) {
+                Text("Match this").font(compact ? .subheadline.bold() : .headline)
+                if !compact {
+                    Text("EXAMPLE").font(.caption2.bold()).foregroundStyle(.secondary)
+                }
+                StudioFace(design: play.current.target, size: size)
+                    .accessibilityLabel("Example to match")
+                    .accessibilityIdentifier("studio.target.\(play.current.emotion.rawValue)")
+            }
+            .padding(.vertical, compact ? 6 : 10).frame(maxWidth: .infinity)
+            .background(.white, in: RoundedRectangle(cornerRadius: 20))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(.purple.opacity(0.3), lineWidth: 2))
+            VStack(spacing: compact ? 2 : 6) {
+                Text("Your face").font(compact ? .subheadline.bold() : .headline)
+                if !compact {
                     Text(play.phase == .found ? "MATCHED!" : "TAP TO CHANGE")
                         .font(.caption2.bold()).foregroundStyle(.pink)
-                    StudioFace(design: play.face, size: size)
-                        .accessibilityLabel("Your face")
-                        .accessibilityIdentifier("studio.editable")
-                        .overlay { faceHotspots(size: size) }
                 }
-                .padding(.vertical, 10).frame(maxWidth: .infinity)
-                .background(.pink.opacity(0.07), in: RoundedRectangle(cornerRadius: 20))
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.pink.opacity(0.5), lineWidth: 2))
+                StudioFace(design: play.face, size: size)
+                    .accessibilityLabel("Your face")
+                    .accessibilityIdentifier("studio.editable")
+                    .overlay { faceHotspots(size: size) }
             }
+            .padding(.vertical, compact ? 6 : 10).frame(maxWidth: .infinity)
+            .background(.pink.opacity(0.07), in: RoundedRectangle(cornerRadius: 20))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(.pink.opacity(0.5), lineWidth: 2))
         }
-        .aspectRatio(1.42, contentMode: .fit)
-        .frame(maxHeight: 340)
     }
 
     private func faceHotspots(size: CGFloat) -> some View {
@@ -240,12 +318,14 @@ struct FunnyFaceStudioGame: View {
         let emotion = play.current.emotion
         let matched = play.matchedFeatures.contains(feature)
         return Button { change(feature, for: emotion, from: expectedStyle) } label: {
-            VStack(spacing: 6) {
+            VStack(spacing: compact ? 2 : 6) {
                 Image(systemName: matched ? "checkmark.circle.fill" : feature.symbol)
-                    .font(.title3).foregroundStyle(matched ? .green : .pink)
-                Text(feature.name).font(.system(.subheadline, design: .rounded, weight: .bold))
+                    .font(compact ? .body : .title3).foregroundStyle(matched ? .green : .pink)
+                Text(feature.name)
+                    .font(.system(compact ? .caption : .subheadline, design: .rounded, weight: .bold))
+                    .lineLimit(1).minimumScaleFactor(0.8)
             }
-            .frame(maxWidth: .infinity, minHeight: 64)
+            .frame(maxWidth: .infinity, minHeight: compact ? 44 : 64)
             .padding(.horizontal, 4)
             .background(.white, in: RoundedRectangle(cornerRadius: 16))
             .overlay(RoundedRectangle(cornerRadius: 16).stroke(matched ? .green.opacity(0.5) : .pink.opacity(0.25), lineWidth: 2))

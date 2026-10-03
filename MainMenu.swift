@@ -10,91 +10,173 @@ struct LearningLabHomeView: View {
                 .accessibilityHidden(true)
 
             GeometryReader { geo in
-                let horizontalPadding: CGFloat = 20
-                let spacing: CGFloat = 10
-                let columnCount = min(3, max(2, Int((geo.size.width - horizontalPadding * 2) / 150)))
-                let compactHeight = geo.size.height < 750
-                let rowCount = CGFloat((categories.count + columnCount - 1) / columnCount)
-                let widthAvailable = geo.size.width - horizontalPadding * 2 - CGFloat(columnCount - 1) * spacing
-                let widthBasedSize = widthAvailable / CGFloat(columnCount)
-                let reservedHeight: CGFloat = compactHeight ? 335 : 390
-                let heightAvailable = geo.size.height - reservedHeight - (rowCount - 1) * spacing
-                let heightBasedSize = heightAvailable / rowCount
-                let maximumTileSize: CGFloat = geo.size.width < 500 ? 145 : 160
-                let tileSize = max(96, min(widthBasedSize, heightBasedSize, maximumTileSize))
-                let logoSize: CGFloat = compactHeight ? 145 : 165
-                let kidsSize: CGFloat = compactHeight ? 320 : 380
-                let columns = Array(
-                    repeating: GridItem(.fixed(tileSize), spacing: spacing),
-                    count: columnCount
-                )
-
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        Spacer().frame(height: 20)
-
-                        Image("learningLabLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: logoSize, maxHeight: logoSize)
-                            .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
-                            .offset(y: -8)
-                            .allowsHitTesting(false)
-                            .accessibilityHidden(true)
-
-                        Image("learningLabKids")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: kidsSize, maxHeight: kidsSize)
-                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
-                            .padding(.top, compactHeight ? -130 : -145)
-                            .allowsHitTesting(false)
-                            .accessibilityHidden(true)
-
-                        LazyVGrid(columns: columns, spacing: spacing) {
-                            ForEach(categories) { category in
-                                NavigationLink {
-                                    category.destination
-                                } label: {
-                                    HomeCategoryTile(category: category, compact: compactHeight)
-                                        .aspectRatio(1, contentMode: .fit)
-                                }
-                                .buttonStyle(.plain)
-                                .accessibilityHint("Opens the \(category.title) games")
-                            }
-                        }
-                        .frame(maxWidth: CGFloat(columnCount) * tileSize + CGFloat(columnCount - 1) * spacing)
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.top, compactHeight ? -105 : -118)
-
-                        HStack {
-                            Spacer()
-                            NavigationLink {
-                                ParentAccessView()
-                            } label: {
-                                Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
-                                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                                    .foregroundStyle(.white)
-                                    .padding(.horizontal, 18)
-                                    .frame(minHeight: 48)
-                                    .background(.black.opacity(0.28), in: Capsule())
-                                    .overlay(Capsule().stroke(.white.opacity(0.4), lineWidth: 1.5))
-                                    .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityHint("Opens settings and parent information")
-                        }
-                        .padding(.horizontal, 24)
-                        .padding(.top, 14)
-                        .padding(.bottom, 24)
-                    }
-                    .frame(minHeight: geo.size.height, alignment: .top)
+                if geo.size.width > geo.size.height {
+                    landscapeHome(size: geo.size)
+                } else {
+                    portraitHome(geometry: geo)
                 }
-                .scrollBounceBehavior(.basedOnSize)
-                .ignoresSafeArea(edges: .top)
             }
         }
     }
+
+    private func landscapeHome(size: CGSize) -> some View {
+        let width = min(max(0, size.width - 32), 1180)
+        let height = max(0, size.height - 24)
+        let gap: CGFloat = width >= 1000 ? 28 : 18
+        let brandingWidth = min(310, width * 0.27)
+        let gridWidth = max(0, width - brandingWidth - gap)
+        let rowGap: CGFloat = height < 300 ? 10 : 14
+        let tileHeight = min(210, max(44, (height - rowGap) / 2))
+        let contentHeight = tileHeight * 2 + rowGap
+        let artworkHeight = max(0, contentHeight - 64)
+        let kidsHeight = min(brandingWidth * 0.74, artworkHeight * 0.66)
+        let logoHeight = min(102, max(0, artworkHeight - kidsHeight))
+        let columns = Array(repeating: GridItem(.flexible(), spacing: rowGap), count: 3)
+
+        return HStack(alignment: .center, spacing: gap) {
+            VStack(spacing: 8) {
+                // These assets include generous empty margins. Frame the complete illustrated subjects.
+                Image("learningLabLogo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: logoHeight / 1.14, height: logoHeight)
+                    .clipped()
+                    .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
+                    .accessibilityHidden(true)
+
+                Image("learningLabKids")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: kidsHeight / 0.74, height: kidsHeight)
+                    .clipped()
+                    .shadow(color: .black.opacity(0.16), radius: 6, y: 3)
+                    .accessibilityHidden(true)
+
+                NavigationLink {
+                    ParentAccessView()
+                } label: {
+                    Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        .background(.black.opacity(0.28), in: Capsule())
+                        .overlay(Capsule().stroke(.white.opacity(0.4), lineWidth: 1.5))
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("home.parents")
+                .accessibilityHint("Opens settings and parent information")
+            }
+            .frame(width: brandingWidth)
+
+            LazyVGrid(columns: columns, spacing: rowGap) {
+                ForEach(categories) { category in
+                    NavigationLink {
+                        category.destination
+                    } label: {
+                        LandscapeHomeCategoryTile(category: category, height: tileHeight)
+                            .frame(height: tileHeight)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityHint("Opens the \(category.title) games")
+                }
+            }
+            .frame(width: gridWidth)
+        }
+        .frame(width: width, height: contentHeight)
+        .frame(width: size.width, height: size.height)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("home.landscape")
+    }
+
+    @ViewBuilder
+    private func portraitHome(geometry geo: GeometryProxy) -> some View {
+        let horizontalPadding: CGFloat = 20
+        let spacing: CGFloat = 10
+        let columnCount = min(3, max(2, Int((geo.size.width - horizontalPadding * 2) / 150)))
+        let compactHeight = geo.size.height < 750
+        let rowCount = CGFloat((categories.count + columnCount - 1) / columnCount)
+        let widthAvailable = geo.size.width - horizontalPadding * 2 - CGFloat(columnCount - 1) * spacing
+        let widthBasedSize = widthAvailable / CGFloat(columnCount)
+        let reservedHeight: CGFloat = compactHeight ? 335 : 390
+        let heightAvailable = geo.size.height - reservedHeight - (rowCount - 1) * spacing
+        let heightBasedSize = heightAvailable / rowCount
+        let maximumTileSize: CGFloat = geo.size.width < 500 ? 145 : 160
+        let tileSize = max(96, min(widthBasedSize, heightBasedSize, maximumTileSize))
+        let logoSize: CGFloat = compactHeight ? 145 : 165
+        let kidsSize: CGFloat = compactHeight ? 320 : 380
+        let columns = Array(
+            repeating: GridItem(.fixed(tileSize), spacing: spacing),
+            count: columnCount
+        )
+
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                Spacer().frame(height: 20)
+
+                Image("learningLabLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: logoSize, maxHeight: logoSize)
+                    .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 8)
+                    .offset(y: -8)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+
+                Image("learningLabKids")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: kidsSize, maxHeight: kidsSize)
+                    .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 6)
+                    .padding(.top, compactHeight ? -130 : -145)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+
+                LazyVGrid(columns: columns, spacing: spacing) {
+                    ForEach(categories) { category in
+                        NavigationLink {
+                            category.destination
+                        } label: {
+                            HomeCategoryTile(category: category, compact: compactHeight)
+                                .aspectRatio(1, contentMode: .fit)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens the \(category.title) games")
+                    }
+                }
+                .frame(maxWidth: CGFloat(columnCount) * tileSize + CGFloat(columnCount - 1) * spacing)
+                .padding(.horizontal, horizontalPadding)
+                .padding(.top, compactHeight ? -105 : -118)
+
+                HStack {
+                    Spacer()
+                    NavigationLink {
+                        ParentAccessView()
+                    } label: {
+                        Label("Parents Corner", systemImage: "person.2.badge.gearshape.fill")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 18)
+                            .frame(minHeight: 48)
+                            .background(.black.opacity(0.28), in: Capsule())
+                            .overlay(Capsule().stroke(.white.opacity(0.4), lineWidth: 1.5))
+                            .shadow(color: .black.opacity(0.2), radius: 8, y: 4)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityHint("Opens settings and parent information")
+                }
+                .padding(.horizontal, 24)
+                .padding(.top, 14)
+                .padding(.bottom, 24)
+            }
+            .frame(minHeight: geo.size.height, alignment: .top)
+        }
+        .scrollBounceBehavior(.basedOnSize)
+        .ignoresSafeArea(edges: .top)
+    }
+
 }
 
 private struct HomeCategory: Identifiable {
@@ -157,6 +239,43 @@ private struct HomeCategoryTile: View {
             }
             .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
             .contentShape(Rectangle())
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(category.title). \(category.subtitle)")
+            .accessibilityIdentifier("category.\(category.title)")
+    }
+}
+
+/// Rectangular cards fill both landscape rows without pushing any category below the screen.
+private struct LandscapeHomeCategoryTile: View {
+    let category: HomeCategory
+    let height: CGFloat
+
+    private var tight: Bool { height < 125 }
+    private var large: Bool { height >= 180 }
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: tight ? 16 : 20, style: .continuous)
+            .fill(LinearGradient(colors: category.colors, startPoint: .topLeading, endPoint: .bottomTrailing))
+            .overlay {
+                VStack(spacing: tight ? 4 : 6) {
+                    Image(systemName: category.icon)
+                        .font(.system(size: tight ? 20 : (large ? 36 : 28), weight: .bold))
+                    Text(category.title)
+                        .font(.system(size: tight ? 13 : (large ? 18 : 15), weight: .bold, design: .rounded))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
+                    Text(category.subtitle)
+                        .font(.system(size: tight ? 10 : (large ? 13 : 11), weight: .semibold, design: .rounded))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
+                        .opacity(0.95)
+                }
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+                .padding(tight ? 8 : 12)
+            }
+            .shadow(color: .black.opacity(0.18), radius: 6, y: 4)
+            .contentShape(RoundedRectangle(cornerRadius: tight ? 16 : 20))
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("\(category.title). \(category.subtitle)")
             .accessibilityIdentifier("category.\(category.title)")

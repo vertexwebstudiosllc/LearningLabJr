@@ -1,0 +1,188 @@
+import XCTest
+import StoreKitTest
+
+final class LandscapeInteractionUITests: XCTestCase {
+    private var store: SKTestSession?
+
+    @MainActor func testScaledGoodbyeDragReachesTheVisibleBed() async throws {
+        continueAfterFailure = false
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = try await launchPremium()
+        try waitForOrientation(in: app, landscape: true)
+        try tapMenu("category.Big Feelings", in: app)
+        try tapMenu("activity.feelings.goodbye", in: app)
+        let bedtime = app.buttons["goodbye.story.bedtime"]
+        XCTAssertTrue(bedtime.waitForExistence(timeout: 5))
+        assertInsidePlay(bedtime, in: app)
+        bedtime.tap()
+
+        let buddy = app.buttons["goodbye.drag"]
+        let bed = app.buttons["goodbye.drop"]
+        XCTAssertTrue(buddy.waitForExistence(timeout: 5))
+        assertInsidePlay(buddy, in: app)
+        assertInsidePlay(bed, in: app)
+        if app.windows.firstMatch.frame.height < 500 {
+            XCTAssertLessThan(bed.frame.height, 190, "The phone case must exercise a scaled 192-point drop target")
+        }
+        XCTAssertFalse(app.buttons["goodbye.words.0"].exists)
+        let before = XCTAttachment(screenshot: app.screenshot())
+        before.name = "Scaled goodbye buddy and measured bed target"; before.lifetime = .keepAlways; add(before)
+        // A physical drag exercises global-to-local displacement and the transformed drop frame.
+        buddy.press(forDuration: 0.3, thenDragTo: bed)
+        let goodnight = app.buttons["goodbye.words.0"]
+        XCTAssertTrue(goodnight.waitForExistence(timeout: 5), "Dropping on the visible bed advances to goodbye words")
+        XCTAssertFalse(buddy.exists)
+        assertInsidePlay(goodnight, in: app)
+        goodnight.tap()
+        let action = app.buttons["goodbye.action.0"]
+        XCTAssertTrue(action.waitForExistence(timeout: 5))
+        assertInsidePlay(action, in: app)
+        action.tap()
+        let stories = app.buttons["goodbye.stories"]
+        XCTAssertTrue(stories.waitForExistence(timeout: 5))
+        assertInsidePlay(stories, in: app)
+        stories.tap()
+        XCTAssertEqual(app.staticTexts["goodbye.progress"].label, "1 of 8 stories explored")
+    }
+
+    @MainActor func testSentenceHistoryStaysBoundedAndDraftSurvivesRotation() async throws {
+        continueAfterFailure = false
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = try await launchPremium()
+        try waitForOrientation(in: app, landscape: true)
+        try tapMenu("category.Story Time", in: app)
+        try tapMenu("activity.stories.sentenceBuilder", in: app)
+        let count = app.staticTexts["chain.count"]
+        XCTAssertTrue(count.waitForExistence(timeout: 5))
+        let drafts = [["bunny", "finds", "apple"], ["dog", "carries", "ball"], ["cat", "looks", "book"]]
+        var firstMoreHeight: CGFloat = 0
+        for (index, draft) in drafts.enumerated() {
+            if index > 0 { app.buttons["chain.more"].tap() }
+            for (wordIndex, word) in draft.enumerated() {
+                let choice = app.buttons["chain.choice." + word]
+                XCTAssertTrue(choice.waitForExistence(timeout: 5))
+                assertInsidePlay(choice, in: app)
+                choice.tap()
+                if index == 1 && wordIndex == 0 {
+                    XCUIDevice.shared.orientation = .portrait
+                    try waitForOrientation(in: app, landscape: false)
+                    XCTAssertTrue(app.staticTexts["chain.step.1"].exists)
+                    XCTAssertEqual(count.label, "My story · 1 sentence")
+                    XCUIDevice.shared.orientation = .landscapeRight
+                    try waitForOrientation(in: app, landscape: true)
+                    XCTAssertTrue(app.staticTexts["chain.step.1"].exists, "Rotation must preserve the partially built sentence")
+                    XCTAssertEqual(count.label, "My story · 1 sentence")
+                }
+            }
+            let addSentence = app.buttons["chain.add"]
+            assertInsidePlay(addSentence, in: app)
+            addSentence.tap()
+            let latest = app.buttons["chain.page.\(index)"]
+            XCTAssertTrue(latest.waitForExistence(timeout: 5))
+            XCTAssertEqual(count.label, "My story · \(index + 1) \(index == 0 ? "sentence" : "sentences")")
+            let history = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "chain.page."))
+            XCTAssertEqual(history.count, 1, "Landscape shows one history sentence regardless of story length")
+            assertInsidePlay(latest, in: app)
+            assertInsidePlay(app.buttons["chain.history.open"], in: app)
+            let more = app.buttons["chain.more"]
+            assertInsidePlay(more, in: app)
+            if index == 0 { firstMoreHeight = more.frame.height }
+            else { XCTAssertEqual(more.frame.height, firstMoreHeight, accuracy: 1.5, "Adding history must not progressively shrink the game") }
+        }
+        let previous = app.buttons["chain.history.previous"]
+        let next = app.buttons["chain.history.next"]
+        XCTAssertFalse(next.isEnabled)
+        previous.tap()
+        XCTAssertTrue(app.buttons["chain.page.1"].waitForExistence(timeout: 3))
+        previous.tap()
+        XCTAssertTrue(app.buttons["chain.page.0"].waitForExistence(timeout: 3))
+        XCTAssertFalse(previous.isEnabled)
+        next.tap()
+        XCTAssertTrue(app.buttons["chain.page.1"].waitForExistence(timeout: 3))
+        let bounded = XCTAttachment(screenshot: app.screenshot())
+        bounded.name = "Three sentences with bounded landscape history"; bounded.lifetime = .keepAlways; add(bounded)
+
+        app.buttons["chain.history.open"].tap()
+        let historyBar = app.navigationBars["My whole story"]
+        XCTAssertTrue(historyBar.waitForExistence(timeout: 5))
+        let scrolls = app.scrollViews.allElementsBoundByIndex
+        let historyScroll = try XCTUnwrap(scrolls.last)
+        for index in 0..<3 {
+            let sentence = historyScroll.buttons.matching(identifier: "chain.page.\(index)").firstMatch
+            for _ in 0..<3 {
+                if sentence.exists && sentence.isHittable && historyScroll.frame.contains(sentence.frame) { break }
+                historyScroll.swipeUp()
+            }
+            XCTAssertTrue(sentence.exists)
+            XCTAssertTrue(sentence.isHittable, "Every retained sentence is reachable in the full history")
+            XCTAssertTrue(sentence.label.hasPrefix("Sentence \(index + 1)."))
+        }
+        historyBar.buttons["Done"].tap()
+        XCTAssertTrue(app.buttons["chain.history.open"].waitForExistence(timeout: 5))
+        XCTAssertEqual(count.label, "My story · 3 sentences")
+        XCTAssertTrue(app.buttons["chain.page.1"].exists, "Closing full history preserves the selected history page")
+        assertInsidePlay(app.buttons["chain.more"], in: app)
+    }
+
+    @MainActor private func launchPremium() async throws -> XCUIApplication {
+        let session = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        session.resetToDefaultState(); session.clearTransactions(); session.disableDialogs = true
+        _ = try await session.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        store = session
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        app.launch()
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        XCUIDevice.shared.orientation = .portrait
+        try waitForOrientation(in: app, landscape: false)
+        XCUIDevice.shared.orientation = .landscapeLeft
+        try waitForOrientation(in: app, landscape: true)
+        return app
+    }
+
+    @MainActor private func waitForOrientation(in app: XCUIApplication, landscape: Bool) throws {
+        var previous = CGRect.null
+        let stable = NSPredicate { _, _ in
+            let frame = app.windows.firstMatch.frame
+            let matches = landscape ? frame.width > frame.height : frame.height > frame.width
+            let settled = matches && frame == previous
+            previous = frame
+            return settled
+        }
+        let result = XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: stable, object: nil)], timeout: 8)
+        _ = try XCTUnwrap(result == .completed ? true : nil, "The requested orientation did not settle")
+    }
+
+    @MainActor private func assertInsidePlay(_ element: XCUIElement, in app: XCUIApplication,
+                                            file: StaticString = #filePath, line: UInt = #line) {
+        let play = app.otherElements["game.play-area"]
+        XCTAssertTrue(play.exists, file: file, line: line)
+        XCTAssertTrue(element.exists, file: file, line: line)
+        XCTAssertTrue(element.isHittable, "Unreachable \(element.identifier)", file: file, line: line)
+        XCTAssertTrue(play.frame.insetBy(dx: -1, dy: -1).contains(element.frame),
+                      "\(element.identifier) escaped the actual play container", file: file, line: line)
+        XCTAssertTrue(app.windows.firstMatch.frame.insetBy(dx: -1, dy: -1).contains(element.frame), file: file, line: line)
+    }
+
+    @MainActor private func tapMenu(_ identifier: String, in app: XCUIApplication) throws {
+        let element = app.buttons[identifier]
+        if element.waitForExistence(timeout: 2), element.isHittable { element.tap(); return }
+        let activities = app.scrollViews["activity-menu.activities"]
+        let scroll = identifier.hasPrefix("activity.") && activities.waitForExistence(timeout: 3)
+            ? activities : app.scrollViews.firstMatch
+        _ = try XCTUnwrap(scroll.waitForExistence(timeout: 3) ? scroll : nil,
+                          "Missing scrollable menu while revealing \(identifier)")
+        for _ in 0..<8 {
+            if element.exists && element.isHittable { element.tap(); return }
+            // Keep the drag inside the right activity pane; the screen center may be its fixed header.
+            let start = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.6, dy: 0.85))
+            let end = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.6, dy: 0.2))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+        let visible = try XCTUnwrap(element.exists && element.isHittable ? element : nil,
+                                    "Missing reachable menu control: \(identifier)")
+        visible.tap()
+    }
+}

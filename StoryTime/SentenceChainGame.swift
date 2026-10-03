@@ -8,82 +8,15 @@ struct SentenceBuilderGame: View {
     @State private var reading = false
     @State private var readingLine = 0
     @State private var readingToken = UUID()
+    @State private var historyPage = 0
+    @State private var showingHistory = false
     var body: some View {
         ScrollViewReader { proxy in
             ToddlerGameScaffold(title: "Make a Sentence", prompt: session.prompt, accent: .purple,
                                 completion: false, onReplay: {}, scrollToTopOnPromptChange: true) {
-                Text("My story · \(session.pages.count) \(session.pages.count == 1 ? "sentence" : "sentences")")
-                    .font(.title2.bold()).accessibilityIdentifier("chain.count")
-                if !session.pages.isEmpty {
-                    ToddlerActionButton(title: reading ? "Stop reading" : "Read my whole story",
-                                        systemImage: reading ? "stop.fill" : "speaker.wave.2.fill", color: .purple) {
-                        if reading { stopReading() } else { readStory() }
-                    }.accessibilityIdentifier("chain.read")
+                GameViewportReader { viewport in
+                    sentenceContent(compact: viewport != nil)
                 }
-                if session.building {
-                    Text(session.pages.isEmpty ? "Build the first sentence." : "What happens next? Add a sentence to your story.")
-                        .font(.headline).multilineTextAlignment(.center)
-                    SentenceChainPicture(words: session.draft).frame(height: 175)
-                        .accessibilityLabel(session.draft.map(\.title).joined(separator: ", "))
-                    if session.ready {
-                        Text(session.draftSentence).font(.title3.bold()).multilineTextAlignment(.center)
-                        ToddlerActionButton(title: "Add to my story", systemImage: "plus.circle.fill", color: .purple) {
-                            stopReading(); session.addSentence()
-                        }.accessibilityIdentifier("chain.add")
-                    } else {
-                        Text("\(["Who?", "Does what?", "With what?"][session.draft.count])")
-                            .font(.headline).accessibilityIdentifier("chain.step.\(session.draft.count)")
-                        let token = session.generation
-                        HStack(alignment: .top, spacing: 10) {
-                            ForEach(session.choices) { word in
-                                Button { stopReading(); session.choose(word.id, generation: token) } label: {
-                                    VStack(spacing: 10) {
-                                        SentenceChainWordArt(word: word).frame(height: 65)
-                                        Text(word.title).font(.system(.headline, design: .rounded))
-                                            .multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
-                                    }.padding(10).frame(maxWidth: .infinity, minHeight: 120)
-                                        .background(.white, in: RoundedRectangle(cornerRadius: 20))
-                                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(.purple.opacity(0.2), lineWidth: 2))
-                                }.buttonStyle(.plain).accessibilityLabel(word.title)
-                                    .accessibilityIdentifier("chain.choice.\(word.id)")
-                            }
-                        }
-                    }
-                    if !session.draft.isEmpty {
-                        Button { stopReading(); session.undoWord() } label: {
-                            Label("Change the last word", systemImage: "arrow.uturn.backward").frame(minHeight: 48)
-                        }.accessibilityIdentifier("chain.undo")
-                    }
-                } else if let latest = session.pages.last {
-                    SentenceChainPicture(words: latest.words).frame(height: 175)
-                        .accessibilityLabel(latest.sentence)
-                    Text(latest.sentence).font(.title3.bold()).multilineTextAlignment(.center)
-                    ToddlerActionButton(title: "Keep adding to my story", systemImage: "plus.bubble.fill", color: .purple) {
-                        stopReading(); session.keepAdding()
-                    }.accessibilityIdentifier("chain.more")
-                }
-                if !session.pages.isEmpty {
-                    Text("My story so far").font(.title3.bold())
-                    Text("Tap any sentence to hear it.").font(.subheadline)
-                    LazyVStack(spacing: 12) {
-                        ForEach(Array(session.pages.enumerated()), id: \.element.id) { index, page in
-                            Button { stopReading(); narrator.speak(page.sentence) } label: {
-                                HStack(spacing: 12) {
-                                    Text("\(index + 1)").font(.headline).foregroundStyle(.purple)
-                                    HuntItemArt(item: HuntItem.named(page.words[0].art)).frame(width: 42, height: 48)
-                                    Text(page.sentence).font(.headline).multilineTextAlignment(.leading)
-                                    Spacer(minLength: 0)
-                                    Image(systemName: "speaker.wave.2.fill").foregroundStyle(.purple)
-                                }.padding(14).frame(maxWidth: .infinity, minHeight: 78)
-                                    .background(reading && readingLine == index ? Color.purple.opacity(0.17) : .white,
-                                                in: RoundedRectangle(cornerRadius: 18))
-                            }.buttonStyle(.plain).id(page.id)
-                                .accessibilityLabel("Sentence \(index + 1). \(page.sentence)")
-                                .accessibilityIdentifier("chain.page.\(index)")
-                        }
-                    }
-                }
-                Button("All done") { stopReading(); dismiss() }.frame(minHeight: 48)
             }
             .safeAreaInset(edge: .bottom) {
                 if reading {
@@ -95,14 +28,146 @@ struct SentenceBuilderGame: View {
             }
             .onChange(of: readingLine) { _, index in
                 guard reading, session.pages.indices.contains(index) else { return }
+                historyPage = index
                 withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { proxy.scrollTo(session.pages[index].id, anchor: .center) }
             }
+            .onChange(of: session.pages.count) { _, count in historyPage = max(0, count - 1) }
             .onDisappear { stopReading() }
+            .sheet(isPresented: $showingHistory) {
+                NavigationStack {
+                    ScrollViewReader { historyScroll in
+                        ScrollView { historyRows.padding(20) }
+                            .onChange(of: readingLine) { _, index in
+                                guard reading, session.pages.indices.contains(index) else { return }
+                                historyScroll.scrollTo(session.pages[index].id, anchor: .center)
+                            }
+                    }
+                    .navigationTitle("My whole story")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { showingHistory = false } } }
+                }
+                .environment(\.gameViewportSize, nil)
+                .environment(\.gameContentScale, 1)
+            }
         }
     }
+
+    @ViewBuilder private func sentenceContent(compact: Bool) -> some View {
+        Text("My story · \(session.pages.count) \(session.pages.count == 1 ? "sentence" : "sentences")")
+            .font(.title2.bold()).accessibilityIdentifier("chain.count")
+        if !session.pages.isEmpty {
+            ToddlerActionButton(title: reading ? "Stop reading" : "Read my whole story",
+                                systemImage: reading ? "stop.fill" : "speaker.wave.2.fill", color: .purple) {
+                if reading { stopReading() } else { readStory() }
+            }.accessibilityIdentifier("chain.read")
+        }
+        if session.building {
+            Text(session.pages.isEmpty ? "Build the first sentence." : "What happens next? Add a sentence to your story.")
+                .font(.headline).multilineTextAlignment(.center)
+            SentenceChainPicture(words: session.draft).frame(height: 175)
+                .accessibilityLabel(session.draft.map(\.title).joined(separator: ", "))
+            if session.ready {
+                Text(session.draftSentence).font(.title3.bold()).multilineTextAlignment(.center)
+                ToddlerActionButton(title: "Add to my story", systemImage: "plus.circle.fill", color: .purple) {
+                    stopReading(); session.addSentence()
+                }.accessibilityIdentifier("chain.add")
+            } else {
+                Text("\(["Who?", "Does what?", "With what?"][session.draft.count])")
+                    .font(.headline).accessibilityIdentifier("chain.step.\(session.draft.count)")
+                let token = session.generation
+                HStack(alignment: .top, spacing: 10) {
+                    ForEach(session.choices) { word in
+                        Button { stopReading(); session.choose(word.id, generation: token) } label: {
+                            VStack(spacing: 10) {
+                                SentenceChainWordArt(word: word).frame(height: 65)
+                                Text(word.title).font(.system(.headline, design: .rounded))
+                                    .multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
+                            }.padding(10).frame(maxWidth: .infinity, minHeight: 120)
+                                .background(.white, in: RoundedRectangle(cornerRadius: 20))
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.purple.opacity(0.2), lineWidth: 2))
+                        }.buttonStyle(.plain).accessibilityLabel(word.title)
+                            .accessibilityIdentifier("chain.choice.\(word.id)")
+                    }
+                }
+            }
+            if !session.draft.isEmpty {
+                Button { stopReading(); session.undoWord() } label: {
+                    Label("Change the last word", systemImage: "arrow.uturn.backward").frame(minHeight: 48)
+                }.accessibilityIdentifier("chain.undo")
+            }
+        } else if let latest = session.pages.last {
+            SentenceChainPicture(words: latest.words).frame(height: 175)
+                .accessibilityLabel(latest.sentence)
+            Text(latest.sentence).font(.title3.bold()).multilineTextAlignment(.center)
+            ToddlerActionButton(title: "Keep adding to my story", systemImage: "plus.bubble.fill", color: .purple) {
+                stopReading(); session.keepAdding()
+            }.accessibilityIdentifier("chain.more")
+        }
+        if !session.pages.isEmpty {
+            if compact {
+                compactHistory
+            } else {
+                Text("My story so far").font(.title3.bold())
+                Text("Tap any sentence to hear it.").font(.subheadline)
+                historyRows
+            }
+        }
+        Button("All done") { stopReading(); dismiss() }.frame(minHeight: 48)
+    }
+
+    private var compactHistory: some View {
+        VStack(spacing: 6) {
+            HStack {
+                Text("My story so far").font(.headline)
+                Spacer()
+                Button("See all sentences") { showingHistory = true }
+                    .font(.subheadline.bold()).frame(minHeight: 44)
+                    .accessibilityIdentifier("chain.history.open")
+            }
+            if !session.pages.isEmpty {
+                let index = min(historyPage, session.pages.count - 1)
+                HStack(spacing: 8) {
+                    Button { stopReading(); historyPage = max(0, index - 1) } label: {
+                        Image(systemName: "chevron.left").frame(width: 44, height: 44)
+                    }.disabled(index == 0).accessibilityLabel("Previous sentence")
+                        .accessibilityIdentifier("chain.history.previous")
+                    historyButton(index: index, page: session.pages[index])
+                    Button { stopReading(); historyPage = min(session.pages.count - 1, index + 1) } label: {
+                        Image(systemName: "chevron.right").frame(width: 44, height: 44)
+                    }.disabled(index == session.pages.count - 1).accessibilityLabel("Next sentence")
+                        .accessibilityIdentifier("chain.history.next")
+                }
+            }
+        }
+    }
+
+    private var historyRows: some View {
+        LazyVStack(spacing: 12) {
+            ForEach(Array(session.pages.enumerated()), id: \.element.id) { index, page in
+                historyButton(index: index, page: page)
+            }
+        }
+    }
+
+    private func historyButton(index: Int, page: SentenceStoryPage) -> some View {
+        Button { stopReading(); narrator.speak(page.sentence) } label: {
+            HStack(spacing: 12) {
+                Text("\(index + 1)").font(.headline).foregroundStyle(.purple)
+                HuntItemArt(item: HuntItem.named(page.words[0].art)).frame(width: 42, height: 48)
+                Text(page.sentence).font(.headline).multilineTextAlignment(.leading)
+                Spacer(minLength: 0)
+                Image(systemName: "speaker.wave.2.fill").foregroundStyle(.purple)
+            }.padding(14).frame(maxWidth: .infinity, minHeight: 78)
+                .background(reading && readingLine == index ? Color.purple.opacity(0.17) : .white,
+                            in: RoundedRectangle(cornerRadius: 18))
+        }.buttonStyle(.plain).id(page.id)
+            .accessibilityLabel("Sentence \(index + 1). \(page.sentence)")
+            .accessibilityIdentifier("chain.page.\(index)")
+    }
+
     private func stopReading() { readingToken = UUID(); reading = false; narrator.stop() }
     private func readStory() {
-        stopReading(); let token = UUID(); readingToken = token; reading = true; readingLine = 0
+        stopReading(); let token = UUID(); readingToken = token; reading = true; readingLine = 0; historyPage = 0
         narrator.speakSequence(session.lines, onLine: { index in
             guard readingToken == token else { return }; readingLine = index
         }, onFinish: {

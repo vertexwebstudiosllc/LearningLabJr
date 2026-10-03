@@ -2,60 +2,313 @@ import XCTest
 import StoreKitTest
 
 final class LandscapeLayoutUITests: XCTestCase {
-    @MainActor func testSharedLayoutAcrossCategoriesAndRotation() async throws {
+    private var store: SKTestSession?
+    private let categories = ["ABCs & Phonics", "Shapes & Colors", "123s & Counting", "Nature Explorers", "Story Time", "Big Feelings"]
+
+    @MainActor func testHomeTilesAndParentsStayVisibleInLandscape() {
         continueAfterFailure = false
-        let store = try SKTestSession(configurationFileNamed: "LearningLabJr")
-        store.resetToDefaultState()
-        store.clearTransactions()
-        store.disableDialogs = true
-        _ = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
         defer { XCUIDevice.shared.orientation = .portrait }
-        let app = XCUIApplication()
-        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
-        let activities = [
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = application()
+        app.launch()
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        for orientation in [UIDeviceOrientation.landscapeLeft, .landscapeRight] {
+            rotate(to: orientation, in: app)
+            for category in categories {
+                assertFullyVisible(app.buttons["category." + category], in: app)
+            }
+            let parents = app.buttons["home.parents"]
+            assertFullyVisible(parents, in: app)
+            let snapshot = XCTAttachment(screenshot: app.screenshot())
+            snapshot.name = "All six home tiles and Parents Corner — \(orientation.rawValue)"
+            snapshot.lifetime = .keepAlways; add(snapshot)
+        }
+    }
+
+    @MainActor func testSharedLayoutAcrossCategoriesAndRotation() async throws {
+        try await checkLayouts([
+            ("Story Time", "Picture Hunt", "stories.pictureHunt"),
             ("ABCs & Phonics", "Letter Twins", "phonics.letter-match"),
             ("Shapes & Colors", "Shape Post", "shapes.post"),
             ("123s & Counting", "Number Picnic", "counting.pile-match"),
             ("Nature Explorers", "Habitat Helpers", "nature.habitats"),
-            ("Story Time", "Picture Hunt", "stories.pictureHunt"),
             ("Big Feelings", "Funny Face Studio", "feelings.faces")
-        ]
+        ])
+    }
+
+    @MainActor func testFittedBoardsAcrossCategoriesAndRotation() async throws {
+        try await checkLayouts([
+            ("Big Feelings", "Body Clue Buddies", "feelings.body"),
+            ("123s & Counting", "Build-A-Tower", "counting.tower")
+        ])
+    }
+
+    @MainActor private func checkLayouts(_ activities: [(String, String, String)]) async throws {
+        continueAfterFailure = false
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = try await launchPremium()
         for (category, title, identifier) in activities {
-            XCUIDevice.shared.orientation = .landscapeLeft
-            app.launch()
-            let categoryButton = app.buttons["category." + category]
-            XCTAssertTrue(categoryButton.waitForExistence(timeout: 15))
-            tapVisible(categoryButton, in: app)
-            tapVisible(app.buttons["activity." + identifier], in: app)
+            rotate(to: .landscapeLeft, in: app)
+            try tapMenu(app.buttons["category." + category], in: app)
+            try tapMenu(app.buttons["activity." + identifier], in: app)
+            if identifier == "stories.pictureHunt" {
+                XCTAssertTrue(app.staticTexts["hunt.scene.snow"].waitForExistence(timeout: 5))
+            }
+            assertLandscapeGame(in: app)
             let directions = app.otherElements["game.directions"]
             let play = app.otherElements["game.play-area"]
-            XCTAssertTrue(directions.waitForExistence(timeout: 5))
-            XCTAssertTrue(play.waitForExistence(timeout: 5))
-            XCTAssertLessThanOrEqual(directions.frame.maxX, play.frame.minX)
-            XCTAssertEqual(directions.frame.minY, play.frame.minY, accuracy: 3)
-            XCTAssertGreaterThanOrEqual(play.frame.width, 320)
-            XCTAssertLessThanOrEqual(play.frame.maxX, app.windows.firstMatch.frame.maxX)
-            let landscape = XCTAttachment(screenshot: app.screenshot())
-            landscape.name = title + " landscape"; landscape.lifetime = .keepAlways; add(landscape)
-
             let prompt = directions.staticTexts.allElementsBoundByIndex.map(\.label)
-            XCUIDevice.shared.orientation = .portrait
+            let landscape = XCTAttachment(screenshot: app.screenshot())
+            landscape.name = title + " complete landscape board"; landscape.lifetime = .keepAlways; add(landscape)
+
+            rotate(to: .portrait, in: app)
             XCTAssertTrue(app.buttons["Hear the directions again"].waitForExistence(timeout: 5))
             XCTAssertEqual(directions.staticTexts.allElementsBoundByIndex.map(\.label), prompt)
             XCTAssertLessThanOrEqual(directions.frame.maxY, play.frame.minY)
-            XCUIDevice.shared.orientation = .landscapeRight
+            rotate(to: .landscapeRight, in: app)
             XCTAssertEqual(directions.staticTexts.allElementsBoundByIndex.map(\.label), prompt)
-            XCTAssertLessThanOrEqual(directions.frame.maxX, play.frame.minX)
-            app.terminate()
+            assertLandscapeGame(in: app)
+            returnHome(app)
         }
-        _ = store
     }
 
-    @MainActor private func tapVisible(_ element: XCUIElement, in app: XCUIApplication) {
-        for _ in 0..<12 {
-            if element.exists && element.isHittable { element.tap(); return }
-            app.swipeUp()
+    @MainActor func testLandscapeAccessoryAndHabitatFeedbackStatesFit() async throws {
+        continueAfterFailure = false
+        defer { XCUIDevice.shared.orientation = .portrait }
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let app = try await launchPremium()
+        try tapMenu(app.buttons["category.Big Feelings"], in: app)
+        try tapMenu(app.buttons["activity.feelings.faces"], in: app)
+        XCTAssertTrue(app.staticTexts["studio.progress"].waitForExistence(timeout: 5))
+        for round in 1...6 {
+            XCTAssertEqual(app.staticTexts["studio.progress"].label, "Face \(round) of 6")
+            let features = ["eyebrows", "eyes", "mouth"] + (round >= 3 ? ["glasses"] : []) + (round >= 5 ? ["hat"] : [])
+            if round == 1 || round >= 5 { assertLandscapeGame(in: app) }
+            for feature in features {
+                let button = app.buttons["studio.feature." + feature]
+                XCTAssertTrue(button.exists)
+                assertFullyVisible(button, in: app)
+                XCTAssertGreaterThanOrEqual(button.frame.height, 43.5)
+                XCTAssertGreaterThanOrEqual(button.frame.width, 43.5)
+                for _ in 0..<6 {
+                    if !button.exists || (button.value as? String ?? "").contains("Matches example") { break }
+                    button.tap()
+                }
+                if button.exists {
+                    XCTAssertTrue((button.value as? String ?? "").contains("Matches example"))
+                }
+                if round == 1 && feature == "eyebrows" {
+                    let face = app.descendants(matching: .any).matching(identifier: "studio.editable").firstMatch
+                    let design = face.value as? String
+                    rotate(to: .portrait, in: app)
+                    XCTAssertEqual(face.value as? String, design)
+                    rotate(to: .landscapeRight, in: app)
+                    XCTAssertEqual(face.value as? String, design, "Rotation preserves the child's edited face")
+                    assertLandscapeGame(in: app)
+                }
+            }
+            XCTAssertTrue(app.staticTexts["studio.found"].waitForExistence(timeout: 5))
+            assertFullyVisible(app.staticTexts["studio.found"], in: app)
+            assertFullyVisible(app.buttons["studio.next"], in: app)
+            if round >= 5 {
+                assertLandscapeGame(in: app)
+                let screenshot = XCTAttachment(screenshot: app.screenshot())
+                screenshot.name = "Funny Face matched accessories round \(round)"
+                screenshot.lifetime = .keepAlways; add(screenshot)
+            }
+            if round < 6 { app.buttons["studio.next"].tap() }
         }
-        XCTFail("Missing control: \(element)")
+        returnHome(app)
+        try tapMenu(app.buttons["category.Nature Explorers"], in: app)
+        try tapMenu(app.buttons["activity.nature.habitats"], in: app)
+        XCTAssertTrue(app.staticTexts["habitats.progress"].waitForExistence(timeout: 5))
+        let homes = ["dolphin": "ocean", "octopus": "ocean", "shark": "ocean", "seahorse": "ocean",
+                     "cow": "farm", "sheep": "farm", "horse": "farm", "pig": "farm",
+                     "bee": "garden", "butterfly": "garden", "ladybug": "garden", "ant": "garden",
+                     "owl": "trees", "eagle": "trees", "bluebird": "trees", "squirrel": "trees",
+                     "gorilla": "rainforest", "orangutan": "rainforest", "tiger": "rainforest", "sloth": "rainforest",
+                     "frog": "pond", "duck": "pond", "goose": "pond", "turtle": "pond"]
+        let animals = app.images.matching(NSPredicate(format: "identifier BEGINSWITH %@", "habitats.animal."))
+        for count in 0..<4 {
+            XCTAssertEqual(animals.count, 1)
+            let animalID = animals.firstMatch.identifier
+            let name = String(animalID.dropFirst("habitats.animal.".count))
+            let home = try XCTUnwrap(homes[name])
+            assertFullyVisible(animals.firstMatch, in: app)
+            if count == 0 {
+                let choices = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "habitats.home.")).allElementsBoundByIndex
+                let wrong = try XCTUnwrap(choices.first { $0.identifier != "habitats.home." + home })
+                wrong.tap()
+                XCTAssertEqual(animals.firstMatch.identifier, animalID)
+                assertFullyVisible(app.staticTexts["habitats.feedback"], in: app)
+                assertLandscapeGame(in: app)
+                let progress = app.staticTexts["habitats.progress"].label
+                let hint = app.staticTexts["habitats.feedback"].label
+                rotate(to: .landscapeLeft, in: app)
+                XCTAssertEqual(app.staticTexts["habitats.progress"].label, progress)
+                XCTAssertEqual(app.staticTexts["habitats.feedback"].label, hint)
+                XCTAssertEqual(animals.firstMatch.identifier, animalID)
+                assertLandscapeGame(in: app)
+            }
+            let correct = app.buttons["habitats.home." + home]
+            assertFullyVisible(correct, in: app)
+            XCTAssertGreaterThanOrEqual(correct.frame.height, 43.5)
+            correct.tap()
+        }
+        XCTAssertTrue(app.buttons["habitats.next"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["habitats.progress"].label, "Set 1 of 6 · 4 of 4 at home")
+        assertLandscapeGame(in: app)
+        app.buttons["habitats.next"].tap()
+        XCTAssertEqual(app.staticTexts["habitats.progress"].label, "Set 2 of 6 · 0 of 4 at home")
+        assertLandscapeGame(in: app)
+    }
+
+    @MainActor private func application() -> XCUIApplication {
+        let app = XCUIApplication()
+        app.launchArguments = ["-parents.voicePromptsEnabled", "NO", "-parents.backgroundMusicEnabled", "NO"]
+        // Exercise the snow scene's clipped decorative backdrop consistently.
+        app.launchArguments += ["-pictureHunt.recentScenes",
+            "(picnic, farm, bedtime, beach, space, garden, rain, music, kitchen, library, ocean, birthday, park, workshop, station)"]
+        return app
+    }
+
+    @MainActor private func launchPremium() async throws -> XCUIApplication {
+        let session = try SKTestSession(configurationFileNamed: "LearningLabJr")
+        session.resetToDefaultState(); session.clearTransactions(); session.disableDialogs = true
+        _ = try await session.buyProduct(identifier: "com.learninglabjr.premium.monthly")
+        store = session
+        let app = application(); app.launch()
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 15))
+        XCUIDevice.shared.orientation = .portrait
+        waitForOrientation(.portrait, in: app)
+        rotate(to: .landscapeLeft, in: app)
+        return app
+    }
+
+    @MainActor private func visibleBounds(in app: XCUIApplication) -> CGRect {
+        // The outer scroll view is constrained by SwiftUI's safe area; its content can be much taller.
+        // Intersecting its viewport with the window excludes the home-indicator and navigation regions.
+        var bounds = app.windows.firstMatch.frame
+        let viewport = app.scrollViews.firstMatch
+        if viewport.exists { bounds = bounds.intersection(viewport.frame) }
+        let bar = app.navigationBars.firstMatch
+        if bar.exists && bar.frame.maxY > bounds.minY {
+            let top = min(bounds.maxY, bar.frame.maxY)
+            bounds = CGRect(x: bounds.minX, y: top, width: bounds.width, height: bounds.maxY - top)
+        }
+        return bounds.insetBy(dx: -1, dy: -1)
+    }
+
+    @MainActor private func assertFullyVisible(_ element: XCUIElement, in app: XCUIApplication,
+                                               within bounds: CGRect? = nil,
+                                               file: StaticString = #filePath, line: UInt = #line) {
+        let visible = bounds ?? visibleBounds(in: app)
+        let frame = element.frame
+        XCTAssertTrue(element.exists, "Missing \(element.identifier)", file: file, line: line)
+        XCTAssertTrue(element.isHittable, "Unreachable \(element.identifier)", file: file, line: line)
+        XCTAssertTrue(visible.contains(frame),
+                      "Clipped \(element.identifier): \(frame), visible viewport \(visible)", file: file, line: line)
+    }
+
+    @MainActor private func assertLandscapeGame(in app: XCUIApplication,
+                                               file: StaticString = #filePath, line: UInt = #line) {
+        let directions = app.otherElements["game.directions"]
+        let play = app.otherElements["game.play-area"]
+        XCTAssertTrue(directions.waitForExistence(timeout: 5), file: file, line: line)
+        XCTAssertTrue(play.waitForExistence(timeout: 5), file: file, line: line)
+        let visible = visibleBounds(in: app)
+        let directionFrame = directions.frame
+        let playFrame = play.frame
+        XCTAssertLessThanOrEqual(directionFrame.maxX, playFrame.minX, file: file, line: line)
+        XCTAssertEqual(directionFrame.minY, playFrame.minY, accuracy: 3, file: file, line: line)
+        // Accessibility reports the union of rendered content, which may be
+        // narrower than the allocated pane when a tall board is scaled to fit.
+        XCTAssertGreaterThan(playFrame.width, 0, file: file, line: line)
+        XCTAssertTrue(visible.contains(playFrame), "Play viewport exceeds safe visible bounds", file: file, line: line)
+        // Validate actual rendered descendants, including art and labels, rather than just the outer pane.
+        let content = play.buttons.allElementsBoundByIndex + play.staticTexts.allElementsBoundByIndex
+            + play.images.allElementsBoundByIndex + play.otherElements.allElementsBoundByIndex
+        XCTAssertFalse(content.isEmpty, "The play area must expose actual game content", file: file, line: line)
+        for element in content {
+            let frame = element.frame
+            let button = element.elementType == .button
+            if frame.isEmpty && !button { continue }
+            // Empty feedback reserves visual space but has no visible text to measure.
+            if element.elementType == .staticText && element.label.isEmpty { continue }
+            XCTAssertFalse(frame.isEmpty, "Empty game control: \(element.identifier)", file: file, line: line)
+            XCTAssertTrue(visible.contains(frame), "Clipped game content: \(element.identifier), \(frame)", file: file, line: line)
+            XCTAssertTrue(playFrame.insetBy(dx: -1, dy: -1).contains(frame),
+                          "Game content escaped the right pane: \(element.identifier), \(frame)", file: file, line: line)
+            if button {
+                XCTAssertTrue(element.isHittable, "Unreachable game control: \(element.identifier)", file: file, line: line)
+            }
+        }
+        let together = app.buttons["game.play-together"]
+        assertFullyVisible(together, in: app, within: visible, file: file, line: line)
+        XCTAssertLessThanOrEqual(together.frame.maxX, playFrame.minX, file: file, line: line)
+        assertFullyVisible(app.buttons["Hear the directions again"], in: app, within: visible, file: file, line: line)
+    }
+
+    @MainActor private func rotate(to orientation: UIDeviceOrientation, in app: XCUIApplication,
+                                   file: StaticString = #filePath, line: UInt = #line) {
+        if XCUIDevice.shared.orientation != orientation { XCUIDevice.shared.orientation = orientation }
+        waitForOrientation(orientation, in: app, file: file, line: line)
+    }
+
+    @MainActor private func waitForOrientation(_ orientation: UIDeviceOrientation, in app: XCUIApplication,
+                                               file: StaticString = #filePath, line: UInt = #line) {
+        var previous: [CGRect]?
+        var stableSince = Date.distantPast
+        let predicate = NSPredicate { _, _ in
+            let window = app.windows.firstMatch.frame
+            let correctShape = orientation.isLandscape
+                ? window.width >= window.height * 1.3
+                : window.height >= window.width * 1.3
+            guard correctShape, abs(window.minX) <= 1, abs(window.minY) <= 1 else {
+                previous = nil
+                return false
+            }
+            var sample = [window]
+            let play = app.otherElements["game.play-area"]
+            let home = app.otherElements["home.landscape"]
+            if play.exists { sample.append(play.frame) }
+            else if home.exists { sample.append(home.frame) }
+            let scroll = app.scrollViews.firstMatch
+            if scroll.exists { sample.append(scroll.frame) }
+            if sample == previous {
+                // Two matching accessibility snapshots separated in time avoid sampling the middle of a rotation.
+                return Date().timeIntervalSince(stableSince) >= 0.25
+            }
+            previous = sample
+            stableSince = Date()
+            return false
+        }
+        let settled = XCTNSPredicateExpectation(predicate: predicate, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [settled], timeout: 8), .completed,
+                       "Orientation did not settle: \(orientation.rawValue), last frames \(String(describing: previous))",
+                       file: file, line: line)
+    }
+
+    @MainActor private func returnHome(_ app: XCUIApplication) {
+        app.navigationBars.buttons.firstMatch.tap()
+        app.navigationBars.buttons.firstMatch.tap()
+        XCTAssertTrue(app.buttons["category.ABCs & Phonics"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor private func tapMenu(_ element: XCUIElement, in app: XCUIApplication) throws {
+        if element.waitForExistence(timeout: 2), element.isHittable { element.tap(); return }
+        let activities = app.scrollViews["activity-menu.activities"]
+        let scroll = activities.exists ? activities : app.scrollViews.firstMatch
+        _ = try XCTUnwrap(scroll.exists ? scroll : nil, "Missing menu scroll view")
+        for _ in 0..<10 {
+            if element.exists && element.isHittable { element.tap(); return }
+            let start = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.6, dy: 0.85))
+            let end = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.6, dy: 0.2))
+            start.press(forDuration: 0.05, thenDragTo: end)
+        }
+        let visible = try XCTUnwrap(element.exists && element.isHittable ? element : nil,
+                                    "Missing reachable menu control")
+        visible.tap()
     }
 }

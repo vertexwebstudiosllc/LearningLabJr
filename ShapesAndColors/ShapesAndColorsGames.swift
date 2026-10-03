@@ -31,14 +31,27 @@ struct ShapePostRound {
         }
     }
     // Generous rectangular drop zones include the outline and its label.
-    static func holeFrame(index: Int, width: CGFloat) -> CGRect {
+    static func holeFrame(index: Int, width: CGFloat, compact: Bool = false) -> CGRect {
+        if compact {
+            let stampWidth = min(110, width * 0.25)
+            let cellWidth = (width - stampWidth - 24) / 3
+            return CGRect(x: stampWidth + 8 + CGFloat(index) * (cellWidth + 8), y: 7,
+                          width: cellWidth, height: 106)
+        }
         let cellWidth = (width - 24) / 3
         return CGRect(x: CGFloat(index) * (cellWidth + 12), y: 136, width: cellWidth, height: 116)
     }
-    func accepts(_ point: CGPoint, width: CGFloat) -> Bool {
+    func accepts(_ point: CGPoint, width: CGFloat, compact: Bool = false) -> Bool {
         guard let index = openings.firstIndex(of: target) else { return false }
-        return Self.holeFrame(index: index, width: width).contains(point)
+        return Self.holeFrame(index: index, width: width, compact: compact).contains(point)
     }
+}
+
+/// Reads the viewport at the content's position inside the shared game scaffold.
+struct GameViewportReader<Content: View>: View {
+    @Environment(\.gameViewportSize) private var viewport
+    @ViewBuilder let content: (CGSize?) -> Content
+    var body: some View { content(viewport) }
 }
 
 struct ShapePostGame: View {
@@ -55,36 +68,58 @@ struct ShapePostGame: View {
 
     var body: some View {
         ToddlerGameScaffold(title: "Shape Post", prompt: finished ? ShapePostRound.completion : round.target.prompt, accent: .blue, completion: finished, onReplay: onReplay) {
+            GameViewportReader { viewport in
+                boardContent(compact: viewport != nil)
+            }
+        }
+    }
+
+    private func boardContent(compact: Bool) -> some View {
+        VStack(spacing: compact ? 8 : 22) {
             Text("\(posted + (solved ? 1 : 0)) of 10 shapes posted")
                 .font(.headline).accessibilityIdentifier("shapes.post.progress")
             GeometryReader { geometry in
                 ZStack(alignment: .topLeading) {
                     ForEach(Array(round.openings.enumerated()), id: \.element.id) { index, shape in
-                        opening(shape, index: index, width: geometry.size.width)
+                        opening(shape, index: index, width: geometry.size.width, compact: compact)
                     }
-                    stamp(width: geometry.size.width)
+                    stamp(width: geometry.size.width, compact: compact)
                 }.coordinateSpace(name: "shape-post-board")
-            }.frame(height: 260)
-            SCNote(text: note)
-            if solved && !finished {
-                ToddlerActionButton(title: posted == rounds.count - 1 ? "Finish posting" : "Next shape", systemImage: "arrow.right", color: .blue) {
-                    guard solved, !finished else { return }
-                    posted += 1
-                    solved = false
-                    note = "Slide the shape with your finger."
-                }.accessibilityIdentifier("shapes.post.next")
+            }.frame(height: compact ? 120 : 260)
+            if compact {
+                HStack(spacing: 12) {
+                    Text(note).font(.system(.subheadline, design: .rounded, weight: .medium))
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, minHeight: 44).padding(.horizontal, 8)
+                        .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 16))
+                        .accessibilityAddTraits(.updatesFrequently)
+                    if solved && !finished {
+                        Button(action: advance) {
+                            Label(posted == rounds.count - 1 ? "Finish" : "Next shape", systemImage: "arrow.right")
+                                .font(.headline).padding(.horizontal, 14).frame(minHeight: 48)
+                                .background(.blue.opacity(0.16), in: RoundedRectangle(cornerRadius: 16))
+                        }.buttonStyle(.plain).accessibilityIdentifier("shapes.post.next")
+                    }
+                }
+            } else {
+                SCNote(text: note)
+                if solved && !finished {
+                    ToddlerActionButton(title: posted == rounds.count - 1 ? "Finish posting" : "Next shape", systemImage: "arrow.right", color: .blue, action: advance)
+                        .accessibilityIdentifier("shapes.post.next")
+                }
             }
         }
     }
 
-    private func opening(_ shape: PostShape, index: Int, width: CGFloat) -> some View {
-        let frame = ShapePostRound.holeFrame(index: index, width: width)
+    private func opening(_ shape: PostShape, index: Int, width: CGFloat, compact: Bool) -> some View {
+        let frame = ShapePostRound.holeFrame(index: index, width: width, compact: compact)
         let filled = solved && shape == round.target
         return VStack(spacing: 8) {
             PostShapeSilhouette(kind: shape)
                 .fill(filled ? Color.green : Color(red: 0.16, green: 0.23, blue: 0.32))
                 .overlay(PostShapeSilhouette(kind: shape).stroke(.black.opacity(0.3), lineWidth: 2))
-                .frame(width: 62, height: 62)
+                .frame(width: compact ? 48 : 62, height: compact ? 48 : 62)
             Text(shape.name).font(.system(.caption, design: .rounded, weight: .bold))
         }
         .foregroundStyle(filled ? Color.green : Color.primary)
@@ -98,33 +133,33 @@ struct ShapePostGame: View {
         .accessibilityAction(named: "Post shape here") { post(matches: shape == round.target) }
     }
 
-    private func stamp(width: CGFloat) -> some View {
+    private func stamp(width: CGFloat, compact: Bool) -> some View {
         PostShapeSilhouette(kind: round.target)
             .fill(solved ? Color.green : Color.blue)
-            .frame(width: 86, height: 86).padding(10)
+            .frame(width: compact ? 60 : 86, height: compact ? 60 : 86).padding(10)
             .contentShape(Rectangle())
-            .highPriorityGesture(stampDrag(width: width), including: solved || finished ? .none : .all)
+            .highPriorityGesture(stampDrag(width: width, compact: compact), including: solved || finished ? .none : .all)
             .offset(offset)
-            .position(x: width / 2, y: 57)
+            .position(x: compact ? min(110, width * 0.25) / 2 : width / 2, y: compact ? 60 : 57)
             .accessibilityLabel("\(round.target.name) stamp")
             .accessibilityValue(round.target.rawValue)
             .accessibilityHint("Drag to the matching opening, or use an opening's Post shape here action.")
             .accessibilityIdentifier("shapes.post.stamp")
     }
 
-    private func stampDrag(width: CGFloat) -> some Gesture {
+    private func stampDrag(width: CGFloat, compact: Bool) -> some Gesture {
         DragGesture(minimumDistance: 4, coordinateSpace: .named("shape-post-board"))
             .onChanged { value in
                 guard !solved, !finished else { return }
                 offset = value.translation
                 hover = round.openings.enumerated().first {
-                    ShapePostRound.holeFrame(index: $0.offset, width: width).contains(value.location)
+                    ShapePostRound.holeFrame(index: $0.offset, width: width, compact: compact).contains(value.location)
                 }?.element
             }
             .onEnded { value in
                 offset = .zero
                 hover = nil
-                post(matches: round.accepts(value.location, width: width))
+                post(matches: round.accepts(value.location, width: width, compact: compact))
             }
     }
 
@@ -133,6 +168,13 @@ struct ShapePostGame: View {
         solved = matches
         note = matches ? round.target.success : round.target.retry
         narrator.speak(note)
+    }
+
+    private func advance() {
+        guard solved, !finished else { return }
+        posted += 1
+        solved = false
+        note = "Slide the shape with your finger."
     }
 }
 

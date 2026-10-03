@@ -36,12 +36,34 @@ struct StoryPictureHunt: View {
         ToddlerGameScaffold(title: "Picture Hunt", prompt: play.current.prompt, accent: .purple,
                             completion: play.complete, onReplay: { feedback = ""; session.replay() },
                             scrollToTopOnPromptChange: true) {
+            PictureHuntBoard(session: session, feedback: $feedback, narrator: narrator)
+        }.onDisappear { narrator.stop() }
+    }
+}
+
+/// Reads the scaffold's available play area inside its environment, keeping every answer and speaker usable.
+private struct PictureHuntBoard: View {
+    @Environment(\.gameViewportSize) private var viewport
+    @ObservedObject var session: PictureHuntSession
+    @Binding var feedback: String
+    let narrator: GameNarrator
+    private var play: PictureHuntPlay { session.play }
+
+    var body: some View {
+        if let viewport {
+            landscapeContent(size: viewport)
+        } else {
+            portraitContent
+        }
+    }
+
+    private var portraitContent: some View {
+        VStack(spacing: 22) {
             Text("Story \(play.index + 1) of \(play.rounds.count) · \(play.found.count) of 3 found")
                 .font(.subheadline.bold()).accessibilityIdentifier("hunt.progress")
             Text(play.current.title).font(.title3.bold()).accessibilityIdentifier("hunt.scene.\(play.current.id)")
             HuntStoryPicture(story: play.current, found: play.found)
                 .frame(maxWidth: 540).aspectRatio(320.0 / 210, contentMode: .fit)
-                .accessibilityElement(children: .ignore).accessibilityLabel(play.current.story)
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 10) {
                 ForEach(play.choices, id: \.self) { id in
                     let item = HuntItem.named(id)
@@ -79,7 +101,117 @@ struct StoryPictureHunt: View {
                     narrator.stop(); feedback = ""; session.next()
                 }.accessibilityIdentifier("hunt.next")
             }
-        }.onDisappear { narrator.stop() }
+        }
+    }
+
+    private func landscapeContent(size: CGSize) -> some View {
+        let gap: CGFloat = 10
+        let pictureWidth = min(280, size.width * 0.38)
+        let choicesWidth = max(1, size.width - pictureWidth - gap)
+        let boardHeight = max(144, size.height - 52)
+        let rowHeight = min(96, (boardHeight - 12) / 3)
+
+        return VStack(spacing: 8) {
+            HStack(alignment: .center, spacing: gap) {
+                VStack(spacing: 6) {
+                    Text("Story \(play.index + 1) of \(play.rounds.count) · \(play.found.count) of 3 found")
+                        .font(.system(size: 12, weight: .semibold, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .accessibilityIdentifier("hunt.progress")
+                    Text(play.current.title)
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .accessibilityIdentifier("hunt.scene.\(play.current.id)")
+                    HuntStoryPicture(story: play.current, found: play.found)
+                        .frame(width: pictureWidth, height: pictureWidth * 210 / 320)
+                        .accessibilityIdentifier("hunt.picture")
+                }
+                .frame(width: pictureWidth)
+
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 6), GridItem(.flexible(), spacing: 6)], spacing: 6) {
+                    ForEach(play.choices, id: \.self) { id in
+                        compactChoice(id, height: rowHeight)
+                    }
+                }
+                .frame(width: choicesWidth)
+            }
+            .frame(height: boardHeight)
+
+            HStack(spacing: 8) {
+                Text(feedback)
+                    .font(.system(.caption, design: .rounded, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .accessibilityIdentifier("hunt.feedback")
+                if play.solved {
+                    Button {
+                        narrator.stop(); feedback = ""; session.next()
+                    } label: {
+                        Label(play.index == play.rounds.count - 1 ? "Finish our stories" : "Next story", systemImage: "book.fill")
+                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.9)
+                            .frame(width: min(180, size.width * 0.4), height: 44)
+                            .background(.purple.opacity(0.14), in: RoundedRectangle(cornerRadius: 15))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("hunt.next")
+                }
+            }
+            .frame(height: 44)
+        }
+    }
+
+    private func compactChoice(_ id: String, height: CGFloat) -> some View {
+        let item = HuntItem.named(id)
+        let found = play.found.contains(id)
+        let artSize = min(38, max(24, height - 32))
+
+        return HStack(spacing: 0) {
+            Button {
+                guard !play.solved else { return }
+                if session.play.select(id) {
+                    feedback = play.solved ? HuntStory.success : HuntStory.found
+                } else { feedback = HuntStory.retry }
+                narrator.speak(feedback)
+            } label: {
+                VStack(spacing: 2) {
+                    HuntItemArt(item: item)
+                        .frame(width: artSize, height: artSize)
+                        .overlay(alignment: .topTrailing) {
+                            if found {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green).background(.white, in: Circle())
+                            }
+                        }
+                    Text(item.name)
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                }
+                .padding(.horizontal, 3)
+                .frame(maxWidth: .infinity)
+                .frame(height: height)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .disabled(found || play.solved)
+            .accessibilityLabel(item.name)
+            .accessibilityValue(found ? "Found" : "Not found")
+            .accessibilityIdentifier("hunt.choice.\(id)")
+
+            Button { narrator.speak(item.name) } label: {
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.system(size: 16, weight: .semibold))
+                    .frame(width: 44, height: height)
+                    .background(.purple.opacity(0.06), in: RoundedRectangle(cornerRadius: 14))
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Hear \(item.name)")
+            .accessibilityIdentifier("hunt.hear.\(id)")
+        }
+        .background(found ? Color.green.opacity(0.13) : .white, in: RoundedRectangle(cornerRadius: 15))
+        .overlay(RoundedRectangle(cornerRadius: 15).stroke(found ? Color.green : .purple.opacity(0.25), lineWidth: 1.5))
     }
 }
 
@@ -109,6 +241,14 @@ struct HuntStoryPicture: View {
             }.frame(width: 320, height: 210)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .scaleEffect(g.size.width / 320, anchor: .topLeading)
+        }
+        .contentShape(.accessibility, Rectangle())
+        .accessibilityRepresentation {
+            // Use the displayed viewport, rather than unclipped decorative
+            // shapes, for the story picture's VoiceOver focus rectangle.
+            Rectangle()
+                .accessibilityLabel(story.story)
+                .accessibilityAddTraits(.isImage)
         }
     }
     private var positions: [(CGFloat, CGFloat, CGFloat)] {

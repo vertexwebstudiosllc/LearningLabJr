@@ -114,6 +114,7 @@ struct GoodbyeStoryScene: View {
     let move: (String) -> Bool
     @Binding var dragging: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var dropFrame = CGRect.zero
     var body: some View {
         GeometryReader { g in
             let targetWidth = min(132, g.size.width * 0.43)
@@ -184,6 +185,7 @@ struct GoodbyeStoryScene: View {
                         Text(story.destination).font(.subheadline.bold()).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
                     }.frame(width: targetWidth, height: 192).background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 23))
                         .overlay(RoundedRectangle(cornerRadius: 23).stroke(canMove ? Color.orange : finished ? .green : .teal.opacity(0.2), style: StrokeStyle(lineWidth: 3, dash: canMove ? [7, 5] : [])))
+                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { dropFrame = $0 }
                 }.buttonStyle(.plain).position(x: g.size.width * 0.74, y: 167)
                     .accessibilityLabel(moved ? "\(buddy.name) at the \(story.destination)" : "Move to the \(story.destination)")
                     .accessibilityIdentifier("goodbye.drop")
@@ -199,8 +201,7 @@ struct GoodbyeStoryScene: View {
                     }.buttonStyle(.plain).position(x: g.size.width * 0.24, y: story.kind == .bathroom ? 126 : 168)
                         .disabled(!canMove)
                         .modifier(ImmediatePictureDrag(dragging: $dragging,
-                            target: CGRect(x: g.frame(in: .global).minX + g.size.width * 0.74 - targetWidth / 2,
-                                           y: g.frame(in: .global).minY + 71, width: targetWidth, height: 192),
+                            target: dropFrame,
                             tap: pickUp, drop: { if canMove { _ = move(token) } })).accessibilityLabel("Move \(buddy.name)").accessibilityIdentifier("goodbye.drag")
                 }
             }

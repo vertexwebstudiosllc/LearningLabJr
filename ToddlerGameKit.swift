@@ -167,6 +167,51 @@ private final class ActivitySpeech: NSObject, AVSpeechSynthesizerDelegate {
     }
 }
 
+private struct GameViewportSizeKey: EnvironmentKey {
+    static let defaultValue: CGSize? = nil
+}
+
+private struct GameContentScaleKey: EnvironmentKey {
+    static let defaultValue: CGFloat = 1
+}
+
+extension EnvironmentValues {
+    /// The actual space available for play in a landscape window. Nil uses the portrait layout.
+    var gameViewportSize: CGSize? {
+        get { self[GameViewportSizeKey.self] }
+        set { self[GameViewportSizeKey.self] = newValue }
+    }
+    /// Converts screen-space drag displacement back into the fitted board's coordinates.
+    var gameContentScale: CGFloat {
+        get { self[GameContentScaleKey.self] }
+        set { self[GameContentScaleKey.self] = newValue }
+    }
+}
+
+/// Keeps legacy fixed-size boards completely visible while viewport-aware games lay themselves out at full size.
+/// The same content subtree is retained when rotating, so a game never starts over just to change its layout.
+struct GameFittedContent<Content: View>: View {
+    let viewport: CGSize?
+    @ViewBuilder var content: () -> Content
+    @State private var measuredSize = CGSize.zero
+
+    private var scale: CGFloat {
+        guard let viewport, measuredSize.width > 0, measuredSize.height > 0 else { return 1 }
+        return min(1, viewport.width / measuredSize.width, viewport.height / measuredSize.height)
+    }
+
+    var body: some View {
+        content()
+            .environment(\.gameViewportSize, viewport)
+            .environment(\.gameContentScale, scale)
+            .frame(width: viewport?.width)
+            .fixedSize(horizontal: false, vertical: true)
+            .onGeometryChange(for: CGSize.self) { $0.size } action: { measuredSize = $0 }
+            .scaleEffect(scale, anchor: .top)
+            .frame(width: viewport?.width, height: viewport?.height, alignment: .top)
+    }
+}
+
 struct ToddlerGameScaffold<Content: View>: View {
     let title: String
     let prompt: String
@@ -180,79 +225,97 @@ struct ToddlerGameScaffold<Content: View>: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.learningActivity) private var activity
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @StateObject private var narrator = GameNarrator()
-
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @StateObject private var narrator = GameNarrator()
+    @State private var showingTogether = false
 
     var body: some View {
         GeometryReader { geometry in
-            // Use the actual window size so rotation and iPad multitasking both adapt.
-            let landscape = geometry.size.width >= 640 && geometry.size.width > geometry.size.height
+            // A short window needs two independently bounded panes, not a portrait stack in a wide ScrollView.
+            let landscape = geometry.size.width >= 600 && geometry.size.width > geometry.size.height
                 && !dynamicTypeSize.isAccessibilitySize
-            let margin: CGFloat = landscape ? 16 : 20
-            let availableWidth = min(geometry.size.width - margin * 2, landscape ? 1060 : 740)
-            let directionsWidth = min(260, max(180, availableWidth * 0.27))
+            let margin: CGFloat = landscape ? 10 : 20
+            let gap: CGFloat = landscape ? 16 : 22
+            let availableWidth = max(0, min(geometry.size.width - margin * 2, landscape ? 1180 : 740))
+            let availableHeight = max(1, geometry.size.height - margin * 2)
+            let directionsWidth = min(260, max(190, availableWidth * 0.27))
+            let viewport = landscape ? CGSize(width: max(1, availableWidth - directionsWidth - gap), height: availableHeight) : nil
             let layout = landscape
-                ? AnyLayout(HStackLayout(alignment: .top, spacing: 24))
-                : AnyLayout(VStackLayout(spacing: 22))
+                ? AnyLayout(HStackLayout(alignment: .top, spacing: gap))
+                : AnyLayout(VStackLayout(spacing: gap))
 
             ScrollViewReader { scroll in
                 ScrollView {
                     layout {
-                        VStack(spacing: landscape ? 12 : 16) {
+                        VStack(spacing: landscape ? 10 : 16) {
                             directions(compact: landscape)
-                            if landscape, let activity, !completion {
-                                DisclosureGroup {
-                                    Text(activity.caregiverTip)
-                                        .font(.system(.subheadline, design: .rounded))
-                                        .padding(.top, 6)
-                                } label: {
-                                    Label("Play together", systemImage: "person.2.fill")
-                                        .font(.system(.subheadline, design: .rounded, weight: .bold))
+                            if landscape {
+                                if completion {
+                                    finishControls(compact: true)
+                                } else if activity != nil {
+                                    Button { showingTogether = true } label: {
+                                        Label("Play together", systemImage: "person.2.fill")
+                                            .font(.system(.subheadline, design: .rounded, weight: .bold))
+                                            .frame(maxWidth: .infinity, minHeight: 44)
+                                            .background(.white.opacity(0.9), in: RoundedRectangle(cornerRadius: 16))
+                                    }
+                                    .buttonStyle(.plain)
+                                    .accessibilityIdentifier("game.play-together")
+                                    .popover(isPresented: $showingTogether) {
+                                        VStack(alignment: .leading, spacing: 14) {
+                                            Label("Play together", systemImage: "person.2.fill").font(.headline)
+                                            Text(activity?.caregiverTip ?? "")
+                                            Button("Done") { showingTogether = false }
+                                                .frame(maxWidth: .infinity, minHeight: 44)
+                                        }
+                                        .padding(20).frame(idealWidth: 280, maxWidth: 340)
+                                        .presentationCompactAdaptation(.popover)
+                                        .environment(\.gameViewportSize, nil)
+                                        .environment(\.gameContentScale, 1)
+                                    }
                                 }
-                                .padding(14)
-                                .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
+                                Spacer(minLength: 0)
                             }
                         }
-                        .frame(width: landscape ? directionsWidth : nil)
+                        .frame(width: landscape ? directionsWidth : nil, height: landscape ? availableHeight : nil, alignment: .top)
                         .id("activity-top")
 
-                        VStack(spacing: landscape ? 16 : 22) {
-                            if completion {
-                                finishControls
-                                    .transition(reduceMotion ? .identity : .opacity)
-                            }
-
-                            // Keep the same content identity when rotating or completing a game.
-                            content()
-                                .frame(maxWidth: .infinity)
-                                .disabled(completion)
-
-                            if !landscape, let activity, !completion {
-                                VStack(alignment: .leading, spacing: 6) {
-                                    Label("Play together", systemImage: "person.2.fill")
-                                        .font(.system(.subheadline, design: .rounded, weight: .bold))
-                                    Text(activity.caregiverTip)
-                                        .font(.system(.subheadline, design: .rounded))
+                        GameFittedContent(viewport: viewport) {
+                            VStack(spacing: landscape ? 10 : 22) {
+                                if completion && !landscape {
+                                    finishControls(compact: false)
+                                        .transition(reduceMotion ? .identity : .opacity)
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(18)
-                                .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
+                                content()
+                                    .frame(maxWidth: .infinity)
+                                    .disabled(completion)
+                                if !landscape, let activity, !completion {
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        Label("Play together", systemImage: "person.2.fill")
+                                            .font(.system(.subheadline, design: .rounded, weight: .bold))
+                                        Text(activity.caregiverTip).font(.system(.subheadline, design: .rounded))
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(18)
+                                    .background(.white.opacity(0.85), in: RoundedRectangle(cornerRadius: 20))
+                                }
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .accessibilityElement(children: .contain)
                         .accessibilityIdentifier("game.play-area")
                     }
-                    .frame(width: max(0, availableWidth))
+                    .frame(width: availableWidth)
                     .padding(margin)
                     .frame(maxWidth: .infinity)
                 }
+                .scrollDisabled(landscape)
+                .scrollBounceBehavior(.basedOnSize)
                 .onChange(of: prompt) { _, _ in
-                    if scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }
+                    if !landscape && scrollToTopOnPromptChange { scroll.scrollTo("activity-top", anchor: .top) }
                 }
                 .onChange(of: completion) { _, finished in
-                    if finished { scroll.scrollTo("activity-top", anchor: .top) }
+                    if finished && !landscape { scroll.scrollTo("activity-top", anchor: .top) }
                 }
             }
         }
@@ -268,23 +331,22 @@ struct ToddlerGameScaffold<Content: View>: View {
     }
 
     private func directions(compact: Bool) -> some View {
-        VStack(spacing: compact ? 12 : 16) {
-            HStack(spacing: 12) {
+        VStack(spacing: compact ? 10 : 16) {
+            HStack(spacing: 10) {
                 Text(title)
-                    .font(.system(compact ? .title2 : .title, design: .rounded, weight: .bold))
+                    .font(.system(compact ? .title3 : .title, design: .rounded, weight: .bold))
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Button { narrator.speak(prompt, allowUnrecorded: allowUnrecordedPrompt) } label: {
                     Image(systemName: "speaker.wave.2.fill")
-                        .font(.title2.bold())
-                        .frame(width: compact ? 48 : 64, height: compact ? 48 : 64)
+                        .font(compact ? .title3.bold() : .title2.bold())
+                        .frame(width: compact ? 44 : 64, height: compact ? 44 : 64)
                         .background(accent.opacity(0.13), in: Circle())
                 }
                 .accessibilityLabel("Hear the directions again")
             }
-
             Text(prompt)
-                .font(.system(compact ? .headline : .title3, design: .rounded, weight: .semibold))
+                .font(.system(compact ? .subheadline : .title3, design: .rounded, weight: .semibold))
                 .multilineTextAlignment(compact ? .leading : .center)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: compact ? 0 : 56, alignment: compact ? .leading : .center)
@@ -294,29 +356,32 @@ struct ToddlerGameScaffold<Content: View>: View {
         .accessibilityIdentifier("game.directions")
     }
 
-    private var finishControls: some View {
-        VStack(spacing: 14) {
+    private func finishControls(compact: Bool) -> some View {
+        VStack(spacing: compact ? 8 : 14) {
             Label("We did it together!", systemImage: "checkmark.seal.fill")
-                .font(.system(.title2, design: .rounded, weight: .bold))
-            Text(activity?.caregiverTip ?? "Try this play idea with a grown-up away from the screen.")
-                .multilineTextAlignment(.center)
-            ToddlerActionButton(title: "All done", systemImage: "house.fill", color: accent) { dismiss() }
+                .font(.system(compact ? .headline : .title2, design: .rounded, weight: .bold))
+            if !compact {
+                Text(activity?.caregiverTip ?? "Try this play idea with a grown-up away from the screen.")
+                    .multilineTextAlignment(.center)
+            }
+            Button { dismiss() } label: {
+                Label("All done", systemImage: "house.fill")
+                    .font(.system(.headline, design: .rounded))
+                    .frame(maxWidth: .infinity, minHeight: compact ? 44 : 64)
+                    .background(accent.opacity(0.19), in: RoundedRectangle(cornerRadius: 18))
+            }
+            .buttonStyle(.plain)
             if let onReplay {
-                Button {
-                    narrator.stop()
-                    onReplay()
-                } label: {
-                    Text("Play again")
-                        .font(.system(.headline, design: .rounded))
-                        .frame(minWidth: 100, minHeight: 64)
+                Button { narrator.stop(); onReplay() } label: {
+                    Text("Play again").font(.system(.headline, design: .rounded))
+                        .frame(maxWidth: .infinity, minHeight: compact ? 44 : 64)
                         .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
+                }.buttonStyle(.plain)
             }
         }
-        .padding(22)
+        .padding(compact ? 10 : 22)
         .frame(maxWidth: .infinity)
-        .background(accent.opacity(0.1), in: RoundedRectangle(cornerRadius: 26))
+        .background(accent.opacity(0.1), in: RoundedRectangle(cornerRadius: 22))
     }
 }
 
@@ -411,14 +476,42 @@ private struct FrogMenuSymbol: View {
     }
 }
 
+private struct CompactActivityMenuKey: EnvironmentKey {
+    static let defaultValue = false
+}
+
+private extension EnvironmentValues {
+    var compactActivityMenu: Bool {
+        get { self[CompactActivityMenuKey.self] }
+        set { self[CompactActivityMenuKey.self] = newValue }
+    }
+}
+
 struct ActivityMenu<Content: View>: View {
     let title: String
     let subtitle: String
     let accent: Color
     var activityCount: Int = 12
     @ViewBuilder let content: () -> Content
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
+        GeometryReader { geometry in
+            if geometry.size.width >= 600 && geometry.size.width > geometry.size.height
+                && !dynamicTypeSize.isAccessibilitySize {
+                landscapeMenu(size: geometry.size)
+            } else {
+                portraitMenu
+            }
+        }
+        .background(Color(red: 0.98, green: 0.97, blue: 0.93).ignoresSafeArea())
+        .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
+        .tint(accent)
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var portraitMenu: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
                 Text(title).font(.system(.largeTitle, design: .rounded, weight: .bold))
@@ -435,11 +528,47 @@ struct ActivityMenu<Content: View>: View {
             .frame(maxWidth: 960)
             .frame(maxWidth: .infinity)
         }
-        .background(Color(red: 0.98, green: 0.97, blue: 0.93).ignoresSafeArea())
-        .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
-        .tint(accent)
-        .navigationTitle(title)
-        .navigationBarTitleDisplayMode(.inline)
+        .environment(\.compactActivityMenu, false)
+    }
+
+    private func landscapeMenu(size: CGSize) -> some View {
+        let width = min(max(0, size.width - 24), 1180)
+        let height = max(1, size.height - 24)
+        let headingWidth = min(260, max(180, width * 0.26))
+        let gridWidth = max(1, width - headingWidth - 20)
+        let columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: gridWidth >= 780 ? 3 : 2)
+
+        return HStack(alignment: .top, spacing: 20) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(title)
+                    .font(.system(.title2, design: .rounded, weight: .bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(subtitle)
+                    .font(.system(.subheadline, design: .rounded))
+                    .fixedSize(horizontal: false, vertical: true)
+                Label("\(activityCount) ways to play together", systemImage: "hand.wave.fill")
+                    .font(.system(.caption, design: .rounded, weight: .semibold))
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(accent.opacity(0.12), in: RoundedRectangle(cornerRadius: 16))
+            }
+            .frame(width: headingWidth, height: height, alignment: .topLeading)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("activity-menu.heading")
+
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 12) {
+                    content()
+                }
+                .environment(\.compactActivityMenu, true)
+                .padding(2)
+            }
+            .scrollBounceBehavior(.basedOnSize)
+            .frame(width: gridWidth, height: height)
+            .accessibilityIdentifier("activity-menu.activities")
+        }
+        .frame(width: width, height: height)
+        .frame(width: size.width, height: size.height)
     }
 }
 
@@ -449,8 +578,41 @@ struct ActivityCard: View {
     let symbol: String
     var asset: String? = nil
     let accent: Color
+    @Environment(\.compactActivityMenu) private var compact
 
     var body: some View {
+        Group {
+            if compact {
+                HStack(alignment: .center, spacing: 10) {
+                    ToddlerArt(asset: asset, symbol: symbol, size: 48)
+                        .foregroundStyle(accent)
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(title)
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .fixedSize(horizontal: false, vertical: true)
+                        Text(subtitle)
+                            .font(.system(size: 12, design: .rounded))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            } else {
+                portraitContent
+            }
+        }
+        .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
+        .padding(compact ? 12 : 18)
+        .frame(maxWidth: .infinity, minHeight: compact ? 104 : 210, alignment: compact ? .leading : .topLeading)
+        .background(.white, in: RoundedRectangle(cornerRadius: compact ? 20 : 26))
+        .overlay(RoundedRectangle(cornerRadius: compact ? 20 : 26).strokeBorder(accent.opacity(0.23), lineWidth: 2))
+        .contentShape(RoundedRectangle(cornerRadius: compact ? 20 : 26))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(title). \(subtitle)")
+        .accessibilityHint("Opens this activity")
+        .accessibilityIdentifier("activity-card.\(title)")
+    }
+
+    private var portraitContent: some View {
         VStack(alignment: .leading, spacing: 12) {
             ToddlerArt(asset: asset, symbol: symbol, size: 68)
                 .foregroundStyle(accent)
@@ -463,15 +625,5 @@ struct ActivityCard: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
         }
-        .foregroundStyle(Color(red: 0.13, green: 0.21, blue: 0.27))
-        .padding(18)
-        .frame(maxWidth: .infinity, minHeight: 210, alignment: .topLeading)
-        .background(.white, in: RoundedRectangle(cornerRadius: 26))
-        .overlay(RoundedRectangle(cornerRadius: 26).strokeBorder(accent.opacity(0.23), lineWidth: 2))
-        .contentShape(RoundedRectangle(cornerRadius: 26))
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(title). \(subtitle)")
-        .accessibilityHint("Opens this activity")
-        .accessibilityIdentifier("activity-card.\(title)")
     }
 }

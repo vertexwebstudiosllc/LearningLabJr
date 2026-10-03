@@ -46,21 +46,37 @@ struct LiteracyStage<Content: View>: View {
 
     var body: some View {
         ToddlerGameScaffold(title: title, prompt: prompt, accent: .orange, completion: play.complete, onReplay: onReplay ?? play.replay) {
-            VStack(spacing: 20) {
-                Text("\(progressLabel) \(play.round + 1) of \(play.total)").font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
-                content().disabled(play.solved)
-                if !play.feedback.isEmpty {
-                    Text(play.feedback).font(.title3.weight(.semibold)).multilineTextAlignment(.center).foregroundStyle(Color.brown)
-                }
-                if play.solved {
-                    ToddlerActionButton(title: play.round + 1 == play.total ? "All done" : nextLabel, systemImage: "arrow.right.circle.fill", color: .orange, action: play.advance)
-                }
-            }
+            LiteracyStageContent(play: play, progressLabel: progressLabel, nextLabel: nextLabel, content: content)
         }
         .onChange(of: play.feedbackRevision) { _, _ in
             if !play.feedback.isEmpty { narrator.speak(play.feedback) }
         }
         .onDisappear { narrator.stop() }
+    }
+}
+
+private struct LiteracyStageContent<Content: View>: View {
+    @Environment(\.gameViewportSize) private var viewport
+    @ObservedObject var play: LiteracyPlay
+    let progressLabel: String
+    let nextLabel: String
+    @ViewBuilder var content: () -> Content
+
+    var body: some View {
+        VStack(spacing: viewport == nil ? 20 : 8) {
+            Text("\(progressLabel) \(play.round + 1) of \(play.total)")
+                .font(.subheadline.weight(.semibold)).foregroundStyle(.secondary)
+            content().disabled(play.solved)
+            if !play.feedback.isEmpty {
+                Text(play.feedback)
+                    .font(viewport == nil ? .title3.weight(.semibold) : .subheadline.weight(.semibold))
+                    .multilineTextAlignment(.center).foregroundStyle(Color.brown)
+            }
+            if play.solved {
+                ToddlerActionButton(title: play.round + 1 == play.total ? "All done" : nextLabel,
+                                    systemImage: "arrow.right.circle.fill", color: .orange, action: play.advance)
+            }
+        }
     }
 }
 
@@ -89,14 +105,15 @@ private struct WordPictureCard: View {
 }
 
 struct LiteracyLetterButton: View {
+    @Environment(\.gameViewportSize) private var viewport
     let letter: String
     var selected = false
     let action: () -> Void
     var body: some View {
         Button(action: action) {
-            Text(letter).font(.system(size: 46, weight: .bold, design: .rounded))
+            Text(letter).font(.system(size: viewport == nil ? 46 : 40, weight: .bold, design: .rounded))
                 .foregroundStyle(.brown)
-                .frame(maxWidth: .infinity, minHeight: 92)
+                .frame(maxWidth: .infinity, minHeight: viewport == nil ? 92 : 72)
                 .background(selected ? Color.orange.opacity(0.25) : Color.white, in: RoundedRectangle(cornerRadius: 20))
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.orange.opacity(0.5), lineWidth: 2))
         }.buttonStyle(.plain).accessibilityLabel("Letter \(letter)")
@@ -128,21 +145,7 @@ struct LetterTwinsGame: View {
                 let round = rounds[play.round]
                 LiteracyStage(title: "Letter Twins", prompt: "This is \(round.letter). Find the letter that looks just like it.", play: play,
                               onReplay: restart, progressLabel: "Letter", nextLabel: "Next letter") {
-                    VStack(spacing: 26) {
-                        Text(round.letter).font(.system(size: 100, weight: .bold, design: .rounded)).foregroundStyle(.brown)
-                            .frame(width: 150, height: 160).background(Color.orange.opacity(0.18), in: RoundedRectangle(cornerRadius: 28))
-                            .accessibilityLabel("Find letter \(round.letter)")
-                            .accessibilityIdentifier("letter-twins.target")
-                        HStack(spacing: 18) {
-                            ForEach(round.choices, id: \.self) { choice in
-                                LiteracyLetterButton(letter: choice) {
-                                    if choice == round.letter { play.win("Two matching letters. They are both \(round.letter)!") }
-                                    else { play.say("Look at the lines and curves. Find the same shape.") }
-                                }
-                                .accessibilityIdentifier("letter-twins.choice.\(choice)")
-                            }
-                        }
-                    }
+                    LetterTwinsBoard(round: round, play: play)
                 }
             }
         }
@@ -158,6 +161,34 @@ struct LetterTwinsGame: View {
         previousStart = rounds[0].letter
         lastShown = previousStart
         play.replay()
+    }
+}
+
+private struct LetterTwinsBoard: View {
+    @Environment(\.gameViewportSize) private var viewport
+    let round: LetterTwinsRound
+    @ObservedObject var play: LiteracyPlay
+
+    var body: some View {
+        let compact = viewport != nil
+        let layout = compact ? AnyLayout(HStackLayout(spacing: 18)) : AnyLayout(VStackLayout(spacing: 26))
+        layout {
+            Text(round.letter).font(.system(size: compact ? 76 : 100, weight: .bold, design: .rounded))
+                .foregroundStyle(.brown)
+                .frame(width: compact ? 120 : 150, height: compact ? 120 : 160)
+                .background(Color.orange.opacity(0.18), in: RoundedRectangle(cornerRadius: 28))
+                .accessibilityLabel("Find letter \(round.letter)")
+                .accessibilityIdentifier("letter-twins.target")
+            HStack(spacing: 18) {
+                ForEach(round.choices, id: \.self) { choice in
+                    LiteracyLetterButton(letter: choice) {
+                        if choice == round.letter { play.win("Two matching letters. They are both \(round.letter)!") }
+                        else { play.say("Look at the lines and curves. Find the same shape.") }
+                    }
+                    .accessibilityIdentifier("letter-twins.choice.\(choice)")
+                }
+            }
+        }
     }
 }
 

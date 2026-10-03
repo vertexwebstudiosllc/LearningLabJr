@@ -6,6 +6,7 @@ struct ImmediatePictureDrag: ViewModifier {
     let target: CGRect
     let tap: () -> Void
     let drop: () -> Void
+    @Environment(\.gameContentScale) private var contentScale
     @GestureState private var offset = CGSize.zero
     @GestureState private var active = false
 
@@ -13,7 +14,13 @@ struct ImmediatePictureDrag: ViewModifier {
         content.offset(offset).zIndex(active ? 10 : 0)
             .highPriorityGesture(DragGesture(minimumDistance: 0, coordinateSpace: .global)
                 .updating($active) { _, value, _ in value = true }
-                .updating($offset) { value, offset, _ in offset = value.translation }
+                .updating($offset) { value, offset, _ in
+                    // The gesture and drop target use screen coordinates, while
+                    // offset is applied inside the fitted game content.
+                    let scale = max(contentScale, 0.01)
+                    offset = CGSize(width: value.translation.width / scale,
+                                    height: value.translation.height / scale)
+                }
                 .onEnded { value in
                     if hypot(value.translation.width, value.translation.height) < 8 { tap() }
                     else if !target.isEmpty && target.insetBy(dx: -22, dy: -22).contains(value.location) { drop() }
