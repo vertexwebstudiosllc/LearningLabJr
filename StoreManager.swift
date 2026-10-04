@@ -169,64 +169,27 @@ struct PremiumLaunchPromptState {
     }
 }
 
-/// A dismissible invitation; purchase and external links remain behind the parent gate.
+/// Shows the full plan chooser immediately, with parent approval for adult actions.
 struct PremiumPromptView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var store = StoreManager.shared
-    @State private var showPlans = false
 
     var body: some View {
         NavigationStack {
-            Group {
-                if showPlans {
-                    PremiumParentGateView()
-                } else {
-                    ScrollView {
-                        VStack(spacing: 24) {
-                            Image(systemName: "sparkles.rectangle.stack.fill")
-                                .font(.system(size: 56))
-                                .foregroundStyle(.teal)
-                                .accessibilityHidden(true)
-                            Text("More to discover with Premium")
-                                .font(.system(.largeTitle, design: .rounded, weight: .bold))
-                                .multilineTextAlignment(.center)
-                            Text(GameAccessPolicy.premiumDescription)
-                                .font(.title3)
-                                .multilineTextAlignment(.center)
-                            Button { showPlans = true } label: {
-                                Text("See subscription plans")
-                                    .font(.headline)
-                                    .frame(maxWidth: .infinity, minHeight: 54)
-                            }
-                            .buttonStyle(.borderedProminent)
-                            .accessibilityIdentifier("premium.viewPlans")
-                            Button("Continue with free games") { dismiss() }
-                                .font(.headline)
-                                .frame(minHeight: 48)
-                                .accessibilityIdentifier("premium.continueFree")
+            PremiumPaywallView(requiresParentApproval: true)
+                .navigationTitle("Learning Lab Jr Premium")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button { dismiss() } label: {
+                            Image(systemName: "xmark")
+                                .frame(minWidth: 44, minHeight: 44)
                         }
-                        .padding(28)
-                        .frame(maxWidth: 560)
-                        .frame(maxWidth: .infinity)
+                        .accessibilityLabel("Close subscription prompt")
+                        .accessibilityIdentifier("premium.close")
+                        .disabled(store.isPurchasing)
                     }
-                    .background(Color(red: 0.98, green: 0.97, blue: 0.93))
-                    .foregroundStyle(Color(red: 0.08, green: 0.24, blue: 0.28))
-                    .accessibilityIdentifier("premium.prompt")
                 }
-            }
-            .navigationTitle("Learning Lab Jr Premium")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button { dismiss() } label: {
-                        Image(systemName: "xmark")
-                            .frame(minWidth: 44, minHeight: 44)
-                    }
-                    .accessibilityLabel("Close subscription prompt")
-                    .accessibilityIdentifier("premium.close")
-                    .disabled(store.isPurchasing)
-                }
-            }
         }
         .tint(.teal)
         .onChange(of: store.hasPremium) { _, premium in
@@ -271,6 +234,11 @@ enum PremiumPlan {
 }
 
 struct PremiumPaywallView: View {
+    var requiresParentApproval = false
+    @Environment(\.openURL) private var openURL
+    @State private var parentApproved = false
+    @State private var pendingParentAction: PremiumParentAction?
+    @State private var approvedAction: PremiumParentAction?
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var storeManager = StoreManager.shared
     @State private var selectedProductID = PremiumPlan.annualID
@@ -350,7 +318,7 @@ struct PremiumPaywallView: View {
                                 .accessibilityIdentifier("premium.offer")
                         }
                         Button {
-                            Task { await storeManager.purchase(product) }
+                            request(.purchase(product))
                         } label: {
                             Text("Subscribe · \(product.displayPrice) / \(billingPeriod(product))")
                                 .font(.system(.headline, design: .rounded, weight: .bold))
@@ -377,18 +345,19 @@ struct PremiumPaywallView: View {
                     Text(message).font(.footnote).foregroundStyle(ink)
                         .multilineTextAlignment(.center)
                 }
-                Button("Restore Purchases") { Task { await storeManager.restorePurchases() } }
+                Button("Restore Purchases") { request(.restore) }
                     .font(.subheadline.weight(.semibold))
                     .disabled(storeManager.isPurchasing)
                 Text("Payment is charged to your Apple Account at confirmation. Subscriptions renew automatically unless canceled at least 24 hours before the current period ends. Yearly plans are billed in one annual payment. Manage or cancel in your App Store account settings.")
                     .font(.caption).foregroundStyle(ink.opacity(0.75))
                     .multilineTextAlignment(.center)
                 HStack(spacing: 24) {
-                    Link("Privacy Policy", destination: AppLinks.privacy)
-                    Link("Terms of Use", destination: AppLinks.terms)
+                    Button("Privacy Policy") { request(.open(AppLinks.privacy)) }
+                    Button("Terms of Use") { request(.open(AppLinks.terms)) }
                 }
                 .font(.footnote).frame(minHeight: 44)
                 Button("Not Now") { dismiss() }
+                    .accessibilityIdentifier("premium.continueFree")
                     .font(.subheadline.weight(.semibold))
                     .disabled(storeManager.isPurchasing)
                 Text("Your free games and first Read Together book are always here.")
@@ -399,6 +368,13 @@ struct PremiumPaywallView: View {
             .frame(maxWidth: 560)
             .frame(maxWidth: .infinity)
         }
+        .accessibilityIdentifier("premium.prompt")
+        .sheet(item: $pendingParentAction, onDismiss: performApprovedAction) { action in
+            ParentChallengeView(onSuccess: {
+                approvedAction = action
+                pendingParentAction = nil
+            }, onCancel: { pendingParentAction = nil })
+        }
         .background(cream.ignoresSafeArea())
         .tint(teal)
         .task {
@@ -407,6 +383,44 @@ struct PremiumPaywallView: View {
         }
         .onChange(of: storeManager.hasPremium) { _, hasPremium in
             if hasPremium { dismiss() }
+        }
+    }
+
+    private enum PremiumParentAction: Identifiable {
+        case purchase(Product)
+        case restore
+        case open(URL)
+
+        var id: String {
+            switch self {
+            case .purchase(let product): "purchase." + product.id
+            case .restore: "restore"
+            case .open(let url): url.absoluteString
+            }
+        }
+    }
+
+    private func request(_ action: PremiumParentAction) {
+        guard !storeManager.isPurchasing else { return }
+        if requiresParentApproval && !parentApproved {
+            pendingParentAction = action
+        } else {
+            perform(action)
+        }
+    }
+
+    private func performApprovedAction() {
+        guard let action = approvedAction else { return }
+        approvedAction = nil
+        parentApproved = true
+        perform(action)
+    }
+
+    private func perform(_ action: PremiumParentAction) {
+        switch action {
+        case .purchase(let product): Task { await storeManager.purchase(product) }
+        case .restore: Task { await storeManager.restorePurchases() }
+        case .open(let url): openURL(url)
         }
     }
 

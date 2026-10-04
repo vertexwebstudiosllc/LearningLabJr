@@ -22,14 +22,6 @@ final class ReleasePaywallUITests: XCTestCase {
         let letterDraw = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Letter Draw.'")).firstMatch
         XCTAssertTrue(letterDraw.waitForExistence(timeout: 5))
         letterDraw.tap()
-        app.buttons["premium.viewPlans"].tap()
-        let question = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Please add '")).firstMatch
-        XCTAssertTrue(question.waitForExistence(timeout: 5))
-        XCTAssertFalse(app.buttons["premium.subscribe"].exists)
-        let numbers = question.label.split(whereSeparator: { !$0.isNumber }).compactMap { Int($0) }
-        app.textFields["Your answer"].tap()
-        app.textFields["Your answer"].typeText(String(numbers.reduce(0, +)))
-        app.buttons["Continue"].tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.buttons["premium.plan.annual"].exists)
         XCTAssertTrue(app.buttons["premium.subscribe"].label.contains("29.99"))
@@ -64,6 +56,12 @@ final class ReleasePaywallUITests: XCTestCase {
             app.swipeDown()
         }
         app.buttons["premium.subscribe"].tap()
+        let question = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Please add '")).firstMatch
+        XCTAssertTrue(question.waitForExistence(timeout: 5))
+        let numbers = question.label.split(whereSeparator: { !$0.isNumber }).compactMap { Int($0) }
+        app.textFields["Your answer"].tap()
+        app.textFields["Your answer"].typeText(String(numbers.reduce(0, +)))
+        app.buttons["Continue"].tap()
         XCTAssertTrue(letterDraw.waitForExistence(timeout: 15))
         XCTAssertFalse(letterDraw.label.contains("Premium, grown-up required"))
         letterDraw.tap()
@@ -98,7 +96,7 @@ final class CategoryAccessUITests: XCTestCase {
             XCTAssertTrue(locked.waitForExistence(timeout: 5))
             XCTAssertTrue(locked.label.contains("Premium, grown-up required"))
             locked.tap()
-            app.buttons["premium.viewPlans"].tap()
+            tapPaywallButton(app, "premium.subscribe")
             XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
             XCTAssertFalse(app.buttons["premium.subscribe"].exists)
             app.buttons["Back to play"].tap()
@@ -175,10 +173,11 @@ final class BookAccessUITests: XCTestCase {
             let book = app.buttons["activity.\(id)"]
             XCTAssertTrue(book.label.contains("Premium, grown-up required"))
             tap(book)
-            app.buttons["premium.viewPlans"].tap()
+            tapPaywallButton(app, "premium.subscribe")
             XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
             XCTAssertFalse(app.buttons["premium.subscribe"].exists)
             app.buttons["Back to play"].tap()
+            app.buttons["premium.close"].tap()
         }
         let transaction = try await store.buyProduct(identifier: "com.learninglabjr.premium.monthly")
         for id in paidIDs {
@@ -225,26 +224,26 @@ final class LaunchSubscriptionPromptUITests: XCTestCase {
         defer { store.clearTransactions() }
         for closeID in ["premium.close", "premium.continueFree"] {
             let app = launch()
-            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
             app.buttons["category.ABCs & Phonics"].tap()
-            XCTAssertTrue(app.buttons["premium.viewPlans"].waitForExistence(timeout: 10))
-            XCTAssertFalse(app.buttons["premium.subscribe"].exists)
-            app.buttons[closeID].tap()
+            XCTAssertTrue(app.buttons["premium.plan.annual"].waitForExistence(timeout: 10))
+            XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+            tapPaywallButton(app, closeID)
             let free = app.buttons["activity.phonics.letter-match"]
             XCTAssertTrue(free.waitForExistence(timeout: 5))
             free.tap()
-            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
             app.navigationBars.buttons.firstMatch.tap()
             for _ in 0..<2 {
                 app.buttons["activity.phonics.letter-draw"].tap()
-                XCTAssertTrue(app.buttons["premium.viewPlans"].waitForExistence(timeout: 5))
+                XCTAssertTrue(app.buttons["premium.plan.annual"].waitForExistence(timeout: 5))
                 app.buttons["premium.close"].tap()
                 XCTAssertTrue(free.waitForExistence(timeout: 5))
             }
             app.navigationBars.buttons.firstMatch.tap()
             app.buttons["category.ABCs & Phonics"].tap()
             XCTAssertTrue(free.waitForExistence(timeout: 5))
-            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
             app.terminate()
         }
     }
@@ -261,10 +260,10 @@ final class LaunchSubscriptionPromptUITests: XCTestCase {
             app.buttons["category.ABCs & Phonics"].tap()
             let paid = app.buttons["activity.phonics.letter-draw"]
             XCTAssertTrue(paid.waitForExistence(timeout: 10))
-            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
             XCTAssertFalse(paid.label.contains("Premium, grown-up required"))
             paid.tap()
-            XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+            XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
             XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
             app.terminate()
         }
@@ -286,7 +285,30 @@ final class LaunchSubscriptionPromptUITests: XCTestCase {
         app.buttons["premium.close"].tap()
         app.buttons["category.ABCs & Phonics"].tap()
         XCTAssertTrue(app.buttons["activity.phonics.letter-match"].waitForExistence(timeout: 5))
-        XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+        XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
+    }
+
+    func testCancelingParentCheckKeepsPlansAndDoesNotPurchase() throws {
+        continueAfterFailure = false
+        let store = try makeStoreSession()
+        store.resetToDefaultState(); store.clearTransactions(); store.disableDialogs = true
+        defer { store.clearTransactions() }
+        let app = launch()
+        app.buttons["category.ABCs & Phonics"].tap()
+        XCTAssertTrue(app.buttons["premium.plan.annual"].waitForExistence(timeout: 10))
+        XCTAssertFalse(app.staticTexts["Grown-ups, this part is for you"].exists)
+        tapPaywallButton(app, "premium.plan.monthly")
+        for action in ["premium.subscribe", "Restore Purchases", "Privacy Policy"] {
+            tapPaywallButton(app, action)
+            XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
+            XCTAssertTrue(store.allTransactions().isEmpty)
+            app.buttons["Back to play"].tap()
+            XCTAssertTrue(app.buttons["premium.close"].waitForExistence(timeout: 5))
+        }
+        XCTAssertTrue(app.buttons["premium.subscribe"].label.contains("3.99"))
+        app.buttons["premium.close"].tap()
+        XCTAssertTrue(app.buttons["activity.phonics.letter-match"].waitForExistence(timeout: 5))
+        XCTAssertTrue(store.allTransactions().isEmpty)
     }
 
     func testParentsButtonAlsoPromptsOnFirstTapInLandscape() throws {
@@ -300,7 +322,7 @@ final class LaunchSubscriptionPromptUITests: XCTestCase {
         XCTAssertTrue(app.buttons["premium.close"].waitForExistence(timeout: 10))
         app.buttons["premium.close"].tap()
         XCTAssertTrue(app.staticTexts["Grown-ups, this part is for you"].waitForExistence(timeout: 5))
-        XCTAssertFalse(app.buttons["premium.viewPlans"].exists)
+        XCTAssertFalse(app.buttons["premium.plan.annual"].exists)
     }
 }
 
@@ -308,4 +330,18 @@ final class LaunchSubscriptionPromptUITests: XCTestCase {
 private func makeStoreSession() throws -> SKTestSession {
     let url = try XCTUnwrap(Bundle(for: ReleasePaywallUITests.self).url(forResource: "LearningLabJr", withExtension: "storekit"))
     return try SKTestSession(contentsOf: url)
+}
+
+@MainActor
+private func tapPaywallButton(_ app: XCUIApplication, _ identifier: String) {
+    let button = app.buttons[identifier]
+    for _ in 0..<5 {
+        if button.exists && button.isHittable { button.tap(); return }
+        app.swipeUp()
+    }
+    for _ in 0..<5 {
+        if button.exists && button.isHittable { button.tap(); return }
+        app.swipeDown()
+    }
+    XCTFail("Missing paywall button: \(identifier)")
 }
